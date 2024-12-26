@@ -105,7 +105,7 @@ export function AboutComponent() {
               <p className="text-lg text-gray-600 italic mb-8">
                 At Positive Check, we're more than just a service—we're a trusted partner in 
                 creating a better life for seniors and peace of mind for families. Together, 
-                we're building a future where caregiving is not just about meeting needs, but 
+                we&apos;re building a future where caregiving is not just about meeting needs, but 
                 about nurturing independence, connection, and joy.
               </p>
               <Link 
