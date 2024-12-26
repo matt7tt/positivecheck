@@ -65,22 +65,22 @@ export function ContactComponent() {
                         throw new Error('Failed to submit form')
                       }
 
-                      toast.success('Thank you for your message. We will be in touch soon!', {
+                      toast.success("Thank you for your message. We will be in touch soon!", {
                         duration: 3000,
                         style: {
-                          background: '#10B981',
-                          color: '#FFFFFF',
+                          background: "#10B981",
+                          color: "#FFFFFF",
                         },
                       })
                       e.currentTarget.reset()
                       setIsSubmitted(true)
                     } catch (error) {
                       console.error('Error submitting form:', error)
-                      toast.error('Sorry, there was an error submitting the form. Please try again.', {
+                      toast.error("Sorry, there was an error submitting the form. Please try again.", {
                         duration: 5000,
                         style: {
-                          background: '#EF4444',
-                          color: '#FFFFFF',
+                          background: "#EF4444",
+                          color: "#FFFFFF",
                         },
                       })
                     } finally {
