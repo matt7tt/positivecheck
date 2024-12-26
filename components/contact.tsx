@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
-import Link from "next/link"
-import Image from 'next/image'
+// import Link from "next/link"
+// import Image from 'next/image'
 import { useState } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
