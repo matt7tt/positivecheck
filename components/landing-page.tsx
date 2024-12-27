@@ -312,6 +312,18 @@ export function LandingPageComponent() {
                 {
                   question: "Does Lola replace human caregivers?",
                   answer: "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps families and caregivers stay informed and respond proactively to changes in well-being."
+                },
+                {
+                  question: "What makes Positive Check unique?",
+                  answer: "Positive Check leverages AI to deliver consistent, reliable, and objective care while maintaining affordability and scalability. Unlike services with human caregivers, Positive Check is available 24/7, never experiences fatigue, and provides instant reporting with complete transparency."
+                },
+                {
+                  question: "Is Positive Check personalized for each user?",
+                  answer: "Yes! Positive Check's AI adapts to each senior's preferences, history, and needs, creating a highly personalized experience. This ensures that every interaction feels tailored and meaningful."
+                },
+                {
+                  question: "Can Positive Check help with caregiver burnout?",
+                  answer: "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout."
                 }
               ].map((faq, index) => (
                 <div 
