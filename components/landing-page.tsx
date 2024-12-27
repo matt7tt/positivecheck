@@ -39,15 +39,15 @@ export function LandingPageComponent() {
       <main>
         <section className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 items-center py-2 lg:py-4">
-            <div className="space-y-16">
-              <div className="space-y-4 -mt-6">
+            <div className="space-y-12 ml-4">
+              <div className="space-y-4">
                 <h1 className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
                   Daily Wellness Check-In Calls for Seniors
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
                   Affordable, reliable wellness check-ins for just $15 per month. Cancel anytime.
                 </p>
-                <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
+                <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>&nbsp;</p>
               </div>
               <Link href="/onboarding-wizard">
                 <Button 
@@ -78,7 +78,7 @@ export function LandingPageComponent() {
         <section className="bg-[#F598FF] py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative h-[400px] lg:h-[500px]">
+              <div className="relative h-[400px] lg:h-[500px] ml-4">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                   <img
                     alt="Healthcare professional in pink scrubs working at a computer with a headset"
@@ -87,7 +87,7 @@ export function LandingPageComponent() {
                   />
                 </div>
               </div>
-              <div className="space-y-6 bg-[#F598FF] p-12 rounded-2xl">
+              <div className="space-y-6 bg-[#F598FF] p-12 rounded-2xl ml-4">
                 <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642]`}>
                   Meet Lola
                 </h2>
@@ -114,6 +114,7 @@ export function LandingPageComponent() {
                     <span className="text-[#1a2642]">Delivers daily wellness updates with meaningful trend analysis.</span>
                   </li>
                 </ul>
+                <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
                 <Link href="/onboarding-wizard">
                   <Button 
                     className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md mt-4`}
@@ -215,11 +216,11 @@ export function LandingPageComponent() {
 
         <section className="bg-[#F598FF] py-16 lg:py-24">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-12`}>
+            <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-12 ml-4`}>
               How does it work?
             </h2>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div className="space-y-8">
+              <div className="space-y-8 ml-4">
                 <div className="space-y-2">
                   <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
                     Step 1: Personalized Scheduling
@@ -261,6 +262,7 @@ export function LandingPageComponent() {
                     </li>
                   </ul>
                 </div>
+                <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
 
                 <Link href="/onboarding-wizard">
                   <Button 
@@ -385,16 +387,18 @@ export function LandingPageComponent() {
         <section className="bg-[#F598FF] py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-16`}>
+              <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-8`}>
                 A Personal Note to Families
               </h2>
+              
+              <div className="mb-16 ml-4">
+                <p className="text-xl text-[#1a2642]">
+                  We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
+                </p>
+              </div>
+
               <div className="grid lg:grid-cols-2 gap-16">
-                <div className="space-y-8">
-                  <p className="text-xl text-[#1a2642]">
-                    We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
-                  </p>
-                </div>
-                <div className="space-y-8">
+                <div className="space-y-8 ml-4">
                   <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
                     The Gift of Connection
                   </h3>
@@ -402,7 +406,7 @@ export function LandingPageComponent() {
                     Daily check-ins aren't just about health—they're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
                   </p>
                 </div>
-                <div className="space-y-8">
+                <div className="space-y-8 ml-4">
                   <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
                     Helping Seniors Age in Place
                   </h3>
