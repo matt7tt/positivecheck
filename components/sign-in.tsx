@@ -12,6 +12,7 @@ import { Lock } from 'lucide-react'
 import { useAuth } from '@/lib/auth-context'
 // import Image from 'next/image'
 import { PublicHeader } from '@/components/shared/public-header'
+import { PublicFooter } from "@/components/shared/public-footer"
 
 export function SignInComponent() {
   const router = useRouter()
@@ -19,6 +20,7 @@ export function SignInComponent() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <SignInForm />
+      <PublicFooter />
     </Suspense>
   )
 }
@@ -161,7 +163,7 @@ function SignInForm() {
                 <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-500">
                   Forgot your password?
                 </Link>
-                <Link href="/sign-up" className="text-sm text-blue-600 hover:text-blue-500">
+                <Link href="/onboarding-wizard" className="text-sm text-blue-600 hover:text-blue-500">
                   Don&apos;t have an account? Sign up
                 </Link>
               </CardFooter>

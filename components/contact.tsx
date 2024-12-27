@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
-// import Link from "next/link"
+import Link from "next/link"
 // import Image from 'next/image'
 import { useState } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
@@ -145,12 +145,12 @@ export function ContactComponent() {
       </main>
 
       <footer className="border-t bg-gray-50">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-gray-600 text-sm">
-            © Positive Check 2025
+          <div className="container mx-auto px-4 py-8">
+            <div className="text-center text-gray-600 text-sm">
+              © Positive Check 2025 | <Link href="/terms">Terms</Link>
+            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
     </div>
   )
 } 

@@ -1,7 +1,11 @@
 import Link from "next/link"
 import Image from 'next/image'
 
-export function PublicHeader({ currentPage }: { currentPage?: string }) {
+type PublicHeaderProps = {
+  currentPage: 'home' | 'sign-in' | 'contact' | 'about'
+}
+
+export function PublicHeader({ currentPage }: PublicHeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">

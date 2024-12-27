@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle } from 'lucide-react'
 import toast, { Toaster } from 'react-hot-toast'
 import Image from 'next/image'
+import { PublicFooter } from "@/components/shared/public-footer"
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -709,6 +710,7 @@ export function MyAccountComponent() {
             </div>
           </div>
         </div>
+        <PublicFooter />
       </div>
     </>
   )
