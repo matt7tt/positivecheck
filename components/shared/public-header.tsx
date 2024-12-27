@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from 'next/image'
 
 type PublicHeaderProps = {
-  currentPage: 'home' | 'sign-in' | 'contact' | 'about'
+  currentPage: 'home' | 'sign-in' | 'contact' | 'about' | 'blog'
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
@@ -40,6 +40,16 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               }`}
             >
               About
+            </Link>
+            <Link 
+              href="/blog" 
+              className={`text-base font-medium ${
+                currentPage === 'blog' 
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              Blog
             </Link>
             <Link 
               href="/contact" 
