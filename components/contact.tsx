@@ -24,7 +24,7 @@ export function ContactComponent() {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           {isSubmitted ? (
-            <Card>
+            <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
               <CardContent className="p-12 text-center">
                 <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
                 <p className="text-gray-600">
@@ -33,7 +33,7 @@ export function ContactComponent() {
               </CardContent>
             </Card>
           ) : (
-            <Card>
+            <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
               <CardContent className="p-6">
                 <h1 className="text-2xl font-bold text-[#1a2642] mb-6">Contact Us</h1>
                 <form 
