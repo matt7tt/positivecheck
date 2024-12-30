@@ -21,15 +21,20 @@ export function ContactComponent() {
       <Toaster position="bottom-center" containerStyle={{ bottom: 100 }} />
       <PublicHeader currentPage="contact" />
 
-      <main>
+      {/* Skip link */}
+      <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
+        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+      </div>
+
+      <main id="main-content">
         {/* Hero Section - Full Width */}
-        <section className="w-full py-12 bg-[#F598FF]">
+        <section className="w-full py-12 bg-[#F598FF]" aria-labelledby="contact-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6">
+              <h1 id="contact-heading" className="text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6">
                 Contact Us
               </h1>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-gray-700 mb-8">
                 Have questions or need support? The Positive Check team is here to help! Please fill out the form below, and we will respond promptly to ensure you have the information and support you need.
               </p>
             </div>
@@ -37,14 +42,14 @@ export function ContactComponent() {
         </section>
 
         {/* Form Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50" aria-labelledby="form-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               {isSubmitted ? (
                 <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
                   <CardContent className="p-12 text-center">
                     <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
-                    <p className="text-gray-600">
+                    <p className="text-gray-700">
                       Thanks for your message. We will be in touch soon.
                     </p>
                   </CardContent>
@@ -103,25 +108,52 @@ export function ContactComponent() {
                           setIsSubmitting(false)
                         }
                       }}
+                      aria-labelledby="form-heading"
+                      noValidate
                     >
+                      <h2 id="form-heading" className="sr-only">Contact Form</h2>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
-                          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">First Name (required)</label>
-                          <Input id="firstName" name="firstName" required />
+                          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                            First Name <span aria-hidden="true">*</span>
+                            <span className="sr-only">(required)</span>
+                          </label>
+                          <Input 
+                            id="firstName" 
+                            name="firstName" 
+                            required 
+                            aria-required="true"
+                            aria-describedby="firstName-error"
+                          />
                         </div>
                         <div>
-                          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                            Last Name
+                          </label>
                           <Input id="lastName" name="lastName" />
                         </div>
                       </div>
+
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email (required)</label>
-                        <Input id="email" name="email" type="email" required />
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                          Email <span aria-hidden="true">*</span>
+                          <span className="sr-only">(required)</span>
+                        </label>
+                        <Input 
+                          id="email" 
+                          name="email" 
+                          type="email" 
+                          required
+                          aria-required="true"
+                          aria-describedby="email-error"
+                        />
                       </div>
+
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
                         <Input id="phone" name="phone" type="tel" />
                       </div>
+
                       <div>
                         <label htmlFor="hearAboutUs" className="block text-sm font-medium text-gray-700 mb-1">How did you hear about us?</label>
                         <Select name="hearAboutUs">
@@ -136,20 +168,33 @@ export function ContactComponent() {
                           </SelectContent>
                         </Select>
                       </div>
+
                       <div>
                         <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message (required)</label>
                         <Textarea id="message" name="message" required />
                       </div>
+
                       <div className="flex items-center">
-                        <input id="newsletter" name="newsletter" type="checkbox" className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded" />
+                        <input 
+                          id="newsletter" 
+                          name="newsletter" 
+                          type="checkbox" 
+                          className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded"
+                          aria-describedby="newsletter-description"
+                        />
                         <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-700">
                           Sign up for news and updates
                         </label>
+                        <span id="newsletter-description" className="sr-only">
+                          Check this box to receive updates about Positive Check services
+                        </span>
                       </div>
+
                       <Button 
                         type="submit" 
-                        className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white"
+                        className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white focus:ring-2 focus:ring-offset-2 focus:ring-[#1a2642]"
                         disabled={isSubmitting}
+                        aria-disabled={isSubmitting}
                       >
                         {isSubmitting ? 'Submitting...' : 'Submit'}
                       </Button>
@@ -162,13 +207,13 @@ export function ContactComponent() {
         </section>
       </main>
 
-      <footer className="border-t bg-gray-50">
-          <div className="container mx-auto px-4 py-8">
-            <div className="text-center text-gray-600 text-sm">
-              © Positive Check 2025 | <Link href="/terms">Terms</Link>
-            </div>
+      <footer className="border-t bg-gray-50" role="contentinfo">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center text-gray-700 text-sm">
+            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
           </div>
-        </footer>
+        </div>
+      </footer>
     </div>
   )
 } 

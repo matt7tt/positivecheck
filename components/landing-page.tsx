@@ -37,11 +37,11 @@ export function LandingPageComponent() {
       <PublicHeader currentPage="home" />
 
       <main>
-        <section className="container mx-auto px-4">
+        <section className="container mx-auto px-4" aria-labelledby="hero-heading">
           <div className="grid lg:grid-cols-2 gap-8 items-center py-2 lg:py-4">
             <div className="space-y-12 ml-4">
               <div className="space-y-4">
-                <h1 className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
+                <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
                   Daily Wellness Check-In Calls for Seniors
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
@@ -49,15 +49,15 @@ export function LandingPageComponent() {
                 </p>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>&nbsp;</p>
               </div>
-              <Link href="/onboarding-wizard">
-                <Button 
-                  className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-6 text-lg rounded-md`}
-                >
-                  SIGN UP
-                </Button>
+              <Link 
+                href="/onboarding-wizard"
+                aria-label="Start your sign up process"
+                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-6 text-lg rounded-md`}
+              >
+                SIGN UP
               </Link>
             </div>
-            <div className="relative h-[400px] lg:h-[600px]">
+            <div className="relative h-[400px] lg:h-[600px]" role="img" aria-label="A senior person enjoying a phone conversation in a cozy setting">
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <img
                   alt="A senior person enjoying a phone conversation in a cozy setting with warm lighting"
@@ -331,17 +331,21 @@ export function LandingPageComponent() {
                 <div 
                   key={index} 
                   className="border border-gray-200 rounded-lg overflow-hidden"
-                  onClick={() => {
-                    const newExpanded = new Set(expandedFaqs)
-                    if (newExpanded.has(index)) {
-                      newExpanded.delete(index)
-                    } else {
-                      newExpanded.add(index)
-                    }
-                    setExpandedFaqs(newExpanded)
-                  }}
                 >
-                  <div className="flex items-center justify-between p-6 cursor-pointer bg-white hover:bg-gray-50">
+                  <button
+                    className="flex items-center justify-between w-full p-6 cursor-pointer bg-white hover:bg-gray-50"
+                    onClick={() => {
+                      const newExpanded = new Set(expandedFaqs)
+                      if (newExpanded.has(index)) {
+                        newExpanded.delete(index)
+                      } else {
+                        newExpanded.add(index)
+                      }
+                      setExpandedFaqs(newExpanded)
+                    }}
+                    aria-expanded={expandedFaqs.has(index)}
+                    aria-controls={`faq-content-${index}`}
+                  >
                     <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642]`}>
                       {faq.question}
                     </h3>
@@ -349,10 +353,14 @@ export function LandingPageComponent() {
                       className={`h-5 w-5 text-[#1a2642] transition-transform ${
                         expandedFaqs.has(index) ? 'transform rotate-180' : ''
                       }`}
+                      aria-hidden="true"
                     />
-                  </div>
+                  </button>
                   {expandedFaqs.has(index) && (
-                    <div className="px-6 pb-6 text-gray-600">
+                    <div 
+                      id={`faq-content-${index}`}
+                      className="px-6 pb-6 text-gray-600"
+                    >
                       {faq.answer}
                     </div>
                   )}
@@ -538,6 +546,10 @@ export function LandingPageComponent() {
       </main>
 
       <PublicFooter />
+
+      <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
+        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+      </div>
     </div>
   )
 }

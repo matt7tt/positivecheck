@@ -39,32 +39,39 @@ export function BlogComponent() {
     <div className="min-h-screen flex flex-col">
       <PublicHeader currentPage="blog" />
 
-      <main className="flex-grow container mx-auto px-4 py-8">
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-8`}>
+      <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
+        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+      </div>
+
+      <main id="main-content" className="flex-grow container mx-auto px-4 py-8">
+        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-8`} id="blog-heading">
           Blog
         </h1>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
           {BLOG_POSTS.map((post, index) => (
             <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-48">
+              <div className="relative h-48" role="img" aria-label={post.title}>
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={`Illustration for ${post.title}`}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <time className="text-sm text-gray-500">{post.date}</time>
+                <time className="text-sm text-gray-700" dateTime={post.date}>
+                  {post.date}
+                </time>
                 <h2 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-2 mb-3`}>
                   {post.title}
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-700 mb-4">
                   {post.excerpt}
                 </p>
                 <Link 
                   href={`/blog/${post.slug}`}
-                  className="text-[#1a2642] font-medium hover:text-[#2a3752]"
+                  className="text-[#1a2642] font-medium hover:text-[#2a3752] focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2"
+                  aria-label={`Read more about ${post.title}`}
                 >
                   Read more →
                 </Link>
