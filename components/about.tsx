@@ -34,7 +34,7 @@ export function AboutComponent() {
         </section>
 
         {/* Mission Section */}
-        <section className="py-16 bg-white" aria-labelledby="mission-heading">
+        <section className="py-8 bg-white" aria-labelledby="mission-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 id="mission-heading" className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-6`}>

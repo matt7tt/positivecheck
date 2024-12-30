@@ -1,153 +1,176 @@
 'use client'
 
+import { Suspense, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import Link from "next/link"
-import { useState } from 'react'
-import { PublicHeader } from "@/components/shared/public-header"
-import toast, { Toaster } from 'react-hot-toast'
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Lock } from 'lucide-react'
+import { useAuth } from '@/lib/auth-context'
+// import Image from 'next/image'
+import { PublicHeader } from '@/components/shared/public-header'
+import { PublicFooter } from "@/components/shared/public-footer"
 
 export function SignInComponent() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Toaster position="bottom-center" containerStyle={{ bottom: 100 }} />
-      <PublicHeader currentPage="sign-in" />
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignInForm />
+      <PublicFooter />
+    </Suspense>
+  )
+}
 
-      {/* Skip link */}
-      <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
-      </div>
+function SignInForm() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const returnUrl = searchParams.get('return') || '/my-account'
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const { setIsAuthenticated } = useAuth()
 
-      <main id="main-content">
-        <section className="w-full py-12 bg-[#F598FF]" aria-labelledby="signin-heading">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 id="signin-heading" className="text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6">
-                Sign In
-              </h1>
-              <p className="text-xl text-gray-700 mb-8">
-                Welcome back! Please sign in to access your account.
-              </p>
-            </div>
+  const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    setIsLoading(true)
+
+    try {
+      const formData = new URLSearchParams()
+      formData.append('username', email)
+      formData.append('password', password)
+      formData.append('grant_type', 'password')
+      
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+        },
+        body: formData.toString()
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.detail || 'Invalid credentials')
+      }
+
+      const result = await response.json()
+      console.log('Login response:', result)
+      
+      // Store token in both localStorage and cookie
+      const token = result.access_token
+      console.log('Received token:', token ? 'Present' : 'Not present')
+      
+      // Store token in localStorage
+      localStorage.setItem('auth_token', token)
+      
+      // Set cookie with proper attributes
+      document.cookie = `auth_token=${token}; path=/; max-age=3600; SameSite=Lax; secure`
+      
+      console.log('Token stored in localStorage:', localStorage.getItem('auth_token') ? 'Present' : 'Not present')
+      console.log('Cookies after setting:', document.cookie)
+      
+      // Force a small delay to ensure storage is complete
+      await new Promise(resolve => setTimeout(resolve, 200))
+      
+      // Use router.push for the redirect
+      router.push(returnUrl)
+    } catch (error) {
+      console.error('Login error:', error)
+      setError(error instanceof Error ? error.message : 'Invalid email or password')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  return (
+    <>
+      <div className="min-h-screen bg-gray-50 flex flex-col">
+        <PublicHeader currentPage="sign-in" />
+
+        <div className="flex-grow flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+          <div className="sm:mx-auto sm:w-full sm:max-w-md">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
           </div>
-        </section>
 
-        <section className="py-16 bg-gray-50" aria-labelledby="form-heading">
-          <div className="container mx-auto px-4">
-            <div className="max-w-md mx-auto">
-              <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
-                <CardContent className="p-6">
-                  <form 
-                    className="space-y-4"
-                    onSubmit={(e) => {
-                      e.preventDefault()
-                      setIsSubmitting(true)
-                      // Add form submission logic here
-                    }}
-                    aria-labelledby="form-heading"
-                    noValidate
-                  >
-                    <h2 id="form-heading" className="sr-only">Sign In Form</h2>
-                    
-                    <div>
-                      <label 
-                        htmlFor="email" 
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Email <span aria-hidden="true">*</span>
-                        <span className="sr-only">(required)</span>
-                      </label>
-                      <Input 
-                        id="email" 
-                        name="email" 
-                        type="email" 
-                        required
-                        aria-required="true"
-                        aria-describedby="email-error"
-                        autoComplete="email"
-                      />
-                    </div>
+          <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <Card>
+              <CardHeader>
+                <CardTitle>Welcome back</CardTitle>
+                <CardDescription>Enter your email and password to access your account</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Label htmlFor="email">Email address</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="mt-1"
+                    />
+                  </div>
 
-                    <div>
-                      <label 
-                        htmlFor="password" 
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Password <span aria-hidden="true">*</span>
-                        <span className="sr-only">(required)</span>
-                      </label>
-                      <Input 
-                        id="password" 
-                        name="password" 
-                        type="password" 
-                        required
-                        aria-required="true"
-                        aria-describedby="password-error"
-                        autoComplete="current-password"
-                      />
-                    </div>
+                  <div>
+                    <Label htmlFor="password">Password</Label>
+                    <Input
+                      id="password"
+                      name="password"
+                      type="password"
+                      autoComplete="current-password"
+                      required
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="mt-1"
+                    />
+                  </div>
 
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <input 
-                          id="remember" 
-                          name="remember" 
-                          type="checkbox" 
-                          className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded"
-                          aria-describedby="remember-description"
-                        />
-                        <label htmlFor="remember" className="ml-2 block text-sm text-gray-700">
-                          Remember me
-                        </label>
-                        <span id="remember-description" className="sr-only">
-                          Keep me signed in on this device
-                        </span>
-                      </div>
+                  {error && (
+                    <Alert variant="destructive">
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  )}
 
-                      <Link 
-                        href="/reset-password" 
-                        className="text-sm text-[#1a2642] hover:text-[#2a3752] focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2 rounded"
-                      >
-                        Forgot password?
-                      </Link>
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white focus:ring-2 focus:ring-offset-2 focus:ring-[#1a2642]"
-                      disabled={isSubmitting}
-                      aria-disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Signing in...' : 'Sign in'}
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-
-              <p className="mt-4 text-center text-gray-700">
-                Don't have an account?{' '}
-                <Link 
-                  href="/onboarding-wizard" 
-                  className="text-[#1a2642] hover:text-[#2a3752] font-medium focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2 rounded"
-                >
-                  Sign up
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <span className="loading loading-spinner loading-sm mr-2"></span>
+                        Signing in...
+                      </>
+                    ) : (
+                      <>
+                        <Lock className="w-4 h-4 mr-2" />
+                        Sign in
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-500">
+                  Forgot your password?
                 </Link>
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t bg-gray-50" role="contentinfo">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-gray-700 text-sm">
-            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
+                <Link href="/onboarding-wizard" className="text-sm text-blue-600 hover:text-blue-500">
+                  Don&apos;t have an account? Sign up
+                </Link>
+              </CardFooter>
+            </Card>
           </div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </>
   )
 }

@@ -207,7 +207,7 @@ export function LandingPageComponent() {
                 <Button 
                   className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md`}
                 >
-                  Sign up
+                  SIGN UP
                 </Button>
               </Link>
             </div>
@@ -370,7 +370,7 @@ export function LandingPageComponent() {
           </div>
         </section>
 
-        <section className="bg-[#f8f9ff] py-16 lg:py-24">
+        <section className="bg-[#f8f9ff] py-8 lg:py-12">
           <div className="container mx-auto px-4">
             <blockquote className="max-w-3xl mx-auto">
               <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -399,14 +399,14 @@ export function LandingPageComponent() {
                 A Personal Note to Families
               </h2>
               
-              <div className="mb-16 ml-4">
+              <div className="mb-16">
                 <p className="text-xl text-[#1a2642]">
                   We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-16">
-                <div className="space-y-8 ml-4">
+                <div className="space-y-8">
                   <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
                     The Gift of Connection
                   </h3>
@@ -414,7 +414,7 @@ export function LandingPageComponent() {
                     Daily check-ins aren't just about health—they're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
                   </p>
                 </div>
-                <div className="space-y-8 ml-4">
+                <div className="space-y-8">
                   <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
                     Helping Seniors Age in Place
                   </h3>
