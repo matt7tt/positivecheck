@@ -75,7 +75,7 @@ export function LandingPageComponent() {
           </div>
         </section>
 
-        <section className="bg-[#F598FF] py-16 lg:py-24">
+        <section className="bg-[#F598FF] py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-[400px] lg:h-[500px] ml-4">
@@ -214,7 +214,7 @@ export function LandingPageComponent() {
           </div>
         </section>
 
-        <section className="bg-[#F598FF] py-16 lg:py-24">
+        <section className="bg-[#F598FF] py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-12 ml-4`}>
               How does it work?
@@ -286,9 +286,11 @@ export function LandingPageComponent() {
           </div>
         </section>
 
-        <section className="py-16 lg:py-24">
+        <section className="py-12 lg:py-16">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-bold text-[#1a2642] mb-12 text-center`}>FAQs</h2>
+            <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-bold text-[#1a2642] mb-8 text-center`}>
+              FAQs
+            </h2>
             <div className="space-y-4 max-w-3xl mx-auto">
               {[
                 {

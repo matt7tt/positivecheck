@@ -15,14 +15,14 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="h-16 flex items-center">
+        <Link href="/" className="h-16">
           <Image
             src="/images/positive-logo.png"
             alt="Positive Check"
             height={32}
             width={120}
             priority
-            className="h-8 lg:h-12 w-auto"
+            className="h-full w-auto lg:h-[32px]"
           />
         </Link>
 

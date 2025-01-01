@@ -457,7 +457,9 @@ export function OnboardingWizardComponent() {
                       </CardHeader>
                       <CardContent>
                         <p><strong>Call Days:</strong> {formData.callDays.join(', ') || 'None selected'}</p>
-                        <p><strong>Call Time:</strong> {formData.callTime || 'Not specified'}</p>
+                        <p><strong>Call Time:</strong> {formData.callTime ? formData.callTime.replace(/(\d{2}):(\d{2})/, (_, hour, min) => 
+                          `${hour > 12 ? hour - 12 : hour}${min === '00' ? '' : ':' + min}${hour >= 12 ? 'PM' : 'AM'}`
+                        ) : 'Not specified'}</p>
                         <p><strong>Selected Questions:</strong></p>
                         <ul className="list-disc list-inside">
                           {formData.questions.filter(q => q.selected).map(q => (
