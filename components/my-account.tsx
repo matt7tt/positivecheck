@@ -478,7 +478,7 @@ export function MyAccountComponent() {
           
           <div className="flex gap-6">
             {/* Side Navigation */}
-            <nav className="w-64 flex-shrink-0">
+            <nav className="w-1/3 lg:w-64 flex-shrink-0">
               <div className="space-y-1">
                 {navItems.map((item) => (
                   <button
@@ -498,7 +498,7 @@ export function MyAccountComponent() {
             </nav>
 
             {/* Content Area */}
-            <div className="flex-grow max-w-2xl">
+            <div className="w-2/3 lg:flex-grow lg:max-w-2xl">
               {activeSection === 'call-preferences' && renderSection(
                 "Call Preferences",
                 <PhoneCall className="h-5 w-5" />,
