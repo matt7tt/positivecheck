@@ -13,6 +13,13 @@ import { PhoneCall, Calendar, User, CreditCard } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import Image from 'next/image'
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import toast from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
+
+// Initialize Stripe (add your publishable key)
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export function OnboardingWizardComponent() {
   const [step, setStep] = useState(1)
@@ -25,6 +32,7 @@ export function OnboardingWizardComponent() {
     preferredName: '',
     phone: '',
     timezone: '',
+    language: 'English',
     accountFirstName: '',
     accountLastName: '',
     accountPhone: '',
@@ -117,7 +125,7 @@ export function OnboardingWizardComponent() {
     setErrorMessage(null)
     
     if (formData.signUpCode !== 'PCSIGNUP34') {
-      setErrorMessage('Invalid Sign Up Code')
+      setErrorMessage('Invalid Sign Up Code - Please contact support if you need help.')
       setIsLoading(false)
       return
     }
@@ -142,6 +150,7 @@ export function OnboardingWizardComponent() {
         caller_last_name: formData.lastName,
         caller_preferred_name: formData.preferredName,
         caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
+        caller_language: formData.language,
         questions: formData.questions
           .filter(q => q.selected)
           .map(q => q.id)
@@ -193,6 +202,7 @@ export function OnboardingWizardComponent() {
     { title: "Questions", icon: <Calendar className="w-6 h-6" /> },
     { title: "Caller Info", icon: <User className="w-6 h-6" /> },
     { title: "Account", icon: <CreditCard className="w-6 h-6" /> },
+    { title: "Payment", icon: <CreditCard className="w-6 h-6" /> },
   ]
 
   const fetchQuestions = async () => {
@@ -233,8 +243,205 @@ export function OnboardingWizardComponent() {
     fetchQuestions();
   }, []);
 
+  interface PaymentFormProps {
+    onBack: () => void;
+    isLoading: boolean;
+    setIsLoading: (loading: boolean) => void;
+    setErrorMessage: (message: string | null) => void;
+    formData: typeof formData;
+  }
+
+  function PaymentForm({ onBack, isLoading, setIsLoading, setErrorMessage, formData }: PaymentFormProps) {
+    const stripe = useStripe()
+    const elements = useElements()
+    const router = useRouter()
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault()
+      if (!stripe || !elements) {
+        toast.error("Stripe is not properly initialized")
+        return
+      }
+
+      setIsLoading(true)
+      setErrorMessage(null)
+
+      const loadingToast = toast.loading('Processing your payment...')
+
+      try {
+        // Create payment method
+        const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: elements.getElement(CardElement)!,
+        })
+
+        if (paymentMethodError) {
+          toast.error(`Payment method error: ${paymentMethodError.message}`)
+          throw new Error(paymentMethodError.message)
+        }
+
+        // Create subscription
+        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+          },
+          body: JSON.stringify({
+            paymentMethodId: paymentMethod.id,
+            email: formData.accountEmail,
+          }),
+        })
+
+        if (!response.ok) {
+          const errorData = await response.json()
+          toast.error(`Subscription error: ${errorData.detail || 'Failed to create subscription'}`)
+          throw new Error('Failed to create subscription')
+        }
+
+        const { clientSecret, subscriptionId } = await response.json()
+
+        // Confirm the payment
+        const { error: confirmationError } = await stripe.confirmCardPayment(clientSecret)
+
+        if (confirmationError) {
+          toast.error(`Payment confirmation error: ${confirmationError.message}`)
+          throw new Error(confirmationError.message)
+        }
+
+        // Payment successful - create user account
+        const userData = {
+          first_name: formData.accountFirstName,
+          last_name: formData.accountLastName,
+          email: formData.accountEmail,
+          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
+          timezone: formData.timezone,
+          call_time: formData.callTime,
+          days_to_call: formData.callDays,
+          password: formData.accountPassword,
+          caller_first_name: formData.firstName,
+          caller_last_name: formData.lastName,
+          caller_preferred_name: formData.preferredName,
+          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
+          caller_language: formData.language,
+          questions: formData.questions
+            .filter(q => q.selected)
+            .map(q => q.id),
+          subscription_id: subscriptionId
+        }
+
+        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+          },
+          body: JSON.stringify(userData),
+        })
+
+        if (!userResponse.ok) {
+          const errorData = await userResponse.json()
+          toast.error(`Account creation error: ${errorData.detail || 'Failed to create account'}`)
+          throw new Error('Failed to create user account')
+        }
+
+        // Success!
+        toast.success('Payment successful! Redirecting to your account...')
+        await new Promise(resolve => setTimeout(resolve, 1500)) // Brief delay for user to see success message
+        router.push('/my-account')
+      } catch (error) {
+        console.error('Error:', error)
+        setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
+      } finally {
+        toast.dismiss(loadingToast)
+        setIsLoading(false)
+      }
+    }
+
+    // Add card validation feedback
+    const handleCardChange = (event: any) => {
+      if (event.error) {
+        setErrorMessage(event.error.message)
+      } else {
+        setErrorMessage(null)
+      }
+    }
+
+    return (
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <Card className="bg-gray-50">
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold text-[#1a2642]">Payment Information</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="p-4 bg-white rounded-lg">
+                <CardElement 
+                  onChange={handleCardChange}
+                  options={{
+                    style: {
+                      base: {
+                        fontSize: '16px',
+                        color: '#424770',
+                        '::placeholder': {
+                          color: '#aab7c4',
+                        },
+                      },
+                      invalid: {
+                        color: '#9e2146',
+                      },
+                    },
+                  }}
+                />
+              </div>
+              <div className="mt-4 p-4 bg-white rounded-lg">
+                <p className="text-lg font-semibold text-[#1a2642] mb-2">Order Summary</p>
+                <div className="flex justify-between text-gray-600 mb-2">
+                  <span>Monthly Subscription</span>
+                  <span>$15.00</span>
+                </div>
+                <div className="border-t pt-2 mt-2">
+                  <div className="flex justify-between font-semibold text-[#1a2642]">
+                    <span>Total</span>
+                    <span>$15.00/month</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="flex justify-between">
+          <Button 
+            type="button" 
+            onClick={onBack} 
+            variant="outline"
+            disabled={isLoading}
+          >
+            Back
+          </Button>
+          <Button 
+            type="submit" 
+            className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+            disabled={isLoading || !stripe}
+          >
+            {isLoading ? (
+              <>
+                <span className="animate-spin mr-2">⚪</span>
+                Processing Payment...
+              </>
+            ) : (
+              'Submit Payment'
+            )}
+          </Button>
+        </div>
+      </form>
+    )
+  }
+
   return (
     <>
+      <Toaster position="bottom-center" />
       <div className="min-h-screen bg-gray-50">
         <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -437,6 +644,23 @@ export function OnboardingWizardComponent() {
                           </SelectContent>
                         </Select>
                       </div>
+
+                      <div>
+                        <Label htmlFor="language">Preferred Language</Label>
+                        <Select 
+                          onValueChange={(value) => handleSelectChange('language', value)} 
+                          defaultValue="English"
+                          required
+                        >
+                          <SelectTrigger id="language">
+                            <SelectValue placeholder="Select language" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="English">English</SelectItem>
+                            <SelectItem value="Spanish">Spanish</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
                     </div>
                     <div className="flex justify-between">
                       <Button type="button" onClick={handleBack} variant="outline">
@@ -450,7 +674,15 @@ export function OnboardingWizardComponent() {
                 )}
 
                 {step === 4 && (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={(e) => {
+                    e.preventDefault();
+                    if (formData.signUpCode !== 'PCSIGNUP34') {
+                      setErrorMessage('Invalid Sign Up Code');
+                      return;
+                    }
+                    setErrorMessage(null);
+                    handleNext();
+                  }} className="space-y-6">
                     <Card className="bg-gray-50">
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-[#1a2642]">Call Configuration Summary</CardTitle>
@@ -561,17 +793,22 @@ export function OnboardingWizardComponent() {
                         className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
                         disabled={isLoading}
                       >
-                        {isLoading ? (
-                          <>
-                            <span className="animate-spin mr-2">⚪</span>
-                            Creating Account...
-                          </>
-                        ) : (
-                          'Submit'
-                        )}
+                        Next
                       </Button>
                     </div>
                   </form>
+                )}
+
+                {step === 5 && (
+                  <Elements stripe={stripePromise}>
+                    <PaymentForm 
+                      onBack={handleBack}
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
+                      setErrorMessage={setErrorMessage}
+                      formData={formData}
+                    />
+                  </Elements>
                 )}
               </CardContent>
             </Card>

@@ -22,7 +22,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
             height={32}
             width={120}
             priority
-            className="h-full w-auto lg:h-[32px]"
+            className="h-full w-auto lg:h-[64px]"
           />
         </Link>
 

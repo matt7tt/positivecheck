@@ -9,7 +9,6 @@ import Link from "next/link"
 // import Image from 'next/image'
 import { useState } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
-import toast, { Toaster } from 'react-hot-toast'
 
 export function ContactComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -18,7 +17,6 @@ export function ContactComponent() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Toaster position="bottom-center" containerStyle={{ bottom: 100 }} />
       <PublicHeader currentPage="contact" />
 
       {/* Skip link */}
@@ -65,7 +63,7 @@ export function ContactComponent() {
                         
                         try {
                           const formData = new FormData(e.currentTarget)
-                          const response = await fetch(`${API_BASE_URL}/api/contact`, {
+                          await fetch(`${API_BASE_URL}/api/contact`, {
                             method: 'POST',
                             headers: {
                               'Content-Type': 'application/json',
@@ -81,29 +79,10 @@ export function ContactComponent() {
                               newsletter: formData.get('newsletter') === 'on'
                             }),
                           })
-
-                          if (!response.ok) {
-                            throw new Error('Failed to submit form')
-                          }
-
-                          toast.success("Thank you for your message. We will be in touch soon!", {
-                            duration: 3000,
-                            style: {
-                              background: "#10B981",
-                              color: "#FFFFFF",
-                            },
-                          })
-                          e.currentTarget.reset()
+                          
                           setIsSubmitted(true)
                         } catch (error) {
                           console.error('Error submitting form:', error)
-                          toast.error("Sorry, there was an error submitting the form. Please try again.", {
-                            duration: 5000,
-                            style: {
-                              background: "#EF4444",
-                              color: "#FFFFFF",
-                            },
-                          })
                         } finally {
                           setIsSubmitting(false)
                         }

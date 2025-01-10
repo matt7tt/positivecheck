@@ -49,7 +49,29 @@ export function BlogComponent() {
         </h1>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
-          {BLOG_POSTS.map((post, index) => (
+          {[
+            {
+              title: "The Impact of AI on Senior Care",
+              excerpt: "Discover how artificial intelligence is revolutionizing elderly care, from daily check-ins to health monitoring.",
+              date: "2024-01-15",
+              slug: "impact-of-ai-on-senior-care",
+              image: "/images/ai-senior-care.jpg"
+            },
+            {
+              title: "When Should Families Check-In on Aging Loved Ones?",
+              excerpt: "Learn about the importance of regular check-ins with aging family members and how Positive Check can help maintain consistent communication.",
+              date: "2024-02-01",
+              slug: "when-should-families-check-in",
+              image: "/images/senior-phone-call.jpg"
+            },
+            {
+              title: "How Many Adults Live Far From Their Aging Parents?",
+              excerpt: "Explore the statistics and challenges of caring for aging parents from a distance in today's mobile society.",
+              date: "2024-01-01",
+              slug: "how-many-adults-live-far-from-aging-parents",
+              image: "/images/long-distance-family.jpg"
+            }
+          ].map((post, index) => (
             <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="relative h-48" role="img" aria-label={post.title}>
                 <img

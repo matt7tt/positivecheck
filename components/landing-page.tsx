@@ -52,7 +52,7 @@ export function LandingPageComponent() {
               <Link 
                 href="/onboarding-wizard"
                 aria-label="Start your sign up process"
-                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-6 text-lg rounded-md`}
+                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md`}
               >
                 SIGN UP
               </Link>
