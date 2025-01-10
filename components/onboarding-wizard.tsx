@@ -17,6 +17,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
+import type { StripeElementChangeEvent } from '@stripe/stripe-js';
 
 // Initialize Stripe (add your publishable key)
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
@@ -359,7 +360,7 @@ export function OnboardingWizardComponent() {
     }
 
     // Add card validation feedback
-    const handleCardChange = (event: any) => {
+    const handleCardChange = (event: StripeElementChangeEvent) => {
       if (event.error) {
         setErrorMessage(event.error.message)
       } else {
