@@ -19,8 +19,15 @@ import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import type { StripeElementChangeEvent } from '@stripe/stripe-js';
 
-// Initialize Stripe (add your publishable key)
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+// Initialize Stripe with error handling
+const stripePromise = (() => {
+  const key = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  if (!key) {
+    console.error('Stripe publishable key is missing')
+    return null
+  }
+  return loadStripe(key)
+})()
 
 export function OnboardingWizardComponent() {
   const [step, setStep] = useState(1)
@@ -801,15 +808,23 @@ export function OnboardingWizardComponent() {
                 )}
 
                 {step === 5 && (
-                  <Elements stripe={stripePromise}>
-                    <PaymentForm 
-                      onBack={handleBack}
-                      isLoading={isLoading}
-                      setIsLoading={setIsLoading}
-                      setErrorMessage={setErrorMessage}
-                      formData={formData}
-                    />
-                  </Elements>
+                  <>
+                    {!stripePromise ? (
+                      <div className="p-4 text-sm text-red-800 bg-red-100 rounded-lg">
+                        Payment system is not properly configured. Please contact support.
+                      </div>
+                    ) : (
+                      <Elements stripe={stripePromise}>
+                        <PaymentForm 
+                          onBack={handleBack}
+                          isLoading={isLoading}
+                          setIsLoading={setIsLoading}
+                          setErrorMessage={setErrorMessage}
+                          formData={formData}
+                        />
+                      </Elements>
+                    )}
+                  </>
                 )}
               </CardContent>
             </Card>
