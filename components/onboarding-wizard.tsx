@@ -263,11 +263,20 @@ export function OnboardingWizardComponent() {
     const stripe = useStripe()
     const elements = useElements()
     const router = useRouter()
+    const [cardElement, setCardElement] = useState<any>(null)
+
+    // Store the card element reference when it's created
+    useEffect(() => {
+      if (elements) {
+        const card = elements.getElement(CardElement)
+        setCardElement(card)
+      }
+    }, [elements])
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
-      if (!stripe || !elements) {
-        toast.error("Stripe is not properly initialized")
+      if (!stripe || !cardElement) {
+        toast.error("Payment system is not ready")
         return
       }
 
@@ -277,10 +286,10 @@ export function OnboardingWizardComponent() {
       const loadingToast = toast.loading('Processing your payment...')
 
       try {
-        // Create payment method
+        // Create payment method using the stored card element
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
-          card: elements.getElement(CardElement)!,
+          card: cardElement,
         })
 
         if (paymentMethodError) {
@@ -365,6 +374,15 @@ export function OnboardingWizardComponent() {
         setIsLoading(false)
       }
     }
+
+    // Clean up function
+    useEffect(() => {
+      return () => {
+        if (cardElement) {
+          cardElement.destroy()
+        }
+      }
+    }, [cardElement])
 
     // Add card validation feedback
     const handleCardChange = (event: StripeElementChangeEvent) => {
