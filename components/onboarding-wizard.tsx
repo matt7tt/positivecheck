@@ -18,6 +18,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import type { StripeElementChangeEvent } from '@stripe/stripe-js';
+import { StripeCardElement } from '@stripe/stripe-js';
 
 // Initialize Stripe with error handling
 const stripePromise = (() => {
@@ -263,7 +264,7 @@ export function OnboardingWizardComponent() {
     const stripe = useStripe()
     const elements = useElements()
     const router = useRouter()
-    const [cardElement, setCardElement] = useState<any>(null)
+    const [cardElement, setCardElement] = useState<StripeCardElement | null>(null)
 
     // Store the card element reference when it's created
     useEffect(() => {
