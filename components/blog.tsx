@@ -19,18 +19,18 @@ const BLOG_POSTS = [
     slug: "how-many-adults-live-far-from-aging-parents"
   },
   {
-    title: "Tips for Long-Distance Caregiving",
+    title: "When Should Families Check-In on Aging Loved Ones?",
     date: "March 10, 2024",
-    excerpt: "Practical strategies for managing care when you live far away from your aging loved ones.",
-    image: "/images/senior-talking-on-the-phone.jpeg",
-    slug: "tips-for-long-distance-caregiving"
+    excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes, reduce isolation, and provide timely assistance when needed.",
+    image: "/images/happy-senior.jpg",
+    slug: "when-should-families-check-in"
   },
   {
-    title: "Understanding Caregiver Burnout",
-    date: "March 5, 2024",
-    excerpt: "Recognizing the signs of caregiver burnout and finding ways to maintain your own well-being while caring for others.",
-    image: "/images/senior-drinking-coffee.jpeg",
-    slug: "understanding-caregiver-burnout"
+    title: "10 Signs Your Loved One Could Benefit from a Caregiver's Check-In Service",
+    date: "March 8, 2024",
+    excerpt: "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could benefit your aging loved ones while maintaining their independence.",
+    image: "/images/happy-senior-2.jpg",
+    slug: "signs-loved-one-needs-caregiver-check-in"
   }
 ]
 
@@ -49,35 +49,16 @@ export function BlogComponent() {
         </h1>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
-          {[
-            {
-              title: "The Impact of AI on Senior Care",
-              excerpt: "Discover how artificial intelligence is revolutionizing elderly care, from daily check-ins to health monitoring.",
-              date: "2024-01-15",
-              slug: "impact-of-ai-on-senior-care",
-              image: "/images/ai-senior-care.jpg"
-            },
-            {
-              title: "When Should Families Check-In on Aging Loved Ones?",
-              excerpt: "Learn about the importance of regular check-ins with aging family members and how Positive Check can help maintain consistent communication.",
-              date: "2024-02-01",
-              slug: "when-should-families-check-in",
-              image: "/images/senior-phone-call.jpg"
-            },
-            {
-              title: "How Many Adults Live Far From Their Aging Parents?",
-              excerpt: "Explore the statistics and challenges of caring for aging parents from a distance in today's mobile society.",
-              date: "2024-01-01",
-              slug: "how-many-adults-live-far-from-aging-parents",
-              image: "/images/long-distance-family.jpg"
-            }
-          ].map((post, index) => (
+          {BLOG_POSTS.map((post, index) => (
             <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-48" role="img" aria-label={post.title}>
+              <div className="relative h-56" role="img" aria-label={post.title}>
                 <img
                   src={post.image}
                   alt={`Illustration for ${post.title}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/default-blog-image.jpg'
+                  }}
                 />
               </div>
               <div className="p-6">

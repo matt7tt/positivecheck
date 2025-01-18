@@ -264,19 +264,11 @@ export function OnboardingWizardComponent() {
     const stripe = useStripe()
     const elements = useElements()
     const router = useRouter()
-    const [cardElement, setCardElement] = useState<StripeCardElement | null>(null)
-
-    // Store the card element reference when it's created
-    useEffect(() => {
-      if (elements) {
-        const card = elements.getElement(CardElement)
-        setCardElement(card)
-      }
-    }, [elements])
+    const [cardComplete, setCardComplete] = useState(false)
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
-      if (!stripe || !cardElement) {
+      if (!stripe || !elements) {
         toast.error("Payment system is not ready")
         return
       }
@@ -287,7 +279,12 @@ export function OnboardingWizardComponent() {
       const loadingToast = toast.loading('Processing your payment...')
 
       try {
-        // Create payment method using the stored card element
+        const cardElement = elements.getElement(CardElement)
+        if (!cardElement) {
+          throw new Error('Card element not found')
+        }
+
+        // Create payment method using the card element
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
           card: cardElement,
@@ -376,17 +373,9 @@ export function OnboardingWizardComponent() {
       }
     }
 
-    // Clean up function
-    useEffect(() => {
-      return () => {
-        if (cardElement) {
-          cardElement.destroy()
-        }
-      }
-    }, [cardElement])
-
     // Add card validation feedback
     const handleCardChange = (event: StripeElementChangeEvent) => {
+      setCardComplete(event.complete)
       if (event.error) {
         setErrorMessage(event.error.message)
       } else {
@@ -450,7 +439,7 @@ export function OnboardingWizardComponent() {
           <Button 
             type="submit" 
             className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
-            disabled={isLoading || !stripe}
+            disabled={isLoading || !stripe || !cardComplete}
           >
             {isLoading ? (
               <>

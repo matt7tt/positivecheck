@@ -154,7 +154,7 @@ export function LandingPageComponent() {
                 <div className="relative h-48">
                   <img
                     alt="Senior person drinking coffee and relaxing"
-                    src="/images/senior-drinking-coffee.jpeg"
+                    src="/images/senior-drinking-coffee.jpg"
                     className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
@@ -278,7 +278,7 @@ export function LandingPageComponent() {
                   <img
                     alt="Senior woman smiling while talking on a mobile phone"
                     className="object-cover w-full h-full"
-                    src="/images/senior-talking-on-the-phone.jpeg"
+                    src="/images/senior-talking-on-the-phone.jpg"
                   />
                 </div>
               </div>
