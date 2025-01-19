@@ -498,7 +498,7 @@ export function MyAccountComponent() {
             </nav>
 
             {/* Content Area */}
-            <div className="w-2/3 lg:flex-grow lg:max-w-2xl">
+            <div className="w-2/3 lg:flex-grow">
               {activeSection === 'call-preferences' && renderSection(
                 "Call Preferences",
                 <PhoneCall className="h-5 w-5" />,
@@ -677,9 +677,9 @@ export function MyAccountComponent() {
                 "Call Log",
                 <Clock className="h-5 w-5" />,
                 'call-log',
-                <div className="w-full overflow-x-auto -mx-6">
+                <div className="w-full overflow-x-auto">
                   <div className="inline-block min-w-full align-middle">
-                    <table className="w-full divide-y divide-gray-200">
+                    <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
                         <tr>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
