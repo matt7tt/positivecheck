@@ -265,14 +265,17 @@ export function OnboardingWizardComponent() {
     const elements = useElements()
     const router = useRouter()
     const [cardComplete, setCardComplete] = useState(false)
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
+      
       if (!stripe || !elements) {
         toast.error("Payment system is not ready")
         return
       }
 
+      setIsSubmitting(true)
       setIsLoading(true)
       setErrorMessage(null)
 
@@ -284,7 +287,7 @@ export function OnboardingWizardComponent() {
           throw new Error('Card element not found')
         }
 
-        // Create payment method using the card element
+        // Create payment method
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
           card: cardElement,
@@ -324,7 +327,7 @@ export function OnboardingWizardComponent() {
           throw new Error(confirmationError.message)
         }
 
-        // Payment successful - create user account
+        // Only proceed with user creation if payment is successful
         const userData = {
           first_name: formData.accountFirstName,
           last_name: formData.accountLastName,
@@ -362,14 +365,16 @@ export function OnboardingWizardComponent() {
 
         // Success!
         toast.success('Payment successful! Redirecting to your account...')
-        await new Promise(resolve => setTimeout(resolve, 1500)) // Brief delay for user to see success message
+        await new Promise(resolve => setTimeout(resolve, 1500))
         router.push('/my-account')
+
       } catch (error) {
         console.error('Error:', error)
         setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
       } finally {
         toast.dismiss(loadingToast)
         setIsLoading(false)
+        setIsSubmitting(false)
       }
     }
 
@@ -408,6 +413,7 @@ export function OnboardingWizardComponent() {
                       },
                     },
                   }}
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="mt-4 p-4 bg-white rounded-lg">
@@ -432,14 +438,14 @@ export function OnboardingWizardComponent() {
             type="button" 
             onClick={onBack} 
             variant="outline"
-            disabled={isLoading}
+            disabled={isLoading || isSubmitting}
           >
             Back
           </Button>
           <Button 
             type="submit" 
             className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
-            disabled={isLoading || !stripe || !cardComplete}
+            disabled={isLoading || !stripe || !cardComplete || isSubmitting}
           >
             {isLoading ? (
               <>
