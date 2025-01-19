@@ -413,7 +413,6 @@ export function OnboardingWizardComponent() {
                       },
                     },
                   }}
-                  disabled={isSubmitting}
                 />
               </div>
               <div className="mt-4 p-4 bg-white rounded-lg">
