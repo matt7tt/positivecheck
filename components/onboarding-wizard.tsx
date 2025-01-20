@@ -270,7 +270,7 @@ export function OnboardingWizardComponent() {
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       
-      if (!stripe || !elements) {
+      if (!stripe) {
         toast.error("Payment system is not ready")
         return
       }
@@ -280,91 +280,33 @@ export function OnboardingWizardComponent() {
       setErrorMessage(null)
 
       try {
-        // Get card element reference before any async operations
-        const cardElement = elements.getElement(CardElement)
-        if (!cardElement) {
-          throw new Error('Card element not found')
-        }
-
-        // Create payment method immediately after getting element reference
-        const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
-          type: 'card',
-          card: cardElement,
-        })
-
-        if (paymentMethodError) {
-          throw new Error(paymentMethodError.message)
-        }
-
-        // Create subscription
-        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
+        // Create Checkout Session
+        const response = await fetch(`${API_BASE_URL}/api/create-checkout-session`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
           },
           body: JSON.stringify({
-            paymentMethodId: paymentMethod.id,
             email: formData.accountEmail,
+            // Add other necessary data
           }),
         })
 
         if (!response.ok) {
-          const errorData = await response.json()
-          toast.error(`Subscription error: ${errorData.detail || 'Failed to create subscription'}`)
-          throw new Error('Failed to create subscription')
+          throw new Error('Failed to create checkout session')
         }
 
-        const { clientSecret, subscriptionId } = await response.json()
+        const { sessionId } = await response.json()
 
-        // Confirm the payment
-        const { error: confirmationError } = await stripe.confirmCardPayment(clientSecret)
-
-        if (confirmationError) {
-          toast.error(`Payment confirmation error: ${confirmationError.message}`)
-          throw new Error(confirmationError.message)
-        }
-
-        // Only proceed with user creation if payment is successful
-        const userData = {
-          first_name: formData.accountFirstName,
-          last_name: formData.accountLastName,
-          email: formData.accountEmail,
-          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
-          timezone: formData.timezone,
-          call_time: formData.callTime,
-          days_to_call: formData.callDays,
-          password: formData.accountPassword,
-          caller_first_name: formData.firstName,
-          caller_last_name: formData.lastName,
-          caller_preferred_name: formData.preferredName,
-          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
-          caller_language: formData.language,
-          questions: formData.questions
-            .filter(q => q.selected)
-            .map(q => q.id),
-          subscription_id: subscriptionId
-        }
-
-        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-          },
-          body: JSON.stringify(userData),
+        // Redirect to Checkout
+        const { error } = await stripe.redirectToCheckout({
+          sessionId
         })
 
-        if (!userResponse.ok) {
-          const errorData = await userResponse.json()
-          toast.error(`Account creation error: ${errorData.detail || 'Failed to create account'}`)
-          throw new Error('Failed to create user account')
+        if (error) {
+          throw new Error(error.message)
         }
-
-        // Success!
-        toast.success('Payment successful! Redirecting to your account...')
-        await new Promise(resolve => setTimeout(resolve, 1500))
-        router.push('/my-account')
 
       } catch (error) {
         console.error('Error:', error)
