@@ -288,6 +288,8 @@ export function OnboardingWizardComponent() {
             'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
           },
           body: JSON.stringify({
+            first_name: formData.accountFirstName,
+            last_name: formData.accountLastName,
             email: formData.accountEmail,
           }),
         })
