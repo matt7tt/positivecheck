@@ -279,22 +279,20 @@ export function OnboardingWizardComponent() {
       setIsLoading(true)
       setErrorMessage(null)
 
-      const loadingToast = toast.loading('Processing your payment...')
-
       try {
+        // Get card element reference before any async operations
         const cardElement = elements.getElement(CardElement)
         if (!cardElement) {
           throw new Error('Card element not found')
         }
 
-        // Create payment method
+        // Create payment method immediately after getting element reference
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
           card: cardElement,
         })
 
         if (paymentMethodError) {
-          toast.error(`Payment method error: ${paymentMethodError.message}`)
           throw new Error(paymentMethodError.message)
         }
 
@@ -371,8 +369,8 @@ export function OnboardingWizardComponent() {
       } catch (error) {
         console.error('Error:', error)
         setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
+        toast.error(error instanceof Error ? error.message : 'Payment failed')
       } finally {
-        toast.dismiss(loadingToast)
         setIsLoading(false)
         setIsSubmitting(false)
       }
