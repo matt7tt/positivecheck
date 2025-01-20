@@ -270,7 +270,7 @@ export function OnboardingWizardComponent() {
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       
-      if (!stripe) {
+      if (!stripe || !elements) {
         toast.error("Payment system is not ready")
         return
       }
@@ -280,8 +280,8 @@ export function OnboardingWizardComponent() {
       setErrorMessage(null)
 
       try {
-        // Create Checkout Session
-        const response = await fetch(`${API_BASE_URL}/api/create-checkout-session`, {
+        // Create subscription first to get clientSecret
+        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -289,24 +289,73 @@ export function OnboardingWizardComponent() {
           },
           body: JSON.stringify({
             email: formData.accountEmail,
-            // Add other necessary data
           }),
         })
 
         if (!response.ok) {
-          throw new Error('Failed to create checkout session')
+          throw new Error('Failed to create subscription')
         }
 
-        const { sessionId } = await response.json()
+        const { clientSecret, subscriptionId } = await response.json()
 
-        // Redirect to Checkout
-        const { error } = await stripe.redirectToCheckout({
-          sessionId
+        // Get a reference to the mounted CardElement
+        const cardElement = elements.getElement(CardElement)
+        if (!cardElement) {
+          throw new Error('Card element not found')
+        }
+
+        // Confirm the payment with the card element
+        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: cardElement,
+            billing_details: {
+              name: `${formData.accountFirstName} ${formData.accountLastName}`,
+              email: formData.accountEmail,
+            }
+          }
         })
 
-        if (error) {
-          throw new Error(error.message)
+        if (confirmError) {
+          throw new Error(confirmError.message)
         }
+
+        // Create user account
+        const userData = {
+          first_name: formData.accountFirstName,
+          last_name: formData.accountLastName,
+          email: formData.accountEmail,
+          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
+          timezone: formData.timezone,
+          call_time: formData.callTime,
+          days_to_call: formData.callDays,
+          password: formData.accountPassword,
+          caller_first_name: formData.firstName,
+          caller_last_name: formData.lastName,
+          caller_preferred_name: formData.preferredName,
+          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
+          caller_language: formData.language,
+          questions: formData.questions
+            .filter(q => q.selected)
+            .map(q => q.id),
+          subscription_id: subscriptionId
+        }
+
+        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+          },
+          body: JSON.stringify(userData),
+        })
+
+        if (!userResponse.ok) {
+          throw new Error('Failed to create user account')
+        }
+
+        toast.success('Payment successful! Redirecting to your account...')
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        router.push('/my-account')
 
       } catch (error) {
         console.error('Error:', error)
