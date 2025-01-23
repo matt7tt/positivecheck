@@ -280,7 +280,23 @@ export function OnboardingWizardComponent() {
       setErrorMessage(null)
 
       try {
-        // Create subscription first to get clientSecret
+        // Get the card element first
+        const cardElement = elements.getElement(CardElement)
+        if (!cardElement) {
+          throw new Error('Card element not found')
+        }
+
+        // Create PaymentMethod first
+        const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: cardElement,
+        })
+
+        if (paymentMethodError) {
+          throw new Error(paymentMethodError.message)
+        }
+
+        // Create subscription with payment method
         const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
           method: 'POST',
           headers: {
@@ -300,28 +316,13 @@ export function OnboardingWizardComponent() {
 
         const { clientSecret, subscriptionId } = await response.json()
 
-        // Get a reference to the mounted CardElement
-        const cardElement = elements.getElement(CardElement)
-        if (!cardElement) {
-          throw new Error('Card element not found')
-        }
-
-        // Confirm the payment with the card element
-        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
-          payment_method: {
-            card: cardElement,
-            billing_details: {
-              name: `${formData.accountFirstName} ${formData.accountLastName}`,
-              email: formData.accountEmail,
-            }
-          }
-        })
-
+        // Confirm the payment
+        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret)
         if (confirmError) {
           throw new Error(confirmError.message)
         }
 
-        // Create user account
+        // Success! Create user account
         const userData = {
           first_name: formData.accountFirstName,
           last_name: formData.accountLastName,
