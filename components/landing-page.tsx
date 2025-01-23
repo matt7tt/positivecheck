@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
-import { CheckCircle, ChevronDown } from 'lucide-react'
+import { CheckCircle, ChevronDown, Volume2 } from 'lucide-react'
 // import { Phone, Calendar, Clock, Shield } from 'lucide-react'
 import { Space_Grotesk, Raleway } from 'next/font/google'
 import { useState } from 'react'
@@ -30,6 +30,16 @@ export function LandingPageComponent() {
   const [expandedFaqs, setExpandedFaqs] = useState<Set<number>>(new Set())
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [audio] = useState(typeof Audio !== 'undefined' ? new Audio('/audio/Positive_Check_Greeting.mp3') : null)
+
+  const playAudio = () => {
+    if (audio) {
+      audio.currentTime = 0 // Reset to start
+      audio.play().catch(error => {
+        console.error('Error playing audio:', error)
+      })
+    }
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -66,12 +76,6 @@ export function LandingPageComponent() {
                 />
               </div>
             </div>
-          </div>
-          <div className="text-center py-12">
-            <h2 className={`${spaceGrotesk.className} text-5xl lg:text-6xl font-bold text-[#1a2642] mb-6`}>
-              Stay Connected, Stay Informed
-            </h2>
-            <p className="text-2xl lg:text-3xl text-gray-600">Because You Can't Always Be There</p>
           </div>
         </section>
 
@@ -129,9 +133,19 @@ export function LandingPageComponent() {
 
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-bold text-[#1a2642] mb-12 text-center`}>
-              Good morning! This is Lola calling…
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <h2 className={`${spaceGrotesk.className} text-3xl md:text-4xl font-bold text-[#1a2642]`}>
+              Hello there! My name is Lola...
             </h2>
+            <Button 
+              onClick={playAudio}
+              className="flex items-center gap-2 bg-[#1a2642] hover:bg-[#2a3752] text-white"
+            >
+              <Volume2 className="h-4 w-4" />
+              Click to hear Lola
+            </Button>
+          </div>
+          
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
