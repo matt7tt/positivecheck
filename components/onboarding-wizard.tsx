@@ -279,14 +279,17 @@ export function OnboardingWizardComponent() {
       setIsLoading(true)
       setErrorMessage(null)
 
-      try {
-        // Get the card element first
-        const cardElement = elements.getElement(CardElement)
-        if (!cardElement) {
-          throw new Error('Card element not found')
-        }
+      // Get card element reference before any async operations
+      const cardElement = elements.getElement(CardElement)
+      if (!cardElement) {
+        toast.error('Card element not found')
+        setIsSubmitting(false)
+        setIsLoading(false)
+        return
+      }
 
-        // Create PaymentMethod first
+      try {
+        // Create PaymentMethod with stored card element reference
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
           card: cardElement,
