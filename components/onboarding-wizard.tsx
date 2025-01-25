@@ -266,69 +266,45 @@ export function OnboardingWizardComponent() {
     const router = useRouter()
     const [cardComplete, setCardComplete] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [clientSecret, setClientSecret] = useState<string | null>(null)
-    const [cardElement, setCardElement] = useState<StripeCardElement | null>(null)
-
-    // First, create the subscription and get the client secret
-    useEffect(() => {
-      const createSubscription = async () => {
-        try {
-          const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-            },
-            body: JSON.stringify({
-              email: formData.accountEmail,
-              first_name: formData.accountFirstName,
-              last_name: formData.accountLastName,
-            }),
-          })
-
-          if (!response.ok) {
-            throw new Error('Failed to create subscription')
-          }
-
-          const data = await response.json()
-          setClientSecret(data.clientSecret)
-        } catch (error) {
-          console.error('Error creating subscription:', error)
-          setErrorMessage('Failed to initialize payment. Please try again.')
-        }
-      }
-
-      createSubscription()
-    }, []) // Run once on component mount
-
-    const handleCardChange = (event: StripeElementChangeEvent) => {
-      setCardComplete(event.complete)
-      if (event.error) {
-        setErrorMessage(event.error.message)
-      } else {
-        setErrorMessage(null)
-      }
-      if (!cardElement && event.elementType === 'card') {
-        const element = elements?.getElement(CardElement)
-        if (element) {
-          setCardElement(element)
-        }
-      }
-    }
 
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       
-      if (!stripe || !elements || !clientSecret || !cardElement) {
+      if (!stripe || !elements) {
         toast.error("Payment system is not ready")
         return
       }
 
       setIsSubmitting(true)
       setIsLoading(true)
-      setErrorMessage(null)
 
+      // Create subscription first
       try {
+        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+          },
+          body: JSON.stringify({
+            email: formData.accountEmail,
+            first_name: formData.accountFirstName,
+            last_name: formData.accountLastName,
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to create subscription')
+        }
+
+        const { clientSecret } = await response.json()
+
+        // Get card element and confirm payment in quick succession
+        const cardElement = elements.getElement(CardElement)
+        if (!cardElement) {
+          throw new Error('Card element not found')
+        }
+
         const { error } = await stripe.confirmCardPayment(clientSecret, {
           payment_method: {
             card: cardElement,
@@ -343,7 +319,10 @@ export function OnboardingWizardComponent() {
           throw new Error(error.message)
         }
 
-        // Rest of the success flow...
+        toast.success('Payment successful! Redirecting to your account...')
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        router.push('/my-account')
+
       } catch (error) {
         console.error('Error:', error)
         setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
@@ -354,6 +333,15 @@ export function OnboardingWizardComponent() {
       }
     }
 
+    const handleCardChange = (event: StripeElementChangeEvent) => {
+      setCardComplete(event.complete)
+      if (event.error) {
+        setErrorMessage(event.error.message)
+      } else {
+        setErrorMessage(null)
+      }
+    }
+
     return (
       <form onSubmit={handleSubmit} className="space-y-6">
         <Card className="bg-gray-50">
@@ -361,39 +349,24 @@ export function OnboardingWizardComponent() {
             <CardTitle className="text-lg font-semibold text-[#1a2642]">Payment Information</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-4">
-              <div className="p-4 bg-white rounded-lg">
-                <CardElement 
-                  onChange={handleCardChange}
-                  options={{
-                    style: {
-                      base: {
-                        fontSize: '16px',
-                        color: '#424770',
-                        '::placeholder': {
-                          color: '#aab7c4',
-                        },
-                      },
-                      invalid: {
-                        color: '#9e2146',
+            <div className="p-4 bg-white rounded-lg">
+              <CardElement 
+                onChange={handleCardChange}
+                options={{
+                  style: {
+                    base: {
+                      fontSize: '16px',
+                      color: '#424770',
+                      '::placeholder': {
+                        color: '#aab7c4',
                       },
                     },
-                  }}
-                />
-              </div>
-              <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-lg font-semibold text-[#1a2642] mb-2">Order Summary</p>
-                <div className="flex justify-between text-gray-600 mb-2">
-                  <span>Monthly Subscription</span>
-                  <span>$15.00</span>
-                </div>
-                <div className="border-t pt-2 mt-2">
-                  <div className="flex justify-between font-semibold text-[#1a2642]">
-                    <span>Total</span>
-                    <span>$15.00/month</span>
-                  </div>
-                </div>
-              </div>
+                    invalid: {
+                      color: '#9e2146',
+                    },
+                  },
+                }}
+              />
             </div>
           </CardContent>
         </Card>
@@ -403,23 +376,16 @@ export function OnboardingWizardComponent() {
             type="button" 
             onClick={onBack} 
             variant="outline"
-            disabled={isLoading || isSubmitting}
+            disabled={isSubmitting}
           >
             Back
           </Button>
           <Button 
             type="submit" 
             className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
-            disabled={isLoading || !stripe || !cardComplete || isSubmitting}
+            disabled={!stripe || !cardComplete || isSubmitting}
           >
-            {isLoading ? (
-              <>
-                <span className="animate-spin mr-2">⚪</span>
-                Processing Payment...
-              </>
-            ) : (
-              'Submit Payment'
-            )}
+            {isSubmitting ? 'Processing...' : 'Submit Payment'}
           </Button>
         </div>
       </form>
