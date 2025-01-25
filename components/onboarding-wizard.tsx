@@ -319,6 +319,39 @@ export function OnboardingWizardComponent() {
           throw new Error(error.message)
         }
 
+        // Add back the user creation after successful payment
+        const userData = {
+          first_name: formData.accountFirstName,
+          last_name: formData.accountLastName,
+          email: formData.accountEmail,
+          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
+          timezone: formData.timezone,
+          call_time: formData.callTime,
+          days_to_call: formData.callDays,
+          password: formData.accountPassword,
+          caller_first_name: formData.firstName,
+          caller_last_name: formData.lastName,
+          caller_preferred_name: formData.preferredName,
+          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
+          caller_language: formData.language,
+          questions: formData.questions
+            .filter(q => q.selected)
+            .map(q => q.id)
+        }
+
+        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+          },
+          body: JSON.stringify(userData),
+        })
+
+        if (!userResponse.ok) {
+          throw new Error('Failed to create user account')
+        }
+
         toast.success('Payment successful! Redirecting to your account...')
         await new Promise(resolve => setTimeout(resolve, 1500))
         router.push('/my-account')
