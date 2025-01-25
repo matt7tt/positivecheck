@@ -267,110 +267,97 @@ export function OnboardingWizardComponent() {
     const [cardComplete, setCardComplete] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
 
-    
+
     const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
+  e.preventDefault();
+
+  if (!stripe || !elements) {
+    toast.error("Payment system is not ready");
+    return;
+  }
+
+  setIsSubmitting(true);
+  setIsLoading(true);
+  setErrorMessage(null);
+
+  try {
+    // Re-check for stripe and elements before proceeding
+    if (!stripe || !elements) {
+      throw new Error("Stripe.js has not loaded properly. Please try again.");
+    }
+
+    // Get a reference to the mounted CardElement
+    const cardElement = elements.getElement(CardElement);
+    if (!cardElement) {
+      throw new Error('Card details form is not available. Please refresh and try again.');
+    }
+    // Get the client secret from state/props
+    const clientSecret = formData.clientSecret;
     
-      if (!stripe || !elements) {
-        toast.error("Payment system is not ready");
-        return;
-      }
-    
-      setIsSubmitting(true);
-      setIsLoading(true);
-      setErrorMessage(null);
-    
-      try {
-        // Get card element reference
-        const cardElement = elements.getElement(CardElement);
-    
-        // Add explicit check for `CardElement` presence
-        if (!cardElement) {
-          throw new Error('Card element is not mounted or accessible');
-        }
-    
-        // Create PaymentMethod with the card element
-        const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
-          type: 'card',
-          card: cardElement,
-        });
-    
-        if (paymentMethodError) {
-          throw new Error(paymentMethodError.message);
-        }
-    
-        // Create subscription with payment method
-        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-          },
-          body: JSON.stringify({
-            first_name: formData.accountFirstName,
-            last_name: formData.accountLastName,
-            email: formData.accountEmail,
-          }),
-        });
-    
-        if (!response.ok) {
-          throw new Error('Failed to create subscription');
-        }
-    
-        const { clientSecret, subscriptionId } = await response.json();
-    
-        // Confirm the payment
-        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret);
-        if (confirmError) {
-          throw new Error(confirmError.message);
-        }
-    
-        // Success! Create user account
-        const userData = {
-          first_name: formData.accountFirstName,
-          last_name: formData.accountLastName,
+    // Ensure clientSecret is available
+    if (!clientSecret) {
+      throw new Error('Payment authorization (client secret) is missing. Please try again.');
+    }
+
+    // Confirm the payment directly using CardElement
+    const { error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: cardElement,
+        billing_details: {
+          name: `${formData.accountFirstName} ${formData.accountLastName}`,
           email: formData.accountEmail,
-          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
-          timezone: formData.timezone,
-          call_time: formData.callTime,
-          days_to_call: formData.callDays,
-          password: formData.accountPassword,
-          caller_first_name: formData.firstName,
-          caller_last_name: formData.lastName,
-          caller_preferred_name: formData.preferredName,
-          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
-          caller_language: formData.language,
-          questions: formData.questions
-            .filter(q => q.selected)
-            .map(q => q.id),
-          subscription_id: subscriptionId,
-        };
-    
-        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-          },
-          body: JSON.stringify(userData),
-        });
-    
-        if (!userResponse.ok) {
-          throw new Error('Failed to create user account');
-        }
-    
-        toast.success('Payment successful! Redirecting to your account...');
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        router.push('/my-account');
-      } catch (error) {
-        console.error('Error:', error);
-        setErrorMessage(error instanceof Error ? error.message : 'An error occurred');
-        toast.error(error instanceof Error ? error.message : 'Payment failed');
-      } finally {
-        setIsLoading(false);
-        setIsSubmitting(false);
-      }
+        },
+      },
+    });
+
+    if (confirmError) {
+      throw new Error(confirmError.message);
+    }
+
+    // Success! Create user account
+    const userData = {
+      first_name: formData.accountFirstName,
+      last_name: formData.accountLastName,
+      email: formData.accountEmail,
+      phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
+      timezone: formData.timezone,
+      call_time: formData.callTime,
+      days_to_call: formData.callDays,
+      password: formData.accountPassword,
+      caller_first_name: formData.firstName,
+      caller_last_name: formData.lastName,
+      caller_preferred_name: formData.preferredName,
+      caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
+      caller_language: formData.language,
+      questions: formData.questions.filter(q => q.selected).map(q => q.id),
+      subscription_id: subscriptionId,
     };
+
+    const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+      },
+      body: JSON.stringify(userData),
+    });
+
+    if (!userResponse.ok) {
+      throw new Error('Failed to create user account');
+    }
+
+    toast.success('Payment successful! Redirecting to your account...');
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    router.push('/my-account');
+  } catch (error) {
+    console.error('Error:', error);
+    setErrorMessage(error instanceof Error ? error.message : 'An error occurred');
+    toast.error(error instanceof Error ? error.message : 'Payment failed');
+  } finally {
+    setIsLoading(false);
+    setIsSubmitting(false);
+  }
+};
 
     
     // Add card validation feedback
