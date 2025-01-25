@@ -267,38 +267,38 @@ export function OnboardingWizardComponent() {
     const [cardComplete, setCardComplete] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
 
+    
     const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault()
-      
+      e.preventDefault();
+    
       if (!stripe || !elements) {
-        toast.error("Payment system is not ready")
-        return
+        toast.error("Payment system is not ready");
+        return;
       }
-
-      setIsSubmitting(true)
-      setIsLoading(true)
-      setErrorMessage(null)
-
-      // Get card element reference before any async operations
-      const cardElement = elements.getElement(CardElement)
-      if (!cardElement) {
-        toast.error('Card element not found')
-        setIsSubmitting(false)
-        setIsLoading(false)
-        return
-      }
-
+    
+      setIsSubmitting(true);
+      setIsLoading(true);
+      setErrorMessage(null);
+    
       try {
-        // Create PaymentMethod with stored card element reference
+        // Get card element reference
+        const cardElement = elements.getElement(CardElement);
+    
+        // Add explicit check for `CardElement` presence
+        if (!cardElement) {
+          throw new Error('Card element is not mounted or accessible');
+        }
+    
+        // Create PaymentMethod with the card element
         const { error: paymentMethodError, paymentMethod } = await stripe.createPaymentMethod({
           type: 'card',
           card: cardElement,
-        })
-
+        });
+    
         if (paymentMethodError) {
-          throw new Error(paymentMethodError.message)
+          throw new Error(paymentMethodError.message);
         }
-
+    
         // Create subscription with payment method
         const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
           method: 'POST',
@@ -311,20 +311,20 @@ export function OnboardingWizardComponent() {
             last_name: formData.accountLastName,
             email: formData.accountEmail,
           }),
-        })
-
+        });
+    
         if (!response.ok) {
-          throw new Error('Failed to create subscription')
+          throw new Error('Failed to create subscription');
         }
-
-        const { clientSecret, subscriptionId } = await response.json()
-
+    
+        const { clientSecret, subscriptionId } = await response.json();
+    
         // Confirm the payment
-        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret)
+        const { error: confirmError } = await stripe.confirmCardPayment(clientSecret);
         if (confirmError) {
-          throw new Error(confirmError.message)
+          throw new Error(confirmError.message);
         }
-
+    
         // Success! Create user account
         const userData = {
           first_name: formData.accountFirstName,
@@ -343,9 +343,9 @@ export function OnboardingWizardComponent() {
           questions: formData.questions
             .filter(q => q.selected)
             .map(q => q.id),
-          subscription_id: subscriptionId
-        }
-
+          subscription_id: subscriptionId,
+        };
+    
         const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
           method: 'POST',
           headers: {
@@ -353,26 +353,26 @@ export function OnboardingWizardComponent() {
             'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
           },
           body: JSON.stringify(userData),
-        })
-
+        });
+    
         if (!userResponse.ok) {
-          throw new Error('Failed to create user account')
+          throw new Error('Failed to create user account');
         }
-
-        toast.success('Payment successful! Redirecting to your account...')
-        await new Promise(resolve => setTimeout(resolve, 1500))
-        router.push('/my-account')
-
+    
+        toast.success('Payment successful! Redirecting to your account...');
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        router.push('/my-account');
       } catch (error) {
-        console.error('Error:', error)
-        setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
-        toast.error(error instanceof Error ? error.message : 'Payment failed')
+        console.error('Error:', error);
+        setErrorMessage(error instanceof Error ? error.message : 'An error occurred');
+        toast.error(error instanceof Error ? error.message : 'Payment failed');
       } finally {
-        setIsLoading(false)
-        setIsSubmitting(false)
+        setIsLoading(false);
+        setIsSubmitting(false);
       }
-    }
+    };
 
+    
     // Add card validation feedback
     const handleCardChange = (event: StripeElementChangeEvent) => {
       setCardComplete(event.complete)
