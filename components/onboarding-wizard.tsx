@@ -267,6 +267,7 @@ export function OnboardingWizardComponent() {
     const [cardComplete, setCardComplete] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [clientSecret, setClientSecret] = useState<string | null>(null)
+    const [cardElement, setCardElement] = useState<any>(null)
 
     // First, create the subscription and get the client secret
     useEffect(() => {
@@ -300,10 +301,22 @@ export function OnboardingWizardComponent() {
       createSubscription()
     }, []) // Run once on component mount
 
+    const handleCardChange = (event: StripeElementChangeEvent) => {
+      setCardComplete(event.complete)
+      if (event.error) {
+        setErrorMessage(event.error.message)
+      } else {
+        setErrorMessage(null)
+      }
+      if (!cardElement && event.elementType === 'card') {
+        setCardElement(elements?.getElement(CardElement))
+      }
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault()
       
-      if (!stripe || !elements || !clientSecret) {
+      if (!stripe || !elements || !clientSecret || !cardElement) {
         toast.error("Payment system is not ready")
         return
       }
@@ -313,11 +326,6 @@ export function OnboardingWizardComponent() {
       setErrorMessage(null)
 
       try {
-        const cardElement = elements.getElement(CardElement)
-        if (!cardElement) {
-          throw new Error('Card element not found')
-        }
-
         const { error } = await stripe.confirmCardPayment(clientSecret, {
           payment_method: {
             card: cardElement,
@@ -340,16 +348,6 @@ export function OnboardingWizardComponent() {
       } finally {
         setIsLoading(false)
         setIsSubmitting(false)
-      }
-    }
-
-    // Add card validation feedback
-    const handleCardChange = (event: StripeElementChangeEvent) => {
-      setCardComplete(event.complete)
-      if (event.error) {
-        setErrorMessage(event.error.message)
-      } else {
-        setErrorMessage(null)
       }
     }
 
