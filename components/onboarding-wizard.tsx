@@ -18,7 +18,7 @@ import { Elements, CardElement, useStripe, useElements } from '@stripe/react-str
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import type { StripeElementChangeEvent } from '@stripe/stripe-js';
-import { StripeCardElement } from '@stripe/stripe-js';
+import type { StripeCardElement } from '@stripe/stripe-js'
 
 // Initialize Stripe with error handling
 const stripePromise = (() => {
@@ -267,7 +267,7 @@ export function OnboardingWizardComponent() {
     const [cardComplete, setCardComplete] = useState(false)
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [clientSecret, setClientSecret] = useState<string | null>(null)
-    const [cardElement, setCardElement] = useState<any>(null)
+    const [cardElement, setCardElement] = useState<StripeCardElement | null>(null)
 
     // First, create the subscription and get the client secret
     useEffect(() => {
@@ -309,7 +309,10 @@ export function OnboardingWizardComponent() {
         setErrorMessage(null)
       }
       if (!cardElement && event.elementType === 'card') {
-        setCardElement(elements?.getElement(CardElement))
+        const element = elements?.getElement(CardElement)
+        if (element) {
+          setCardElement(element)
+        }
       }
     }
 
