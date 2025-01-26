@@ -13,6 +13,8 @@ import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle }
 import toast, { Toaster } from 'react-hot-toast'
 import Image from 'next/image'
 import { PublicFooter } from "@/components/shared/public-footer"
+import { loadStripe } from '@stripe/stripe-js'
+import { Button } from "@/components/ui/button"
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -69,7 +71,10 @@ export function MyAccountComponent() {
       call_end: string;
       call_duration: string;
       call_issues: string;
-    }>
+    }>,
+    billing: {
+      stripeCustomerId: '',
+    }
   })
   const [activeSection, setActiveSection] = useState('call-preferences')
   const [editMode, setEditMode] = useState({
@@ -354,7 +359,7 @@ export function MyAccountComponent() {
   const renderSection = (
     title: string,
     icon: React.ReactNode,
-    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log',
+    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'billing',
     content: React.ReactNode,
     editContent: React.ReactNode
   ) => (
@@ -364,7 +369,7 @@ export function MyAccountComponent() {
           {icon}
           {title}
         </div>
-        {sectionId !== 'call-log' && (
+        {sectionId !== 'call-log' && sectionId !== 'billing' && (
           <button
             onClick={() => editMode[sectionId] ? handleSave(sectionId) : toggleEdit(sectionId)}
             className="p-2 hover:bg-gray-100 rounded-full"
@@ -377,7 +382,7 @@ export function MyAccountComponent() {
         )}
       </div>
       <div className="space-y-4 w-full">
-        {editMode[sectionId] ? editContent : content}
+        {editMode[sectionId as keyof typeof editMode] ? editContent : content}
       </div>
     </div>
   )
@@ -389,6 +394,11 @@ export function MyAccountComponent() {
     { id: 'caller-info', label: 'Caller Info', icon: <User className="h-5 w-5" /> },
     { id: 'account-info', label: 'Account Info', icon: <CreditCard className="h-5 w-5" /> },
     { id: 'call-log', label: 'Call Log', icon: <Clock className="h-5 w-5" /> },
+    {
+      id: 'billing',
+      label: 'Billing',
+      icon: <CreditCard className="h-5 w-5" />,
+    },
   ]
 
   // Add logout function
@@ -419,6 +429,44 @@ export function MyAccountComponent() {
     } catch (error) {
       console.error('Logout error:', error)
       toast.error('Error logging out. Please try again.')
+    }
+  }
+
+  // Add this function to handle portal redirect
+  const redirectToCustomerPortal = async () => {
+    try {
+      const cookies = document.cookie.split(';')
+      const authCookie = cookies.find(c => c.trim().startsWith('auth_token='))
+      const token = authCookie ? authCookie.split('=')[1].trim() : null
+
+      if (!token) {
+        console.error('No token found')
+        toast.error('Authentication required')
+        setIsLoading(false)
+        return
+      }
+
+      const response = await fetch(`${API_BASE_URL}/api/create-portal-session`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': `bearer ${token}`,
+          'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+        },
+
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to create portal session')
+      }
+
+      const { url } = await response.json()
+      window.location.href = url
+    } catch (error) {
+      console.error('Error:', error)
+      toast.error('Could not access billing portal')
     }
   }
 
@@ -706,6 +754,32 @@ export function MyAccountComponent() {
                   </div>
                 </div>,
                 <div>Call log cannot be edited</div>
+              )}
+
+              {activeSection === 'billing' && renderSection(
+                "Billing",
+                <CreditCard className="h-5 w-5" />,
+                'billing',
+                <div>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
+                      <div>
+                        <h3 className="font-semibold text-[#1a2642]">Current Plan</h3>
+                        <p className="text-gray-600">Monthly Subscription</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="font-semibold text-[#1a2642]">$15.00/month</p>
+                        <Button 
+                          onClick={redirectToCustomerPortal}
+                          className="mt-2 px-4 py-2 bg-[#1a2642] hover:bg-[#2a3752] text-white rounded"
+                        >
+                          Manage Billing
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </div>,
+                <div>Loading...</div>
               )}
             </div>
           </div>
