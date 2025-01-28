@@ -10,7 +10,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { CheckCircle, ChevronDown, Volume2 } from 'lucide-react'
 // import { Phone, Calendar, Clock, Shield } from 'lucide-react'
 import { Space_Grotesk, Raleway } from 'next/font/google'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
 import { PublicFooter } from "@/components/shared/public-footer"
@@ -31,6 +31,14 @@ export function LandingPageComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [audio] = useState(typeof Audio !== 'undefined' ? new Audio('/audio/Positive_Check_Greeting.mp3') : null)
+  const [showCookieConsent, setShowCookieConsent] = useState(false)
+
+  useEffect(() => {
+    const hasConsent = localStorage.getItem('cookieConsent')
+    if (!hasConsent) {
+      setShowCookieConsent(true)
+    }
+  }, [])
 
   const playAudio = () => {
     if (audio) {
@@ -39,6 +47,11 @@ export function LandingPageComponent() {
         console.error('Error playing audio:', error)
       })
     }
+  }
+
+  const acceptCookies = () => {
+    localStorage.setItem('cookieConsent', 'true')
+    setShowCookieConsent(false)
   }
 
   return (
@@ -566,6 +579,18 @@ export function LandingPageComponent() {
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
         <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
       </div>
+
+      {showCookieConsent && (
+        <div className="fixed bottom-4 right-4 max-w-sm bg-white p-4 rounded-lg shadow-lg border border-gray-200 text-sm z-50 flex items-center gap-4">
+          <p className="text-gray-600">We use cookies to improve your experience.</p>
+          <button
+            onClick={acceptCookies}
+            className="bg-[#1a2642] text-white px-3 py-1 rounded-md hover:bg-[#2a3752] text-sm whitespace-nowrap"
+          >
+            Got it
+          </button>
+        </div>
+      )}
     </div>
   )
 }
