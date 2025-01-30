@@ -276,7 +276,8 @@ export function OnboardingWizardComponent() {
       }
 
       setIsSubmitting(true)
-      setIsLoading(true)
+      // setIsLoading(true)
+      setErrorMessage(null)
 
       // Create subscription first
       try {
@@ -294,7 +295,8 @@ export function OnboardingWizardComponent() {
         })
 
         if (!response.ok) {
-          throw new Error('Failed to create subscription')
+          const errorData = await response.json(); // Try to get error details from the server
+          throw new Error(errorData.detail || 'Failed to create subscription')
         }
 
         const { clientSecret } = await response.json()
@@ -304,6 +306,9 @@ export function OnboardingWizardComponent() {
         if (!cardElement) {
           throw new Error('Card element not found')
         }
+
+        // Set loading state to true
+        setIsLoading(true);
 
         const { error } = await stripe.confirmCardPayment(clientSecret, {
           payment_method: {
@@ -319,7 +324,7 @@ export function OnboardingWizardComponent() {
           throw new Error(error.message)
         }
 
-        // Add back the user creation after successful payment
+        // User creation after successful payment
         const userData = {
           first_name: formData.accountFirstName,
           last_name: formData.accountLastName,
