@@ -38,7 +38,8 @@ const PaymentWrapper: React.FC<PaymentWrapperProps> = ({ formData, onBack, isLoa
   useEffect(() => {
     if (!clientSecret) {
       setLoadingClientSecret(true);
-      fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-subscription`, {
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, ""); // Removes trailing slashes
+      fetch(`${apiBaseUrl}/api/create-subscription`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
