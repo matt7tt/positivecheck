@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useState, useEffect } from "react";
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import toast from "react-hot-toast";
-
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 interface FormData {
   accountEmail: string;
@@ -29,16 +27,16 @@ interface FormData {
   clientSecret?: string;
 }
 
-interface PaymentError {
-  message: string;
-}
-
 interface PaymentFormProps {
   onBack: () => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
   setErrorMessage: (message: string | null) => void;
   formData: FormData;
+}
+
+interface PaymentError {
+  message: string;
 }
 
 const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoading, setErrorMessage, formData }) => {
@@ -48,48 +46,38 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [clientSecret, setClientSecret] = useState(formData.clientSecret || "");
 
-  // Fetch client secret when the component mounts
   useEffect(() => {
     if (!clientSecret) {
-      fetch(`${API_BASE_URL}/api/create-subscription`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/create-subscription`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-API-Key": process.env.NEXT_PUBLIC_API_KEY || "",
         },
-        body: JSON.stringify({
-          email: formData.accountEmail,
-          first_name: formData.accountFirstName,
-          last_name: formData.accountLastName,
-          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
-          timezone: formData.timezone,
-          call_time: formData.callTime,
-          days_to_call: formData.callDays,
-          password: formData.accountPassword,
-          caller_first_name: formData.firstName,
-          caller_last_name: formData.lastName,
-          caller_preferred_name: formData.preferredName,
-          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
-          caller_language: formData.language,
-          questions: formData.questions.filter(q => q.selected).map(q => q.id),
-          price_id: formData.priceId,
-        }),
+        body: JSON.stringify(formData),
       })
         .then((response) => response.json())
-        .then((data) => setClientSecret(data.clientSecret))
-        .catch(() => setErrorMessage("Failed to load payment details."));
+        .then((data) => {
+          if (data.clientSecret) {
+            setClientSecret(data.clientSecret);
+          } else {
+            setErrorMessage("Error: Could not fetch clientSecret.");
+          }
+        })
+        .catch(() => {
+          setErrorMessage("Error: Failed to load payment details.");
+        });
     }
   }, [formData, clientSecret]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!stripe || !elements) {
-      toast.error("Payment system is not ready");
+    if (!stripe || !elements || isSubmitting) {
       return;
     }
 
-    setIsSubmitting(true);
+    setIsSubmitting(true); // ✅ Disable submit button immediately
     setIsLoading(true);
     setErrorMessage(null);
 
@@ -110,7 +98,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
       toast.error(error instanceof Error ? error.message : 'Payment failed');
     } finally {
       setIsLoading(false);
-      setIsSubmitting(false);
+      setIsSubmitting(false); // ✅ Re-enable submit button after request finishes
     }
   };
 
@@ -140,7 +128,11 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
         <Button type="button" onClick={onBack} variant="outline" disabled={isSubmitting}>
           Back
         </Button>
-        <Button type="submit" className="bg-[#1a2642] hover:bg-[#2a3752] text-white" disabled={!stripe || isSubmitting}>
+        <Button
+          type="submit"
+          className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+          disabled={!stripe || isSubmitting} // ✅ Prevent double submission
+        >
           {isSubmitting ? "Processing..." : `Submit`}
         </Button>
       </div>
