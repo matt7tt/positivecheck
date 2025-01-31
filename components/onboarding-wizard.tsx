@@ -14,11 +14,15 @@ import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import Image from 'next/image'
 import { loadStripe } from '@stripe/stripe-js'
-import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { Elements, CardElement, useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js'
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import type { StripeElementChangeEvent } from '@stripe/stripe-js';
-import type { StripeCardElement } from '@stripe/stripe-js'
+//import type { StripeCardElement, PaymentElement } from '@stripe/stripe-js'
+import PaymentWrapper from './payment/PaymentWrapper'
+import PaymentForm from './payment/PaymentForm'
+
+
 
 // Initialize Stripe with error handling
 const stripePromise = (() => {
@@ -29,6 +33,12 @@ const stripePromise = (() => {
   }
   return loadStripe(key)
 })()
+
+
+
+
+
+
 
 export function OnboardingWizardComponent() {
   const [step, setStep] = useState(1)
@@ -48,6 +58,8 @@ export function OnboardingWizardComponent() {
     accountEmail: '',
     accountPassword: '',
     signUpCode: '',
+    priceId: 'price_YOUR_PRICE_ID',
+    amount: 15.00
   })
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
@@ -252,183 +264,22 @@ export function OnboardingWizardComponent() {
     fetchQuestions();
   }, []);
 
-  interface PaymentFormProps {
-    onBack: () => void;
-    isLoading: boolean;
-    setIsLoading: (loading: boolean) => void;
-    setErrorMessage: (message: string | null) => void;
-    formData: typeof formData;
-  }
 
-  function PaymentForm({ onBack, isLoading, setIsLoading, setErrorMessage, formData }: PaymentFormProps) {
-    const stripe = useStripe()
-    const elements = useElements()
-    const router = useRouter()
-    const [cardComplete, setCardComplete] = useState(false)
-    const [isSubmitting, setIsSubmitting] = useState(false)
+// ***** Payment Form *****
 
-    const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault()
-      
-      if (!stripe || !elements) {
-        toast.error("Payment system is not ready")
-        return
-      }
 
-      setIsSubmitting(true)
-      // setIsLoading(true)
-      setErrorMessage(null)
 
-      // Create subscription first
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/create-subscription`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-          },
-          body: JSON.stringify({
-            email: formData.accountEmail,
-            first_name: formData.accountFirstName,
-            last_name: formData.accountLastName,
-          }),
-        })
 
-        if (!response.ok) {
-          const errorData = await response.json(); // Try to get error details from the server
-          throw new Error(errorData.detail || 'Failed to create subscription')
-        }
 
-        const { clientSecret } = await response.json()
 
-        // Get card element and confirm payment in quick succession
-        const cardElement = elements.getElement(CardElement)
-        if (!cardElement) {
-          throw new Error('Card element not found')
-        }
 
-        // Set loading state to true
-        setIsLoading(true);
 
-        const { error } = await stripe.confirmCardPayment(clientSecret, {
-          payment_method: {
-            card: cardElement,
-            billing_details: {
-              name: `${formData.accountFirstName} ${formData.accountLastName}`,
-              email: formData.accountEmail,
-            }
-          }
-        })
 
-        if (error) {
-          throw new Error(error.message)
-        }
+  // ***** End Payment Form *****
 
-        // User creation after successful payment
-        const userData = {
-          first_name: formData.accountFirstName,
-          last_name: formData.accountLastName,
-          email: formData.accountEmail,
-          phone: `+1${formData.accountPhone.replace(/\D/g, '')}`,
-          timezone: formData.timezone,
-          call_time: formData.callTime,
-          days_to_call: formData.callDays,
-          password: formData.accountPassword,
-          caller_first_name: formData.firstName,
-          caller_last_name: formData.lastName,
-          caller_preferred_name: formData.preferredName,
-          caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
-          caller_language: formData.language,
-          questions: formData.questions
-            .filter(q => q.selected)
-            .map(q => q.id)
-        }
 
-        const userResponse = await fetch(`${API_BASE_URL}/api/users`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-          },
-          body: JSON.stringify(userData),
-        })
 
-        if (!userResponse.ok) {
-          throw new Error('Failed to create user account')
-        }
 
-        toast.success('Payment successful! Redirecting to your account...')
-        await new Promise(resolve => setTimeout(resolve, 1500))
-        router.push('/my-account')
-
-      } catch (error) {
-        console.error('Error:', error)
-        setErrorMessage(error instanceof Error ? error.message : 'An error occurred')
-        toast.error(error instanceof Error ? error.message : 'Payment failed')
-      } finally {
-        setIsLoading(false)
-        setIsSubmitting(false)
-      }
-    }
-
-    const handleCardChange = (event: StripeElementChangeEvent) => {
-      setCardComplete(event.complete)
-      if (event.error) {
-        setErrorMessage(event.error.message)
-      } else {
-        setErrorMessage(null)
-      }
-    }
-
-    return (
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <Card className="bg-gray-50">
-          <CardHeader>
-            <CardTitle className="text-lg font-semibold text-[#1a2642]">Payment Information</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="p-4 bg-white rounded-lg">
-              <CardElement 
-                onChange={handleCardChange}
-                options={{
-                  style: {
-                    base: {
-                      fontSize: '16px',
-                      color: '#424770',
-                      '::placeholder': {
-                        color: '#aab7c4',
-                      },
-                    },
-                    invalid: {
-                      color: '#9e2146',
-                    },
-                  },
-                }}
-              />
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="flex justify-between">
-          <Button 
-            type="button" 
-            onClick={onBack} 
-            variant="outline"
-            disabled={isSubmitting}
-          >
-            Back
-          </Button>
-          <Button 
-            type="submit" 
-            className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
-            disabled={!stripe || !cardComplete || isSubmitting}
-          >
-            {isSubmitting ? 'Processing...' : 'Submit Payment'}
-          </Button>
-        </div>
-      </form>
-    )
-  }
 
   return (
     <>
@@ -790,6 +641,7 @@ export function OnboardingWizardComponent() {
                   </form>
                 )}
 
+
                 {step === 5 && (
                   <>
                     {!stripePromise ? (
@@ -797,18 +649,19 @@ export function OnboardingWizardComponent() {
                         Payment system is not properly configured. Please contact support.
                       </div>
                     ) : (
-                      <Elements stripe={stripePromise}>
-                        <PaymentForm 
-                          onBack={handleBack}
-                          isLoading={isLoading}
-                          setIsLoading={setIsLoading}
-                          setErrorMessage={setErrorMessage}
-                          formData={formData}
-                        />
-                      </Elements>
+                      <PaymentWrapper
+                        formData={formData}
+                        onBack={handleBack}
+                        isLoading={isLoading}
+                        setIsLoading={setIsLoading}
+                        setErrorMessage={setErrorMessage}
+                      />
                     )}
                   </>
                 )}
+
+
+
               </CardContent>
             </Card>
           </div>
