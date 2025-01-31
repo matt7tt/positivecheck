@@ -9,7 +9,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { PhoneCall, Calendar, User, CreditCard } from 'lucide-react'
+import { PhoneCall, Calendar, User, CreditCard, UserCircle } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/lib/auth-context'
 import Image from 'next/image'
@@ -18,7 +18,6 @@ import { Elements, CardElement, useStripe, useElements, PaymentElement } from '@
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import type { StripeElementChangeEvent } from '@stripe/stripe-js';
-//import type { StripeCardElement, PaymentElement } from '@stripe/stripe-js'
 import PaymentWrapper from './payment/PaymentWrapper'
 import PaymentForm from './payment/PaymentForm'
 
@@ -33,9 +32,6 @@ const stripePromise = (() => {
   }
   return loadStripe(key)
 })()
-
-
-
 
 
 
@@ -140,6 +136,8 @@ export function OnboardingWizardComponent() {
 
   const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
+
+  // Now not called, since we are using the PaymentWrapper component
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -218,11 +216,12 @@ export function OnboardingWizardComponent() {
     }
   }
 
+  
   const steps = [
     { title: "Call Preferences", icon: <PhoneCall className="w-6 h-6" /> },
     { title: "Questions", icon: <Calendar className="w-6 h-6" /> },
     { title: "Caller Info", icon: <User className="w-6 h-6" /> },
-    { title: "Account", icon: <CreditCard className="w-6 h-6" /> },
+    { title: "Account", icon: <UserCircle className="w-6 h-6" /> },
     { title: "Payment", icon: <CreditCard className="w-6 h-6" /> },
   ]
 

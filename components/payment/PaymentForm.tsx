@@ -85,14 +85,14 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: `${window.location.origin}/payment-success`,
+          return_url: `${window.location.origin}/my-account`,
         },
       });
 
       if (error) throw new Error(error.message);
 
       toast.success("Payment successful! Redirecting...");
-      router.push("/payment-success");
+      router.push("/my-account");
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
       toast.error(error instanceof Error ? error.message : 'Payment failed');
