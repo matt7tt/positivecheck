@@ -29,6 +29,10 @@ interface FormData {
   clientSecret?: string;
 }
 
+interface PaymentError {
+  message: string;
+}
+
 interface PaymentFormProps {
   onBack: () => void;
   isLoading: boolean;
@@ -101,9 +105,9 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
 
       toast.success("Payment successful! Redirecting...");
       router.push("/payment-success");
-    } catch (error: any) {
-      setErrorMessage(error.message);
-      toast.error(error.message);
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
+      toast.error(error instanceof Error ? error.message : 'Payment failed');
     } finally {
       setIsLoading(false);
       setIsSubmitting(false);
