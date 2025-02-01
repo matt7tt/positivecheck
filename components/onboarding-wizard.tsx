@@ -54,7 +54,7 @@ export function OnboardingWizardComponent() {
     accountEmail: '',
     accountPassword: '',
     signUpCode: '',
-    priceId: 'price_YOUR_PRICE_ID',
+    priceId: 'price_1QfqGzChFWcVeCaxrGrGIRvM',
     amount: 15.00
   })
   const [isLoading, setIsLoading] = useState(false)
