@@ -264,20 +264,6 @@ export function OnboardingWizardComponent() {
   }, []);
 
 
-// ***** Payment Form *****
-
-
-
-
-
-
-
-
-
-  // ***** End Payment Form *****
-
-
-
 
 
   return (
@@ -515,14 +501,36 @@ export function OnboardingWizardComponent() {
                 )}
 
                 {step === 4 && (
-                  <form onSubmit={(e) => {
+                  <form onSubmit={async (e) => {
                     e.preventDefault();
                     if (formData.signUpCode !== 'PCSIGNUP34') {
                       setErrorMessage('Invalid Sign Up Code');
                       return;
                     }
-                    setErrorMessage(null);
-                    handleNext();
+
+                    // Add email check before proceeding
+                    try {
+                      const response = await fetch(`${API_BASE_URL}/api/check-email`, {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+                        },
+                        body: JSON.stringify({ email: formData.accountEmail }),
+                      });
+
+                      if (!response.ok) {
+                        const data = await response.json();
+                        setErrorMessage(data.message || 'This email is already registered. Please use a different email address.');
+                        return;
+                      }
+
+                      setErrorMessage(null);
+                      handleNext();
+                    } catch (error) {
+                      setErrorMessage('Error checking email. Please try again.');
+                      return;
+                    }
                   }} className="space-y-6">
                     <Card className="bg-gray-50">
                       <CardHeader>
