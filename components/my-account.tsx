@@ -34,6 +34,16 @@ const CALL_TIMES = [
   {value: "16:00", label: "Evening (4PM - 8PM)"}
 ]
 
+const DAY_ORDER: Record<string, number> = {
+  'Monday': 1,
+  'Tuesday': 2,
+  'Wednesday': 3,
+  'Thursday': 4,
+  'Friday': 5,
+  'Saturday': 6,
+  'Sunday': 7
+}
+
 export function MyAccountComponent() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
@@ -552,7 +562,11 @@ export function MyAccountComponent() {
                 <PhoneCall className="h-5 w-5" />,
                 'call-preferences',
                 <div>
-                  <p>Your preferred call days: {userData.callPreferences.callDays.join(', ')}</p>
+                  <p>Your preferred call days: {
+                    [...userData.callPreferences.callDays]
+                      .sort((a, b) => DAY_ORDER[a] - DAY_ORDER[b])
+                      .join(', ')
+                  }</p>
                   <p>Call time: {CALL_TIMES.find(t => t.value === userData.callPreferences.callTime)?.label || userData.callPreferences.callTime}</p>
                 </div>,
                 <div className="space-y-4">

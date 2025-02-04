@@ -5,8 +5,8 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
-type PublicHeaderProps = {
-  currentPage: 'home' | 'sign-in' | 'contact' | 'about' | 'blog'
+interface PublicHeaderProps {
+  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
