@@ -68,7 +68,7 @@ export function LandingPageComponent() {
                   Daily Wellness Check-In Calls for Seniors
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-                  Affordable, reliable wellness check-ins for just $15 per month. Cancel anytime.
+                  Affordable, reliable wellness check-ins for just $20 per month. Cancel anytime.
                 </p>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>&nbsp;</p>
               </div>
@@ -282,7 +282,7 @@ export function LandingPageComponent() {
                       • Easy setup: no smartphones, apps, or equipment needed.
                     </li>
                     <li className="text-lg text-[#1a2642]">
-                      • Affordable and flexible: $15 per month, no hidden fees, and cancel anytime.
+                      • Affordable and flexible: $20 per month, no hidden fees, and cancel anytime.
                     </li>
                     <li className="text-lg text-[#1a2642]">
                       • Reliable and adaptable: adjust settings as needs evolve.
@@ -448,7 +448,7 @@ export function LandingPageComponent() {
                     Helping Seniors Age in Place
                   </h3>
                   <p className="text-xl text-[#1a2642]">
-                    At $15 per month, Positive Check is an affordable solution that empowers seniors to maintain their independence at home. It's care that feels personal, at a price that makes sense.
+                    At $20 per month, Positive Check is an affordable solution that empowers seniors to maintain their independence at home. It's care that feels personal, at a price that makes sense.
                   </p>
                 </div>
               </div>
