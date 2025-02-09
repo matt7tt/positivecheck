@@ -362,6 +362,7 @@ export function OnboardingWizardComponent() {
                   }} className="space-y-6">
                     <div className="space-y-4">
                       <h2 className="text-xl font-semibold text-[#1a2642]">Which questions to ask? <span className="text-red-500">*</span></h2>
+                      <p className="text-sm text-gray-600 mb-4">Please select up to 3 questions that Lola will ask during each call.</p>
                       {isLoadingQuestions ? (
                         <div className="text-center py-4">
                           <span className="animate-spin mr-2">⚪</span>
@@ -378,7 +379,14 @@ export function OnboardingWizardComponent() {
                               <Checkbox
                                 id={`question-${question.id}`}
                                 checked={question.selected}
-                                onCheckedChange={() => handleQuestionChange(question.id)}
+                                onCheckedChange={(checked) => {
+                                  const selectedCount = formData.questions.filter(q => q.selected).length;
+                                  if (checked && selectedCount >= 3) {
+                                    toast.error('You can only select up to 3 questions');
+                                    return;
+                                  }
+                                  handleQuestionChange(question.id);
+                                }}
                               />
                               <Label
                                 htmlFor={`question-${question.id}`}
