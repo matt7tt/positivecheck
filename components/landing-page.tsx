@@ -559,7 +559,7 @@ export function LandingPageComponent() {
                     <Textarea id="message" name="message" required />
                   </div>
                   <div className="flex items-center">
-                    <input id="newsletter" name="newsletter" type="checkbox" className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded" />
+                    <input id="newsletter" name="newsletter" type="checkbox" className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded" defaultChecked/>
                     <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-700">
                       Sign up for news and updates
                     </label>
