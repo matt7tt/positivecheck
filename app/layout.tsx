@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Space_Grotesk, Raleway } from 'next/font/google'
 import { AuthProvider } from '@/lib/auth-context'
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
