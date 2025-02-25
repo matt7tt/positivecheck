@@ -28,8 +28,8 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: "PositiveCheck.com | Stay Connected",
-  description: "Stay connected with your loved ones through scheduled phone calls",
+  title: "Positive Check | Affordable Caregiver Check-In Calls for Seniors",
+  description: "Positive Check provides affordable caregiver calls to check-in on seniors on a customizable schedule ensuring their safety and well-being. Get updates and peace of mind for loved ones.",
 };
 
 export default function RootLayout({
