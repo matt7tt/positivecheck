@@ -28,7 +28,7 @@ export function SignInComponent() {
 function SignInForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const returnUrl = searchParams.get('return') || '/my-account'
+  const returnUrl = searchParams?.get('return') || '/my-account'
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
