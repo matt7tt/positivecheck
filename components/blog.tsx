@@ -4,6 +4,7 @@ import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -12,27 +13,62 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "The Impact of AI on Modern Senior Care",
+    date: "March 20, 2024",
+    excerpt: "Discover how artificial intelligence is revolutionizing senior care, from health monitoring to enhanced safety and improved quality of life for aging adults.",
+    image: "../images/senior_tech.jpg",
+    slug: "impact-of-ai-on-senior-care"
+  },
+  {
     title: "How Many Adults Live Far From Aging Parents?",
-    date: "March 15, 2024",
-    excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging, leaving many feeling disconnected or worried about their loved ones.",
-    image: "/images/grandma-with-son-and-grandson.jpg",
+    date: "January 15, 2025",
+    excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
+    image: "../images/grandma-with-son-and-grandson.jpg",
     slug: "how-many-adults-live-far-from-aging-parents"
   },
   {
+    title: "Maintaining Social Connections in Senior Years",
+    date: "March 12, 2024",
+    excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
+    image: "../images/senior_social.jpg",
+    slug: "maintaining-social-connections"
+  },
+  {
     title: "When Should Families Check-In on Aging Loved Ones?",
-    date: "March 10, 2024",
-    excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes, reduce isolation, and provide timely assistance when needed.",
-    image: "/images/happy-senior.jpg",
+    date: "December 10, 2024",
+    excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes and reduce isolation.",
+    image: "../images/happy-senior.jpg",
     slug: "when-should-families-check-in"
   },
   {
+    title: "Understanding and Preventing Caregiver Burnout",
+    date: "March 5, 2024",
+    excerpt: "Caring for an aging loved one is rewarding but can be emotionally and physically demanding. Learn to recognize the signs of burnout and discover effective prevention strategies.",
+    image: "../images/caregiver_stress.jpg",
+    slug: "understanding-caregiver-burnout"
+  },
+  {
+    title: "Essential Tips for Long-Distance Caregiving",
+    date: "March 3, 2024",
+    excerpt: "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
+    image: "../images/long_distance_care.jpg",
+    slug: "tips-for-long-distance-caregiving"
+  },
+  {
     title: "10 Signs Your Loved One Could Benefit from a Caregiver's Check-In Service",
-    date: "March 8, 2024",
-    excerpt: "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could benefit your aging loved ones while maintaining their independence.",
-    image: "/images/happy-senior-2.jpg",
+    date: "February 8, 2025",
+    excerpt: "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could be beneficial.",
+    image: "../images/happy-senior-2.jpg",
     slug: "signs-loved-one-needs-caregiver-check-in"
+  },
+  {
+    title: "The Importance of Checking In on Seniors Living Alone",
+    date: "March 2, 2025",
+    excerpt: "Regular check-ins are vital for seniors living independently. Learn why these visits matter and how they contribute to better health outcomes and quality of life.",
+    image: "../images/happy_senior_headphones.jpg",
+    slug: "checking-in-on-seniors"
   }
-]
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 export function BlogComponent() {
   return (
@@ -50,36 +86,37 @@ export function BlogComponent() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
           {BLOG_POSTS.map((post, index) => (
-            <article key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-56" role="img" aria-label={post.title}>
-                <img
-                  src={post.image}
-                  alt={`Illustration for ${post.title}`}
-                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.currentTarget.src = '/images/default-blog-image.jpg'
-                  }}
-                />
-              </div>
-              <div className="p-6">
-                <time className="text-sm text-gray-700" dateTime={post.date}>
-                  {post.date}
-                </time>
-                <h2 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-2 mb-3`}>
-                  {post.title}
-                </h2>
-                <p className="text-gray-700 mb-4">
-                  {post.excerpt}
-                </p>
-                <Link 
-                  href={`/blog/${post.slug}`}
-                  className="text-[#1a2642] font-medium hover:text-[#2a3752] focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2"
-                  aria-label={`Read more about ${post.title}`}
-                >
-                  Read more →
-                </Link>
-              </div>
-            </article>
+            <Link 
+              href={`/blog/${post.slug}`}
+              key={index}
+              className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              aria-labelledby={`post-title-${index}`}
+            >
+              <article>
+                <div className="relative h-56" role="img" aria-label={post.title}>
+                  <Image
+                    src={post.image}
+                    alt={`Illustration for ${post.title}`}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <time className="text-sm text-gray-700" dateTime={post.date}>
+                    {post.date}
+                  </time>
+                  <h2 
+                    id={`post-title-${index}`}
+                    className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-2 mb-3`}
+                  >
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-700">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       </main>

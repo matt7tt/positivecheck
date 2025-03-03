@@ -144,7 +144,7 @@ export function OnboardingWizardComponent() {
     setErrorMessage(null)
     
     if (formData.signUpCode !== 'PCSIGNUP34') {
-      setErrorMessage('Invalid Sign Up Code - Please contact support if you need help.')
+      setErrorMessage('Invalid Sign Up Code - Please email info@positivecheck.com for help.')
       setIsLoading(false)
       return
     }

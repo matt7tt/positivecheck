@@ -14,6 +14,13 @@ export function WhenShouldFamiliesCheckInComponent() {
 
       <main className="container mx-auto px-4 py-8">
         <article className="max-w-3xl mx-auto">
+          <Link
+            href="/blog"
+            className="inline-block mb-6 text-[#1a2642] hover:text-[#2a3752] font-medium"
+          >
+            ← Back to Blog
+          </Link>
+
           <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-6`}>
             When Should Families Check-In on Aging Loved Ones?
           </h1>
@@ -25,7 +32,7 @@ export function WhenShouldFamiliesCheckInComponent() {
 
             <div className="my-8 rounded-lg overflow-hidden">
               <img
-                src="/images/happy-senior.jpg"
+                src="../images/happy-senior.jpg"
                 alt="A happy senior person celebrating with raised arms while holding a phone"
                 className="w-full h-auto object-cover"
               />
