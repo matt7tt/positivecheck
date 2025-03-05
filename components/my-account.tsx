@@ -46,7 +46,11 @@ const DAY_ORDER: Record<string, number> = {
 
 const convertToUserTimezone = (utcTime: string, userTimezone: string): string => {
   try {
-    const date = new Date(utcTime);
+    // Create a date object for today with the specified time
+    const [hours, minutes] = utcTime.split(':').map(Number);
+    const date = new Date();
+    date.setUTCHours(hours, minutes, 0, 0);
+
     const options: Intl.DateTimeFormatOptions = {
       hour: 'numeric',
       minute: '2-digit',
