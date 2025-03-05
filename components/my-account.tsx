@@ -44,6 +44,29 @@ const DAY_ORDER: Record<string, number> = {
   'Sunday': 7
 }
 
+const convertToUserTimezone = (utcTime: string, userTimezone: string): string => {
+  try {
+    const date = new Date(utcTime);
+    const options: Intl.DateTimeFormatOptions = {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: userTimezone === 'EST' ? 'America/New_York' :
+                userTimezone === 'CST' ? 'America/Chicago' :
+                userTimezone === 'MST' ? 'America/Denver' :
+                userTimezone === 'PST' ? 'America/Los_Angeles' :
+                userTimezone === 'AKST' ? 'America/Anchorage' :
+                userTimezone === 'HST' ? 'Pacific/Honolulu' : 'UTC'
+    };
+    
+    const timeString = date.toLocaleTimeString('en-US', options);
+    return `${timeString} [${userTimezone}]`;
+  } catch (error) {
+    console.error('Error converting timezone:', error);
+    return utcTime; // Fallback to original time if conversion fails
+  }
+}
+
 export function MyAccountComponent() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
@@ -747,9 +770,8 @@ export function MyAccountComponent() {
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Start Time</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">End Time</th>
                           <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Duration</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Summary</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">Summary</th>
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
@@ -757,10 +779,11 @@ export function MyAccountComponent() {
                           <tr key={index}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_date}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_status}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_start}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_end}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                              {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}
+                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_duration}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_issues}</td>
+                            <td className="px-6 py-4 text-sm text-gray-900 break-words">{log.call_issues}</td>
                           </tr>
                         ))}
                       </tbody>

@@ -36,6 +36,26 @@ const stripePromise = (() => {
 
 
 
+const getStepRecommendation = (step: number): string => {
+  switch (step) {
+    case 1:
+      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+    case 2:
+      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+    case 3:
+      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+    case 4:
+      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+    case 5:
+      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+    default:
+      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+  }
+}
+
+
+
+
 export function OnboardingWizardComponent() {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({
@@ -293,7 +313,7 @@ export function OnboardingWizardComponent() {
               </CardHeader>
               <CardContent>
                 <p className="text-center text-gray-600 mb-6">
-                  Recommendation: Start with a small set of questions to encourage engagement. Make changes at any time.
+                  {getStepRecommendation(step)}
                 </p>
                 <div className="flex justify-between mb-2">
                   {steps.map((s, index) => (
@@ -338,9 +358,21 @@ export function OnboardingWizardComponent() {
                             <SelectValue placeholder="Select time" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="08:00">Morning (8AM - 12PM)</SelectItem>
-                            <SelectItem value="12:00">Afternoon (12PM - 4PM)</SelectItem>
-                            <SelectItem value="16:00">Evening (4PM - 8PM)</SelectItem>
+                            <SelectItem value="08:00">8 AM</SelectItem>
+                            <SelectItem value="09:00">9 AM</SelectItem>
+                            <SelectItem value="10:00">10 AM</SelectItem>
+                            <SelectItem value="11:00">11 AM</SelectItem>
+                            <SelectItem value="12:00">12 PM</SelectItem>
+                            <SelectItem value="13:00">1 PM</SelectItem>
+                            <SelectItem value="14:00">2 PM</SelectItem>
+                            <SelectItem value="15:00">3 PM</SelectItem>
+                            <SelectItem value="16:00">4 PM</SelectItem>
+                            <SelectItem value="17:00">5 PM</SelectItem>
+                            <SelectItem value="18:00">6 PM</SelectItem>
+                            <SelectItem value="19:00">7 PM</SelectItem>
+                            <SelectItem value="20:00">8 PM</SelectItem>
+                            <SelectItem value="21:00">9 PM</SelectItem>
+                            <SelectItem value="22:00">10 PM</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
