@@ -141,6 +141,7 @@ export function MyAccountComponent() {
       call_duration: string;
       call_issues: string;
     }>,
+    weeklyLearning: '',
     billing: {
       stripeCustomerId: '',
     }
@@ -184,7 +185,7 @@ export function MyAccountComponent() {
         }
 
         // Fetch all data
-        const [userResponse, preferencesResponse, questionsResponse, callLogResponse] = await Promise.all([
+        const [userResponse, preferencesResponse, questionsResponse, callLogResponse, weeklyLearningResponse] = await Promise.all([
           fetch(`${API_BASE_URL}/api/users/me`, {
             method: 'GET',
             credentials: 'include',
@@ -224,6 +225,16 @@ export function MyAccountComponent() {
               'Authorization': `bearer ${token}`,
               'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
             },
+          }),
+          fetch(`${API_BASE_URL}/api/users/me/weekly-learning`, {
+            method: 'GET',
+            credentials: 'include',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': `bearer ${token}`,
+              'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+            },
           })
         ])
 
@@ -238,11 +249,12 @@ export function MyAccountComponent() {
           return
         }
 
-        const [userData, preferencesData, questionsData, callLogData] = await Promise.all([
+        const [userData, preferencesData, questionsData, callLogData, weeklyLearningData] = await Promise.all([
           userResponse.json(),
           preferencesResponse.json(),
           questionsResponse.json(),
-          callLogResponse.json()
+          callLogResponse.json(),
+          weeklyLearningResponse.ok ? weeklyLearningResponse.text() : ''
         ])
 
         // Process questions data
@@ -287,7 +299,8 @@ export function MyAccountComponent() {
             callTime: callTime,
           },
           questions: questionsWithText,
-          callLog: callLogData
+          callLog: callLogData,
+          weeklyLearning: weeklyLearningData
         }))
 
         setIsAuthenticated(true)
@@ -811,6 +824,11 @@ export function MyAccountComponent() {
                 <Clock className="h-5 w-5" />,
                 'call-log',
                 <div className="w-full overflow-x-auto">
+                  {userData.weeklyLearning && (
+                    <div className="mb-6 p-4 bg-blue-50 rounded-lg">
+                      <p className="text-sm text-blue-800">{userData.weeklyLearning}</p>
+                    </div>
+                  )}
                   <div className="inline-block min-w-full align-middle">
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
