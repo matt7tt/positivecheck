@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle } from 'lucide-react'
+import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle, UserCircle } from 'lucide-react'
 import toast, { Toaster } from 'react-hot-toast'
 import Image from 'next/image'
 import { PublicFooter } from "@/components/shared/public-footer"
@@ -145,7 +145,7 @@ export function MyAccountComponent() {
       stripeCustomerId: '',
     }
   })
-  const [activeSection, setActiveSection] = useState('call-preferences')
+  const [activeSection, setActiveSection] = useState('call-log')
   const [editMode, setEditMode] = useState({
     'call-preferences': false,
     'questions': false,
@@ -458,18 +458,14 @@ export function MyAccountComponent() {
     </div>
   )
 
-  // Add navigation items
+  // Update the navItems array order
   const navItems = [
+    { id: 'call-log', label: 'Call Log', icon: <Clock className="h-5 w-5" /> },
     { id: 'call-preferences', label: 'Call Preferences', icon: <PhoneCall className="h-5 w-5" /> },
     { id: 'questions', label: 'Questions', icon: <Calendar className="h-5 w-5" /> },
     { id: 'caller-info', label: 'Caller Info', icon: <User className="h-5 w-5" /> },
-    { id: 'account-info', label: 'Account Info', icon: <CreditCard className="h-5 w-5" /> },
-    { id: 'call-log', label: 'Call Log', icon: <Clock className="h-5 w-5" /> },
-    {
-      id: 'billing',
-      label: 'Billing',
-      icon: <CreditCard className="h-5 w-5" />,
-    },
+    { id: 'account-info', label: 'Account Info', icon: <UserCircle className="h-5 w-5" /> },
+    { id: 'billing', label: 'Billing', icon: <CreditCard className="h-5 w-5" /> },
   ]
 
   // Add logout function
