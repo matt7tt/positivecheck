@@ -25,79 +25,96 @@ export function UnderstandingCaregiverBurnoutPost() {
         </h1>
 
         <img
-          src="/images/caregiver-stress.jpg"
-          alt="A person showing signs of stress while caregiving"
+          src="/images/happy-senior-and-caregiver.jpg"
+          alt="A caregiver and senior woman sharing a happy moment together"
           className="w-full h-[400px] object-cover rounded-lg mb-8"
         />
 
         <p className="lead-paragraph">
-          Caring for an aging loved one is a noble and rewarding responsibility, but it can also be emotionally and physically demanding. Caregiver burnout is a state of physical, emotional, and mental exhaustion that can occur when caregivers don't get the help they need or try to do more than they're able. Understanding the signs and taking preventive measures is crucial for both the caregiver and their loved one.
+          Caring for an aging loved one is both rewarding and challenging. However, the demands of caregiving can lead to caregiver burnout which is a state of physical, emotional, and mental exhaustion. Recognizing the signs and implementing preventive measures is crucial for the well-being of both the caregiver and the care recipient.
         </p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           Signs of Caregiver Burnout
         </h2>
 
-        <ul className="list-disc pl-6 space-y-4">
-          <li><strong>Physical Exhaustion:</strong> Feeling constantly tired, having trouble sleeping, or experiencing changes in appetite</li>
-          <li><strong>Emotional Changes:</strong> Increased irritability, anxiety, depression, or mood swings</li>
-          <li><strong>Social Withdrawal:</strong> Losing interest in activities once enjoyed or avoiding friends and family</li>
-          <li><strong>Health Issues:</strong> Weakened immune system, frequent headaches, or other physical ailments</li>
-          <li><strong>Cognitive Problems:</strong> Difficulty concentrating or making decisions</li>
-        </ul>
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Physical Exhaustion
+        </h3>
+        <p className="mb-4">Persistent fatigue, sleep disturbances, or changes in appetite.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Emotional Changes
+        </h3>
+        <p className="mb-4">Increased irritability, anxiety, depression, or mood swings.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Social Withdrawal
+        </h3>
+        <p className="mb-4">Loss of interest in previously enjoyed activities or avoiding social interactions.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Health Issues
+        </h3>
+        <p className="mb-4">Frequent illnesses, headaches, or other physical ailments.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Cognitive Problems
+        </h3>
+        <p className="mb-6">Difficulty concentrating or making decisions.</p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           Prevention Strategies
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-4">
-          <li>
-            <strong>Set Realistic Expectations</strong>
-            <p>Understand that you can't do everything alone. It's okay to ask for help and set boundaries.</p>
-          </li>
-          <li>
-            <strong>Practice Self-Care</strong>
-            <p>Make time for yourself, exercise regularly, eat well, and get enough sleep.</p>
-          </li>
-          <li>
-            <strong>Build a Support Network</strong>
-            <p>Connect with other caregivers, join support groups, and maintain relationships with friends and family.</p>
-          </li>
-          <li>
-            <strong>Use Available Resources</strong>
-            <p>Take advantage of respite care, adult day care centers, and other support services.</p>
-          </li>
-          <li>
-            <strong>Stay Organized</strong>
-            <p>Keep a calendar, make to-do lists, and establish routines to reduce stress and anxiety.</p>
-          </li>
-        </ol>
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Set Realistic Expectations
+        </h3>
+        <p className="mb-4">Acknowledge personal limits and seek assistance when necessary.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Practice Self-Care
+        </h3>
+        <p className="mb-4">Engage in regular exercise, maintain a balanced diet, and ensure adequate rest.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Build a Support Network
+        </h3>
+        <p className="mb-4">Connect with other caregivers, join support groups, and maintain relationships with friends and family.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Utilize Available Resources
+        </h3>
+        <p className="mb-4">Explore respite care, adult day care centers, and other support services.</p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Stay Organized
+        </h3>
+        <p className="mb-6">Use calendars, to-do lists, and establish routines to manage tasks effectively.</p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           How Positive Check Can Help
         </h2>
 
-        <p>
-          One effective way to prevent caregiver burnout is to share the responsibility of checking in on your loved one. Positive Check's daily check-in service can provide:
+        <p className="mb-4">
+          Positive Check offers services designed to support caregivers and their loved ones:
         </p>
 
-        <ul className="list-disc pl-6 space-y-4">
-          <li>Regular wellness checks to ensure your loved one is safe and well</li>
-          <li>Peace of mind knowing someone is monitoring their well-being</li>
-          <li>Time for you to focus on self-care and other responsibilities</li>
-          <li>Professional support in maintaining your loved one's independence</li>
-          <li>Regular updates about your loved one's condition and needs</li>
+        <ul className="list-disc pl-6 space-y-4 mb-8">
+          <li><strong>Regular Wellness Checks:</strong> Daily check-ins to ensure the safety and well-being of your loved one.</li>
+          <li><strong>Peace of Mind:</strong> Knowing that this reliable service is calling to check-in and monitoring your loved one's wellbeing allowing caregivers to focus on self-care and other responsibilities.</li>
+          <li><strong>Timely Updates:</strong> Regular reports on your loved one's wellbeing and needs.</li>
         </ul>
 
         <div className="bg-blue-50 p-6 rounded-lg mt-8">
           <p className="font-medium text-lg mb-4">
-            Don't wait until you're experiencing burnout to seek help. Contact Positive Check today to learn how we can support you in caring for your loved one.
+            Don't wait until burnout occurs. Contact Positive Check today to learn how we can support you in caring for your loved one.
           </p>
           <Link
-            href="/get-started"
+            href="/onboarding-wizard"
             className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
           >
-            GET STARTED TODAY
+            Get Started Today
           </Link>
         </div>
       </article>

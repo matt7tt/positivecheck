@@ -13,13 +13,6 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
-    title: "The Impact of AI on Modern Senior Care",
-    date: "March 20, 2024",
-    excerpt: "Discover how artificial intelligence is revolutionizing senior care, from health monitoring to enhanced safety and improved quality of life for aging adults.",
-    image: "../images/senior_tech.jpg",
-    slug: "impact-of-ai-on-senior-care"
-  },
-  {
     title: "How Many Adults Live Far From Aging Parents?",
     date: "January 15, 2025",
     excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
@@ -35,21 +28,21 @@ const BLOG_POSTS = [
   },
   {
     title: "When Should Families Check-In on Aging Loved Ones?",
-    date: "December 10, 2024",
+    date: "March 10, 2024",
     excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes and reduce isolation.",
     image: "../images/happy-senior.jpg",
     slug: "when-should-families-check-in"
   },
   {
     title: "Understanding and Preventing Caregiver Burnout",
-    date: "March 5, 2024",
+    date: "March 8, 2024",
     excerpt: "Caring for an aging loved one is rewarding but can be emotionally and physically demanding. Learn to recognize the signs of burnout and discover effective prevention strategies.",
     image: "../images/caregiver_stress.jpg",
     slug: "understanding-caregiver-burnout"
   },
   {
     title: "Essential Tips for Long-Distance Caregiving",
-    date: "March 3, 2024",
+    date: "March 5, 2024",
     excerpt: "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
     image: "../images/long_distance_care.jpg",
     slug: "tips-for-long-distance-caregiving"

@@ -71,6 +71,28 @@ const convertToUserTimezone = (utcTime: string, userTimezone: string): string =>
   }
 }
 
+const convertDateToUserTimezone = (utcDate: string, userTimezone: string): string => {
+  try {
+    const date = new Date(utcDate);
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      timeZone: userTimezone === 'EST' ? 'America/New_York' :
+                userTimezone === 'CST' ? 'America/Chicago' :
+                userTimezone === 'MST' ? 'America/Denver' :
+                userTimezone === 'PST' ? 'America/Los_Angeles' :
+                userTimezone === 'AKST' ? 'America/Anchorage' :
+                userTimezone === 'HST' ? 'Pacific/Honolulu' : 'UTC'
+    };
+    
+    return date.toLocaleDateString('en-US', options);
+  } catch (error) {
+    console.error('Error converting date timezone:', error);
+    return utcDate; // Fallback to original date if conversion fails
+  }
+}
+
 export function MyAccountComponent() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
@@ -781,7 +803,9 @@ export function MyAccountComponent() {
                       <tbody className="bg-white divide-y divide-gray-200">
                         {userData.callLog.map((log, index) => (
                           <tr key={index}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_date}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                              {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}
+                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_status}</td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}

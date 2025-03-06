@@ -25,97 +25,109 @@ export function MaintainingSocialConnectionsPost() {
         </h1>
 
         <img
-          src="/images/senior-social.jpg"
-          alt="Seniors enjoying social activities together"
+          src="/images/happy-seniors.jpg"
+          alt="Group of senior friends enjoying social time together"
           className="w-full h-[400px] object-cover rounded-lg mb-8"
         />
 
         <p className="lead-paragraph">
-          Social connections play a vital role in maintaining mental and physical health as we age. Discover effective ways to help seniors stay socially active and engaged, preventing isolation and enhancing their quality of life.
+          Maintaining social connections is essential for seniors, significantly impacting their mental, emotional, and physical well-being. Engaging in regular social activities can prevent feelings of isolation and enhance overall quality of life.
         </p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
-          The Importance of Social Connection
+          1. Mental Health Benefits
         </h2>
+        <p className="mb-6">
+          Active social engagement helps prevent depression and anxiety, while also maintaining cognitive functions. Strong social ties have been linked to improved mental health and a reduced risk of cognitive decline.
+        </p>
 
-        <ul className="list-disc pl-6 space-y-4">
-          <li>
-            <strong>Mental Health Benefits</strong>
-            <p>Regular social interaction helps prevent depression and anxiety while maintaining cognitive function</p>
-          </li>
-          <li>
-            <strong>Physical Health Impact</strong>
-            <p>Social engagement often leads to increased physical activity and better self-care habits</p>
-          </li>
-          <li>
-            <strong>Emotional Well-being</strong>
-            <p>Strong social connections provide emotional support and a sense of belonging</p>
-          </li>
-          <li>
-            <strong>Quality of Life</strong>
-            <p>Active social lives contribute to higher life satisfaction and purpose</p>
-          </li>
-        </ul>
+        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          2. Physical Health Impact
+        </h2>
+        <p className="mb-6">
+          Seniors with robust social networks often experience better physical health. Social interactions can lead to increased physical activity and encourage healthier lifestyles, contributing to overall well-being.
+        </p>
+
+        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          3. Emotional Well-being
+        </h2>
+        <p className="mb-6">
+          Having a supportive social circle provides emotional support and a sense of belonging. These connections can boost self-esteem and foster a positive outlook on life.
+        </p>
+
+        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          4. Quality of Life
+        </h2>
+        <p className="mb-6">
+          Engaged seniors often report higher life satisfaction and a stronger sense of purpose. Participating in social activities can lead to more fulfilling and enjoyable experiences.
+        </p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           Ways to Stay Socially Connected
         </h2>
 
-        <ol className="list-decimal pl-6 space-y-4">
-          <li>
-            <strong>Community Involvement</strong>
-            <p>Participate in local senior centers, religious organizations, or community groups</p>
-          </li>
-          <li>
-            <strong>Technology Adoption</strong>
-            <p>Use video calls, social media, and messaging apps to stay in touch with family and friends</p>
-          </li>
-          <li>
-            <strong>Hobby Groups</strong>
-            <p>Join clubs or groups focused on shared interests like gardening, reading, or crafts</p>
-          </li>
-          <li>
-            <strong>Volunteer Work</strong>
-            <p>Give back to the community while meeting new people and staying active</p>
-          </li>
-        </ol>
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Community Involvement
+        </h3>
+        <p className="mb-4">
+          Participating in local senior centers, religious organizations, or community groups offers opportunities to meet new people and engage in meaningful activities.
+        </p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Technology Adoption
+        </h3>
+        <p className="mb-4">
+          Utilizing video calls, social media, and messaging apps can help maintain connections with family and friends, especially when in-person meetings are not possible.
+        </p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Hobby Groups
+        </h3>
+        <p className="mb-4">
+          Joining clubs or groups focused on shared interests, such as gardening, knitting, reading, or crafts, provides both social interaction and personal enjoyment.
+        </p>
+
+        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+          Volunteer Work
+        </h3>
+        <p className="mb-6">
+          Engaging in volunteer activities allows seniors to give back to the community while meeting new people and staying active.
+        </p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           Overcoming Social Barriers
         </h2>
 
-        <ul className="list-disc pl-6 space-y-4">
-          <li><strong>Transportation:</strong> Utilize senior transportation services or ride-sharing apps</li>
-          <li><strong>Technology Challenges:</strong> Seek training or assistance with digital tools</li>
-          <li><strong>Health Limitations:</strong> Find activities that accommodate physical capabilities</li>
-          <li><strong>Location Constraints:</strong> Explore virtual social opportunities and online communities</li>
+        <ul className="list-disc pl-6 space-y-4 mb-8">
+          <li><strong>Transportation:</strong> Utilize senior transportation services or ride-sharing apps to attend social events.</li>
+          <li><strong>Technology Challenges:</strong> Seek training or assistance with digital tools to stay connected online.</li>
+          <li><strong>Health Limitations:</strong> Find activities that accommodate physical capabilities, ensuring participation without strain.</li>
+          <li><strong>Location Constraints:</strong> Explore virtual social opportunities and online communities to maintain connections regardless of location.</li>
         </ul>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
           How Positive Check Supports Social Connection
         </h2>
 
-        <p>
+        <p className="mb-4">
           At Positive Check, we understand the importance of social connections and provide services that help seniors stay engaged:
         </p>
 
-        <ul className="list-disc pl-6 space-y-4">
-          <li>Regular friendly check-ins from caring staff</li>
-          <li>Connection to local community resources and activities</li>
-          <li>Support in using technology for social engagement</li>
-          <li>Family updates to maintain strong connections</li>
-          <li>Recommendations for social activities and groups</li>
+        <ul className="list-disc pl-6 space-y-4 mb-8">
+          <li><strong>Regular Friendly Check-ins:</strong> Our caring staff conducts consistent check-ins to ensure well-being and provide companionship.</li>
+          <li><strong>Family Updates:</strong> We keep families informed about their loved one's social activities and well-being, fostering stronger connections.</li>
+          <li><strong>Activity Recommendations:</strong> We suggest social activities and groups that align with individual preferences, encouraging active participation.</li>
         </ul>
 
         <div className="bg-blue-50 p-6 rounded-lg mt-8">
           <p className="font-medium text-lg mb-4">
-            Let Positive Check help your loved one maintain meaningful social connections while ensuring their safety and well-being.
+            Let Positive Check assist your loved one in maintaining meaningful social connections while ensuring their safety and well-being.
           </p>
           <Link
-            href="/get-started"
+            href="/onboarding-wizard"
             className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
           >
-            GET STARTED TODAY
+            Get Started Today
           </Link>
         </div>
       </article>
