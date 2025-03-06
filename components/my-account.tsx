@@ -93,6 +93,12 @@ const convertDateToUserTimezone = (utcDate: string, userTimezone: string): strin
   }
 }
 
+const toCamelCase = (str: string): string => {
+  return str.toLowerCase().replace(/_/g, ' ').replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => 
+    index === 0 ? word.toUpperCase() : word.toUpperCase()
+  );
+}
+
 export function MyAccountComponent() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
@@ -806,7 +812,9 @@ export function MyAccountComponent() {
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_status}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                              {toCamelCase(log.call_status)}
+                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}
                             </td>
