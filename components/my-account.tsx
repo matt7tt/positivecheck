@@ -541,7 +541,16 @@ export function MyAccountComponent() {
     }
   }
 
-  const paginate = (items: any[], pageNumber: number, itemsPerPage: number) => {
+  type CallLogEntry = {
+    call_date: string;
+    call_status: string;
+    call_start: string;
+    call_end: string;
+    call_duration: string;
+    call_issues: string;
+  };
+
+  const paginate = (items: CallLogEntry[], pageNumber: number, itemsPerPage: number): CallLogEntry[] => {
     const startIndex = (pageNumber - 1) * itemsPerPage;
     return items.slice(startIndex, startIndex + itemsPerPage);
   };
@@ -875,7 +884,7 @@ export function MyAccountComponent() {
                         <p className="text-gray-600">Monthly Subscription</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-semibold text-[#1a2642]">$15.00/month</p>
+                        <p className="font-semibold text-[#1a2642]">$20.00/month</p>
                         <Button 
                           onClick={redirectToCustomerPortal}
                           className="mt-2 px-4 py-2 bg-[#1a2642] hover:bg-[#2a3752] text-white rounded"
