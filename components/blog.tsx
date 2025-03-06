@@ -23,7 +23,7 @@ const BLOG_POSTS = [
     title: "Maintaining Social Connections in Senior Years",
     date: "March 12, 2024",
     excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
-    image: "../images/senior_social.jpg",
+    image: "../images/happy_seniors.jpg",
     slug: "maintaining-social-connections"
   },
   {
@@ -37,14 +37,14 @@ const BLOG_POSTS = [
     title: "Understanding and Preventing Caregiver Burnout",
     date: "March 8, 2024",
     excerpt: "Caring for an aging loved one is rewarding but can be emotionally and physically demanding. Learn to recognize the signs of burnout and discover effective prevention strategies.",
-    image: "../images/caregiver_stress.jpg",
+    image: "../images/happy-senior-and-caregiver.jpg",
     slug: "understanding-caregiver-burnout"
   },
   {
     title: "Essential Tips for Long-Distance Caregiving",
     date: "March 5, 2024",
     excerpt: "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
-    image: "../images/long_distance_care.jpg",
+    image: "../images/senior-on-the-phone.jpg",
     slug: "tips-for-long-distance-caregiving"
   },
   {
