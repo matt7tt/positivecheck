@@ -23,7 +23,7 @@ const BLOG_POSTS = [
     title: "Maintaining Social Connections in Senior Years",
     date: "March 12, 2024",
     excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
-    image: "../images/happy_seniors.jpg",
+    image: "../images/happy-seniors.jpg",
     slug: "maintaining-social-connections"
   },
   {

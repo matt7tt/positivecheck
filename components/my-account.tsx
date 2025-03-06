@@ -99,6 +99,10 @@ const toCamelCase = (str: string): string => {
   );
 }
 
+const removeSummaryPrefix = (text: string): string => {
+  return text.replace(/^Summary:\s*/i, '');
+}
+
 export function MyAccountComponent() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(true)
@@ -149,6 +153,8 @@ export function MyAccountComponent() {
     'account-info': false,
     'call-log': false
   })
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 10;
 
   const handleInputChange = (
     section: 'accountInfo' | 'callerInfo' | 'callPreferences' | 'questions',
@@ -535,6 +541,11 @@ export function MyAccountComponent() {
     }
   }
 
+  const paginate = (items: any[], pageNumber: number, itemsPerPage: number) => {
+    const startIndex = (pageNumber - 1) * itemsPerPage;
+    return items.slice(startIndex, startIndex + itemsPerPage);
+  };
+
   return (
     <>
       <Toaster 
@@ -807,7 +818,7 @@ export function MyAccountComponent() {
                         </tr>
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
-                        {userData.callLog.map((log, index) => (
+                        {paginate(userData.callLog, currentPage, rowsPerPage).map((log, index) => (
                           <tr key={index}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}
@@ -819,11 +830,34 @@ export function MyAccountComponent() {
                               {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_duration}</td>
-                            <td className="px-6 py-4 text-sm text-gray-900 break-words">{log.call_issues}</td>
+                            <td className="px-6 py-4 text-sm text-gray-900 break-words">
+                              {removeSummaryPrefix(log.call_issues)}
+                            </td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
+                    {userData.callLog.length > rowsPerPage && (
+                      <div className="px-6 py-4 flex justify-between items-center border-t">
+                        <button
+                          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                          disabled={currentPage === 1}
+                          className="px-4 py-2 text-sm font-medium text-[#1a2642] bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          Previous
+                        </button>
+                        <span className="text-sm text-gray-700">
+                          Page {currentPage} of {Math.ceil(userData.callLog.length / rowsPerPage)}
+                        </span>
+                        <button
+                          onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(userData.callLog.length / rowsPerPage)))}
+                          disabled={currentPage === Math.ceil(userData.callLog.length / rowsPerPage)}
+                          className="px-4 py-2 text-sm font-medium text-[#1a2642] bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          Next
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>,
                 <div>Call log cannot be edited</div>
