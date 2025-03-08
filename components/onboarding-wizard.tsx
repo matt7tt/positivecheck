@@ -43,13 +43,13 @@ const getStepRecommendation = (step: number): string => {
     case 2:
       return "Start with a small set of questions to encourage engagement. Make changes at any time.";
     case 3:
-      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+      return "";
     case 4:
-      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+      return "";
     case 5:
-      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+      return "";
     default:
-      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+      return "";
   }
 }
 
@@ -74,6 +74,7 @@ export function OnboardingWizardComponent() {
     accountEmail: '',
     accountPassword: '',
     signUpCode: '',
+    relationship: '',
     priceId: 'price_1Qoxf8ChFWcVeCaxsEQ4mOFt',
     amount: 20.00
   })
@@ -190,6 +191,7 @@ export function OnboardingWizardComponent() {
         caller_preferred_name: formData.preferredName,
         caller_phone: `+1${formData.phone.replace(/\D/g, '')}`,
         caller_language: formData.language,
+        relationship: formData.relationship,
         questions: formData.questions
           .filter(q => q.selected)
           .map(q => q.id)
@@ -449,7 +451,7 @@ export function OnboardingWizardComponent() {
                 {step === 3 && (
                   <form onSubmit={(e) => { e.preventDefault(); handleNext(); }} className="space-y-6">
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-[#1a2642]">Who will Lola be calling?</h2>
+                      <h2 className="text-xl font-semibold text-[#1a2642]">Who will we be calling?</h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="firstName">First Name</Label>
@@ -614,19 +616,38 @@ export function OnboardingWizardComponent() {
                           />
                         </div>
                       </div>
-                      <div>
-                        <Label htmlFor="accountPhone">Phone</Label>
-                        <Input
-                          id="accountPhone"
-                          name="accountPhone"
-                          type="tel"
-                          value={formData.accountPhone}
-                          onChange={handleInputChange}
-                          placeholder="(555) 555-5555"
-                          required
-                          pattern="\(\d{3}\) \d{3}-\d{4}"
-                          className="w-full p-2 border rounded"
-                        />
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="relationship">Your relationship to the person we are calling? <span className="text-red-500">*</span></Label>
+                          <Select onValueChange={(value) => handleSelectChange('relationship', value)} required>
+                            <SelectTrigger id="relationship">
+                              <SelectValue placeholder="Select relationship" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Son">Son</SelectItem>
+                              <SelectItem value="Daughter">Daughter</SelectItem>
+                              <SelectItem value="Cousin">Cousin</SelectItem>
+                              <SelectItem value="Uncle">Uncle</SelectItem>
+                              <SelectItem value="Aunt">Aunt</SelectItem>
+                              <SelectItem value="Friend">Friend</SelectItem>
+                              <SelectItem value="Neighbor">Neighbor</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div>
+                          <Label htmlFor="accountPhone">Phone</Label>
+                          <Input
+                            id="accountPhone"
+                            name="accountPhone"
+                            type="tel"
+                            value={formData.accountPhone}
+                            onChange={handleInputChange}
+                            placeholder="(555) 555-5555"
+                            required
+                            pattern="\(\d{3}\) \d{3}-\d{4}"
+                            className="w-full p-2 border rounded"
+                          />
+                        </div>
                       </div>
                       <div>
                         <Label htmlFor="accountEmail">Email</Label>

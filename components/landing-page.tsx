@@ -92,6 +92,17 @@ export function LandingPageComponent() {
           </div>
         </section>
 
+        <section className="bg-[#f8f9ff] py-12 text-center">
+          <div className="container mx-auto px-4">
+            <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-4`}>
+              Stay Connected, Stay Informed
+            </h2>
+            <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
+              Because You Cannot Always Be There
+            </p>
+          </div>
+        </section>
+
         <section className="bg-[#F598FF] py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
