@@ -498,10 +498,10 @@ export function OnboardingWizardComponent() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="timezone">Timezone</Label>
+                        <Label htmlFor="timezone">Time Zone</Label>
                         <Select onValueChange={(value) => handleSelectChange('timezone', value)} required>
                           <SelectTrigger id="timezone">
-                            <SelectValue placeholder="Select timezone" />
+                            <SelectValue placeholder="Select Time Zone" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem value="EST">Eastern Time (ET)</SelectItem>

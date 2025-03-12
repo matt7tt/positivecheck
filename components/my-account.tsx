@@ -732,11 +732,11 @@ export function MyAccountComponent() {
                   <p>Name: {userData.callerInfo.firstName} {userData.callerInfo.lastName}</p>
                   <p>Preferred Name: {userData.callerInfo.preferredName}</p>
                   <p>Phone: {userData.callerInfo.userphone}</p>
-                  <p>Timezone: {userData.callerInfo.timezone}</p>
+                  <p>Time Zone: {userData.callerInfo.timezone}</p>
                 </div>,
                 <div className="space-y-2">
                   <input 
-                    type="text" 
+                    type="text"
                     value={userData.callerInfo.firstName}
                     onChange={(e) => handleInputChange('callerInfo', 'firstName', e.target.value)}
                     placeholder="First Name"
