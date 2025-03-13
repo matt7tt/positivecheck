@@ -580,7 +580,7 @@ export function MyAccountComponent() {
     return items.slice(startIndex, startIndex + itemsPerPage);
   };
 
-  const calculateCallStatistics = (callLog: any[]) => {
+  const calculateCallStatistics = (callLog: CallLogEntry[]) => {
     const totalCalls = callLog.length
     const contactMade = callLog.filter(log => log.call_status === 'Contact Made').length
     const contactNotMade = totalCalls - contactMade
