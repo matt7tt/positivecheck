@@ -484,31 +484,34 @@ export function MyAccountComponent() {
   // Add logout function
   const handleLogout = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+      // First, clear the auth cookie and state regardless of server response
+      document.cookie = 'auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+      setIsAuthenticated(false)
+      
+      // Attempt to notify the server, but don't wait for it
+      fetch(`${API_BASE_URL}/api/auth/logout`, {
         method: 'POST',
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
         },
+      }).catch(error => {
+        console.error('Logout server notification failed:', error)
+        // Server notification failed, but user is still logged out locally
       })
-
-      if (!response.ok) {
-        throw new Error('Logout failed')
-      }
-
-      // Clear auth cookie
-      document.cookie = 'auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       
-      // Update auth context
-      setIsAuthenticated(false)
-      
-      // Redirect to sign in page
+      // Redirect to sign in page immediately
       router.push('/sign-in')
       
     } catch (error) {
       console.error('Logout error:', error)
-      toast.error('Error logging out. Please try again.')
+      toast.error('Error during logout, please try again or close your browser.')
+      
+      // Force logout anyway for security
+      document.cookie = 'auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+      setIsAuthenticated(false)
+      router.push('/sign-in')
     }
   }
 
