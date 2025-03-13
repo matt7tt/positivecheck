@@ -336,6 +336,10 @@ export function LandingPageComponent() {
                   answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable."
                 },
                 {
+                  question: "How do I prepare for the first call?",
+                  answer: "Please inform the person receiving the calls you care for their wellbeing and that you signed up for a wellness check-in call service called Positive Check. Lola from Positive Check will be calling and will be asking questions about your wellbeing. If the person receiving the calls has caller ID, incoming calls will be coming from 866-605-8571."
+                },
+                {
                   question: "How does Positive Check support seniors' independence?",
                   answer: "By checking in daily, Lola helps seniors feel connected while promoting healthy habits like regular meals, sleep, and medication adherence. This proactive care allows them to stay in their homes longer, with confidence and dignity."
                 },
