@@ -527,6 +527,9 @@ export function OnboardingWizardComponent() {
                           <SelectContent>
                             <SelectItem value="English">English</SelectItem>
                             <SelectItem value="Spanish">Spanish</SelectItem>
+                            <SelectItem value="French">French</SelectItem>
+                            <SelectItem value="Mandarin">Mandarin</SelectItem>
+                            <SelectItem value="Korean">Korean</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
