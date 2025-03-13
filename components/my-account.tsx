@@ -701,7 +701,7 @@ export function MyAccountComponent() {
                         <Checkbox
                           id={day}
                           checked={userData.callPreferences.callDays.includes(day)}
-                          onCheckedChange={(checked) => {
+                          onCheckedChange={(checked: boolean) => {
                             const newDays = checked
                               ? [...userData.callPreferences.callDays, day]
                               : userData.callPreferences.callDays.filter(d => d !== day)
