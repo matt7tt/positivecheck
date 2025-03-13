@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 // import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle, UserCircle } from 'lucide-react'
+import { PhoneCall, Calendar, User, CreditCard, Edit2, Save, Clock, HelpCircle, UserCircle, BarChart2, Smile, Frown, Meh } from 'lucide-react'
 import toast, { Toaster } from 'react-hot-toast'
 import Image from 'next/image'
 import { PublicFooter } from "@/components/shared/public-footer"
@@ -152,7 +152,9 @@ export function MyAccountComponent() {
     'questions': false,
     'caller-info': false,
     'account-info': false,
-    'call-log': false
+    'call-log': false,
+    'dashboard': false,
+    'billing': false
   })
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
@@ -330,7 +332,7 @@ export function MyAccountComponent() {
   }
 
   // Add edit toggle function
-  const toggleEdit = (section: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log') => {
+  const toggleEdit = (section: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'dashboard' | 'billing') => {
     setEditMode(prev => ({
       ...prev,
       [section]: !prev[section]
@@ -338,7 +340,7 @@ export function MyAccountComponent() {
   }
 
   // Add save handler function
-  const handleSave = async (section: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log') => {
+  const handleSave = async (section: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'dashboard' | 'billing') => {
     try {
       const cookies = document.cookie.split(';')
       const authCookie = cookies.find(c => c.trim().startsWith('auth_token='))
@@ -399,6 +401,16 @@ export function MyAccountComponent() {
           // Call log is read-only, no save needed
           setEditMode(prev => ({ ...prev, [section]: false }))
           return
+        case 'dashboard':
+          // Dashboard is read-only, no save needed
+          setEditMode(prev => ({ ...prev, [section]: false }))
+          return
+        case 'billing':
+          endpoint = '/api/users/me/billing'
+          data = {
+            stripeCustomerId: userData.billing.stripeCustomerId,
+          }
+          break
       }
 
       const response = await fetch(`${API_BASE_URL}${endpoint}`, {
@@ -443,7 +455,7 @@ export function MyAccountComponent() {
   const renderSection = (
     title: string,
     icon: React.ReactNode,
-    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'billing',
+    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'billing' | 'dashboard',
     content: React.ReactNode,
     editContent: React.ReactNode
   ) => (
@@ -453,7 +465,7 @@ export function MyAccountComponent() {
           {icon}
           {title}
         </div>
-        {sectionId !== 'call-log' && sectionId !== 'billing' && (
+        {sectionId !== 'call-log' && sectionId !== 'dashboard' && sectionId !== 'billing' && (
           <button
             onClick={() => editMode[sectionId] ? handleSave(sectionId) : toggleEdit(sectionId)}
             className="p-2 hover:bg-gray-100 rounded-full"
@@ -473,9 +485,10 @@ export function MyAccountComponent() {
 
   // Update the navItems array order
   const navItems = [
+    { id: 'dashboard', label: 'Dashboard', icon: <BarChart2 className="h-5 w-5" /> },
     { id: 'call-log', label: 'Call Log', icon: <Clock className="h-5 w-5" /> },
     { id: 'call-preferences', label: 'Call Preferences', icon: <PhoneCall className="h-5 w-5" /> },
-    { id: 'questions', label: 'Questions', icon: <Calendar className="h-5 w-5" /> },
+    { id: 'questions', label: 'Questions', icon: <HelpCircle className="h-5 w-5" /> },
     { id: 'caller-info', label: 'Caller Info', icon: <User className="h-5 w-5" /> },
     { id: 'account-info', label: 'Account Info', icon: <UserCircle className="h-5 w-5" /> },
     { id: 'billing', label: 'Billing', icon: <CreditCard className="h-5 w-5" /> },
@@ -566,6 +579,30 @@ export function MyAccountComponent() {
     const startIndex = (pageNumber - 1) * itemsPerPage;
     return items.slice(startIndex, startIndex + itemsPerPage);
   };
+
+  const calculateCallStatistics = (callLog: any[]) => {
+    const totalCalls = callLog.length
+    const contactMade = callLog.filter(log => log.call_status === 'Contact Made').length
+    const contactNotMade = totalCalls - contactMade
+    const contactRate = totalCalls > 0 ? (contactMade / totalCalls * 100).toFixed(1) : '0'
+
+    return {
+      contactMade,
+      contactNotMade,
+      contactRate
+    }
+  }
+
+  const getSentimentIcon = (sentiment: string) => {
+    switch(sentiment.toLowerCase()) {
+      case 'positive':
+        return <Smile className="h-6 w-6 text-green-500" />
+      case 'negative':
+        return <Frown className="h-6 w-6 text-red-500" />
+      default:
+        return <Meh className="h-6 w-6 text-yellow-500" />
+    }
+  }
 
   return (
     <>
@@ -783,7 +820,7 @@ export function MyAccountComponent() {
 
               {activeSection === 'account-info' && renderSection(
                 "Account Info",
-                <CreditCard className="h-5 w-5" />,
+                <UserCircle className="h-5 w-5" />,
                 'account-info',
                 <div>
                   <p>Name: {userData.accountInfo.firstName} {userData.accountInfo.lastName}</p>
@@ -913,6 +950,87 @@ export function MyAccountComponent() {
                   </div>
                 </div>,
                 <div>Loading...</div>
+              )}
+
+              {activeSection === 'dashboard' && renderSection(
+                "Dashboard",
+                <BarChart2 className="h-5 w-5" />,
+                'dashboard',
+                <div className="space-y-6">
+                  {/* Call Statistics Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-white p-6 rounded-lg shadow">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Contact Rate</h3>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-3xl font-bold text-[#1a2642]">{calculateCallStatistics(userData.callLog).contactRate}%</p>
+                          <p className="text-sm text-gray-600">Successful Contacts</p>
+                        </div>
+                        <PhoneCall className="h-8 w-8 text-[#1a2642] opacity-20" />
+                      </div>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Contact Summary</h3>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Made</span>
+                          <span className="text-sm font-semibold text-green-600">{calculateCallStatistics(userData.callLog).contactMade}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Not Made</span>
+                          <span className="text-sm font-semibold text-red-600">{calculateCallStatistics(userData.callLog).contactNotMade}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Last Contact</h3>
+                      <div className="space-y-1">
+                        {userData.callLog[0] ? (
+                          <>
+                            <p className="text-sm text-gray-600">
+                              {convertDateToUserTimezone(userData.callLog[0].call_date, userData.callerInfo.timezone)}
+                            </p>
+                            <p className="text-sm font-semibold text-[#1a2642]">
+                              {convertToUserTimezone(userData.callLog[0].call_start, userData.callerInfo.timezone)}
+                            </p>
+                          </>
+                        ) : (
+                          <p className="text-sm text-gray-600">No calls recorded</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Question Response Sections */}
+                  <div className="space-y-6">
+                    <h3 className="text-xl font-semibold text-[#1a2642]">Recent Responses</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {userData.questions.filter(q => q.selected).map((question, index) => (
+                        <div key={index} className="bg-white p-6 rounded-lg shadow">
+                          <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
+                          {userData.callLog[0] && (
+                            <div className="space-y-2">
+                              <p className="text-sm text-gray-600">Latest Response:</p>
+                              <div className="flex items-center gap-2">
+                                {getSentimentIcon('positive')}
+                                <span className="text-sm font-medium">Positive</span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Weekly Trend */}
+                  {userData.weeklyLearning && (
+                    <div className="bg-blue-50 p-6 rounded-lg">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Weekly Insight</h3>
+                      <p className="text-sm text-blue-800">{userData.weeklyLearning}</p>
+                    </div>
+                  )}
+                </div>,
+                <div>Dashboard cannot be edited</div>
               )}
             </div>
           </div>
