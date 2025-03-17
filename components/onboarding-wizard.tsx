@@ -634,6 +634,9 @@ export function OnboardingWizardComponent() {
                               <SelectItem value="Aunt">Aunt</SelectItem>
                               <SelectItem value="Friend">Friend</SelectItem>
                               <SelectItem value="Neighbor">Neighbor</SelectItem>
+                              <SelectItem value="Niece">Niece</SelectItem>
+                              <SelectItem value="Nephew">Nephew</SelectItem>
+                              <SelectItem value="Caregiver">Caregiver</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>

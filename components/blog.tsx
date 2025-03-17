@@ -13,6 +13,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention",
+    date: "March 17, 2025",
+    excerpt: "While care communities strive to provide quality service, regular family check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
+    image: "/images/seniors-in-community.jpg",
+    slug: "importance-of-checking-in-care-communities"
+  },
+  {
     title: "How Many Adults Live Far From Aging Parents?",
     date: "September 15, 2024",
     excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
@@ -21,7 +28,7 @@ const BLOG_POSTS = [
   },
   {
     title: "Maintaining Social Connections in Senior Years",
-    date: "March 12, 2025",
+    date: "March 10, 2025",
     excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
     image: "../images/happy-seniors.jpg",
     slug: "maintaining-social-connections"

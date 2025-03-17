@@ -29,8 +29,6 @@ export function CheckingInOnSeniorsPost() {
         The Importance of Checking In on Seniors Living Alone
       </h1>
       
-      <div className="text-gray-500 mb-8">Published on March 2, 2025</div>
-      
       <div className="prose max-w-none">
         <p className="mb-4">
           As family members age, many choose to live independently in their own homes. While this choice provides comfort and familiarity, it also comes with risks. Seniors living alone may face challenges such as social isolation, health emergencies, and difficulty managing daily tasks. Regular check-ins from Positive Check can make a significant difference in their well-being and overall quality of life.
