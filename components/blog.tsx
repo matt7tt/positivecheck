@@ -14,49 +14,49 @@ const spaceGrotesk = Space_Grotesk({
 const BLOG_POSTS = [
   {
     title: "How Many Adults Live Far From Aging Parents?",
-    date: "January 15, 2025",
+    date: "September 15, 2024",
     excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
     image: "../images/grandma-with-son-and-grandson.jpg",
     slug: "how-many-adults-live-far-from-aging-parents"
   },
   {
     title: "Maintaining Social Connections in Senior Years",
-    date: "March 12, 2024",
+    date: "March 12, 2025",
     excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
     image: "../images/happy-seniors.jpg",
     slug: "maintaining-social-connections"
   },
   {
     title: "When Should Families Check-In on Aging Loved Ones?",
-    date: "March 10, 2024",
+    date: "February 10, 2025",
     excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes and reduce isolation.",
     image: "../images/happy-senior.jpg",
     slug: "when-should-families-check-in"
   },
   {
     title: "Understanding and Preventing Caregiver Burnout",
-    date: "March 8, 2024",
+    date: "January 8, 2025",
     excerpt: "Caring for an aging loved one is rewarding but can be emotionally and physically demanding. Learn to recognize the signs of burnout and discover effective prevention strategies.",
     image: "../images/happy-senior-and-caregiver.jpg",
     slug: "understanding-caregiver-burnout"
   },
   {
     title: "Essential Tips for Long-Distance Caregiving",
-    date: "March 5, 2024",
+    date: "December 5, 2024",
     excerpt: "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
     image: "../images/senior-on-the-phone.jpg",
     slug: "tips-for-long-distance-caregiving"
   },
   {
     title: "10 Signs Your Loved One Could Benefit from a Caregiver's Check-In Service",
-    date: "February 8, 2025",
+    date: "October 8, 2024",
     excerpt: "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could be beneficial.",
     image: "../images/happy-senior-2.jpg",
     slug: "signs-loved-one-needs-caregiver-check-in"
   },
   {
     title: "The Importance of Checking In on Seniors Living Alone",
-    date: "March 2, 2025",
+    date: "November 2, 2024",
     excerpt: "Regular check-ins are vital for seniors living independently. Learn why these visits matter and how they contribute to better health outcomes and quality of life.",
     image: "../images/happy_senior_headphones.jpg",
     slug: "checking-in-on-seniors"
