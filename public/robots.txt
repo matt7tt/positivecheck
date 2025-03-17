@@ -11,6 +11,7 @@ Disallow: /my-account
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
+Disallow: /private/
 
 # Sitemap location
 Sitemap: https://www.positivecheck.com/sitemap.xml 

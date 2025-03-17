@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-// import Image from 'next/image'
+import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -14,6 +14,7 @@ import { useState, useEffect } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
 import { PublicFooter } from "@/components/shared/public-footer"
+import Script from 'next/script'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -56,6 +57,36 @@ export function LandingPageComponent() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Script id="structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "HealthAndBeautyBusiness",
+            "name": "Positive Check",
+            "description": "Daily wellness check-in calls for seniors using AI companion Lola",
+            "url": "https://www.positivecheck.com",
+            "priceRange": "$20/month",
+            "telephone": "866-605-8571",
+            "areaServed": "United States",
+            "serviceType": "Senior Care Services",
+            "offers": {
+              "@type": "Offer",
+              "price": "20",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "description": "Daily wellness check-in calls for seniors"
+            },
+            "service": {
+              "@type": "Service",
+              "serviceType": "Senior Care",
+              "provider": {
+                "@type": "Organization",
+                "name": "Positive Check"
+              }
+            }
+          }
+        `}
+      </Script>
       <Toaster position="bottom-center" containerStyle={{ bottom: 100 }} />
       <PublicHeader currentPage="home" />
 
@@ -81,10 +112,13 @@ export function LandingPageComponent() {
             </div>
             <div className="relative h-[400px] lg:h-[600px]" role="img" aria-label="A senior person enjoying a phone conversation in a cozy setting">
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <img
+                <Image
                   alt="A senior person enjoying a phone conversation in a cozy setting with warm lighting"
-                  className="object-cover w-full h-full"
+                  className="object-cover"
                   src="/images/senior-talking-on-the-phone1.jpeg"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
                 />
               </div>
             </div>
@@ -107,10 +141,12 @@ export function LandingPageComponent() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-[400px] lg:h-[500px] ml-4">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                  <img
+                  <Image
                     alt="Healthcare professional in pink scrubs working at a computer with a headset"
-                    className="object-cover w-full h-full"
+                    className="object-cover"
                     src="/images/lola-from-positive-check.jpeg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -417,11 +453,13 @@ export function LandingPageComponent() {
           <div className="container mx-auto px-4">
             <blockquote className="max-w-3xl mx-auto">
               <div className="flex flex-col lg:flex-row items-center gap-8">
-                <div className="w-32 h-32 flex-shrink-0 rounded-full overflow-hidden">
-                  <img
+                <div className="w-32 h-32 flex-shrink-0 rounded-full overflow-hidden relative">
+                  <Image
                     alt="Senior woman smiling at the beach"
                     src="/images/senior-at-the-beach.jpeg"
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="128px"
+                    className="object-cover"
                   />
                 </div>
                 <div>
