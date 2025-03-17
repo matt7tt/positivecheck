@@ -105,7 +105,7 @@ export function LandingPageComponent() {
               <Link 
                 href="/onboarding-wizard"
                 aria-label="Start your sign up process"
-                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md`}
+                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
               >
                 SIGN UP
               </Link>
@@ -180,7 +180,7 @@ export function LandingPageComponent() {
                 <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
                 <Link href="/onboarding-wizard">
                   <Button 
-                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md mt-4`}
+                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
                     SIGN UP
                   </Button>
@@ -198,9 +198,9 @@ export function LandingPageComponent() {
             </h2>
             <Button 
               onClick={playAudio}
-              className="flex items-center gap-2 bg-[#1a2642] hover:bg-[#2a3752] text-white"
+              className="flex items-center gap-2 bg-[#1a2642] hover:bg-[#2a3752] text-white p-4 min-h-[44px] min-w-[44px]"
             >
-              <Volume2 className="h-4 w-4" />
+              <Volume2 className="h-5 w-5" />
               Click to hear Lola
             </Button>
           </div>
@@ -278,7 +278,7 @@ export function LandingPageComponent() {
             <div className="text-center mt-12">
               <Link href="/onboarding-wizard">
                 <Button 
-                  className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md`}
+                  className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                 >
                   SIGN UP
                 </Button>
@@ -339,7 +339,7 @@ export function LandingPageComponent() {
 
                 <Link href="/onboarding-wizard">
                   <Button 
-                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md`}
+                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
                     SIGN UP
                   </Button>
@@ -412,7 +412,7 @@ export function LandingPageComponent() {
                   className="border border-gray-200 rounded-lg overflow-hidden"
                 >
                   <button
-                    className="flex items-center justify-between w-full p-6 cursor-pointer bg-white hover:bg-gray-50"
+                    className="flex items-center justify-between w-full p-6 cursor-pointer bg-white hover:bg-gray-50 min-h-[44px]"
                     onClick={() => {
                       const newExpanded = new Set(expandedFaqs)
                       if (newExpanded.has(index)) {
@@ -611,12 +611,18 @@ export function LandingPageComponent() {
                     <Textarea id="message" name="message" required />
                   </div>
                   <div className="flex items-center">
-                    <input id="newsletter" name="newsletter" type="checkbox" className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded" defaultChecked/>
-                    <label htmlFor="newsletter" className="ml-2 block text-sm text-gray-700">
+                    <input 
+                      id="newsletter" 
+                      name="newsletter" 
+                      type="checkbox" 
+                      className="h-5 w-5 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded cursor-pointer"
+                      defaultChecked
+                    />
+                    <label htmlFor="newsletter" className="ml-3 block text-sm text-gray-700 cursor-pointer py-2">
                       Sign up for news and updates
                     </label>
                   </div>
-                  <Button type="submit" className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white">
+                  <Button type="submit" className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-4 min-h-[44px]">
                     Submit
                   </Button>
                 </form>
@@ -637,7 +643,7 @@ export function LandingPageComponent() {
           <p className="text-gray-600">We use cookies to improve your experience.</p>
           <button
             onClick={acceptCookies}
-            className="bg-[#1a2642] text-white px-3 py-1 rounded-md hover:bg-[#2a3752] text-sm whitespace-nowrap"
+            className="bg-[#1a2642] text-white px-4 py-3 rounded-md hover:bg-[#2a3752] text-sm whitespace-nowrap min-h-[44px] min-w-[44px]"
           >
             Got it
           </button>
