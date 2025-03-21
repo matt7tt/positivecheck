@@ -22,6 +22,7 @@ interface PaymentWrapperProps {
     firstName: string;
     lastName: string;
     preferredName: string;
+    relationship: string;
     phone: string;
     language: string;
     questions: { id: number; selected: boolean }[];
@@ -61,6 +62,7 @@ const PaymentWrapper: React.FC<PaymentWrapperProps> = ({ formData, onBack, isLoa
           caller_language: formData.language,
           questions: formData.questions.filter(q => q.selected).map(q => q.id),
           price_id: formData.priceId,
+          relationship: formData.relationship,
         }),
       })
         .then(response => response.json())
