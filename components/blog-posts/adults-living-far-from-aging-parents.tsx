@@ -112,7 +112,7 @@ export function AdultsLivingFarFromParentsPost() {
             Don't let distance prevent you from ensuring your parents receive the care they need. Let Positive Check be your trusted partner in long-distance caregiving.
           </p>
           <Link
-            href="/get-started"
+            href="/onboarding-wizard"
             className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
           >
             GET STARTED TODAY

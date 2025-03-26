@@ -80,7 +80,7 @@ export function SignsLovedOneNeedsCaregiverPost() {
         </p>
 
         <Link
-          href="/get-started"
+          href="/onboarding-wizard"
           className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold mt-8 hover:bg-[#2a3752] transition-colors"
         >
           GET STARTED TODAY

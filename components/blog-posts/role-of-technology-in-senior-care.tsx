@@ -112,7 +112,7 @@ export function TechnologyInSeniorCarePost() {
             Experience how Positive Check's technology-enhanced care services can help your loved one maintain independence while ensuring their safety and well-being.
           </p>
           <Link
-            href="/get-started"
+            href="/onboarding-wizard"
             className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
           >
             GET STARTED TODAY
