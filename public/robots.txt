@@ -2,6 +2,7 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
+Allow: /phoenix
 Allow: /blog
 Allow: /contact
 Allow: /onboarding-wizard
@@ -14,4 +15,4 @@ Disallow: /_next/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.positivecheck.com/sitemap.xml 
+Sitemap: https://www.positivecheck.com/sitemap.xml
