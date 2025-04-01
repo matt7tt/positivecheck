@@ -864,11 +864,6 @@ export function MyAccountComponent() {
                 <Clock className="h-5 w-5" />,
                 'call-log',
                 <div className="w-full overflow-x-auto">
-                  {userData.weeklyLearning && (
-                    <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                      <p className="text-sm text-blue-800">{userData.weeklyLearning}</p>
-                    </div>
-                  )}
                   <div className="inline-block min-w-full align-middle">
                     <table className="min-w-full divide-y divide-gray-200">
                       <thead className="bg-gray-50">
@@ -1021,14 +1016,6 @@ export function MyAccountComponent() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Weekly Trend */}
-                  {userData.weeklyLearning && (
-                    <div className="bg-blue-50 p-6 rounded-lg">
-                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Weekly Insight</h3>
-                      <p className="text-sm text-blue-800">{userData.weeklyLearning}</p>
-                    </div>
-                  )}
                 </div>,
                 <div>Dashboard cannot be edited</div>
               )}
