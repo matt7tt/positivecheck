@@ -56,18 +56,30 @@ export function PhoenixLandingPageComponent() {
           __html: `
           {
             "@context": "https://schema.org",
-            "@type": "HealthAndBeautyBusiness",
+            "@type": "LocalBusiness",
             "name": "Positive Check Phoenix",
-            "description": "Daily wellness check-in calls for seniors in Phoenix, Arizona using AI companion Lola",
+            "description": "Daily wellness check-in calls for seniors in Phoenix, Arizona. Providing peace of mind for families with affordable daily check-ins.",
             "url": "https://www.positivecheck.com/phoenix",
             "priceRange": "$20/month",
             "telephone": "866-605-8571",
-            "areaServed": "Phoenix, Arizona",
+            "areaServed": {
+              "@type": "City",
+              "name": "Phoenix",
+              "containedInPlace": {
+                "@type": "State",
+                "name": "Arizona"
+              }
+            },
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Phoenix",
               "addressRegion": "AZ",
               "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "33.4484",
+              "longitude": "-112.0740"
             },
             "serviceType": "Senior Care Services",
             "offers": {
@@ -75,7 +87,7 @@ export function PhoenixLandingPageComponent() {
               "price": "20",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "description": "Daily wellness check-in calls for seniors in Phoenix"
+              "description": "Daily wellness check-in calls for seniors"
             },
             "service": {
               "@type": "Service",
@@ -84,7 +96,11 @@ export function PhoenixLandingPageComponent() {
                 "@type": "Organization",
                 "name": "Positive Check"
               }
-            }
+            },
+            "sameAs": [
+              "https://www.facebook.com/positivecheck",
+              "https://twitter.com/positivecheck"
+            ]
           }
         `
         }}
@@ -98,10 +114,10 @@ export function PhoenixLandingPageComponent() {
             <div className="space-y-8 md:space-y-12 ml-4">
               <div className="space-y-6">
                 <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
-                  Phoenix Senior Wellness Check-In Calls
+                  Senior Wellness Check-In Calls
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-                  Helping Arizona families stay connected with affordable $20/month wellness calls. Perfect for the Valley's heat and sprawling neighborhoods.
+                  Helping Arizona families stay connected with affordable $20/month wellness calls. Peace of mind for you and your loved ones.
                 </p>
               </div>
               <Link 
@@ -142,52 +158,52 @@ export function PhoenixLandingPageComponent() {
         <section className="bg-[#f8f9ff] py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-8 text-center`}>
-              Supporting Phoenix Seniors Through Every Season
+              Supporting Seniors Through Every Season
             </h2>
             
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Beat the Valley Heat
+                  Daily Wellness Support
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Phoenix summers can be dangerous for seniors, with temperatures regularly exceeding 110°F. Daily check-ins ensure your loved ones are staying cool, hydrated, and safe during extreme heat waves.
+                  Our daily check-ins ensure your loved ones are staying healthy and comfortable, especially during Arizona's warm summers. We help monitor well-being and maintain regular routines.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Monitor for signs of heat-related illness</span>
+                    <span>Regular wellness monitoring</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Remind seniors to use air conditioning and stay hydrated</span>
+                    <span>Medication and hydration reminders</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Alert family members if cooling systems fail</span>
+                    <span>Temperature and comfort checks</span>
                   </li>
                 </ul>
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Bridging Phoenix's Sprawling Distances
+                  Connecting Families
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  The Phoenix metro area spans over 14,000 square miles, making it challenging to check in on seniors regularly. Lola provides consistent daily contact no matter where you are in the Valley.
+                  Whether you're across town or across the country, our service helps you stay connected with your loved ones in the Phoenix area through consistent daily contact.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Stay connected across Phoenix's vast neighborhoods</span>
+                    <span>Daily updates on well-being</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Reduce travel time across the metro area</span>
+                    <span>Consistent care monitoring</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Maintain connection during heavy traffic hours</span>
+                    <span>Peace of mind for families</span>
                   </li>
                 </ul>
               </div>
@@ -258,13 +274,13 @@ export function PhoenixLandingPageComponent() {
                   Meet Lola
                 </h2>
                 <p className="text-lg text-[#1a2642]">
-                  Caring for aging loved ones in Phoenix while managing life's responsibilities can be overwhelming.
+                  Caring for aging loved ones while managing life's responsibilities can be overwhelming.
                 </p>
                 <p className="text-lg text-[#1a2642]">
                   That's where Lola comes in. Lola is our caring AI companion that makes regular check-in calls to seniors, asking simple but important questions about their well-being.
                 </p>
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] pt-4`}>
-                  How Lola Helps Phoenix Families
+                  How Lola Helps Families
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
@@ -473,7 +489,7 @@ export function PhoenixLandingPageComponent() {
             <div className="space-y-4 max-w-3xl mx-auto">
               {[
                 {
-                  question: "Why should I choose Positive Check in Phoenix?",
+                  question: "Why should I choose Positive Check?",
                   answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give Phoenix families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable, especially during extreme Arizona summers."
                 },
                 {
@@ -481,7 +497,7 @@ export function PhoenixLandingPageComponent() {
                   answer: "Please inform the person receiving the calls you care for their wellbeing and that you signed up for a wellness check-in call service called Positive Check. Lola from Positive Check will be calling and will be asking questions about your wellbeing. If the person receiving the calls has caller ID, incoming calls will be coming from 866-605-8571."
                 },
                 {
-                  question: "How does Positive Check support seniors' independence in Phoenix?",
+                  question: "How does Positive Check support seniors' independence?",
                   answer: "By checking in daily, Lola helps Phoenix seniors feel connected while promoting healthy habits like regular meals, sleep, and medication adherence. This proactive care allows them to stay in their homes longer, with confidence and dignity, even during challenging weather conditions."
                 },
                 {
@@ -567,9 +583,9 @@ export function PhoenixLandingPageComponent() {
                 </div>
                 <div>
                   <p className="text-xl text-gray-600 mb-4">
-                    "Living in North Phoenix while my mom is in Chandler made daily check-ins difficult with my work schedule. Lola's calls give me peace of mind knowing she's safe during our hot summers, and I get updates even when I can't make the drive across town."
+                    "With my busy work schedule, it was difficult to check in with mom as often as I wanted. Lola's daily calls give me peace of mind knowing she's safe and well-cared for, and I get updates even when I can't be there in person."
                   </p>
-                  <footer className="text-lg font-semibold text-[#1a2642]">M.R., Phoenix, Arizona</footer>
+                  <footer className="text-lg font-semibold text-[#1a2642]">Maria R., Phoenix Area Resident</footer>
                 </div>
               </div>
             </blockquote>
@@ -581,7 +597,7 @@ export function PhoenixLandingPageComponent() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-8`}>
-                A Personal Note to Phoenix Families
+                A Personal Note to Families
               </h2>
               
               <div className="mb-16">
@@ -596,15 +612,15 @@ export function PhoenixLandingPageComponent() {
                     The Gift of Connection
                   </h3>
                   <p className="text-xl text-[#1a2642]">
-                    Daily check-ins aren't just about health—they're about showing you care. Lola ensures Phoenix seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
+                    Daily check-ins aren't just about health—they're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
                   </p>
                 </div>
                 <div className="space-y-8">
                   <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
-                    Helping Phoenix Seniors Age in Place
+                    Helping Seniors Age in Place
                   </h3>
                   <p className="text-xl text-[#1a2642]">
-                    At $20 per month, Positive Check is an affordable solution that empowers Phoenix seniors to maintain their independence at home. It's care that feels personal, at a price that makes sense.
+                    At $20 per month, Positive Check is an affordable solution that empowers seniors to maintain their independence at home. It's care that feels personal, at a price that makes sense.
                   </p>
                 </div>
               </div>
@@ -621,7 +637,7 @@ export function PhoenixLandingPageComponent() {
                 <CardContent className="p-12 text-center">
                   <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Get in Touch</h2>
                   <p className="text-gray-600 mb-6">
-                    Have questions about our Phoenix senior check-in services? We're here to help.
+                    Questions about our senior check-in services? We're here to help Phoenix area families.
                   </p>
                   <div className="space-y-4 text-left">
                     <div>
@@ -630,11 +646,15 @@ export function PhoenixLandingPageComponent() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#1a2642]">Email</h3>
-                      <p className="text-gray-600">info@positivecheck.com</p>
+                      <p className="text-gray-600">phoenix@positivecheck.com</p>
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#1a2642]">Hours</h3>
                       <p className="text-gray-600">Monday - Friday: 9am - 5pm MST</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#1a2642]">Service Area</h3>
+                      <p className="text-gray-600">Greater Phoenix Metropolitan Area</p>
                     </div>
                   </div>
                   <div className="mt-8">
