@@ -29,10 +29,23 @@ const DAYS_OF_WEEK = [
 ]
 
 const CALL_TIMES = [
-  {value: "08:00", label: "Morning (8AM - 12PM)"},
-  {value: "12:00", label: "Afternoon (12PM - 4PM)"},
-  {value: "16:00", label: "Evening (4PM - 8PM)"}
+  {value: "08:00", label: "8 AM"},
+  {value: "09:00", label: "9 AM"},
+  {value: "10:00", label: "10 AM"},
+  {value: "11:00", label: "11 AM"},
+  {value: "12:00", label: "12 PM"},
+  {value: "13:00", label: "1 PM"},
+  {value: "14:00", label: "2 PM"},
+  {value: "15:00", label: "3 PM"},
+  {value: "16:00", label: "4 PM"},
+  {value: "17:00", label: "5 PM"},
+  {value: "18:00", label: "6 PM"},
+  {value: "19:00", label: "7 PM"},
+  {value: "20:00", label: "8 PM"},
+  {value: "21:00", label: "9 PM"},
+  {value: "22:00", label: "10 PM"}
 ]
+
 
 const DAY_ORDER: Record<string, number> = {
   'Monday': 1,
