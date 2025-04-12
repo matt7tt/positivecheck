@@ -75,9 +75,13 @@ export function OnboardingWizardComponent() {
     accountPassword: '',
     signUpCode: '',
     relationship: '',
-    priceId: 'price_1Qoxf8ChFWcVeCaxsEQ4mOFt',
+    priceId: 'price_1Qj8IPChFWcVeCaxTWtguaBc',
     amount: 20.00
   })
+
+  // Test price id: price_1Qoxf8ChFWcVeCaxsEQ4mOFt
+  // Prod price id: price_1Qj8IPChFWcVeCaxTWtguaBc
+
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true)
@@ -164,11 +168,11 @@ export function OnboardingWizardComponent() {
     setIsLoading(true)
     setErrorMessage(null)
     
-    if (formData.signUpCode !== 'PCSIGNUP34') {
-      setErrorMessage('Invalid Sign Up Code - Please email info@positivecheck.com for help.')
-      setIsLoading(false)
-      return
-    }
+    // if (formData.signUpCode !== 'PCSIGNUP34') {
+    //   setErrorMessage('Invalid Sign Up Code - Please email info@positivecheck.com for help.')
+    //   setIsLoading(false)
+    //   return
+    // }
     
     if (!validatePhoneNumber(formData.phone) || !validatePhoneNumber(formData.accountPhone)) {
       setErrorMessage('Please enter valid US phone numbers')
@@ -548,10 +552,10 @@ export function OnboardingWizardComponent() {
                 {step === 4 && (
                   <form onSubmit={async (e) => {
                     e.preventDefault();
-                    if (formData.signUpCode !== 'PCSIGNUP34') {
-                      setErrorMessage('Invalid Sign Up Code');
-                      return;
-                    }
+                    // if (formData.signUpCode !== 'PCSIGNUP34') {
+                    //   setErrorMessage('Invalid Sign Up Code');
+                    //   return;
+                    // }
 
                     // Add email check before proceeding
                     try {
