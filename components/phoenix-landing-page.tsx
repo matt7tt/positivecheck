@@ -117,7 +117,7 @@ export function PhoenixLandingPageComponent() {
                   Senior Wellness Check-In Calls
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-                  Helping Arizona families stay connected with affordable $20/month wellness calls. Peace of mind for you and your loved ones.
+                  Helping Phoenix area families stay connected everyday starting at $20/month. Cancel anytime.
                 </p>
               </div>
               <Link 
@@ -143,67 +143,56 @@ export function PhoenixLandingPageComponent() {
           </div>
         </section>
 
-        <section className="bg-[#f8f9ff] py-12 text-center">
-          <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-4`}>
-              Stay Connected, Stay Informed
-            </h2>
-            <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-              Because You Cannot Always Be There
-            </p>
-          </div>
-        </section>
-
         {/* Phoenix-Specific Section */}
         <section className="bg-[#f8f9ff] py-12 lg:py-16">
           <div className="container mx-auto px-4">
             <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-8 text-center`}>
-              Supporting Seniors Through Every Season
+              Supporting Phoenix Area Seniors Everyday
             </h2>
             
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Daily Wellness Support
+                  Peace of Mind for Busy Families
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Our daily check-ins ensure your loved ones are staying healthy and comfortable, especially during Arizona's warm summers. We help monitor well-being and maintain regular routines.
+                  Know your loved one is doing okay especially in Arizona's extreme conditions.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Regular wellness monitoring</span>
+                    <span>Daily check-ins track how seniors feel and function</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Medication and hydration reminders</span>
+                    <span>Daily reports highlight any changes in wellbeing</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Temperature and comfort checks</span>
+                    <span>Caregivers stay informed without constant calling</span>
                   </li>
                 </ul>
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Connecting Families
+                Support for Seniors Living Anywhere
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Whether you're across town or across the country, our service helps you stay connected with your loved ones in the Phoenix area through consistent daily contact.
+                  Friendly conversations for seniors living alone or in communities that help ensure wellbeing.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Daily updates on well-being</span>
+                    <span>A familiar and caring voice reaching out each day</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Consistent care monitoring</span>
+                    <span>Seniors feel heard and better cared for</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Peace of mind for families</span>
+                    <span>Helps ensure seniors get the help or care they need</span>
                   </li>
                 </ul>
               </div>
@@ -212,46 +201,60 @@ export function PhoenixLandingPageComponent() {
             <div className="mt-12 grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Supporting Seasonal Residents
+                  Relief for Local and Remote Caregivers
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Phoenix welcomes thousands of "snowbirds" each winter. Whether your loved ones are seasonal or year-round residents, Lola provides consistent care and connection.
+                Get reliable insights without the stress of daily check-ins for any senior with a phone.
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Maintain check-ins whether family is in-state or across the country</span>
+                    <span>Gathers key wellness info through brief calls</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Ensure consistent care during seasonal transitions</span>
+                    <span>Summarizes what is going well and what is not</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Help seniors adjust to changing routines</span>
+                    <span>Helps families respond before issues grow</span>
                   </li>
                 </ul>
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Trusted by Phoenix Families
+                  Proactive, Personalized Care for Phoenix
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
-                  Join hundreds of Phoenix-area families who rely on Positive Check to keep their senior loved ones safe, connected, and thriving in the Valley of the Sun.
+                A caring, reliable touchpoint in the face of heat, distance, and aging.
                 </p>
-                <div className="mt-6">
-                  <Link href="/onboarding-wizard">
-                    <Button 
-                      className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-6 py-3 text-lg rounded-md min-h-[44px] min-w-[44px]`}
-                    >
-                      SIGN UP TODAY
-                    </Button>
-                  </Link>
-                </div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#1a2642] font-bold">•</span>
+                    <span>Conversations that go beyond yes/no answers</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#1a2642] font-bold">•</span>
+                    <span>Tracks trends that may signal concern over time</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-[#1a2642] font-bold">•</span>
+                    <span>Builds trust with familiar daily interactions</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
+          <div className="text-center mt-12">
+              <Link href="/onboarding-wizard">
+                <Button 
+                  className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                >
+                  SIGN UP
+                </Button>
+              </Link>
+            </div>
         </section>
 
         {/* Meet Lola Section */}
