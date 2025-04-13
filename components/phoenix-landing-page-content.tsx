@@ -99,12 +99,12 @@ const PhoenixSpecificSection = () => {
               Join hundreds of Phoenix-area families who rely on Positive Check to keep their senior loved ones safe, connected, and thriving in the Valley of the Sun.
             </p>
             <div className="mt-6">
-              <a 
-                href="/onboarding-wizard"
-                className="inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-6 py-3 text-lg rounded-md min-h-[44px] min-w-[44px]"
+              <Link 
+                href="/onboarding-wizard/"
+                className="btn btn-primary"
               >
-                SIGN UP TODAY
-              </a>
+                Sign up now!
+              </Link>
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Custom404() {
   return (
     <div style={{
@@ -18,18 +20,12 @@ export default function Custom404() {
         marginBottom: '2rem',
         color: '#666'
       }}>Sorry, we couldn't find the page you were looking for.</p>
-      <a 
+      <Link 
         href="/"
-        style={{
-          padding: '0.75rem 1.5rem',
-          backgroundColor: '#1a2642',
-          color: 'white',
-          borderRadius: '0.375rem',
-          textDecoration: 'none'
-        }}
+        className="inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md"
       >
         Return Home
-      </a>
+      </Link>
     </div>
   );
 } 
