@@ -1,4 +1,5 @@
 // Phoenix, Arizona Localized Content for Landing Page
+import Link from 'next/link';
 
 // 1. Localized Headline Section
 // Replace the existing headline section with this content
