@@ -2,7 +2,6 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
-Allow: /phoenix
 Allow: /blog
 Allow: /contact
 Allow: /onboarding-wizard
@@ -16,3 +15,7 @@ Disallow: /private/
 
 # Sitemap location
 Sitemap: https://www.positivecheck.com/sitemap.xml
+
+# Location pages
+# These pages contain location-specific information for seniors in these areas
+Allow: /phoenix

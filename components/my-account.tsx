@@ -171,6 +171,12 @@ export function MyAccountComponent() {
   })
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
+  const [dashboardData, setDashboardData] = useState<Array<{
+    user_question_id: number;
+    user_call_questions_result: string;
+    date_created: string;
+  }>>([])
+  const [isDashboardLoading, setIsDashboardLoading] = useState(true)
 
   const handleInputChange = (
     section: 'accountInfo' | 'callerInfo' | 'callPreferences' | 'questions',
@@ -200,7 +206,7 @@ export function MyAccountComponent() {
         }
 
         // Fetch all data
-        const [userResponse, preferencesResponse, questionsResponse, callLogResponse, weeklyLearningResponse] = await Promise.all([
+        const [userResponse, preferencesResponse, questionsResponse, callLogResponse, dashboardDataResponse] = await Promise.all([
           fetch(`${API_BASE_URL}/api/users/me`, {
             method: 'GET',
             credentials: 'include',
@@ -241,7 +247,7 @@ export function MyAccountComponent() {
               'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
             },
           }),
-          fetch(`${API_BASE_URL}/api/users/me/weekly-learning`, {
+          fetch(`${API_BASE_URL}/api/users/me/dashboard-data`, {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -264,13 +270,19 @@ export function MyAccountComponent() {
           return
         }
 
-        const [userData, preferencesData, questionsData, callLogData, weeklyLearningData] = await Promise.all([
+        const [userData, preferencesData, questionsData, callLogData] = await Promise.all([
           userResponse.json(),
           preferencesResponse.json(),
           questionsResponse.json(),
           callLogResponse.json(),
-          weeklyLearningResponse.ok ? weeklyLearningResponse.text() : ''
         ])
+
+        // Fetch dashboard data
+        if (dashboardDataResponse.ok) {
+          const dashboardData = await dashboardDataResponse.json()
+          setDashboardData(dashboardData)
+        }
+        setIsDashboardLoading(false)
 
         // Process questions data
         const questionsArray = Array.isArray(questionsData) 
@@ -315,7 +327,7 @@ export function MyAccountComponent() {
           },
           questions: questionsWithText,
           callLog: callLogData,
-          weeklyLearning: weeklyLearningData
+          weeklyLearning: ''
         }))
 
         setIsAuthenticated(true)
@@ -323,6 +335,7 @@ export function MyAccountComponent() {
       } catch (error) {
         console.error('fetchUserData error:', error)
         setIsLoading(false)
+        setIsDashboardLoading(false)
       }
     }
 
@@ -606,6 +619,26 @@ export function MyAccountComponent() {
     }
   }
 
+  // Function to get dashboard data for a specific question
+  const getQuestionData = (questionId: number) => {
+    return dashboardData
+      .filter(data => data.user_question_id === questionId)
+      .sort((a, b) => new Date(a.date_created).getTime() - new Date(b.date_created).getTime())
+  }
+
+  // Function to determine bar color based on sentiment
+  const getSentimentColor = (sentiment: string) => {
+    switch(sentiment.toLowerCase()) {
+      case 'positive':
+        return 'bg-green-500'
+      case 'negative':
+        return 'bg-red-500'
+      default:
+        return 'bg-yellow-400'
+    }
+  }
+
+  // Function to get sentiment icon
   const getSentimentIcon = (sentiment: string) => {
     switch(sentiment.toLowerCase()) {
       case 'positive':
@@ -615,6 +648,59 @@ export function MyAccountComponent() {
       default:
         return <Meh className="h-6 w-6 text-yellow-500" />
     }
+  }
+
+  // Function to render a sentiment chart for a question
+  const renderSentimentChart = (questionId: number) => {
+    const questionData = getQuestionData(questionId)
+    
+    if (questionData.length === 0) {
+      return (
+        <div className="flex justify-center items-center h-24 text-gray-400">
+          No data available
+        </div>
+      )
+    }
+
+    // Get last 7 days, including today
+    const last7Days = Array.from({length: 7}, (_, i) => {
+      const d = new Date()
+      d.setDate(d.getDate() - i)
+      return d.toISOString().split('T')[0]
+    }).reverse()
+
+    // Create a mapping of dates to results
+    const dateResultMap: Record<string, string> = {}
+    questionData.forEach(data => {
+      dateResultMap[data.date_created] = data.user_call_questions_result
+    })
+
+    // Get the latest sentiment for display
+    const latestSentiment = questionData.length > 0 ? questionData[0].user_call_questions_result : 'neutral'
+
+    return (
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-gray-600">7-Day Trend:</p>
+          <div className="flex items-center gap-2">
+            {getSentimentIcon(latestSentiment)}
+            <span className="text-sm font-medium">Latest: {latestSentiment}</span>
+          </div>
+        </div>
+        <div className="flex items-end h-16 gap-1">
+          {last7Days.map((date, index) => {
+            const sentiment = dateResultMap[date] || 'none'
+            const height = sentiment === 'none' ? 'h-0' : sentiment === 'positive' ? 'h-full' : sentiment === 'negative' ? 'h-1/3' : 'h-2/3'
+            return (
+              <div key={index} className="flex-1 flex flex-col items-center">
+                <div className={`w-full ${height} ${sentiment !== 'none' ? getSentimentColor(sentiment) : ''} rounded-sm`}></div>
+                <span className="text-xs mt-1 text-gray-500">{new Date(date).getDate()}</span>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -1011,23 +1097,22 @@ export function MyAccountComponent() {
 
                   {/* Question Response Sections */}
                   <div className="space-y-6">
-                    <h3 className="text-xl font-semibold text-[#1a2642]">Recent Responses</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {userData.questions.filter(q => q.selected).map((question, index) => (
-                        <div key={index} className="bg-white p-6 rounded-lg shadow">
-                          <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
-                          {userData.callLog[0] && (
-                            <div className="space-y-2">
-                              <p className="text-sm text-gray-600">Latest Response:</p>
-                              <div className="flex items-center gap-2">
-                                {getSentimentIcon('positive')}
-                                <span className="text-sm font-medium">Positive</span>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
+                    <h3 className="text-xl font-semibold text-[#1a2642]">Response Trends</h3>
+                    {isDashboardLoading ? (
+                      <div className="text-center py-8">
+                        <span className="animate-spin inline-block mr-2">⚪</span>
+                        Loading sentiment data...
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {userData.questions.filter(q => q.selected).map((question) => (
+                          <div key={question.id} className="bg-white p-6 rounded-lg shadow">
+                            <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
+                            {renderSentimentChart(question.id)}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>,
                 <div>Dashboard cannot be edited</div>

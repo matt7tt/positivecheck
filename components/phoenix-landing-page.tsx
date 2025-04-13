@@ -62,14 +62,56 @@ export function PhoenixLandingPageComponent() {
             "url": "https://www.positivecheck.com/phoenix",
             "priceRange": "$20/month",
             "telephone": "866-605-8571",
-            "areaServed": {
-              "@type": "City",
-              "name": "Phoenix",
-              "containedInPlace": {
-                "@type": "State",
-                "name": "Arizona"
+            "areaServed": [
+              {
+                "@type": "City",
+                "name": "Phoenix",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Scottsdale",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Tempe",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Mesa",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Chandler",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
+              },
+              {
+                "@type": "City",
+                "name": "Glendale",
+                "containedInPlace": {
+                  "@type": "State",
+                  "name": "Arizona"
+                }
               }
-            },
+            ],
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Phoenix",
@@ -81,26 +123,52 @@ export function PhoenixLandingPageComponent() {
               "latitude": "33.4484",
               "longitude": "-112.0740"
             },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "09:00",
+              "closes": "17:00"
+            },
             "serviceType": "Senior Care Services",
             "offers": {
               "@type": "Offer",
               "price": "20",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "description": "Daily wellness check-in calls for seniors"
+              "description": "Daily wellness check-in calls for seniors in the Greater Phoenix area"
             },
             "service": {
               "@type": "Service",
               "serviceType": "Senior Care",
               "provider": {
                 "@type": "Organization",
-                "name": "Positive Check"
+                "name": "Positive Check",
+                "url": "https://www.positivecheck.com"
               }
             },
             "sameAs": [
               "https://www.facebook.com/positivecheck",
               "https://twitter.com/positivecheck"
-            ]
+            ],
+            "review": {
+              "@type": "Review",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": "Maria R."
+              },
+              "reviewBody": "With my busy work schedule, it was difficult to check in with mom as often as I wanted. Lola's daily calls give me peace of mind knowing she's safe and well-cared for."
+            }
           }
         `
         }}
