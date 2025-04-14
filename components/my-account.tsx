@@ -159,7 +159,7 @@ export function MyAccountComponent() {
       stripeCustomerId: '',
     }
   })
-  const [activeSection, setActiveSection] = useState('call-log')
+  const [activeSection, setActiveSection] = useState('dashboard')
   const [editMode, setEditMode] = useState({
     'call-preferences': false,
     'questions': false,
@@ -175,6 +175,7 @@ export function MyAccountComponent() {
     user_question_id: number;
     user_call_questions_result: string;
     date_created: string;
+    questionid: number;
   }>>([])
   const [isDashboardLoading, setIsDashboardLoading] = useState(true)
 
@@ -344,10 +345,10 @@ export function MyAccountComponent() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <span className="animate-spin inline-block mr-2">⚪</span>
-          Loading...
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+          <div className="animate-spin h-8 w-8 border-4 border-[#1a2642] border-t-transparent rounded-full mx-auto mb-4"></div>
+          <p className="text-[#1a2642] font-medium">Loading your account...</p>
         </div>
       </div>
     )
@@ -481,24 +482,27 @@ export function MyAccountComponent() {
   const renderSection = (
     title: string,
     icon: React.ReactNode,
-    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'billing' | 'dashboard',
+    sectionId: 'call-preferences' | 'questions' | 'caller-info' | 'account-info' | 'call-log' | 'dashboard' | 'billing',
     content: React.ReactNode,
     editContent: React.ReactNode
   ) => (
-    <div className="border rounded-lg p-6 mb-6 relative w-full">
-      <div className="mb-4 flex justify-between items-center w-full">
-        <div className="flex items-center gap-2 font-bold text-lg">
-          {icon}
+    <div className="border rounded-lg p-6 mb-6 relative w-full hover:shadow-sm transition-shadow duration-200">
+      <div className="mb-5 flex justify-between items-center w-full pb-3 border-b border-gray-100">
+        <div className="flex items-center gap-3 font-bold text-lg text-[#1a2642]">
+          <span className="text-blue-600">{icon}</span>
           {title}
         </div>
         {sectionId !== 'call-log' && sectionId !== 'dashboard' && sectionId !== 'billing' && (
           <button
             onClick={() => editMode[sectionId] ? handleSave(sectionId) : toggleEdit(sectionId)}
-            className="p-2 hover:bg-gray-100 rounded-full"
+            className={`p-2 rounded-full transition-colors duration-200 ${
+              editMode[sectionId] ? 'bg-blue-50 hover:bg-blue-100' : 'hover:bg-gray-100'
+            }`}
+            aria-label={editMode[sectionId] ? `Save ${title} changes` : `Edit ${title}`}
           >
             {editMode[sectionId] ? 
               <Save className="h-5 w-5 text-blue-600" /> : 
-              <Edit2 className="h-5 w-5" />
+              <Edit2 className="h-5 w-5 text-gray-600" />
             }
           </button>
         )}
@@ -622,7 +626,7 @@ export function MyAccountComponent() {
   // Function to get dashboard data for a specific question
   const getQuestionData = (questionId: number) => {
     return dashboardData
-      .filter(data => data.user_question_id === questionId)
+      .filter(data => data.questionid === questionId)
       .sort((a, b) => new Date(a.date_created).getTime() - new Date(b.date_created).getTime())
   }
 
@@ -656,8 +660,8 @@ export function MyAccountComponent() {
     
     if (questionData.length === 0) {
       return (
-        <div className="flex justify-center items-center h-24 text-gray-400">
-          No data available
+        <div className="flex justify-center items-center h-24 text-gray-400 bg-gray-50 rounded-md">
+          <span className="text-sm">No data available</span>
         </div>
       )
     }
@@ -681,19 +685,19 @@ export function MyAccountComponent() {
     return (
       <div className="space-y-3">
         <div className="flex items-center justify-between">
-          <p className="text-sm text-gray-600">7-Day Trend:</p>
-          <div className="flex items-center gap-2">
+          <p className="text-sm text-gray-600 font-medium">7-Day Trend:</p>
+          <div className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full">
             {getSentimentIcon(latestSentiment)}
-            <span className="text-sm font-medium">Latest: {latestSentiment}</span>
+            <span className="text-sm font-medium">{latestSentiment}</span>
           </div>
         </div>
-        <div className="flex items-end h-16 gap-1">
+        <div className="flex items-end h-16 gap-1 bg-gray-50 p-2 rounded-md">
           {last7Days.map((date, index) => {
             const sentiment = dateResultMap[date] || 'none'
             const height = sentiment === 'none' ? 'h-0' : sentiment === 'positive' ? 'h-full' : sentiment === 'negative' ? 'h-1/3' : 'h-2/3'
             return (
               <div key={index} className="flex-1 flex flex-col items-center">
-                <div className={`w-full ${height} ${sentiment !== 'none' ? getSentimentColor(sentiment) : ''} rounded-sm`}></div>
+                <div className={`w-full ${height} ${sentiment !== 'none' ? getSentimentColor(sentiment) : ''} rounded-sm transition-all duration-300`}></div>
                 <span className="text-xs mt-1 text-gray-500">{new Date(date).getDate()}</span>
               </div>
             )
@@ -712,34 +716,36 @@ export function MyAccountComponent() {
         }}
       />
       <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50 w-full border-b bg-white">
+        <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm transition-shadow duration-200">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-90">
               <Image
                 src="/images/positive-logo.png"
                 alt="Positive Check"
                 width={120}
                 height={32}
                 priority
+                className="h-full w-auto lg:h-[64px]"
               />
             </Link>
             <nav>
               <div className="flex items-center gap-6">
                 <Link 
                   href="/" 
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642]"
+                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200"
                 >
                   Home
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642]"
+                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200"
                 >
                   Contact
                 </Link>
                 <button 
                   onClick={handleLogout}
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642]"
+                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200"
+                  aria-label="Log out of your account"
                 >
                   Log Out
                 </button>
@@ -750,8 +756,8 @@ export function MyAccountComponent() {
 
         <div className="container mx-auto px-4 py-8 flex-grow">
           <div>
-            <h1 className="text-3xl font-bold text-[#1a2642]">Account</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-bold text-[#1a2642] mb-1">Account</h1>
+            <p className="text-gray-600">
               Manage your account settings and preferences.
             </p>
           </div>
@@ -765,14 +771,15 @@ export function MyAccountComponent() {
                   <button
                     key={item.id}
                     onClick={() => setActiveSection(item.id)}
-                    className={`w-full flex items-center gap-2 px-4 py-2 rounded-lg text-left ${
+                    className={`w-full flex items-center gap-2 px-4 py-3 rounded-lg text-left transition-all duration-200 ${
                       activeSection === item.id 
-                        ? 'bg-blue-50 text-blue-600' 
-                        : 'hover:bg-gray-50'
+                        ? 'bg-blue-50 text-blue-600 shadow-sm' 
+                        : 'hover:bg-gray-50 text-gray-700 hover:text-[#1a2642]'
                     }`}
+                    aria-current={activeSection === item.id ? 'page' : undefined}
                   >
-                    {item.icon}
-                    <span>{item.label}</span>
+                    <span className="flex-shrink-0">{item.icon}</span>
+                    <span className="font-medium">{item.label}</span>
                   </button>
                 ))}
               </div>
@@ -796,7 +803,7 @@ export function MyAccountComponent() {
                   <div className="space-y-2">
                     <Label>Preferred Call Days</Label>
                     {DAYS_OF_WEEK.map((day) => (
-                      <div key={day} className="flex items-center space-x-2">
+                      <div key={day} className="flex items-center space-x-3 hover:bg-gray-50 p-2 rounded-md transition-colors cursor-pointer">
                         <Checkbox
                           id={day}
                           checked={userData.callPreferences.callDays.includes(day)}
@@ -806,8 +813,9 @@ export function MyAccountComponent() {
                               : userData.callPreferences.callDays.filter(d => d !== day)
                             handleInputChange('callPreferences', 'callDays', newDays)
                           }}
+                          className="h-5 w-5 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600 transition-colors"
                         />
-                        <Label htmlFor={day}>{day}</Label>
+                        <Label htmlFor={day} className="text-base cursor-pointer">{day}</Label>
                       </div>
                     ))}
                   </div>
@@ -817,12 +825,12 @@ export function MyAccountComponent() {
                       value={userData.callPreferences.callTime}
                       onValueChange={(value) => handleInputChange('callPreferences', 'callTime', value)}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="w-full focus:ring-2 focus:ring-blue-500 focus:border-blue-500 border-gray-300">
                         <SelectValue placeholder="Select a time" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="max-h-80">
                         {CALL_TIMES.map((time) => (
-                          <SelectItem key={time.value} value={time.value}>
+                          <SelectItem key={time.value} value={time.value} className="cursor-pointer hover:bg-blue-50">
                             {time.label}
                           </SelectItem>
                         ))}
@@ -879,33 +887,33 @@ export function MyAccountComponent() {
                     value={userData.callerInfo.firstName}
                     onChange={(e) => handleInputChange('callerInfo', 'firstName', e.target.value)}
                     placeholder="First Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="text" 
                     value={userData.callerInfo.lastName}
                     onChange={(e) => handleInputChange('callerInfo', 'lastName', e.target.value)}
                     placeholder="Last Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="text" 
                     value={userData.callerInfo.preferredName}
                     onChange={(e) => handleInputChange('callerInfo', 'preferredName', e.target.value)}
                     placeholder="Preferred Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="tel" 
                     value={userData.callerInfo.userphone}
                     onChange={(e) => handleInputChange('callerInfo', 'phone', e.target.value)}
                     placeholder="Phone"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <select 
                     value={userData.callerInfo.timezone}
                     onChange={(e) => handleInputChange('callerInfo', 'timezone', e.target.value)}
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   >
                     <option value="EST">EST</option>
                     <option value="CST">CST</option>
@@ -932,28 +940,28 @@ export function MyAccountComponent() {
                     value={userData.accountInfo.firstName}
                     onChange={(e) => handleInputChange('accountInfo', 'firstName', e.target.value)}
                     placeholder="First Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="text" 
                     value={userData.accountInfo.lastName}
                     onChange={(e) => handleInputChange('accountInfo', 'lastName', e.target.value)}
                     placeholder="Last Name"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="email" 
                     value={userData.accountInfo.email}
                     onChange={(e) => handleInputChange('accountInfo', 'email', e.target.value)}
                     placeholder="Email"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                   <input 
                     type="tel" 
                     value={userData.accountInfo.userphone}
                     onChange={(e) => handleInputChange('accountInfo', 'phone', e.target.value)}
                     placeholder="Phone"
-                    className="w-full p-2 border rounded"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
                 </div>
               )}
@@ -986,7 +994,9 @@ export function MyAccountComponent() {
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}
                             </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.call_duration}</td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                              {log.call_duration} {parseInt(log.call_duration) === 1 ? 'min' : 'mins'}
+                            </td>
                             <td className="px-6 py-4 text-sm text-gray-900 break-words">
                               {removeSummaryPrefix(log.call_issues)}
                             </td>
@@ -1053,43 +1063,53 @@ export function MyAccountComponent() {
                 <div className="space-y-6">
                   {/* Call Statistics Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-white p-6 rounded-lg shadow">
-                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Contact Rate</h3>
+                    <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200 border border-gray-100">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-4 flex items-center">
+                        <span className="mr-2">Contact Rate</span>
+                        <span className="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">Overall</span>
+                      </h3>
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-3xl font-bold text-[#1a2642]">{calculateCallStatistics(userData.callLog).contactRate}%</p>
+                          <p className="text-4xl font-bold text-[#1a2642] mb-1">{calculateCallStatistics(userData.callLog).contactRate}%</p>
                           <p className="text-sm text-gray-600">Successful Contacts</p>
                         </div>
-                        <PhoneCall className="h-8 w-8 text-[#1a2642] opacity-20" />
+                        <div className="bg-blue-50 p-4 rounded-full">
+                          <PhoneCall className="h-9 w-9 text-blue-600" />
+                        </div>
                       </div>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow">
-                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Contact Summary</h3>
+                    <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200 border border-gray-100">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-4">Contact Summary</h3>
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
+                          <span className="text-gray-700 font-medium">Made</span>
+                          <span className="text-lg font-semibold text-green-600">{calculateCallStatistics(userData.callLog).contactMade}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-md">
+                          <span className="text-gray-700 font-medium">Not Made</span>
+                          <span className="text-lg font-semibold text-red-600">{calculateCallStatistics(userData.callLog).contactNotMade}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200 border border-gray-100">
+                      <h3 className="text-lg font-semibold text-[#1a2642] mb-4">Last Contact</h3>
                       <div className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Made</span>
-                          <span className="text-sm font-semibold text-green-600">{calculateCallStatistics(userData.callLog).contactMade}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-600">Not Made</span>
-                          <span className="text-sm font-semibold text-red-600">{calculateCallStatistics(userData.callLog).contactNotMade}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="bg-white p-6 rounded-lg shadow">
-                      <h3 className="text-lg font-semibold text-[#1a2642] mb-2">Last Contact</h3>
-                      <div className="space-y-1">
                         {userData.callLog[0] ? (
                           <>
-                            <p className="text-sm text-gray-600">
+                            <p className="text-gray-700 font-medium">
                               {convertDateToUserTimezone(userData.callLog[0].call_date, userData.callerInfo.timezone)}
                             </p>
-                            <p className="text-sm font-semibold text-[#1a2642]">
+                            <p className="text-xl font-semibold text-[#1a2642]">
                               {convertToUserTimezone(userData.callLog[0].call_start, userData.callerInfo.timezone)}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-2">
+                              {userData.callLog[0].call_status === 'Contact Made' ? 
+                                <span className="text-green-600 flex items-center"><span className="w-2 h-2 bg-green-600 rounded-full mr-2"></span>Contact Made</span> : 
+                                <span className="text-red-600 flex items-center"><span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>No Contact</span>}
                             </p>
                           </>
                         ) : (
-                          <p className="text-sm text-gray-600">No calls recorded</p>
+                          <p className="text-gray-600 text-lg">No calls recorded</p>
                         )}
                       </div>
                     </div>
@@ -1099,14 +1119,14 @@ export function MyAccountComponent() {
                   <div className="space-y-6">
                     <h3 className="text-xl font-semibold text-[#1a2642]">Response Trends</h3>
                     {isDashboardLoading ? (
-                      <div className="text-center py-8">
-                        <span className="animate-spin inline-block mr-2">⚪</span>
-                        Loading sentiment data...
+                      <div className="text-center py-8 bg-gray-50 rounded-lg">
+                        <div className="animate-spin h-6 w-6 border-3 border-[#1a2642] border-t-transparent rounded-full mx-auto mb-2"></div>
+                        <p className="text-gray-600 text-sm">Loading sentiment data...</p>
                       </div>
                     ) : (
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {userData.questions.filter(q => q.selected).map((question) => (
-                          <div key={question.id} className="bg-white p-6 rounded-lg shadow">
+                          <div key={question.id} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200">
                             <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
                             {renderSentimentChart(question.id)}
                           </div>
