@@ -689,7 +689,6 @@ export function OnboardingWizardComponent() {
                           type="text"
                           value={formData.signUpCode}
                           onChange={handleInputChange}
-                          required
                           className="w-full p-2 border rounded"
                         />
                       </div>
