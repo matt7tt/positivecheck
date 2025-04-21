@@ -81,6 +81,7 @@ export function OnboardingWizardComponent() {
 
   // Test price id: price_1Qoxf8ChFWcVeCaxsEQ4mOFt
   // Prod price id: price_1Qj8IPChFWcVeCaxTWtguaBc
+  
 
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
