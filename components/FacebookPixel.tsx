@@ -2,25 +2,29 @@
 
 import { useEffect } from 'react';
 
+// Add TypeScript declarations for Facebook Pixel
 declare global {
   interface Window {
     fbq: any;
+    _fbq: any;
   }
 }
 
 export default function FacebookPixel() {
   useEffect(() => {
-    // Facebook Pixel Code
-    !(function(f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function() {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    // Facebook Pixel Code with TypeScript fixes
+    (function(f, b, e, v, n, t, s) {
+      if ((f as any).fbq) return;
+      n = (f as any).fbq = function() {
+        (n as any).callMethod ? 
+          (n as any).callMethod.apply(n, arguments) : 
+          (n as any).queue.push(arguments);
       };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = true;
-      n.version = '2.0';
-      n.queue = [];
+      if (!(f as any)._fbq) (f as any)._fbq = n;
+      (n as any).push = n;
+      (n as any).loaded = true;
+      (n as any).version = '2.0';
+      (n as any).queue = [];
       t = b.createElement(e);
       t.async = true;
       t.src = v;
