@@ -281,7 +281,10 @@ export function MyAccountComponent() {
         // Fetch dashboard data
         if (dashboardDataResponse.ok) {
           const dashboardData = await dashboardDataResponse.json()
+          console.log('Dashboard Data received:', dashboardData)
           setDashboardData(dashboardData)
+        } else {
+          console.error('Failed to fetch dashboard data:', await dashboardDataResponse.text())
         }
         setIsDashboardLoading(false)
 
@@ -625,32 +628,78 @@ export function MyAccountComponent() {
 
   // Function to get dashboard data for a specific question
   const getQuestionData = (questionId: number) => {
-    return dashboardData
+    console.log(`Getting data for question ID ${questionId}`)
+    const filteredData = dashboardData
       .filter(data => data.questionid === questionId)
       .sort((a, b) => new Date(a.date_created).getTime() - new Date(b.date_created).getTime())
+    console.log(`Found ${filteredData.length} data points for question ID ${questionId}:`, filteredData)
+    return filteredData
   }
 
-  // Function to determine bar color based on sentiment
+  // Function to determine dot color based on sentiment
   const getSentimentColor = (sentiment: string) => {
-    switch(sentiment.toLowerCase()) {
-      case 'positive':
-        return 'bg-green-500'
-      case 'negative':
-        return 'bg-red-500'
+    // First check if it's a scale value (0-5)
+    if (/^[0-5]$/.test(sentiment) && sentiment !== '0' && sentiment !== '1') {
+      const value = parseInt(sentiment);
+      if (value >= 4) return 'bg-green-500'; // 4-5 = positive
+      if (value === 3 || value === 2) return 'bg-yellow-400'; // 2-3 = neutral
+      return 'bg-red-500'; // shouldn't reach here for 0-5 scale
+    }
+    
+    // Handle regular values (0/1/-)
+    switch(sentiment) {
+      case '1':
+        return 'bg-green-500'; // positive
+      case '0':
+        return 'bg-red-500';   // negative
+      case '-':
       default:
-        return 'bg-yellow-400'
+        return 'bg-yellow-400'; // neutral/unknown
     }
   }
 
   // Function to get sentiment icon
   const getSentimentIcon = (sentiment: string) => {
-    switch(sentiment.toLowerCase()) {
-      case 'positive':
-        return <Smile className="h-6 w-6 text-green-500" />
-      case 'negative':
-        return <Frown className="h-6 w-6 text-red-500" />
+    // First check if it's a scale value (0-5)
+    if (/^[0-5]$/.test(sentiment) && sentiment !== '0' && sentiment !== '1') {
+      const value = parseInt(sentiment);
+      if (value >= 4) return <Smile className="h-6 w-6 text-green-500" />; // 4-5 = positive
+      if (value === 3 || value === 2) return <Meh className="h-6 w-6 text-yellow-500" />; // 2-3 = neutral
+      return <Frown className="h-6 w-6 text-red-500" />; // shouldn't reach here for 0-5 scale
+    }
+    
+    // Handle regular values (0/1/-)
+    switch(sentiment) {
+      case '1':
+        return <Smile className="h-6 w-6 text-green-500" />; // positive
+      case '0':
+        return <Frown className="h-6 w-6 text-red-500" />;   // negative
+      case '-':
       default:
-        return <Meh className="h-6 w-6 text-yellow-500" />
+        return <Meh className="h-6 w-6 text-yellow-500" />;  // neutral/unknown
+    }
+  }
+
+  // Function to get sentiment label
+  const getSentimentLabel = (sentiment: string) => {
+    // First check if it's a scale value (0-5)
+    if (/^[0-5]$/.test(sentiment) && sentiment !== '0' && sentiment !== '1') {
+      const value = parseInt(sentiment);
+      if (value >= 4) return 'Positive';  // 4-5 = positive
+      if (value === 3 || value === 2) return 'Neutral'; // 2-3 = neutral
+      return 'Negative'; // shouldn't reach here for 0-5 scale
+    }
+    
+    // Handle regular values (0/1/-)
+    switch(sentiment) {
+      case '1':
+        return 'Positive';
+      case '0':
+        return 'Negative';
+      case '-':
+        return 'Neutral';
+      default:
+        return 'Unknown';
     }
   }
 
@@ -659,6 +708,7 @@ export function MyAccountComponent() {
     const questionData = getQuestionData(questionId)
     
     if (questionData.length === 0) {
+      console.log(`No data available for question ID ${questionId}`)
       return (
         <div className="flex justify-center items-center h-24 text-gray-400 bg-gray-50 rounded-md">
           <span className="text-sm">No data available</span>
@@ -672,15 +722,23 @@ export function MyAccountComponent() {
       d.setDate(d.getDate() - i)
       return d.toISOString().split('T')[0]
     }).reverse()
+    
+    console.log(`Last 7 days for question ID ${questionId}:`, last7Days)
 
     // Create a mapping of dates to results
     const dateResultMap: Record<string, string> = {}
     questionData.forEach(data => {
-      dateResultMap[data.date_created] = data.user_call_questions_result
+      const date = data.date_created.split('T')[0]
+      dateResultMap[date] = data.user_call_questions_result
     })
+    
+    console.log(`Date-result map for question ID ${questionId}:`, dateResultMap)
 
     // Get the latest sentiment for display
-    const latestSentiment = questionData.length > 0 ? questionData[0].user_call_questions_result : 'neutral'
+    const latestSentiment = questionData.length > 0 ? 
+      questionData[questionData.length-1].user_call_questions_result : '-'
+    
+    console.log(`Latest sentiment for question ID ${questionId}:`, latestSentiment)
 
     return (
       <div className="space-y-3">
@@ -688,20 +746,71 @@ export function MyAccountComponent() {
           <p className="text-sm text-gray-600 font-medium">7-Day Trend:</p>
           <div className="flex items-center gap-2 bg-gray-50 px-3 py-1 rounded-full">
             {getSentimentIcon(latestSentiment)}
-            <span className="text-sm font-medium">{latestSentiment}</span>
+            <span className="text-sm font-medium">{getSentimentLabel(latestSentiment)}</span>
           </div>
         </div>
-        <div className="flex items-end h-16 gap-1 bg-gray-50 p-2 rounded-md">
-          {last7Days.map((date, index) => {
-            const sentiment = dateResultMap[date] || 'none'
-            const height = sentiment === 'none' ? 'h-0' : sentiment === 'positive' ? 'h-full' : sentiment === 'negative' ? 'h-1/3' : 'h-2/3'
-            return (
-              <div key={index} className="flex-1 flex flex-col items-center">
-                <div className={`w-full ${height} ${sentiment !== 'none' ? getSentimentColor(sentiment) : ''} rounded-sm transition-all duration-300`}></div>
-                <span className="text-xs mt-1 text-gray-500">{new Date(date).getDate()}</span>
+        <div className="flex flex-col h-48 w-full bg-gray-50 p-3 rounded-md">
+          {/* Chart line with dots */}
+          <div className="relative h-32 w-full mb-6">
+            {/* Data points */}
+            <div className="relative w-full flex justify-between h-full pt-2 pb-1">
+              {last7Days.map((date, index) => {
+                const sentiment = dateResultMap[date] || 'none';
+                
+                // Determine vertical position based on sentiment
+                let positionClass = '';
+                if (sentiment === 'none') {
+                  positionClass = 'opacity-0';
+                } else if (sentiment === '1' || (parseInt(sentiment) >= 4 && /^[0-5]$/.test(sentiment))) {
+                  // Positive - place high on the chart (near top)
+                  // Includes '1' or 4-5 on 0-5 scale
+                  positionClass = 'top-3';
+                } else if (sentiment === '0' || (parseInt(sentiment) <= 1 && /^[0-5]$/.test(sentiment))) {
+                  // Negative - place low on the chart (near bottom)
+                  // Includes '0' or 0-1 on 0-5 scale
+                  positionClass = 'top-24';
+                } else {
+                  // Neutral - place in the middle of the chart
+                  // Includes '-' or 2-3 on 0-5 scale
+                  positionClass = 'top-14';
+                }
+                
+                // Determine dot color
+                const dotColor = sentiment !== 'none' ? getSentimentColor(sentiment) : 'bg-transparent';
+                
+                return (
+                  <div key={index} className="flex flex-col items-center relative h-full">
+                    <div className={`absolute w-5 h-5 ${dotColor} rounded-full ${sentiment !== 'none' ? 'ring-2 ring-white' : ''} ${positionClass} z-10 transform transition-all duration-300`}></div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Date labels */}
+          <div className="flex justify-between w-full px-2 mt-0">
+            {last7Days.map((date, index) => (
+              <div key={`date-${index}`} className="text-xs text-gray-500 text-center">
+                {new Date(date).getDate()}
               </div>
-            )
-          })}
+            ))}
+          </div>
+          
+          {/* Legend */}
+          <div className="flex justify-between text-xs text-gray-500 mt-2 px-1">
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Positive</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              <span>Neutral</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+              <span>Negative</span>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -1125,12 +1234,15 @@ export function MyAccountComponent() {
                       </div>
                     ) : (
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {userData.questions.filter(q => q.selected).map((question) => (
-                          <div key={question.id} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200">
-                            <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
-                            {renderSentimentChart(question.id)}
-                          </div>
-                        ))}
+                        {userData.questions.filter(q => q.selected).map((question) => {
+                          console.log(`Rendering chart for question:`, question)
+                          return (
+                            <div key={question.id} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200">
+                              <h4 className="text-md font-semibold text-[#1a2642] mb-4">{question.text}</h4>
+                              {renderSentimentChart(question.id)}
+                            </div>
+                          )
+                        })}
                       </div>
                     )}
                   </div>
