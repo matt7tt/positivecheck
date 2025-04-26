@@ -1,4 +1,4 @@
-# https://www.positivecheck.com/robots.txt
+# https://positivecheck.com/robots.txt
 # Allow all crawlers
 User-agent: *
 Allow: /
@@ -14,7 +14,7 @@ Disallow: /_next/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.positivecheck.com/sitemap.xml
+Sitemap: https://positivecheck.com/sitemap.xml
 
 # Location pages
 # These pages contain location-specific information for seniors in these areas
