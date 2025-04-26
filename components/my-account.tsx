@@ -757,6 +757,15 @@ export function MyAccountComponent() {
               {last7Days.map((date, index) => {
                 const sentiment = dateResultMap[date] || 'none';
                 
+                // Skip rendering the dot completely if sentiment is '-'
+                if (sentiment === '-') {
+                  return (
+                    <div key={index} className="flex flex-col items-center relative h-full">
+                      {/* No dot rendered for "-" values */}
+                    </div>
+                  );
+                }
+                
                 // Determine vertical position based on sentiment
                 let positionClass = '';
                 if (sentiment === 'none') {
@@ -771,7 +780,7 @@ export function MyAccountComponent() {
                   positionClass = 'top-24';
                 } else {
                   // Neutral - place in the middle of the chart
-                  // Includes '-' or 2-3 on 0-5 scale
+                  // Includes 2-3 on 0-5 scale
                   positionClass = 'top-14';
                 }
                 
@@ -801,10 +810,6 @@ export function MyAccountComponent() {
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               <span>Positive</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-              <span>Neutral</span>
             </div>
             <div className="flex items-center gap-1">
               <div className="w-2 h-2 bg-red-500 rounded-full"></div>
