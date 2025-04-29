@@ -9,6 +9,9 @@ import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
 import { useSearchParams } from 'next/navigation'
 
+// Define API base URL the same way as in forgot-password.tsx
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
+
 // Separate component that uses useSearchParams
 function ResetPasswordForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -85,7 +88,7 @@ function ResetPasswordForm() {
                     return
                   }
                   
-                  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/reset-password`, {
+                  const response = await fetch(`${API_BASE_URL}/api/auth/reset-password`, {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
