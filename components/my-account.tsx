@@ -1020,7 +1020,7 @@ export function MyAccountComponent() {
                   <input 
                     type="tel" 
                     value={userData.callerInfo.userphone}
-                    onChange={(e) => handleInputChange('callerInfo', 'phone', e.target.value)}
+                    onChange={(e) => handleInputChange('callerInfo', 'userphone', e.target.value)}
                     placeholder="Phone"
                     className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
                   />
