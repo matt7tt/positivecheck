@@ -1100,7 +1100,7 @@ export function MyAccountComponent() {
                         {paginate(userData.callLog, currentPage, rowsPerPage).map((log, index) => (
                           <tr key={index}>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                              {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}
+                              {log.call_date/*convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)*/}
                             </td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                               {toCamelCase(log.call_status)}
