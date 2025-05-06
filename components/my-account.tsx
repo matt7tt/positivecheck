@@ -1353,29 +1353,8 @@ export function MyAccountComponent() {
                                           </div>
                                         </div>
                                       </div>
-                                      <div className="mt-2">
-                                        <span className="font-medium">Average</span>{" "}
-                                        <span className="text-gray-700">
-                                          {(((parsedData.engagement_metrics?.response_lengths?.client || 0) + 
-                                            (parsedData.engagement_metrics?.response_lengths?.lola || 0)) / 2).toFixed(1)} sec. average response delay
-                                        </span>
-                                      </div>
                                     </div>
                                     
-                                    <div className="grid grid-cols-2 gap-4">
-                                      <div>
-                                        <p className="font-medium mb-1">Turn-Taking Balance</p>
-                                        <p className="text-gray-700">
-                                          {displayValue(parsedData.engagement_metrics?.turn_taking_balance)}
-                                        </p>
-                                      </div>
-                                      <div>
-                                        <p className="font-medium mb-1">Average to Respond</p>
-                                        <p className="text-gray-700">
-                                          {displayValue(parsedData.engagement_metrics?.response_consistency, "consistent")}
-                                        </p>
-                                      </div>
-                                    </div>
                                   </div>
                                   
                                   <h4 className="text-lg font-bold text-[#1a2642] mt-6">Interaction Quality</h4>
