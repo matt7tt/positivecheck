@@ -153,6 +153,7 @@ export function MyAccountComponent() {
       call_end: string;
       call_duration: string;
       call_issues: string;
+      call_sentiment: string;
     }>,
     weeklyLearning: '',
     billing: {
@@ -606,6 +607,7 @@ export function MyAccountComponent() {
     call_end: string;
     call_duration: string;
     call_issues: string;
+    call_sentiment: string;
   };
 
   const paginate = (items: CallLogEntry[], pageNumber: number, itemsPerPage: number): CallLogEntry[] => {
@@ -1251,6 +1253,283 @@ export function MyAccountComponent() {
                       </div>
                     )}
                   </div>
+                  
+                  {/* Call Sentiment Section */}
+                  {userData.callLog.some(log => log.call_sentiment && log.call_sentiment.trim() !== '') && (
+                    <div className="space-y-6">
+                      <h3 className="text-xl font-semibold text-[#1a2642]">Call Sentiment Analysis</h3>
+                      {userData.callLog
+                        .filter(log => log.call_sentiment && log.call_sentiment.trim() !== '')
+                        .slice(0, 3) // Show only the 3 most recent calls with sentiment
+                        .map((log, index) => {
+                          let parsedData: any = {};
+                          try {
+                            parsedData = JSON.parse(log.call_sentiment);
+                          } catch (e) {
+                            // If parsing fails, just display the raw text
+                            return (
+                              <div key={index} className="p-4 bg-gray-50 rounded-md">
+                                <div className="flex justify-between items-center mb-2">
+                                  <span className="font-medium text-[#1a2642]">
+                                    {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}
+                                  </span>
+                                  <span className="text-sm text-gray-600">
+                                    {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}
+                                  </span>
+                                </div>
+                                <p className="text-gray-700">{log.call_sentiment}</p>
+                              </div>
+                            );
+                          }
+
+                          // Function to display field value or fallback for "not_applicable"
+                          const displayValue = (value: any, defaultVal: string = "N/A") => {
+                            if (value === undefined || value === null) return defaultVal;
+                            if (value === "not_applicable") return "-";
+                            return value;
+                          };
+
+                          return (
+                            <div key={index} className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow duration-200 border border-gray-100">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                {/* Left Column - Client Interaction Summary */}
+                                <div className="md:col-span-2 space-y-4">
+                                  <div className="flex items-center justify-between">
+                                    <h4 className="text-lg font-bold text-[#1a2642]">Client Interaction Summary</h4>
+                                    {parsedData.interaction_quality?.sentiment && (
+                                      <div className="flex items-center">
+                                        <span className="text-green-500">
+                                          {parsedData.interaction_quality.sentiment === "positive" && (
+                                            <span className="flex items-center">
+                                              <Smile className="h-6 w-6 text-green-500 mr-2" />
+                                              Positive
+                                            </span>
+                                          )}
+                                          {parsedData.interaction_quality.sentiment === "negative" && (
+                                            <span className="flex items-center">
+                                              <Frown className="h-6 w-6 text-red-500 mr-2" />
+                                              Negative
+                                            </span>
+                                          )}
+                                          {parsedData.interaction_quality.sentiment === "neutral" && (
+                                            <span className="flex items-center">
+                                              <Meh className="h-6 w-6 text-yellow-500 mr-2" />
+                                              Neutral
+                                            </span>
+                                          )}
+                                        </span>
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className="border rounded-lg p-4">
+                                    <p className="text-gray-700">{parsedData.summary || ""}</p>
+                                  </div>
+                                  
+                                  <h4 className="text-lg font-bold text-[#1a2642] mt-6">Engagement Metrics</h4>
+                                  <div className="space-y-4">
+                                    <div>
+                                      <p className="font-medium mb-2">Response Lengths</p>
+                                      <div className="space-y-2">
+                                        <div>
+                                          <div className="flex justify-between mb-1">
+                                            <span>Client</span>
+                                          </div>
+                                          <div className="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div 
+                                              className="bg-blue-500 h-2.5 rounded-full" 
+                                              style={{ width: `${Math.min(100, ((parsedData.engagement_metrics?.response_lengths?.client || 0) / 50) * 100)}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                        <div>
+                                          <div className="flex justify-between mb-1">
+                                            <span>Lola</span>
+                                          </div>
+                                          <div className="w-full bg-gray-200 rounded-full h-2.5">
+                                            <div 
+                                              className="bg-blue-500 h-2.5 rounded-full" 
+                                              style={{ width: `${Math.min(100, ((parsedData.engagement_metrics?.response_lengths?.lola || 0) / 50) * 100)}%` }}
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className="mt-2">
+                                        <span className="font-medium">Average</span>{" "}
+                                        <span className="text-gray-700">
+                                          {(((parsedData.engagement_metrics?.response_lengths?.client || 0) + 
+                                            (parsedData.engagement_metrics?.response_lengths?.lola || 0)) / 2).toFixed(1)} sec. average response delay
+                                        </span>
+                                      </div>
+                                    </div>
+                                    
+                                    <div className="grid grid-cols-2 gap-4">
+                                      <div>
+                                        <p className="font-medium mb-1">Turn-Taking Balance</p>
+                                        <p className="text-gray-700">
+                                          {displayValue(parsedData.engagement_metrics?.turn_taking_balance)}
+                                        </p>
+                                      </div>
+                                      <div>
+                                        <p className="font-medium mb-1">Average to Respond</p>
+                                        <p className="text-gray-700">
+                                          {displayValue(parsedData.engagement_metrics?.response_consistency, "consistent")}
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <h4 className="text-lg font-bold text-[#1a2642] mt-6">Interaction Quality</h4>
+                                  <div className="border rounded-md p-4 space-y-3 bg-gray-50">
+                                    <div className="grid grid-cols-2 gap-4">
+                                      <div>
+                                        <p className="font-medium text-sm text-gray-500 mb-1">Emotional Language</p>
+                                        <p className="text-gray-700">
+                                          {Array.isArray(parsedData.interaction_quality?.emotional_language)
+                                            ? parsedData.interaction_quality.emotional_language.join(', ')
+                                            : displayValue(parsedData.interaction_quality?.emotional_language)}
+                                        </p>
+                                      </div>
+                                      <div>
+                                        <p className="font-medium text-sm text-gray-500 mb-1">Conversational Richness</p>
+                                        <div className="mt-1">
+                                          {parsedData.interaction_quality?.conversational_richness === "low" && 
+                                            <span className="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs font-medium">
+                                              Low
+                                            </span>
+                                          }
+                                          {parsedData.interaction_quality?.conversational_richness === "medium" && 
+                                            <span className="px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-medium">
+                                              Medium
+                                            </span>
+                                          }
+                                          {parsedData.interaction_quality?.conversational_richness === "high" && 
+                                            <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+                                              High
+                                            </span>
+                                          }
+                                          {!["low", "medium", "high"].includes(parsedData.interaction_quality?.conversational_richness) && 
+                                            <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
+                                              {displayValue(parsedData.interaction_quality?.conversational_richness)}
+                                            </span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  
+                                  <h4 className="text-lg font-bold text-[#1a2642] mt-6">Cognitive Health Signals</h4>
+                                  <div className="border rounded-md p-4 space-y-3 bg-gray-50">
+                                    <div className="grid grid-cols-3 gap-4">
+                                      <div>
+                                        <p className="font-medium text-sm text-gray-500 mb-1">Memory Recall</p>
+                                        <div className="mt-1">
+                                          {parsedData.cognitive_health_signals?.memory_recall === "intact" && 
+                                            <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+                                              Intact
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.memory_recall === "impaired" && 
+                                            <span className="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+                                              Impaired
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.memory_recall === "not_observed" && 
+                                            <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
+                                              Not Observed
+                                            </span>
+                                          }
+                                          {!["intact", "impaired", "not_observed"].includes(parsedData.cognitive_health_signals?.memory_recall) && 
+                                            <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
+                                              {displayValue(parsedData.cognitive_health_signals?.memory_recall)}
+                                            </span>
+                                          }
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <p className="font-medium text-sm text-gray-500 mb-1">Verbal Fluency</p>
+                                        <div className="mt-1">
+                                          {parsedData.cognitive_health_signals?.verbal_fluency === "fluent" && 
+                                            <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+                                              Fluent
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.verbal_fluency === "hesitant" && 
+                                            <span className="px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-medium">
+                                              Hesitant
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.verbal_fluency === "circumlocutory" && 
+                                            <span className="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+                                              Circumlocutory
+                                            </span>
+                                          }
+                                          {!["fluent", "hesitant", "circumlocutory"].includes(parsedData.cognitive_health_signals?.verbal_fluency) && 
+                                            <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
+                                              {displayValue(parsedData.cognitive_health_signals?.verbal_fluency)}
+                                            </span>
+                                          }
+                                        </div>
+                                      </div>
+                                      <div>
+                                        <p className="font-medium text-sm text-gray-500 mb-1">Language Coherence</p>
+                                        <div className="mt-1">
+                                          {parsedData.cognitive_health_signals?.language_coherence === "coherent" && 
+                                            <span className="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
+                                              Coherent
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.language_coherence === "fragmented" && 
+                                            <span className="px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-medium">
+                                              Fragmented
+                                            </span>
+                                          }
+                                          {parsedData.cognitive_health_signals?.language_coherence === "repetitive" && 
+                                            <span className="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-medium">
+                                              Repetitive
+                                            </span>
+                                          }
+                                          {!["coherent", "fragmented", "repetitive"].includes(parsedData.cognitive_health_signals?.language_coherence) && 
+                                            <span className="px-2 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-medium">
+                                              {displayValue(parsedData.cognitive_health_signals?.language_coherence)}
+                                            </span>
+                                          }
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Right Column - Action Items */}
+                                <div className="space-y-4">
+                                  <h4 className="text-lg font-bold text-[#1a2642]">Action Items</h4>
+                                  <ul className="space-y-2">
+                                    {Array.isArray(parsedData.action_items) && parsedData.action_items.length > 0 ? (
+                                      parsedData.action_items.map((item: any, i: number) => (
+                                        <li key={i} className="flex items-start">
+                                          <span className="text-gray-500 mr-2 mt-1">•</span>
+                                          <span>{item}</span>
+                                        </li>
+                                      ))
+                                    ) : (
+                                      <li className="flex items-start">
+                                        <span className="text-gray-500 mr-2 mt-1">•</span>
+                                        <span>No action needed</span>
+                                      </li>
+                                    )}
+                                  </ul>
+                                  
+                                  <div className="pt-4 text-xs text-gray-500 mt-auto">
+                                    <p>Call Date: {convertDateToUserTimezone(log.call_date, userData.callerInfo.timezone)}</p>
+                                    <p>Call Time: {convertToUserTimezone(log.call_start, userData.callerInfo.timezone)}</p>
+                                    <p>Duration: {log.call_duration} mins</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  )}
                 </div>,
                 <div>Dashboard cannot be edited</div>
               )}
