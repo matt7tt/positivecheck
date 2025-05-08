@@ -466,6 +466,7 @@ export function OnboardingWizardComponent() {
                             value={formData.firstName}
                             onChange={handleInputChange}
                             required
+                            placeholder="'Joan'"
                           />
                         </div>
                         <div>
@@ -476,16 +477,18 @@ export function OnboardingWizardComponent() {
                             value={formData.lastName}
                             onChange={handleInputChange}
                             required
+                            placeholder="'Smith'"
                           />
                         </div>
                       </div>
                       <div>
-                        <Label htmlFor="preferredName">Preferred Name</Label>
+                        <Label htmlFor="preferredName">Preferred Name (for unique names, spell phonetically)</Label>
                         <Input
                           id="preferredName"
                           name="preferredName"
                           value={formData.preferredName}
                           onChange={handleInputChange}
+                          placeholder="e.g. 'Jon' or 'Johnathan'"
                         />
                       </div>
                       <div>

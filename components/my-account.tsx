@@ -993,7 +993,7 @@ export function MyAccountComponent() {
                 'caller-info',
                 <div>
                   <p>Name: {userData.callerInfo.firstName} {userData.callerInfo.lastName}</p>
-                  <p>Preferred Name: {userData.callerInfo.preferredName}</p>
+                  <p>Preferred Name (for unique names, spell phonetically): {userData.callerInfo.preferredName}</p>
                   <p>Phone: {userData.callerInfo.userphone}</p>
                   <p>Time Zone: {userData.callerInfo.timezone}</p>
                 </div>,
