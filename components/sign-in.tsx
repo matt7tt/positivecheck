@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Lock } from 'lucide-react'
+import { Lock, Mail, ArrowRight } from 'lucide-react'
 import { useAuth } from '@/lib/auth-context'
 // import Image from 'next/image'
 import { PublicHeader } from '@/components/shared/public-header'
@@ -99,72 +99,89 @@ function SignInForm() {
 
         <div className="flex-grow flex flex-col justify-center py-12 sm:px-6 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-[#1a2642]">Sign in to your account</h2>
+            <p className="mt-2 text-center text-sm text-gray-500">
+              Access your personalized dashboard and preferences
+            </p>
           </div>
 
           <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <Card>
-              <CardHeader>
-                <CardTitle>Welcome back</CardTitle>
-                <CardDescription>Enter your email and password to access your account</CardDescription>
+            <Card className="border border-gray-200 rounded-xl shadow-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-xl font-semibold text-[#1a2642]">Welcome back</CardTitle>
+                <CardDescription className="text-gray-500">Enter your email and password to access your account</CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="email">Email address</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="mt-1"
-                    />
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-sm font-medium text-gray-700">Email address</Label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Mail className="h-5 w-5 text-gray-400" />
+                      </div>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autoComplete="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="pl-10 bg-white border-gray-200 focus:ring-blue-500 focus:border-blue-500 rounded-md"
+                      />
+                    </div>
                   </div>
 
-                  <div>
-                    <Label htmlFor="password">Password</Label>
-                    <Input
-                      id="password"
-                      name="password"
-                      type="password"
-                      autoComplete="current-password"
-                      required
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="mt-1"
-                    />
+                  <div className="space-y-2">
+                    <Label htmlFor="password" className="text-sm font-medium text-gray-700">Password</Label>
+                    <div className="relative">
+                      <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Lock className="h-5 w-5 text-gray-400" />
+                      </div>
+                      <Input
+                        id="password"
+                        name="password"
+                        type="password"
+                        autoComplete="current-password"
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="pl-10 bg-white border-gray-200 focus:ring-blue-500 focus:border-blue-500 rounded-md"
+                      />
+                    </div>
                   </div>
 
                   {error && (
-                    <Alert variant="destructive">
+                    <Alert variant="destructive" className="border border-red-200 bg-red-50 text-red-800 rounded-lg">
                       <AlertDescription>{error}</AlertDescription>
                     </Alert>
                   )}
 
-                  <Button type="submit" className="w-full" disabled={isLoading}>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-2.5 rounded-md transition-colors duration-200"
+                    disabled={isLoading}
+                  >
                     {isLoading ? (
                       <>
-                        <span className="loading loading-spinner loading-sm mr-2"></span>
+                        <div className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                         Signing in...
                       </>
                     ) : (
-                      <>
-                        <Lock className="w-4 h-4 mr-2" />
+                      <div className="flex items-center justify-center">
                         Sign in
-                      </>
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </div>
                     )}
                   </Button>
                 </form>
               </CardContent>
-              <CardFooter className="flex justify-between">
-                <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-500">
+              <CardFooter className="flex flex-col sm:flex-row justify-between border-t border-gray-100 pt-4 pb-4 px-6 bg-gray-50 rounded-b-xl">
+                <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-800 transition-colors mb-2 sm:mb-0">
                   Forgot your password?
                 </Link>
-                <Link href="/onboarding-wizard" className="text-sm text-blue-600 hover:text-blue-500">
-                  Don&apos;t have an account? Sign up
+                <Link href="/onboarding-wizard" className="text-sm text-blue-600 hover:text-blue-800 transition-colors">
+                  Don&apos;t have an account? <span className="font-medium">Sign up</span>
                 </Link>
               </CardFooter>
             </Card>
