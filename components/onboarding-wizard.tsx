@@ -488,6 +488,7 @@ export function OnboardingWizardComponent() {
                           name="preferredName"
                           value={formData.preferredName}
                           onChange={handleInputChange}
+                          required
                           placeholder="e.g. 'Jon' or 'Johnathan'"
                         />
                       </div>
