@@ -313,40 +313,43 @@ export function OnboardingWizardComponent() {
         </header>
 
         <main className="container mx-auto px-4 py-8">
-          <div className="max-w-3xl mx-auto">
-            <Card className="mb-8">
-              <CardHeader>
+          <div className="max-w-4xl mx-auto">
+            <Card className="mb-8 overflow-hidden">
+              <div className="bg-[#f0f3f9] px-6 py-8">
                 <CardTitle className="text-3xl font-bold text-[#1a2642] text-center">Sign Up for Positive Check</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-center text-gray-600 mb-6">
+                <p className="text-center text-gray-600 mt-4 max-w-3xl mx-auto">
                   {getStepRecommendation(step)}
                 </p>
-                <div className="flex justify-between mb-2">
+              </div>
+              <CardContent className="px-6 py-8">
+                <div className="flex justify-between mb-6 bg-white rounded-full p-2 shadow-sm max-w-lg mx-auto">
                   {steps.map((s, index) => (
-                    <div key={index} className={`flex flex-col items-center ${index + 1 === step ? 'text-[#1a2642]' : 'text-gray-400'}`}>
-                      <div className={`rounded-full p-2 ${index + 1 === step ? 'bg-[#1a2642] text-white' : 'bg-gray-200'}`}>
+                    <div key={index} className="flex-1 text-center">
+                      <div className={`rounded-full mx-auto flex items-center justify-center h-12 w-12 ${index + 1 === step ? 'bg-[#1a2642] text-white' : index + 1 < step ? 'bg-[#3a4662] text-white' : 'bg-gray-100'}`}>
                         {s.icon}
                       </div>
-                      <span className="text-sm mt-1">{s.title}</span>
+                      <span className={`text-xs mt-2 block ${index + 1 === step ? 'text-[#1a2642] font-medium' : 'text-gray-500'}`}>{s.title}</span>
                     </div>
                   ))}
                 </div>
-                <Progress value={step * 25} className="h-2 mb-8" />
                 
                 {step === 1 && (
-                  <form onSubmit={(e) => { e.preventDefault(); handleNext(); }} className="space-y-6">
+                  <form onSubmit={(e) => { e.preventDefault(); handleNext(); }} className="space-y-6 max-w-2xl mx-auto">
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-[#1a2642]">Call Preferences</h2>
+                      <h2 className="text-xl font-semibold text-[#1a2642] flex items-center">
+                        <PhoneCall className="w-6 h-6 mr-2 text-[#1a2642]" /> 
+                        Call Preferences
+                      </h2>
                       <div>
                         <Label className="text-base font-semibold">Days to Call <span className="text-red-500">*</span></Label>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-2">
                           {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-                            <div key={day} className="flex items-center space-x-2">
+                            <div key={day} className="flex items-center space-x-2 bg-white rounded-md p-2 border border-gray-200">
                               <Checkbox
                                 id={day}
                                 checked={formData.callDays.includes(day)}
                                 onCheckedChange={() => handleCheckboxChange(day)}
+                                className="text-[#1a2642] border-[#1a2642]"
                               />
                               <Label
                                 htmlFor={day}
@@ -358,10 +361,10 @@ export function OnboardingWizardComponent() {
                           ))}
                         </div>
                       </div>
-                      <div>
-                        <Label htmlFor="callTime">Preferred Call Time</Label>
+                      <div className="mt-6">
+                        <Label htmlFor="callTime" className="text-base font-semibold">Preferred Call Time</Label>
                         <Select onValueChange={(value) => handleSelectChange('callTime', value)} required>
-                          <SelectTrigger id="callTime">
+                          <SelectTrigger id="callTime" className="mt-2">
                             <SelectValue placeholder="Select time" />
                           </SelectTrigger>
                           <SelectContent>
@@ -382,11 +385,18 @@ export function OnboardingWizardComponent() {
                             <SelectItem value="22:00">10 PM</SelectItem>
                           </SelectContent>
                         </Select>
+                        <p className="text-sm text-gray-500 mt-2">Choose a time when your loved one is most likely to be available</p>
                       </div>
                     </div>
-                    <Button type="submit" className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white">
+                    <Button type="submit" className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white mt-8 py-6 text-lg font-medium">
                       Next
                     </Button>
+                    <div className="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                      </svg>
+                      Your information is secure and will never be shared
+                    </div>
                   </form>
                 )}
 
@@ -398,10 +408,13 @@ export function OnboardingWizardComponent() {
                       return;
                     }
                     handleNext();
-                  }} className="space-y-6">
+                  }} className="space-y-6 max-w-2xl mx-auto">
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-[#1a2642]">Which questions to ask? <span className="text-red-500">*</span></h2>
-                      <p className="text-sm text-gray-600 mb-4">Please select up to 3 questions that Lola will ask during each call.</p>
+                      <h2 className="text-xl font-semibold text-[#1a2642] flex items-center">
+                        <Calendar className="w-6 h-6 mr-2 text-[#1a2642]" /> 
+                        Which questions to ask? <span className="text-red-500">*</span>
+                      </h2>
+                      <p className="text-sm text-gray-600 mb-4">Please select up to 3 questions that will be asked during each call.</p>
                       {isLoadingQuestions ? (
                         <div className="text-center py-4">
                           <span className="animate-spin mr-2">⚪</span>
@@ -414,7 +427,7 @@ export function OnboardingWizardComponent() {
                       ) : (
                         <div className="space-y-2">
                           {formData.questions.map((question) => (
-                            <div key={question.id} className="flex items-center space-x-2">
+                            <div key={question.id} className="flex items-center space-x-2 p-3 bg-white rounded-md border border-gray-200">
                               <Checkbox
                                 id={`question-${question.id}`}
                                 checked={question.selected}
@@ -426,10 +439,11 @@ export function OnboardingWizardComponent() {
                                   }
                                   handleQuestionChange(question.id);
                                 }}
+                                className="text-[#1a2642] border-[#1a2642]"
                               />
                               <Label
                                 htmlFor={`question-${question.id}`}
-                                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                className="text-sm font-medium"
                               >
                                 {question.text}
                               </Label>
@@ -444,19 +458,28 @@ export function OnboardingWizardComponent() {
                       </Button>
                       <Button 
                         type="submit" 
-                        className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+                        className="bg-[#1a2642] hover:bg-[#2a3752] text-white px-8"
                         disabled={isLoadingQuestions}
                       >
                         Next
                       </Button>
                     </div>
+                    <div className="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                      </svg>
+                      Your information is secure and will never be shared
+                    </div>
                   </form>
                 )}
 
                 {step === 3 && (
-                  <form onSubmit={(e) => { e.preventDefault(); handleNext(); }} className="space-y-6">
+                  <form onSubmit={(e) => { e.preventDefault(); handleNext(); }} className="space-y-6 max-w-2xl mx-auto">
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-[#1a2642]">Who will we be calling?</h2>
+                      <h2 className="text-xl font-semibold text-[#1a2642] flex items-center">
+                        <User className="w-6 h-6 mr-2 text-[#1a2642]" /> 
+                        Who will we be calling?
+                      </h2>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="firstName">First Name</Label>
@@ -467,6 +490,7 @@ export function OnboardingWizardComponent() {
                             onChange={handleInputChange}
                             required
                             placeholder="'Joan'"
+                            className="mt-1"
                           />
                         </div>
                         <div>
@@ -478,6 +502,7 @@ export function OnboardingWizardComponent() {
                             onChange={handleInputChange}
                             required
                             placeholder="'Smith'"
+                            className="mt-1"
                           />
                         </div>
                       </div>
@@ -490,6 +515,7 @@ export function OnboardingWizardComponent() {
                           onChange={handleInputChange}
                           required
                           placeholder="e.g. 'Jon' or 'Johnathan'"
+                          className="mt-1"
                         />
                       </div>
                       <div>
@@ -503,13 +529,13 @@ export function OnboardingWizardComponent() {
                           placeholder="(555) 555-5555"
                           required
                           pattern="\(\d{3}\) \d{3}-\d{4}"
-                          className="w-full p-2 border rounded"
+                          className="w-full p-2 border rounded mt-1"
                         />
                       </div>
                       <div>
                         <Label htmlFor="timezone">Time Zone</Label>
                         <Select onValueChange={(value) => handleSelectChange('timezone', value)} required>
-                          <SelectTrigger id="timezone">
+                          <SelectTrigger id="timezone" className="mt-1">
                             <SelectValue placeholder="Select Time Zone" />
                           </SelectTrigger>
                           <SelectContent>
@@ -530,7 +556,7 @@ export function OnboardingWizardComponent() {
                           defaultValue="English"
                           required
                         >
-                          <SelectTrigger id="language">
+                          <SelectTrigger id="language" className="mt-1">
                             <SelectValue placeholder="Select language" />
                           </SelectTrigger>
                           <SelectContent>
@@ -547,9 +573,15 @@ export function OnboardingWizardComponent() {
                       <Button type="button" onClick={handleBack} variant="outline">
                         Back
                       </Button>
-                      <Button type="submit" className="bg-[#1a2642] hover:bg-[#2a3752] text-white">
+                      <Button type="submit" className="bg-[#1a2642] hover:bg-[#2a3752] text-white px-8">
                         Next
                       </Button>
+                    </div>
+                    <div className="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                      </svg>
+                      Your information is secure and will never be shared
                     </div>
                   </form>
                 )}
@@ -585,8 +617,8 @@ export function OnboardingWizardComponent() {
                       setErrorMessage('Error checking email. Please try again.');
                       return;
                     }
-                  }} className="space-y-6">
-                    <Card className="bg-gray-50">
+                  }} className="space-y-6 max-w-2xl mx-auto">
+                    <Card className="bg-gray-50 border border-gray-200">
                       <CardHeader>
                         <CardTitle className="text-lg font-semibold text-[#1a2642]">Call Configuration Summary</CardTitle>
                       </CardHeader>
@@ -604,7 +636,10 @@ export function OnboardingWizardComponent() {
                       </CardContent>
                     </Card>
                     <div className="space-y-4">
-                      <h2 className="text-xl font-semibold text-[#1a2642]">Account Information</h2>
+                      <h2 className="text-xl font-semibold text-[#1a2642] flex items-center">
+                        <UserCircle className="w-6 h-6 mr-2 text-[#1a2642]" /> 
+                        Account Information
+                      </h2>
                       <p className="text-sm text-gray-600">Account owner/person paying for the service.</p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
@@ -615,6 +650,7 @@ export function OnboardingWizardComponent() {
                             value={formData.accountFirstName}
                             onChange={handleInputChange}
                             required
+                            className="mt-1"
                           />
                         </div>
                         <div>
@@ -625,6 +661,7 @@ export function OnboardingWizardComponent() {
                             value={formData.accountLastName}
                             onChange={handleInputChange}
                             required
+                            className="mt-1"
                           />
                         </div>
                       </div>
@@ -632,7 +669,7 @@ export function OnboardingWizardComponent() {
                         <div>
                           <Label htmlFor="relationship">Your relationship to the person we are calling? <span className="text-red-500">*</span></Label>
                           <Select onValueChange={(value) => handleSelectChange('relationship', value)} required>
-                            <SelectTrigger id="relationship">
+                            <SelectTrigger id="relationship" className="mt-1">
                               <SelectValue placeholder="Select relationship" />
                             </SelectTrigger>
                             <SelectContent>
@@ -660,7 +697,7 @@ export function OnboardingWizardComponent() {
                             placeholder="(555) 555-5555"
                             required
                             pattern="\(\d{3}\) \d{3}-\d{4}"
-                            className="w-full p-2 border rounded"
+                            className="w-full p-2 border rounded mt-1"
                           />
                         </div>
                       </div>
@@ -673,6 +710,7 @@ export function OnboardingWizardComponent() {
                           value={formData.accountEmail}
                           onChange={handleInputChange}
                           required
+                          className="mt-1"
                         />
                       </div>
                       <div>
@@ -684,6 +722,7 @@ export function OnboardingWizardComponent() {
                           value={formData.accountPassword}
                           onChange={handleInputChange}
                           required
+                          className="mt-1"
                         />
                       </div>
                       <div>
@@ -694,7 +733,7 @@ export function OnboardingWizardComponent() {
                           type="text"
                           value={formData.signUpCode}
                           onChange={handleInputChange}
-                          className="w-full p-2 border rounded"
+                          className="w-full p-2 border rounded mt-1"
                         />
                       </div>
                     </div>
@@ -714,32 +753,46 @@ export function OnboardingWizardComponent() {
                       </Button>
                       <Button 
                         type="submit" 
-                        className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+                        className="bg-[#1a2642] hover:bg-[#2a3752] text-white px-8"
                         disabled={isLoading}
                       >
                         Next
                       </Button>
+                    </div>
+                    <div className="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                      </svg>
+                      Your information is secure and will never be shared
                     </div>
                   </form>
                 )}
 
 
                 {step === 5 && (
-                  <>
+                  <div className="max-w-2xl mx-auto">
                     {!stripePromise ? (
                       <div className="p-4 text-sm text-red-800 bg-red-100 rounded-lg">
                         Payment system is not properly configured. Please contact support.
                       </div>
                     ) : (
-                      <PaymentWrapper
-                        formData={formData}
-                        onBack={handleBack}
-                        isLoading={isLoading}
-                        setIsLoading={setIsLoading}
-                        setErrorMessage={setErrorMessage}
-                      />
+                      <>
+                        <PaymentWrapper
+                          formData={formData}
+                          onBack={handleBack}
+                          isLoading={isLoading}
+                          setIsLoading={setIsLoading}
+                          setErrorMessage={setErrorMessage}
+                        />
+                        <div className="flex items-center justify-center mt-4 text-gray-500 text-sm">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
+                          </svg>
+                          Your information is secure and will never be shared
+                        </div>
+                      </>
                     )}
-                  </>
+                  </div>
                 )}
 
 

@@ -96,7 +96,7 @@ export function LandingPageComponent() {
             <div className="space-y-8 md:space-y-12 ml-4">
               <div className="space-y-6">
                 <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
-                  Daily Wellness Check-In Calls for Seniors
+                  Daily Wellness Check-In Calls for Loved Ones
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
                   Affordable, reliable wellness check-ins for just $20 per month. Cancel anytime.
