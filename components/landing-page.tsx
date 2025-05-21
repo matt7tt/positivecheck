@@ -526,10 +526,12 @@ export function LandingPageComponent() {
                   className="space-y-6"
                   onSubmit={async (e) => {
                     e.preventDefault()
+                    // Store a reference to the form element
+                    const form = e.currentTarget as HTMLFormElement
                     setIsSubmitting(true)
                     
                     try {
-                      const formData = new FormData(e.currentTarget)
+                      const formData = new FormData(form)
                       const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact`, {
                         method: 'POST',
                         headers: {
@@ -558,7 +560,8 @@ export function LandingPageComponent() {
                           color: "#FFFFFF",
                         },
                       })
-                      e.currentTarget.reset()
+                      // Use the cached form reference
+                      form.reset()
                       setIsSubmitted(true)
                     } catch (error) {
                       console.error('Error submitting form:', error)
