@@ -99,7 +99,9 @@ export function LandingPageComponent() {
                   Daily Wellness Check-In Calls for Loved Ones
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-                  Affordable, reliable wellness check-ins for just $20 per month. Cancel anytime.
+                Affordable, reliable peace of mind with trend analysis.
+                <br />
+                Try it free for 7 days. Just $20/month. Cancel anytime.
                 </p>
               </div>
               <Link 
@@ -315,7 +317,7 @@ export function LandingPageComponent() {
                     Step 3: Insights Delivered to You
                   </h3>
                   <p className="text-lg text-[#1a2642]">
-                    Receive a daily email report summarizing their responses, including helpful trend analysis to track changes over time.
+                    Receive a daily email notification and click through to the dashboard for daily wellness insights and helpful trend analysis.
                   </p>
                 </div>
 
@@ -353,6 +355,61 @@ export function LandingPageComponent() {
                     className="object-cover w-full h-full"
                     src="/images/senior-talking-on-the-phone.jpg"
                   />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-16 lg:py-24">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative h-[500px] rounded-xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/wellness-dash.jpg"
+                    alt="Positive Check Wellness Dashboard showing client information, call details, and response trends"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover object-left-top"
+                    priority
+                  />
+                </div>
+                
+                <div className="space-y-8">
+                  <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642]`}>
+                    Introducing the Wellness Dashboard
+                  </h2>
+                  
+                  <h3 className={`${spaceGrotesk.className} text-2xl font-semibold text-[#1a2642]`}>
+                    Stay Informed with Daily Insights
+                  </h3>
+                  
+                  <p className="text-xl text-gray-700">
+                    Our intuitive dashboard provides you with daily wellness updates, allowing you to:
+                  </p>
+                  
+                  <div className="space-y-6">
+                    <div className="text-lg text-gray-700">
+                      <span className="font-semibold text-[#1a2642]">Track Contacts:</span> See contact rates over time and when last contact attempt was made.
+                    </div>
+                    <div className="text-lg text-gray-700">
+                      <span className="font-semibold text-[#1a2642]">Monitor Trends:</span> Track changes in mood, sleep, medication adherence, and nutrition over time.
+                    </div>
+                    <div className="text-lg text-gray-700">
+                      <span className="font-semibold text-[#1a2642]">Personalize Care:</span> Adjust questions and call times to better suit your loved one's needs.
+                    </div>
+                  </div>
+                  
+                  <div className="pt-4">
+                    <Link href="/onboarding-wizard">
+                      <Button 
+                        className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                      >
+                        SIGN UP
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
