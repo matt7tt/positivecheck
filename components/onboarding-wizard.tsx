@@ -39,13 +39,13 @@ const stripePromise = (() => {
 const getStepRecommendation = (step: number): string => {
   switch (step) {
     case 1:
-      return "Research suggests the best times to call seniors to check in are generally mid-morning (10AM - 12PM) and early afternoon (2PM - 4PM), as these are times when most seniors are likely to be awake, settled, and comfortable answering the phone.";
+      return "Try it free for 7 days. Just $20/month. Cancel anytime.<br />Research shows that the best times to check in with seniors are typically mid-morning (10 AM – 12 PM) and early afternoon (2 PM – 4 PM). During these times, most older adults are awake, relaxed, and more likely to be available for a friendly conversation. Choose the time window that works best for your loved one’s daily routine. Make changes anytime.";
     case 2:
-      return "Start with a small set of questions to encourage engagement. Make changes at any time.";
+      return "Try it free for 7 days. Just $20/month. Cancel anytime.<br />Begin with a short set of simple questions designed to encourage conversation and build comfort. Make changes anytime.";
     case 3:
-      return "";
+      return "Try it free for 7 days. Just $20/month. Cancel anytime.<br />Want to hear how it works? Enter your own phone number below to receive the wellness call first. Experience it for yourself before setting it up for a loved one. It is s a great way to get comfortable and see the value firsthand. Make changes anytime.";
     case 4:
-      return "";
+      return "Try it free for 7 days. Just $20/month. Cancel anytime.<br />You're almost there! We'll use this information to create your account so you can receive daily reports, access the wellness dashboard with trend analysis, and make changes to the account anytime.";
     case 5:
       return "";
     default:
