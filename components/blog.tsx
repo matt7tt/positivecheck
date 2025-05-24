@@ -13,6 +13,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "How Positive Check's Wellness Calls Provide Essential Caregiver Relief When Caring Becomes All-Consuming",
+    date: "April 5, 2025",
+    excerpt: "Caring for an aging loved one can be overwhelming. Learn how Positive Check's wellness calls can provide essential relief and support for caregivers while ensuring seniors receive the attention they need.",
+    image: "../images/caregiver-and-loved-one.jpg",
+    slug: "caregiver-relief"
+  },
+  {
     title: "The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention",
     date: "March 17, 2025",
     excerpt: "While care communities strive to provide quality service, regular family check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
