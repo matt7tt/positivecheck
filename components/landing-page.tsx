@@ -27,6 +27,8 @@ const raleway = Raleway({
   style: ['normal', 'italic'],
 })
 
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
+
 export function LandingPageComponent() {
   const [expandedFaqs, setExpandedFaqs] = useState<Set<number>>(new Set())
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -589,7 +591,7 @@ export function LandingPageComponent() {
                     
                     try {
                       const formData = new FormData(form)
-                      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact`, {
+                      const response = await fetch(`${API_BASE_URL}/api/contact`, {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
