@@ -1397,9 +1397,6 @@ export function MyAccountComponent() {
                   {/* Dashboard header with action buttons */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
                     <div>
-                      <h1 className="text-2xl font-bold tracking-tight text-[#1a2642]">
-                        Client Dashboard
-                      </h1>
                       <div className="flex items-center gap-2 mt-2">
                         <User className="h-4 w-4 text-gray-500" />
                         <span className="text-gray-500">{userData.callerInfo.firstName} {userData.callerInfo.lastName}</span>
