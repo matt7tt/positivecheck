@@ -675,13 +675,27 @@ export function OnboardingWizardComponent() {
                             <SelectContent>
                               <SelectItem value="Son">Son</SelectItem>
                               <SelectItem value="Daughter">Daughter</SelectItem>
-                              <SelectItem value="Cousin">Cousin</SelectItem>
+                              <SelectItem value="Brother">Brother</SelectItem>
+                              <SelectItem value="Sister">Sister</SelectItem>
+                              <SelectItem value="Grandson">Grandson</SelectItem>
+                              <SelectItem value="Granddaughter">Granddaughter</SelectItem>
                               <SelectItem value="Uncle">Uncle</SelectItem>
                               <SelectItem value="Aunt">Aunt</SelectItem>
+                              <SelectItem value="Nephew">Nephew</SelectItem>
+                              <SelectItem value="Niece">Niece</SelectItem>
+                              <SelectItem value="Cousin">Cousin</SelectItem>
+                              <SelectItem value="Son-in-law">Son-in-law</SelectItem>
+                              <SelectItem value="Daughter-in-law">Daughter-in-law</SelectItem>
+                              <SelectItem value="Brother-in-law">Brother-in-law</SelectItem>
+                              <SelectItem value="Sister-in-law">Sister-in-law</SelectItem>
+                              <SelectItem value="Stepson">Stepson</SelectItem>
+                              <SelectItem value="Stepdaughter">Stepdaughter</SelectItem>
+                              <SelectItem value="Stepbrother">Stepbrother</SelectItem>
+                              <SelectItem value="Stepsister">Stepsister</SelectItem>
+                              <SelectItem value="Half-brother">Half-brother</SelectItem>
+                              <SelectItem value="Half-sister">Half-sister</SelectItem>
                               <SelectItem value="Friend">Friend</SelectItem>
                               <SelectItem value="Neighbor">Neighbor</SelectItem>
-                              <SelectItem value="Niece">Niece</SelectItem>
-                              <SelectItem value="Nephew">Nephew</SelectItem>
                               <SelectItem value="Caregiver">Caregiver</SelectItem>
                             </SelectContent>
                           </Select>
