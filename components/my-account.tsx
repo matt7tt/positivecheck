@@ -516,7 +516,7 @@ export function MyAccountComponent() {
   ) => (
     <div className="relative w-full mb-6 overflow-hidden">
       <div className="mb-5 flex justify-between items-center w-full pb-3 border-b border-gray-200">
-        <div className="flex items-center gap-3 font-semibold text-lg text-[#1a2642]">
+        <div className="flex items-center gap-3 font-semibold text-xl text-[#1a2642]">
           {icon}
           {title}
         </div>
