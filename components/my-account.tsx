@@ -1117,7 +1117,7 @@ export function MyAccountComponent() {
                 <HelpCircle className="h-5 w-5 text-purple-500" />,
                 'questions',
                 <div className="bg-white rounded-xl border border-gray-200 p-6 space-y-4 shadow-sm">
-                  {userData.questions.map((question) => (
+                  {userData.questions.sort((a, b) => a.id - b.id).map((question) => (
                     <div key={question.id} className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded-md transition-duration-200">
                       <Checkbox checked={question.selected} disabled className="h-5 w-5 data-[state=checked]:bg-blue-600 data-[state=checked]:border-blue-600" />
                       <span>{question.text}</span>
@@ -1125,7 +1125,7 @@ export function MyAccountComponent() {
                   ))}
                 </div>,
                 <div className="bg-white rounded-xl border border-gray-200 p-6 space-y-4 shadow-sm">
-                  {userData.questions.map((question) => (
+                  {userData.questions.sort((a, b) => a.id - b.id).map((question) => (
                     <div key={question.id} className="flex items-center space-x-2 p-2 hover:bg-gray-50 rounded-md transition-duration-200">
                       <Checkbox
                         id={`question-${question.id}`}
