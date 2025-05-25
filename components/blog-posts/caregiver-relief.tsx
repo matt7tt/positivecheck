@@ -27,7 +27,7 @@ export function CaregiverReliefPost() {
         <img
           src="/images/caregiver-and-loved-one.jpg"
           alt="A caregiver taking a moment to relax while knowing their loved one is being cared for"
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          className="w-full rounded-lg mb-8"
         />
 
         <p className="lead-paragraph">
