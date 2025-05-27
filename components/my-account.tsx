@@ -1008,7 +1008,7 @@ export function MyAccountComponent() {
                 width={120}
                 height={32}
                 priority
-                className="h-full w-auto lg:h-[64px]"
+                className="h-full w-auto"
               />
             </Link>
             <nav>
