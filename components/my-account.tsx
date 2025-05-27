@@ -151,6 +151,7 @@ export function MyAccountComponent() {
       userphone: '',
       email: '',
       password: '',
+      subscription_status: '',
     },
     callPreferences: {
       callDayIds: [] as number[],
@@ -340,6 +341,7 @@ export function MyAccountComponent() {
             email: userData.acc_user_email || '',
             userphone: userData.acc_user_phone || '',
             password: '',
+            subscription_status: userData.acc_subscription_status || '',
           },
           callerInfo: {
             firstName: userData.caller_user_first_name || '',
@@ -358,6 +360,15 @@ export function MyAccountComponent() {
           callLog: callLogData,
           weeklyLearning: ''
         }))
+
+        console.log('Subscription Status:', userData.subscription_status)
+        console.log('Account Info:', {
+          firstName: userData.acc_user_first_name,
+          lastName: userData.acc_user_last_name,
+          email: userData.acc_user_email,
+          userphone: userData.acc_user_phone,
+          subscription_status: userData.subscription_status
+        })
 
         setIsAuthenticated(true)
         setIsLoading(false)
@@ -1027,9 +1038,20 @@ export function MyAccountComponent() {
         </header>
 
         <div className="container mx-auto px-4 py-8 flex-grow">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-[#1a2642] mb-1">My Account</h1>
-            <p className="text-gray-600">
+          <div className="mb-2">
+            <div className="flex items-center gap-3">
+              <h1 className="text-3xl font-bold tracking-tight text-[#1a2642]">My Account</h1>
+              {userData.accountInfo.subscription_status && (
+                <span className={`px-3 py-1 text-xs font-medium rounded-full inline-flex items-center ${
+                  userData.accountInfo.subscription_status.toLowerCase() === 'active' 
+                    ? 'bg-green-100 text-green-800' 
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {toCamelCase(userData.accountInfo.subscription_status)}
+                </span>
+              )}
+            </div>
+            <p className="text-gray-600 mt-1">
               Manage your account settings and preferences.
             </p>
           </div>
