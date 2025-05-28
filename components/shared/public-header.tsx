@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 interface PublicHeaderProps {
-  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms"
+  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
@@ -60,6 +60,16 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               }`}
             >
               About
+            </Link>
+            <Link 
+              href="/how-it-works" 
+              className={`text-base font-medium ${
+                currentPage === 'how-it-works' 
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              How It Works
             </Link>
             <Link 
               href="/blog" 
@@ -120,6 +130,17 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   About
+                </Link>
+                <Link 
+                  href="/how-it-works" 
+                  className={`text-base font-medium ${
+                    currentPage === 'how-it-works' 
+                      ? 'text-[#1a2642] font-bold' 
+                      : 'text-gray-600'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  How It Works
                 </Link>
                 <Link 
                   href="/blog" 

@@ -1,5 +1,4 @@
-'use client'
-
+import type { Metadata } from 'next'
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { Space_Grotesk } from 'next/font/google'
@@ -9,6 +8,11 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
   weight: ['500', '700'],
 })
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Positive Check',
+  description: 'Positive Check\'s privacy policy explains how we protect your personal and health information. HIPAA-compliant senior care service with secure data handling practices.',
+}
 
 export default function PrivacyPage() {
   return (

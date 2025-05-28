@@ -61,32 +61,104 @@ export function LandingPageComponent() {
     <div className="min-h-screen flex flex-col">
       <Script id="structured-data" type="application/ld+json">
         {`
-          {
-            "@context": "https://schema.org",
-            "@type": "HealthAndBeautyBusiness",
-            "name": "Positive Check",
-            "description": "Daily wellness check-in calls for seniors using AI companion Lola",
-            "url": "https://www.positivecheck.com",
-            "priceRange": "$20/month",
-            "telephone": "866-605-8571",
-            "areaServed": "United States",
-            "serviceType": "Senior Care Services",
-            "offers": {
-              "@type": "Offer",
-              "price": "20",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "description": "Daily wellness check-in calls for seniors"
-            },
-            "service": {
-              "@type": "Service",
-              "serviceType": "Senior Care",
-              "provider": {
-                "@type": "Organization",
-                "name": "Positive Check"
+          [
+            {
+              "@context": "https://schema.org",
+              "@type": "HealthAndBeautyBusiness",
+              "name": "Positive Check",
+              "description": "Daily wellness check-in calls for seniors using AI companion Lola",
+              "url": "https://www.positivecheck.com",
+              "priceRange": "$20/month",
+              "telephone": "866-605-8571",
+              "areaServed": "United States",
+              "serviceType": "Senior Care Services",
+              "offers": {
+                "@type": "Offer",
+                "price": "20",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "description": "Daily wellness check-in calls for seniors"
+              },
+              "service": {
+                "@type": "Service",
+                "serviceType": "Senior Care",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "Positive Check"
+                }
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Why should I choose Positive Check?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I prepare for the first call?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Please inform the person receiving the calls you care for their wellbeing and that you signed up for a wellness check-in call service called Positive Check. Lola from Positive Check will be calling and will be asking questions about your wellbeing. If the person receiving the calls has caller ID, incoming calls will be coming from 866-605-8571."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How does Positive Check support seniors' independence?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "By checking in daily, Lola helps seniors feel connected while promoting healthy habits like regular meals, sleep, and medication adherence. This proactive care allows them to stay in their homes longer, with confidence and dignity."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is Positive Check secure?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Privacy and security are our top priorities. All calls and reports are handled with the utmost care to protect sensitive information."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What if my loved one is hard of hearing?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Lola speaks clear and concise language during calls and can repeat questions if needed. Volume adjustments can also be customized for optimal clarity."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Lola replace human caregivers?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps families and caregivers stay informed and respond proactively to changes in well-being."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What makes Positive Check unique?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Positive Check leverages AI to deliver consistent, reliable, and objective care while maintaining affordability and scalability. Unlike services with human caregivers, Positive Check is available 24/7, never experiences fatigue, and provides instant reporting with complete transparency."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can Positive Check help with caregiver burnout?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout."
+                  }
+                }
+              ]
             }
-          }
+          ]
         `}
       </Script>
       <Toaster position="bottom-center" containerStyle={{ bottom: 100 }} />

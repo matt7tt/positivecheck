@@ -2,6 +2,7 @@
 
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
+import Script from 'next/script'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -11,6 +12,51 @@ const spaceGrotesk = Space_Grotesk({
 export function UnderstandingCaregiverBurnoutPost() {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
+      <Script id="article-structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Understanding and Preventing Caregiver Burnout",
+            "description": "Learn to recognize the signs of caregiver burnout and discover effective prevention strategies. Find out how Positive Check can provide essential support for overwhelmed caregivers.",
+            "image": "https://www.positivecheck.com/images/happy-senior-and-caregiver.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Positive Check"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Positive Check",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.positivecheck.com/images/positive-logo.png"
+              }
+            },
+            "datePublished": "2025-03-17",
+            "dateModified": "2025-03-17",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.positivecheck.com/blog/understanding-caregiver-burnout"
+            },
+            "articleSection": "Caregiver Support",
+            "keywords": ["caregiver burnout", "caregiver stress", "senior care", "caregiver support", "burnout prevention", "caregiver health"],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Caregiver Burnout"
+              },
+              {
+                "@type": "Thing", 
+                "name": "Mental Health"
+              },
+              {
+                "@type": "Thing",
+                "name": "Senior Care"
+              }
+            ]
+          }
+        `}
+      </Script>
       <Link 
         href="/blog"
         className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"

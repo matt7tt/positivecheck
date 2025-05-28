@@ -2,6 +2,7 @@
 
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
+import Script from 'next/script'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -11,6 +12,51 @@ const spaceGrotesk = Space_Grotesk({
 export function CaregiverReliefPost() {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
+      <Script id="article-structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "How Positive Check's Wellness Calls Provide Essential Caregiver Relief When Caring Becomes All-Consuming",
+            "description": "Discover how Positive Check's wellness calls provide essential relief for overwhelmed caregivers. Learn how daily check-ins reduce stress and improve family relationships.",
+            "image": "https://www.positivecheck.com/images/caregiver-and-loved-one.jpg",
+            "author": {
+              "@type": "Organization",
+              "name": "Positive Check"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Positive Check",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.positivecheck.com/images/positive-logo.png"
+              }
+            },
+            "datePublished": "2025-04-05",
+            "dateModified": "2025-04-05",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.positivecheck.com/blog/caregiver-relief"
+            },
+            "articleSection": "Senior Care",
+            "keywords": ["caregiver relief", "senior care", "wellness calls", "caregiver burnout", "AI companion", "elder care"],
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "Caregiver Support"
+              },
+              {
+                "@type": "Thing", 
+                "name": "Senior Wellness"
+              },
+              {
+                "@type": "Thing",
+                "name": "AI Healthcare"
+              }
+            ]
+          }
+        `}
+      </Script>
       <Link 
         href="/blog"
         className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"

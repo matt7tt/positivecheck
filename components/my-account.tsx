@@ -1001,7 +1001,7 @@ export function MyAccountComponent() {
       <div className="min-h-screen flex flex-col">
         <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm transition-shadow duration-200">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-90">
+            <Link href="/" className="h-16">
               <Image
                 src="/images/positive-logo.png"
                 alt="Positive Check"

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from 'next/image'
+import Script from 'next/script'
 import { Space_Grotesk } from 'next/font/google'
 import { PublicHeader } from '@/components/shared/public-header'
 
@@ -10,6 +11,47 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 export function AboutComponent() {
   return (
     <div className="min-h-screen bg-white">
+      <Script id="about-structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Positive Check",
+            "description": "A revolutionary AI-powered caregiver service dedicated to ensuring the well-being of seniors while offering peace of mind to families and caregivers.",
+            "url": "https://www.positivecheck.com",
+            "logo": "https://www.positivecheck.com/images/positive-logo.png",
+            "telephone": "866-605-8571",
+            "email": "info@positivecheck.com",
+            "foundingDate": "2024",
+            "areaServed": "United States",
+            "serviceType": "Senior Care Services",
+            "mission": "To enhance the quality of life for seniors and help seniors age in place longer through regular check-ins and empower caregivers with actionable insights, fostering stronger connections and improved care for loved ones.",
+            "vision": "To redefine caregiving by empowering seniors with personalized support through AI, enabling them to live independently and stay connected.",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Senior Wellness Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Daily Wellness Check-in Calls",
+                    "description": "Compassionate AI check-ins designed to ensure seniors feel heard and cared for"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Daily Caregiver Reports",
+                    "description": "Comprehensive updates on physical, emotional, and social well-being, helping caregivers respond proactively"
+                  }
+                }
+              ]
+            }
+          }
+        `}
+      </Script>
       <PublicHeader currentPage="about" />
 
       {/* Skip link */}

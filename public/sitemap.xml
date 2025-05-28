@@ -2,85 +2,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://positivecheck.com/</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://positivecheck.com/about</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://positivecheck.com/contact</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://positivecheck.com/blog</loc>
-    <lastmod>2025-04-22</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/sign-in</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/onboarding-wizard</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.positivecheck.com/blog/caregiver-relief</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.positivecheck.com/blog/importance-of-checking-in-care-communities</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/how-many-adults-live-far-from-aging-parents</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/maintaining-social-connections</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/when-should-families-check-in</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/understanding-caregiver-burnout</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/tips-for-long-distance-caregiving</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/signs-loved-one-needs-caregiver-check-in</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.positivecheck.com/blog/checking-in-on-seniors</loc>
-    <lastmod>2024-03-20</lastmod>
+    <lastmod>2025-01-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

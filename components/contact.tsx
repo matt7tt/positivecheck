@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import Link from "next/link"
+import Script from 'next/script'
 // import Image from 'next/image'
 import { useState } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
@@ -17,6 +18,36 @@ export function ContactComponent() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Script id="contact-structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Positive Check",
+            "description": "Daily wellness check-in calls for seniors using AI companion Lola. Contact us for questions about our senior wellness call service.",
+            "url": "https://www.positivecheck.com",
+            "logo": "https://www.positivecheck.com/images/positive-logo.png",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "866-605-8571",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "English"
+              },
+              {
+                "@type": "ContactPoint",
+                "email": "info@positivecheck.com",
+                "contactType": "customer service",
+                "areaServed": "US",
+                "availableLanguage": "English"
+              }
+            ],
+            "areaServed": "United States",
+            "serviceType": "Senior Care Services"
+          }
+        `}
+      </Script>
       <PublicHeader currentPage="contact" />
 
       {/* Skip link */}
