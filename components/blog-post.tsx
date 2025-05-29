@@ -24,9 +24,9 @@ export function BlogPostComponent() {
 
           <div className="my-8">
             <img
-              src="/images/grandma-with-son-and-grandson.jpg"
-              alt="A heartwarming family photo showing three generations - grandmother, son, and grandson - standing together on their front porch"
-              className="w-full h-auto rounded-lg shadow-lg"
+              src="/images/grandma-with-son-and-grandson.webp"
+              alt="Grandmother with son and grandson"
+              className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
             />
             <p className="text-sm text-gray-500 mt-2 text-center">
               Family connections matter, no matter the distance

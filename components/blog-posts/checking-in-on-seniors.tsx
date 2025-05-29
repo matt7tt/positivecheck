@@ -17,12 +17,12 @@ export function CheckingInOnSeniorsPost() {
         ← Back to Blog
       </Link>
       
-      <Image 
-        src="../images/happy_senior_headphones.jpg" 
-        alt="Senior living alone" 
-        width={800} 
-        height={400} 
-        className="w-full h-auto rounded-lg mb-6"
+      <Image
+        src="../images/happy_senior_headphones.webp"
+        alt="Senior person enjoying music with headphones"
+        width={800}
+        height={400}
+        className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
       />
       
       <h1 className={`text-3xl md:text-4xl font-bold mb-4 text-[#1a2642] ${spaceGrotesk.className}`}>

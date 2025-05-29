@@ -13,24 +13,26 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: 'Phoenix Senior Wellness Check-In Calls | Positive Check',
-    description: 'Daily wellness check-in calls for seniors in Phoenix, Arizona. Our service provides peace of mind for families with affordable $20/month wellness calls.',
-    url: 'https://www.positivecheck.com/phoenix',
+    title: 'Senior Wellness Calls in Phoenix | Positive Check',
+    description: 'Daily wellness check-in calls for Phoenix seniors. AI-powered service provides local families peace of mind with $20/month senior care support.',
+    url: '/phoenix',
     siteName: 'Positive Check',
     locale: 'en_US',
     type: 'website',
-    images: [{
-      url: '/images/senior-talking-on-the-phone1.jpeg',
-      width: 1200,
-      height: 630,
-      alt: 'Senior enjoying a wellness check-in call in Phoenix'
-    }]
+    images: [
+      {
+        url: '/images/senior-talking-on-the-phone1.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Senior in Phoenix enjoying a wellness call',
+      },
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Phoenix Senior Wellness Check-In Calls | Positive Check',
-    description: 'Daily wellness check-in calls for seniors in Phoenix, Arizona. Our service provides peace of mind for families.',
-    images: ['/images/senior-talking-on-the-phone1.jpeg']
+    title: 'Senior Wellness Calls in Phoenix | Positive Check',
+    description: 'Daily wellness check-in calls for Phoenix seniors starting at $20/month.',
+    images: ['/images/senior-talking-on-the-phone1.webp']
   },
   robots: {
     index: true,

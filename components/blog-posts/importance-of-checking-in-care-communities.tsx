@@ -27,11 +27,11 @@ export function ImportanceOfCheckingInPost() {
         </h1>
 
         <Image
-          src="/images/seniors-in-community.jpg"
-          alt="Group of seniors participating in an activity session at a care community"
+          src="/images/seniors-in-community.webp"
+          alt="Seniors in a care community setting"
           width={800}
           height={400}
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

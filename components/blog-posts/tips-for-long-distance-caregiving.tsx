@@ -25,9 +25,9 @@ export function LongDistanceCaregivingTipsPost() {
         </h1>
 
         <img
-          src="/images/senior-on-the-phone.jpg"
-          alt="Senior woman using a phone to stay connected with family"
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          src="/images/senior-on-the-phone.webp"
+          alt="Senior person having a phone conversation"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

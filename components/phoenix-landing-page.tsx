@@ -201,7 +201,7 @@ export function PhoenixLandingPageComponent() {
                 <Image
                   alt="A senior person enjoying a phone conversation in a cozy setting with warm lighting"
                   className="object-cover"
-                  src="/images/senior-talking-on-the-phone1.jpeg"
+                  src="/images/senior-talking-on-the-phone1.webp"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
@@ -334,7 +334,7 @@ export function PhoenixLandingPageComponent() {
                   <Image
                     alt="Healthcare professional in pink scrubs working at a computer with a headset"
                     className="object-cover"
-                    src="/images/lola-from-positive-check.jpeg"
+                    src="/images/lola-from-positive-check.webp"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
@@ -401,7 +401,7 @@ export function PhoenixLandingPageComponent() {
                 <div className="relative h-48">
                   <img
                     alt="Senior person looking content and well"
-                    src="/images/senior-watching-tv.jpeg"
+                    src="/images/senior-watching-tv.webp"
                     className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
                   />
                 </div>
@@ -418,7 +418,7 @@ export function PhoenixLandingPageComponent() {
                 <div className="relative h-48">
                   <Image
                     alt="Senior person drinking coffee and relaxing"
-                    src="/images/senior-drinking-coffee.jpg"
+                    src="/images/senior-drinking-coffee.webp"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-t-lg"
@@ -438,7 +438,7 @@ export function PhoenixLandingPageComponent() {
                 <div className="relative h-48">
                   <Image
                     alt="Senior person managing medications"
-                    src="/images/senior-checking-medications.jpeg"
+                    src="/images/senior-checking-medications.webp"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-t-lg"
@@ -458,7 +458,7 @@ export function PhoenixLandingPageComponent() {
                 <div className="relative h-48">
                   <Image
                     alt="Senior person enjoying a healthy meal"
-                    src="/images/senior-eating-lunch.jpeg"
+                    src="/images/senior-eating-lunch.webp"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover rounded-t-lg"
@@ -552,7 +552,7 @@ export function PhoenixLandingPageComponent() {
                   <img
                     alt="Senior woman smiling while talking on a mobile phone"
                     className="object-cover w-full h-full"
-                    src="/images/senior-talking-on-the-phone.jpg"
+                    src="/images/senior-talking-on-the-phone.webp"
                   />
                 </div>
               </div>
@@ -655,7 +655,7 @@ export function PhoenixLandingPageComponent() {
                 <div className="w-32 h-32 flex-shrink-0 rounded-full overflow-hidden relative">
                   <Image
                     alt="Senior woman smiling at the beach"
-                    src="/images/senior-at-the-beach.jpeg"
+                    src="/images/senior-at-the-beach.webp"
                     fill
                     sizes="128px"
                     className="object-cover"

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     description: 'Daily wellness check-in calls for seniors starting at $20/month. AI-powered service provides caregiver relief, family peace of mind, and helps seniors age safely at home.',
     images: [
       {
-        url: '/images/senior-talking-on-the-phone1.jpeg',
+        url: '/images/senior-talking-on-the-phone1.webp',
         width: 1200,
         height: 630,
         alt: 'Senior person enjoying a phone conversation with Positive Check',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     creator: '@positivecheck',
     title: 'Daily Wellness Calls for Seniors | Positive Check',
     description: 'Daily wellness check-in calls for seniors starting at $20/month. AI-powered service provides caregiver relief and family peace of mind.',
-    images: ['/images/senior-talking-on-the-phone1.jpeg'],
+    images: ['/images/senior-talking-on-the-phone1.webp'],
   },
 };
 

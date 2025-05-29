@@ -20,18 +20,16 @@ export function UnderstandingCaregiverBurnoutPost() {
             "@type": "Article",
             "headline": "Understanding and Preventing Caregiver Burnout",
             "description": "Learn to recognize the signs of caregiver burnout and discover effective prevention strategies. Find out how Positive Check can provide essential support for overwhelmed caregivers.",
-            "image": "https://www.positivecheck.com/images/happy-senior-and-caregiver.jpg",
+            "image": "https://www.positivecheck.com/images/happy-senior-and-caregiver.webp",
             "author": {
               "@type": "Organization",
-              "name": "Positive Check"
+              "name": "Positive Check",
+              "url": "https://www.positivecheck.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "Positive Check",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.positivecheck.com/images/positive-logo.png"
-              }
+              "url": "https://www.positivecheck.com/images/positive-logo.png"
             },
             "datePublished": "2025-03-17",
             "dateModified": "2025-03-17",
@@ -72,13 +70,11 @@ export function UnderstandingCaregiverBurnoutPost() {
         </h1>
 
         <Image
-          src="/images/happy-senior-and-caregiver.jpg"
+          src="/images/happy-senior-and-caregiver.webp"
           alt="A caregiver and senior woman sharing a happy moment together"
           width={800}
           height={400}
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
-          priority={false}
-          sizes="(max-width: 768px) 100vw, 800px"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

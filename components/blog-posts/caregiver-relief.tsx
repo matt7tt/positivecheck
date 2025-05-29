@@ -20,18 +20,16 @@ export function CaregiverReliefPost() {
             "@type": "Article",
             "headline": "How Positive Check's Wellness Calls Provide Essential Caregiver Relief When Caring Becomes All-Consuming",
             "description": "Discover how Positive Check's wellness calls provide essential relief for overwhelmed caregivers. Learn how daily check-ins reduce stress and improve family relationships.",
-            "image": "https://www.positivecheck.com/images/caregiver-and-loved-one.jpg",
+            "image": "https://www.positivecheck.com/images/caregiver-and-loved-one.webp",
             "author": {
               "@type": "Organization",
-              "name": "Positive Check"
+              "name": "Positive Check",
+              "url": "https://www.positivecheck.com"
             },
             "publisher": {
               "@type": "Organization",
               "name": "Positive Check",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.positivecheck.com/images/positive-logo.png"
-              }
+              "url": "https://www.positivecheck.com/images/positive-logo.png"
             },
             "datePublished": "2025-04-05",
             "dateModified": "2025-04-05",
@@ -72,13 +70,11 @@ export function CaregiverReliefPost() {
         </h1>
 
         <Image
-          src="/images/caregiver-and-loved-one.jpg"
+          src="/images/caregiver-and-loved-one.webp"
           alt="A caregiver taking a moment to relax while knowing their loved one is being cared for"
           width={800}
           height={400}
-          className="w-full rounded-lg mb-8"
-          priority={false}
-          sizes="(max-width: 768px) 100vw, 800px"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

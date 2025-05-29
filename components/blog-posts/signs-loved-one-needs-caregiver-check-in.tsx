@@ -25,9 +25,9 @@ export function SignsLovedOneNeedsCaregiverPost() {
         </h1>
 
         <img
-          src="/images/happy-senior-2.jpg"
-          alt="Happy senior person smiling"
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          src="/images/happy-senior-2.webp"
+          alt="Senior person smiling and looking content"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

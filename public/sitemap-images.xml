@@ -4,12 +4,12 @@
   <url>
     <loc>https://positivecheck.com/</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/senior-talking-on-the-phone1.jpeg</image:loc>
+      <image:loc>https://positivecheck.com/images/senior-talking-on-the-phone1.webp</image:loc>
       <image:caption>Senior person enjoying a phone conversation in a cozy setting</image:caption>
       <image:title>Senior Wellness Call</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://positivecheck.com/images/lola-from-positive-check.jpeg</image:loc>
+      <image:loc>https://positivecheck.com/images/lola-from-positive-check.webp</image:loc>
       <image:caption>Healthcare professional representing Lola, our AI companion</image:caption>
       <image:title>Meet Lola - AI Wellness Companion</image:title>
     </image:image>
@@ -22,7 +22,7 @@
   <url>
     <loc>https://positivecheck.com/about</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/happy-senior-with-positive-check.jpg</image:loc>
+      <image:loc>https://positivecheck.com/images/happy-senior-with-positive-check.webp</image:loc>
       <image:caption>Senior person smiling while using Positive Check service</image:caption>
       <image:title>Happy Senior with Positive Check</image:title>
     </image:image>
@@ -30,7 +30,7 @@
   <url>
     <loc>https://positivecheck.com/blog/caregiver-relief</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/caregiver-and-loved-one.jpg</image:loc>
+      <image:loc>https://positivecheck.com/images/caregiver-and-loved-one.webp</image:loc>
       <image:caption>A caregiver taking a moment to relax while knowing their loved one is being cared for</image:caption>
       <image:title>Caregiver Relief</image:title>
     </image:image>
@@ -38,7 +38,7 @@
   <url>
     <loc>https://positivecheck.com/blog/understanding-caregiver-burnout</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/happy-senior-and-caregiver.jpg</image:loc>
+      <image:loc>https://positivecheck.com/images/happy-senior-and-caregiver.webp</image:loc>
       <image:caption>A caregiver and senior woman sharing a happy moment together</image:caption>
       <image:title>Caregiver and Senior Together</image:title>
     </image:image>
@@ -46,7 +46,7 @@
   <url>
     <loc>https://positivecheck.com/blog/how-many-adults-live-far-from-aging-parents</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/grandma-with-son-and-grandson.jpg</image:loc>
+      <image:loc>https://positivecheck.com/images/grandma-with-son-and-grandson.webp</image:loc>
       <image:caption>Family members connecting virtually across distances</image:caption>
       <image:title>Long Distance Family Connection</image:title>
     </image:image>

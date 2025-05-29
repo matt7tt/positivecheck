@@ -26,13 +26,11 @@ export function AdultsLivingFarFromParentsPost() {
         </h1>
 
         <Image
-          src="/images/grandma-with-son-and-grandson.jpg"
+          src="/images/grandma-with-son-and-grandson.webp"
           alt="Family members connecting virtually across distances"
           width={800}
           height={400}
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
-          priority={false}
-          sizes="(max-width: 768px) 100vw, 800px"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

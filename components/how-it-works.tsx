@@ -18,9 +18,9 @@ export function HowItWorksComponent() {
           {
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "How Positive Check Senior Wellness Service Works",
-            "description": "Complete step-by-step guide to using Positive Check's daily wellness check-in calls for seniors",
-            "image": "https://www.positivecheck.com/images/how-it-works-guide.jpg",
+            "name": "How Senior Wellness Calls Work",
+            "description": "Simple 3-step process: 5-minute setup, daily AI wellness calls, detailed family reports. See exactly how our $20/month senior check-in service works.",
+            "image": "https://www.positivecheck.com/images/how-it-works-guide.webp",
             "totalTime": "PT5M",
             "estimatedCost": {
               "@type": "MonetaryAmount",

@@ -99,7 +99,7 @@ export function AboutComponent() {
               {/* Image Section */}
               <div className="my-16 text-center" role="img" aria-label="Happy senior enjoying Positive Check services">
                 <Image
-                  src="/images/happy-senior-with-positive-check.jpg"
+                  src="/images/happy-senior-with-positive-check.webp"
                   alt="Senior person smiling while using Positive Check service"
                   width={800}
                   height={500}

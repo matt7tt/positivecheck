@@ -25,9 +25,9 @@ export function MaintainingSocialConnectionsPost() {
         </h1>
 
         <img
-          src="/images/happy-seniors.jpg"
+          src="/images/happy-seniors.webp"
           alt="Group of senior friends enjoying social time together"
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">

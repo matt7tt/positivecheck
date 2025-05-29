@@ -25,9 +25,9 @@ export function TechnologyInSeniorCarePost() {
         </h1>
 
         <img
-          src="/images/senior-tech.jpg"
-          alt="Senior using modern technology for health monitoring"
-          className="w-full h-[400px] object-cover rounded-lg mb-8"
+          src="/images/senior-tech.webp"
+          alt="Senior person using technology for health monitoring"
+          className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
         <p className="lead-paragraph">
