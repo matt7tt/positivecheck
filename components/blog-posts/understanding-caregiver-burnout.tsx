@@ -3,6 +3,7 @@
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Script from 'next/script'
+import Image from 'next/image'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -70,10 +71,14 @@ export function UnderstandingCaregiverBurnoutPost() {
           Understanding and Preventing Caregiver Burnout
         </h1>
 
-        <img
+        <Image
           src="/images/happy-senior-and-caregiver.jpg"
           alt="A caregiver and senior woman sharing a happy moment together"
+          width={800}
+          height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8"
+          priority={false}
+          sizes="(max-width: 768px) 100vw, 800px"
         />
 
         <p className="lead-paragraph">
@@ -143,7 +148,7 @@ export function UnderstandingCaregiverBurnoutPost() {
         </h2>
 
         <p className="mb-4">
-          Positive Check offers services designed to support caregivers and their loved ones:
+          Positive Check offers services designed to support caregivers and their loved ones. Learn more about <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">how wellness calls provide essential caregiver relief</Link> and discover <Link href="/blog/signs-loved-one-needs-caregiver-check-in" className="text-blue-600 hover:text-blue-800 underline">10 signs your senior needs check-in calls</Link>:
         </p>
 
         <ul className="list-disc pl-6 space-y-4 mb-8">

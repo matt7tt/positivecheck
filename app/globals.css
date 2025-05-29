@@ -2,6 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Critical CSS for performance */
+@layer base {
+  html {
+    font-display: swap;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Prevent layout shift for images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Optimize button interactions */
+  button, [role="button"] {
+    touch-action: manipulation;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Performance optimizations */
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  .contain-layout {
+    contain: layout;
+  }
+  
+  .contain-paint {
+    contain: paint;
+  }
+  
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -5,6 +5,8 @@ Allow: /
 Allow: /blog
 Allow: /contact
 Allow: /onboarding-wizard
+Allow: /about
+Allow: /how-it-works
 
 # Disallow admin and private areas
 Disallow: /my-account
@@ -13,9 +15,13 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /private/
 
-# Sitemap location
-Sitemap: https://positivecheck.com/sitemap.xml
-
 # Location pages
 # These pages contain location-specific information for seniors in these areas
 Allow: /phoenix
+
+# Sitemap locations
+Sitemap: https://positivecheck.com/sitemap.xml
+Sitemap: https://positivecheck.com/sitemap-images.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

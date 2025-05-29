@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { SignInComponent } from '@/components/sign-in'
 
 export const metadata: Metadata = {
-  title: 'Sign In | Positive Check',
-  description: 'Sign in to your Positive Check account to manage wellness calls, view reports, and update preferences for your loved one\'s daily check-in service.',
+  title: 'Senior Care Account Login | Positive Check',
+  description: 'Access your senior wellness call dashboard. View call reports, update preferences, manage billing, and monitor your loved one\'s daily check-in trends.',
 }
 
 export default function SignInPage() {

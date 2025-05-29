@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Positive Check',
-  description: 'Positive Check\'s privacy policy explains how we protect your personal and health information. HIPAA-compliant senior care service with secure data handling practices.',
+  description: 'HIPAA-compliant senior wellness call service. Learn how we protect your personal and health information with secure data handling and privacy safeguards.',
 }
 
 export default function PrivacyPage() {

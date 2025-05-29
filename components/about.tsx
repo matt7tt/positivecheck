@@ -85,7 +85,7 @@ export function AboutComponent() {
               <p className="text-lg text-gray-700 mb-12">
                 To enhance the quality of life for seniors and help seniors age in place longer 
                 through regular check-ins and empower caregivers with actionable insights, 
-                fostering stronger connections and improved care for loved ones.
+                fostering stronger connections and improved care for loved ones. Learn more about <Link href="/blog/checking-in-on-seniors" className="text-blue-600 hover:text-blue-800 underline">why check-ins matter for seniors living alone</Link> and discover <Link href="/how-it-works" className="text-blue-600 hover:text-blue-800 underline">how our service works</Link>.
               </p>
 
               <h2 id="vision-heading" className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-6`}>
@@ -126,7 +126,7 @@ export function AboutComponent() {
                   <h3 className="text-xl font-bold text-[#1a2642] mb-4">Daily Caregiver Reports</h3>
                   <p className="text-gray-600">
                     Comprehensive updates on physical, emotional, and social well-being, helping 
-                    caregivers respond proactively.
+                    caregivers respond proactively. See how our service provides <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">essential caregiver relief</Link>.
                   </p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow-sm">

@@ -3,6 +3,7 @@
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Script from 'next/script'
+import Image from 'next/image'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -70,10 +71,14 @@ export function CaregiverReliefPost() {
           How Positive Check's Wellness Calls Provide Essential Caregiver Relief When Caring Becomes All-Consuming
         </h1>
 
-        <img
+        <Image
           src="/images/caregiver-and-loved-one.jpg"
           alt="A caregiver taking a moment to relax while knowing their loved one is being cared for"
+          width={800}
+          height={400}
           className="w-full rounded-lg mb-8"
+          priority={false}
+          sizes="(max-width: 768px) 100vw, 800px"
         />
 
         <p className="lead-paragraph">
@@ -81,7 +86,7 @@ export function CaregiverReliefPost() {
         </p>
 
         <p>
-          Caregiver burnout is real. It wears you down slowly, then all at once. Constant worry, interrupted sleep, a sense of never doing quite enough. These are common signs that the load is too heavy. But asking for help can feel impossible. That is where Positive Check steps in. Not to replace your care, but to reinforce it in a way that truly makes a difference.
+          Caregiver burnout is real. It wears you down slowly, then all at once. Constant worry, interrupted sleep, a sense of never doing quite enough. These are common signs that the load is too heavy. But asking for help can feel impossible. That is where Positive Check steps in. Not to replace your care, but to reinforce it in a way that truly makes a difference. Learn more about <Link href="/blog/understanding-caregiver-burnout" className="text-blue-600 hover:text-blue-800 underline">recognizing and preventing caregiver burnout</Link>.
         </p>
 
         <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
@@ -184,7 +189,7 @@ export function CaregiverReliefPost() {
         </p>
 
         <p>
-          If you're tired, overwhelmed, or just ready for a bit of help, know this: you are not failing. You are human. And you do not have to carry this all by yourself.
+          If you're tired, overwhelmed, or just ready for a bit of help, know this: you are not failing. You are human. And you do not have to carry this all by yourself. If you're caring for someone from a distance, check out our <Link href="/blog/tips-for-long-distance-caregiving" className="text-blue-600 hover:text-blue-800 underline">essential tips for long-distance caregiving</Link>.
         </p>
 
         <p>

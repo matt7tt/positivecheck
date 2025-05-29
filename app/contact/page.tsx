@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { ContactComponent } from '@/components/contact'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Positive Check',
-  description: 'Contact Positive Check for questions about our senior wellness call service. Get support, schedule a demo, or learn how we can help your family stay connected with loved ones.',
+  title: 'Contact Senior Care Support | Positive Check',
+  description: 'Get help with senior wellness calls. Call 866-605-8571 or email for support, demos, and questions about our $20/month check-in service. Quick response guaranteed.',
 }
 
 export default function ContactPage() {

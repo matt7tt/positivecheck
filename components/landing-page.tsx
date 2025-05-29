@@ -15,6 +15,7 @@ import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
 import { PublicFooter } from "@/components/shared/public-footer"
 import Script from 'next/script'
+import { ContactForm } from '@/components/contact-form'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -153,7 +154,7 @@ export function LandingPageComponent() {
                   "name": "Can Positive Check help with caregiver burnout?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout."
+                    "text": "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout. Learn more about <a href='/blog/understanding-caregiver-burnout' class='text-blue-600 hover:text-blue-800 underline'>preventing caregiver burnout</a> and how <a href='/blog/caregiver-relief' class='text-blue-600 hover:text-blue-800 underline'>wellness calls provide essential relief</a>."
                   }
                 }
               ]
@@ -284,10 +285,13 @@ export function LandingPageComponent() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person looking content and well"
                     src="/images/senior-watching-tv.jpeg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -301,10 +305,13 @@ export function LandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person drinking coffee and relaxing"
                     src="/images/senior-drinking-coffee.jpg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -318,10 +325,13 @@ export function LandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person managing medications"
                     src="/images/senior-checking-medications.jpeg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -335,10 +345,13 @@ export function LandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person enjoying a healthy meal"
                     src="/images/senior-eating-lunch.jpeg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -391,7 +404,7 @@ export function LandingPageComponent() {
                     Step 3: Insights Delivered to You
                   </h3>
                   <p className="text-lg text-[#1a2642]">
-                    Receive a daily email notification and click through to the dashboard for daily wellness insights and helpful trend analysis.
+                    Receive a daily email notification and click through to the dashboard for daily wellness insights and helpful trend analysis. <Link href="/how-it-works" className="text-blue-600 hover:text-blue-800 underline">Learn more about how it works</Link>.
                   </p>
                 </div>
 
@@ -424,10 +437,13 @@ export function LandingPageComponent() {
 
               <div className="relative h-[600px]">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                  <img
+                  <Image
                     alt="Senior woman smiling while talking on a mobile phone"
-                    className="object-cover w-full h-full"
                     src="/images/senior-talking-on-the-phone.jpg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -535,7 +551,7 @@ export function LandingPageComponent() {
                 },
                 {
                   question: "Can Positive Check help with caregiver burnout?",
-                  answer: "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout."
+                  answer: "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout. Learn more about <a href='/blog/understanding-caregiver-burnout' class='text-blue-600 hover:text-blue-800 underline'>preventing caregiver burnout</a> and how <a href='/blog/caregiver-relief' class='text-blue-600 hover:text-blue-800 underline'>wellness calls provide essential relief</a>."
                 }
               ].map((faq, index) => (
                 <div 
@@ -613,7 +629,7 @@ export function LandingPageComponent() {
               
               <div className="mb-16">
                 <p className="text-xl text-[#1a2642]">
-                  We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
+                  We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates. If you're caring for parents from afar, check out our <Link href="/blog/tips-for-long-distance-caregiving" className="text-blue-600 hover:text-blue-800 underline">essential long-distance caregiving tips</Link>.
                 </p>
               </div>
 
@@ -653,113 +669,7 @@ export function LandingPageComponent() {
                   </CardContent>
                 </Card>
               ) : (
-                <form 
-                  className="space-y-6"
-                  onSubmit={async (e) => {
-                    e.preventDefault()
-                    // Store a reference to the form element
-                    const form = e.currentTarget as HTMLFormElement
-                    setIsSubmitting(true)
-                    
-                    try {
-                      const formData = new FormData(form)
-                      const response = await fetch(`${API_BASE_URL}/api/contact`, {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json',
-                          'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-                        },
-                        body: JSON.stringify({
-                          firstName: formData.get('firstName'),
-                          lastName: formData.get('lastName'),
-                          email: formData.get('email'),
-                          phone: formData.get('phone'),
-                          hearAboutUs: formData.get('hearAboutUs'),
-                          message: formData.get('message'),
-                          newsletter: formData.get('newsletter') === 'on'
-                        }),
-                      })
-
-                      if (!response.ok) {
-                        throw new Error('Failed to submit form')
-                      }
-
-                      toast.success("Thank you for your message. We will be in touch soon!", {
-                        duration: 3000,
-                        style: {
-                          background: "#10B981",
-                          color: "#FFFFFF",
-                        },
-                      })
-                      // Use the cached form reference
-                      form.reset()
-                      setIsSubmitted(true)
-                    } catch (error) {
-                      console.error('Error submitting form:', error)
-                      toast.error("Sorry, there was an error submitting the form. Please try again.", {
-                        duration: 5000,
-                        style: {
-                          background: "#EF4444",
-                          color: "#FFFFFF",
-                        },
-                      })
-                    } finally {
-                      setIsSubmitting(false)
-                    }
-                  }}
-                >
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">First Name (required)</label>
-                      <Input id="firstName" name="firstName" required />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                      <Input id="lastName" name="lastName" />
-                    </div>
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email (required)</label>
-                    <Input id="email" name="email" type="email" required />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                    <Input id="phone" name="phone" type="tel" />
-                  </div>
-                  <div>
-                    <label htmlFor="hearAboutUs" className="block text-sm font-medium text-gray-700 mb-1">How did you hear about us?</label>
-                    <Select name="hearAboutUs">
-                      <SelectTrigger id="hearAboutUs">
-                        <SelectValue placeholder="Select an option" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="google">Google</SelectItem>
-                        <SelectItem value="friend">Friend or Family</SelectItem>
-                        <SelectItem value="social">Social Media</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message (required)</label>
-                    <Textarea id="message" name="message" required />
-                  </div>
-                  <div className="flex items-center">
-                    <input 
-                      id="newsletter" 
-                      name="newsletter" 
-                      type="checkbox" 
-                      className="h-5 w-5 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded cursor-pointer"
-                      defaultChecked
-                    />
-                    <label htmlFor="newsletter" className="ml-3 block text-sm text-gray-700 cursor-pointer py-2">
-                      Sign up for news and updates
-                    </label>
-                  </div>
-                  <Button type="submit" className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-4 min-h-[44px]">
-                    Submit
-                  </Button>
-                </form>
+                <ContactForm />
               )}
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -24,10 +25,14 @@ export function AdultsLivingFarFromParentsPost() {
           How Many Adults Live Far from Their Aging Parents?
         </h1>
 
-        <img
-          src="../images/grandma-with-son-and-grandson.jpg"
+        <Image
+          src="/images/grandma-with-son-and-grandson.jpg"
           alt="Family members connecting virtually across distances"
+          width={800}
+          height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8"
+          priority={false}
+          sizes="(max-width: 768px) 100vw, 800px"
         />
 
         <p className="lead-paragraph">

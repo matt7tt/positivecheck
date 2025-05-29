@@ -5,6 +5,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Breadcrumb, BreadcrumbSchema } from '@/components/shared/breadcrumb'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -80,6 +81,7 @@ const BLOG_POSTS = [
 export function BlogComponent() {
   return (
     <div className="min-h-screen flex flex-col">
+      <BreadcrumbSchema items={[{ label: 'Blog' }]} />
       <PublicHeader currentPage="blog" />
 
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
@@ -87,9 +89,36 @@ export function BlogComponent() {
       </div>
 
       <main id="main-content" className="flex-grow container mx-auto px-4 py-8">
+        <Breadcrumb items={[{ label: 'Blog' }]} />
+        
         <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-8`} id="blog-heading">
           Blog
         </h1>
+        
+        {/* Featured Posts Section */}
+        <div className="bg-blue-50 p-6 rounded-lg mb-12">
+          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
+            Featured Articles
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 className="font-semibold text-lg mb-2">
+                <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">
+                  Essential Caregiver Relief Through Wellness Calls
+                </Link>
+              </h3>
+              <p className="text-gray-600 text-sm">Learn how daily check-ins can reduce caregiver stress and improve family relationships.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-lg mb-2">
+                <Link href="/blog/understanding-caregiver-burnout" className="text-blue-600 hover:text-blue-800 underline">
+                  Preventing Caregiver Burnout
+                </Link>
+              </h3>
+              <p className="text-gray-600 text-sm">Recognize warning signs and discover effective prevention strategies for overwhelmed caregivers.</p>
+            </div>
+          </div>
+        </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
           {BLOG_POSTS.map((post, index) => (

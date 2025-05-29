@@ -866,9 +866,11 @@ export function MyAccountComponent() {
     try {
       toast.loading('Preparing PDF...', { id: 'export-pdf' });
       
-      // Dynamic imports
-      const html2canvas = (await import('html2canvas')).default;
-      const { jsPDF } = await import('jspdf');
+      // Dynamic imports with better error handling
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import('html2canvas'),
+        import('jspdf')
+      ]);
       
       // Get the dashboard element
       const dashboardElement = document.getElementById('dashboard-content');

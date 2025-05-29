@@ -416,10 +416,13 @@ export function PhoenixLandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person drinking coffee and relaxing"
                     src="/images/senior-drinking-coffee.jpg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -433,10 +436,13 @@ export function PhoenixLandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person managing medications"
                     src="/images/senior-checking-medications.jpeg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">
@@ -450,10 +456,13 @@ export function PhoenixLandingPageComponent() {
               </Card>
               <Card className="bg-white border-none shadow-lg">
                 <div className="relative h-48">
-                  <img
+                  <Image
                     alt="Senior person enjoying a healthy meal"
                     src="/images/senior-eating-lunch.jpeg"
-                    className="absolute inset-0 w-full h-full object-cover rounded-t-lg"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover rounded-t-lg"
+                    loading="lazy"
                   />
                 </div>
                 <CardContent className="pt-6">

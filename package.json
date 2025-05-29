@@ -25,6 +25,7 @@
     "aria-hidden": "^1.2.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "critters": "^0.0.23",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",
     "lucide-react": "^0.460.0",
@@ -35,7 +36,8 @@
     "react-remove-scroll": "^2.6.2",
     "shadcn-ui": "^0.9.3",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "web-vitals": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -86,7 +86,7 @@ export function HowItWorksComponent() {
               <div className="bg-blue-50 p-8 rounded-lg mb-12">
                 <p className="text-lg text-gray-700 mb-4">
                   <strong>Positive Check provides daily wellness check-in calls for seniors through our AI companion Lola.</strong> 
-                  Here's exactly how our service works from signup to daily reports.
+                  Here's exactly how our service works from signup to daily reports. If you're wondering whether your loved one could benefit from this service, check out our guide on <Link href="/blog/signs-loved-one-needs-caregiver-check-in" className="text-blue-600 hover:text-blue-800 underline">10 signs your senior needs check-in calls</Link>.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 mt-6">
                   <div className="text-center">
@@ -399,7 +399,7 @@ export function HowItWorksComponent() {
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Daily Peace of Mind</strong>
-                        <p className="text-gray-600">Regular updates and trend analysis</p>
+                        <p className="text-gray-600">Regular updates and trend analysis. Learn how this provides <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">essential caregiver relief</Link>.</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
