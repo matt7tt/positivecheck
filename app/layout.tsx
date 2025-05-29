@@ -97,6 +97,18 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://connect.facebook.net" />
         <link rel="preload" href="/images/positive-logo.png" as="image" type="image/png" />
+        <link rel="preload" href="/images/senior-talking-on-the-phone1.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/lola-from-positive-check.webp" as="image" type="image/webp" />
+        
+        {/* Critical CSS for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .hero-container { min-height: 400px; }
+            @media (min-width: 1024px) { .hero-container { min-height: 600px; } }
+            .hero-image { background-color: #f3f4f6; }
+            .hero-text { font-display: swap; }
+          `
+        }} />
         
         {/* Facebook Pixel */}
         <Script

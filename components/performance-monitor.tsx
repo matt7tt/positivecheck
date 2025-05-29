@@ -12,78 +12,41 @@ interface Metric {
 
 export function PerformanceMonitor() {
   useEffect(() => {
-    // Only run in production and if Web Vitals API is available
-    if (process.env.NODE_ENV !== 'production' || typeof window === 'undefined') {
-      return
+    if (typeof window !== 'undefined' && 'web-vitals' in window === false) {
+      import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
+        onCLS(console.log)
+        onINP(console.log)
+        onFCP(console.log)
+        onLCP((metric: any) => {
+          console.log('LCP:', metric)
+          // Track LCP specifically for optimization
+          if (metric.value > 2500) {
+            console.warn('LCP is slow:', metric.value, 'ms')
+          }
+        })
+        onTTFB(console.log)
+      })
     }
+  }, [])
 
-    // Dynamic import of web-vitals for performance
-    import('web-vitals').then((webVitals) => {
-      // Track Core Web Vitals
-      webVitals.onCLS((metric: Metric) => {
-        console.log('CLS:', metric)
-        // Send to analytics if needed
-        if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_label: 'CLS',
-            value: Math.round(metric.value * 1000),
-            non_interaction: true,
-          })
-        }
+  // Preload critical resources
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Preload critical images that might be LCP candidates
+      const criticalImages = [
+        '/images/senior-talking-on-the-phone1.webp',
+        '/images/lola-from-positive-check.webp'
+      ]
+      
+      criticalImages.forEach(src => {
+        const link = document.createElement('link')
+        link.rel = 'preload'
+        link.as = 'image'
+        link.href = src
+        link.type = 'image/webp'
+        document.head.appendChild(link)
       })
-
-      // Use onINP instead of onFID for web-vitals v5
-      webVitals.onINP((metric: Metric) => {
-        console.log('INP:', metric)
-        if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_label: 'INP',
-            value: Math.round(metric.value),
-            non_interaction: true,
-          })
-        }
-      })
-
-      webVitals.onFCP((metric: Metric) => {
-        console.log('FCP:', metric)
-        if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_label: 'FCP',
-            value: Math.round(metric.value),
-            non_interaction: true,
-          })
-        }
-      })
-
-      webVitals.onLCP((metric: Metric) => {
-        console.log('LCP:', metric)
-        if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_label: 'LCP',
-            value: Math.round(metric.value),
-            non_interaction: true,
-          })
-        }
-      })
-
-      webVitals.onTTFB((metric: Metric) => {
-        console.log('TTFB:', metric)
-        if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            event_category: 'Web Vitals',
-            event_label: 'TTFB',
-            value: Math.round(metric.value),
-            non_interaction: true,
-          })
-        }
-      })
-    }).catch((error) => {
-      console.warn('Failed to load web-vitals:', error)
-    })
+    }
   }, [])
 
   return null // This component doesn't render anything

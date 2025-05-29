@@ -178,13 +178,13 @@ export function PhoenixLandingPageComponent() {
       <main>
         {/* Phoenix-specific Hero Section */}
         <section className="container mx-auto px-4" aria-labelledby="hero-heading">
-          <div className="grid lg:grid-cols-2 gap-8 items-center py-2 lg:py-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center py-2 lg:py-4 hero-container">
             <div className="space-y-8 md:space-y-12 ml-4">
               <div className="space-y-6">
-                <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight`}>
+                <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight hero-text`}>
                   Senior Wellness Check-In Calls
                 </h1>
-                <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
+                <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
                   Helping Phoenix area families stay connected everyday starting at $20/month. Cancel anytime.
                 </p>
               </div>
@@ -196,15 +196,16 @@ export function PhoenixLandingPageComponent() {
                 SIGN UP
               </Link>
             </div>
-            <div className="relative h-[400px] lg:h-[600px]" role="img" aria-label="A senior person enjoying a phone conversation in a cozy setting">
+            <div className="relative h-[400px] lg:h-[600px] hero-image" role="img" aria-label="A senior person enjoying a phone conversation in a cozy setting">
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <Image
                   alt="A senior person enjoying a phone conversation in a cozy setting with warm lighting"
                   className="object-cover"
                   src="/images/senior-talking-on-the-phone1.webp"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                   priority
+                  fetchPriority="high"
                 />
               </div>
             </div>
