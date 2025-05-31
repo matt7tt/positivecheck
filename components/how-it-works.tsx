@@ -85,8 +85,7 @@ export function HowItWorksComponent() {
               </h2>
               <div className="bg-blue-50 p-8 rounded-lg mb-12">
                 <p className="text-lg text-gray-700 mb-4">
-                  <strong>Positive Check provides daily wellness check-in calls for seniors through our AI companion Lola.</strong> 
-                  Here's exactly how our service works from signup to daily reports. If you're wondering whether your loved one could benefit from this service, check out our guide on <Link href="/blog/signs-loved-one-needs-caregiver-check-in" className="text-blue-600 hover:text-blue-800 underline">10 signs your senior needs check-in calls</Link>.
+                  <strong>Positive Check provides daily wellness check-in calls for seniors through our AI companion Lola.</strong> Here's exactly how our service works from signup to daily reports. If you're wondering whether your loved one could benefit from this service, check out our guide on <Link href="/blog/signs-loved-one-needs-caregiver-check-in" className="text-blue-600 hover:text-blue-800 underline">10 signs your senior needs check-in calls</Link>.
                 </p>
                 <div className="grid md:grid-cols-3 gap-6 mt-6">
                   <div className="text-center">
@@ -157,7 +156,7 @@ export function HowItWorksComponent() {
                       <ul className="space-y-3">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Emergency contact information</span>
+                          <span>Your relationship to the senior</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
@@ -200,7 +199,7 @@ export function HowItWorksComponent() {
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">You'll Receive:</h4>
                         <ul className="space-y-2">
-                          <li>• Dashboard login credentials</li>
+                          <li>• Account / Dashboard access</li>
                           <li>• Service overview and tips</li>
                           <li>• Contact information for support</li>
                           <li>• First call confirmation</li>
@@ -222,22 +221,15 @@ export function HowItWorksComponent() {
                       Daily Wellness Calls
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Lola calls at the scheduled time every day for a friendly 3-5 minute wellness conversation.
+                      Lola calls at the scheduled time every day for a friendly wellness conversation.
                     </p>
                     
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">Call Details:</h4>
                         <ul className="space-y-2">
-                          <li className="flex items-center gap-2">
-                            <Phone className="h-4 w-4 text-[#1a2642]" />
-                            <span>Calls from 866-605-8571</span>
-                          </li>
-                          <li className="flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-[#1a2642]" />
-                            <span>Consistent daily time</span>
-                          </li>
-                          <li>• Duration: 3-5 minutes</li>
+                          <li>• Calls from 866-605-8571</li>
+                          <li>• Consistent daily time</li>
                           <li>• Natural, friendly conversation</li>
                           <li>• Automatic retry if missed</li>
                         </ul>
@@ -249,7 +241,7 @@ export function HowItWorksComponent() {
                           <li>• "Did you sleep well last night?"</li>
                           <li>• "Have you taken your medications?"</li>
                           <li>• "Have you eaten today?"</li>
-                          <li>• Custom questions you selected</li>
+                          <li>• Contact us for custom questions</li>
                         </ul>
                       </div>
                     </div>
@@ -275,24 +267,21 @@ export function HowItWorksComponent() {
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">Daily Reports Include:</h4>
                         <ul className="space-y-2">
-                          <li className="flex items-center gap-2">
-                            <Mail className="h-4 w-4 text-[#1a2642]" />
-                            <span>Email summary with key insights</span>
-                          </li>
-                          <li>• Detailed call transcript</li>
+                          <li>• Email summary with key insights</li>
+                          <li>• Detailed call summary</li>
                           <li>• Wellness score and trends</li>
                           <li>• Mood and health indicators</li>
-                          <li>• Medication and meal tracking</li>
+                          <li>• Medication and meal tracking if selected</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">Dashboard Features:</h4>
                         <ul className="space-y-2">
-                          <li>• Weekly and monthly trend analysis</li>
+                          <li>• Weekly trend analysis</li>
                           <li>• Historical data and patterns</li>
-                          <li>• Emergency alert system</li>
-                          <li>• Customizable notifications</li>
-                          <li>• Family sharing options</li>
+                          <li>• Sentiment analysis</li>
+                          <li>• Contact summary</li>
+                          <li>• Interaction report</li>
                         </ul>
                       </div>
                     </div>
@@ -315,9 +304,9 @@ export function HowItWorksComponent() {
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-[#1a2642] mb-4">Senior Doesn't Answer</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Automatic retry after 30 minutes</li>
-                    <li>• Second attempt if first call missed</li>
-                    <li>• Family notification if both unsuccessful</li>
+                    <li>• Automatic retry after 10 minutes</li>
+                    <li>• Second and third attempts if first call missed</li>
+                    <li>• Email notification if unsuccessful</li>
                     <li>• Detailed missed call report in dashboard</li>
                   </ul>
                 </div>
@@ -325,14 +314,14 @@ export function HowItWorksComponent() {
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-[#1a2642] mb-4">Concerning Response</h3>
                   <ul className="space-y-2 text-gray-700">
-                    <li>• Immediate family notification via email/text</li>
+                    <li>• Family notification via email report</li>
                     <li>• Detailed report of specific concerns</li>
                     <li>• Recommended actions provided</li>
                     <li>• Follow-up tracking in subsequent calls</li>
                   </ul>
                 </div>
                 
-                <div className="bg-gray-50 p-6 rounded-lg">
+                {/* <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-[#1a2642] mb-4">Technical Issues</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li>• 24/7 customer support available</li>
@@ -340,9 +329,9 @@ export function HowItWorksComponent() {
                     <li>• Service credits for missed calls</li>
                     <li>• Alternative contact methods if needed</li>
                   </ul>
-                </div>
+                </div> */}
                 
-                <div className="bg-gray-50 p-6 rounded-lg">
+                {/* <div className="bg-gray-50 p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-[#1a2642] mb-4">Emergency Situations</h3>
                   <ul className="space-y-2 text-gray-700">
                     <li>• Immediate family and emergency contact alerts</li>
@@ -350,7 +339,7 @@ export function HowItWorksComponent() {
                     <li>• Guidance on next steps</li>
                     <li>• Follow-up support and monitoring</li>
                   </ul>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -369,7 +358,7 @@ export function HowItWorksComponent() {
                   <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Seniors</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
-                      <Shield className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>No Technology Required</strong>
                         <p className="text-gray-600">Uses existing home or mobile phone</p>
@@ -400,13 +389,6 @@ export function HowItWorksComponent() {
                       <div>
                         <strong>Daily Peace of Mind</strong>
                         <p className="text-gray-600">Regular updates and trend analysis. Learn how this provides <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">essential caregiver relief</Link>.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
-                      <div>
-                        <strong>Emergency Alerts</strong>
-                        <p className="text-gray-600">Immediate notifications for urgent situations</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
