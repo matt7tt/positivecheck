@@ -458,7 +458,7 @@ export function LandingPageComponent() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[500px] rounded-xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/wellness-dash-2.webp"
+                    src="/images/wellness-dash.webp"
                     alt="Positive Check Wellness Dashboard showing client information, call details, and response trends"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
