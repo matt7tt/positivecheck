@@ -174,9 +174,9 @@ export function LandingPageComponent() {
                   Daily Wellness Check-In Calls for Loved Ones
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
-                Affordable, reliable peace of mind with trend analysis.
-                <br />
-                Try it free for 7 days. Just $20/month. Cancel anytime.
+                 Affordable, reliable peace of mind starting at $20 / month.
+                 <br />
+                 7 day FREE trial. Cancel anytime.
                 </p>
               </div>
               <Link 
