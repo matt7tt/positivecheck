@@ -6,6 +6,7 @@ import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Breadcrumb, BreadcrumbSchema } from '@/components/shared/breadcrumb'
+import { Card, CardContent } from '@/components/ui/card'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -120,7 +121,60 @@ export function BlogComponent() {
           </div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" role="feed" aria-labelledby="blog-heading">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Link href="/blog/senior-phone-check-ins-mental-health-safety-benefits" className="group">
+            <Card className="h-full hover:shadow-lg transition-shadow">
+              <div className="relative h-48">
+                <Image
+                  src="/images/senior-phone-mental-health.webp"
+                  alt="Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2 group-hover:text-[#2a3752]`}>
+                  7 Ways Phone Check-ins Help Senior Mental Health
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Discover how regular phone check-ins improve senior mental health and safety, providing proven benefits for aging in place and caregiver peace of mind.
+                </p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <time dateTime="2025-01-25">January 25, 2025</time>
+                  <span className="mx-2">•</span>
+                  <span>8 min read</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/blog/caregiver-relief" className="group">
+            <Card className="h-full hover:shadow-lg transition-shadow">
+              <div className="relative h-48">
+                <Image
+                  src="/images/caregiver-and-loved-one.webp"
+                  alt="Illustration of a caregiver and an aging loved one"
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2 group-hover:text-[#2a3752]`}>
+                  Essential Caregiver Relief Through Wellness Calls
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Learn how daily check-ins can reduce caregiver stress and improve family relationships.
+                </p>
+                <div className="flex items-center text-sm text-gray-500">
+                  <time dateTime="2025-04-05">April 5, 2025</time>
+                  <span className="mx-2">•</span>
+                  <span>8 min read</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
           {BLOG_POSTS.map((post, index) => (
             <Link 
               href={`/blog/${post.slug}`}
