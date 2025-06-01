@@ -89,6 +89,19 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
         },
       });
 
+      // const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+      //   payment_method: {
+      //     card: elements.getElement(PaymentElement)!,
+      //     billing_details: {
+      //       name: `${formData.accountFirstName} ${formData.accountLastName}`,
+      //       email: formData.accountEmail,
+      //     },
+      //   },
+      // });
+    
+
+
+
       if (error) throw new Error(error.message);
 
       toast.success("Payment successful! Redirecting...");
