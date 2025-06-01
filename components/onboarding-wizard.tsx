@@ -75,7 +75,7 @@ export function OnboardingWizardComponent() {
     accountPassword: '',
     signUpCode: '',
     relationship: '',
-    priceId: 'price_1Qj8IPChFWcVeCaxTWtguaBc',
+    priceId: 'price_1RVI9cChFWcVeCaxmXYs2GlQ',
     amount: 20.00
   })
 
