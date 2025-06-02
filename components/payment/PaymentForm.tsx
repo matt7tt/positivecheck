@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
+import { CardElement } from "@stripe/react-stripe-js";
 import { useRouter } from "next/navigation";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -60,6 +61,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
         .then((data) => {
           if (data.clientSecret) {
             setClientSecret(data.clientSecret);
+            console.log("✅ Client Secret from backend:", data.clientSecret); // 🔍 Add this line
           } else {
             setErrorMessage("Error: Could not fetch clientSecret.");
           }
@@ -82,22 +84,22 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
     setErrorMessage(null);
 
     try {
-      const { error } = await stripe.confirmPayment({
-        elements,
-        confirmParams: {
-          return_url: `${window.location.origin}/my-account`,
-        },
-      });
-
-      // const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-      //   payment_method: {
-      //     card: elements.getElement(PaymentElement)!,
-      //     billing_details: {
-      //       name: `${formData.accountFirstName} ${formData.accountLastName}`,
-      //       email: formData.accountEmail,
-      //     },
+      // const { error } = await stripe.confirmPayment({
+      //   elements,
+      //   confirmParams: {
+      //     return_url: `${window.location.origin}/my-account`,
       //   },
       // });
+
+      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(PaymentElement)!,
+          billing_details: {
+            name: `${formData.accountFirstName} ${formData.accountLastName}`,
+            email: formData.accountEmail,
+          },
+        },
+      });
     
 
 
