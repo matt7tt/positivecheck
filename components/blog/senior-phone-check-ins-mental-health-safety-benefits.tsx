@@ -36,7 +36,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
 
           <div className="relative h-[400px] mb-8 rounded-xl overflow-hidden">
             <Image
-              src="/images/senior-phone-mental-health.webp"
+              src="/images/senior-phone-check-in-mental-health.webp"
               alt="Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"

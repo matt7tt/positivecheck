@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/senior-phone-mental-health.webp',
+        url: '/images/senior-phone-check-in-mental-health.webp',
         width: 1200,
         height: 630,
         alt: 'Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '7 Ways Phone Check-ins Help Senior Mental Health',
     description: 'Discover 7 ways regular phone check-ins improve senior mental health and safety. Learn proven benefits of elderly wellness calls for aging in place and caregiver peace of mind.',
-    images: ['/images/senior-phone-mental-health.webp'],
+    images: ['/images/senior-phone-check-in-mental-health.webp'],
   },
 }
 

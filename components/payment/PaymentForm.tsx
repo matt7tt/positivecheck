@@ -73,47 +73,31 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!stripe || !elements || isSubmitting) {
-      return;
-    }
-
-    setIsSubmitting(true); // ✅ Disable submit button immediately
+    if (!stripe || !elements || isSubmitting) return;
+  
+    setIsSubmitting(true);
     setIsLoading(true);
     setErrorMessage(null);
-
+  
     try {
-      const { error } = await stripe.confirmPayment({
+      const { error } = await stripe.confirmSetup({
         elements,
         confirmParams: {
           return_url: `${window.location.origin}/my-account`,
         },
       });
-      
-
-      // const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-      //   payment_method: {
-      //     card: elements.getElement(PaymentElement)!,
-      //     billing_details: {
-      //       name: `${formData.accountFirstName} ${formData.accountLastName}`,
-      //       email: formData.accountEmail,
-      //     },
-      //   },
-      // });
-    
-
-
-
+  
       if (error) throw new Error(error.message);
-
-      toast.success("Payment successful! Redirecting...");
-      router.push("/my-account");
-    } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred');
-      toast.error(error instanceof Error ? error.message : 'Payment failed');
+  
+      toast.success("Card saved! Redirecting…");
+      // Stripe will redirect automatically to /my-account
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unexpected error";
+      setErrorMessage(message);
+      toast.error(message);
     } finally {
       setIsLoading(false);
-      setIsSubmitting(false); // ✅ Re-enable submit button after request finishes
+      setIsSubmitting(false);
     }
   };
 

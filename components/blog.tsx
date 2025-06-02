@@ -15,13 +15,6 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
-    title: "How Positive Check's Wellness Calls Provide Essential Caregiver Relief When Caring Becomes All-Consuming",
-    date: "April 5, 2025",
-    excerpt: "Caring for an aging loved one can be overwhelming. Learn how Positive Check's wellness calls can provide essential relief and support for caregivers while ensuring seniors receive the attention they need.",
-    image: "../images/caregiver-and-loved-one.webp",
-    slug: "caregiver-relief"
-  },
-  {
     title: "The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention",
     date: "March 17, 2025",
     excerpt: "While care communities strive to provide quality service, regular family check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
@@ -32,49 +25,49 @@ const BLOG_POSTS = [
     title: "How Many Adults Live Far From Aging Parents?",
     date: "September 15, 2024",
     excerpt: "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
-    image: "../images/grandma-with-son-and-grandson.webp",
+    image: "/images/grandma-with-son-and-grandson.webp",
     slug: "how-many-adults-live-far-from-aging-parents"
   },
   {
     title: "Maintaining Social Connections in Senior Years",
     date: "March 10, 2025",
     excerpt: "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
-    image: "../images/happy-seniors.webp",
+    image: "/images/happy-seniors.webp",
     slug: "maintaining-social-connections"
   },
   {
     title: "When Should Families Check-In on Aging Loved Ones?",
     date: "February 10, 2025",
     excerpt: "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes and reduce isolation.",
-    image: "../images/happy-senior.webp",
+    image: "/images/happy-senior.webp",
     slug: "when-should-families-check-in"
   },
   {
     title: "Understanding and Preventing Caregiver Burnout",
     date: "January 8, 2025",
     excerpt: "Caring for an aging loved one is rewarding but can be emotionally and physically demanding. Learn to recognize the signs of burnout and discover effective prevention strategies.",
-    image: "../images/happy-senior-and-caregiver.webp",
+    image: "/images/happy-senior-and-caregiver.webp",
     slug: "understanding-caregiver-burnout"
   },
   {
     title: "Essential Tips for Long-Distance Caregiving",
     date: "December 5, 2024",
     excerpt: "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
-    image: "../images/senior-on-the-phone.webp",
+    image: "/images/senior-on-the-phone.webp",
     slug: "tips-for-long-distance-caregiving"
   },
   {
     title: "10 Signs Your Loved One Could Benefit from a Caregiver's Check-In Service",
     date: "October 8, 2024",
     excerpt: "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could be beneficial.",
-    image: "../images/happy-senior-2.webp",
+    image: "/images/happy-senior-2.webp",
     slug: "signs-loved-one-needs-caregiver-check-in"
   },
   {
     title: "The Importance of Checking In on Seniors Living Alone",
     date: "November 2, 2024",
     excerpt: "Regular check-ins are vital for seniors living independently. Learn why these visits matter and how they contribute to better health outcomes and quality of life.",
-    image: "../images/happy_senior_headphones.webp",
+    image: "/images/happy_senior_headphones.webp",
     slug: "checking-in-on-seniors"
   }
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -126,7 +119,7 @@ export function BlogComponent() {
             <Card className="h-full hover:shadow-lg transition-shadow">
               <div className="relative h-48">
                 <Image
-                  src="/images/senior-phone-mental-health.webp"
+                  src="/images/senior-phone-check-in-mental-health.webp"
                   alt="Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
