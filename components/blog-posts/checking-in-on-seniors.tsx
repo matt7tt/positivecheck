@@ -18,7 +18,7 @@ export function CheckingInOnSeniorsPost() {
       </Link>
       
       <Image
-        src="../images/happy_senior_headphones.webp"
+        src="/images/happy_senior_headphones.webp"
         alt="Senior person enjoying music with headphones"
         width={800}
         height={400}

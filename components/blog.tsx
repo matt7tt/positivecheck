@@ -85,9 +85,9 @@ export function BlogComponent() {
       <main id="main-content" className="flex-grow container mx-auto px-4 py-8">
         <Breadcrumb items={[{ label: 'Blog' }]} />
         
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-8`} id="blog-heading">
+        {/* <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-8`} id="blog-heading">
           Blog
-        </h1>
+        </h1> */}
         
         {/* Featured Posts Section */}
         <div className="bg-blue-50 p-6 rounded-lg mb-12">
@@ -117,7 +117,7 @@ export function BlogComponent() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Link href="/blog/senior-phone-check-ins-mental-health-safety-benefits" className="group">
             <Card className="h-full hover:shadow-lg transition-shadow">
-              <div className="relative h-48">
+              <div className="relative h-56">
                 <Image
                   src="/images/senior-phone-check-in-mental-health.webp"
                   alt="Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins"
@@ -144,7 +144,7 @@ export function BlogComponent() {
 
           <Link href="/blog/caregiver-relief" className="group">
             <Card className="h-full hover:shadow-lg transition-shadow">
-              <div className="relative h-48">
+              <div className="relative h-56">
                 <Image
                   src="/images/caregiver-and-loved-one.webp"
                   alt="Illustration of a caregiver and an aging loved one"
