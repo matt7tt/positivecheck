@@ -79,6 +79,9 @@ function SignInForm() {
       console.log('Token stored in localStorage:', localStorage.getItem('auth_token') ? 'Present' : 'Not present')
       console.log('Cookies after setting:', document.cookie)
       
+      // Update auth context state
+      setIsAuthenticated(true)
+      
       // Force a small delay to ensure storage is complete
       await new Promise(resolve => setTimeout(resolve, 200))
       
