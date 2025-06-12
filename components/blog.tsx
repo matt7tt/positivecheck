@@ -69,6 +69,13 @@ const BLOG_POSTS = [
     excerpt: "Regular check-ins are vital for seniors living independently. Learn why these visits matter and how they contribute to better health outcomes and quality of life.",
     image: "/images/happy_senior_headphones.webp",
     slug: "checking-in-on-seniors"
+  },
+  {
+    title: "Daily Wellness Calls for Seniors: Supporting Independence at Home",
+    date: "May 1, 2025",
+    excerpt: "How daily wellness check-ins help seniors age in place safely while giving families peace of mind. Affordable senior care from $20/month.",
+    image: "/images/daily-connection-that-changes-everything.webp",
+    slug: "daily-wellness-calls-seniors-aging-in-place"
   }
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
