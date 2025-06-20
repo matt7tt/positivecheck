@@ -15,6 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "How Daily Engagement Check‑Ins Improve Senior Well‑Being: Insights From Real-Life Stories",
+    date: "June 13, 2025",
+    excerpt: "Daily engagement check-ins help reduce senior isolation, boost mood, and give families peace of mind. Discover how Positive Check supports aging loved ones with simple, meaningful connection.",
+    image: "/images/how-daily-engagement-check‑ins-improve-senior-well‑being.webp",
+    slug: "daily-senior-wellness-check-ins"
+  },
+  {
     title: "Daily Wellness Calls for Seniors: Supporting Independence at Home",
     date: "May 1, 2025",
     excerpt: "How daily wellness check-ins help seniors age in place safely while giving families peace of mind. Affordable senior care from $20/month.",
