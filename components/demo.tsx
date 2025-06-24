@@ -78,8 +78,8 @@ export function DemoComponent() {
                       'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
                     },
                     body: JSON.stringify({
-                      firstName: formData.get('name'),
-                      lastName: '',
+                      firstName: formData.get('firstName'),
+                      lastName: formData.get('lastName'),
                       email: '',
                       phone: formData.get('phone'),
                       hearAboutUs: 'demo-page',
@@ -115,17 +115,31 @@ export function DemoComponent() {
                 }
               }}
             >
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                  Name (required)
-                </label>
-                <Input 
-                  id="name" 
-                  name="name" 
-                  type="text"
-                  required 
-                  placeholder="Enter your full name"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                    First Name (required)
+                  </label>
+                  <Input 
+                    id="firstName" 
+                    name="firstName" 
+                    type="text"
+                    required 
+                    placeholder="First name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                    Last Name (required)
+                  </label>
+                  <Input 
+                    id="lastName" 
+                    name="lastName" 
+                    type="text"
+                    required 
+                    placeholder="Last name"
+                  />
+                </div>
               </div>
               
               <div>
