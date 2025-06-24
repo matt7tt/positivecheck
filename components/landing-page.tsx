@@ -30,7 +30,18 @@ const raleway = Raleway({
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
-export function LandingPageComponent() {
+// Global analytics function declarations
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+interface LandingPageProps {
+  variant?: string
+}
+
+export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
   const [expandedFaqs, setExpandedFaqs] = useState<Set<number>>(new Set())
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -43,6 +54,49 @@ export function LandingPageComponent() {
       setShowCookieConsent(true)
     }
   }, [])
+
+  useEffect(() => {
+    // Track A/B test variant in analytics
+    const trackVariant = () => {
+      // Get variant from cookie
+      const cookieVariant = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('ab_test_variant='))
+        ?.split('=')[1] || variant || 'A';
+
+      // Google Analytics 4 tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'ab_test_view', {
+          variant: cookieVariant,
+          page: 'homepage'
+        });
+
+        // Also set as custom parameter for page view
+        window.gtag('event', 'page_view', {
+          custom_parameters: {
+            ab_test_variant: cookieVariant
+          }
+        });
+      }
+
+      // Facebook Pixel tracking
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('trackCustom', 'ABTestView', {
+          variant: cookieVariant,
+          page: 'homepage'
+        });
+      }
+
+      // Console log for debugging
+      console.log('A/B Test Variant:', cookieVariant);
+    };
+
+    // Track immediately and after a small delay to ensure scripts are loaded
+    trackVariant();
+    const timeoutId = setTimeout(trackVariant, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [variant])
 
   const playAudio = () => {
     if (audio) {
@@ -171,12 +225,18 @@ export function LandingPageComponent() {
             <div className="space-y-8 md:space-y-12 ml-4">
               <div className="space-y-6">
                 <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight hero-text`}>
-                  Daily Wellness Check-In Calls for Loved Ones
+                  {variant === 'B' 
+                    ? 'Keep Your Family Connected with Daily Wellness Calls'
+                    : 'Daily Wellness Check-In Calls for Loved Ones'
+                  }
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
-                 Affordable, reliable peace of mind starting at $20 / month.
-                 <br />
-                 7 day FREE trial. Cancel anytime.
+                  {variant === 'B' 
+                    ? 'Stay close to your aging parents with AI-powered daily check-ins. Peace of mind for just $20/month.'
+                    : 'Affordable, reliable peace of mind starting at $20 / month.'
+                  }
+                  <br />
+                  7 day FREE trial. Cancel anytime.
                 </p>
               </div>
               <Link 
@@ -206,10 +266,16 @@ export function LandingPageComponent() {
         <section className="bg-[#f8f9ff] py-12 text-center">
           <div className="container mx-auto px-4">
             <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-4`}>
-              Stay Connected, Stay Informed
+              {variant === 'B' 
+                ? 'Never Wonder How Your Parents Are Doing'
+                : 'Stay Connected, Stay Informed'
+              }
             </h2>
             <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
-              Because You Cannot Always Be There
+              {variant === 'B' 
+                ? 'Daily Check-Ins That Bridge the Distance'
+                : 'Because You Cannot Always Be There'
+              }
             </p>
           </div>
         </section>
