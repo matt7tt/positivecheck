@@ -15,6 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "Why Sleep Quality Is Critical for Senior Safety & Health",
+    date: "June 27, 2025",
+    excerpt: "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help prevent issues.",
+    image: "/images/critical-importance-of-sleep-for-senior-health.webp",
+    slug: "senior-sleep-health-fall-prevention-wellness-monitoring"
+  },
+  {
     title: "How Daily Engagement Check‑Ins Improve Senior Well‑Being: Insights From Real-Life Stories",
     date: "June 13, 2025",
     excerpt: "Daily engagement check-ins help reduce senior isolation, boost mood, and give families peace of mind. Discover how Positive Check supports aging loved ones with simple, meaningful connection.",

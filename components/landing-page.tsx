@@ -226,17 +226,17 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
               <div className="space-y-6">
                 <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight hero-text`}>
                   {variant === 'B' 
-                    ? 'Keep Your Family Connected with Daily Wellness Calls'
-                    : 'Daily Wellness Check-In Calls for Loved Ones'
+                    ? 'Stay Connected Even When Life Get Busy'
+                    : 'Wellness Check-In Calls for Aging Parents'
                   }
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
                   {variant === 'B' 
-                    ? 'Stay close to your aging parents with AI-powered daily check-ins. Peace of mind for just $20/month.'
-                    : 'Affordable, reliable peace of mind starting at $20 / month.'
+                    ? 'A friendly conversation that keeps family informed with daily insights.'
+                    : 'A friendly conversation that keeps family informed with daily insights.'
                   }
                   <br />
-                  7 day FREE trial. Cancel anytime.
+                  Starts at $20/month · 7-day free trial · Cancel anytime
                 </p>
               </div>
               <Link 
