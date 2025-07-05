@@ -15,6 +15,13 @@ const spaceGrotesk = Space_Grotesk({
 
 const BLOG_POSTS = [
   {
+    title: "Can AI Companions Help Seniors and Caregivers?",
+    date: "July 5, 2025",
+    excerpt: "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
+    image: "/images/happy-senior-and-caregiver.webp",
+    slug: "ai-companions-for-senior-loneliness-and-caregiver-stress"
+  },
+  {
     title: "Why Sleep Quality Is Critical for Senior Safety & Health",
     date: "June 27, 2025",
     excerpt: "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help prevent issues.",
