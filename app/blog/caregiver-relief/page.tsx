@@ -6,6 +6,10 @@ import { CaregiverReliefPost } from "@/components/blog-posts/caregiver-relief"
 export const metadata: Metadata = {
   title: 'Caregiver Relief Through Wellness Calls | Positive Check',
   description: 'Overwhelmed caring for aging parents? Daily wellness calls provide essential caregiver relief, reduce stress, and ensure seniors get consistent check-ins.',
+
+  alternates: {
+    canonical: '/blog/caregiver-relief',
+  },
 }
 
 export default function CaregiverReliefPage() {

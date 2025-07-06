@@ -6,6 +6,9 @@ import { AiCompanionsForSeniorLonelinessAndCaregiverStressPost } from "@/compone
 export const metadata: Metadata = {
   title: 'Can AI Companions Help Seniors and Caregivers? | Positive Check Blog',
   description: 'Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.',
+  alternates: {
+    canonical: '/blog/ai-companions-for-senior-loneliness-and-caregiver-stress',
+  },
 }
 
 export default function AiCompanionsForSeniorLonelinessAndCaregiverStressPage() {

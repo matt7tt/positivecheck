@@ -6,6 +6,10 @@ import { UnderstandingCaregiverBurnoutPost } from "@/components/blog-posts/under
 export const metadata: Metadata = {
   title: 'Preventing Caregiver Burnout | Positive Check Blog',
   description: 'Recognize caregiver burnout warning signs: exhaustion, resentment, isolation. Learn prevention strategies and how wellness calls provide essential support.',
+
+  alternates: {
+    canonical: '/blog/understanding-caregiver-burnout',
+  },
 }
 
 export default function UnderstandingCaregiverBurnoutPage() {

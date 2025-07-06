@@ -20,7 +20,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
             "@type": "Article",
             "headline": "Can AI Companions Help Seniors and Caregivers?",
             "description": "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-            "image": "https://www.positivecheck.com/images/happy-senior-and-caregiver.webp",
+            "image": "https://www.positivecheck.com/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp",
             "author": {
               "@type": "Organization",
               "name": "Positive Check",
@@ -70,7 +70,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
         </h1>
 
         <Image
-          src="/images/happy-senior-and-caregiver.webp"
+          src="/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp"
           alt="A caregiver and senior sharing a supportive moment together"
           width={800}
           height={400}

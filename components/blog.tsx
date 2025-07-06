@@ -18,7 +18,7 @@ const BLOG_POSTS = [
     title: "Can AI Companions Help Seniors and Caregivers?",
     date: "July 5, 2025",
     excerpt: "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-    image: "/images/happy-senior-and-caregiver.webp",
+    image: "/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp",
     slug: "ai-companions-for-senior-loneliness-and-caregiver-stress"
   },
   {
