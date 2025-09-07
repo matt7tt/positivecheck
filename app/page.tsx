@@ -203,7 +203,6 @@ export default function HomePage() {
                       height: "288px", // Set explicit height instead of h-72 class to prevent scaling issues
                       objectPosition: "center -60px", // Moved image up by additional 20px (from -40px to -60px) so man's hair touches the top frame
                       imageRendering: "auto",
-                      WebkitImageRendering: "auto",
                       filter: "contrast(1.1) saturate(1.05)",
                     }}
                   />
