@@ -2,37 +2,18 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
-import localFont from "next/font/local";
 import "./globals.css";
-import { Space_Grotesk, Raleway } from "next/font/google";
+import { Inter } from "next/font/google";
 import { AuthProvider } from "@/lib/auth-context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { PerformanceMonitor } from '@/components/performance-monitor'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
-const spaceGrotesk = Space_Grotesk({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["500", "700"],
   display: 'swap',
   preload: true,
-});
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  style: ["normal", "italic"],
-  display: 'swap',
-  preload: true,
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -162,7 +143,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.className} ${geistMono.className} antialiased ${spaceGrotesk.className} ${raleway.className}`}
+        className={`${inter.className} antialiased`}
 >
         <AuthProvider>
           <PerformanceMonitor />

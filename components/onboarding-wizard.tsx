@@ -299,14 +299,14 @@ export function OnboardingWizardComponent() {
       <div className="min-h-screen bg-gray-50">
         <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <Link href="/" className="h-16">
+            <Link href="/">
               <Image
                 src="/images/positive-logo.png"
                 alt="Positive Check"
-                height={32}
-                width={120}
+                height={44}
+                width={165}
                 priority
-                className="h-full w-auto"
+                className="h-11 w-auto"
               />
             </Link>
           </div>
