@@ -265,7 +265,6 @@ export default function HomePage() {
                       height: "288px", // Set explicit height instead of h-72 class to prevent scaling issues
                       objectPosition: "center center", // Updated to use new high-quality provider image
                       imageRendering: "auto",
-                      WebkitImageRendering: "auto",
                       filter: "contrast(1.1) saturate(1.05)",
                     }}
                   />
