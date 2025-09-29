@@ -8,6 +8,9 @@ import Link from "next/link"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { RequestDemoModal } from "@/components/request-demo-modal"
 import { StructuredData, organizationSchema, medicalServiceSchema } from "@/components/structured-data"
+import toast, { Toaster } from 'react-hot-toast'
+
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
 export default function HomePage() {
   const headlines = [
@@ -78,6 +81,8 @@ export default function HomePage() {
   ]
 
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -97,6 +102,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Toaster position="top-center" />
       <StructuredData data={organizationSchema} />
       <StructuredData data={medicalServiceSchema} />
       {/* Header */}
@@ -550,7 +556,66 @@ export default function HomePage() {
 
           <Card className="p-8 bg-white shadow-lg">
             <CardContent className="p-0">
-              <form className="space-y-6">
+              {isSubmitted ? (
+                <div className="p-12 text-center">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
+                  <p className="text-gray-600">
+                    Thanks for your message. We will be in touch soon.
+                  </p>
+                </div>
+              ) : (
+              <form
+                className="space-y-6"
+                onSubmit={async (e) => {
+                  e.preventDefault()
+                  const form = e.currentTarget as HTMLFormElement
+                  setIsSubmitting(true)
+
+                  try {
+                    const formData = new FormData(form)
+                    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
+                      },
+                      body: JSON.stringify({
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        hearAboutUs: formData.get('hearAbout'),
+                        message: formData.get('message'),
+                        newsletter: formData.get('newsletter') === 'on'
+                      }),
+                    })
+
+                    if (!response.ok) {
+                      throw new Error('Failed to submit form')
+                    }
+
+                    toast.success("Thank you for your message. We will be in touch soon!", {
+                      duration: 3000,
+                      style: {
+                        background: "#10B981",
+                        color: "#FFFFFF",
+                      },
+                    })
+                    form.reset()
+                    setIsSubmitted(true)
+                  } catch (error) {
+                    console.error('Error submitting form:', error)
+                    toast.error("Sorry, there was an error submitting the form. Please try again.", {
+                      duration: 5000,
+                      style: {
+                        background: "#EF4444",
+                        color: "#FFFFFF",
+                      },
+                    })
+                  } finally {
+                    setIsSubmitting(false)
+                  }
+                }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -681,10 +746,12 @@ export default function HomePage() {
                 <Button
                   type="submit"
                   className="w-full bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white py-3 font-bold"
+                  disabled={isSubmitting}
                 >
-                  SUBMIT
+                  {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
                 </Button>
               </form>
+              )}
             </CardContent>
           </Card>
         </div>
