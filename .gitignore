@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# old/backup directories (not part of main app)
+/positive-check-homepage/
+/backup-before-homepage-migration/
