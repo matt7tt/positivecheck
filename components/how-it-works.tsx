@@ -7,6 +7,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Phone, Mail, Clock, Shield } from 'lucide-react'
+import { RequestDemoModal } from '@/components/request-demo-modal'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
@@ -18,41 +19,40 @@ export function HowItWorksComponent() {
           {
             "@context": "https://schema.org",
             "@type": "HowTo",
-            "name": "How Senior Wellness Calls Work",
-            "description": "Simple 3-step process: 5-minute setup, daily AI wellness calls, detailed family reports. See exactly how our $20/month senior check-in service works.",
+            "name": "How AI-Powered Patient Check-In Calls Work",
+            "description": "Simple setup and implementation process for healthcare providers: configure call schedules, customize prompts, and receive real-time patient insights.",
             "image": "https://www.positivecheck.com/images/how-it-works-guide.webp",
-            "totalTime": "PT5M",
-            "estimatedCost": {
-              "@type": "MonetaryAmount",
-              "currency": "USD",
-              "value": "20"
-            },
+            "totalTime": "PT15M",
             "supply": [
               {
                 "@type": "HowToSupply",
-                "name": "Phone (landline or mobile)"
+                "name": "Patient phone number (landline or mobile)"
               },
               {
-                "@type": "HowToSupply", 
-                "name": "Internet connection for family dashboard"
+                "@type": "HowToSupply",
+                "name": "Internet connection for admin console"
               }
             ],
             "step": [
               {
                 "@type": "HowToStep",
-                "name": "Quick 5-Minute Setup",
-                "text": "Sign up online and provide basic information: your contact details, your loved one's phone number, preferred call times, and choose from our wellness questions.",
-                "url": "https://www.positivecheck.com/onboarding-wizard"
+                "name": "Set the Cadence",
+                "text": "Choose how often patients receive check-ins. Daily, weekly, bi-weekly, or a fully custom schedule can be supported."
               },
               {
                 "@type": "HowToStep",
-                "name": "Daily Wellness Calls Begin",
-                "text": "Lola calls your loved one at the scheduled time every day, engaging them in a friendly 3-5 minute conversation with personalized wellness questions."
+                "name": "Engineer the Call Prompts",
+                "text": "Positive Check will work with your team to design the right set of questions. We make sure each call captures the information your program needs."
               },
               {
                 "@type": "HowToStep",
-                "name": "Daily Reports and Insights",
-                "text": "Receive daily email notifications with detailed wellness insights, trend analysis, and immediate alerts for any concerning changes."
+                "name": "Engage with Patients",
+                "text": "Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Get Alerts and Insights",
+                "text": "Providers receive timely notifications and can review results anytime in the secure HIPAA-compliant dashboard."
               }
             ]
           }
@@ -69,8 +69,8 @@ export function HowItWorksComponent() {
                 How Positive Check Works
               </h1>
               <p className="text-xl text-gray-700 mb-8">
-                Complete step-by-step guide to our daily wellness check-in service for seniors. 
-                From 5-minute setup to daily reports and insights.
+                Simple setup and implementation that integrates seamlessly with your existing
+                care workflow. From configuration to real-time patient insights.
               </p>
             </div>
           </div>
@@ -85,29 +85,36 @@ export function HowItWorksComponent() {
               </h2>
               <div className="bg-blue-50 p-8 rounded-lg mb-12">
                 <p className="text-lg text-gray-700 mb-4">
-                  <strong>Positive Check provides daily wellness check-in calls for seniors through our AI companion Lola.</strong> Here's exactly how our service works from signup to daily reports. If you're wondering whether your loved one could benefit from this service, check out our guide on <Link href="/blog/signs-loved-one-needs-caregiver-check-in" className="text-blue-600 hover:text-blue-800 underline">10 signs your senior needs check-in calls</Link>.
+                  <strong>Positive Check provides AI-powered check-in calls for patients through our virtual assistant Lola.</strong> Here's exactly how providers set up and use the service to strengthen their RPM, CCM, and post-discharge follow-up programs.
                 </p>
-                <div className="grid md:grid-cols-3 gap-6 mt-6">
+                <div className="grid md:grid-cols-4 gap-6 mt-6">
                   <div className="text-center">
                     <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">1</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">5-Minute Setup</h3>
-                    <p className="text-sm text-gray-600">Quick online registration</p>
+                    <h3 className="font-semibold text-[#1a2642]">Set the Cadence</h3>
+                    <p className="text-sm text-gray-600">Choose call frequency</p>
                   </div>
                   <div className="text-center">
                     <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">2</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Daily Calls</h3>
-                    <p className="text-sm text-gray-600">Friendly wellness check-ins</p>
+                    <h3 className="font-semibold text-[#1a2642]">Engineer Prompts</h3>
+                    <p className="text-sm text-gray-600">Customize questions</p>
                   </div>
                   <div className="text-center">
                     <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">3</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Daily Reports</h3>
-                    <p className="text-sm text-gray-600">Insights and alerts</p>
+                    <h3 className="font-semibold text-[#1a2642]">Engage Patients</h3>
+                    <p className="text-sm text-gray-600">Lola makes the calls</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                      <span className="font-bold">4</span>
+                    </div>
+                    <h3 className="font-semibold text-[#1a2642]">Get Insights</h3>
+                    <p className="text-sm text-gray-600">Alerts and reports</p>
                   </div>
                 </div>
               </div>
@@ -131,40 +138,40 @@ export function HowItWorksComponent() {
                   </div>
                   <div className="flex-1">
                     <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                      Quick Setup (5-10 minutes)
+                      Set the Cadence
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Sign up online and provide basic information to get started with our service.
+                      Choose how often patients receive check-ins. Daily, weekly, bi-weekly, or a fully custom schedule can be supported.
                     </p>
-                    
-                    <h4 className="font-semibold text-[#1a2642] mb-3">Setup Requirements:</h4>
+
+                    <h4 className="font-semibold text-[#1a2642] mb-3">Configuration Options:</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <ul className="space-y-3">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Your contact details (name, email, phone)</span>
+                          <span>Daily, weekly, or custom schedules</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Senior's name and phone number</span>
+                          <span>Patient phone number (landline or mobile)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Preferred call times and frequency</span>
+                          <span>Preferred call times</span>
                         </li>
                       </ul>
                       <ul className="space-y-3">
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Your relationship to the senior</span>
+                          <span>Program type (RPM, CCM, post-discharge)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Wellness questions selection</span>
+                          <span>Alert and escalation preferences</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                          <span>Payment setup ($20/month)</span>
+                          <span>No apps or special devices required</span>
                         </li>
                       </ul>
                     </div>
@@ -180,29 +187,29 @@ export function HowItWorksComponent() {
                   </div>
                   <div className="flex-1">
                     <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                      Service Activation (24-48 hours)
+                      Engineer the Call Prompts
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Our team activates your account and schedules the first wellness call.
+                      Positive Check will work with your team to design the right set of questions. We make sure each call captures the information your program needs.
                     </p>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">What Happens:</h4>
+                        <h4 className="font-semibold text-[#1a2642] mb-3">Prompt Design:</h4>
                         <ul className="space-y-2">
-                          <li>• Account verification and setup completion</li>
-                          <li>• First call scheduling within 24-48 hours</li>
-                          <li>• Welcome email with dashboard access</li>
-                          <li>• Preparation guidance for the senior</li>
+                          <li>&#8226; Fully customizable wellness questions</li>
+                          <li>&#8226; Escalation questions for concerning responses</li>
+                          <li>&#8226; Program-specific question sets</li>
+                          <li>&#8226; Natural, friendly conversation flow</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">You'll Receive:</h4>
+                        <h4 className="font-semibold text-[#1a2642] mb-3">Typical Questions:</h4>
                         <ul className="space-y-2">
-                          <li>• Account / Dashboard access</li>
-                          <li>• Service overview and tips</li>
-                          <li>• Contact information for support</li>
-                          <li>• First call confirmation</li>
+                          <li>&#8226; &quot;How are you feeling today?&quot;</li>
+                          <li>&#8226; &quot;Did you sleep well last night?&quot;</li>
+                          <li>&#8226; &quot;Have you taken your medications?&quot;</li>
+                          <li>&#8226; &quot;Have you eaten today?&quot;</li>
                         </ul>
                       </div>
                     </div>
@@ -218,30 +225,29 @@ export function HowItWorksComponent() {
                   </div>
                   <div className="flex-1">
                     <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                      Daily Wellness Calls
+                      Engage with Patients
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Lola calls at the scheduled time every day for a friendly wellness conversation.
+                      Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns.
                     </p>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">Call Details:</h4>
                         <ul className="space-y-2">
-                          <li>• Calls from 866-605-8571</li>
-                          <li>• Consistent daily time</li>
-                          <li>• Natural, friendly conversation</li>
-                          <li>• Automatic retry if missed</li>
+                          <li>&#8226; Calls from 866-605-8571</li>
+                          <li>&#8226; Consistent scheduled time</li>
+                          <li>&#8226; Natural, friendly conversation</li>
+                          <li>&#8226; Automatic retry if missed</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Typical Questions:</h4>
+                        <h4 className="font-semibold text-[#1a2642] mb-3">Escalation Protocol:</h4>
                         <ul className="space-y-2">
-                          <li>• "How are you feeling today?"</li>
-                          <li>• "Did you sleep well last night?"</li>
-                          <li>• "Have you taken your medications?"</li>
-                          <li>• "Have you eaten today?"</li>
-                          <li>• Contact us for custom questions</li>
+                          <li>&#8226; Follow-up questions for concerning responses</li>
+                          <li>&#8226; Multiple retry attempts if unanswered</li>
+                          <li>&#8226; Care team notification for missed calls</li>
+                          <li>&#8226; Detailed call records in dashboard</li>
                         </ul>
                       </div>
                     </div>
@@ -257,89 +263,34 @@ export function HowItWorksComponent() {
                   </div>
                   <div className="flex-1">
                     <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                      Daily Reports and Insights
+                      Get Alerts and Insights
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Receive comprehensive daily reports with insights, trends, and immediate alerts.
+                      Providers receive timely notifications and can review results anytime in the secure HIPAA-compliant dashboard.
                     </p>
-                    
+
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Daily Reports Include:</h4>
+                        <h4 className="font-semibold text-[#1a2642] mb-3">Real-Time Alerts:</h4>
                         <ul className="space-y-2">
-                          <li>• Email summary with key insights</li>
-                          <li>• Detailed call summary</li>
-                          <li>• Wellness score and trends</li>
-                          <li>• Mood and health indicators</li>
-                          <li>• Medication and meal tracking if selected</li>
+                          <li>&#8226; Immediate notification for concerning responses</li>
+                          <li>&#8226; Missed call alerts</li>
+                          <li>&#8226; Medication non-adherence flags</li>
+                          <li>&#8226; Symptom change detection</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-[#1a2642] mb-3">Dashboard Features:</h4>
                         <ul className="space-y-2">
-                          <li>• Weekly trend analysis</li>
-                          <li>• Historical data and patterns</li>
-                          <li>• Sentiment analysis</li>
-                          <li>• Contact summary</li>
-                          <li>• Interaction report</li>
+                          <li>&#8226; Population wellness trends</li>
+                          <li>&#8226; Historical data and patterns</li>
+                          <li>&#8226; Compliance reporting</li>
+                          <li>&#8226; Call logs and audit trail</li>
                         </ul>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What If Scenarios */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-12 text-center`}>
-                What Happens If...
-              </h2>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Senior Doesn't Answer</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Automatic retry after 10 minutes</li>
-                    <li>• Second and third attempts if first call missed</li>
-                    <li>• Email notification if unsuccessful</li>
-                    <li>• Detailed missed call report in dashboard</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Concerning Response</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Family notification via email report</li>
-                    <li>• Detailed report of specific concerns</li>
-                    <li>• Recommended actions provided</li>
-                    <li>• Follow-up tracking in subsequent calls</li>
-                  </ul>
-                </div>
-                
-                {/* <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Technical Issues</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• 24/7 customer support available</li>
-                    <li>• Backup calling systems ensure reliability</li>
-                    <li>• Service credits for missed calls</li>
-                    <li>• Alternative contact methods if needed</li>
-                  </ul>
-                </div> */}
-                
-                {/* <div className="bg-gray-50 p-6 rounded-lg">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Emergency Situations</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Immediate family and emergency contact alerts</li>
-                    <li>• Detailed incident report</li>
-                    <li>• Guidance on next steps</li>
-                    <li>• Follow-up support and monitoring</li>
-                  </ul>
-                </div> */}
               </div>
             </div>
           </div>
@@ -352,10 +303,10 @@ export function HowItWorksComponent() {
               <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-12 text-center`}>
                 Service Features
               </h2>
-              
+
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Seniors</h3>
+                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Patients</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
@@ -368,7 +319,7 @@ export function HowItWorksComponent() {
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Familiar Routine</strong>
-                        <p className="text-gray-600">Same friendly voice at the same time daily</p>
+                        <p className="text-gray-600">Same friendly voice at the same time</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -380,22 +331,22 @@ export function HowItWorksComponent() {
                     </li>
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Families</h3>
+                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Providers</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <strong>Daily Peace of Mind</strong>
-                        <p className="text-gray-600">Regular updates and trend analysis. Learn how this provides <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">essential caregiver relief</Link>.</p>
+                        <strong>Real-Time Alerts</strong>
+                        <p className="text-gray-600">Immediate notification when patients need attention</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <strong>Easy Access</strong>
-                        <p className="text-gray-600">Dashboard available from any device</p>
+                        <strong>HIPAA-Compliant Dashboard</strong>
+                        <p className="text-gray-600">Secure admin console accessible from any device</p>
                       </div>
                     </li>
                   </ul>
@@ -405,67 +356,23 @@ export function HowItWorksComponent() {
           </div>
         </section>
 
-        {/* Pricing and Getting Started */}
+        {/* CTA Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-8`}>
-                Pricing and Plans
+                Ready to Get Started?
               </h2>
-              
-              <div className="bg-[#F598FF] p-8 rounded-lg mb-12">
-                <div className="grid md:grid-cols-4 gap-6 text-center">
-                  <div>
-                    <h3 className="font-bold text-[#1a2642] mb-2">Monthly Cost</h3>
-                    <p className="text-2xl font-bold text-[#1a2642]">$20/month</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#1a2642] mb-2">Free Trial</h3>
-                    <p className="text-2xl font-bold text-[#1a2642]">7 days</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#1a2642] mb-2">Setup Fees</h3>
-                    <p className="text-2xl font-bold text-[#1a2642]">$0</p>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#1a2642] mb-2">Contracts</h3>
-                    <p className="text-2xl font-bold text-[#1a2642]">None</p>
-                  </div>
-                </div>
-              </div>
 
-              <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
-                Getting Started
-              </h3>
-              
-              <div className="grid md:grid-cols-5 gap-4 mb-8">
-                <div className="text-center">
-                  <div className="bg-[#1a2642] text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2">1</div>
-                  <p className="text-sm">Visit onboarding wizard</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#1a2642] text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2">2</div>
-                  <p className="text-sm">Complete 5-minute setup</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#1a2642] text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2">3</div>
-                  <p className="text-sm">Receive confirmation</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#1a2642] text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2">4</div>
-                  <p className="text-sm">First call scheduled</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-[#1a2642] text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-2">5</div>
-                  <p className="text-sm">Daily reports begin</p>
-                </div>
-              </div>
+              <p className="text-lg text-gray-700 mb-8">
+                Schedule a demo today and discover how Positive Check can support your patients and your staff.
+              </p>
 
-              <Link href="/onboarding-wizard">
+              <RequestDemoModal>
                 <Button className="bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md">
-                  Start Your 7-Day Free Trial
+                  Request Demo
                 </Button>
-              </Link>
+              </RequestDemoModal>
             </div>
           </div>
         </section>
@@ -474,4 +381,4 @@ export function HowItWorksComponent() {
       <PublicFooter />
     </div>
   )
-} 
+}

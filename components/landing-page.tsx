@@ -152,7 +152,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   "name": "Why should I choose Positive Check?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable."
+                    "text": "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give care teams the confidence they need. It's an affordable solution designed to make aging in place safer and more sustainable."
                   }
                 },
                 {
@@ -192,7 +192,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   "name": "Does Lola replace human caregivers?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps families and caregivers stay informed and respond proactively to changes in well-being."
+                    "text": "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps care teams stay informed and respond proactively to changes in well-being."
                   }
                 },
                 {
@@ -208,7 +208,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   "name": "Can Positive Check help with caregiver burnout?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout. Learn more about <a href='/blog/understanding-caregiver-burnout' class='text-blue-600 hover:text-blue-800 underline'>preventing caregiver burnout</a> and how <a href='/blog/caregiver-relief' class='text-blue-600 hover:text-blue-800 underline'>wellness calls provide essential relief</a>."
+                    "text": "Yes! Positive Check reduces the workload of care teams by handling routine check-ins and monitoring. This allows staff to focus on more complex needs, reducing stress and preventing burnout."
                   }
                 }
               ]
@@ -232,15 +232,15 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
                   {variant === 'B' 
-                    ? 'A friendly conversation that keeps family informed with daily insights.'
-                    : 'A friendly conversation that keeps family informed with daily insights.'
+                    ? 'A friendly conversation that keeps care teams informed with daily insights.'
+                    : 'A friendly conversation that keeps care teams informed with daily insights.'
                   }
                   <br />
                   Starts at $20/month · 7-day free trial · Cancel anytime
                 </p>
               </div>
               <Link 
-                href="/onboarding-wizard"
+                href="/contact"
                 aria-label="Start your sign up process"
                 className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
               >
@@ -310,7 +310,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
-                    <span className="text-[#1a2642]">Provides peace of mind for busy families.</span>
+                    <span className="text-[#1a2642]">Provides peace of mind for busy care teams.</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
@@ -322,7 +322,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   </li>
                 </ul>
                 <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
-                <Link href="/onboarding-wizard">
+                <Link href="/contact">
                   <Button 
                     className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
@@ -432,7 +432,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
               </Card>
             </div>
             <div className="text-center mt-12">
-              <Link href="/onboarding-wizard">
+              <Link href="/contact">
                 <Button 
                   className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                 >
@@ -477,7 +477,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
 
                 <div className="space-y-4 pt-8">
                   <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
-                    Why Families Choose Us
+                    Why Providers Choose Us
                   </h3>
                   <ul className="space-y-4">
                     <li className="text-lg text-[#1a2642]">
@@ -493,7 +493,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 </div>
                 <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
 
-                <Link href="/onboarding-wizard">
+                <Link href="/contact">
                   <Button 
                     className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
@@ -559,7 +559,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   </div>
                   
                   <div className="pt-4">
-                    <Link href="/onboarding-wizard">
+                    <Link href="/contact">
                       <Button 
                         className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                       >
@@ -582,7 +582,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
               {[
                 {
                   question: "Why should I choose Positive Check?",
-                  answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable."
+                  answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give care teams the confidence they need. It's an affordable solution designed to make aging in place safer and more sustainable."
                 },
                 {
                   question: "How do I prepare for the first call?",
@@ -606,7 +606,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 },
                 {
                   question: "Does Lola replace human caregivers?",
-                  answer: "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps families and caregivers stay informed and respond proactively to changes in well-being."
+                  answer: "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps care teams stay informed and respond proactively to changes in well-being."
                 },
                 {
                   question: "What makes Positive Check unique?",
@@ -618,7 +618,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 },
                 {
                   question: "Can Positive Check help with caregiver burnout?",
-                  answer: "Yes! Positive Check reduces the workload of human caregivers by handling routine check-ins and monitoring. This allows caregivers to focus on more complex needs, reducing stress and preventing burnout. Learn more about <a href='/blog/understanding-caregiver-burnout' class='text-blue-600 hover:text-blue-800 underline'>preventing caregiver burnout</a> and how <a href='/blog/caregiver-relief' class='text-blue-600 hover:text-blue-800 underline'>wellness calls provide essential relief</a>."
+                  answer: "Yes! Positive Check reduces the workload of care teams by handling routine check-ins and monitoring. This allows staff to focus on more complex needs, reducing stress and preventing burnout."
                 }
               ].map((faq, index) => (
                 <div 
@@ -691,12 +691,12 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-8`}>
-                A Personal Note to Families
+                A Personal Note to Care Teams
               </h2>
               
               <div className="mb-16">
                 <p className="text-xl text-[#1a2642]">
-                  We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates. If you're caring for parents from afar, check out our <Link href="/blog/tips-for-long-distance-caregiving" className="text-blue-600 hover:text-blue-800 underline">essential long-distance caregiving tips</Link>.
+                  We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates. Learn more about <Link href="/blog" className="text-blue-600 hover:text-blue-800 underline">our latest insights</Link>.
                 </p>
               </div>
 

@@ -1,8 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
 
 export default function AboutPage() {
@@ -24,9 +22,6 @@ export default function AboutPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/families" className="text-gray-600 hover:text-gray-900">
-              For Families
-            </Link>
             <Link href="/providers" className="text-gray-600 hover:text-gray-900">
               For Providers
             </Link>
@@ -36,20 +31,9 @@ export default function AboutPage() {
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                Sign In
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/families">For Families</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/providers">For Providers</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+              Sign In
+            </Link>
           </div>
         </nav>
       </header>
@@ -60,7 +44,7 @@ export default function AboutPage() {
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">About Positive Check</h1>
           <p className="text-xl text-purple-100 mb-8 max-w-4xl mx-auto leading-relaxed">
             A revolutionary AI-powered caregiver support service dedicated to ensuring the well-being of seniors while
-            offering peace of mind to families and helping providers deliver more effective care.
+            helping healthcare providers deliver more effective patient care.
           </p>
         </div>
       </section>
@@ -82,9 +66,8 @@ export default function AboutPage() {
             <p className="text-lg text-gray-600 leading-relaxed">
               Our mission is to enhance the quality of life for seniors and patients by making daily wellness check-ins
               simple, reliable, and compassionate. Positive Check helps people age in place longer, supports recovery
-              after hospital stays, and empowers caregivers with actionable insights. Families benefit from knowing
-              their loved ones are safe and connected. Providers benefit from improved outcomes, fewer preventable
-              emergency visits, and reduced hospital re-admissions.
+              after hospital stays, and empowers healthcare providers with actionable insights. Providers benefit from
+              improved outcomes, fewer preventable emergency visits, and reduced hospital re-admissions.
             </p>
           </div>
         </div>
@@ -110,61 +93,35 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Positive Check?</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Because every moment matters. Families deserve reassurance that loved ones are supported every day.
-            Providers need scalable tools to extend care, reduce strain on staff, and improve patient outcomes.
+            Because every moment matters. Healthcare providers need scalable tools to extend care beyond
+            clinical settings, reduce strain on staff, and improve patient outcomes across their entire population.
           </p>
         </div>
       </section>
 
-      {/* For Families and Providers */}
+      {/* For Providers */}
       <section className="px-6 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-          {/* For Families */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">For Families</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Compassionate AI Check-ins</h3>
-                <p className="text-gray-700">Personalized calls designed to ensure seniors feel heard and cared for.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Daily Family Reports</h3>
-                <p className="text-gray-700">
-                  Clear updates on well-being, allowing families to stay informed and respond with confidence.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Peace of Mind</h3>
-                <p className="text-gray-700">
-                  Families know their loved ones are safe, connected, and never overlooked.
-                </p>
-              </div>
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">For Providers</h2>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Care Support</h3>
+              <p className="text-gray-700">
+                Automated check-ins across large populations without overwhelming staff.
+              </p>
             </div>
-          </div>
-
-          {/* For Providers */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">For Providers</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Care Support</h3>
-                <p className="text-gray-700">
-                  Automated check-ins across large populations without overwhelming staff.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Clinical and Operational Insights</h3>
-                <p className="text-gray-700">
-                  Actionable reports that help reduce risks, avoid unnecessary ER visits, and lower re-admission rates.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Improved Efficiency</h3>
-                <p className="text-gray-700">
-                  Staff are freed from repetitive tasks so they can focus on higher-value interactions with patients and
-                  residents.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Clinical and Operational Insights</h3>
+              <p className="text-gray-700">
+                Actionable reports that help reduce risks, avoid unnecessary ER visits, and lower re-admission rates.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Improved Efficiency</h3>
+              <p className="text-gray-700">
+                Staff are freed from repetitive tasks so they can focus on higher-value interactions with patients and
+                residents.
+              </p>
             </div>
           </div>
         </div>
@@ -175,11 +132,11 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-xl mb-8 text-purple-100 leading-relaxed">
             At Positive Check, we are more than just a service. We are a trusted partner in creating a better life for
-            seniors, peace of mind for families, and stronger results for healthcare providers.
+            seniors and stronger results for healthcare providers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
-              <Link href="/families">FAMILIES - LEARN MORE</Link>
+              <Link href="/contact">REQUEST DEMO</Link>
             </Button>
             <Button asChild className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
               <Link href="/providers">PROVIDERS - LEARN MORE</Link>
@@ -205,8 +162,8 @@ export default function AboutPage() {
             <div className="text-center">
               <ul className="space-y-2">
                 <li>
-                  <Link href="/families" className="text-gray-600 hover:text-gray-900">
-                    For Families
+                  <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900">
+                    How It Works
                   </Link>
                 </li>
                 <li>
@@ -238,22 +195,9 @@ export default function AboutPage() {
                   </Link>
                 </li>
                 <li>
-                  <div className="flex justify-center">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                        Sign In
-                        <ChevronDown className="w-4 h-4" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center">
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/families">For Families</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/providers">For Providers</Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
+                  <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+                    Sign In
+                  </Link>
                 </li>
               </ul>
             </div>

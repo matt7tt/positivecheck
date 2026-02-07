@@ -183,7 +183,7 @@ function SignInForm() {
                 <Link href="/forgot-password" className="text-sm text-blue-600 hover:text-blue-800 transition-colors mb-2 sm:mb-0">
                   Forgot your password?
                 </Link>
-                <Link href="/onboarding-wizard" className="text-sm text-blue-600 hover:text-blue-800 transition-colors">
+                <Link href="/contact" className="text-sm text-blue-600 hover:text-blue-800 transition-colors">
                   Don&apos;t have an account? <span className="font-medium">Sign up</span>
                 </Link>
               </CardFooter>

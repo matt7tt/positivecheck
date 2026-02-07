@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Script from 'next/script'
 import { Space_Grotesk } from 'next/font/google'
 import { PublicHeader } from '@/components/shared/public-header'
+import { RequestDemoModal } from '@/components/request-demo-modal'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
@@ -17,34 +18,34 @@ export function AboutComponent() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Positive Check",
-            "description": "A revolutionary AI-powered caregiver service dedicated to ensuring the well-being of seniors while offering peace of mind to families and caregivers.",
+            "description": "An AI-powered patient check-in service dedicated to helping healthcare providers improve outcomes through consistent, scalable wellness monitoring.",
             "url": "https://www.positivecheck.com",
             "logo": "https://www.positivecheck.com/images/positive-logo.png",
             "telephone": "866-605-8571",
             "email": "info@positivecheck.com",
             "foundingDate": "2024",
             "areaServed": "United States",
-            "serviceType": "Senior Care Services",
-            "mission": "To enhance the quality of life for seniors and help seniors age in place longer through regular check-ins and empower caregivers with actionable insights, fostering stronger connections and improved care for loved ones.",
-            "vision": "To redefine caregiving by empowering seniors with personalized support through AI, enabling them to live independently and stay connected.",
+            "serviceType": "Healthcare Technology Services",
+            "mission": "To enhance the quality of life for seniors and patients through regular AI-powered check-ins and empower healthcare providers and care teams with actionable insights for better outcomes.",
+            "vision": "To redefine patient engagement by empowering healthcare providers with AI-powered tools that keep patients connected and supported.",
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Senior Wellness Services",
+              "name": "Patient Wellness Services",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Daily Wellness Check-in Calls",
-                    "description": "Compassionate AI check-ins designed to ensure seniors feel heard and cared for"
+                    "name": "AI-Powered Patient Check-In Calls",
+                    "description": "HIPAA-compliant AI check-ins designed to monitor patient wellness and surface actionable insights"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Daily Caregiver Reports",
-                    "description": "Comprehensive updates on physical, emotional, and social well-being, helping caregivers respond proactively"
+                    "name": "Provider Admin Console",
+                    "description": "Comprehensive dashboard with alerts, trends, and compliance reporting for care teams"
                   }
                 }
               ]
@@ -68,8 +69,8 @@ export function AboutComponent() {
                 About Positive Check
               </h1>
               <p className="text-xl text-gray-700 mb-8">
-                A revolutionary AI-powered caregiver service dedicated to ensuring 
-                the well-being of seniors while offering peace of mind to families and caregivers.
+                An AI-powered patient check-in service dedicated to helping healthcare providers
+                improve outcomes through consistent, scalable wellness monitoring.
               </p>
             </div>
           </div>
@@ -83,17 +84,17 @@ export function AboutComponent() {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-700 mb-12">
-                To enhance the quality of life for seniors and help seniors age in place longer 
-                through regular check-ins and empower caregivers with actionable insights, 
-                fostering stronger connections and improved care for loved ones. Learn more about <Link href="/blog/checking-in-on-seniors" className="text-blue-600 hover:text-blue-800 underline">why check-ins matter for seniors living alone</Link> and discover <Link href="/how-it-works" className="text-blue-600 hover:text-blue-800 underline">how our service works</Link>.
+                To enhance the quality of life for seniors and patients through regular AI-powered
+                check-ins and empower healthcare providers and care teams with actionable insights
+                for better outcomes. Learn more about <Link href="/how-it-works" className="text-blue-600 hover:text-blue-800 underline">how our service works</Link>.
               </p>
 
               <h2 id="vision-heading" className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-6`}>
                 Our Vision
               </h2>
               <p className="text-lg text-gray-700 mb-12">
-                To redefine caregiving by empowering seniors with personalized support through AI, 
-                enabling them to live independently and stay connected.
+                To redefine patient engagement by empowering healthcare providers with AI-powered
+                tools that keep patients connected and supported.
               </p>
 
               {/* Image Section */}
@@ -112,28 +113,26 @@ export function AboutComponent() {
                 Why Choose Positive Check?
               </h2>
               <p className="text-xl text-center text-gray-700 mb-12">
-                Because every moment counts, and being able to spend more time with aging loved 
-                ones is everything.
+                Because consistent patient engagement leads to better outcomes,
+                and your care team deserves tools that scale.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
                 <div className="p-6 bg-white rounded-lg shadow-sm" role="listitem">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Compassionate AI Check-ins</h3>
+                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">HIPAA-Compliant AI Check-ins</h3>
                   <p className="text-gray-700">
-                    Personalized calls designed to ensure seniors feel heard and cared for.
+                    Personalized calls designed to monitor patient wellness and surface actionable insights.
                   </p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow-sm">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Daily Caregiver Reports</h3>
+                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Real-Time Alerts &amp; Reporting</h3>
                   <p className="text-gray-600">
-                    Comprehensive updates on physical, emotional, and social well-being, helping 
-                    caregivers respond proactively. See how our service provides <Link href="/blog/caregiver-relief" className="text-blue-600 hover:text-blue-800 underline">essential caregiver relief</Link>.
+                    Comprehensive updates on patient health, medication adherence, and wellness trends, helping care teams respond proactively.
                   </p>
                 </div>
                 <div className="p-6 bg-white rounded-lg shadow-sm">
-                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Peace of Mind</h3>
+                  <h3 className="text-xl font-bold text-[#1a2642] mb-4">Scalable Patient Outreach</h3>
                   <p className="text-gray-600">
-                    Families stay informed, reassured that their loved ones are supported every 
-                    step of the way.
+                    Expand your RPM and CCM programs without increasing staff burden, keeping every patient engaged.
                   </p>
                 </div>
               </div>
@@ -146,16 +145,17 @@ export function AboutComponent() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-lg text-gray-700 italic mb-8">
-                At Positive Check, we're more than just a service—we're a trusted partner in 
-                creating a better life for seniors and peace of mind for families.
+                At Positive Check, we're more than just a service—we're a trusted partner in
+                delivering better patient outcomes and supporting care teams at scale.
               </p>
-              <Link 
-                href="/onboarding-wizard"
-                className="inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 rounded-md font-medium text-lg focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2"
-                aria-label="Begin your Positive Check journey"
-              >
-                Get Started Today
-              </Link>
+              <RequestDemoModal>
+                <button
+                  className="inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 rounded-md font-medium text-lg focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2"
+                  aria-label="Request a demo of Positive Check"
+                >
+                  Request Demo
+                </button>
+              </RequestDemoModal>
             </div>
           </div>
         </section>
@@ -164,10 +164,10 @@ export function AboutComponent() {
       <footer className="border-t bg-gray-50" role="contentinfo">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-gray-700 text-sm">
-            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
+            &copy; Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
           </div>
         </div>
       </footer>
     </div>
   )
-} 
+}

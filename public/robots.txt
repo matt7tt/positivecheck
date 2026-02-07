@@ -4,7 +4,6 @@ User-agent: *
 Allow: /
 Allow: /blog
 Allow: /contact
-Allow: /onboarding-wizard
 Allow: /about
 Allow: /how-it-works
 

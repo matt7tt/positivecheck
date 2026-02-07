@@ -1,29 +1,19 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Calendar, Clock, ChevronDown } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 
 export default function BlogPage() {
   const featuredArticle = {
-    title: "Essential Caregiver Relief Through Wellness Calls",
-    excerpt: "Learn how daily check-ins can reduce caregiver stress and improve family relationships.",
-    slug: "caregiver-relief",
-    date: "April 5, 2025",
+    title: "Can AI Companions Help Seniors and Caregivers?",
+    excerpt: "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
+    slug: "ai-companions-for-senior-loneliness-and-caregiver-stress",
+    date: "July 5, 2025",
     readTime: "8 min read",
-    image: "/images/happy-senior-and-caregiver.webp",
+    image: "/images/ai-companion-senior-wellness.png",
   }
 
   const articles = [
-    {
-      title: "Can AI Companions Help Seniors and Caregivers?",
-      excerpt:
-        "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-      slug: "ai-companions-for-senior-loneliness-and-caregiver-stress",
-      date: "July 5, 2025",
-      readTime: "8 min read",
-      image: "/images/ai-companion-senior-wellness.png",
-    },
     {
       title: "Why Sleep Quality Is Critical for Senior Safety & Health",
       excerpt:
@@ -34,27 +24,9 @@ export default function BlogPage() {
       image: "/images/senior-sleep-safety-bedroom.png",
     },
     {
-      title: "How Daily Engagement Check‑Ins Improve Senior Well‑Being: Insights From Real-Life Stories",
-      excerpt:
-        "Daily engagement check-ins help reduce senior isolation, boost mood, and give families peace of mind. Discover how Positive Check supports aging loved ones with simple, meaningful connection.",
-      slug: "daily-senior-wellness-check-ins",
-      date: "June 13, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-check-in-call.png",
-    },
-    {
-      title: "Daily Wellness Calls for Seniors: Supporting Independence at Home",
-      excerpt:
-        "How daily wellness check-ins help seniors age in place safely while giving families peace of mind. Affordable senior care from $20/month.",
-      slug: "daily-wellness-calls-seniors-aging-in-place",
-      date: "May 1, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-wellness-call.png",
-    },
-    {
       title: "The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention",
       excerpt:
-        "While care communities strive to provide quality service, regular family check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
+        "While care communities strive to provide quality service, regular check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
       slug: "importance-of-checking-in-care-communities",
       date: "March 17, 2025",
       readTime: "8 min read",
@@ -70,15 +42,6 @@ export default function BlogPage() {
       image: "/images/senior-social-connections.png",
     },
     {
-      title: "When Should Families Check-In on Aging Loved Ones?",
-      excerpt:
-        "Regular check-ins with aging family members are crucial for ensuring their health, safety, and overall well-being. These interactions help monitor health changes and reduce isolation.",
-      slug: "when-should-families-check-in",
-      date: "February 10, 2025",
-      readTime: "8 min read",
-      image: "/images/family-checking-on-elderly-care.png",
-    },
-    {
       title: "7 Ways Phone Check-ins Help Senior Mental Health",
       excerpt:
         "Discover how regular phone check-ins improve senior mental health and safety, providing proven benefits for aging in place and caregiver peace of mind.",
@@ -86,42 +49,6 @@ export default function BlogPage() {
       date: "January 25, 2025",
       readTime: "8 min read",
       image: "/images/senior-phone-check-in.png",
-    },
-    {
-      title: "Essential Tips for Long-Distance Caregiving",
-      excerpt:
-        "Managing care from afar presents unique challenges. Discover effective strategies and tools to provide the best possible care for your loved ones despite the distance.",
-      slug: "tips-for-long-distance-caregiving",
-      date: "December 5, 2024",
-      readTime: "8 min read",
-      image: "/images/long-distance-caregiving-tech.png",
-    },
-    {
-      title: "The Importance of Checking In on Seniors Living Alone",
-      excerpt:
-        "Regular check-ins are vital for seniors living independently. Learn why these visits matter and how they contribute to better health outcomes and quality of life.",
-      slug: "checking-in-on-seniors",
-      date: "November 2, 2024",
-      readTime: "8 min read",
-      image: "/images/senior-living-check-in.png",
-    },
-    {
-      title: "10 Signs Your Loved One Could Benefit from a Caregiver's Check-In Service",
-      excerpt:
-        "As our loved ones age, ensuring their well-being becomes a priority. Learn the key signs that indicate when extra support through a check-in service could be beneficial.",
-      slug: "signs-loved-one-needs-caregiver-check-in",
-      date: "October 8, 2024",
-      readTime: "8 min read",
-      image: "/images/caregiver-check-in-signs.png",
-    },
-    {
-      title: "How Many Adults Live Far From Aging Parents?",
-      excerpt:
-        "Studies show that about 45% of American adults live more than an hour's drive away from their aging parents. This distance can make regular in-person check-ins challenging.",
-      slug: "how-many-adults-live-far-from-aging-parents",
-      date: "September 15, 2024",
-      readTime: "8 min read",
-      image: "/images/distant-family.png",
     },
   ]
 
@@ -134,7 +61,7 @@ export default function BlogPage() {
             <Link href="/" className="flex items-center">
               <img
                 src="/images/positive-logo-dark-blue.png"
-                alt="Positive Check - AI-powered senior wellness monitoring service"
+                alt="Positive Check - AI-powered patient check-in calls"
                 className="h-14 w-auto -mt-1"
               />
             </Link>
@@ -143,32 +70,15 @@ export default function BlogPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/families" className="text-gray-600 hover:text-gray-900">
-              For Families
-            </Link>
-            <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-              For Providers
-            </Link>
             <Link href="/blog" className="text-[#e879f9] font-semibold">
               Blog
             </Link>
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                Sign In
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/families">For Families</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/providers">For Providers</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+              Sign In
+            </Link>
           </div>
         </nav>
       </header>
@@ -178,8 +88,7 @@ export default function BlogPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Positive Check Blog</h1>
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-            Insights, tips, and resources for families and healthcare providers caring for aging loved ones and
-            patients.
+            Insights, tips, and resources for healthcare providers and care teams supporting patient wellness.
           </p>
         </div>
       </section>
@@ -261,7 +170,7 @@ export default function BlogPage() {
             <Link href="/" className="flex items-center">
               <img
                 src="/images/positive-logo-dark-blue-alt.png"
-                alt="Positive Check - AI-powered senior wellness monitoring service"
+                alt="Positive Check - AI-powered patient check-in calls"
                 className="h-16"
               />
             </Link>
@@ -271,22 +180,8 @@ export default function BlogPage() {
             <div className="text-center">
               <ul className="space-y-2">
                 <li>
-                  <Link href="/families" className="text-gray-600 hover:text-gray-900">
-                    For Families
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-                    For Providers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/blog" className="text-gray-600 hover:text-gray-900">
-                    Blog
+                  <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900">
+                    How It Works
                   </Link>
                 </li>
                 <li>
@@ -299,34 +194,30 @@ export default function BlogPage() {
             <div className="text-center">
               <ul className="space-y-2">
                 <li>
+                  <Link href="/blog" className="text-gray-600 hover:text-gray-900">
+                    Blog
+                  </Link>
+                </li>
+                <li>
                   <Link href="/contact" className="text-gray-600 hover:text-gray-900">
                     Contact Us
                   </Link>
                 </li>
+              </ul>
+            </div>
+            <div className="text-center">
+              <ul className="space-y-2">
                 <li>
-                  <div className="flex justify-center">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                        Sign In
-                        <ChevronDown className="w-4 h-4" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center">
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/families">For Families</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/providers">For Providers</Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
+                  <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+                    Sign In
+                  </Link>
                 </li>
               </ul>
             </div>
           </div>
           <div className="border-t mt-8 pt-8 text-center">
             <p className="text-gray-600 text-sm">
-              © Positive Check 2025 |{" "}
+              &copy; Positive Check 2025 |{" "}
               <Link href="/terms" className="hover:text-gray-900">
                 Terms
               </Link>{" "}

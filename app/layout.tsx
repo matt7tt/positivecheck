@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Daily Wellness Calls for Seniors | Positive Check",
+  title: "AI-Powered Patient Check-In Calls | Positive Check",
   description:
-    "Daily wellness check-in calls for seniors starting at $20/month. AI-powered service provides caregiver relief, family peace of mind, and helps seniors age safely at home.",
+    "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers. HIPAA-compliant wellness monitoring at scale.",
   metadataBase: new URL('https://positivecheck.com'),
   alternates: {
     canonical: '/',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://positivecheck.com',
     siteName: 'Positive Check',
-    title: 'Daily Wellness Calls for Seniors | Positive Check',
-    description: 'Daily wellness check-in calls for seniors starting at $20/month. AI-powered service provides caregiver relief, family peace of mind, and helps seniors age safely at home.',
+    title: 'AI-Powered Patient Check-In Calls | Positive Check',
+    description: 'AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers. HIPAA-compliant wellness monitoring at scale.',
     images: [
       {
         url: '/images/senior-talking-on-the-phone1.webp',
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@positivecheck',
     creator: '@positivecheck',
-    title: 'Daily Wellness Calls for Seniors | Positive Check',
-    description: 'Daily wellness check-in calls for seniors starting at $20/month. AI-powered service provides caregiver relief and family peace of mind.',
+    title: 'AI-Powered Patient Check-In Calls | Positive Check',
+    description: 'AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers.',
     images: ['/images/senior-talking-on-the-phone1.webp'],
   },
 };

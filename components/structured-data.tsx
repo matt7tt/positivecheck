@@ -23,7 +23,7 @@ export const organizationSchema = {
   "name": "Positive Check",
   "url": "https://positivecheck.com",
   "logo": "https://positivecheck.com/images/positive-logo-dark-blue.png",
-  "description": "AI-powered daily wellness calls for seniors and remote patient monitoring for healthcare providers",
+  "description": "AI-powered patient check-in calls and remote patient monitoring for healthcare providers",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+1-858-522-9524",
@@ -46,7 +46,7 @@ export const medicalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
   "name": "Positive Check",
-  "description": "Daily wellness monitoring and AI-powered check-in calls for seniors",
+  "description": "AI-powered patient check-in calls for RPM, CCM, and post-discharge follow-up programs",
   "medicalSpecialty": [
     "Geriatrics",
     "RemotePatientMonitoring",
@@ -55,8 +55,8 @@ export const medicalServiceSchema = {
   "availableService": [
     {
       "@type": "MedicalProcedure",
-      "name": "Daily Wellness Calls",
-      "description": "Automated daily check-in calls with AI companion Lola for seniors"
+      "name": "Automated Patient Check-In Calls",
+      "description": "AI-powered check-in calls with virtual assistant Lola for patient wellness monitoring"
     },
     {
       "@type": "MedicalProcedure",
@@ -69,30 +69,6 @@ export const medicalServiceSchema = {
       "description": "Daily reminders and tracking for medication compliance"
     }
   ]
-}
-
-// Product schema for service pages
-export const productSchemaFamilies = {
-  "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Positive Check for Families",
-  "description": "Daily wellness calls for aging parents with AI companion Lola",
-  "brand": {
-    "@type": "Brand",
-    "name": "Positive Check"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "29.00",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock",
-    "priceValidUntil": "2025-12-31"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "250"
-  }
 }
 
 export const productSchemaProviders = {
@@ -125,7 +101,7 @@ export const faqSchema = {
       "name": "How does Positive Check work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Positive Check uses an AI companion named Lola to make daily wellness calls to seniors. Lola checks on their health, mood, and daily activities, then sends updates to family members or healthcare providers."
+        "text": "Positive Check uses an AI companion named Lola to make wellness check-in calls to patients. Lola checks on their health, mood, and daily activities, then sends updates and alerts to healthcare providers through a HIPAA-compliant dashboard."
       }
     },
     {
@@ -134,14 +110,6 @@ export const faqSchema = {
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, Positive Check is fully HIPAA compliant. We maintain the highest standards of privacy and security for all health information."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if my parent doesn't answer the call?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "If a call is missed, Positive Check will attempt to call again later. If multiple calls are missed, designated family members or caregivers are notified immediately."
       }
     },
     {

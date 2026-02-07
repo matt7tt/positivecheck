@@ -58,7 +58,7 @@ export function PhoenixLandingPageComponent() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Positive Check Phoenix",
-            "description": "Daily wellness check-in calls for seniors in Phoenix, Arizona. Providing peace of mind for families with affordable daily check-ins.",
+            "description": "Daily wellness check-in calls for seniors in Phoenix, Arizona. Supporting healthcare providers with patient wellness monitoring.",
             "url": "https://www.positivecheck.com/phoenix",
             "priceRange": "$20/month",
             "telephone": "866-605-8571",
@@ -185,11 +185,11 @@ export function PhoenixLandingPageComponent() {
                   Senior Wellness Check-In Calls
                 </h1>
                 <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
-                  Helping Phoenix area families stay connected everyday starting at $20/month. Cancel anytime.
+                  Helping Phoenix area providers stay connected with patients everyday starting at $20/month. Cancel anytime.
                 </p>
               </div>
               <Link 
-                href="/onboarding-wizard"
+                href="/contact"
                 aria-label="Start your sign up process"
                 className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
               >
@@ -222,7 +222,7 @@ export function PhoenixLandingPageComponent() {
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="bg-white p-8 rounded-xl shadow-md">
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
-                  Peace of Mind for Busy Families
+                  Peace of Mind for Care Teams
                 </h3>
                 <p className="text-lg text-gray-600 mb-4">
                   Know your loved one is doing okay especially in Arizona's extreme conditions.
@@ -286,7 +286,7 @@ export function PhoenixLandingPageComponent() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-[#1a2642] font-bold">•</span>
-                    <span>Helps families respond before issues grow</span>
+                    <span>Helps care teams respond before issues grow</span>
                   </li>
                 </ul>
               </div>
@@ -316,7 +316,7 @@ export function PhoenixLandingPageComponent() {
             </div>
           </div>
           <div className="text-center mt-12">
-              <Link href="/onboarding-wizard">
+              <Link href="/contact">
                 <Button 
                   className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                 >
@@ -352,12 +352,12 @@ export function PhoenixLandingPageComponent() {
                   That's where Lola comes in. Lola is our caring AI companion that makes regular check-in calls to seniors, asking simple but important questions about their well-being.
                 </p>
                 <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] pt-4`}>
-                  How Lola Helps Families
+                  How Lola Helps Providers
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
                     <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
-                    <span className="text-[#1a2642]">Provides peace of mind for busy Phoenix families.</span>
+                    <span className="text-[#1a2642]">Provides peace of mind for busy Phoenix care teams.</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
@@ -369,7 +369,7 @@ export function PhoenixLandingPageComponent() {
                   </li>
                 </ul>
                 <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
-                <Link href="/onboarding-wizard">
+                <Link href="/contact">
                   <Button 
                     className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
@@ -477,7 +477,7 @@ export function PhoenixLandingPageComponent() {
               </Card>
             </div>
             <div className="text-center mt-12">
-              <Link href="/onboarding-wizard">
+              <Link href="/contact">
                 <Button 
                   className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                 >
@@ -523,7 +523,7 @@ export function PhoenixLandingPageComponent() {
 
                 <div className="space-y-4 pt-8">
                   <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
-                    Why Phoenix Families Choose Us
+                    Why Phoenix Providers Choose Us
                   </h3>
                   <ul className="space-y-4">
                     <li className="text-lg text-[#1a2642]">
@@ -539,7 +539,7 @@ export function PhoenixLandingPageComponent() {
                 </div>
                 <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
 
-                <Link href="/onboarding-wizard">
+                <Link href="/contact">
                   <Button 
                     className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
@@ -571,7 +571,7 @@ export function PhoenixLandingPageComponent() {
               {[
                 {
                   question: "Why should I choose Positive Check?",
-                  answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give Phoenix families the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable, especially during extreme Arizona summers."
+                  answer: "Positive Check combines cutting-edge AI with a human touch, offering consistent, reliable wellness check-ins that give Phoenix providers the reassurance they need. It's an affordable solution designed to make aging in place safer and more sustainable, especially during extreme Arizona summers."
                 },
                 {
                   question: "How do I prepare for the first call?",
@@ -583,7 +583,7 @@ export function PhoenixLandingPageComponent() {
                 },
                 {
                   question: "How does Positive Check help during Phoenix's extreme heat?",
-                  answer: "During Phoenix's hot summers, Lola can check if seniors are staying cool and hydrated, remind them to use air conditioning, and alert family members if there are concerns about heat-related issues. This is especially important when temperatures exceed 110°F and heat-related illnesses become a serious risk for seniors."
+                  answer: "During Phoenix's hot summers, Lola can check if seniors are staying cool and hydrated, remind them to use air conditioning, and alert care teams if there are concerns about heat-related issues. This is especially important when temperatures exceed 110°F and heat-related illnesses become a serious risk for seniors."
                 },
                 {
                   question: "Is Positive Check secure?",
@@ -599,7 +599,7 @@ export function PhoenixLandingPageComponent() {
                 },
                 {
                   question: "Does Lola replace human caregivers?",
-                  answer: "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps families and caregivers stay informed and respond proactively to changes in well-being."
+                  answer: "Not at all. Lola is a supportive tool that complements caregiving by offering daily insights and reminders. It helps care teams and caregivers stay informed and respond proactively to changes in well-being."
                 },
                 {
                   question: "Can Positive Check help with caregiver burnout?",
@@ -673,17 +673,17 @@ export function PhoenixLandingPageComponent() {
           </div>
         </section>
 
-        {/* "A Personal Note to Families" section */}
+        {/* "A Personal Note to Providers" section */}
         <section className="bg-[#F598FF] py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-8`}>
-                A Personal Note to Families
+                A Personal Note to Providers
               </h2>
               
               <div className="mb-16">
                 <p className="text-xl text-[#1a2642]">
-                  We know you want the very best for your aging loved ones in Phoenix. Whether they live across the Valley or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
+                  We know you want the very best for your patients in Phoenix. Whether they live across the Valley or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates.
                 </p>
               </div>
 
@@ -718,7 +718,7 @@ export function PhoenixLandingPageComponent() {
                 <CardContent className="p-12 text-center">
                   <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Get in Touch</h2>
                   <p className="text-gray-600 mb-6">
-                    Questions about our senior check-in services? We're here to help Phoenix area families.
+                    Questions about our senior check-in services? We're here to help Phoenix area providers.
                   </p>
                   <div className="space-y-4 text-left">
                     <div>

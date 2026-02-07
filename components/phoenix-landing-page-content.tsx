@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const phoenixHeadlineSection = {
   heading: "Phoenix Senior Wellness Check-In Calls",
-  subheading: "Helping Arizona families stay connected with affordable $20/month wellness calls. Perfect for the Valley's heat and sprawling neighborhoods."
+  subheading: "Helping Arizona healthcare providers stay connected with patients with affordable $20/month wellness calls. Perfect for the Valley's heat and sprawling neighborhoods."
 };
 
 // 2. Phoenix-Specific Messaging Section
@@ -39,7 +39,7 @@ const PhoenixSpecificSection = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#1a2642] font-bold">•</span>
-                <span>Alert family members if cooling systems fail</span>
+                <span>Alert care teams if patients report heat concerns</span>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@ const PhoenixSpecificSection = () => {
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="text-[#1a2642] font-bold">•</span>
-                <span>Maintain check-ins whether family is in-state or across the country</span>
+                <span>Maintain check-ins across your patient population</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-[#1a2642] font-bold">•</span>
@@ -94,14 +94,14 @@ const PhoenixSpecificSection = () => {
           
           <div className="bg-white p-8 rounded-xl shadow-md">
             <h3 className="text-2xl font-bold text-[#1a2642] mb-4">
-              Trusted by Phoenix Families
+              Trusted by Phoenix Healthcare Providers
             </h3>
             <p className="text-lg text-gray-600 mb-4">
-              Join hundreds of Phoenix-area families who rely on Positive Check to keep their senior loved ones safe, connected, and thriving in the Valley of the Sun.
+              Join Phoenix-area healthcare providers who rely on Positive Check to keep their senior loved ones safe, connected, and thriving in the Valley of the Sun.
             </p>
             <div className="mt-6">
               <Link 
-                href="/onboarding-wizard/"
+                href="/contact"
                 className="btn btn-primary"
               >
                 Sign up now!
@@ -127,7 +127,7 @@ const phoenixTestimonial = {
 
 const phoenixFAQ = {
   question: "How does Positive Check help during Phoenix's extreme heat?",
-  answer: "During Phoenix's hot summers, Lola can check if seniors are staying cool and hydrated, remind them to use air conditioning, and alert family members if there are concerns about heat-related issues. This is especially important when temperatures exceed 110°F and heat-related illnesses become a serious risk for seniors."
+  answer: "During Phoenix's hot summers, Lola can check if seniors are staying cool and hydrated, remind them to use air conditioning, and alert care teams if there are concerns about heat-related issues. This is especially important when temperatures exceed 110°F and heat-related illnesses become a serious risk for seniors."
 };
 
 // Implementation instructions:

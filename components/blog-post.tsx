@@ -29,12 +29,12 @@ export function BlogPostComponent() {
               className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
             />
             <p className="text-sm text-gray-500 mt-2 text-center">
-              Family connections matter, no matter the distance
+              Consistent check-ins matter, no matter the setting
             </p>
           </div>
 
           <p className="text-lg mb-8">
-            It's not uncommon for families to live far apart. Studies show that about 45% of American adults live more than an hour's drive away from their aging parents, and a significant portion of these live over two hours away. This distance can make regular in-person check-ins challenging, leaving many feeling disconnected or worried about their loved ones. Knowing you're not alone in facing this challenge highlights the importance of solutions like Positive Check.
+            Regular wellness check-ins are essential for maintaining the health and safety of seniors, yet many go days or even weeks without meaningful contact. Whether in assisted living, home care, or independent living settings, consistent outreach helps identify changes in well-being early and ensures that seniors feel connected and supported. Positive Check was built to address this gap with reliable, proactive care.
           </p>
 
           <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
@@ -67,14 +67,14 @@ export function BlogPostComponent() {
             <li><strong>Daily Check-Ins:</strong> We call seniors to see how they are doing 7 days a week (configurable). These regular conversations not only monitor their well-being but also provide a friendly and familiar voice.</li>
             <li><strong>Daily Reports:</strong> Caregivers receive a detailed daily report summarizing how their loved one is doing. This transparency helps you stay informed and take action if necessary.</li>
             <li><strong>Connection:</strong> Beyond practical care calls, Positive Check offers a listening ear. These care calls reduce feelings of isolation and loneliness.</li>
-            <li><strong>Affordable:</strong> Positive Check is an affordable solution for any family or caregiver.</li>
+            <li><strong>Affordable:</strong> Positive Check is an affordable solution for any healthcare provider or care team.</li>
           </ul>
 
           <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
             When Life Gets Busy, We're Here to Help
           </h2>
           <p>
-            It's natural to feel stretched thin between work, family, and other commitments. Positive Check gives you the peace of mind that your aging parent receives care calls, even when you can't be there yourself. Knowing that Positive Check is consistently checking in can provide immense relief for families and ensure seniors feel valued and cared for.
+            Positive Check gives care teams confidence that patients receive consistent wellness check-ins, even when staff bandwidth is limited. Knowing that Positive Check is consistently checking in can provide immense relief for providers and ensure seniors feel valued and cared for.
           </p>
 
           <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
@@ -84,7 +84,7 @@ export function BlogPostComponent() {
             Every senior deserves the assurance that someone is looking out for them. Regular check-ins are more than just a phone call—they're a lifeline. Positive Check makes it easy to provide that care and connection.
           </p>
           <p>
-            <Link href="/onboarding-wizard" className="text-[#1a2642] font-medium hover:text-[#2a3752]">
+            <Link href="/contact" className="text-[#1a2642] font-medium hover:text-[#2a3752]">
               Visit Positive Check
             </Link> to learn more about how we can help you support your aging parents. Together, we can ensure your loved ones lead happy, healthy, and connected lives.
           </p>

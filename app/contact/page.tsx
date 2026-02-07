@@ -6,8 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { ChevronDown, Loader2 } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Loader2 } from "lucide-react"
 import Link from "next/link"
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -87,9 +86,6 @@ export default function ContactPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/families" className="text-gray-600 hover:text-gray-900">
-              For Families
-            </Link>
             <Link href="/providers" className="text-gray-600 hover:text-gray-900">
               For Providers
             </Link>
@@ -99,20 +95,9 @@ export default function ContactPage() {
             <Link href="/contact" className="text-[#e879f9] font-semibold">
               Contact
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                Sign In
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/families">For Families</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/providers">For Providers</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+              Sign In
+            </Link>
           </div>
         </nav>
       </header>
@@ -288,8 +273,8 @@ export default function ContactPage() {
             <div className="text-center">
               <ul className="space-y-2">
                 <li>
-                  <Link href="/families" className="text-gray-600 hover:text-gray-900">
-                    For Families
+                  <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900">
+                    How It Works
                   </Link>
                 </li>
                 <li>
@@ -321,22 +306,9 @@ export default function ContactPage() {
                   </Link>
                 </li>
                 <li>
-                  <div className="flex justify-center">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                        Sign In
-                        <ChevronDown className="w-4 h-4" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center">
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/families">For Families</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/providers">For Providers</Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
+                  <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+                    Sign In
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -1,6 +1,4 @@
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export default function TermsPage() {
   return (
@@ -21,30 +19,15 @@ export default function TermsPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/families" className="text-gray-600 hover:text-gray-900">
-              For Families
-            </Link>
             <Link href="/providers" className="text-gray-600 hover:text-gray-900">
               For Providers
             </Link>
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
             </Link>
-            {/* Sign In dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                Sign In
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/families">For Families</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/sign-in/providers">For Providers</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+              Sign In
+            </Link>
           </div>
         </nav>
       </header>
@@ -288,13 +271,12 @@ export default function TermsPage() {
             alt="Positive Check - AI-powered senior wellness monitoring service"
             className="h-16 mx-auto mb-4"
           />
-          {/* Sign In dropdown in footer */}
           <div className="grid md:grid-cols-3 gap-8 justify-center mb-8">
             <div className="text-center">
               <ul className="space-y-2">
                 <li>
-                  <Link href="/families" className="text-gray-600 hover:text-gray-900">
-                    For Families
+                  <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900">
+                    How It Works
                   </Link>
                 </li>
                 <li>
@@ -326,22 +308,9 @@ export default function TermsPage() {
                   </Link>
                 </li>
                 <li>
-                  <div className="flex justify-center">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="flex items-center gap-1 text-gray-600 hover:text-gray-900">
-                        Sign In
-                        <ChevronDown className="w-4 h-4" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center">
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/families">For Families</Link>
-                        </DropdownMenuItem>
-                        <DropdownMenuItem asChild>
-                          <Link href="/sign-in/providers">For Providers</Link>
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
+                  <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
+                    Sign In
+                  </Link>
                 </li>
               </ul>
             </div>

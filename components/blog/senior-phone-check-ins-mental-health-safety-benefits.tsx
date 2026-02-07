@@ -207,7 +207,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                   Ready to experience the peace of mind that comes with daily wellness check-ins for your loved one?
                 </p>
                 <Link
-                  href="/onboarding-wizard"
+                  href="/contact"
                   className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
                 >
                   CLICK HERE to get started today
