@@ -213,6 +213,28 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                   CLICK HERE to get started today
                 </Link>
               </div>
+
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+                  Related Articles
+                </h2>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Link
+                    href="/blog/maintaining-social-connections"
+                    className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <h3 className="font-semibold text-[#1a2642] mb-1">Maintaining Social Connections in Senior Years</h3>
+                    <p className="text-sm text-gray-600">Strategies to help seniors stay socially active and engaged.</p>
+                  </Link>
+                  <Link
+                    href="/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
+                    className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <h3 className="font-semibold text-[#1a2642] mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
+                    <p className="text-sm text-gray-600">How AI companions reduce senior loneliness and caregiver stress.</p>
+                  </Link>
+                </div>
+              </div>
             </article>
           </div>
         </div>

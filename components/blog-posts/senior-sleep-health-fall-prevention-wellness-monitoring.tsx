@@ -288,6 +288,28 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
         <div className="mt-8 text-center text-sm text-gray-600">
           <p>#SeniorWellness #VirtualCaregiver #DailyCheckIns #CaregiverSupport #AgingInPlace #PositiveCheck</p>
         </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+            Related Articles
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link
+              href="/blog/importance-of-checking-in-care-communities"
+              className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="font-semibold text-[#1a2642] mb-1">The Importance of Checking In</h3>
+              <p className="text-sm text-gray-600">Ensuring seniors in care communities receive proper attention.</p>
+            </Link>
+            <Link
+              href="/blog/role-of-technology-in-senior-care"
+              className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="font-semibold text-[#1a2642] mb-1">The Role of Technology in Modern Senior Care</h3>
+              <p className="text-sm text-gray-600">How technology is transforming modern senior care delivery.</p>
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   )

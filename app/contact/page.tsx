@@ -10,6 +10,8 @@ import { Loader2 } from "lucide-react"
 import Link from "next/link"
 import toast, { Toaster } from 'react-hot-toast'
 import { StructuredData, generateBreadcrumbSchema } from "@/components/structured-data"
+import { PublicHeader } from "@/components/shared/public-header"
+import { PublicFooter } from "@/components/shared/public-footer"
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -71,37 +73,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}, {name: "Contact", url: "https://positivecheck.com/contact"}])} id="schema-breadcrumb" />
-      {/* Header */}
-      <header className="px-6 py-2 border-b">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center">
-              <img
-                src="/images/positive-logo-dark-blue.png"
-                alt="Positive Check - AI-powered senior wellness monitoring service"
-                className="h-14 w-auto -mt-1"
-              />
-            </Link>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-gray-900">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900">
-              About
-            </Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900">
-              Blog
-            </Link>
-            <Link href="/contact" className="text-[#e879f9] font-semibold">
-              Contact
-            </Link>
-            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
-              Sign In
-            </Link>
-          </div>
-        </nav>
-      </header>
+      <PublicHeader currentPage="contact" />
 
       {/* Hero Section */}
       <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
@@ -240,72 +212,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-6 py-12 bg-white border-t">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center mb-8">
-            <Link href="/" className="flex items-center">
-              <img
-                src="/images/positive-logo-dark-blue-alt.png"
-                alt="Positive Check - AI-powered senior wellness monitoring service"
-                className="h-16"
-              />
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 justify-center">
-            <div className="text-center">
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/how-it-works" className="text-gray-600 hover:text-gray-900">
-                    How It Works
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                    About Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/blog" className="text-gray-600 hover:text-gray-900">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-gray-600 hover:text-gray-900">
-                    Contact Us
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="text-center">
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
-                    Sign In
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t mt-8 pt-8 text-center">
-            <p className="text-gray-600 text-sm">
-              © Positive Check 2025 |{" "}
-              <Link href="/terms" className="hover:text-gray-900">
-                Terms
-              </Link>{" "}
-              |{" "}
-              <Link href="/privacy" className="hover:text-gray-900">
-                Privacy
-              </Link>
-            </p>
-          </div>
-        </div>
-      </footer>
+      <PublicFooter />
     </div>
   )
 }

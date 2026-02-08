@@ -1,6 +1,7 @@
 'use client'
 
 import { Space_Grotesk } from 'next/font/google'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const spaceGrotesk = Space_Grotesk({
@@ -24,9 +25,11 @@ export function TechnologyInSeniorCarePost() {
           The Role of Technology in Modern Senior Care
         </h1>
 
-        <img
+        <Image
           src="/images/senior-tech.webp"
           alt="Senior person using technology for health monitoring"
+          width={800}
+          height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
@@ -118,7 +121,29 @@ export function TechnologyInSeniorCarePost() {
             GET STARTED TODAY
           </Link>
         </div>
+
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+            Related Articles
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link
+              href="/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
+              className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="font-semibold text-[#1a2642] mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
+              <p className="text-sm text-gray-600">How AI companions reduce senior loneliness and caregiver stress.</p>
+            </Link>
+            <Link
+              href="/blog/senior-sleep-health-fall-prevention-wellness-monitoring"
+              className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="font-semibold text-[#1a2642] mb-1">Why Sleep Quality Is Critical for Senior Safety & Health</h3>
+              <p className="text-sm text-gray-600">Why quality sleep matters for senior safety and fall prevention.</p>
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   )
-} 
+}
