@@ -5,8 +5,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle, Menu, X } from "lucide-react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
-import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema } from "@/components/structured-data"
+import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
@@ -115,15 +116,19 @@ export default function HomePage() {
       <StructuredData data={organizationSchema} id="schema-organization" />
       <StructuredData data={medicalServiceSchema} id="schema-medical-service" />
       <StructuredData data={faqSchema} id="schema-faq" />
+      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}])} id="schema-breadcrumb" />
       {/* Header */}
       <header className="px-6 py-2 border-b relative">
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
             <Link href="/" className="flex items-center">
-              <img
+              <Image
                 src="/images/positive-logo-dark-blue.png"
                 alt="Positive Check - AI-powered patient check-in calls logo"
+                width={210}
+                height={56}
                 className="h-14 w-auto -mt-1"
+                priority
               />
             </Link>
           </div>
@@ -145,6 +150,9 @@ export default function HomePage() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
             </Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">
               Blog
@@ -168,6 +176,13 @@ export default function HomePage() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/about"
+                className="block text-gray-600 hover:text-[#e879f9]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
               </Link>
               <Link
                 href="/blog"
@@ -261,9 +276,11 @@ export default function HomePage() {
             </RequestDemoModal>
           </div>
           <div>
-            <img
+            <Image
               src="/images/new-administrator-admin-console.webp"
               alt="Healthcare provider using Positive Check admin dashboard to monitor patient wellness"
+              width={800}
+              height={400}
               className="rounded-lg shadow-xl w-full object-cover"
               style={{
                 height: "400px",
@@ -328,9 +345,11 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-gradient-to-r from-purple-500 to-[#e879f9]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <img
+            <Image
               src="/images/care-companion-lola-calling.webp"
               alt="Healthcare professional conducting daily wellness check-in calls for senior patients"
+              width={600}
+              height={400}
               className="rounded-lg shadow-xl w-full"
             />
           </div>
@@ -436,9 +455,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative">
-            <img
+            <Image
               src="/images/happy-senior-talking-to-lola-2.webp"
               alt="Senior citizen engaged in friendly wellness conversation with AI companion Lola"
+              width={600}
+              height={400}
               className="rounded-lg shadow-xl w-full"
             />
           </div>
@@ -479,9 +500,11 @@ export default function HomePage() {
                   <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">{tab.description}</p>
                 </div>
                 <div className="flex justify-center">
-                  <img
-                    src={tab.image || "/placeholder.svg"}
+                  <Image
+                    src={tab.image}
                     alt={tab.alt}
+                    width={1200}
+                    height={600}
                     className="rounded-lg shadow-xl w-full max-w-6xl"
                   />
                 </div>
@@ -572,9 +595,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative">
-            <img
+            <Image
               src="/images/daily-checkin-calls.webp"
               alt="Senior patient receiving automated wellness check-in call from healthcare provider"
+              width={600}
+              height={320}
               className="rounded-lg shadow-xl w-full h-80 object-cover"
             />
           </div>
@@ -594,10 +619,13 @@ export default function HomePage() {
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto min-h-[280px]">
             <div className="flex flex-col md:flex-row items-start gap-8">
               <div className="flex-shrink-0">
-                <img
-                  src={testimonials[currentTestimonialIndex].image || "/placeholder.svg"}
+                <Image
+                  src={testimonials[currentTestimonialIndex].image}
                   alt={`${testimonials[currentTestimonialIndex].author} from ${testimonials[currentTestimonialIndex].location}`}
+                  width={80}
+                  height={80}
                   className="w-20 h-20 rounded-full object-cover"
+                  unoptimized
                 />
               </div>
               <div className="flex-1">
@@ -960,10 +988,12 @@ export default function HomePage() {
       <footer className="px-6 py-12 bg-white border-t">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-center mb-8">
-            <img
+            <Image
               src="/images/positive-logo-dark-blue-alt.png"
               alt="Positive"
-              className="h-16"
+              width={240}
+              height={64}
+              className="h-16 w-auto"
             />
           </div>
 

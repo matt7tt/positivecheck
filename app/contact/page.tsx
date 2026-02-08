@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
 import toast, { Toaster } from 'react-hot-toast'
+import { StructuredData, generateBreadcrumbSchema } from "@/components/structured-data"
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -69,6 +70,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}, {name: "Contact", url: "https://positivecheck.com/contact"}])} id="schema-breadcrumb" />
       {/* Header */}
       <header className="px-6 py-2 border-b">
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
@@ -84,6 +86,9 @@ export default function ContactPage() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
             </Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">
               Blog
@@ -271,19 +276,14 @@ export default function ContactPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-gray-600 hover:text-gray-900">
-                    About Us
+                  <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+                    Contact Us
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="text-center">
               <ul className="space-y-2">
-                <li>
-                  <Link href="/contact" className="text-gray-600 hover:text-gray-900">
-                    Contact Us
-                  </Link>
-                </li>
                 <li>
                   <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
                     Sign In

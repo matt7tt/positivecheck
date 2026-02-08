@@ -19,8 +19,11 @@ export default function TermsPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-              For Providers
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
+            </Link>
+            <Link href="/blog" className="text-gray-600 hover:text-gray-900">
+              Blog
             </Link>
             <Link href="/contact" className="text-gray-600 hover:text-gray-900">
               Contact
@@ -280,8 +283,8 @@ export default function TermsPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-                    For Providers
+                  <Link href="/about" className="text-gray-600 hover:text-gray-900">
+                    About Us
                   </Link>
                 </li>
               </ul>

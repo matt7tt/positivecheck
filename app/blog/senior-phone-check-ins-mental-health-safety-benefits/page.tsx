@@ -30,5 +30,23 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": "7 Ways Phone Check-ins Help Senior Mental Health", "item": "https://positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits" }
+            ]
+          })
+        }}
+      />
+      <SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost />
+    </>
+  )
 } 

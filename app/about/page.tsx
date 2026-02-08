@@ -2,10 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { StructuredData, generateBreadcrumbSchema } from "@/components/structured-data"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
+      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}, {name: "About", url: "https://positivecheck.com/about"}])} id="schema-breadcrumb" />
       {/* Header */}
       <header className="px-6 py-2 border-b">
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
@@ -22,8 +24,8 @@ export default function AboutPage() {
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
-            <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-              For Providers
+            <Link href="/about" className="text-[#e879f9] font-semibold">
+              About
             </Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">
               Blog
@@ -62,7 +64,7 @@ export default function AboutPage() {
 
           {/* Our Mission */}
           <div className="max-w-7xl mx-auto">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Our mission is to enhance the quality of life for seniors and patients by making daily wellness check-ins
               simple, reliable, and compassionate. Positive Check helps people age in place longer, supports recovery
@@ -139,7 +141,7 @@ export default function AboutPage() {
               <Link href="/contact">REQUEST DEMO</Link>
             </Button>
             <Button asChild className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
-              <Link href="/providers">PROVIDERS - LEARN MORE</Link>
+              <Link href="/how-it-works">HOW IT WORKS</Link>
             </Button>
           </div>
         </div>
@@ -167,8 +169,8 @@ export default function AboutPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-                    For Providers
+                  <Link href="/about" className="text-gray-600 hover:text-gray-900">
+                    About Us
                   </Link>
                 </li>
               </ul>

@@ -54,6 +54,19 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" }
+            ]
+          })
+        }}
+      />
       {/* Header */}
       <header className="px-6 py-2 border-b">
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
@@ -69,6 +82,9 @@ export default function BlogPage() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
+            </Link>
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
             </Link>
             <Link href="/blog" className="text-[#e879f9] font-semibold">
               Blog
