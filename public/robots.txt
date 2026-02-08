@@ -14,10 +14,6 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /private/
 
-# Location pages
-# These pages contain location-specific information for seniors in these areas
-Allow: /phoenix
-
 # AI-friendly content
 Allow: /llms.txt
 

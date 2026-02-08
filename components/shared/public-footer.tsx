@@ -30,7 +30,7 @@ export function PublicFooter() {
             <h3 className="font-semibold text-[#1a2642] mb-3">Company</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="text-gray-600 hover:text-[#1a2642]">About Us</Link></li>
-              <li><Link href="/phoenix" className="text-gray-600 hover:text-[#1a2642]">Phoenix Services</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
             </ul>
           </div>
           <div>
