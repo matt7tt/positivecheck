@@ -2,14 +2,6 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  // www to non-www redirect
-  const host = request.headers.get('host') || ''
-  if (host.startsWith('www.')) {
-    const newUrl = new URL(request.url)
-    newUrl.host = host.replace('www.', '')
-    return NextResponse.redirect(newUrl, 301)
-  }
-
   const token = request.cookies.get('auth_token')?.value
 
   // A/B Test for homepage
@@ -58,6 +50,8 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|images/|audio/).*)',
+    '/my-account/:path*',
+    '/api/:path*',
+    '/'
   ]
 }
