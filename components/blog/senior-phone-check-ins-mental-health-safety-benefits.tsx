@@ -1,21 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Space_Grotesk, Raleway } from 'next/font/google'
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { Button } from "@/components/ui/button"
 import Script from 'next/script'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
-
-const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
-})
 
 export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
   return (
@@ -71,14 +59,14 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
 
             <Link 
               href="/blog"
-              className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"
+              className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
               aria-label="Back to blog"
             >
               ← Back to Blog
             </Link>
 
             <article className="prose max-w-none">
-              <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+              <h1 className={`text-4xl font-bold text-gray-900 mb-4`}>
                 7 Ways Regular Phone Check-ins Improve Senior Mental Health and Safety
               </h1>
 
@@ -98,7 +86,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 Whether provided by family members, professional services, or community programs, regular phone check-ins offer numerous benefits that extend well beyond basic wellness monitoring. Here are seven key ways these conversations enhance senior mental health and safety.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 1. Enhanced Safety Awareness and Routine Building
               </h2>
               <p>
@@ -111,7 +99,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 The consistent timing of these calls also helps seniors maintain regular sleep schedules, meal times, and medication routines, all of which contribute to better overall health and reduced risk of accidents or health complications.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 2. Combat Social Isolation and Loneliness
               </h2>
               <p>
@@ -124,7 +112,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 For seniors with limited mobility or transportation challenges, phone check-ins become a vital lifeline to the outside world, helping them maintain social connections that might otherwise fade away.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 3. Early Detection of Health Changes
               </h2>
               <p>
@@ -137,7 +125,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 The consistency of these calls also encourages seniors to be more aware of their own health status and more likely to seek medical attention when needed, rather than ignoring symptoms or hoping they'll resolve on their own.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 4. Medication Adherence Monitoring
               </h2>
               <p>
@@ -150,7 +138,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 While the calls focus on basic wellness questions, the regular contact helps maintain awareness around the importance of medication adherence and provides a touchpoint for seniors to consider their overall health status.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 5. Cognitive Stimulation and Mental Exercise
               </h2>
               <p>
@@ -163,7 +151,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 For seniors experiencing early stages of cognitive decline, regular phone contact helps maintain familiar relationships and provides consistency that can reduce anxiety and confusion.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 6. Family Peace of Mind and Caregiver Support
               </h2>
               <p>
@@ -176,7 +164,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 The documentation and alerts provided by professional check-in services give families the information they need to take appropriate action and can be valuable for healthcare providers to help track changes in their loved one's condition over time.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 7. Cost-Effective Alternative to Institutional Care
               </h2>
               <p>
@@ -189,7 +177,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 The information and trends collected through regular check-ins can be valuable for healthcare providers when shared by caregivers, helping to track changes in seniors' conditions over time. This approach respects seniors' preferences to age in place while providing the monitoring and information that families need to make informed care decisions.
               </p>
 
-              <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+              <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
                 Implementing Effective Phone Check-ins
               </h2>
               <p>
@@ -208,14 +196,14 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
+                  className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
                 >
                   CLICK HERE to get started today
                 </Link>
               </div>
 
               <div className="mt-12 pt-8 border-t border-gray-200">
-                <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+                <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
                   Related Articles
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -223,14 +211,14 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                     href="/blog/maintaining-social-connections"
                     className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
-                    <h3 className="font-semibold text-[#1a2642] mb-1">Maintaining Social Connections in Senior Years</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">Maintaining Social Connections in Senior Years</h3>
                     <p className="text-sm text-gray-600">Strategies to help seniors stay socially active and engaged.</p>
                   </Link>
                   <Link
                     href="/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
                     className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
-                    <h3 className="font-semibold text-[#1a2642] mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
+                    <h3 className="font-semibold text-gray-900 mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
                     <p className="text-sm text-gray-600">How AI companions reduce senior loneliness and caregiver stress.</p>
                   </Link>
                 </div>

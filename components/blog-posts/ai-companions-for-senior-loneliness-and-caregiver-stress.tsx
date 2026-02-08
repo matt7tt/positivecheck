@@ -1,14 +1,8 @@
 'use client'
 
-import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Script from 'next/script'
 import Image from 'next/image'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
   return (
@@ -58,14 +52,14 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
       </Script>
       <Link 
         href="/blog"
-        className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"
+        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
       </Link>
 
       <article className="prose max-w-none">
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+        <h1 className={`text-4xl font-bold text-gray-900 mb-4`}>
           Can AI Companions Help Seniors and Caregivers?
         </h1>
 
@@ -77,7 +71,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
         />
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Can an AI Companion Reduce Senior Isolation and Caregiver Stress?
         </h2>
 
@@ -89,7 +83,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           What if a simple, daily check-in could ease both burdens? AI companions, like Positive Check's virtual wellness calls, are stepping into this role, not to replace human connection, but to reinforce it. With the right design and purpose, they can offer comfort, engagement, and peace of mind for everyone involved.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Senior Isolation: More Than Just Loneliness
         </h2>
 
@@ -101,7 +95,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           The pandemic further intensified this issue, cutting off many seniors from community centers, places of worship, and family visits. Even as the world opens up again, many older adults remain alone for long stretches of the day, especially those who are homebound or have mobility challenges.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Hidden Weight of Caregiving
         </h2>
 
@@ -113,7 +107,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           Many caregivers experience "sandwich generation" pressure, caring for aging parents while raising children of their own. They worry not just about safety, but about how their aging parent is feeling, whether they have eaten, or if today might be the day something goes wrong. That kind of mental load can become overwhelming.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Enter the AI Companion
         </h2>
 
@@ -129,7 +123,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           They're not a replacement for human care. They're an extension of it.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           How AI Companions Support Seniors
         </h2>
 
@@ -146,7 +140,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           For example, Positive Check's AI caregiver "Lola" makes brief wellness calls each day. Lola listens for changes in how a senior answers questions and flags anything unusual, giving caregivers early insight into potential problems.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           How AI Companions Support Caregivers
         </h2>
 
@@ -165,7 +159,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           One daughter recently shared, "Before Positive Check, I called my dad every morning to see if he took his meds and was feeling okay. Now Lola calls him, and I get a daily summary. Now when we chat, our conversations are about life and family which has been life-changing for both of us."
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Human-AI Balance
         </h2>
 
@@ -181,7 +175,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           The key is balance: use AI to handle routine support, and save your energy for quality moments together.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Conclusion: A Smarter Way to Stay Connected
         </h2>
 
@@ -203,14 +197,14 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
+            className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
           >
             Get Started Today
           </Link>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+          <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
             Related Articles
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -218,14 +212,14 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
               href="/blog/maintaining-social-connections"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">Maintaining Social Connections in Senior Years</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Maintaining Social Connections in Senior Years</h3>
               <p className="text-sm text-gray-600">Strategies to help seniors stay socially active and engaged.</p>
             </Link>
             <Link
               href="/blog/senior-phone-check-ins-mental-health-safety-benefits"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">7 Ways Phone Check-ins Help Senior Mental Health</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">7 Ways Phone Check-ins Help Senior Mental Health</h3>
               <p className="text-sm text-gray-600">How regular phone check-ins improve senior mental health.</p>
             </Link>
           </div>

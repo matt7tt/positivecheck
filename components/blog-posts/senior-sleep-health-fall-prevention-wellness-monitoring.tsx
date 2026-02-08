@@ -1,14 +1,8 @@
 'use client'
 
-import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Script from 'next/script'
 import Image from 'next/image'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
   return (
@@ -57,14 +51,14 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
       </Script>
       <Link 
         href="/blog"
-        className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"
+        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
       </Link>
 
       <article className="prose max-w-none">
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+        <h1 className={`text-4xl font-bold text-gray-900 mb-4`}>
           The Critical Importance of Sleep for Senior Health: Why Quality Rest Can't Be Ignored
         </h1>
 
@@ -80,7 +74,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           As we age, many aspects of our health require closer attention, but few are as foundational, or as overlooked, as sleep quality. For seniors, a good night's rest is not just about feeling refreshed; it is a critical component of overall health, safety, and independence. Understanding the connection between sleep and senior wellness can help families make informed decisions about their loved ones' care.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Hidden Dangers of Poor Sleep in Seniors
         </h2>
 
@@ -92,7 +86,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Falls are particularly concerning for older adults, as they can lead to serious injuries including hip fractures, head trauma, and other complications that may require hospitalization or long-term care. When we consider that inadequate sleep affects balance, reaction time, and cognitive function, the connection between rest and safety becomes undeniable.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           How Sleep Changes with Age
         </h2>
 
@@ -111,7 +105,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           These changes don't necessarily mean poor sleep is inevitable, but they do require attention and often adjustment to sleep habits and environments.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Ripple Effect: How Poor Sleep Impacts Overall Health
         </h2>
 
@@ -119,7 +113,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Sleep deprivation in seniors creates a cascade of health challenges that extend far beyond fatigue:
         </p>
 
-        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+        <h3 className={`text-xl font-bold text-gray-900 mt-6 mb-3`}>
           Cognitive Function and Memory
         </h3>
         
@@ -127,7 +121,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Poor sleep directly affects brain health, contributing to memory problems, difficulty concentrating, and increased risk of cognitive decline. For seniors already concerned about maintaining mental sharpness, quality sleep becomes even more crucial.
         </p>
 
-        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+        <h3 className={`text-xl font-bold text-gray-900 mt-6 mb-3`}>
           Immune System Weakness
         </h3>
         
@@ -135,7 +129,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Adequate rest is essential for a robust immune system. Sleep-deprived seniors are more susceptible to infections, illnesses, and slower recovery times from health setbacks.
         </p>
 
-        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+        <h3 className={`text-xl font-bold text-gray-900 mt-6 mb-3`}>
           Medication Management
         </h3>
         
@@ -143,7 +137,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Fatigue and confusion from poor sleep can lead to medication errors, a serious concern for seniors managing multiple prescriptions.
         </p>
 
-        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+        <h3 className={`text-xl font-bold text-gray-900 mt-6 mb-3`}>
           Mental Health Impacts
         </h3>
         
@@ -151,7 +145,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Chronic sleep problems are closely linked to depression and anxiety, which can create a cycle where mental health issues further disrupt sleep patterns.
         </p>
 
-        <h3 className={`${spaceGrotesk.className} text-xl font-bold text-[#1a2642] mt-6 mb-3`}>
+        <h3 className={`text-xl font-bold text-gray-900 mt-6 mb-3`}>
           Physical Health Consequences
         </h3>
         
@@ -159,7 +153,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           Beyond the increased fall risk, poor sleep contributes to cardiovascular problems, diabetes complications, and slower healing from injuries or illnesses.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Recognizing the Warning Signs
         </h2>
 
@@ -177,7 +171,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           <li>Increased frequency of minor accidents or "close calls"</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Role of Daily Monitoring in Sleep Health
         </h2>
 
@@ -198,7 +192,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           This daily monitoring creates a clear picture of sleep patterns over time, allowing families to identify trends and potential problems before they escalate. When sleep quality declines, family members can see trend analysis through the wellness dashboard, enabling early intervention.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Creating Better Sleep Environments for Seniors
         </h2>
 
@@ -213,7 +207,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           <li><strong>Comfortable Bedding:</strong> Supportive mattresses and pillows become increasingly important with age, as joint pain and pressure points can disrupt sleep.</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           When to Seek Professional Help
         </h2>
 
@@ -229,7 +223,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           <li>Daytime sleepiness that interferes with daily activities</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           The Family's Role in Supporting Senior Sleep Health
         </h2>
 
@@ -245,7 +239,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           <li><strong>Professional Resources:</strong> Help connect seniors with sleep specialists when needed</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Technology as a Sleep Health Ally
         </h2>
 
@@ -257,7 +251,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           The beauty of this approach is its simplicity; no complex devices, apps, or technology for seniors to learn. Just a friendly daily phone call that includes important wellness questions, including sleep quality assessment.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Conclusion: Sleep as a Foundation for Healthy Aging
         </h2>
 
@@ -279,7 +273,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
+            className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
           >
             CLICK HERE to get started today
           </Link>
@@ -290,7 +284,7 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+          <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
             Related Articles
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -298,14 +292,14 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
               href="/blog/importance-of-checking-in-care-communities"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">The Importance of Checking In</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">The Importance of Checking In</h3>
               <p className="text-sm text-gray-600">Ensuring seniors in care communities receive proper attention.</p>
             </Link>
             <Link
               href="/blog/role-of-technology-in-senior-care"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">The Role of Technology in Modern Senior Care</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">The Role of Technology in Modern Senior Care</h3>
               <p className="text-sm text-gray-600">How technology is transforming modern senior care delivery.</p>
             </Link>
           </div>

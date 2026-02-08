@@ -1,27 +1,21 @@
 'use client'
 
-import { Space_Grotesk } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function TechnologyInSeniorCarePost() {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
         href="/blog"
-        className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"
+        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
       </Link>
 
       <article className="prose max-w-none">
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+        <h1 className={`text-4xl font-bold text-gray-900 mb-4`}>
           The Role of Technology in Modern Senior Care
         </h1>
 
@@ -37,7 +31,7 @@ export function TechnologyInSeniorCarePost() {
           Technology is revolutionizing how we care for our aging loved ones, offering new ways to ensure safety, maintain independence, and provide peace of mind for families. Discover how modern solutions are transforming senior care and improving quality of life.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Key Technologies in Senior Care
         </h2>
 
@@ -60,7 +54,7 @@ export function TechnologyInSeniorCarePost() {
           </li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Benefits of Technology in Senior Care
         </h2>
 
@@ -83,7 +77,7 @@ export function TechnologyInSeniorCarePost() {
           </li>
         </ol>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Implementing Technology Solutions
         </h2>
 
@@ -94,7 +88,7 @@ export function TechnologyInSeniorCarePost() {
           <li><strong>Maintain Privacy:</strong> Balance monitoring needs with personal privacy</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           How Positive Check Integrates Technology
         </h2>
 
@@ -116,14 +110,14 @@ export function TechnologyInSeniorCarePost() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#1a2642] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2a3752] transition-colors"
+            className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
           >
             GET STARTED TODAY
           </Link>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+          <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
             Related Articles
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -131,14 +125,14 @@ export function TechnologyInSeniorCarePost() {
               href="/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
               <p className="text-sm text-gray-600">How AI companions reduce senior loneliness and caregiver stress.</p>
             </Link>
             <Link
               href="/blog/senior-sleep-health-fall-prevention-wellness-monitoring"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">Why Sleep Quality Is Critical for Senior Safety & Health</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Why Sleep Quality Is Critical for Senior Safety & Health</h3>
               <p className="text-sm text-gray-600">Why quality sleep matters for senior safety and fall prevention.</p>
             </Link>
           </div>

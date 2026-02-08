@@ -42,7 +42,7 @@ export function PublicFooter() {
           </div>
         </div>
         <div className="text-center text-gray-600 text-sm flex items-center justify-center gap-2 pt-6 border-t border-gray-200">
-          <span>&copy; Positive Check 2025</span>
+          <span>&copy; Positive Check {new Date().getFullYear()}</span>
           <span>|</span>
           <Link href="/terms" className="hover:text-[#1a2642]">Terms</Link>
           <span>|</span>

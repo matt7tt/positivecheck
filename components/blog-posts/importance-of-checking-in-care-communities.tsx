@@ -1,28 +1,22 @@
 'use client'
 
-import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function ImportanceOfCheckingInPost() {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
         href="/blog"
-        className="text-[#1a2642] hover:text-[#2a3752] mb-6 inline-block"
+        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
       </Link>
 
       <article className="prose max-w-none">
-        <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+        <h1 className={`text-4xl font-bold text-gray-900 mb-4`}>
           The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention
         </h1>
 
@@ -38,7 +32,7 @@ export function ImportanceOfCheckingInPost() {
           As loved ones age, many families make the difficult decision to transition them into assisted living or nursing homes, hoping these environments will provide the support and care they need. While many care communities strive to offer high-quality service, the reality is that even the best facilities can sometimes fall short in providing consistent, individualized attention. That's why it's crucial for family members to check in on seniors daily, ensuring they are receiving the care they deserve and maintaining their well-being.
         </p>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Why Daily Check-Ins Matter
         </h2>
         <p>
@@ -53,7 +47,7 @@ export function ImportanceOfCheckingInPost() {
           <li><strong>Catching Red Flags Early</strong> – Neglect, abuse, and poor living conditions are unfortunate realities in some care communities. Regular check-ins help family members identify warning signs early and take action before a situation worsens.</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           How to Stay Engaged Daily
         </h2>
         <p>
@@ -67,7 +61,7 @@ export function ImportanceOfCheckingInPost() {
           <li><strong>Leveraging Technology</strong> – Services like Positive Check can provide daily wellness calls, alerting families if their loved one is unwell or in distress.</li>
         </ul>
 
-        <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+        <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
           Peace of Mind for Families
         </h2>
         <p>
@@ -82,14 +76,14 @@ export function ImportanceOfCheckingInPost() {
             Want to learn more about how Positive Check can help ensure your loved one's well-being in their care community? Contact us today!
           </p>
           <Link href="/contact">
-            <Button className="bg-[#1a2642] hover:bg-[#2a3752] text-white">
+            <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white">
               Contact Us
             </Button>
           </Link>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-200">
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-6`}>
+          <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
             Related Articles
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
@@ -97,14 +91,14 @@ export function ImportanceOfCheckingInPost() {
               href="/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">Can AI Companions Help Seniors and Caregivers?</h3>
               <p className="text-sm text-gray-600">How AI companions reduce senior loneliness and caregiver stress.</p>
             </Link>
             <Link
               href="/blog/senior-phone-check-ins-mental-health-safety-benefits"
               className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
             >
-              <h3 className="font-semibold text-[#1a2642] mb-1">7 Ways Phone Check-ins Help Senior Mental Health</h3>
+              <h3 className="font-semibold text-gray-900 mb-1">7 Ways Phone Check-ins Help Senior Mental Health</h3>
               <p className="text-sm text-gray-600">How regular phone check-ins improve senior mental health.</p>
             </Link>
           </div>
