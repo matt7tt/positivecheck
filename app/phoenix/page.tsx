@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   description: 'Daily wellness check-in calls for seniors in Phoenix, Arizona. Helping families stay connected with affordable $20/month wellness calls, providing peace of mind for your loved ones.',
   keywords: 'senior care Phoenix, elderly check-in Phoenix, senior wellness Phoenix, Phoenix senior services, daily check-in calls Phoenix, senior care Arizona, Valley of the Sun senior care',
   alternates: {
-    canonical: 'https://www.positivecheck.com/phoenix',
+    canonical: 'https://positivecheck.com/phoenix',
     languages: {
-      'en-US': 'https://www.positivecheck.com/phoenix',
-      'x-default': 'https://www.positivecheck.com'
+      'en-US': 'https://positivecheck.com/phoenix',
+      'x-default': 'https://positivecheck.com'
     }
   },
   openGraph: {

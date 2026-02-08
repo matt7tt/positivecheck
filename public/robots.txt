@@ -18,6 +18,9 @@ Disallow: /private/
 # These pages contain location-specific information for seniors in these areas
 Allow: /phoenix
 
+# AI-friendly content
+Allow: /llms.txt
+
 # Sitemap locations
 Sitemap: https://positivecheck.com/sitemap.xml
 Sitemap: https://positivecheck.com/sitemap-images.xml

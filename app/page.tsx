@@ -6,7 +6,7 @@ import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangl
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { RequestDemoModal } from "@/components/request-demo-modal"
-import { StructuredData, organizationSchema, medicalServiceSchema } from "@/components/structured-data"
+import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
@@ -112,8 +112,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Toaster position="top-center" />
-      <StructuredData data={organizationSchema} />
-      <StructuredData data={medicalServiceSchema} />
+      <StructuredData data={organizationSchema} id="schema-organization" />
+      <StructuredData data={medicalServiceSchema} id="schema-medical-service" />
+      <StructuredData data={faqSchema} id="schema-faq" />
       {/* Header */}
       <header className="px-6 py-2 border-b relative">
         <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">

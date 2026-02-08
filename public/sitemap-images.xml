@@ -22,41 +22,49 @@
   <url>
     <loc>https://positivecheck.com/about</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/happy-senior-with-positive-check.webp</image:loc>
-      <image:caption>Senior person smiling while using Positive Check service</image:caption>
-      <image:title>Happy Senior with Positive Check</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://positivecheck.com/blog/caregiver-relief</loc>
-    <image:image>
-      <image:loc>https://positivecheck.com/images/caregiver-and-loved-one.webp</image:loc>
-      <image:caption>A caregiver taking a moment to relax while knowing their loved one is being cared for</image:caption>
-      <image:title>Caregiver Relief</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://positivecheck.com/blog/understanding-caregiver-burnout</loc>
-    <image:image>
-      <image:loc>https://positivecheck.com/images/happy-senior-and-caregiver.webp</image:loc>
-      <image:caption>A caregiver and senior woman sharing a happy moment together</image:caption>
-      <image:title>Caregiver and Senior Together</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://positivecheck.com/blog/how-many-adults-live-far-from-aging-parents</loc>
-    <image:image>
-      <image:loc>https://positivecheck.com/images/grandma-with-son-and-grandson.webp</image:loc>
-      <image:caption>Family members connecting virtually across distances</image:caption>
-      <image:title>Long Distance Family Connection</image:title>
+      <image:loc>https://positivecheck.com/images/family-gathering-dinner.png</image:loc>
+      <image:caption>Happy family gathering around dinner table</image:caption>
+      <image:title>About Positive Check</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress</loc>
     <image:image>
-      <image:loc>https://positivecheck.com/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp</image:loc>
+      <image:loc>https://positivecheck.com/images/ai-companion-senior-wellness.png</image:loc>
       <image:caption>AI companion technology helping reduce senior isolation and caregiver stress</image:caption>
       <image:title>AI Companions for Senior Care</image:title>
     </image:image>
   </url>
-</urlset> 
+  <url>
+    <loc>https://positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-sleep-safety-bedroom.png</image:loc>
+      <image:caption>Senior sleeping safely in a well-designed bedroom</image:caption>
+      <image:title>Senior Sleep Health and Fall Prevention</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/blog/importance-of-checking-in-care-communities</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-care-family-visit.png</image:loc>
+      <image:caption>Family visiting senior in care community</image:caption>
+      <image:title>Checking In on Seniors in Care Communities</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/blog/maintaining-social-connections</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-social-connections.png</image:loc>
+      <image:caption>Seniors maintaining social connections and community engagement</image:caption>
+      <image:title>Maintaining Social Connections in Senior Years</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-phone-check-in.png</image:loc>
+      <image:caption>Senior receiving a wellness check-in phone call</image:caption>
+      <image:title>Senior Phone Check-Ins for Mental Health</image:title>
+    </image:image>
+  </url>
+</urlset>

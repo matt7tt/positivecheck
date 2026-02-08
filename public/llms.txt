@@ -1,0 +1,59 @@
+# Positive Check
+
+> AI-powered patient check-in call service for healthcare providers
+
+## What is Positive Check?
+
+Positive Check is an AI-powered patient check-in call service that helps healthcare providers monitor patient wellness at scale through automated, HIPAA-compliant phone calls. The platform's AI companion, Lola, conducts daily wellness calls covering medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking. Actionable insights and real-time alerts are delivered to care teams through a secure provider dashboard.
+
+## Who is it for?
+
+Positive Check is built for healthcare providers, including:
+
+- Hospitals and health systems (post-discharge follow-up)
+- Primary care and specialty practices (chronic care management)
+- Skilled nursing facilities and assisted living communities
+- Home health agencies
+- Population health and care management programs
+- Remote Patient Monitoring (RPM) programs
+- Chronic Care Management (CCM) programs
+
+## How does it work?
+
+1. **Set the Cadence**: Providers choose how often patients receive check-in calls (daily, weekly, or custom schedules).
+2. **Engineer the Call Prompts**: Customize the questions Lola asks based on clinical needs, conditions, or care plans.
+3. **Engage with Patients**: Lola calls patients at their scheduled time, conducts a conversational wellness check, and captures structured responses.
+4. **Get Alerts and Insights**: Care teams receive real-time alerts for concerning responses and access detailed analytics through the Admin Console dashboard.
+
+## Key Features
+
+- **AI Companion (Lola)**: Conversational AI that conducts natural, empathetic phone calls with patients
+- **Admin Console Dashboard**: Centralized view of patient wellness, call performance, alerts, and engagement metrics
+- **Real-Time Alerts**: Immediate notifications when patients report concerning symptoms or miss calls
+- **Client Management**: Enroll patients, manage contact details, and track program participation
+- **Call Logs & Audit Trail**: Detailed records of every check-in call with patient responses
+- **Role-Based Access**: Multi-user support with permissions for organizations of any size
+- **HIPAA Compliant**: All data encrypted in transit and at rest with strict access controls
+
+## Use Cases
+
+- **Remote Patient Monitoring (RPM)**: Automate daily wellness check-ins across large patient panels
+- **Chronic Care Management (CCM)**: Monitor medication adherence, symptom progression, and care plan compliance
+- **Post-Discharge Follow-Up**: Reduce readmissions by maintaining contact with patients after hospital stays
+- **Senior Wellness Monitoring**: Daily check-ins for seniors aging in place or in care communities
+- **Population Health Management**: Scale patient engagement without increasing staff workload
+
+## Benefits for Providers
+
+- Reduce preventable emergency visits and hospital readmissions
+- Scale patient outreach without hiring additional staff
+- Improve care quality metrics and program compliance
+- Free clinical staff from repetitive phone calls to focus on high-value care
+- Generate actionable data for quality reporting and regulatory compliance
+
+## Contact
+
+- Website: https://positivecheck.com
+- Email: info@positivecheck.com
+- Phone: 858-522-9524
+- Request a demo: https://positivecheck.com/contact

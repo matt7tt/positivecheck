@@ -4,10 +4,11 @@ interface StructuredDataProps {
   data: Record<string, any>
 }
 
-export function StructuredData({ data }: StructuredDataProps) {
+export function StructuredData({ data, id }: StructuredDataProps & { id?: string }) {
+  const schemaId = id || `structured-data-${data['@type'] || 'default'}`
   return (
     <Script
-      id="structured-data"
+      id={schemaId}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(data),
@@ -91,33 +92,57 @@ export const productSchemaProviders = {
   }
 }
 
-// FAQ schema
+// FAQ schema — matches the 6 FAQ items on the homepage
 export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does Positive Check work?",
+      "name": "What does the Positive Check Admin Console provide?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Positive Check uses an AI companion named Lola to make wellness check-in calls to patients. Lola checks on their health, mood, and daily activities, then sends updates and alerts to healthcare providers through a HIPAA-compliant dashboard."
+        "text": "The Admin Console gives providers a centralized view of wellness check-ins, client status, and call performance. Dashboards summarize key metrics such as active alerts, intervention rates, and engagement levels. This makes it easy for care teams to monitor overall program effectiveness and quickly identify where human attention is needed."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Positive Check HIPAA compliant?",
+      "name": "How can providers use alerts and reporting?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Positive Check is fully HIPAA compliant. We maintain the highest standards of privacy and security for all health information."
+        "text": "Alerts immediately notify staff when follow-up is required, ensuring that no client is overlooked. Reports provide detailed insights into call outcomes, wellness trends, and the frequency of human interventions. This data allows providers to make more informed decisions, improve operational efficiency, and demonstrate measurable results to leadership or regulatory bodies."
       }
     },
     {
       "@type": "Question",
-      "name": "Can Lola understand different accents or speech patterns?",
+      "name": "How does Positive Check reduce workload for staff?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Lola is trained to understand various accents, speech patterns, and even mild cognitive impairment. The AI continuously improves its understanding through machine learning."
+        "text": "Positive Check automates routine daily check-ins, capturing essential information and flagging only those cases that require human intervention. This reduces the time staff spend on repetitive tasks and allows them to focus on higher-value care activities. As a result, organizations gain efficiency, reduce staff burnout, and optimize resources across their operations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How secure is Positive Check?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Positive Check is designed with strong safeguards to protect sensitive client information. All data is encrypted in transit and at rest, and administrative controls are available to ensure only authorized users can access reports and client records. Security and privacy are treated as foundational elements of the platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Positive Check scale with our organization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Admin Console supports multiple users with role-based permissions and centralized oversight. Whether a provider manages a single location or multiple facilities, the platform can adapt to the organization's scale while maintaining consistency and visibility across all sites."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes Positive Check different from traditional wellness calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Traditional wellness calls often depend on call center staff or individual caregivers, which can be inconsistent, costly, and difficult to scale. Positive Check provides a reliable, AI-powered system that ensures every patient receives consistent attention. The platform also produces objective data, real-time alerts, and clear reporting that providers can use to improve outcomes, demonstrate compliance, and achieve a stronger return on investment."
       }
     }
   ]
