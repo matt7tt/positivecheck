@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { useState, useEffect, Suspense } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
+import { PublicFooter } from "@/components/shared/public-footer"
 import toast, { Toaster } from 'react-hot-toast'
 import { useSearchParams } from 'next/navigation'
 
@@ -241,13 +242,7 @@ export function ResetPasswordComponent() {
         </section>
       </main>
 
-      <footer className="border-t bg-gray-50" role="contentinfo">
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center text-gray-700 text-sm">
-            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
-          </div>
-        </div>
-      </footer>
+      <PublicFooter />
     </div>
   )
 } 
