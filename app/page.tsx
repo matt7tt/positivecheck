@@ -2,33 +2,19 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle, Menu, X } from "lucide-react"
+import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle } from "lucide-react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
 import { PublicFooter } from "@/components/shared/public-footer"
+import { PublicHeader } from "@/components/shared/public-header"
 import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
 export default function HomePage() {
-  const headlines = [
-    "Wellness",
-    "Medicine Adherence",
-    "Sleep Quality",
-    "Mood & Well-Being",
-    "Mobility & Fall Risk",
-    "Cognitive Health",
-    "Appetite & Nutrition",
-    "Symptom Tracking",
-    "Remote Patient Management",
-    "Chronic Care Management",
-    "Post-Discharge Follow-Up",
-  ]
-
-  const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0)
   const [activeTab, setActiveTab] = useState("dashboard")
 
   const testimonials = [
@@ -93,15 +79,6 @@ export default function HomePage() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeadlineIndex((prevIndex) => (prevIndex + 1) % headlines.length)
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [headlines.length])
 
   useEffect(() => {
     const testimonialInterval = setInterval(() => {
@@ -118,126 +95,48 @@ export default function HomePage() {
       <StructuredData data={medicalServiceSchema} id="schema-medical-service" />
       <StructuredData data={faqSchema} id="schema-faq" />
       <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}])} id="schema-breadcrumb" />
-      {/* Header */}
-      <header className="px-6 py-2 border-b relative">
-        <nav className="max-w-7xl mx-auto flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/positive-logo-dark-blue.png"
-                alt="Positive Check - AI-powered patient check-in calls logo"
-                width={210}
-                height={56}
-                className="h-14 w-auto -mt-1"
-                priority
-              />
-            </Link>
-          </div>
+      <PublicHeader currentPage="home" />
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-gray-900" />
-            ) : (
-              <Menu className="h-6 w-6 text-gray-900" />
-            )}
-          </button>
-
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-600 hover:text-gray-900">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-600 hover:text-gray-900">
-              About
-            </Link>
-            <Link href="/blog" className="text-gray-600 hover:text-gray-900">
-              Blog
-            </Link>
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900">
-              Contact
-            </Link>
-            <Link href="/sign-in" className="text-gray-600 hover:text-gray-900">
-              Sign In
-            </Link>
-          </div>
-        </nav>
-
-        {/* Mobile navigation menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute left-0 right-0 top-full bg-white border-b shadow-lg z-50">
-            <div className="px-6 py-4 space-y-4">
-              <Link
-                href="/"
-                className="block text-gray-900 font-medium hover:text-[#e879f9]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/about"
-                className="block text-gray-600 hover:text-[#e879f9]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/blog"
-                className="block text-gray-600 hover:text-[#e879f9]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-gray-600 hover:text-[#e879f9]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <div className="border-t pt-4">
-                <Link
-                  href="/sign-in"
-                  className="block text-gray-600 hover:text-[#e879f9]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Sign In
-                </Link>
-              </div>
-            </div>
-          </div>
-        )}
-      </header>
-
-      {/* Hero Section - Introduction */}
+      {/* Hero Section */}
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            <div className="h-[120px] lg:h-[140px] flex flex-col justify-center items-center">
-              <div className="flex flex-wrap justify-center items-baseline gap-x-2 max-w-5xl">
-                <span className="whitespace-nowrap">AI-Powered</span>
-                <span className="text-[#e879f9] font-bold min-w-0 flex-shrink-0 transition-opacity duration-500 ease-in-out">
-                  {headlines[currentHeadlineIndex]}
-                </span>
-              </div>
-              <div className="mt-2">
-                <span>Check-In Calls</span>
-              </div>
-            </div>
+            AI-Powered Patient Check-In Calls for
+            <span className="text-[#e879f9]"> RPM, CCM & Post-Discharge Programs</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Engage patients. Improve outcomes. Save time. Our AI-powered calls handle routine check-ins and surface
-            important changes, helping providers strengthen their RPM, CCM, and post-discharge follow-up programs.
+            important changes, helping providers strengthen their care programs.
           </p>
-          <RequestDemoModal>
-            <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-8 py-4 text-lg font-bold">
-              REQUEST DEMO
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <RequestDemoModal>
+              <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-8 py-4 text-lg font-bold">
+                REQUEST DEMO
+              </Button>
+            </RequestDemoModal>
+            <Button asChild variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-bold">
+              <Link href="/how-it-works">HOW IT WORKS</Link>
             </Button>
-          </RequestDemoModal>
+          </div>
+          {/* Trust Signals */}
+          <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500 pt-4 border-t border-gray-100">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-[#e879f9]" />
+              <span>HIPAA Compliant</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-[#e879f9]" />
+              <span>No Apps or Devices Needed</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Stethoscope className="w-4 h-4 text-[#e879f9]" />
+              <span>Built for Healthcare Providers</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <BarChart3 className="w-4 h-4 text-[#e879f9]" />
+              <span>Real-Time Alerts & Analytics</span>
+            </div>
+          </div>
         </div>
       </section>
 

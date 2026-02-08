@@ -22,8 +22,8 @@ export function PublicFooter() {
             <h3 className="font-semibold text-[#1a2642] mb-3">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-gray-600 hover:text-[#1a2642]">Blog</Link></li>
-              <li><Link href="/blog/senior-sleep-health-fall-prevention-wellness-monitoring" className="text-gray-600 hover:text-[#1a2642]">Senior Sleep &amp; Health</Link></li>
-              <li><Link href="/blog/maintaining-social-connections" className="text-gray-600 hover:text-[#1a2642]">Social Connections</Link></li>
+              <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
+              <li><Link href="/blog/importance-of-checking-in-care-communities" className="text-gray-600 hover:text-[#1a2642]">Checking In on Care Communities</Link></li>
             </ul>
           </div>
           <div>

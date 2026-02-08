@@ -18,8 +18,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">About Positive Check</h1>
           <p className="text-xl text-purple-100 mb-8 max-w-4xl mx-auto leading-relaxed">
-            A revolutionary AI-powered caregiver support service dedicated to ensuring the well-being of seniors while
-            helping healthcare providers deliver more effective patient care.
+            AI-powered patient check-in technology helping healthcare providers deliver proactive, scalable care through RPM, CCM, and post-discharge programs.
           </p>
         </div>
       </section>
@@ -41,10 +40,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our mission is to enhance the quality of life for seniors and patients by making daily wellness check-ins
-              simple, reliable, and compassionate. Positive Check helps people age in place longer, supports recovery
-              after hospital stays, and empowers healthcare providers with actionable insights. Providers benefit from
-              improved outcomes, fewer preventable emergency visits, and reduced hospital re-admissions.
+              Our mission is to help healthcare providers deliver better outcomes through consistent, AI-powered patient engagement. Positive Check enables care teams to monitor patient wellness at scale, catch emerging issues early, and reduce preventable emergency visits and hospital readmissions — all without adding to staff workload.
             </p>
           </div>
         </div>
@@ -55,12 +51,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Vision</h2>
           <p className="text-lg text-gray-600 leading-relaxed">
-            The caregiving shortage is one of the greatest challenges facing humanity and will only grow in the future.
-            Positive Check is redefining caregiving by combining AI with a human touch to bridge this gap. Our vision is
-            to partner with healthcare providers and integrate with trusted services such as Amazon Fresh, Uber, and
-            Express Scripts to simplify daily living needs. From groceries and medication delivery to transportation and
-            appointment scheduling, our AI caregiver Lola will help coordinate these essentials. Seniors gain
-            independence and dignity, while caregivers focus on higher-value care.
+            Healthcare is shifting toward proactive, value-based care — but providers lack the tools to stay connected with patients between visits. Positive Check bridges that gap. Our vision is to become the standard for automated patient engagement, giving every provider the ability to monitor wellness, detect issues early, and intervene before problems escalate. By combining conversational AI with clinical-grade reporting, we help care teams scale their reach without scaling their workload.
           </p>
         </div>
       </section>

@@ -4,6 +4,8 @@ import Link from "next/link"
 import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { RequestDemoModal } from '@/components/request-demo-modal'
+import { Button } from '@/components/ui/button'
 
 interface PublicHeaderProps {
   currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works"
@@ -101,6 +103,11 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
             >
               Sign In
             </Link>
+            <RequestDemoModal>
+              <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-4 py-2 text-sm font-bold">
+                REQUEST DEMO
+              </Button>
+            </RequestDemoModal>
           </div>
         </nav>
 
@@ -175,6 +182,11 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                 >
                   Sign In
                 </Link>
+                <RequestDemoModal>
+                  <Button className="w-full bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white py-2 text-sm font-bold mt-2">
+                    REQUEST DEMO
+                  </Button>
+                </RequestDemoModal>
               </div>
             </nav>
           </div>
