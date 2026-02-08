@@ -2,14 +2,11 @@
 
 import Link from "next/link"
 import Script from 'next/script'
-import { Space_Grotesk } from 'next/font/google'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
-import { CheckCircle, Phone, Mail, Clock, Shield } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 import { RequestDemoModal } from '@/components/request-demo-modal'
-
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
 export function HowItWorksComponent() {
   return (
@@ -62,17 +59,15 @@ export function HowItWorksComponent() {
 
       <main>
         {/* Hero Section */}
-        <section className="w-full py-12 bg-[#F598FF]">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6`}>
-                How Positive Check Works
-              </h1>
-              <p className="text-xl text-gray-700 mb-8">
-                Simple setup and implementation that integrates seamlessly with your existing
-                care workflow. From configuration to real-time patient insights.
-              </p>
-            </div>
+        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              How Positive Check Works
+            </h1>
+            <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Simple setup and implementation that integrates seamlessly with your existing
+              care workflow. From configuration to real-time patient insights.
+            </p>
           </div>
         </section>
 
@@ -80,40 +75,40 @@ export function HowItWorksComponent() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-8`}>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
                 Service Overview
               </h2>
-              <div className="bg-blue-50 p-8 rounded-lg mb-12">
+              <div className="bg-purple-50 p-8 rounded-lg mb-12">
                 <p className="text-lg text-gray-700 mb-4">
                   <strong>Positive Check provides AI-powered check-in calls for patients through our virtual assistant Lola.</strong> Here's exactly how providers set up and use the service to strengthen their RPM, CCM, and post-discharge follow-up programs.
                 </p>
                 <div className="grid md:grid-cols-4 gap-6 mt-6">
                   <div className="text-center">
-                    <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">1</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Set the Cadence</h3>
+                    <h3 className="font-semibold text-gray-900">Set the Cadence</h3>
                     <p className="text-sm text-gray-600">Choose call frequency</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">2</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Engineer Prompts</h3>
+                    <h3 className="font-semibold text-gray-900">Engineer Prompts</h3>
                     <p className="text-sm text-gray-600">Customize questions</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">3</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Engage Patients</h3>
+                    <h3 className="font-semibold text-gray-900">Engage Patients</h3>
                     <p className="text-sm text-gray-600">Lola makes the calls</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#1a2642] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">4</span>
                     </div>
-                    <h3 className="font-semibold text-[#1a2642]">Get Insights</h3>
+                    <h3 className="font-semibold text-gray-900">Get Insights</h3>
                     <p className="text-sm text-gray-600">Alerts and reports</p>
                   </div>
                 </div>
@@ -126,25 +121,25 @@ export function HowItWorksComponent() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-12 text-center`}>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
                 The Complete Process
               </h2>
 
               {/* Step 1 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1a2642] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">1</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-4`}>
                       Set the Cadence
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
                       Choose how often patients receive check-ins. Daily, weekly, bi-weekly, or a fully custom schedule can be supported.
                     </p>
 
-                    <h4 className="font-semibold text-[#1a2642] mb-3">Configuration Options:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3">Configuration Options:</h4>
                     <div className="grid md:grid-cols-2 gap-6">
                       <ul className="space-y-3">
                         <li className="flex items-start gap-2">
@@ -182,11 +177,11 @@ export function HowItWorksComponent() {
               {/* Step 2 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1a2642] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-4`}>
                       Engineer the Call Prompts
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
@@ -195,7 +190,7 @@ export function HowItWorksComponent() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Prompt Design:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Prompt Design:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Fully customizable wellness questions</li>
                           <li>&#8226; Escalation questions for concerning responses</li>
@@ -204,7 +199,7 @@ export function HowItWorksComponent() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Typical Questions:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Typical Questions:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; &quot;How are you feeling today?&quot;</li>
                           <li>&#8226; &quot;Did you sleep well last night?&quot;</li>
@@ -220,11 +215,11 @@ export function HowItWorksComponent() {
               {/* Step 3 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1a2642] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">3</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-4`}>
                       Engage with Patients
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
@@ -233,7 +228,7 @@ export function HowItWorksComponent() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Call Details:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Call Details:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Calls from 866-605-8571</li>
                           <li>&#8226; Consistent scheduled time</li>
@@ -242,7 +237,7 @@ export function HowItWorksComponent() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Escalation Protocol:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Escalation Protocol:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Follow-up questions for concerning responses</li>
                           <li>&#8226; Multiple retry attempts if unanswered</li>
@@ -258,11 +253,11 @@ export function HowItWorksComponent() {
               {/* Step 4 */}
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#1a2642] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">4</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mb-4`}>
+                    <h3 className={`text-2xl font-bold text-gray-900 mb-4`}>
                       Get Alerts and Insights
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
@@ -271,7 +266,7 @@ export function HowItWorksComponent() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Real-Time Alerts:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Real-Time Alerts:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Immediate notification for concerning responses</li>
                           <li>&#8226; Missed call alerts</li>
@@ -280,7 +275,7 @@ export function HowItWorksComponent() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-[#1a2642] mb-3">Dashboard Features:</h4>
+                        <h4 className="font-semibold text-gray-900 mb-3">Dashboard Features:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Population wellness trends</li>
                           <li>&#8226; Historical data and patterns</li>
@@ -297,16 +292,16 @@ export function HowItWorksComponent() {
         </section>
 
         {/* Service Features */}
-        <section className="py-16 bg-[#f8f9ff]">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-12 text-center`}>
+              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
                 Service Features
               </h2>
 
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Patients</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">For Patients</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
@@ -333,7 +328,7 @@ export function HowItWorksComponent() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-[#1a2642] mb-6">For Providers</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6">For Providers</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
@@ -357,23 +352,21 @@ export function HowItWorksComponent() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-[#1a2642] mb-8`}>
-                Ready to Get Started?
-              </h2>
+        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Ready to Get Started?
+            </h2>
 
-              <p className="text-lg text-gray-700 mb-8">
-                Schedule a demo today and discover how Positive Check can support your patients and your staff.
-              </p>
+            <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+              Schedule a demo today and discover how Positive Check can support your patients and your staff.
+            </p>
 
-              <RequestDemoModal>
-                <Button className="bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md">
-                  Request Demo
-                </Button>
-              </RequestDemoModal>
-            </div>
+            <RequestDemoModal>
+              <Button className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                Request Demo
+              </Button>
+            </RequestDemoModal>
           </div>
         </section>
       </main>
