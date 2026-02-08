@@ -34,7 +34,6 @@ export default function ContactPage() {
           lastName: formData.get('lastName'),
           email: formData.get('email'),
           phone: formData.get('phone'),
-          customerType: formData.get('customerType'),
           hearAboutUs: formData.get('hearAbout'),
           message: formData.get('message'),
           newsletter: formData.get('newsletter') === 'on'
@@ -85,9 +84,6 @@ export default function ContactPage() {
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900">
               Home
-            </Link>
-            <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-              For Providers
             </Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900">
               Blog
@@ -159,23 +155,6 @@ export default function ContactPage() {
                     Phone <span className="text-red-500">*</span>
                   </Label>
                   <Input id="phone" name="phone" type="tel" required className="mt-1" placeholder="Enter your phone number" disabled={isSubmitting} />
-                </div>
-
-                <div>
-                  <label htmlFor="customerType" className="block text-sm font-medium text-gray-700 mb-2">
-                    I am interested in <span className="text-red-500">*</span>
-                  </label>
-                  <select
-                    id="customerType"
-                    name="customerType"
-                    required
-                    disabled={isSubmitting}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  >
-                    <option value="">Select customer type</option>
-                    <option value="families">For Families</option>
-                    <option value="providers">For Providers</option>
-                  </select>
                 </div>
 
                 <div>
@@ -278,8 +257,8 @@ export default function ContactPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/providers" className="text-gray-600 hover:text-gray-900">
-                    For Providers
+                  <Link href="/about" className="text-gray-600 hover:text-gray-900">
+                    About Us
                   </Link>
                 </li>
               </ul>
