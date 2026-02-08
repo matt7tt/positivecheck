@@ -2,10 +2,23 @@ import type { Metadata } from 'next'
 import { HowItWorksComponent } from '@/components/how-it-works'
 
 export const metadata: Metadata = {
-  title: 'How Senior Wellness Calls Work | Positive Check',
-  description: 'Simple 3-step process: 5-minute setup, daily AI wellness calls, detailed family reports. See exactly how our $20/month senior check-in service works.',
+  title: 'How AI-Powered Patient Check-In Calls Work | Positive Check',
+  description: 'Simple setup process for healthcare providers: configure call schedules, customize wellness prompts, and receive real-time patient insights through a HIPAA-compliant dashboard.',
   alternates: {
     canonical: '/how-it-works',
+  },
+  openGraph: {
+    title: 'How AI-Powered Patient Check-In Calls Work',
+    description: 'Simple setup for healthcare providers: configure schedules, customize prompts, and receive real-time patient insights via a HIPAA-compliant dashboard.',
+    url: '/how-it-works',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How AI-Powered Patient Check-In Calls Work',
+    description: 'Simple setup for healthcare providers: configure schedules, customize prompts, and receive real-time patient insights.',
   },
 }
 

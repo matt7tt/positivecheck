@@ -2,10 +2,15 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  console.log('Middleware processing path:', request.nextUrl.pathname)
-  
+  // www to non-www redirect
+  const host = request.headers.get('host') || ''
+  if (host.startsWith('www.')) {
+    const newUrl = new URL(request.url)
+    newUrl.host = host.replace('www.', '')
+    return NextResponse.redirect(newUrl, 301)
+  }
+
   const token = request.cookies.get('auth_token')?.value
-  console.log('Token in middleware:', token ? 'Present' : 'Not present')
 
   // A/B Test for homepage
   if (request.nextUrl.pathname === '/') {
@@ -36,7 +41,6 @@ export function middleware(request: NextRequest) {
     const response = NextResponse.next()
     if (token) {
       response.headers.set('Authorization', `Bearer ${token}`)
-      console.log('Forwarding token to API')
     }
     return response
   }
@@ -44,10 +48,8 @@ export function middleware(request: NextRequest) {
   // For my-account page
   if (request.nextUrl.pathname.startsWith('/my-account')) {
     if (!token) {
-      console.log('No token, redirecting to sign-in')
       return NextResponse.redirect(new URL('/sign-in?return=/my-account', request.url))
     }
-    console.log('Token present, allowing access to my-account')
     return NextResponse.next()
   }
 
@@ -56,8 +58,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/my-account/:path*',
-    '/api/:path*',
-    '/'
+    '/((?!_next/static|_next/image|favicon.ico|images/|audio/).*)',
   ]
 }
