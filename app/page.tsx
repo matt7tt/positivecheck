@@ -12,8 +12,6 @@ import { PublicHeader } from "@/components/shared/public-header"
 import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
-
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("dashboard")
 
@@ -697,11 +695,10 @@ export default function HomePage() {
 
                   try {
                     const formData = new FormData(form)
-                    const response = await fetch(`${API_BASE_URL}/api/contact`, {
+                    const response = await fetch('/api/contact', {
                       method: 'POST',
                       headers: {
                         'Content-Type': 'application/json',
-                        'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
                       },
                       body: JSON.stringify({
                         firstName: formData.get('firstName'),

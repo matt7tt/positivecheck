@@ -13,8 +13,6 @@ import { StructuredData, generateBreadcrumbSchema } from "@/components/structure
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
-
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -26,11 +24,10 @@ export default function ContactPage() {
 
     try {
       const formData = new FormData(form)
-      const response = await fetch(`${API_BASE_URL}/api/contact`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
         },
         body: JSON.stringify({
           firstName: formData.get('firstName'),

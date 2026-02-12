@@ -14,8 +14,6 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['500', '700'],
 })
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
-
 export function DemoComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -71,20 +69,17 @@ export function DemoComponent() {
                 
                 try {
                   const formData = new FormData(form)
-                  const response = await fetch(`${API_BASE_URL}/api/demo-request`, {
+                  const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
-                      'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
                     },
                     body: JSON.stringify({
                       firstName: formData.get('firstName'),
                       lastName: formData.get('lastName'),
-                      email: '',
                       phone: formData.get('phone'),
                       hearAboutUs: 'demo-page',
                       message: 'Demo request from /demo page',
-                      newsletter: false
                     }),
                   })
 
