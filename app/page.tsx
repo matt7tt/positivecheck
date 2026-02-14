@@ -364,6 +364,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Real-Time Alerts and Notifications Section */}
+      <section className="px-6 py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <Image
+              src="/images/elderly-man-phone.png"
+              alt="Elderly man talking on the phone during a wellness check-in call"
+              width={600}
+              height={400}
+              className="rounded-lg shadow-xl w-full object-cover grayscale"
+              style={{ height: "400px", objectPosition: "center center" }}
+            />
+          </div>
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Alerts and Notifications</h3>
+            <p className="text-lg text-gray-600 mb-8">
+              When concerning responses are detected, such as skipped medication, mood changes, or new symptoms, care
+              teams receive an immediate alert. These early signals give providers the chance to step in quickly and
+              prevent small issues from turning into costly complications.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <span className="text-gray-700">Immediate alerts for concerning responses</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <span className="text-gray-700">Early intervention opportunities</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <span className="text-gray-700">Prevent small issues from becoming costly complications</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Admin Console Section */}
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
