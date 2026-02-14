@@ -369,11 +369,11 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <Image
-              src="/images/elderly-man-phone.png"
-              alt="Elderly man talking on the phone during a wellness check-in call"
+              src="/images/pc-concerned-senior.png"
+              alt="Concerned senior during a wellness check-in call"
               width={600}
               height={400}
-              className="rounded-lg shadow-xl w-full object-cover grayscale"
+              className="rounded-lg shadow-xl w-full object-cover"
               style={{ height: "400px", objectPosition: "center center" }}
             />
           </div>
