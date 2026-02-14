@@ -713,7 +713,8 @@ export default function HomePage() {
                     })
 
                     if (!response.ok) {
-                      throw new Error('Failed to submit form')
+                      const errData = await response.json().catch(() => ({}))
+                      throw new Error(errData.error || 'Failed to submit form')
                     }
 
                     toast.success("Thank you for your message. We will be in touch soon!", {

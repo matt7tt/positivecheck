@@ -22,7 +22,7 @@ export async function POST(request: Request) {
 
     const contactEmail = process.env.CONTACT_EMAIL || 'hello@positivecheck.com'
 
-    await resend.emails.send({
+    const { data, error: resendError } = await resend.emails.send({
       from: 'Positive Check <info@contact.positivecheck.com>',
       to: [contactEmail],
       replyTo: email,
@@ -38,6 +38,14 @@ export async function POST(request: Request) {
         </table>
       `,
     })
+
+    if (resendError) {
+      console.error('Resend API error:', resendError)
+      return NextResponse.json(
+        { error: `Email send failed: ${resendError.message}` },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json(
       { message: 'Demo request submitted successfully' },

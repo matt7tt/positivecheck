@@ -4,8 +4,9 @@ import { Resend } from 'resend'
 export async function POST(request: Request) {
   try {
     if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set')
       return NextResponse.json(
-        { error: 'Email service not configured' },
+        { error: 'Email service not configured. RESEND_API_KEY is missing.' },
         { status: 500 }
       )
     }
@@ -46,7 +47,15 @@ export async function POST(request: Request) {
       emailOptions.replyTo = email
     }
 
-    await resend.emails.send(emailOptions)
+    const { data, error: resendError } = await resend.emails.send(emailOptions)
+
+    if (resendError) {
+      console.error('Resend API error:', resendError)
+      return NextResponse.json(
+        { error: `Email send failed: ${resendError.message}` },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json(
       { message: 'Message sent successfully' },
