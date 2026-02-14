@@ -8,7 +8,7 @@ import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
 
 interface PublicHeaderProps {
-  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works"
+  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {

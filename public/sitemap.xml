@@ -19,6 +19,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://positivecheck.com/platform</loc>
+    <lastmod>2026-02-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://positivecheck.com/contact</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
