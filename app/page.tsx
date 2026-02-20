@@ -99,7 +99,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI-Powered Patient Check-In Calls for
+            AI Patient Outreach for
             <span className="text-[#e879f9]"> RPM, CCM & Post-Discharge Programs</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
