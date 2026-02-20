@@ -134,19 +134,19 @@ export default function HomePage() {
           {/* Trust Signals */}
           <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500 pt-4 border-t border-gray-100">
             <div className="flex items-center gap-2">
-              <Shield className="w-[4.4px] h-[4.4px] text-[#e879f9]" style={{width: '4.4px', height: '4.4px'}} />
+              <Shield className="w-5 h-5 text-[#e879f9]" />
               <span style={{fontSize: '1.1em'}}>HIPAA Compliant</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-[4.4px] h-[4.4px] text-[#e879f9]" style={{width: '4.4px', height: '4.4px'}} />
+              <Phone className="w-5 h-5 text-[#e879f9]" />
               <span style={{fontSize: '1.1em'}}>No Apps or Devices Needed</span>
             </div>
             <div className="flex items-center gap-2">
-              <Stethoscope className="w-[4.4px] h-[4.4px] text-[#e879f9]" style={{width: '4.4px', height: '4.4px'}} />
+              <Stethoscope className="w-5 h-5 text-[#e879f9]" />
               <span style={{fontSize: '1.1em'}}>Built for Healthcare Providers</span>
             </div>
             <div className="flex items-center gap-2">
-              <BarChart3 className="w-[4.4px] h-[4.4px] text-[#e879f9]" style={{width: '4.4px', height: '4.4px'}} />
+              <BarChart3 className="w-5 h-5 text-[#e879f9]" />
               <span style={{fontSize: '1.1em'}}>Real-Time Alerts & Analytics</span>
             </div>
           </div>
