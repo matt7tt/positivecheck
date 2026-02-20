@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="text-white">
             <h3 className="text-3xl font-bold mb-6">Meet Lola</h3>
             <p className="text-lg text-purple-100 mb-8">
-              Lola is our friendly, HIPAA-compliant AI companion. She makes check-in calls that ask about well-being,
+              Lola is our friendly, HIPAA-compliant virtual assistant. She makes check-in calls that ask about well-being,
               medication, mood, and daily life. Responses are recorded, tracked, and escalated if needed so providers
               can capture the data that matters for RPM and CCM programs.
             </p>
