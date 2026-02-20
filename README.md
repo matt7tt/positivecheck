@@ -58,6 +58,124 @@ Each blog post is a static route under `/app/blog/` with a matching component in
 | `senior-sleep-health-fall-prevention-wellness-monitoring` | `components/blog-posts/senior-sleep-health-fall-prevention-wellness-monitoring.tsx` |
 | `senior-phone-check-ins-mental-health-safety-benefits` | `components/blog/senior-phone-check-ins-mental-health-safety-benefits.tsx` |
 
+### How to Create a New Blog Post
+
+Adding a blog post requires changes in 3 places:
+
+**Step 1: Create the post component** in `/components/blog-posts/your-slug.tsx`
+
+```tsx
+'use client'
+
+import Link from 'next/link'
+import Script from 'next/script'
+import Image from 'next/image'
+
+export function YourPostNamePost() {
+  return (
+    <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
+      <Script id="article-structured-data" type="application/ld+json">
+        {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Your Post Title",
+            "description": "Your post description.",
+            "image": "https://www.positivecheck.com/images/your-image.webp",
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com/images/positive-logo.png" },
+            "datePublished": "2026-01-01",
+            "dateModified": "2026-01-01",
+            "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.positivecheck.com/blog/your-slug" },
+            "articleSection": "Senior Wellness",
+            "keywords": ["keyword1", "keyword2"]
+          }
+        `}
+      </Script>
+      <Link href="/blog" className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block" aria-label="Back to blog">
+        ← Back to Blog
+      </Link>
+      {/* Post content here — use standard HTML elements with Tailwind classes */}
+    </div>
+  )
+}
+```
+
+**Step 2: Create the page route** at `/app/blog/your-slug/page.tsx`
+
+```tsx
+import type { Metadata } from 'next'
+import { PublicHeader } from "@/components/shared/public-header"
+import { PublicFooter } from "@/components/shared/public-footer"
+import { YourPostNamePost } from "@/components/blog-posts/your-slug"
+
+export const metadata: Metadata = {
+  title: 'Your Post Title | Positive Check Blog',
+  description: 'Your post description for search results.',
+  alternates: { canonical: '/blog/your-slug' },
+  openGraph: {
+    title: 'Your Post Title | Positive Check Blog',
+    description: 'Your post description.',
+    url: '/blog/your-slug',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'article',
+    images: [{ url: '/images/your-image.webp', width: 1200, height: 630, alt: 'Image alt text' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your Post Title',
+    description: 'Your post description.',
+    images: ['/images/your-image.webp'],
+  },
+}
+
+export default function YourPostNamePage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": "Your Post Title", "item": "https://positivecheck.com/blog/your-slug" }
+            ]
+          })
+        }}
+      />
+      <PublicHeader currentPage="blog" />
+      <main className="container mx-auto px-4 py-8">
+        <YourPostNamePost />
+      </main>
+      <PublicFooter />
+    </div>
+  )
+}
+```
+
+**Step 3: Add the post to the blog listing** in `app/blog/page.tsx`
+
+Add an entry to either the `featuredArticle` object (to feature it) or the `articles` array (for the grid):
+
+```tsx
+{
+  title: "Your Post Title",
+  excerpt: "Short description shown on the listing card.",
+  slug: "your-slug",
+  date: "January 1, 2026",
+  readTime: "8 min read",
+  image: "/images/your-image.webp",
+}
+```
+
+**Don't forget:**
+- Add the post image to `/public/images/`
+- Add the URL to `/public/sitemap.xml` and `/public/sitemap-images.xml`
+
 ### API Routes
 
 | Route | Method | Purpose |
