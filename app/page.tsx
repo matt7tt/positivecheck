@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
@@ -77,6 +77,13 @@ export default function HomePage() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [rotatingTextIndex, setRotatingTextIndex] = useState(0)
+
+  const rotatingTexts = useMemo(() => [
+    "RPM, CCM & Post-Discharge Programs",
+    "Remote Patient Monitoring",
+    "Chronic Care Management"
+  ], [])
 
   useEffect(() => {
     const testimonialInterval = setInterval(() => {
@@ -85,6 +92,14 @@ export default function HomePage() {
 
     return () => clearInterval(testimonialInterval)
   }, [testimonials.length])
+
+  useEffect(() => {
+    const rotatingInterval = setInterval(() => {
+      setRotatingTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length)
+    }, 3000)
+
+    return () => clearInterval(rotatingInterval)
+  }, [rotatingTexts.length])
 
   return (
     <div className="min-h-screen bg-white">
@@ -100,7 +115,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             AI Patient Outreach for
-            <span className="text-[#e879f9]"> RPM, CCM & Post-Discharge Programs</span>
+            <span className="text-[#e879f9]"> {rotatingTexts[rotatingTextIndex]}</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Automated voice and SMS outreach that expands patient coverage, protects reimbursement, and surfaces actionable clinical and operational alerts.
