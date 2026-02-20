@@ -81,7 +81,7 @@ export default function HomePage() {
 
   const rotatingTexts = useMemo(() => [
     "Remote Patient Monitoring (RPM)",
-    "Critical Care Management (CCM)",
+    "Chronic Care Management (CCM)",
     "Post-Discharge Care"
   ], [])
 
