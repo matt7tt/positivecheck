@@ -80,9 +80,9 @@ export default function HomePage() {
   const [rotatingTextIndex, setRotatingTextIndex] = useState(0)
 
   const rotatingTexts = useMemo(() => [
-    "RPM, CCM & Post-Discharge Programs",
-    "Remote Patient Monitoring",
-    "Chronic Care Management"
+    "Remote Patient Monitoring (RPM)",
+    "Critical Care Management (CCM)",
+    "Post-Discharge Care"
   ], [])
 
   useEffect(() => {
@@ -96,7 +96,7 @@ export default function HomePage() {
   useEffect(() => {
     const rotatingInterval = setInterval(() => {
       setRotatingTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length)
-    }, 3000)
+    }, 1500)
 
     return () => clearInterval(rotatingInterval)
   }, [rotatingTexts.length])
