@@ -161,9 +161,7 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold text-gray-900">Reliable Patient Outreach</h2>
             </div>
             <p className="text-lg text-gray-600 mb-8">
-              Positive Check helps providers stay connected with patients through friendly calls and timely alerts. Our
-              AI-powered service supports Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and
-              post-discharge follow-ups with structured check-ins. All without adding staff workload.
+              Positive Check automates structured voice and SMS check-ins for RPM, CCM, and post-discharge care in any language. Increase contact completion, identify issues earlier, and scale patient engagement without increasing headcount.
             </p>
 
             <div className="space-y-3 mb-8">
