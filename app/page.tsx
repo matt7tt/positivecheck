@@ -142,8 +142,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <Stethoscope className="w-8 h-8 text-[#e879f9]" />
+            <div className="mb-6">
               <h2 className="text-3xl font-bold text-gray-900">RPM, CCM, and Post-Discharge Follow-Up Outreach</h2>
             </div>
             <p className="text-lg text-gray-600 mb-8">
