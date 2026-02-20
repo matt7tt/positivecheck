@@ -96,7 +96,7 @@ export default function HomePage() {
   useEffect(() => {
     const rotatingInterval = setInterval(() => {
       setRotatingTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length)
-    }, 1500)
+    }, 2500)
 
     return () => clearInterval(rotatingInterval)
   }, [rotatingTexts.length])
@@ -114,8 +114,8 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI Patient Outreach for
-            <span className="text-[#e879f9]"> {rotatingTexts[rotatingTextIndex]}</span>
+            AI Patient Outreach for<br />
+            <span className="text-[#e879f9]">{rotatingTexts[rotatingTextIndex]}</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Automated voice and SMS outreach that expands patient coverage, protects reimbursement, and surfaces actionable clinical and operational alerts.
