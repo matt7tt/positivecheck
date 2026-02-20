@@ -158,7 +158,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-6">
-              <h2 className="text-3xl font-bold text-gray-900">RPM, CCM, and Post-Discharge Follow-Up Outreach</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Reliable Patient Outreach</h2>
             </div>
             <p className="text-lg text-gray-600 mb-8">
               Positive Check helps providers stay connected with patients through friendly calls and timely alerts. Our
