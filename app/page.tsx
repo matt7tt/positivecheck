@@ -103,8 +103,7 @@ export default function HomePage() {
             <span className="text-[#e879f9]"> RPM, CCM & Post-Discharge Programs</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Engage patients. Improve outcomes. Save time. Our AI-powered calls handle routine check-ins and surface
-            important changes, helping providers strengthen their care programs.
+            Automated voice and SMS outreach that expands patient coverage, protects reimbursement, and surfaces actionable clinical and operational alerts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <RequestDemoModal>
