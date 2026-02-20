@@ -167,15 +167,15 @@ export default function HomePage() {
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-[#e879f9]" />
-                <span className="text-gray-600">HIPAA-compliant AI conversations</span>
+                <span className="text-gray-600">HIPAA-compliant conversations</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-[#e879f9]" />
-                <span className="text-gray-600">Management console with insights</span>
+                <span className="text-gray-600">Real-time reporting and documentation</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-[#e879f9]" />
-                <span className="text-gray-600">Real-time alerts and escalation for urgent patient needs</span>
+                <span className="text-gray-600">Automated alerting and escalation</span>
               </div>
             </div>
 
