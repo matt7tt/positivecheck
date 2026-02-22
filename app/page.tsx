@@ -303,8 +303,7 @@ export default function HomePage() {
               <div>
                 <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 1: Personalized Scheduling</h4>
                 <p className="text-gray-600">
-                  Set up convenient call times at any cadence (daily, weekly, or custom) and select the questions you
-                  want Lola to ask for your patients.
+                  Set up convenient call times at any cadence (daily, weekly, or custom) and select the questions you want Lola to ask for your patients.
                 </p>
               </div>
 
