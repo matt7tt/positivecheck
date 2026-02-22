@@ -512,21 +512,20 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">HIPAA Compliant and Secure</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Positive Check is fully HIPAA compliant. Patient data is always private, secure, and accessible only to
-              authorized care teams.
+              Positive Check is built on enterprise-grade, HIPAA-compliant infrastructure designed to protect patient data and support secure program operations.
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
-                <span className="text-gray-600">Full HIPAA compliance</span>
+                <span className="text-gray-600">Full HIPAA compliance and secure data handling</span>
               </div>
               <div className="flex items-start gap-3">
                 <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
-                <span className="text-gray-600">Private and secure patient data</span>
+                <span className="text-gray-600">Role-based access controls for authorized teams</span>
               </div>
               <div className="flex items-start gap-3">
                 <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
-                <span className="text-gray-600">Accessible only to authorized care teams</span>
+                <span className="text-gray-600">Encrypted data storage and transmission</span>
               </div>
             </div>
           </div>
