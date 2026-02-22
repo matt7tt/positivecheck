@@ -262,26 +262,24 @@ export default function HomePage() {
           <div className="text-white">
             <h3 className="text-3xl font-bold mb-6">Meet Lola</h3>
             <p className="text-lg text-purple-100 mb-8">
-              Lola is our friendly, HIPAA-compliant virtual assistant. She makes check-in calls that ask about well-being,
-              medication, mood, and daily life. Responses are recorded, tracked, and escalated if needed so providers
-              can capture the data that matters for RPM and CCM programs.
+              Lola is our HIPAA-compliant virtual assistant for structured patient outreach. She conducts voice and SMS check-ins, captures program-aligned data, and escalates meaningful changes in real time. Check-ins can be configured for RPM, CCM, post-discharge, or any care program requiring consistent, documented engagement. Lola speaks virtually any language, enabling scalable outreach across diverse populations.
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
-                <span className="text-purple-100">Delivers proactive insights for care teams</span>
+                <span className="text-purple-100">Program-aligned data capture</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
                 <span className="text-purple-100">
-                  Supports patients in maintaining independence and safety
+                  Early identification of risk signals
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
                 <span className="text-purple-100">
-                  Delivers wellness updates with meaningful trend analysis and timely alerts
+                  Automated escalation workflows
                 </span>
               </div>
             </div>
