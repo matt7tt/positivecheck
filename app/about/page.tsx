@@ -73,7 +73,7 @@ export default function AboutPage() {
             <div>
               <h3 className=\"text-xl font-semibold text-gray-900 mb-2\">Scalable Care Support</h3>
               <p className=\"text-gray-700\">
-                Automated check-ins across large populations without overwhelming staff.
+                Structured voice and SMS outreach across large populations without increasing headcount.
               </p>
             </div>
             <div>
