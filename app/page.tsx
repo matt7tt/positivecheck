@@ -480,8 +480,8 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Improve Satisfaction</h4>
-                <p className="text-gray-600">Improve patient satisfaction and engagement</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Improve Patient Experience</h4>
+                <p className="text-gray-600">Deliver reliable check-ins that support engagement and satisfaction.</p>
               </CardContent>
             </Card>
 
