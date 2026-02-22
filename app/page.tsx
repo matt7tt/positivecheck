@@ -219,8 +219,7 @@ export default function HomePage() {
                 <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">Automated Check-Ins</h4>
                 <p className="text-gray-600">
-                  Conduct wellness calls, medication reminders, and follow-ups automatically, saving time for care
-                  teams.
+                  Structured calls and SMS outreach that meets program requirements and increases patient contact completion.
                 </p>
               </CardContent>
             </Card>
