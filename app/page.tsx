@@ -44,7 +44,7 @@ export default function HomePage() {
       id: "dashboard",
       title: "Dashboard",
       description:
-        "Get a quick overview of patient wellness across your population. Spot trends, review alerts, and track program performance in one secure view.",
+        "Measure patient coverage, call volume, alert activity, and contact completion in real time. Identify trends, track performance goals, and maintain visibility into program compliance.",
       image: "/images/admin-console-dashboard-new.png",
       alt: "Admin console dashboard showing comprehensive analytics, patient metrics, and care workflow data",
     },
