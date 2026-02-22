@@ -456,7 +456,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Benefits for Providers</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Transform your patient care delivery with consistent outreach and early intervention capabilities.
+              Drive measurable improvements in patient engagement, program performance, and operational efficiency.
             </p>
           </div>
 
