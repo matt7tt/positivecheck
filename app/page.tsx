@@ -308,10 +308,9 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 2: Friendly Check-Ins</h4>
+                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 2: Automated Voice and SMS Check-Ins</h4>
                 <p className="text-gray-600">
-                  Lola makes the calls to the patient's regular phone number, asking customized prompts and follow-up
-                  questions if responses raise concern.
+                  Lola contacts patients on their existing phone numbers, conducts structured conversations, and adapts follow-up prompts based on patient responses.
                 </p>
               </div>
 
