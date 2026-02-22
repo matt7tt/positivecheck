@@ -239,8 +239,7 @@ export default function HomePage() {
                 <Shield className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
                 <h4 className="text-xl font-semibold text-gray-900 mb-3">HIPAA Compliant</h4>
                 <p className="text-gray-600">
-                  Enterprise-grade security with full HIPAA compliance to keep every conversation and record safe and
-                  confidential.
+                  Enterprise-Grade HIPAA-compliant infrastructure with secure data handling, audit-ready records, and role-based access controls.
                 </p>
               </CardContent>
             </Card>
