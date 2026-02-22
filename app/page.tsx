@@ -409,8 +409,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Admin Console</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              All patient check-ins are organized in a secure, HIPAA-compliant admin console with comprehensive features
-              for managing your patient population.
+              Your operational command center for patient outreach and program oversight.
             </p>
           </div>
 
