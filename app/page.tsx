@@ -381,24 +381,22 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Alerts and Notifications</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Alerts and Escalation</h3>
             <p className="text-lg text-gray-600 mb-8">
-              When concerning responses are detected, such as skipped medication, mood changes, or new symptoms, care
-              teams receive an immediate alert. These early signals give providers the chance to step in quickly and
-              prevent small issues from turning into costly complications.
+              Positive Check detects meaningful changes and triggers immediate alerts to your care team. Structured escalation workflows support faster intervention and reduce avoidable risk.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
-                <span className="text-gray-700">Immediate alerts for concerning responses</span>
+                <span className="text-gray-700">Configurable alert thresholds</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
-                <span className="text-gray-700">Early intervention opportunities</span>
+                <span className="text-gray-700">Automated escalation paths</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
-                <span className="text-gray-700">Prevent small issues from becoming costly complications</span>
+                <span className="text-gray-700">Audit-ready documentation</span>
               </div>
             </div>
           </div>
