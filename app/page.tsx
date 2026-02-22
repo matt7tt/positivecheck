@@ -207,7 +207,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Transform care at home with AI</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Scale Patient Engagement Without Scaling Staff</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our AI-powered calls handle routine check-ins and surface important changes, helping providers strengthen
               their RPM, CCM, and post-discharge follow-up programs.
