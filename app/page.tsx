@@ -488,8 +488,8 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <AlertTriangle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Spot Risks Earlier</h4>
-                <p className="text-gray-600">Spot risks earlier to reduce avoidable costs of care</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Reduce Avoidable Risk</h4>
+                <p className="text-gray-600">Identify meaningful changes earlier to lower downstream costs of care.</p>
               </CardContent>
             </Card>
 
