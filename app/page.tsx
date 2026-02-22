@@ -50,9 +50,9 @@ export default function HomePage() {
     },
     {
       id: "client-management",
-      title: "Client Management",
+      title: "Patient Management",
       description:
-        "Easily enroll patients, update contact details, and manage program participation. Keep all client information organized and accessible.",
+        "Streamline enrollment, manage participation, and maintain accurate records across your patient population. Keep outreach aligned with program requirements and reporting needs.",
       image: "/images/admin-console-client-management.png",
       alt: "Admin console client management showing patient roster with contact details and status indicators",
     },
