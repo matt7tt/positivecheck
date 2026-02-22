@@ -387,15 +387,15 @@ export default function HomePage() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                 <span className="text-gray-700">Configurable alert thresholds</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                 <span className="text-gray-700">Automated escalation paths</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="flex-shrink-0 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[10px] border-l-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                 <span className="text-gray-700">Audit-ready documentation</span>
               </div>
             </div>
