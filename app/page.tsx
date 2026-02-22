@@ -472,8 +472,8 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Strengthen Programs</h4>
-                <p className="text-gray-600">Strengthen RPM and CCM program compliance and reimbursement</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Protect Reimbursement</h4>
+                <p className="text-gray-600">Improve RPM and CCM compliance with consistent, documented outreach.</p>
               </CardContent>
             </Card>
 
