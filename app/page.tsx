@@ -209,8 +209,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">Scale Patient Engagement Without Scaling Staff</h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our AI-powered calls handle routine check-ins and surface important changes, helping providers strengthen
-              their RPM, CCM, and post-discharge follow-up programs.
+              Positive Check automates structured voice and SMS outreach while capturing documentation, engagement data, and actionable alerts in one unified platform.
             </p>
           </div>
 
