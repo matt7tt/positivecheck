@@ -496,9 +496,9 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <CheckCircle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Consistent Check-ins</h4>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Scale with Flexibility</h4>
                 <p className="text-gray-600">
-                  Deliver consistent check-ins at scale with total flexibility in scheduling
+                  Deliver structured check-ins at any cadence, across any care program.
                 </p>
               </CardContent>
             </Card>
