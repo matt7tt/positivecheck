@@ -68,7 +68,7 @@ export default function HomePage() {
       id: "call-logs",
       title: "Call Logs",
       description:
-        "View detailed records of every check-in call, including patient responses and escalation questions. Ensure accountability and maintain a clear audit trail.",
+        "Maintain complete outreach records with timestamps, duration, and outcomes. Support documentation, quality oversight, and audit readiness across your programs.",
       image: "/images/admin-console-call-logs.png",
       alt: "Admin console call logs showing detailed call history and patient interaction records",
     },
