@@ -315,10 +315,9 @@ export default function HomePage() {
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 3: Insights Delivered to You</h4>
+                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 3: Real-Time Documentation and Alerts</h4>
                 <p className="text-gray-600">
-                  Care teams receive wellness updates and alerts, and can view population trends and
-                  compliance reports in a secure dashboard.
+                  Care teams receive structured data, compliance reporting, and automated alerts through a secure management console.
                 </p>
               </div>
             </div>
