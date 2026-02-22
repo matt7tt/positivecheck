@@ -464,8 +464,8 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Users className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Expand Outreach</h4>
-                <p className="text-gray-600">Expand outreach without increasing staff burden</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-3">Expand Coverage</h4>
+                <p className="text-gray-600">Increase patient reach without increasing staff workload.</p>
               </CardContent>
             </Card>
 
