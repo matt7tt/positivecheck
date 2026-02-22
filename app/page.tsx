@@ -227,10 +227,9 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">Smart Analytics</h4>
+                <h4 className="text-xl font-semibold text-gray-900 mb-3">Actionable Insights</h4>
                 <p className="text-gray-600">
-                  View call history, track engagement trends, and spot potential issues early with real-time alerts and
-                  easy-to-read dashboards.
+                  Track outreach performance, monitor patient responses, and receive real-time alerts for clinical and operational issues.
                 </p>
               </CardContent>
             </Card>
