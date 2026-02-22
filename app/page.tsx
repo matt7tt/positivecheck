@@ -60,7 +60,7 @@ export default function HomePage() {
       id: "alert-management",
       title: "Alert Management",
       description:
-        "Review and prioritize wellness alerts in real time. Focus staff attention where it is needed most and document follow-up actions for compliance.",
+        "Prioritize and resolve clinical and operational alerts quickly through structured workflows. Reduce response time and ensure timely follow-up on meaningful changes.",
       image: "/images/admin-console-alert-management-new.png",
       alt: "Admin console alert management showing critical patient alerts and real-time notifications",
     },
