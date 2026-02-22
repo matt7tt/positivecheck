@@ -61,8 +61,7 @@ export default function AboutPage() {
         <div className=\"max-w-7xl mx-auto text-center\">
           <h2 className=\"text-3xl font-bold text-gray-900 mb-6\">Why Choose Positive Check?</h2>
           <p className=\"text-lg text-gray-600 leading-relaxed\">
-            Because every moment matters. Healthcare providers need scalable tools to extend care beyond
-            clinical settings, reduce strain on staff, and improve patient outcomes across their entire population.
+            Healthcare providers need scalable, compliant systems to extend care beyond clinical settings while maintaining performance and control.
           </p>
         </div>
       </section>
