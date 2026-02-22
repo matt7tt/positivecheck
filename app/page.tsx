@@ -333,7 +333,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                  <CheckCircle className="w-5 h-5 text-[#e879f9] flex-shrink-0" />
                   <span className="text-sm text-gray-600">
                     Built to Scale: From dozens to thousands of patients without added staff.
                   </span>
