@@ -329,19 +329,19 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                   <span className="text-sm text-gray-600">
-                    Easy setup: No smartphones, apps, or extra equipment needed
+                    Simple to Deploy: No apps or additional equipment required.
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                   <span className="text-sm text-gray-600">
-                    Scalable: From a handful of patients to thousands
+                    Built to Scale: From dozens to thousands of patients without added staff.
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#e879f9]" />
                   <span className="text-sm text-gray-600">
-                    Reliable and adaptable: Adjust settings, questions, and frequency as needs change
+                    Flexible by Design: Adjust cadence, scripts, languages, and alerts as needs evolve.
                   </span>
                 </div>
               </div>
