@@ -4,7 +4,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { MaintainingSocialConnectionsPost } from "@/components/blog-posts/maintaining-social-connections"
 
 export const metadata: Metadata = {
-  title: 'Maintaining Social Connections in Senior Years | Positive Check Blog',
+  title: 'Senior Social Connections Guide | Positive Check',
   description: 'Social connections play a vital role in senior mental and physical health. Learn effective strategies to help seniors stay socially active and engaged.',
   alternates: {
     canonical: '/blog/maintaining-social-connections',
@@ -40,6 +40,22 @@ export default function MaintainingSocialConnectionsPage() {
               { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
               { "@type": "ListItem", "position": 3, "name": "Maintaining Social Connections in Senior Years", "item": "https://positivecheck.com/blog/maintaining-social-connections" }
             ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Maintaining Social Connections in Senior Years",
+            "description": "Social connections play a vital role in senior mental and physical health. Learn strategies to help seniors stay socially active and engaged.",
+            "image": "https://positivecheck.com/images/senior-social-connections.png",
+            "datePublished": "2025-03-10",
+            "dateModified": "2025-03-10",
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

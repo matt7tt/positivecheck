@@ -14,11 +14,13 @@ export const metadata: Metadata = {
     siteName: 'Positive Check',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/images/senior-talking-on-the-phone1.webp', width: 1200, height: 630, alt: 'Positive Check ROI calculator for healthcare providers' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ROI & Reimbursement Calculator | Positive Check',
     description: 'Calculate your projected Medicare reimbursement revenue with Positive Check. See RPM, CCM, and post-discharge ROI at $8-16/patient/month.',
+    images: ['/images/senior-talking-on-the-phone1.webp'],
   },
 }
 

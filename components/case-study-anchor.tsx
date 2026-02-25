@@ -469,7 +469,7 @@ export function CaseStudyAnchor() {
         {/* PDF Header */}
         <div className="flex items-center justify-between mb-6 pb-4 border-b-2 border-purple-500">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Positive Check</h1>
+            <p className="text-2xl font-bold text-gray-900">Positive Check</p>
             <p className="text-sm text-gray-500">Case Study — Patient Engagement at Scale</p>
           </div>
           <p className="text-sm text-gray-400">positivecheck.com</p>

@@ -4,7 +4,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { AiCompanionsForSeniorLonelinessAndCaregiverStressPost } from "@/components/blog-posts/ai-companions-for-senior-loneliness-and-caregiver-stress"
 
 export const metadata: Metadata = {
-  title: 'Can AI Companions Help Seniors and Caregivers? | Positive Check Blog',
+  title: 'AI Companions for Seniors & Caregivers | Positive Check',
   description: 'Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.',
   alternates: {
     canonical: '/blog/ai-companions-for-senior-loneliness-and-caregiver-stress',
@@ -40,6 +40,22 @@ export default function AiCompanionsForSeniorLonelinessAndCaregiverStressPage() 
               { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
               { "@type": "ListItem", "position": 3, "name": "Can AI Companions Help Seniors and Caregivers?", "item": "https://positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress" }
             ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Can AI Companions Help Seniors and Caregivers?",
+            "description": "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates.",
+            "image": "https://positivecheck.com/images/ai-companion-senior-wellness.png",
+            "datePublished": "2025-07-05",
+            "dateModified": "2025-07-05",
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

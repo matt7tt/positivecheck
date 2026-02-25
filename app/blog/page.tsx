@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -5,6 +6,29 @@ import { Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
+
+export const metadata: Metadata = {
+  title: 'Blog — Senior Care & Provider Insights | Positive Check',
+  description: 'Tips, research, and resources on AI-powered patient check-in calls, remote patient monitoring, senior wellness, and healthcare best practices.',
+  alternates: {
+    canonical: '/blog',
+  },
+  openGraph: {
+    title: 'Positive Check Blog',
+    description: 'Insights, tips, and resources for healthcare providers and care teams supporting patient wellness.',
+    url: '/blog',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/ai-companion-senior-wellness.png', width: 1200, height: 630, alt: 'Positive Check blog — senior wellness insights' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Positive Check Blog',
+    description: 'Insights, tips, and resources for healthcare providers and care teams supporting patient wellness.',
+    images: ['/images/ai-companion-senior-wellness.png'],
+  },
+}
 
 export default function BlogPage() {
   const featuredArticle = {

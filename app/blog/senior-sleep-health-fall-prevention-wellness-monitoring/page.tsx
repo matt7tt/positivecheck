@@ -4,7 +4,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { SeniorSleepHealthFallPreventionWellnessMonitoringPost } from "@/components/blog-posts/senior-sleep-health-fall-prevention-wellness-monitoring"
 
 export const metadata: Metadata = {
-  title: 'Why Sleep Quality Is Critical for Senior Safety & Health | Positive Check',
+  title: 'Sleep Quality & Senior Safety | Positive Check',
   description: 'Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help prevent issues.',
   alternates: {
     canonical: '/blog/senior-sleep-health-fall-prevention-wellness-monitoring',
@@ -40,6 +40,22 @@ export default function SeniorSleepHealthFallPreventionWellnessMonitoringPage() 
               { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
               { "@type": "ListItem", "position": 3, "name": "Why Sleep Quality Is Critical for Senior Safety & Health", "item": "https://positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring" }
             ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Why Sleep Quality Is Critical for Senior Safety & Health",
+            "description": "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help.",
+            "image": "https://positivecheck.com/images/senior-sleep-safety-bedroom.png",
+            "datePublished": "2025-06-27",
+            "dateModified": "2025-06-27",
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />
