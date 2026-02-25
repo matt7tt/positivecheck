@@ -198,7 +198,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                   href="/contact"
                   className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
                 >
-                  CLICK HERE to get started today
+                  Start Your Free Wellness Check-In Today
                 </Link>
               </div>
 

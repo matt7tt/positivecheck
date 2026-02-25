@@ -1,10 +1,44 @@
+import type { Metadata } from 'next'
 import Link from "next/link"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Positive Check',
+  description: 'Learn how Positive Check protects your personal information and complies with HIPAA regulations for senior wellness monitoring services.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy | Positive Check',
+    description: 'Learn how Positive Check protects your personal information and complies with HIPAA.',
+    url: '/privacy',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy | Positive Check',
+    description: 'Learn how Positive Check protects your personal information and complies with HIPAA.',
+  },
+}
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://positivecheck.com/privacy" }
+            ]
+          })
+        }}
+      />
       <PublicHeader currentPage="privacy" />
 
       {/* Privacy Policy Content */}

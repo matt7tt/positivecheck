@@ -193,7 +193,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
 
         <div className="bg-blue-50 p-6 rounded-lg mt-8">
           <p className="font-medium text-lg mb-4">
-            Try for FREE. CLICK HERE to get started today.
+            Try Positive Check for FREE — start your first wellness call today.
           </p>
           <Link
             href="/contact"

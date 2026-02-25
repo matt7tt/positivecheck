@@ -1,0 +1,232 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { PublicHeader } from '@/components/shared/public-header'
+import { PublicFooter } from '@/components/shared/public-footer'
+import { RequestDemoModal } from '@/components/request-demo-modal'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Chronic Care Management (CCM) Solution | Positive Check',
+  description: 'Automate CCM patient engagement with AI-powered wellness calls. Support CPT 99490, 99439, and 99487 billing — generating $66-$144/patient/month in Medicare revenue.',
+  alternates: { canonical: '/solutions/chronic-care-management' },
+  openGraph: {
+    title: 'Chronic Care Management (CCM) Solution',
+    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, and 99487 billing requirements.',
+    url: '/solutions/chronic-care-management',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: '/images/admin-console-dashboard-new.png', width: 1200, height: 630, alt: 'Positive Check CCM dashboard' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chronic Care Management Solution | Positive Check',
+    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, and 99487 billing.',
+    images: ['/images/admin-console-dashboard-new.png'],
+  },
+}
+
+export default function ChronicCareManagementPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://positivecheck.com/solutions" },
+              { "@type": "ListItem", "position": 3, "name": "Chronic Care Management", "item": "https://positivecheck.com/solutions/chronic-care-management" }
+            ]
+          })
+        }}
+      />
+      <div className="min-h-screen bg-white">
+        <PublicHeader currentPage="platform" />
+
+        <main>
+          {/* Hero */}
+          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+            <div className="max-w-7xl mx-auto text-center">
+              <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">CCM Solution</p>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+                Chronic Care Management at Scale
+              </h1>
+              <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Daily AI wellness calls give your CCM patients consistent touchpoints, medication
+                adherence checks, and care plan follow-up — all documented and ready for billing.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                {[
+                  { value: '$66', label: 'Non-Complex CCM / Mo' },
+                  { value: '$144', label: 'Complex CCM / Mo' },
+                  { value: '99490', label: 'First 20 Min — $66' },
+                  { value: '99487', label: 'Complex 60 Min — $144' },
+                ].map((m) => (
+                  <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
+                    <CardContent className="p-5 text-center">
+                      <p className="text-2xl md:text-3xl font-bold text-white">{m.value}</p>
+                      <p className="text-purple-100 text-sm mt-1">{m.label}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* What is CCM */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">What Is Chronic Care Management?</h2>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  Chronic Care Management (CCM) is a Medicare program that reimburses providers for
+                  non-face-to-face care coordination services for patients with two or more chronic
+                  conditions. Services include care plan development, medication management, and
+                  ongoing patient communication.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  CMS requires at least 20 minutes of clinical staff time per patient per month for
+                  standard CCM (99490), with additional codes for more complex patients (99487) and
+                  additional time blocks (99439). The challenge is documenting this time and maintaining
+                  consistent patient contact across large populations.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* How PC Supports CCM */}
+          <section className="px-6 py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">How Positive Check Supports CCM</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Structured daily calls provide the consistent patient touchpoints your CCM program needs.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {[
+                  { icon: HeartPulse, title: 'Medication Adherence', desc: 'Daily calls include medication check-ins, asking patients about doses taken, side effects, and refill needs — key documentation for CCM.' },
+                  { icon: ClipboardList, title: 'Care Plan Follow-Up', desc: 'Structured wellness questions align to each patient\'s care plan, generating documented follow-up touchpoints for CCM billing.' },
+                  { icon: Bell, title: 'Alert-Triggered Callbacks', desc: 'When a call flags a concern, care teams receive immediate alerts — generating additional documented care coordination time for CPT 99439.' },
+                  { icon: Users, title: 'Complex Patient Support', desc: 'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487.' },
+                ].map((feature) => {
+                  const Icon = feature.icon
+                  return (
+                    <Card key={feature.title} className="border-gray-200 bg-white">
+                      <CardContent className="p-6">
+                        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 text-purple-600 mb-4">
+                          <Icon className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                        <p className="text-gray-600 leading-relaxed text-sm">{feature.desc}</p>
+                      </CardContent>
+                    </Card>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* CPT Code Breakdown */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">CCM Billing Codes</h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  2026 Medicare national average reimbursement rates for Chronic Care Management.
+                </p>
+              </div>
+              <div className="max-w-4xl mx-auto">
+                <Card className="border-gray-200 overflow-hidden">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b bg-gray-50">
+                          <th className="text-left py-3 px-4 font-semibold text-gray-700">CPT Code</th>
+                          <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
+                          <th className="text-right py-3 px-4 font-semibold text-gray-700">2026 Rate</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { code: '99490', desc: 'CCM — first 20 min non-complex chronic care management', rate: '$66' },
+                          { code: '99439', desc: 'CCM — each additional 20 min non-complex CCM', rate: '$48' },
+                          { code: '99487', desc: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: '$144' },
+                        ].map((row) => (
+                          <tr key={row.code} className="border-b last:border-b-0">
+                            <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>
+                            <td className="py-3 px-4 text-gray-700">{row.desc}</td>
+                            <td className="py-3 px-4 text-right font-semibold text-gray-900">{row.rate}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Benefits */}
+          <section className="px-6 py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Providers Choose Positive Check for CCM</h2>
+              </div>
+              <div className="max-w-3xl mx-auto">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {[
+                    'Consistent daily patient touchpoints without manual outreach',
+                    'Medication adherence tracking built into every call',
+                    'Documented care coordination time supports 99490 and 99439 billing',
+                    'Escalation protocols for complex patients meet 99487 requirements',
+                    'Real-time alerts when patients report changes or concerns',
+                    'Works alongside your existing care management workflows',
+                    'Combine with RPM for $159-$237/patient/month in revenue',
+                    'HIPAA-compliant with full audit trail',
+                  ].map((item) => (
+                    <div key={item} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-purple-500 mt-0.5 shrink-0" />
+                      <p className="text-gray-700">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Scale Your CCM Program?</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                See how Positive Check can automate your CCM patient engagement and maximize
+                reimbursable revenue across your chronic care population.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <RequestDemoModal>
+                  <Button size="lg" className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8">
+                    Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </RequestDemoModal>
+                <Link href="/roi-calculator">
+                  <Button size="lg" variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 px-8">
+                    Calculate Your ROI
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <PublicFooter />
+      </div>
+    </>
+  )
+}

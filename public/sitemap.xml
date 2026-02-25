@@ -85,6 +85,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://positivecheck.com/solutions/remote-patient-monitoring</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions/chronic-care-management</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions/post-discharge-follow-up</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://positivecheck.com/privacy</loc>
     <lastmod>2025-06-13</lastmod>
     <changefreq>yearly</changefreq>

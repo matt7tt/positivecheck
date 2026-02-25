@@ -72,6 +72,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Site-wide structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Positive Check",
+              "url": "https://positivecheck.com",
+              "description": "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers.",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Positive Check",
+                "url": "https://positivecheck.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://positivecheck.com/images/positive-logo-dark-blue.png"
+                }
+              }
+            })
+          }}
+        />
+
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

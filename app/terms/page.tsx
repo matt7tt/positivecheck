@@ -1,10 +1,44 @@
+import type { Metadata } from 'next'
 import Link from "next/link"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 
+export const metadata: Metadata = {
+  title: 'Terms and Conditions | Positive Check',
+  description: 'Terms and conditions for using Positive Check AI-powered wellness call services for seniors and healthcare providers.',
+  robots: { index: false, follow: true },
+  alternates: { canonical: '/terms' },
+  openGraph: {
+    title: 'Terms and Conditions | Positive Check',
+    description: 'Terms and conditions for Positive Check wellness call services.',
+    url: '/terms',
+    siteName: 'Positive Check',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms and Conditions | Positive Check',
+    description: 'Terms and conditions for Positive Check wellness call services.',
+  },
+}
+
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://positivecheck.com/terms" }
+            ]
+          })
+        }}
+      />
       <PublicHeader currentPage="terms" />
 
       {/* Terms Content */}
