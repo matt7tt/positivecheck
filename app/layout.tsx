@@ -19,7 +19,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AI-Powered Patient Check-In Calls | Positive Check",
   description:
-    "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers. HIPAA-compliant wellness monitoring at scale.",
+    "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up for healthcare providers. HIPAA-compliant wellness monitoring at scale.",
   metadataBase: new URL('https://positivecheck.com'),
   alternates: {
     canonical: '/',

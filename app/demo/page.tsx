@@ -3,14 +3,10 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Demo Request - Positive Check',
-  description: 'Request a demo of Positive Check wellness calls',
+  description: 'Request a personalized demo of Positive Check AI-powered patient check-in calls for RPM, CCM, and post-discharge follow-up programs.',
   robots: {
     index: false,
     follow: false,
-    nocache: true,
-    noarchive: true,
-    nosnippet: true,
-    noimageindex: true,
   }
 }
 

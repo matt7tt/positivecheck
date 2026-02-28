@@ -207,7 +207,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Scale Patient Engagement Without Scaling Staff</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Scale Patient Engagement Without Scaling Staff</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Positive Check automates structured voice and SMS outreach while capturing documentation, engagement data, and actionable alerts in one unified platform.
             </p>
@@ -260,7 +260,7 @@ export default function HomePage() {
             />
           </div>
           <div className="text-white">
-            <h3 className="text-3xl font-bold mb-6">Meet Lola</h3>
+            <h2 className="text-3xl font-bold mb-6">Meet Lola</h2>
             <p className="text-lg text-purple-100 mb-8">
               Lola is our HIPAA-compliant virtual assistant for structured patient outreach. She conducts voice and SMS check-ins, captures program-aligned data, and escalates meaningful changes in real time. Check-ins can be configured for RPM, CCM, post-discharge, or any care program requiring consistent, documented engagement. Lola speaks virtually any language, enabling scalable outreach across diverse populations.
             </p>
@@ -297,7 +297,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-8">How does it work?</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">How does it work?</h2>
 
             <div className="space-y-6">
               <div>
@@ -381,7 +381,7 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Alerts and Escalation</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Real-Time Alerts and Escalation</h2>
             <p className="text-lg text-gray-600 mb-8">
               Positive Check detects meaningful changes and triggers immediate alerts to your care team. Structured escalation workflows support faster intervention and reduce avoidable risk.
             </p>
@@ -545,7 +545,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Healthcare Providers</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Healthcare Providers</h2>
             <p className="text-lg text-gray-600">
               Real stories from providers who use Positive Check every day.
             </p>
@@ -597,7 +597,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">FAQs</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">FAQs</h2>
           </div>
 
           <div className="space-y-4">
@@ -710,7 +710,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h3>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
           </div>
 
           <Card className="p-8 bg-white shadow-lg">
