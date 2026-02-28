@@ -10,7 +10,6 @@ const nextConfig = {
         remotePatterns: [],
         unoptimized: false,
         loader: 'default',
-        quality: 85,
     },
     eslint: {
         // Warning: This allows production builds to successfully complete even if
@@ -26,6 +25,35 @@ const nextConfig = {
     generateEtags: false,
     httpAgentOptions: {
         keepAlive: true,
+    },
+    async redirects() {
+        return [
+            {
+                source: '/home',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/index',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/providers',
+                destination: '/',
+                permanent: true,
+            },
+            {
+                source: '/provider-login',
+                destination: 'https://provider.positivecheck.com/admin-new/login',
+                permanent: true,
+            },
+            {
+                source: '/sign-in/providers',
+                destination: 'https://provider.positivecheck.com/admin-new/login',
+                permanent: true,
+            },
+        ];
     },
     async headers() {
         return [

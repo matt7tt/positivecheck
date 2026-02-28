@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | Positive Check',
   description: 'Learn how Positive Check protects your personal information and complies with HIPAA regulations for senior wellness monitoring services.',
   robots: { index: false, follow: true },
-  alternates: { canonical: '/privacy' },
   openGraph: {
     title: 'Privacy Policy | Positive Check',
     description: 'Learn how Positive Check protects your personal information and complies with HIPAA.',

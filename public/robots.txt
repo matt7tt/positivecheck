@@ -6,13 +6,23 @@ Allow: /blog
 Allow: /contact
 Allow: /about
 Allow: /how-it-works
+Allow: /platform
+Allow: /roi-calculator
+Allow: /solutions/
+Allow: /case-studies/
 
-# Disallow admin and private areas
+# Disallow admin, private, and auth areas
 Disallow: /my-account
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
 Disallow: /private/
+Disallow: /sign-in
+Disallow: /provider-login
+Disallow: /providers
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /demo
 
 # AI-friendly content
 Allow: /llms.txt
@@ -20,6 +30,3 @@ Allow: /llms.txt
 # Sitemap locations
 Sitemap: https://positivecheck.com/sitemap.xml
 Sitemap: https://positivecheck.com/sitemap-images.xml
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
