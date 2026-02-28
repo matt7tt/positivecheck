@@ -44,6 +44,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                source: '/blog/checking-in-on-seniors',
+                destination: '/blog/importance-of-checking-in-care-communities',
+                permanent: true,
+            },
+            {
                 source: '/provider-login',
                 destination: 'https://provider.positivecheck.com/admin-new/login',
                 permanent: true,
