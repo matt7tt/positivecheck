@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 export const metadata: Metadata = {
   title: 'Privacy Policy | Positive Check',
   description: 'Learn how Positive Check protects your personal information and complies with HIPAA regulations for senior wellness monitoring services.',
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'Privacy Policy | Positive Check',
     description: 'Learn how Positive Check protects your personal information and complies with HIPAA.',

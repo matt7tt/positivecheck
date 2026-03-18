@@ -6,7 +6,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 export const metadata: Metadata = {
   title: 'Terms and Conditions | Positive Check',
   description: 'Terms and conditions for using Positive Check AI-powered wellness call services for seniors and healthcare providers.',
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'Terms and Conditions | Positive Check',
     description: 'Terms and conditions for Positive Check wellness call services.',
