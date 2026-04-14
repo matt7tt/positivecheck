@@ -7,6 +7,7 @@ import { useState, useEffect, useMemo } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
+import { LolaCallModal } from "@/components/lola-call-modal"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { PublicHeader } from "@/components/shared/public-header"
 import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
@@ -127,6 +128,11 @@ export default function HomePage() {
                 REQUEST DEMO
               </Button>
             </RequestDemoModal>
+            <LolaCallModal>
+              <Button variant="outline" className="border-[#e879f9] text-[#e879f9] hover:bg-purple-50 px-8 py-4 text-lg font-bold">
+                GET A CALL FROM LOLA
+              </Button>
+            </LolaCallModal>
             <Button asChild variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-bold">
               <Link href="/how-it-works">HOW IT WORKS</Link>
             </Button>
