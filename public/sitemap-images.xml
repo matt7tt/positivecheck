@@ -67,4 +67,97 @@
       <image:title>Senior Phone Check-Ins for Mental Health</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://positivecheck.com/blog/role-of-technology-in-senior-care</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-technology-care.png</image:loc>
+      <image:caption>Technology supporting senior care and independence</image:caption>
+      <image:title>Role of Technology in Senior Care</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/platform</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Positive Check Admin Console dashboard for healthcare providers</image:caption>
+      <image:title>Positive Check Platform Dashboard</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/wellness-dash-2.png</image:loc>
+      <image:caption>Wellness trends and client monitoring dashboard</image:caption>
+      <image:title>Wellness Monitoring Dashboard</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/how-it-works</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/senior-talking-on-the-phone1.webp</image:loc>
+      <image:caption>Senior receiving an AI-powered wellness check-in call</image:caption>
+      <image:title>How AI Patient Check-In Calls Work</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Positive Check solutions overview for healthcare providers</image:caption>
+      <image:title>Solutions for Healthcare Providers</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions/remote-patient-monitoring</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Remote Patient Monitoring dashboard showing patient wellness trends</image:caption>
+      <image:title>Remote Patient Monitoring (RPM) Solution</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions/chronic-care-management</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Chronic Care Management dashboard with medication adherence tracking</image:caption>
+      <image:title>Chronic Care Management (CCM) Solution</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/solutions/post-discharge-follow-up</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Post-discharge patient follow-up dashboard</image:caption>
+      <image:title>Post-Discharge Follow-Up (TCM) Solution</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/roi-calculator</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>ROI calculator for AI-powered patient wellness calls</image:caption>
+      <image:title>ROI Calculator</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/case-studies/scaling-patient-engagement</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/healthcare-care-coordinator.png</image:loc>
+      <image:caption>Healthcare care coordinator using Positive Check</image:caption>
+      <image:title>Case Study: Scaling Patient Engagement</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/faq</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/admin-console-dashboard-new.png</image:loc>
+      <image:caption>Positive Check frequently asked questions</image:caption>
+      <image:title>Frequently Asked Questions</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://positivecheck.com/contact</loc>
+    <image:image>
+      <image:loc>https://positivecheck.com/images/healthcare-care-coordinator.png</image:loc>
+      <image:caption>Contact the Positive Check care team</image:caption>
+      <image:title>Contact Positive Check</image:title>
+    </image:image>
+  </url>
 </urlset>

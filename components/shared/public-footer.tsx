@@ -21,6 +21,7 @@ export function PublicFooter() {
           <div>
             <h3 className="font-semibold text-[#1a2642] mb-3">Solutions</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/solutions" className="text-gray-600 hover:text-[#1a2642]">All Solutions</Link></li>
               <li><Link href="/solutions/remote-patient-monitoring" className="text-gray-600 hover:text-[#1a2642]">Remote Patient Monitoring</Link></li>
               <li><Link href="/solutions/chronic-care-management" className="text-gray-600 hover:text-[#1a2642]">Chronic Care Management</Link></li>
               <li><Link href="/solutions/post-discharge-follow-up" className="text-gray-600 hover:text-[#1a2642]">Post-Discharge Follow-Up</Link></li>
@@ -32,6 +33,7 @@ export function PublicFooter() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-gray-600 hover:text-[#1a2642]">Blog</Link></li>
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
+              <li><Link href="/faq" className="text-gray-600 hover:text-[#1a2642]">FAQ</Link></li>
               <li><Link href="/case-studies/scaling-patient-engagement" className="text-gray-600 hover:text-[#1a2642]">Case Studies</Link></li>
             </ul>
           </div>

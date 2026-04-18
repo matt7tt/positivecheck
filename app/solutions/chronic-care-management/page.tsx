@@ -45,6 +45,26 @@ export default function ChronicCareManagementPage() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Chronic Care Management",
+            "name": "Chronic Care Management (CCM) with AI Wellness Calls",
+            "description": "Daily AI wellness calls for CCM patients — medication adherence checks, care plan follow-up, and documentation ready for CPT 99490, 99439, and 99487 billing.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Positive Check",
+              "url": "https://positivecheck.com"
+            },
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
+            "category": "Chronic Care Management"
+          })
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 

@@ -197,6 +197,7 @@ export default function HomePage() {
               alt="Healthcare provider using Positive Check admin dashboard to monitor patient wellness"
               width={800}
               height={400}
+              priority
               className="rounded-lg shadow-xl w-full object-cover"
               style={{
                 height: "400px",

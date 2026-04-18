@@ -113,9 +113,10 @@ export default function BlogPage() {
             <div className="aspect-video overflow-hidden">
               <Image
                 src={featuredArticle.image}
-                alt={featuredArticle.title}
+                alt={`Featured article: ${featuredArticle.title} — ${featuredArticle.excerpt}`}
                 width={1200}
                 height={630}
+                priority
                 className="w-full h-full object-cover"
               />
             </div>
@@ -149,7 +150,7 @@ export default function BlogPage() {
                 <div className="aspect-video overflow-hidden">
                   <Image
                     src={article.image}
-                    alt={article.title}
+                    alt={`${article.title} — ${article.excerpt}`}
                     width={600}
                     height={340}
                     className="w-full h-full object-cover"

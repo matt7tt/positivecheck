@@ -45,6 +45,26 @@ export default function RemotePatientMonitoringPage() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Remote Patient Monitoring",
+            "name": "Remote Patient Monitoring (RPM) with AI Wellness Calls",
+            "description": "AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99470 billing.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Positive Check",
+              "url": "https://positivecheck.com"
+            },
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
+            "category": "Remote Patient Monitoring"
+          })
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 

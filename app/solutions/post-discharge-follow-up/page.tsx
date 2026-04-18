@@ -45,6 +45,26 @@ export default function PostDischargeFollowUpPage() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Transitional Care Management",
+            "name": "Post-Discharge Follow-Up (TCM) with AI Calls",
+            "description": "Automated post-discharge patient outreach within 24-48 hours. Satisfies CMS Transitional Care Management requirements, supports CPT 99495 billing, and reduces 30-day readmissions.",
+            "provider": {
+              "@type": "Organization",
+              "name": "Positive Check",
+              "url": "https://positivecheck.com"
+            },
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
+            "category": "Transitional Care Management"
+          })
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 
