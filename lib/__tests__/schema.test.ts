@@ -4,6 +4,8 @@ import {
   buildWebSiteSchema,
   buildBreadcrumbSchema,
   buildFAQSchema,
+  buildServiceSchema,
+  buildArticleSchema,
   ORG_NAME_LEGAL,
   ORG_PHONE,
   ORG_EMAIL,
@@ -90,5 +92,41 @@ describe("buildFAQSchema", () => {
       name: "Q1?",
       acceptedAnswer: { "@type": "Answer", text: "A1." },
     });
+  });
+});
+
+describe("buildServiceSchema", () => {
+  it("returns a Service schema without offers (pricing is never claimed)", () => {
+    const schema = buildServiceSchema({
+      name: "RPM with AI Calls",
+      serviceType: "Remote Patient Monitoring",
+      description: "Daily AI wellness calls",
+      category: "Remote Patient Monitoring",
+      audienceType: "Healthcare Providers",
+    });
+    expect(schema["@type"]).toBe("Service");
+    expect(schema.name).toBe("RPM with AI Calls");
+    expect(schema.provider["@type"]).toBe("Organization");
+    expect(schema.provider.legalName).toBe("Positive Check LLC");
+    expect(schema.audience.audienceType).toBe("Healthcare Providers");
+    expect((schema as any).offers).toBeUndefined();
+  });
+});
+
+describe("buildArticleSchema", () => {
+  it("returns an Article with Organization author and publisher", () => {
+    const schema = buildArticleSchema({
+      headline: "Test Article",
+      description: "Test description",
+      url: "https://positivecheck.com/blog/test",
+      image: "https://positivecheck.com/images/test.png",
+      datePublished: "2026-04-19",
+      dateModified: "2026-04-19",
+    });
+    expect(schema["@type"]).toBe("Article");
+    expect(schema.author["@type"]).toBe("Organization");
+    expect(schema.author.name).toBe("Positive Check");
+    expect(schema.publisher["@type"]).toBe("Organization");
+    expect(schema.mainEntityOfPage["@id"]).toBe("https://positivecheck.com/blog/test");
   });
 });

@@ -133,3 +133,42 @@ export function buildFAQSchema(items: FAQItem[]) {
     })),
   };
 }
+
+export function buildServiceSchema(input: ServiceInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: input.name,
+    serviceType: input.serviceType,
+    description: input.description,
+    category: input.category,
+    provider: buildPublisherOrgNode(),
+    areaServed: { "@type": "Country", name: "United States" },
+    audience: {
+      "@type": "Audience",
+      audienceType: input.audienceType ?? "Healthcare Providers",
+    },
+  };
+}
+
+export function buildArticleSchema(input: ArticleInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: input.headline,
+    description: input.description,
+    image: input.image,
+    datePublished: input.datePublished,
+    dateModified: input.dateModified,
+    author: {
+      "@type": "Organization",
+      name: ORG_NAME_SHORT,
+      url: SITE_URL,
+    },
+    publisher: buildPublisherOrgNode(),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": input.url,
+    },
+  };
+}
