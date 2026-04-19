@@ -53,6 +53,7 @@ const entries: Entry[] = [
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/solutions/post-discharge-follow-up", lastmod: "2026-02-24", changefreq: "monthly", priority: 0.9,
     images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/resources", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/glossary", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/compare", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/billing-guide", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },

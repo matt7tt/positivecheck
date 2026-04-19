@@ -10,6 +10,7 @@ Allow: /platform
 Allow: /roi-calculator
 Allow: /solutions/
 Allow: /case-studies/
+Allow: /resources/
 
 # Disallow admin, private, and auth areas
 Disallow: /my-account
