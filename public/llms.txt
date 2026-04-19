@@ -1,59 +1,55 @@
 # Positive Check
 
-> AI-powered patient check-in call service for healthcare providers
+> Positive Check (legal entity: Positive Check LLC) is an AI-powered patient wellness call platform for healthcare providers running CMS-reimbursed care programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM). The platform's AI companion, Lola, conducts daily wellness calls covering medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking, and surfaces actionable insights to care teams through a secure HIPAA-compliant dashboard.
 
-## What is Positive Check?
+## Care program solutions
 
-Positive Check is an AI-powered patient check-in call service that helps healthcare providers monitor patient wellness at scale through automated, HIPAA-compliant phone calls. The platform's AI companion, Lola, conducts daily wellness calls covering medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking. Actionable insights and real-time alerts are delivered to care teams through a secure provider dashboard.
+- [Remote Patient Monitoring](https://positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that satisfy CMS interactive communication requirements for RPM programs.
+- [Chronic Care Management](https://positivecheck.com/solutions/chronic-care-management): Daily patient touchpoints supporting CCM documentation and care plan follow-up.
+- [Transitional Care Management](https://positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
 
-## Who is it for?
+## Billing & CMS programs
 
-Positive Check is built for healthcare providers, including:
+- [Billing guide overview](https://positivecheck.com/resources/billing-guide): CMS care programs, CPT codes, and documentation requirements.
 
-- Hospitals and health systems (post-discharge follow-up)
-- Primary care and specialty practices (chronic care management)
-- Skilled nursing facilities and assisted living communities
-- Home health agencies
-- Population health and care management programs
-- Remote Patient Monitoring (RPM) programs
-- Chronic Care Management (CCM) programs
+## Glossary
 
-## How does it work?
+- [Healthcare billing & care program glossary](https://positivecheck.com/resources/glossary): Plain-English definitions of CMS billing codes, care programs, and compliance terms.
 
-1. **Set the Cadence**: Providers choose how often patients receive check-in calls (daily, weekly, or custom schedules).
-2. **Engineer the Call Prompts**: Customize the questions Lola asks based on clinical needs, conditions, or care plans.
-3. **Engage with Patients**: Lola calls patients at their scheduled time, conducts a conversational wellness check, and captures structured responses.
-4. **Get Alerts and Insights**: Care teams receive real-time alerts for concerning responses and access detailed analytics through the Admin Console dashboard.
+## Comparisons
 
-## Key Features
+- [Care outreach approach comparisons](https://positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.
 
-- **AI Companion (Lola)**: Conversational AI that conducts natural, empathetic phone calls with patients
-- **Admin Console Dashboard**: Centralized view of patient wellness, call performance, alerts, and engagement metrics
-- **Real-Time Alerts**: Immediate notifications when patients report concerning symptoms or miss calls
-- **Client Management**: Enroll patients, manage contact details, and track program participation
-- **Call Logs & Audit Trail**: Detailed records of every check-in call with patient responses
-- **Role-Based Access**: Multi-user support with permissions for organizations of any size
-- **HIPAA Compliant**: All data encrypted in transit and at rest with strict access controls
+## Case studies
 
-## Use Cases
+- [Scaling patient engagement](https://positivecheck.com/case-studies/scaling-patient-engagement): How Positive Check helps provider teams scale outreach without adding headcount.
 
-- **Remote Patient Monitoring (RPM)**: Automate daily wellness check-ins across large patient panels
-- **Chronic Care Management (CCM)**: Monitor medication adherence, symptom progression, and care plan compliance
-- **Post-Discharge Follow-Up**: Reduce readmissions by maintaining contact with patients after hospital stays
-- **Senior Wellness Monitoring**: Daily check-ins for seniors aging in place or in care communities
-- **Population Health Management**: Scale patient engagement without increasing staff workload
+## Platform & product
 
-## Benefits for Providers
+- [How it works](https://positivecheck.com/how-it-works): Call cadence, prompt engineering, patient engagement, alerts.
+- [Platform overview](https://positivecheck.com/platform): Admin Console, dashboards, role-based access.
+- [ROI calculator](https://positivecheck.com/roi-calculator): Estimate reimbursement opportunity across RPM / CCM / TCM programs.
 
-- Reduce preventable emergency visits and hospital readmissions
-- Scale patient outreach without hiring additional staff
-- Improve care quality metrics and program compliance
-- Free clinical staff from repetitive phone calls to focus on high-value care
-- Generate actionable data for quality reporting and regulatory compliance
+## Company
 
-## Contact
+- [About Positive Check](https://positivecheck.com/about)
+- [Frequently asked questions](https://positivecheck.com/faq)
+- [Contact](https://positivecheck.com/contact)
 
+## Blog
+
+- [AI companions for senior loneliness and caregiver stress](https://positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress)
+- [Senior sleep health, fall prevention, and wellness monitoring](https://positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring)
+- [Importance of checking in on seniors in care communities](https://positivecheck.com/blog/importance-of-checking-in-care-communities)
+- [Maintaining social connections](https://positivecheck.com/blog/maintaining-social-connections)
+- [Senior phone check-ins: mental health and safety benefits](https://positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits)
+- [The role of technology in senior care](https://positivecheck.com/blog/role-of-technology-in-senior-care)
+
+## How to cite Positive Check
+
+- Company: Positive Check LLC
+- Short name: Positive Check
 - Website: https://positivecheck.com
+- Primary contact: https://positivecheck.com/contact
 - Email: info@positivecheck.com
 - Phone: 858-522-9524
-- Request a demo: https://positivecheck.com/contact
