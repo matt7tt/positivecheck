@@ -1,0 +1,63 @@
+import type { MetadataRoute } from "next";
+
+const SITE = "https://positivecheck.com";
+
+type Priority = 0.3 | 0.7 | 0.8 | 0.9 | 1.0;
+type Freq = "weekly" | "monthly" | "yearly";
+
+interface Entry {
+  path: string;
+  lastmod: string;
+  changefreq: Freq;
+  priority: Priority;
+  images?: string[];
+}
+
+const entries: Entry[] = [
+  { path: "/", lastmod: "2026-04-19", changefreq: "weekly", priority: 1.0,
+    images: ["/images/senior-talking-on-the-phone1.webp"] },
+  { path: "/about", lastmod: "2026-02-06", changefreq: "monthly", priority: 0.8 },
+  { path: "/how-it-works", lastmod: "2026-02-06", changefreq: "monthly", priority: 0.9,
+    images: ["/images/senior-talking-on-the-phone1.webp"] },
+  { path: "/platform", lastmod: "2026-02-13", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png", "/images/wellness-dash-2.png"] },
+  { path: "/roi-calculator", lastmod: "2026-02-22", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/contact", lastmod: "2026-02-06", changefreq: "monthly", priority: 0.7,
+    images: ["/images/healthcare-care-coordinator.png"] },
+  { path: "/blog", lastmod: "2025-07-05", changefreq: "weekly", priority: 0.8 },
+  { path: "/blog/ai-companions-for-senior-loneliness-and-caregiver-stress", lastmod: "2025-07-05", changefreq: "monthly", priority: 0.7 },
+  { path: "/blog/senior-sleep-health-fall-prevention-wellness-monitoring", lastmod: "2025-06-27", changefreq: "monthly", priority: 0.7 },
+  { path: "/blog/importance-of-checking-in-care-communities", lastmod: "2025-03-17", changefreq: "monthly", priority: 0.7 },
+  { path: "/blog/maintaining-social-connections", lastmod: "2025-03-10", changefreq: "monthly", priority: 0.7 },
+  { path: "/blog/senior-phone-check-ins-mental-health-safety-benefits", lastmod: "2025-01-25", changefreq: "monthly", priority: 0.7 },
+  { path: "/blog/role-of-technology-in-senior-care", lastmod: "2025-01-25", changefreq: "monthly", priority: 0.7 },
+  { path: "/privacy", lastmod: "2026-03-18", changefreq: "yearly", priority: 0.3 },
+  { path: "/terms", lastmod: "2026-03-18", changefreq: "yearly", priority: 0.3 },
+  { path: "/case-studies/scaling-patient-engagement", lastmod: "2026-02-22", changefreq: "monthly", priority: 0.8,
+    images: ["/images/healthcare-care-coordinator.png"] },
+  { path: "/solutions", lastmod: "2026-04-14", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/faq", lastmod: "2026-04-14", changefreq: "monthly", priority: 0.7 },
+  { path: "/solutions/remote-patient-monitoring", lastmod: "2026-02-24", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/solutions/chronic-care-management", lastmod: "2026-02-24", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/solutions/post-discharge-follow-up", lastmod: "2026-02-24", changefreq: "monthly", priority: 0.9,
+    images: ["/images/admin-console-dashboard-new.png"] },
+  { path: "/resources/glossary", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
+  { path: "/resources/compare", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
+  { path: "/resources/billing-guide", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return entries.map((e) => ({
+    url: `${SITE}${e.path}`,
+    lastModified: new Date(e.lastmod),
+    changeFrequency: e.changefreq,
+    priority: e.priority,
+    ...(e.images?.length
+      ? { images: e.images.map((img) => `${SITE}${img}`) }
+      : {}),
+  }));
+}

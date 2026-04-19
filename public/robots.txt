@@ -27,6 +27,5 @@ Disallow: /demo
 # AI-friendly content
 Allow: /llms.txt
 
-# Sitemap locations
+# Sitemap location
 Sitemap: https://positivecheck.com/sitemap.xml
-Sitemap: https://positivecheck.com/sitemap-images.xml
