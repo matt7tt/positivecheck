@@ -35,6 +35,9 @@ export function PublicFooter() {
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
               <li><Link href="/faq" className="text-gray-600 hover:text-[#1a2642]">FAQ</Link></li>
               <li><Link href="/case-studies/scaling-patient-engagement" className="text-gray-600 hover:text-[#1a2642]">Case Studies</Link></li>
+              <li><Link href="/resources/glossary" className="text-gray-600 hover:text-[#1a2642]">Glossary</Link></li>
+              <li><Link href="/resources/billing-guide" className="text-gray-600 hover:text-[#1a2642]">Billing Guide</Link></li>
+              <li><Link href="/resources/compare" className="text-gray-600 hover:text-[#1a2642]">Comparisons</Link></li>
             </ul>
           </div>
           <div>
