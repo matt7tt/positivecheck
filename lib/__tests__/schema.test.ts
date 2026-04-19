@@ -3,6 +3,8 @@ import {
   buildOrganizationSchema,
   buildWebSiteSchema,
   ORG_NAME_LEGAL,
+  ORG_PHONE,
+  ORG_EMAIL,
   SITE_URL,
 } from "@/lib/schema";
 
@@ -32,5 +34,25 @@ describe("buildWebSiteSchema", () => {
     expect(schema.url).toBe(SITE_URL);
     expect(schema.publisher["@type"]).toBe("Organization");
     expect(schema.publisher.legalName).toBe(ORG_NAME_LEGAL);
+  });
+});
+
+describe("Organization contact constants", () => {
+  it("buildOrganizationSchema uses ORG_PHONE and ORG_EMAIL", () => {
+    const schema = buildOrganizationSchema();
+    expect(schema.contactPoint.telephone).toBe(ORG_PHONE);
+    expect(schema.contactPoint.email).toBe(ORG_EMAIL);
+  });
+});
+
+describe("Shared publisher org node", () => {
+  it("buildWebSiteSchema publisher has the expected shape with legalName and logo ImageObject", () => {
+    const schema = buildWebSiteSchema();
+    expect(schema.publisher["@type"]).toBe("Organization");
+    expect(schema.publisher.name).toBe("Positive Check");
+    expect(schema.publisher.legalName).toBe("Positive Check LLC");
+    expect(schema.publisher.url).toBe("https://positivecheck.com");
+    expect(schema.publisher.logo["@type"]).toBe("ImageObject");
+    expect(schema.publisher.logo.url).toContain("positive-logo-dark-blue.png");
   });
 });

@@ -6,6 +6,8 @@ export const SITE_URL = "https://positivecheck.com";
 export const LOGO_URL = `${SITE_URL}/images/positive-logo-dark-blue.png`;
 export const ORG_NAME_SHORT = "Positive Check";
 export const ORG_NAME_LEGAL = "Positive Check LLC";
+export const ORG_PHONE = "+1-858-522-9524";
+export const ORG_EMAIL = "info@positivecheck.com";
 
 export interface BreadcrumbItem {
   name: string;
@@ -48,6 +50,22 @@ export interface ArticleInput {
   dateModified: string;      // YYYY-MM-DD
 }
 
+// Internal helper — the Organization shape used when referenced from another schema
+// (publisher, provider, author). Not exported; use buildOrganizationSchema for the
+// full top-level Organization node.
+function buildPublisherOrgNode() {
+  return {
+    "@type": "Organization" as const,
+    name: ORG_NAME_SHORT,
+    legalName: ORG_NAME_LEGAL,
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject" as const,
+      url: LOGO_URL,
+    },
+  };
+}
+
 export function buildOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -60,9 +78,9 @@ export function buildOrganizationSchema() {
       "AI-powered patient check-in calls and remote patient monitoring for healthcare providers",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-858-522-9524",
+      telephone: ORG_PHONE,
       contactType: "Customer Service",
-      email: "info@positivecheck.com",
+      email: ORG_EMAIL,
       availableLanguage: ["English"],
     },
     address: {
@@ -84,15 +102,6 @@ export function buildWebSiteSchema() {
     url: SITE_URL,
     description:
       "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers.",
-    publisher: {
-      "@type": "Organization",
-      name: ORG_NAME_SHORT,
-      legalName: ORG_NAME_LEGAL,
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        url: LOGO_URL,
-      },
-    },
+    publisher: buildPublisherOrgNode(),
   } as const;
 }
