@@ -47,3 +47,52 @@ export interface ArticleInput {
   datePublished: string;     // YYYY-MM-DD
   dateModified: string;      // YYYY-MM-DD
 }
+
+export function buildOrganizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: ORG_NAME_SHORT,
+    legalName: ORG_NAME_LEGAL,
+    url: SITE_URL,
+    logo: LOGO_URL,
+    description:
+      "AI-powered patient check-in calls and remote patient monitoring for healthcare providers",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-858-522-9524",
+      contactType: "Customer Service",
+      email: "info@positivecheck.com",
+      availableLanguage: ["English"],
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "US",
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/positivecheck",
+      "https://www.facebook.com/positivecheck",
+    ],
+  } as const;
+}
+
+export function buildWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: ORG_NAME_SHORT,
+    url: SITE_URL,
+    description:
+      "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers.",
+    publisher: {
+      "@type": "Organization",
+      name: ORG_NAME_SHORT,
+      legalName: ORG_NAME_LEGAL,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: LOGO_URL,
+      },
+    },
+  } as const;
+}
