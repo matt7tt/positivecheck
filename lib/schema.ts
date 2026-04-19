@@ -172,3 +172,43 @@ export function buildArticleSchema(input: ArticleInput) {
     },
   };
 }
+
+export function buildDefinedTermSchema(input: DefinedTermInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: input.term,
+    description: input.definition,
+    url: `${SITE_URL}/resources/glossary/${input.slug}`,
+    ...(input.inDefinedTermSet
+      ? { inDefinedTermSet: input.inDefinedTermSet }
+      : {}),
+  };
+}
+
+export function buildCPTCodeSchema(input: CPTCodeInput) {
+  const slug = `cpt-${input.code}`;
+  const glossaryUrl = `${SITE_URL}/resources/glossary/${slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      name: `CPT ${input.code}`,
+      description: input.description,
+      url: glossaryUrl,
+      ...(input.category ? { inDefinedTermSet: input.category } : {}),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalEntity",
+      name: input.name,
+      description: input.description,
+      code: {
+        "@type": "MedicalCode",
+        codeValue: input.code,
+        codingSystem: "CPT",
+      },
+      url: glossaryUrl,
+    },
+  ];
+}

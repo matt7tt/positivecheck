@@ -6,6 +6,8 @@ import {
   buildFAQSchema,
   buildServiceSchema,
   buildArticleSchema,
+  buildDefinedTermSchema,
+  buildCPTCodeSchema,
   ORG_NAME_LEGAL,
   ORG_PHONE,
   ORG_EMAIL,
@@ -128,5 +130,38 @@ describe("buildArticleSchema", () => {
     expect(schema.author.name).toBe("Positive Check");
     expect(schema.publisher["@type"]).toBe("Organization");
     expect(schema.mainEntityOfPage["@id"]).toBe("https://positivecheck.com/blog/test");
+  });
+});
+
+describe("buildDefinedTermSchema", () => {
+  it("returns a DefinedTerm pointing at the canonical glossary URL", () => {
+    const schema = buildDefinedTermSchema({
+      term: "HIPAA Compliance",
+      definition: "A definition.",
+      slug: "hipaa-compliance",
+    });
+    expect(schema["@type"]).toBe("DefinedTerm");
+    expect(schema.name).toBe("HIPAA Compliance");
+    expect(schema.url).toBe("https://positivecheck.com/resources/glossary/hipaa-compliance");
+    expect(schema.description).toBe("A definition.");
+  });
+});
+
+describe("buildCPTCodeSchema", () => {
+  it("returns an array with DefinedTerm + MedicalEntity for a CPT code", () => {
+    const schemas = buildCPTCodeSchema({
+      code: "99457",
+      name: "Remote physiologic monitoring treatment, initial 20 min",
+      description: "CMS-reimbursed RPM interactive communication code.",
+      category: "Remote Patient Monitoring",
+    });
+    expect(Array.isArray(schemas)).toBe(true);
+    expect(schemas).toHaveLength(2);
+    expect(schemas[0]["@type"]).toBe("DefinedTerm");
+    expect(schemas[0].name).toBe("CPT 99457");
+    expect(schemas[0].url).toBe("https://positivecheck.com/resources/glossary/cpt-99457");
+    expect(schemas[1]["@type"]).toBe("MedicalEntity");
+    expect(schemas[1].code.codeValue).toBe("99457");
+    expect(schemas[1].code.codingSystem).toBe("CPT");
   });
 });
