@@ -2,6 +2,8 @@
 import {
   buildOrganizationSchema,
   buildWebSiteSchema,
+  buildBreadcrumbSchema,
+  buildFAQSchema,
   ORG_NAME_LEGAL,
   ORG_PHONE,
   ORG_EMAIL,
@@ -54,5 +56,39 @@ describe("Shared publisher org node", () => {
     expect(schema.publisher.url).toBe("https://positivecheck.com");
     expect(schema.publisher.logo["@type"]).toBe("ImageObject");
     expect(schema.publisher.logo.url).toContain("positive-logo-dark-blue.png");
+  });
+});
+
+describe("buildBreadcrumbSchema", () => {
+  it("maps items to ListItem elements with 1-based position", () => {
+    const schema = buildBreadcrumbSchema([
+      { name: "Home", url: "https://positivecheck.com" },
+      { name: "Solutions", url: "https://positivecheck.com/solutions" },
+    ]);
+    expect(schema["@type"]).toBe("BreadcrumbList");
+    expect(schema.itemListElement).toHaveLength(2);
+    expect(schema.itemListElement[0]).toEqual({
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://positivecheck.com",
+    });
+    expect(schema.itemListElement[1].position).toBe(2);
+  });
+});
+
+describe("buildFAQSchema", () => {
+  it("maps question/answer pairs to FAQPage schema", () => {
+    const schema = buildFAQSchema([
+      { question: "Q1?", answer: "A1." },
+      { question: "Q2?", answer: "A2." },
+    ]);
+    expect(schema["@type"]).toBe("FAQPage");
+    expect(schema.mainEntity).toHaveLength(2);
+    expect(schema.mainEntity[0]).toEqual({
+      "@type": "Question",
+      name: "Q1?",
+      acceptedAnswer: { "@type": "Answer", text: "A1." },
+    });
   });
 });
