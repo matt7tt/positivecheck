@@ -8,6 +8,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { PerformanceMonitor } from '@/components/performance-monitor'
+import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,22 +77,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Positive Check",
-              "url": "https://positivecheck.com",
-              "description": "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers.",
-              "publisher": {
-                "@type": "Organization",
-                "name": "Positive Check",
-                "url": "https://positivecheck.com",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://positivecheck.com/images/positive-logo-dark-blue.png"
-                }
-              }
-            })
+            __html: JSON.stringify(buildWebSiteSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(buildOrganizationSchema()),
           }}
         />
 
