@@ -71,6 +71,61 @@ export default function GlossaryIndexPage() {
               engagement.
             </li>
           </ul>
+          <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
+            Current entries
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6 not-prose">
+            <Link
+              href="/resources/glossary/cpt-99495"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99495</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare TCM code for moderate-complexity post-discharge care.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99496"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99496</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare TCM code for high-complexity post-discharge care.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/transitional-care-management"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Transitional Care Management (TCM)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                CMS-reimbursed care model for post-discharge transitions.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/30-day-readmission"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Clinical outcome</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">30-day readmission</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Unplanned inpatient admission within 30 days of prior discharge; HRRP context.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/care-coordination"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Clinical operations</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Care coordination</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Deliberate organization of patient care activities across participants.
+              </p>
+            </Link>
+          </div>
           <p className="text-gray-700 leading-relaxed mt-8">
             Entries are added on an ongoing basis as Positive Check publishes new
             provider-facing content. For questions about a term not yet listed,{" "}
