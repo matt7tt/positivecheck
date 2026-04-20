@@ -129,7 +129,7 @@ export default function ReadmissionReductionPage() {
                     transitional care management, and proactive patient engagement.
                   </li>
                   <li>
-                    <strong>Transitional Care Management (TCM)</strong> is the CMS-reimbursed framework
+                    <Link href="/resources/glossary/transitional-care-management" className="text-gray-800 underline hover:text-purple-900"><strong>Transitional Care Management (TCM)</strong></Link> is the CMS-reimbursed framework
                     for delivering the 30-day post-discharge intervention at scale.
                   </li>
                 </ul>
@@ -221,7 +221,7 @@ export default function ReadmissionReductionPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 <strong>High-risk primary diagnoses</strong> are the most straightforward risk signal.
-                Heart failure carries a 30-day readmission rate exceeding 22% nationally \u2014 the
+                Heart failure carries a <Link href="/resources/glossary/30-day-readmission" className="text-purple-700 underline hover:text-purple-900">30-day readmission</Link> rate exceeding 22% nationally \u2014 the
                 highest among HRRP-targeted conditions. COPD, sepsis, and pneumonia also carry
                 elevated rates. Patients with these diagnoses should be prioritized for the earliest
                 post-discharge contact.

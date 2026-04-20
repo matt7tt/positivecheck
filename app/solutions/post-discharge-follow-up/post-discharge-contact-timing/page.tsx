@@ -110,7 +110,7 @@ export default function PostDischargeContactTimingPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    CPT 99495 and 99496 both require direct patient contact within{' '}
+                    <Link href="/resources/glossary/cpt-99495" className="text-gray-800 underline hover:text-purple-900">CPT 99495</Link> and 99496 both require direct patient contact within{' '}
                     <strong>two business days</strong> of discharge.
                   </li>
                   <li>
@@ -133,8 +133,8 @@ export default function PostDischargeContactTimingPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The CMS 2-business-day rule</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The 2-business-day contact requirement is one of two hard gates that determine whether a
-                TCM claim is billable. Both CPT 99495 (moderate medical decision-making complexity) and
+                The 2-business-day contact requirement is one of two hard gates that determine whether a{' '}
+                <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">TCM</Link> claim is billable. Both CPT 99495 (moderate medical decision-making complexity) and
                 CPT 99496 (high complexity) require a direct patient contact within two business days of
                 discharge \u2014 there is no exception for staffing shortfalls, patient unavailability on
                 the first attempt, or administrative delays. The{' '}

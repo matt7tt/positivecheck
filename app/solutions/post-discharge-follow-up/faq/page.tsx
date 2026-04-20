@@ -132,6 +132,20 @@ export default function TCMFaqPage() {
             </div>
           </section>
 
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm text-gray-600">
+                Related glossary entries:{' '}
+                <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">CPT 99495</Link>
+                {', '}
+                <Link href="/resources/glossary/cpt-99496" className="text-purple-700 underline hover:text-purple-900">CPT 99496</Link>
+                {', '}
+                <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">Transitional Care Management</Link>
+                .
+              </p>
+            </div>
+          </section>
+
           <section className="px-6 py-12 bg-gray-50">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-gray-700 mb-4">

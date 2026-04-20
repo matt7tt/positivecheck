@@ -88,7 +88,8 @@ export default function TCMVsManualPage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 A category-level look at how automated post-discharge follow-up compares to
-                nurse- or care-coordinator-driven manual outreach.
+                nurse- or care-coordinator-driven manual outreach for{' '}
+                <Link href="/resources/glossary/transitional-care-management" className="text-purple-200 underline hover:text-white">Transitional Care Management</Link>.
               </p>
             </div>
           </section>
@@ -160,7 +161,7 @@ export default function TCMVsManualPage() {
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Same-day if staff are available; variable otherwise</td>
                     </tr>
                     <tr className="bg-gray-50">
-                      <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Documentation for CPT 99495 billing</td>
+                      <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Documentation for <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">CPT 99495</Link> billing</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Auto-generated call transcript + structured summary mapped to CMS requirements</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Dependent on note-taking discipline during or after the call</td>
                     </tr>

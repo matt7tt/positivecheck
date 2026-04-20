@@ -167,9 +167,9 @@ export default function PostDischargeFollowUpPage() {
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">What Is Transitional Care Management?</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Transitional Care Management (TCM) is a Medicare-reimbursed service designed to reduce
-                  hospital readmissions by ensuring patients receive timely follow-up after discharge.
-                  CPT 99495 requires that a clinical staff member contacts the patient within two
+                  <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">Transitional Care Management (TCM)</Link> is a Medicare-reimbursed service designed to reduce
+                  hospital readmissions by ensuring patients receive timely follow-up after discharge.{' '}
+                  <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">CPT 99495</Link> requires that a clinical staff member contacts the patient within two
                   business days of discharge.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">

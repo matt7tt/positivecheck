@@ -108,7 +108,7 @@ export default function CPT99495BillingGuidePage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    CPT 99495 reimburses providers for Transitional Care Management services with{' '}
+                    CPT 99495 reimburses providers for <Link href="/resources/glossary/transitional-care-management" className="text-gray-800 underline hover:text-purple-900">Transitional Care Management</Link> services with{' '}
                     <strong>moderate</strong> medical decision-making complexity \u2014 2026 Medicare national
                     average is approximately $178 per patient per discharge.
                   </li>
@@ -160,7 +160,7 @@ export default function CPT99495BillingGuidePage() {
                 window.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CPT 99496 is the companion code for high medical decision-making complexity \u2014 it carries
+                <Link href="/resources/glossary/cpt-99496" className="text-purple-700 underline hover:text-purple-900">CPT 99496</Link> is the companion code for high medical decision-making complexity \u2014 it carries
                 a higher reimbursement rate and requires a face-to-face visit within 7 calendar days rather
                 than 14. Both codes share the same 2-business-day initial contact requirement. CMS updates
                 TCM reimbursement rates annually through the Physician Fee Schedule, so practices should
