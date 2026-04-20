@@ -551,14 +551,14 @@ export default function ReadmissionReductionPage() {
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm text-gray-500">
-                Reviewed against current CMS program data.{' '}
+                Reviewed against current CMS billing guidance.{' '}
                 <a
-                  href="https://www.cms.gov/medicare/quality/value-based-programs/hospital-readmissions"
+                  href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-700"
                 >
-                  CMS Hospital Readmissions Reduction Program
+                  CMS MLN TCM Booklet
                 </a>
                 . Last updated 2026-04-19.
               </p>
