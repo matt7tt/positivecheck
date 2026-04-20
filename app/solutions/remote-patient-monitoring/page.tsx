@@ -87,6 +87,46 @@ export default function RemotePatientMonitoringPage() {
         id="rpm-pillar-faq"
         data={buildFAQSchema(rpmPillarFaqs)}
       />
+      <StructuredData
+        id="rpm-pillar-howto"
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: 'How Positive Check Supports Remote Patient Monitoring',
+          description:
+            'Automate CMS-compliant RPM patient engagement in four steps: daily wellness calls, structured summaries, consistent cadence, and HIPAA-compliant data handling.',
+          step: [
+            {
+              '@type': 'HowToStep',
+              position: 1,
+              name: 'Daily Wellness Calls',
+              text:
+                'Automated voice calls collect vitals, symptoms, and wellness data \u2014 satisfying the interactive communication requirement for CPT 99457.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 2,
+              name: 'Structured Summaries',
+              text:
+                'Call results are organized into trend reports that reduce clinical review time, making the additional 20 minutes for CPT 99458 highly productive.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 3,
+              name: 'Consistent Cadence',
+              text:
+                'Every enrolled patient receives regular outreach without gaps \u2014 ensuring your practice meets the monthly engagement threshold.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 4,
+              name: 'HIPAA-Compliant Data Handling',
+              text:
+                'All calls, transcripts, and data transmissions meet HIPAA standards. Business Associate Agreements are available for all provider partners.',
+            },
+          ],
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 
@@ -273,6 +313,65 @@ export default function RemotePatientMonitoringPage() {
             </div>
           </section>
 
+          {/* Further Reading */}
+          <section className="px-6 py-16 bg-gray-50">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Further Reading
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link
+                  href="/solutions/remote-patient-monitoring/cpt-99457-billing-guide"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Billing guide</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    CPT 99457 Billing Guide
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Interactive communication requirement, 20-minute threshold, documentation, and common errors.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/remote-patient-monitoring/interactive-communication-requirement"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">CMS rule</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    CMS Interactive Communication Requirement
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    What &ldquo;interactive communication&rdquo; means for CPT 99457/99458 and how AI calls satisfy it.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/remote-patient-monitoring/patient-selection"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Program design</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    RPM Patient Selection
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Which chronic conditions, demographics, and clinical scenarios drive the best RPM outcomes.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/remote-patient-monitoring/vs-device-only-monitoring"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Comparison</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    AI Engagement vs. Device-Only Monitoring
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Why devices alone leave Medicare revenue on the table, and what the interactive layer adds.
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="px-6 py-16 bg-white">
             <div className="max-w-3xl mx-auto text-center">
@@ -293,6 +392,22 @@ export default function RemotePatientMonitoringPage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+          </section>
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-sm text-gray-500">
+                Reviewed against current CMS billing guidance.{' '}
+                <a
+                  href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-700"
+                >
+                  Medicare Physician Fee Schedule
+                </a>
+                . Last updated 2026-04-19.
+              </p>
             </div>
           </section>
         </main>
