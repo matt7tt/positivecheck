@@ -117,12 +117,62 @@ export default function GlossaryIndexPage() {
             </Link>
             <Link
               href="/resources/glossary/care-coordination"
-              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
             >
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Clinical operations</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Care coordination</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Deliberate organization of patient care activities across participants.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99453"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99453</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare RPM one-time setup and patient education.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99454"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99454</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare RPM device supply with daily recordings, each 30 days.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99457"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99457</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                First 20 minutes of RPM interactive communication per month.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99458"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99458</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Each additional 20 minutes of RPM interactive communication per month.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/remote-patient-monitoring"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Remote Patient Monitoring (RPM)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
               </p>
             </Link>
           </div>
