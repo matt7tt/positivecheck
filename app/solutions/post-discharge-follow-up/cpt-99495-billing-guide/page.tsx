@@ -164,7 +164,9 @@ export default function CPT99495BillingGuidePage() {
                 a higher reimbursement rate and requires a face-to-face visit within 7 calendar days rather
                 than 14. Both codes share the same 2-business-day initial contact requirement. CMS updates
                 TCM reimbursement rates annually through the Physician Fee Schedule, so practices should
-                verify current rates each plan year rather than relying on prior-year figures.
+                verify current rates each plan year rather than relying on prior-year figures. For a broader
+                look at how TCM fits alongside RPM and CCM, see the{' '}
+                <Link href="/solutions/post-discharge-follow-up" className="text-purple-700 underline hover:text-purple-900">post-discharge follow-up solution overview</Link>.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who can bill CPT 99495</h2>
