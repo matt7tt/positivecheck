@@ -9,6 +9,9 @@
 - [Transitional Care Management](https://positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
   - [TCM FAQ](https://positivecheck.com/solutions/post-discharge-follow-up/faq): CPT 99495/99496 billing, contact timing, documentation, HIPAA.
   - [AI calls vs. manual discharge outreach](https://positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach): Category-level comparison with six-dimension tradeoff table.
+  - [CPT 99495 billing guide](https://positivecheck.com/solutions/post-discharge-follow-up/cpt-99495-billing-guide): Eligibility, documentation, 2-business-day rule, 14-day face-to-face, common billing errors.
+  - [30-day readmission reduction](https://positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction): HRRP mechanics, highest-risk scenarios, evidence-based interventions, TCM fit.
+  - [Post-discharge contact timing](https://positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing): The 2-business-day rule, weekend/holiday handling, valid contact forms, automation.
 
 ## Billing & CMS programs
 
