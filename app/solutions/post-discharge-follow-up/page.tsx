@@ -4,7 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
-import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, PhoneCall, Timer, AlertTriangle, TrendingDown } from 'lucide-react'
 
@@ -29,6 +29,39 @@ export const metadata: Metadata = {
   },
 }
 
+const tcmPillarFaqs = [
+  {
+    question: 'What is Transitional Care Management (TCM)?',
+    answer:
+      "Transitional Care Management is a Medicare-reimbursed care model designed to reduce hospital readmissions by ensuring patients receive structured follow-up after discharge. CMS pays providers for delivering two things within a 30-day window: an initial patient contact within two business days of discharge, and a face-to-face visit within 7\u201314 days depending on complexity. The billing codes are CPT 99495 (moderate complexity) and 99496 (high complexity).",
+  },
+  {
+    question: 'Can an AI-powered phone call satisfy the TCM contact requirement?',
+    answer:
+      'Yes. CMS specifies that the initial contact within two business days must be a "direct contact" that addresses the patient\u2019s discharge care plan \u2014 it can be telephonic, electronic, or face-to-face. An AI wellness call that captures medication understanding, symptom changes, follow-up appointment awareness, and home safety meets the contact requirement as long as the call is documented, escalates concerns to clinical staff, and occurs within the 2-business-day window.',
+  },
+  {
+    question: 'How quickly must post-discharge contact happen?',
+    answer:
+      'Within two business days of discharge for both CPT 99495 and 99496. Weekends and federal holidays do not count. A patient discharged on a Friday must be contacted by end of business Tuesday. Positive Check schedules calls automatically based on the discharge timestamp from your EHR or discharge list import.',
+  },
+  {
+    question: "What\u2019s the difference between CPT 99495 and 99496?",
+    answer:
+      'Both require contact within two business days of discharge. CPT 99495 requires moderate medical decision-making complexity and a face-to-face visit within 14 calendar days \u2014 2026 Medicare reimburses it at roughly $178. CPT 99496 requires high medical decision-making complexity and a face-to-face visit within 7 calendar days, reimbursed at a higher rate. See the CMS MLN booklet for current rates.',
+  },
+  {
+    question: 'How does TCM relate to the Hospital Readmissions Reduction Program (HRRP)?',
+    answer:
+      'HRRP penalizes hospitals for higher-than-expected 30-day readmission rates across six conditions. TCM is the CMS-recognized intervention for reducing avoidable readmissions in the critical 30-day post-discharge window. Effective TCM programs reduce readmissions, which directly reduces HRRP penalty exposure.',
+  },
+  {
+    question: 'Does HIPAA permit automated discharge follow-up calls?',
+    answer:
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+  },
+];
+
 export default function PostDischargeFollowUpPage() {
   return (
     <>
@@ -49,6 +82,10 @@ export default function PostDischargeFollowUpPage() {
             'Automated post-discharge patient outreach within 24-48 hours. Satisfies CMS Transitional Care Management requirements, supports CPT 99495 billing, and reduces 30-day readmissions.',
           category: 'Transitional Care Management',
         })}
+      />
+      <StructuredData
+        id="tcm-pillar-faq"
+        data={buildFAQSchema(tcmPillarFaqs)}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
@@ -201,6 +238,31 @@ export default function PostDischargeFollowUpPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-8">
+                {tcmPillarFaqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.question}</h3>
+                    <p className="text-gray-600 leading-relaxed">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center mt-10">
+                <Link
+                  href="/solutions/post-discharge-follow-up/faq"
+                  className="text-purple-700 underline hover:text-purple-900"
+                >
+                  See all Transitional Care Management questions
+                </Link>
               </div>
             </div>
           </section>
