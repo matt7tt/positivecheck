@@ -65,6 +65,11 @@ const entries: Entry[] = [
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/resources", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/glossary", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
+  { path: "/resources/glossary/cpt-99495", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/cpt-99496", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/transitional-care-management", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/30-day-readmission", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/care-coordination", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/compare", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/billing-guide", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
 ];

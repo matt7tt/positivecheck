@@ -20,6 +20,11 @@
 ## Glossary
 
 - [Healthcare billing & care program glossary](https://positivecheck.com/resources/glossary): Plain-English definitions of CMS billing codes, care programs, and compliance terms.
+  - [CPT 99495](https://positivecheck.com/resources/glossary/cpt-99495): Medicare TCM code for moderate-complexity post-discharge care.
+  - [CPT 99496](https://positivecheck.com/resources/glossary/cpt-99496): Medicare TCM code for high-complexity post-discharge care (7-day face-to-face).
+  - [Transitional Care Management (TCM)](https://positivecheck.com/resources/glossary/transitional-care-management): CMS care model for post-discharge transitions.
+  - [30-day readmission](https://positivecheck.com/resources/glossary/30-day-readmission): Unplanned inpatient admission within 30 days of discharge; HRRP context.
+  - [Care coordination](https://positivecheck.com/resources/glossary/care-coordination): Deliberate organization of patient care activities across participants.
 
 ## Comparisons
 
