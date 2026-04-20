@@ -4,7 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
-import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, Phone, BarChart3, Clock, ShieldCheck } from 'lucide-react'
 
@@ -29,6 +29,39 @@ export const metadata: Metadata = {
   },
 }
 
+const rpmPillarFaqs = [
+  {
+    question: 'What is Remote Patient Monitoring (RPM)?',
+    answer:
+      "Remote Patient Monitoring is a Medicare-reimbursed care program where clinical staff review physiologic data (blood pressure, glucose, weight, SpO2, etc.) transmitted from a patient\u2019s connected device and conduct interactive communication with the patient at least monthly. CMS reimburses four codes: CPT 99453 (setup), 99454 (device supply), 99457 (first 20 minutes of interactive communication per calendar month), and 99458 (each additional 20 minutes).",
+  },
+  {
+    question: 'What does the CMS interactive communication requirement mean?',
+    answer:
+      'CMS requires that clinical staff (or the physician) have at least one interactive communication with the patient or caregiver each calendar month in which CPT 99457 or 99458 is billed. The interaction can be telephonic, secure messaging, or video \u2014 and it must be real-time, two-way engagement that discusses the patient\u2019s physiologic data, symptoms, or care plan. A one-way notification or unresponded message does not satisfy the requirement.',
+  },
+  {
+    question: 'Can AI-powered wellness calls satisfy the interactive communication requirement?',
+    answer:
+      'Yes, when the call includes real-time two-way engagement, captures structured clinical content, and supports human escalation. CMS defines "interactive communication" by its content and two-way nature, not by who initiates it. An AI call that asks about symptoms, captures responses, and flags concerns to clinical staff meets the requirement as long as the interaction is documented.',
+  },
+  {
+    question: "What\u2019s the typical monthly revenue from an RPM patient?",
+    answer:
+      'Combined, CPT 99457 (\u007e$52 for first 20 minutes) and 99458 (\u007e$41 for each additional 20 minutes) generate roughly $93 per patient per month in the typical case. Adding CPT 99454 for device supply ($47\u2013$56/month) brings the total per-patient monthly revenue to approximately $140\u2013$150 for a full RPM episode. CPT 99453 is a one-time \u007e$19 setup fee. Rates vary by locality and update annually.',
+  },
+  {
+    question: 'Which patients are eligible for RPM?',
+    answer:
+      'Medicare covers RPM for patients with one or more chronic conditions whose physiologic data informs ongoing care decisions \u2014 hypertension, diabetes, heart failure, COPD, and post-surgical monitoring are the most common. The patient must have a connected device capable of transmitting data to the provider, and the provider must document a clinical rationale for monitoring.',
+  },
+  {
+    question: 'Does HIPAA permit AI-powered RPM wellness calls?',
+    answer:
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+  },
+];
+
 export default function RemotePatientMonitoringPage() {
   return (
     <>
@@ -49,6 +82,10 @@ export default function RemotePatientMonitoringPage() {
             'AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99454 billing.',
           category: 'Remote Patient Monitoring',
         })}
+      />
+      <StructuredData
+        id="rpm-pillar-faq"
+        data={buildFAQSchema(rpmPillarFaqs)}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
@@ -207,6 +244,31 @@ export default function RemotePatientMonitoringPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-8">
+                {rpmPillarFaqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.question}</h3>
+                    <p className="text-gray-600 leading-relaxed">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center mt-10">
+                <Link
+                  href="/solutions/remote-patient-monitoring/faq"
+                  className="text-purple-700 underline hover:text-purple-900"
+                >
+                  See all Remote Patient Monitoring questions
+                </Link>
               </div>
             </div>
           </section>
