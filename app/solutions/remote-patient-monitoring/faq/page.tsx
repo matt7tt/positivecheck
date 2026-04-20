@@ -132,6 +132,20 @@ export default function RPMFaqPage() {
             </div>
           </section>
 
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm text-gray-600">
+                Related glossary entries:{' '}
+                <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">CPT 99457</Link>
+                {', '}
+                <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">CPT 99458</Link>
+                {', '}
+                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">Remote Patient Monitoring</Link>
+                .
+              </p>
+            </div>
+          </section>
+
           <section className="px-6 py-12 bg-gray-50">
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-gray-700 mb-4">

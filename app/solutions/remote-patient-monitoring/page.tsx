@@ -166,9 +166,9 @@ export default function RemotePatientMonitoringPage() {
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">What Is Remote Patient Monitoring?</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Remote Patient Monitoring (RPM) allows healthcare providers to track patient health data
+                  <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">Remote Patient Monitoring (RPM)</Link> allows healthcare providers to track patient health data
                   between office visits using connected devices and structured communication. Medicare
-                  reimburses providers for RPM services under CPT codes 99457, 99458, and 99454 when clinical
+                  reimburses providers for RPM services under CPT codes <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">CPT 99457</Link>, 99458, and 99454 when clinical
                   staff spend time reviewing data and interacting with patients.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">

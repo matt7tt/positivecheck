@@ -95,7 +95,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 CMS Interactive Communication Requirement for RPM: What Counts and What Doesn\u2019t
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
-                The rule that underpins CPT 99457 and 99458 billing: what interactive communication actually means,
+                The rule that underpins <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">CPT 99457</Link> and 99458 billing: what interactive communication actually means,
                 what satisfies it, what doesn\u2019t, and how AI-powered wellness calls fit.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 AI-powered system, a video visit, a live portal chat session, or a face-to-face conversation
                 can all qualify as interactive communication \u2014 as long as the exchange is real-time, two-way,
                 and clinically substantive. Providers designing{' '}
-                <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
+                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
                 </Link>{' '}
                 programs have latitude to choose the modality that best fits their patient population, workflow, and

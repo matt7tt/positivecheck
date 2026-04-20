@@ -97,7 +97,7 @@ export default function CPT99457BillingGuidePage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 The 20-minute threshold, who can perform interactive communication, documentation standards,
-                how to combine with CPT 99458, and the common errors that cost providers revenue.
+                how to combine with <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">CPT 99458</Link>, and the common errors that cost providers revenue.
               </p>
             </div>
           </section>
@@ -134,7 +134,7 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99457 is the billing code that reimburses providers for the interactive communication
                 component of{' '}
-                <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
+                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
                 </Link>
                 . Specifically, it covers the first 20 cumulative minutes per calendar month that clinical

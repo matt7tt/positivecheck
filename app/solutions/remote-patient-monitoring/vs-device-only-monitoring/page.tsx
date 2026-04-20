@@ -102,7 +102,7 @@ export default function RPMVsDeviceOnlyPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    Device-only RPM bills CPT 99454 (\u007e$56/month) but misses CPT 99457/99458 (\u007e$93/month combined),
+                    Device-only RPM bills <Link href="/resources/glossary/cpt-99454" className="text-purple-700 underline hover:text-purple-900">CPT 99454</Link> (~$56/month) but misses <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">CPT 99457</Link>/99458 (~$93/month combined),
                     leaving roughly two-thirds of available revenue untapped.
                   </li>
                   <li>

@@ -133,7 +133,7 @@ export default function RPMPatientSelectionPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">CMS eligibility requirements</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS covers{' '}
-                <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
+                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
                 </Link>{' '}
                 for Medicare patients with one or more chronic conditions \u2014 a meaningfully lower bar than the
@@ -163,7 +163,7 @@ export default function RPMPatientSelectionPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The patient must also have a connected medical device capable of automatic data transmission.
                 Manual self-reporting by the patient \u2014 texting blood pressure numbers or emailing glucose
-                readings \u2014 does not satisfy the CPT 99454 device requirement. The device must be capable of
+                readings — does not satisfy the <Link href="/resources/glossary/cpt-99454" className="text-purple-700 underline hover:text-purple-900">CPT 99454</Link> device requirement. The device must be capable of
                 transmitting data electronically to the clinical system. CPT 99454 further requires at least 16 days
                 of device transmission in any 30-day period, so device setup and patient education on consistent use
                 are operationally essential, not optional onboarding details.
