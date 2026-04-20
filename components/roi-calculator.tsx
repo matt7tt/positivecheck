@@ -69,7 +69,7 @@ const PROGRAM_CONFIGS: Record<ProgramType, ProgramConfig> = {
 const CPT_CODES: CPTCode[] = [
   { code: '99457', description: 'RPM — first 20 min clinical staff time per month', rate: 52, pcSupport: 'Automated daily calls collect vitals, symptoms, and wellness data — satisfying the interactive communication requirement.' },
   { code: '99458', description: 'RPM — each additional 20 min clinical staff time per month', rate: 41, pcSupport: 'Structured call summaries and trend reports reduce clinical review time, making the additional 20 minutes highly productive.' },
-  { code: '99470', description: 'RPM — device supply & data transmission (practice expense)', rate: 56, pcSupport: 'Positive Check serves as the patient-facing data collection layer, transmitting structured responses to the provider dashboard.' },
+  { code: '99454', description: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: 56, pcSupport: 'Positive Check serves as the patient-facing data collection layer, transmitting structured responses to the provider dashboard.' },
   { code: '99490', description: 'CCM — first 20 min non-complex chronic care management', rate: 66, pcSupport: 'Daily wellness calls provide documented patient touchpoints, medication adherence checks, and care plan follow-up.' },
   { code: '99439', description: 'CCM — each additional 20 min non-complex CCM', rate: 48, pcSupport: 'Automated follow-ups and alert-triggered callbacks generate additional documented care coordination time.' },
   { code: '99487', description: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: 144, pcSupport: 'Daily monitoring with escalation protocols supports the higher documentation bar for complex patients.' },

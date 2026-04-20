@@ -34,8 +34,8 @@ const solutions = [
     eyebrow: 'RPM',
     title: 'Remote Patient Monitoring',
     description:
-      'Satisfy CMS interactive communication requirements with AI-powered daily wellness calls. Supports CPT 99457, 99458, and 99470 — generating $93+/patient/month.',
-    cpts: ['CPT 99457', 'CPT 99458', 'CPT 99470'],
+      'Satisfy CMS interactive communication requirements with AI-powered daily wellness calls. Supports CPT 99457, 99458, and 99454 — generating $93+/patient/month.',
+    cpts: ['CPT 99457', 'CPT 99458', 'CPT 99454'],
   },
   {
     slug: 'chronic-care-management',

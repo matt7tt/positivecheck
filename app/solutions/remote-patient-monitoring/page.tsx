@@ -9,11 +9,11 @@ import { ArrowRight, CheckCircle, Phone, BarChart3, Clock, ShieldCheck } from 'l
 
 export const metadata: Metadata = {
   title: 'Remote Patient Monitoring (RPM) Solution | Positive Check',
-  description: 'Support RPM billing with AI-powered daily wellness calls. Positive Check automates patient engagement for CPT 99457, 99458, and 99470 — generating $93+/patient/month in Medicare revenue.',
+  description: 'Support RPM billing with AI-powered daily wellness calls. Positive Check automates patient engagement for CPT 99457, 99458, and 99454 — generating $93+/patient/month in Medicare revenue.',
   alternates: { canonical: '/solutions/remote-patient-monitoring' },
   openGraph: {
     title: 'Remote Patient Monitoring (RPM) Solution',
-    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99470 billing requirements.',
+    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99454 billing requirements.',
     url: '/solutions/remote-patient-monitoring',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Remote Patient Monitoring Solution | Positive Check',
-    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99470 billing.',
+    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99454 billing.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -53,7 +53,7 @@ export default function RemotePatientMonitoringPage() {
             "@type": "Service",
             "serviceType": "Remote Patient Monitoring",
             "name": "Remote Patient Monitoring (RPM) with AI Wellness Calls",
-            "description": "AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99470 billing.",
+            "description": "AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99454 billing.",
             "provider": {
               "@type": "Organization",
               "name": "Positive Check",
@@ -85,7 +85,7 @@ export default function RemotePatientMonitoringPage() {
                   { value: '$93', label: 'Revenue / Patient / Mo' },
                   { value: '99457', label: 'First 20 Min — $52' },
                   { value: '99458', label: 'Add\'l 20 Min — $41' },
-                  { value: '99470', label: 'Device Supply — $56' },
+                  { value: '99454', label: 'Device Supply — $56' },
                 ].map((m) => (
                   <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                     <CardContent className="p-5 text-center">
@@ -106,7 +106,7 @@ export default function RemotePatientMonitoringPage() {
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
                   Remote Patient Monitoring (RPM) allows healthcare providers to track patient health data
                   between office visits using connected devices and structured communication. Medicare
-                  reimburses providers for RPM services under CPT codes 99457, 99458, and 99470 when clinical
+                  reimburses providers for RPM services under CPT codes 99457, 99458, and 99454 when clinical
                   staff spend time reviewing data and interacting with patients.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
@@ -176,7 +176,7 @@ export default function RemotePatientMonitoringPage() {
                         {[
                           { code: '99457', desc: 'RPM — first 20 min clinical staff time per month', rate: '$52' },
                           { code: '99458', desc: 'RPM — each additional 20 min clinical staff time per month', rate: '$41' },
-                          { code: '99470', desc: 'RPM — device supply and data transmission (practice expense)', rate: '$56' },
+                          { code: '99454', desc: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: '$56' },
                         ].map((row) => (
                           <tr key={row.code} className="border-b last:border-b-0">
                             <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>

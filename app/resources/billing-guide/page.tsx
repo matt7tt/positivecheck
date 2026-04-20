@@ -55,7 +55,7 @@ export default function BillingGuideIndexPage() {
               <Link href="/solutions/remote-patient-monitoring" className="text-[#1a2642] underline">
                 Remote Patient Monitoring (RPM)
               </Link>{" "}
-              &mdash; CPT 99453, 99454, 99457, 99458, 99470
+              &mdash; CPT 99453, 99454, 99457, 99458
             </li>
             <li>
               <Link href="/solutions/chronic-care-management" className="text-[#1a2642] underline">
