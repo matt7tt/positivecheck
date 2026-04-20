@@ -30,6 +30,11 @@
   - [Transitional Care Management (TCM)](https://positivecheck.com/resources/glossary/transitional-care-management): CMS care model for post-discharge transitions.
   - [30-day readmission](https://positivecheck.com/resources/glossary/30-day-readmission): Unplanned inpatient admission within 30 days of discharge; HRRP context.
   - [Care coordination](https://positivecheck.com/resources/glossary/care-coordination): Deliberate organization of patient care activities across participants.
+  - [CPT 99453](https://positivecheck.com/resources/glossary/cpt-99453): Medicare RPM one-time setup and patient education.
+  - [CPT 99454](https://positivecheck.com/resources/glossary/cpt-99454): Medicare RPM device supply with daily recordings, each 30 days.
+  - [CPT 99457](https://positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM interactive communication per month.
+  - [CPT 99458](https://positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM interactive communication per month.
+  - [Remote Patient Monitoring (RPM)](https://positivecheck.com/resources/glossary/remote-patient-monitoring): Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
 
 ## Comparisons
 
