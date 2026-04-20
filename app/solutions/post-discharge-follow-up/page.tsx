@@ -4,6 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, PhoneCall, Timer, AlertTriangle, TrendingDown } from 'lucide-react'
 
@@ -31,39 +32,23 @@ export const metadata: Metadata = {
 export default function PostDischargeFollowUpPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://positivecheck.com/solutions" },
-              { "@type": "ListItem", "position": 3, "name": "Post-Discharge Follow-Up", "item": "https://positivecheck.com/solutions/post-discharge-follow-up" }
-            ]
-          })
-        }}
+      <StructuredData
+        id="tcm-pillar-breadcrumb"
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: 'https://positivecheck.com' },
+          { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
+          { name: 'Post-Discharge Follow-Up', url: 'https://positivecheck.com/solutions/post-discharge-follow-up' },
+        ])}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Transitional Care Management",
-            "name": "Post-Discharge Follow-Up (TCM) with AI Calls",
-            "description": "Automated post-discharge patient outreach within 24-48 hours. Satisfies CMS Transitional Care Management requirements, supports CPT 99495 billing, and reduces 30-day readmissions.",
-            "provider": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://positivecheck.com"
-            },
-            "areaServed": { "@type": "Country", "name": "United States" },
-            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
-            "category": "Transitional Care Management"
-          })
-        }}
+      <StructuredData
+        id="tcm-pillar-service"
+        data={buildServiceSchema({
+          name: 'Post-Discharge Follow-Up (TCM) with AI Calls',
+          serviceType: 'Transitional Care Management',
+          description:
+            'Automated post-discharge patient outreach within 24-48 hours. Satisfies CMS Transitional Care Management requirements, supports CPT 99495 billing, and reduces 30-day readmissions.',
+          category: 'Transitional Care Management',
+        })}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
