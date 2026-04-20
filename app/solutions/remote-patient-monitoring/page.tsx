@@ -4,6 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, Phone, BarChart3, Clock, ShieldCheck } from 'lucide-react'
 
@@ -31,39 +32,23 @@ export const metadata: Metadata = {
 export default function RemotePatientMonitoringPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://positivecheck.com/solutions" },
-              { "@type": "ListItem", "position": 3, "name": "Remote Patient Monitoring", "item": "https://positivecheck.com/solutions/remote-patient-monitoring" }
-            ]
-          })
-        }}
+      <StructuredData
+        id="rpm-pillar-breadcrumb"
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: 'https://positivecheck.com' },
+          { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
+          { name: 'Remote Patient Monitoring', url: 'https://positivecheck.com/solutions/remote-patient-monitoring' },
+        ])}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Remote Patient Monitoring",
-            "name": "Remote Patient Monitoring (RPM) with AI Wellness Calls",
-            "description": "AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99454 billing.",
-            "provider": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://positivecheck.com"
-            },
-            "areaServed": { "@type": "Country", "name": "United States" },
-            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
-            "category": "Remote Patient Monitoring"
-          })
-        }}
+      <StructuredData
+        id="rpm-pillar-service"
+        data={buildServiceSchema({
+          name: 'Remote Patient Monitoring (RPM) with AI Wellness Calls',
+          serviceType: 'Remote Patient Monitoring',
+          description:
+            'AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99454 billing.',
+          category: 'Remote Patient Monitoring',
+        })}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
