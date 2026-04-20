@@ -87,6 +87,46 @@ export default function PostDischargeFollowUpPage() {
         id="tcm-pillar-faq"
         data={buildFAQSchema(tcmPillarFaqs)}
       />
+      <StructuredData
+        id="tcm-pillar-howto"
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: 'How Positive Check Supports Post-Discharge Care',
+          description:
+            'Automate CMS-compliant post-discharge outreach in four steps: auto-trigger within 48 hours, conduct a structured check-in, escalate concerns, and document for CPT 99495 billing.',
+          step: [
+            {
+              '@type': 'HowToStep',
+              position: 1,
+              name: 'Automated 48-Hour Contact',
+              text:
+                'Patients are contacted within 24-48 hours of discharge, satisfying the initial patient contact requirement for CPT 99495 without manual scheduling.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 2,
+              name: 'Structured Check-In Calls',
+              text:
+                'Calls assess medication understanding, follow-up appointment awareness, symptom changes, and home safety \u2014 the key areas that prevent readmissions.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 3,
+              name: 'Immediate Escalation',
+              text:
+                'If a patient reports confusion about medications, new symptoms, or missed follow-ups, care teams are alerted immediately for same-day intervention.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 4,
+              name: 'Readmission Risk Reduction',
+              text:
+                'Consistent post-discharge engagement catches complications early, reducing 30-day readmission rates and HRRP penalty exposure.',
+            },
+          ],
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 
@@ -267,6 +307,65 @@ export default function PostDischargeFollowUpPage() {
             </div>
           </section>
 
+          {/* Further Reading */}
+          <section className="px-6 py-16 bg-gray-50">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Further Reading
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link
+                  href="/solutions/post-discharge-follow-up/cpt-99495-billing-guide"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Billing guide</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    CPT 99495 Billing Guide
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Eligibility, documentation requirements, and how interactive communication is handled.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/post-discharge-follow-up/30-day-readmission-reduction"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Clinical</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Reducing 30-Day Readmissions
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Which discharge scenarios carry the highest readmission risk and where TCM fits.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/post-discharge-follow-up/post-discharge-contact-timing"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Workflow</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Post-Discharge Contact Timing
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    The 2-business-day window, weekend/holiday handling, and documentation.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/post-discharge-follow-up/vs-manual-discharge-outreach"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Comparison</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    AI Calls vs. Manual Outreach
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Category-level comparison of automated versus manual discharge follow-up workflows.
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="px-6 py-16 bg-white">
             <div className="max-w-3xl mx-auto text-center">
@@ -287,6 +386,22 @@ export default function PostDischargeFollowUpPage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+          </section>
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-sm text-gray-500">
+                Reviewed against current CMS billing guidance.{' '}
+                <a
+                  href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-700"
+                >
+                  CMS MLN TCM Booklet
+                </a>
+                . Last updated 2026-04-19.
+              </p>
             </div>
           </section>
         </main>
