@@ -231,13 +231,8 @@ export default function PostDischargeContactTimingPage() {
                   business day 2.
                 </li>
                 <li>
-                  <strong>Wednesday before Thanksgiving discharge</strong> \u2014{' '}
-                  <em>contact by end of business Friday.</em>{' '}
-                  Wednesday is day 0. Thursday (Thanksgiving) is excluded. Friday is business day 1. The
-                  following Monday is business day 2, but the deadline is actually end of business
-                  Friday \u2014 wait, let\u2019s be precise: Thursday is excluded, so Friday is business
-                  day 1 and the following Monday is business day 2. Contact must occur by end of business
-                  Monday.
+                  <strong>Wednesday before Thanksgiving discharge</strong> \u2014 contact by end of business Monday (Thanksgiving and the weekend don\u2019t count).{' '}
+                  Wednesday is day 0. Thursday (Thanksgiving) is excluded. Friday is business day 1. Saturday and Sunday are excluded. Monday is business day 2.
                 </li>
                 <li>
                   <strong>Day before Christmas (weekday) discharge</strong> \u2014 Christmas and New
