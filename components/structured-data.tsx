@@ -1,5 +1,3 @@
-import Script from "next/script";
-
 export {
   buildOrganizationSchema,
   buildWebSiteSchema,
@@ -32,7 +30,7 @@ export function StructuredData({ data, id }: StructuredDataProps) {
   const first = Array.isArray(data) ? data[0] : data;
   const schemaId = id || `structured-data-${first?.["@type"] || "default"}`;
   return (
-    <Script
+    <script
       id={schemaId}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
