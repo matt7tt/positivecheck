@@ -287,7 +287,7 @@ export default function CPT99490BillingGuidePage() {
                 should audit consent documentation before assuming prior-period claims are defensible.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How CPT 99439, 99487, and 99489 stack on 99490</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How <Link href="/resources/glossary/cpt-99439" className="text-purple-700 underline hover:text-purple-900">CPT 99439</Link>, 99487, and 99489 stack on 99490</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99439 is the add-on code for each additional 20 minutes of non-complex CCM clinical staff time
                 in the same calendar month, reimbursing approximately $48 per unit. It can be billed up to twice
@@ -298,7 +298,7 @@ export default function CPT99490BillingGuidePage() {
                 billing opportunity.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CPT 99487 covers complex CCM {'\u2014'} a higher-intensity service requiring at least 60 minutes
+                <Link href="/resources/glossary/cpt-99487" className="text-purple-700 underline hover:text-purple-900">CPT 99487</Link> covers complex CCM {'\u2014'} a higher-intensity service requiring at least 60 minutes
                 of clinical staff time and substantial revision to the care plan for patients with moderate-to-high
                 complexity medical decision-making. The 2026 national average is approximately $144. CPT 99489 is
                 the add-on for each additional 30 minutes of complex CCM, at approximately $72. Crucially, a

@@ -109,7 +109,7 @@ export default function CCMTwentyMinutesPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    CPT 99490 requires at least <strong>20 cumulative minutes of clinical staff time</strong> on
+                    <Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">CPT 99490</Link> requires at least <strong>20 cumulative minutes of clinical staff time</strong> on
                     CCM activities per calendar month {'\u2014'} it{'\u2019'}s a time threshold, not an encounter
                     threshold.
                   </li>
@@ -523,6 +523,18 @@ export default function CCMTwentyMinutesPage() {
                   Back to the CCM solution overview
                 </Link>
               </div>
+            </div>
+          </section>
+
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm text-gray-600">
+                Related glossary entries:{' '}
+                <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">Chronic Care Management</Link>
+                {', '}
+                <Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">CPT 99490</Link>
+                .
+              </p>
             </div>
           </section>
 

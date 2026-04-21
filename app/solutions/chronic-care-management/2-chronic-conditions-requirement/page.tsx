@@ -96,7 +96,7 @@ export default function CCMTwoChronicConditionsPage() {
                 CCM{'\u2019'}s 2-Chronic-Conditions Requirement: Eligibility and Documentation
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
-                The CMS rule that defines Chronic Care Management eligibility: two or more chronic conditions
+                The CMS rule that defines <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">Chronic Care Management</Link> eligibility: two or more chronic conditions
                 expected to last at least 12 months. What qualifies, how CCM differs from RPM and PCM, and what
                 documentation a practice needs at audit.
               </p>
@@ -236,7 +236,7 @@ export default function CCMTwoChronicConditionsPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>CCM (CPT 99490/99439/99487/99489):</strong> Two or more chronic conditions, ongoing
+                  <strong>CCM (<Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">CPT 99490</Link>/99439/99487/99489):</strong> Two or more chronic conditions, ongoing
                   coordination, either non-complex or complex tracks based on time and care plan complexity.
                 </li>
                 <li>

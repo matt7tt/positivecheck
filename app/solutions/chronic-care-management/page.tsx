@@ -166,7 +166,7 @@ export default function ChronicCareManagementPage() {
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">What Is Chronic Care Management?</h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                  Chronic Care Management (CCM) is a Medicare program that reimburses providers for
+                  <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">Chronic Care Management (CCM)</Link> is a Medicare program that reimburses providers for
                   non-face-to-face care coordination services for patients with two or more chronic
                   conditions. Services include care plan development, medication management, and
                   ongoing patient communication.
@@ -390,6 +390,20 @@ export default function ChronicCareManagementPage() {
               </div>
             </div>
           </section>
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-sm text-gray-600">
+                Related glossary entries:{' '}
+                <Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">CPT 99490</Link>
+                {', '}
+                <Link href="/resources/glossary/cpt-99439" className="text-purple-700 underline hover:text-purple-900">CPT 99439</Link>
+                {', '}
+                <Link href="/resources/glossary/cpt-99487" className="text-purple-700 underline hover:text-purple-900">CPT 99487</Link>
+                .
+              </p>
+            </div>
+          </section>
+
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm text-gray-500">
