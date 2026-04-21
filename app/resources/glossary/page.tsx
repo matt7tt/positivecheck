@@ -167,12 +167,62 @@ export default function GlossaryIndexPage() {
             </Link>
             <Link
               href="/resources/glossary/remote-patient-monitoring"
-              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
             >
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Remote Patient Monitoring (RPM)</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99490"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99490</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                First 20 minutes of non-complex Chronic Care Management clinical staff time per month.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99439"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99439</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Each additional 20 minutes of non-complex CCM (up to 2x per patient per month).
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99487"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99487</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                First 60 minutes of complex Chronic Care Management per month.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99489"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99489</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Each additional 30 minutes of complex CCM beyond the 99487 threshold.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/chronic-care-management"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Chronic Care Management (CCM)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
               </p>
             </Link>
           </div>
