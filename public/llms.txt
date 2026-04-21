@@ -45,6 +45,14 @@
   - [CPT 99487](https://positivecheck.com/resources/glossary/cpt-99487): First 60 minutes of complex Chronic Care Management per month.
   - [CPT 99489](https://positivecheck.com/resources/glossary/cpt-99489): Each additional 30 minutes of complex CCM beyond the 99487 threshold.
   - [Chronic Care Management (CCM)](https://positivecheck.com/resources/glossary/chronic-care-management): Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
+  - [HIPAA Compliance](https://positivecheck.com/resources/glossary/hipaa-compliance): Adherence to HIPAA rules governing covered entities and business associates handling PHI.
+  - [Business Associate Agreement (BAA)](https://positivecheck.com/resources/glossary/business-associate-agreement): HIPAA-required contract between covered entities and PHI-handling vendors.
+  - [ePHI](https://positivecheck.com/resources/glossary/ephi): Electronic Protected Health Information covered by the HIPAA Security Rule.
+  - [HITECH Act](https://positivecheck.com/resources/glossary/hitech-act): 2009 law expanding HIPAA enforcement and creating breach notification.
+  - [Principal Care Management (PCM)](https://positivecheck.com/resources/glossary/principal-care-management): Medicare-reimbursed single-condition care management (CPT 99424-99427).
+  - [Annual Wellness Visit (AWV)](https://positivecheck.com/resources/glossary/annual-wellness-visit): Medicare preventive yearly visit (HCPCS G0438/G0439).
+  - [Interactive communication requirement](https://positivecheck.com/resources/glossary/interactive-communication-requirement): CMS rule defining real-time two-way clinical engagement for RPM billing.
+  - [Patient engagement](https://positivecheck.com/resources/glossary/patient-engagement): Active involvement of patients in their own care; core to CCM/RPM/TCM/PCM outcomes.
 
 ## Comparisons
 
