@@ -87,6 +87,46 @@ export default function ChronicCareManagementPage() {
         id="ccm-pillar-faq"
         data={buildFAQSchema(ccmPillarFaqs)}
       />
+      <StructuredData
+        id="ccm-pillar-howto"
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'HowTo',
+          name: 'How Positive Check Supports Chronic Care Management',
+          description:
+            'Automate CCM patient engagement in four steps: medication adherence checks, care plan follow-up, alert-triggered escalation, and support for complex patients.',
+          step: [
+            {
+              '@type': 'HowToStep',
+              position: 1,
+              name: 'Medication Adherence Checks',
+              text:
+                'Daily calls include medication check-ins, asking patients about doses taken, side effects, and refill needs \u2014 key documentation for CCM.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 2,
+              name: 'Care Plan Follow-Up',
+              text:
+                "Structured wellness questions align to each patient's care plan, generating documented follow-up touchpoints for CCM billing.",
+            },
+            {
+              '@type': 'HowToStep',
+              position: 3,
+              name: 'Alert-Triggered Callbacks',
+              text:
+                'When a call flags a concern, care teams receive immediate alerts \u2014 generating additional documented care coordination time for CPT 99439.',
+            },
+            {
+              '@type': 'HowToStep',
+              position: 4,
+              name: 'Complex Patient Support',
+              text:
+                'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487 and 99489.',
+            },
+          ],
+        }}
+      />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
 
@@ -269,6 +309,65 @@ export default function ChronicCareManagementPage() {
             </div>
           </section>
 
+          {/* Further Reading */}
+          <section className="px-6 py-16 bg-gray-50">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Further Reading
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link
+                  href="/solutions/chronic-care-management/cpt-99490-billing-guide"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Billing guide</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    CPT 99490 Billing Guide
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Eligibility, the 20-minute requirement, documentation, and how 99439/99487/99489 stack.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/chronic-care-management/2-chronic-conditions-requirement"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Eligibility</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    The 2-Chronic-Conditions Requirement
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Which combinations qualify, documentation expectations, and the line between CCM and PCM.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/chronic-care-management/20-minutes-monthly-requirement"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Workflow</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    The 20-Minute Monthly Requirement
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    How time is tracked, what counts as clinical staff time, and common documentation pitfalls.
+                  </p>
+                </Link>
+                <Link
+                  href="/solutions/chronic-care-management/vs-in-house-care-coordinators"
+                  className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+                >
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Comparison</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    AI Calls vs. In-House Care Coordinators
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Category-level comparison of automated engagement versus staffing an in-house CCM team.
+                  </p>
+                </Link>
+              </div>
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="px-6 py-16 bg-white">
             <div className="max-w-3xl mx-auto text-center">
@@ -289,6 +388,22 @@ export default function ChronicCareManagementPage() {
                   </Button>
                 </Link>
               </div>
+            </div>
+          </section>
+          <section className="px-6 py-6 bg-white border-t border-gray-100">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-sm text-gray-500">
+                Reviewed against current CMS billing guidance.{' '}
+                <a
+                  href="https://www.cms.gov/files/document/mln909188-chronic-care-management-services.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-700"
+                >
+                  CMS MLN CCM Booklet
+                </a>
+                . Last updated 2026-04-20.
+              </p>
             </div>
           </section>
         </main>
