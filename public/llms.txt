@@ -40,6 +40,11 @@
   - [CPT 99457](https://positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM interactive communication per month.
   - [CPT 99458](https://positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM interactive communication per month.
   - [Remote Patient Monitoring (RPM)](https://positivecheck.com/resources/glossary/remote-patient-monitoring): Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
+  - [CPT 99490](https://positivecheck.com/resources/glossary/cpt-99490): First 20 minutes of non-complex Chronic Care Management clinical staff time per month.
+  - [CPT 99439](https://positivecheck.com/resources/glossary/cpt-99439): Each additional 20 minutes of non-complex CCM (up to 2x per patient per month).
+  - [CPT 99487](https://positivecheck.com/resources/glossary/cpt-99487): First 60 minutes of complex Chronic Care Management per month.
+  - [CPT 99489](https://positivecheck.com/resources/glossary/cpt-99489): Each additional 30 minutes of complex CCM beyond the 99487 threshold.
+  - [Chronic Care Management (CCM)](https://positivecheck.com/resources/glossary/chronic-care-management): Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
 
 ## Comparisons
 

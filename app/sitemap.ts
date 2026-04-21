@@ -95,6 +95,11 @@ const entries: Entry[] = [
   { path: "/resources/glossary/cpt-99457", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/glossary/cpt-99458", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/glossary/remote-patient-monitoring", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/cpt-99490", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/cpt-99439", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/cpt-99487", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/cpt-99489", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.7 },
+  { path: "/resources/glossary/chronic-care-management", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/compare", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/billing-guide", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
 ];
