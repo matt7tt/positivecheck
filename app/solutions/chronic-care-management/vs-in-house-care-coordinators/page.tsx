@@ -98,7 +98,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    <strong>Fully loaded coordinator cost.</strong> Roughly $65,000\u2013$95,000/year per coordinator (salary + benefits + overhead); one coordinator typically manages 100\u2013200 CCM patients.
+                    <strong>Fully loaded coordinator cost.</strong> Roughly $65,000{'\u2013'}$95,000/year per coordinator (salary + benefits + overhead); one coordinator typically manages 100{'\u2013'}200 CCM patients.
                   </li>
                   <li>
                     <strong>The 20-minute threshold is the operational constraint.</strong> Miss it and 99490 is unbillable for that patient that month.
@@ -118,7 +118,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How the two approaches compare</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 The table below captures the operational tradeoffs. Not every dimension favors
-                automation \u2014 in-house care coordinators still win on nuanced clinical
+                automation {'\u2014'} in-house care coordinators still win on nuanced clinical
                 conversations, face-to-face visits, and patient relationships that run for years.
               </p>
 
@@ -134,13 +134,13 @@ export default function CCMVsInHouseCoordinatorsPage() {
                   <tbody>
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Fully loaded monthly cost</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Low, fixed \u2014 scales with enrolled volume without headcount</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">\u007e$5,400\u2013$7,900/month per FTE (salary + benefits + overhead)</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Low, fixed {'\u2014'} scales with enrolled volume without headcount</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{'\u007e'}$5,400{'\u2013'}$7,900/month per FTE (salary + benefits + overhead)</td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Patients per FTE</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Not constrained by human throughput \u2014 volume scales with technology</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">\u007e100\u2013200 patients per care coordinator depending on complexity</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Not constrained by human throughput {'\u2014'} volume scales with technology</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{'\u007e'}100{'\u2013'}200 patients per care coordinator depending on complexity</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">20-minute/month threshold consistency</td>
@@ -177,16 +177,16 @@ export default function CCMVsInHouseCoordinatorsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">When in-house care coordinators still make sense</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>Complex patients where a trusted human relationship drives outcomes.</li>
-                <li>Face-to-face visits and in-person interventions \u2014 a coordinator must do this.</li>
-                <li>Escalations flagged by AI \u2014 human clinical judgment takes over.</li>
+                <li>Face-to-face visits and in-person interventions {'\u2014'} a coordinator must do this.</li>
+                <li>Escalations flagged by AI {'\u2014'} human clinical judgment takes over.</li>
                 <li>Small enrolled volumes where existing staff reliably hit the 20-minute threshold without automation.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The hybrid model most practices land on</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 In practice, most successful CCM programs run a hybrid: AI handles routine
-                touchpoints for every enrolled patient \u2014 medication checks, symptom
-                surveillance, care-plan follow-up \u2014 generating structured summaries and
+                touchpoints for every enrolled patient {'\u2014'} medication checks, symptom
+                surveillance, care-plan follow-up {'\u2014'} generating structured summaries and
                 time accrual. Care coordinators focus on complex patients, face-to-face work,
                 and escalations flagged by the AI. This maximizes the percentage of enrolled
                 patients who hit the 20-minute threshold each month (the key operational
@@ -215,7 +215,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>Fully loaded care-coordinator cost is the dominant variable cost in CCM programs.</li>
-                  <li>The 20-minute/month threshold is what determines billable vs. unbillable \u2014 consistency is more valuable than conversation length.</li>
+                  <li>The 20-minute/month threshold is what determines billable vs. unbillable {'\u2014'} consistency is more valuable than conversation length.</li>
                   <li>Documentation structure drives billing success; automation reduces note-writing friction.</li>
                   <li>Hybrid AI + human coordinator models are the efficient frontier for most practice sizes.</li>
                 </ul>
