@@ -13,6 +13,9 @@
 - [Chronic Care Management](https://positivecheck.com/solutions/chronic-care-management): Daily patient touchpoints supporting CCM documentation and care plan follow-up.
   - [CCM FAQ](https://positivecheck.com/solutions/chronic-care-management/faq): CPT 99490/99439/99487/99489 billing, 2-chronic-conditions rule, 20-minute threshold, documentation, HIPAA.
   - [AI-powered CCM vs. in-house care coordinators](https://positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators): Category-level comparison with six-dimension tradeoff table.
+  - [CPT 99490 billing guide](https://positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, how 99439/99487/99489 stack, common errors.
+  - [CCM 2-chronic-conditions requirement](https://positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement): CMS eligibility rule, qualifying combinations, documentation, how CCM differs from RPM and PCM.
+  - [CCM 20-minute monthly requirement](https://positivecheck.com/solutions/chronic-care-management/20-minutes-monthly-requirement): What counts as CCM time, what doesn't, tracking standards, common pitfalls.
 - [Transitional Care Management](https://positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
   - [TCM FAQ](https://positivecheck.com/solutions/post-discharge-follow-up/faq): CPT 99495/99496 billing, contact timing, documentation, HIPAA.
   - [AI calls vs. manual discharge outreach](https://positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach): Category-level comparison with six-dimension tradeoff table.
