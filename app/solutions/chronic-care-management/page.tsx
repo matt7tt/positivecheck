@@ -4,6 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
 
@@ -31,39 +32,23 @@ export const metadata: Metadata = {
 export default function ChronicCareManagementPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Solutions", "item": "https://positivecheck.com/solutions" },
-              { "@type": "ListItem", "position": 3, "name": "Chronic Care Management", "item": "https://positivecheck.com/solutions/chronic-care-management" }
-            ]
-          })
-        }}
+      <StructuredData
+        id="ccm-pillar-breadcrumb"
+        data={buildBreadcrumbSchema([
+          { name: 'Home', url: 'https://positivecheck.com' },
+          { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
+          { name: 'Chronic Care Management', url: 'https://positivecheck.com/solutions/chronic-care-management' },
+        ])}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Chronic Care Management",
-            "name": "Chronic Care Management (CCM) with AI Wellness Calls",
-            "description": "Daily AI wellness calls for CCM patients — medication adherence checks, care plan follow-up, and documentation ready for CPT 99490, 99439, and 99487 billing.",
-            "provider": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://positivecheck.com"
-            },
-            "areaServed": { "@type": "Country", "name": "United States" },
-            "audience": { "@type": "Audience", "audienceType": "Healthcare Providers" },
-            "category": "Chronic Care Management"
-          })
-        }}
+      <StructuredData
+        id="ccm-pillar-service"
+        data={buildServiceSchema({
+          name: 'Chronic Care Management (CCM) with AI Wellness Calls',
+          serviceType: 'Chronic Care Management',
+          description:
+            'Daily AI wellness calls for CCM patients \u2014 medication adherence checks, care plan follow-up, and documentation ready for CPT 99490, 99439, 99487, and 99489 billing.',
+          category: 'Chronic Care Management',
+        })}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
@@ -175,9 +160,10 @@ export default function ChronicCareManagementPage() {
                       </thead>
                       <tbody>
                         {[
-                          { code: '99490', desc: 'CCM — first 20 min non-complex chronic care management', rate: '$66' },
-                          { code: '99439', desc: 'CCM — each additional 20 min non-complex CCM', rate: '$48' },
-                          { code: '99487', desc: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: '$144' },
+                          { code: '99490', desc: 'CCM \u2014 first 20 min non-complex chronic care management', rate: '$66' },
+                          { code: '99439', desc: 'CCM \u2014 each additional 20 min non-complex CCM (up to 2x/month)', rate: '$48' },
+                          { code: '99487', desc: 'Complex CCM \u2014 first 60 min for patients with multiple chronic conditions', rate: '$144' },
+                          { code: '99489', desc: 'Complex CCM \u2014 each additional 30 min beyond the 99487 threshold', rate: '$72' },
                         ].map((row) => (
                           <tr key={row.code} className="border-b last:border-b-0">
                             <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>
