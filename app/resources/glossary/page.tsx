@@ -217,12 +217,92 @@ export default function GlossaryIndexPage() {
             </Link>
             <Link
               href="/resources/glossary/chronic-care-management"
-              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
             >
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Chronic Care Management (CCM)</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/hipaa-compliance"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Compliance</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">HIPAA Compliance</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Adherence to HIPAA rules governing how covered entities and business associates handle Protected Health Information.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/business-associate-agreement"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Compliance</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Business Associate Agreement (BAA)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                HIPAA-required contract between covered entities and vendors handling PHI on their behalf.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/ephi"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Compliance</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">ePHI</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Electronic Protected Health Information {'\u2014'} the subset of PHI covered by the HIPAA Security Rule.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/hitech-act"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Compliance</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">HITECH Act</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                2009 law that expanded HIPAA enforcement, created breach notification, and funded EHR adoption.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/principal-care-management"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Principal Care Management (PCM)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare-reimbursed care management for a single high-risk chronic condition (CPT 99424{'\u2013'}99427).
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/annual-wellness-visit"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Care program</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Annual Wellness Visit (AWV)</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Medicare-covered yearly preventive visit establishing a personalized prevention plan (HCPCS G0438/G0439).
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/interactive-communication-requirement"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS requirement</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Interactive communication requirement</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                CMS rule defining real-time two-way clinical engagement for RPM and related code billing.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/patient-engagement"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors md:col-span-2"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Clinical operations</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Patient engagement</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Active, structured involvement of patients in their own care {'\u2014'} core to CCM, RPM, TCM, and PCM outcomes.
               </p>
             </Link>
           </div>
