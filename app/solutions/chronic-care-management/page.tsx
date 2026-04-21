@@ -4,7 +4,7 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
-import { StructuredData, buildBreadcrumbSchema, buildServiceSchema } from '@/components/structured-data'
+import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
 
@@ -29,6 +29,39 @@ export const metadata: Metadata = {
   },
 }
 
+const ccmPillarFaqs = [
+  {
+    question: 'What is Chronic Care Management (CCM)?',
+    answer:
+      "Chronic Care Management is a Medicare-reimbursed care coordination program for patients with two or more chronic conditions expected to last at least 12 months (or until death) and that place the patient at significant risk of death, acute exacerbation, or functional decline. Clinical staff deliver non-face-to-face care coordination \u2014 medication management, care plan updates, patient communication \u2014 and bill CPT 99490 (first 20 minutes non-complex), 99439 (each additional 20 minutes), 99487 (first 60 minutes complex), and 99489 (each additional 30 minutes complex).",
+  },
+  {
+    question: 'What is the two-chronic-conditions requirement?',
+    answer:
+      'To qualify for CCM, a patient must have two or more chronic conditions. This distinguishes CCM from RPM (which requires only one chronic condition) and from Principal Care Management (PCM, which is specifically for a single high-risk condition). The chronic conditions must be documented in the patient\u2019s medical record and must be expected to last at least 12 months or until death. Common qualifying combinations include hypertension + diabetes, COPD + heart failure, and diabetes + chronic kidney disease.',
+  },
+  {
+    question: 'What is the 20-minute monthly clinical staff time requirement?',
+    answer:
+      'CPT 99490 requires at least 20 minutes of clinical staff time per calendar month spent on CCM activities for a given patient. The time can be cumulative across multiple touchpoints in the month \u2014 a 5-minute medication check call, a 10-minute care plan update, and a 5-minute specialist-coordination task all count toward the threshold. If the cumulative time reaches the 20-minute mark, 99490 is billable. If it does not, no CCM code can be billed for that patient that month. Each additional 20 minutes may be billed under 99439 (up to twice per month for non-complex CCM).',
+  },
+  {
+    question: 'Can AI-powered wellness calls count toward the 20-minute CCM time requirement?',
+    answer:
+      'AI calls themselves do not count as "clinical staff time" under the CMS definition, but clinical staff time spent reviewing AI call summaries, updating care plans based on flagged concerns, coordinating escalations, and documenting the interaction does count. In practice, AI calls generate structured summaries that make the 20-minute clinical review highly efficient \u2014 the call captures the patient content, clinical staff spend their time on care-plan action rather than data gathering.',
+  },
+  {
+    question: "What's the difference between non-complex (99490) and complex (99487) CCM?",
+    answer:
+      'Non-complex CCM (CPT 99490, \u007e$66/month) requires 20 minutes of clinical staff time and at least one moderate-complexity medical decision-making element per month. Complex CCM (CPT 99487, \u007e$144/month) requires 60 minutes of clinical staff time and substantial revision of the care plan for patients with moderate-to-high complexity medical decision-making. Complex CCM applies to patients with unstable conditions, recent hospitalizations, or significant care-plan changes. A patient can only be billed under one track per month \u2014 either non-complex or complex, not both.',
+  },
+  {
+    question: 'Does HIPAA permit AI-powered CCM wellness calls?',
+    answer:
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+  },
+]
+
 export default function ChronicCareManagementPage() {
   return (
     <>
@@ -49,6 +82,10 @@ export default function ChronicCareManagementPage() {
             'Daily AI wellness calls for CCM patients \u2014 medication adherence checks, care plan follow-up, and documentation ready for CPT 99490, 99439, 99487, and 99489 billing.',
           category: 'Chronic Care Management',
         })}
+      />
+      <StructuredData
+        id="ccm-pillar-faq"
+        data={buildFAQSchema(ccmPillarFaqs)}
       />
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
@@ -203,6 +240,31 @@ export default function ChronicCareManagementPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section className="px-6 py-16 bg-white">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-8">
+                {ccmPillarFaqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{f.question}</h3>
+                    <p className="text-gray-600 leading-relaxed">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="text-center mt-10">
+                <Link
+                  href="/solutions/chronic-care-management/faq"
+                  className="text-purple-700 underline hover:text-purple-900"
+                >
+                  See all Chronic Care Management questions
+                </Link>
               </div>
             </div>
           </section>
