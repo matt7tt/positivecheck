@@ -25,7 +25,7 @@
 
 ## Billing & CMS programs
 
-- [Billing guide overview](https://positivecheck.com/resources/billing-guide): CMS care programs, CPT codes, and documentation requirements.
+- [CMS Care Program Billing Guide](https://positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
 
 ## Glossary
 
