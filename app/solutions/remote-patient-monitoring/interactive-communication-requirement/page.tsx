@@ -92,11 +92,11 @@ export default function InteractiveCommunicationRequirementPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">CMS rule</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                CMS Interactive Communication Requirement for RPM: What Counts and What Doesn\u2019t
+                CMS Interactive Communication Requirement for RPM: What Counts and What Doesn{'\u2019'}t
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 The rule that underpins <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">CPT 99457</Link> and 99458 billing: what interactive communication actually means,
-                what satisfies it, what doesn\u2019t, and how AI-powered wellness calls fit.
+                what satisfies it, what doesn{'\u2019'}t, and how AI-powered wellness calls fit.
               </p>
             </div>
           </section>
@@ -108,15 +108,15 @@ export default function InteractiveCommunicationRequirementPage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     CMS defines interactive communication as <strong>real-time, two-way engagement</strong> about
-                    physiologic data, symptoms, or care plan \u2014 not a specific technology or staff role.
+                    physiologic data, symptoms, or care plan {'\u2014'} not a specific technology or staff role.
                   </li>
                   <li>
                     Valid forms: <strong>live phone calls, live video, and secure messaging with two-way exchange</strong>.
                     Voicemail alone, one-way alerts, and asynchronous data review do NOT count.
                   </li>
                   <li>
-                    The communication must be <strong>clinically meaningful</strong> \u2014 generic check-ins that
-                    don\u2019t discuss the patient\u2019s condition or care plan are not billable.
+                    The communication must be <strong>clinically meaningful</strong> {'\u2014'} generic check-ins that
+                    don{'\u2019'}t discuss the patient{'\u2019'}s condition or care plan are not billable.
                   </li>
                   <li>
                     <strong>AI-powered calls satisfy the requirement</strong> when structured to capture clinical
@@ -129,7 +129,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 </ul>
               </div>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What CMS means by \u201cinteractive communication\u201d</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What CMS means by {'\u201c'}interactive communication{'\u201d'}</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication requirement</Link> is defined by CMS in the{' '}
                 <a
@@ -142,14 +142,14 @@ export default function InteractiveCommunicationRequirementPage() {
                 </a>{' '}
                 for CPT 99457 and 99458 as real-time, two-way engagement between clinical staff and the patient or
                 caregiver that discusses physiologic data from a monitoring device, current symptoms, medication
-                adherence, or the patient\u2019s care plan. The definition is deliberately technology-agnostic: CMS
+                adherence, or the patient{'\u2019'}s care plan. The definition is deliberately technology-agnostic: CMS
                 does not prescribe a specific communication platform, device, or staff role. What matters is the
                 structure and content of the exchange, not the channel through which it occurs.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 This technology neutrality is meaningful in practice. It means that a telephone call with an
                 AI-powered system, a video visit, a live portal chat session, or a face-to-face conversation
-                can all qualify as interactive communication \u2014 as long as the exchange is real-time, two-way,
+                can all qualify as interactive communication {'\u2014'} as long as the exchange is real-time, two-way,
                 and clinically substantive. Providers designing{' '}
                 <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
@@ -159,7 +159,7 @@ export default function InteractiveCommunicationRequirementPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The two-way requirement is the most commonly misunderstood aspect. Interactive communication is not
-                a monologue. The patient or caregiver must actively participate \u2014 responding to clinical
+                a monologue. The patient or caregiver must actively participate {'\u2014'} responding to clinical
                 questions, reporting symptoms, confirming medication adherence, or signaling concerns. A staff
                 member who leaves a detailed voicemail about blood pressure trends has not engaged in interactive
                 communication in the CMS sense because the patient has not responded in real time. This distinction
@@ -168,25 +168,25 @@ export default function InteractiveCommunicationRequirementPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Real-time vs. asynchronous</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                \u201cReal-time\u201d in the CMS context means both parties are engaged simultaneously during the
+                {'\u201c'}Real-time{'\u201d'} in the CMS context means both parties are engaged simultaneously during the
                 same interaction. A telephone call, a video visit, and a live portal chat session where the patient
                 and staff member are both active at the same moment all qualify as real-time. Asynchronous
-                exchanges \u2014 email messages sent and read hours apart, patient portal messages with delayed
-                responses, or care summaries sent to the patient without a response \u2014 do not qualify without
+                exchanges {'\u2014'} email messages sent and read hours apart, patient portal messages with delayed
+                responses, or care summaries sent to the patient without a response {'\u2014'} do not qualify without
                 a real-time component.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Device data review is the clearest example of asynchronous activity that does not satisfy the
                 interactive communication requirement. When clinical staff review blood pressure readings, weight
                 trends, or glucose logs that a device uploaded overnight, that review happens hours or days after
-                the data was generated. It is a clinically valuable activity \u2014 and CMS separately reimburses
-                it under CPT 99091 for some workflows \u2014 but it does not accumulate toward the 20-minute
+                the data was generated. It is a clinically valuable activity {'\u2014'} and CMS separately reimburses
+                it under CPT 99091 for some workflows {'\u2014'} but it does not accumulate toward the 20-minute
                 interactive communication threshold that drives CPT 99457 and 99458 billing.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Practices that conflate data review time with interactive communication time in a single
-                undifferentiated note create audit risk. If a documentation entry says \u201creviewed device data
-                and spoke with patient for 20 minutes\u201d without differentiating the time spent on each, an
+                undifferentiated note create audit risk. If a documentation entry says {'\u201c'}reviewed device data
+                and spoke with patient for 20 minutes{'\u201d'} without differentiating the time spent on each, an
                 auditor cannot confirm that the full 20 minutes was interactive. Best practice is to document each
                 activity type separately with its own time entry.
               </p>
@@ -194,7 +194,7 @@ export default function InteractiveCommunicationRequirementPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Valid contact forms</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS accepts any modality that supports real-time two-way clinical exchange. The following contact
-                forms satisfy the interactive communication requirement when the content addresses the patient\u2019s
+                forms satisfy the interactive communication requirement when the content addresses the patient{'\u2019'}s
                 physiologic data, symptoms, or care plan:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
@@ -216,13 +216,13 @@ export default function InteractiveCommunicationRequirementPage() {
                 </Link>
                 . An AI call qualifies when it asks structured clinical questions, captures patient responses
                 in real time, time-stamps the interaction, and escalates concerns to human clinical staff when
-                warranted. The call must be genuinely two-way \u2014 the patient responds to questions rather
-                than simply listening \u2014 and the content must address clinical status. Generic wellness
+                warranted. The call must be genuinely two-way {'\u2014'} the patient responds to questions rather
+                than simply listening {'\u2014'} and the content must address clinical status. Generic wellness
                 check-ins that do not touch physiologic data, symptoms, medication, or care plan do not meet
                 the clinical content standard.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What doesn\u2019t count alone</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What doesn{'\u2019'}t count alone</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The following activities do not satisfy the CMS interactive communication requirement by themselves,
                 regardless of how much clinical effort they represent:
@@ -232,14 +232,14 @@ export default function InteractiveCommunicationRequirementPage() {
                   Voicemail left without a patient callback or real-time response during the same interaction
                 </li>
                 <li>
-                  One-way automated reminders or alerts (e.g., \u201cplease take your blood pressure medication\u201d
+                  One-way automated reminders or alerts (e.g., {'\u201c'}please take your blood pressure medication{'\u201d'}
                   or threshold-triggered device alerts pushed to the patient without response)
                 </li>
                 <li>
                   Email without a real-time responsive reply from the patient during the same session
                 </li>
                 <li>
-                  General mass communications or bulk outreach not specific to the individual patient\u2019s
+                  General mass communications or bulk outreach not specific to the individual patient{'\u2019'}s
                   clinical status
                 </li>
                 <li>
@@ -248,7 +248,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
-                It is worth emphasizing that these activities are not without value \u2014 many are essential parts
+                It is worth emphasizing that these activities are not without value {'\u2014'} many are essential parts
                 of an RPM workflow. The key is accurate coding. Voicemail attempts and device alert reviews do not
                 belong in the cumulative minute count for CPT 99457. Including them inflates the reported
                 interaction time and creates over-billing risk. A clean documentation practice keeps interactive
@@ -257,11 +257,11 @@ export default function InteractiveCommunicationRequirementPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The clinical content requirement</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Real-time and two-way are necessary conditions for interactive communication under CMS\u2019s
+                Real-time and two-way are necessary conditions for interactive communication under CMS{'\u2019'}s
                 definition, but they are not sufficient on their own. The interaction must also be clinically
-                meaningful: it must address the patient\u2019s physiologic data, current symptoms, medication
+                meaningful: it must address the patient{'\u2019'}s physiologic data, current symptoms, medication
                 adherence, or care plan. A 20-minute conversation between a patient and a nurse that covers
-                only general topics \u2014 family updates, weather, appointment logistics \u2014 does not satisfy
+                only general topics {'\u2014'} family updates, weather, appointment logistics {'\u2014'} does not satisfy
                 the interactive communication requirement, even if it is genuinely two-way and occurs in real time.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -275,9 +275,9 @@ export default function InteractiveCommunicationRequirementPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Documentation should capture the clinical content of each interaction in enough detail to
                 demonstrate that the conversation addressed the required subject matter. A note that says
-                \u201ccalled patient, no issues\u201d provides little audit protection. A note that says
-                \u201creviewed blood pressure readings from the past 7 days with patient; patient reports
-                no headaches or dizziness; medication adherence confirmed; no care plan changes at this time\u201d
+                {'\u201c'}called patient, no issues{'\u201d'} provides little audit protection. A note that says
+                {'\u201c'}reviewed blood pressure readings from the past 7 days with patient; patient reports
+                no headaches or dizziness; medication adherence confirmed; no care plan changes at this time{'\u201d'}
                 clearly satisfies the content requirement. Escalations or care plan changes identified during
                 the interaction should always be documented inline.
               </p>
@@ -287,9 +287,9 @@ export default function InteractiveCommunicationRequirementPage() {
                 AI-powered wellness calls satisfy the CMS interactive communication requirement when they are
                 built around a structured clinical protocol. The call asks targeted questions about medication
                 adherence, current symptoms, device readings such as blood pressure, weight, glucose, or oxygen
-                saturation, and functional wellness indicators. The patient\u2019s responses are captured and
-                time-stamped in real time. When a response indicates a clinical concern \u2014 a symptom
-                threshold crossed, a missed medication, or a patient-reported problem \u2014 the system escalates
+                saturation, and functional wellness indicators. The patient{'\u2019'}s responses are captured and
+                time-stamped in real time. When a response indicates a clinical concern {'\u2014'} a symptom
+                threshold crossed, a missed medication, or a patient-reported problem {'\u2014'} the system escalates
                 to human clinical staff immediately rather than queuing the alert for later review.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -330,8 +330,8 @@ export default function InteractiveCommunicationRequirementPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Every interactive communication must be documented in a way that allows an auditor to confirm
                 that the billable requirements were met. CMS auditors reviewing CPT 99457 and 99458 claims look
-                for specific elements. Missing any one of them \u2014 most commonly the staff or system identifier
-                or a clear record of cumulative minutes \u2014 can result in claim denial or post-payment
+                for specific elements. Missing any one of them {'\u2014'} most commonly the staff or system identifier
+                or a clear record of cumulative minutes {'\u2014'} can result in claim denial or post-payment
                 recoupment. The required documentation elements for each interactive communication are:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
@@ -353,8 +353,8 @@ export default function InteractiveCommunicationRequirementPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The cumulative minute total is the single most important operational metric in an RPM program
                 because it directly determines which billing codes are billable in any given month. A per-patient
-                time log that accumulates across every interaction in the calendar month \u2014 updated after
-                each contact \u2014 is the foundation of compliant RPM billing. Programs that rely on staff to
+                time log that accumulates across every interaction in the calendar month {'\u2014'} updated after
+                each contact {'\u2014'} is the foundation of compliant RPM billing. Programs that rely on staff to
                 manually reconstruct cumulative totals at month-end frequently encounter errors in both
                 directions: over-billing for patients who fell short of the threshold, and under-billing for
                 patients who exceeded one or two add-on thresholds without anyone noticing.
@@ -371,7 +371,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 Documentation of every outreach attempt is important for two reasons. First, it demonstrates
                 that the program made good-faith efforts to reach the patient, which is relevant context if
                 the program is later audited across multiple months. Second, it creates a record that may
-                support re-enrollment or care coordination decisions \u2014 a patient who has been unreachable
+                support re-enrollment or care coordination decisions {'\u2014'} a patient who has been unreachable
                 for multiple months may need a higher-level intervention. Document each attempt with the date,
                 time, method used (telephone, portal message), and outcome (no answer, voicemail left, message
                 sent with no reply). Multiple attempts across different modalities within the month are
@@ -379,9 +379,9 @@ export default function InteractiveCommunicationRequirementPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS permits authorized caregiver contact as an alternative when the patient is unable to
-                respond directly \u2014 for example, a patient with cognitive impairment whose family member
-                manages their care. When caregiver contact is used, the caregiver\u2019s relationship to the
-                patient must be documented, and the interaction content must still address the patient\u2019s
+                respond directly {'\u2014'} for example, a patient with cognitive impairment whose family member
+                manages their care. When caregiver contact is used, the caregiver{'\u2019'}s relationship to the
+                patient must be documented, and the interaction content must still address the patient{'\u2019'}s
                 clinical status in a clinically meaningful way. See the{' '}
                 <Link
                   href="/solutions/remote-patient-monitoring/faq"
@@ -406,7 +406,7 @@ export default function InteractiveCommunicationRequirementPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    Interactive communication is defined by real-time two-way exchange about clinical content \u2014
+                    Interactive communication is defined by real-time two-way exchange about clinical content {'\u2014'}
                     not by technology or staff role.
                   </li>
                   <li>

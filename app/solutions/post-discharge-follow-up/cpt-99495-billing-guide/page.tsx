@@ -109,7 +109,7 @@ export default function CPT99495BillingGuidePage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     CPT 99495 reimburses providers for <Link href="/resources/glossary/transitional-care-management" className="text-gray-800 underline hover:text-purple-900">Transitional Care Management</Link> services with{' '}
-                    <strong>moderate</strong> medical decision-making complexity \u2014 2026 Medicare national
+                    <strong>moderate</strong> medical decision-making complexity {'\u2014'} 2026 Medicare national
                     average is approximately $178 per patient per discharge.
                   </li>
                   <li>
@@ -118,7 +118,7 @@ export default function CPT99495BillingGuidePage() {
                     <strong>face-to-face visit within 14 calendar days</strong>.
                   </li>
                   <li>
-                    Patient must be discharged to a <strong>community setting</strong> \u2014 home, domiciliary,
+                    Patient must be discharged to a <strong>community setting</strong> {'\u2014'} home, domiciliary,
                     assisted living. SNF, LTAC, and inpatient rehab discharges are not eligible.
                   </li>
                   <li>
@@ -154,13 +154,13 @@ export default function CPT99495BillingGuidePage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The 30-day TCM period begins on the discharge date itself. During that window the billing
-                provider is responsible for managing the patient\u2019s transition back to the community,
+                provider is responsible for managing the patient{'\u2019'}s transition back to the community,
                 coordinating follow-up services, and ensuring medication safety. CPT 99495 cannot be billed
                 twice for the same discharge, even if the patient is seen multiple times during the 30-day
                 window.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <Link href="/resources/glossary/cpt-99496" className="text-purple-700 underline hover:text-purple-900">CPT 99496</Link> is the companion code for high medical decision-making complexity \u2014 it carries
+                <Link href="/resources/glossary/cpt-99496" className="text-purple-700 underline hover:text-purple-900">CPT 99496</Link> is the companion code for high medical decision-making complexity {'\u2014'} it carries
                 a higher reimbursement rate and requires a face-to-face visit within 7 calendar days rather
                 than 14. Both codes share the same 2-business-day initial contact requirement. CMS updates
                 TCM reimbursement rates annually through the Physician Fee Schedule, so practices should
@@ -172,9 +172,9 @@ export default function CPT99495BillingGuidePage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who can bill CPT 99495</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Any physician, regardless of specialty, is eligible to bill CPT 99495 as long as the
-                patient\u2019s care meets the eligibility requirements. Non-physician practitioners
-                \u2014 nurse practitioners, physician assistants, clinical nurse specialists, and certified
-                nurse-midwives \u2014 are also authorized to bill TCM services under their own provider
+                patient{'\u2019'}s care meets the eligibility requirements. Non-physician practitioners
+                {'\u2014'} nurse practitioners, physician assistants, clinical nurse specialists, and certified
+                nurse-midwives {'\u2014'} are also authorized to bill TCM services under their own provider
                 numbers. The{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
@@ -186,12 +186,12 @@ export default function CPT99495BillingGuidePage() {
                   under the general supervision of the billing provider
                 </a>
                 . This means the initial 2-business-day contact can be completed by an RN, MA, or other
-                clinical staff member \u2014 it does not have to be the billing physician or NPP.
+                clinical staff member {'\u2014'} it does not have to be the billing physician or NPP.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The billing provider retains overall responsibility for the quality and accuracy of
                 documentation and must personally perform the face-to-face visit within the required
-                timeframe. When clinical staff perform the initial contact, the billing provider\u2019s
+                timeframe. When clinical staff perform the initial contact, the billing provider{'\u2019'}s
                 documentation should reflect that the contact occurred and that they reviewed the
                 findings as part of ongoing care coordination. Incident-to billing rules do not apply
                 to TCM; each eligible provider bills under their own NPI.
@@ -211,19 +211,19 @@ export default function CPT99495BillingGuidePage() {
                 hospital, inpatient rehabilitation facility, or another inpatient stay does not qualify
                 for TCM billing. If a patient is transferred to a SNF following an acute hospital stay,
                 TCM cannot be initiated until the patient is subsequently discharged to a community setting
-                \u2014 at which point the SNF discharge becomes the qualifying event.
+                {'\u2014'} at which point the SNF discharge becomes the qualifying event.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Patient consent is required for TCM services but formal written consent is not mandated
-                by CMS. Verbal or implied consent through engagement with the care team\u2014such as
-                participating in the initial contact call or showing up for the face-to-face visit\u2014is
+                by CMS. Verbal or implied consent through engagement with the care team{'\u2014'}such as
+                participating in the initial contact call or showing up for the face-to-face visit{'\u2014'}is
                 acceptable. Practices should document the form of consent obtained, as this may be
                 scrutinized during audits.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The 2-business-day contact requirement</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The initial contact must occur within two business days of discharge \u2014 this is the
+                The initial contact must occur within two business days of discharge {'\u2014'} this is the
                 single hardest requirement to meet consistently at scale, and missing it disqualifies
                 the entire TCM episode. The clock starts on the first business day after the discharge
                 date; the discharge day itself is not counted. Saturdays, Sundays, and federal holidays
@@ -238,9 +238,9 @@ export default function CPT99495BillingGuidePage() {
                 .
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS defines the contact as \u201cdirect contact\u201d that addresses the discharge care
+                CMS defines the contact as {'\u201c'}direct contact{'\u201d'} that addresses the discharge care
                 plan. It can be telephonic, electronic (secure portal message, secure text), or
-                face-to-face. The content of the contact matters: it must address the patient\u2019s
+                face-to-face. The content of the contact matters: it must address the patient{'\u2019'}s
                 understanding of their medications, awareness of follow-up appointments, and any
                 symptom changes since discharge. A purely administrative call to confirm an appointment
                 does not satisfy the requirement; the clinical content elements must be present and
@@ -260,18 +260,18 @@ export default function CPT99495BillingGuidePage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The 14-day face-to-face visit requirement</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The face-to-face visit must occur within 14 calendar days of discharge \u2014 not business
+                The face-to-face visit must occur within 14 calendar days of discharge {'\u2014'} not business
                 days. Unlike the initial contact, there is no exclusion for weekends or holidays; the
                 14-day window runs continuously from the discharge date. The visit must be performed by
-                the billing provider \u2014 the physician or NPP who will submit the TCM claim \u2014 and
-                it can take place in the office, in the patient\u2019s home, or via telehealth with an
+                the billing provider {'\u2014'} the physician or NPP who will submit the TCM claim {'\u2014'} and
+                it can take place in the office, in the patient{'\u2019'}s home, or via telehealth with an
                 appropriate billing modifier applied.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The face-to-face visit is a separate and distinct requirement from the 2-business-day
                 contact. However, if the billing provider personally performs the initial patient contact
                 within two business days as a face-to-face encounter, that visit can satisfy both
-                requirements simultaneously \u2014 a useful option for practices with small discharge
+                requirements simultaneously {'\u2014'} a useful option for practices with small discharge
                 volumes where the provider is directly available. The visit must include a complete
                 post-discharge assessment and medication reconciliation; a brief check-in call does not
                 meet the threshold.
@@ -303,7 +303,7 @@ export default function CPT99495BillingGuidePage() {
                 a new beta-blocker regimen and follow-up echocardiogram ordered meets moderate
                 complexity; an elective cholecystectomy patient discharged in stable condition with no
                 new medications and a single follow-up appointment may not. When in doubt, document
-                the specific factors that support the MDM level \u2014 an auditor cannot infer complexity
+                the specific factors that support the MDM level {'\u2014'} an auditor cannot infer complexity
                 from a diagnosis code alone.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -318,8 +318,8 @@ export default function CPT99495BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Complete, contemporaneous documentation is what separates a billable TCM encounter
                 from a denied claim. CMS auditors look for specific data points; missing even one
-                \u2014 most commonly the date and time of the initial contact or the specific content
-                of that contact \u2014 can result in recoupment. The following elements are required:
+                {'\u2014'} most commonly the date and time of the initial contact or the specific content
+                of that contact {'\u2014'} can result in recoupment. The following elements are required:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>Discharge date and discharging facility</li>
@@ -333,9 +333,9 @@ export default function CPT99495BillingGuidePage() {
               </ul>
               <p className="text-gray-700 leading-relaxed mt-4 mb-4">
                 The medication reconciliation element catches many practices off guard because it must
-                be completed \u2014 not merely initiated \u2014 before or during the face-to-face visit.
-                A note that reads \u201cmedication list reviewed\u201d is insufficient; the documentation
-                should reflect a comparison of the discharge medication list against the patient\u2019s
+                be completed {'\u2014'} not merely initiated {'\u2014'} before or during the face-to-face visit.
+                A note that reads {'\u201c'}medication list reviewed{'\u201d'} is insufficient; the documentation
+                should reflect a comparison of the discharge medication list against the patient{'\u2019'}s
                 pre-admission regimen and any changes made, with rationale.
               </p>
 
@@ -343,7 +343,7 @@ export default function CPT99495BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS allows telephonic contact to satisfy the 2-business-day requirement, and the
                 regulation does not specify that the call must be conducted by a human. What matters
-                is that the contact is \u201cdirect,\u201d addresses the discharge care plan, and is
+                is that the contact is {'\u201c'}direct,{'\u201d'} addresses the discharge care plan, and is
                 documented. An AI-powered wellness call that systematically covers medication
                 understanding, symptom status, and follow-up appointment awareness meets this
                 standard when the encounter is properly recorded. See the full{' '}
@@ -359,8 +359,8 @@ export default function CPT99495BillingGuidePage() {
                 The documentation advantage is significant. Manual calls depend on the staff member
                 taking accurate notes during or immediately after the encounter; call quality and
                 documentation completeness vary. An AI call produces a structured transcript and a
-                summary mapped to CMS-required fields \u2014 discharge date, contact date/time,
-                medication topics covered, symptom report, follow-up awareness confirmation \u2014
+                summary mapped to CMS-required fields {'\u2014'} discharge date, contact date/time,
+                medication topics covered, symptom report, follow-up awareness confirmation {'\u2014'}
                 automatically. For a direct operational comparison, see our analysis of{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up/vs-manual-discharge-outreach"
@@ -376,7 +376,7 @@ export default function CPT99495BillingGuidePage() {
                 call flags the response immediately and alerts the care team. This is faster than
                 waiting for a staff member to review call notes at the end of the shift. At high
                 discharge volume, automation guarantees that every discharge receives a contact
-                attempt within the 2-business-day window \u2014 eliminating the staffing bottleneck
+                attempt within the 2-business-day window {'\u2014'} eliminating the staffing bottleneck
                 that is the most common cause of missed TCM opportunities. Providers scaling TCM at
                 volume often struggle with documentation consistency; see our case study on{' '}
                 <Link
@@ -396,23 +396,23 @@ export default function CPT99495BillingGuidePage() {
                 TCM claims:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
-                <li>Billing 99495 for a SNF discharge \u2014 only community-setting discharges are eligible</li>
+                <li>Billing 99495 for a SNF discharge {'\u2014'} only community-setting discharges are eligible</li>
                 <li>Missing the 2-business-day window due to weekend/holiday confusion about business-day counting</li>
                 <li>Insufficient documentation of the contact content (noting only that a call occurred, not what was discussed)</li>
                 <li>Billing 99495 when the case is actually high complexity and should be coded as 99496</li>
                 <li>Duplicate TCM billing: submitting more than one TCM claim during the same 30-day period for the same discharge</li>
-                <li>Missing the medication reconciliation element or documenting it as \u201cpending\u201d at the time of claim submission</li>
+                <li>Missing the medication reconciliation element or documenting it as {'\u201c'}pending{'\u201d'} at the time of claim submission</li>
                 <li>Billing without a face-to-face visit occurring within 14 calendar days</li>
                 <li>Failing to document the specific staff member who performed the initial contact</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">When to use CPT 99496 instead</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CPT 99496 applies when the patient\u2019s post-discharge care requires high medical
+                CPT 99496 applies when the patient{'\u2019'}s post-discharge care requires high medical
                 decision-making complexity. The reimbursement rate is higher than 99495, but so is
                 the documentation burden: the face-to-face visit must occur within 7 calendar days
                 of discharge rather than 14, and the complexity assessment must clearly support the
-                \u201chigh\u201d threshold. Both codes still require the 2-business-day initial
+                {'\u201c'}high{'\u201d'} threshold. Both codes still require the 2-business-day initial
                 contact, as the{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
@@ -457,7 +457,7 @@ export default function CPT99495BillingGuidePage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>CPT 99495 reimburses moderate-complexity TCM at approximately $178 per patient per discharge.</li>
                   <li>Two hard requirements: 2-business-day contact and 14-day face-to-face visit.</li>
-                  <li>Discharge destination matters \u2014 SNF/LTAC/rehab discharges are not eligible.</li>
+                  <li>Discharge destination matters {'\u2014'} SNF/LTAC/rehab discharges are not eligible.</li>
                   <li>Documentation of contact content, timing, and medication reconciliation is what makes TCM billable.</li>
                 </ul>
               </div>

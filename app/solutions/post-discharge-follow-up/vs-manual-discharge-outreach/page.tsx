@@ -101,7 +101,7 @@ export default function TCMVsManualPage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     <strong>Consistency wins with automation.</strong> Manual outreach misses the
-                    2-business-day window on high-discharge days; automated calls don\u2019t.
+                    2-business-day window on high-discharge days; automated calls don{'\u2019'}t.
                   </li>
                   <li>
                     <strong>Face-to-face is still human.</strong> AI handles the initial contact; the
@@ -121,7 +121,7 @@ export default function TCMVsManualPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How the two approaches compare</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 The table below captures the operational tradeoffs. Not every dimension favors
-                automation \u2014 manual outreach still wins on nuanced clinical conversations and
+                automation {'\u2014'} manual outreach still wins on nuanced clinical conversations and
                 relationship continuity.
               </p>
 
@@ -137,13 +137,13 @@ export default function TCMVsManualPage() {
                   <tbody>
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">2-business-day contact rate</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Near 100% \u2014 scheduling is automatic from discharge timestamp</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Near 100% {'\u2014'} scheduling is automatic from discharge timestamp</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Varies with staffing; drops on high-discharge days and holiday weekends</td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Per-call cost</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Low, fixed \u2014 scales with discharge volume without headcount</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">~$3\u2013$8 labor per call; scales linearly with discharge volume</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Low, fixed {'\u2014'} scales with discharge volume without headcount</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">{'\u007e'}$3{'\u2013'}$8 labor per call; scales linearly with discharge volume</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Scalability</td>
@@ -179,9 +179,9 @@ export default function TCMVsManualPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">When manual outreach still makes sense</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
-                <li>The 7- or 14-day face-to-face visit required for TCM billing \u2014 a clinician must do this.</li>
+                <li>The 7- or 14-day face-to-face visit required for TCM billing {'\u2014'} a clinician must do this.</li>
                 <li>Patients with complex psychosocial needs where human conversation is clinically indicated.</li>
-                <li>Escalations triggered by the AI contact \u2014 human clinical judgment takes over.</li>
+                <li>Escalations triggered by the AI contact {'\u2014'} human clinical judgment takes over.</li>
                 <li>Small discharge volumes where existing staff can reliably hit the 2-business-day window.</li>
               </ul>
 
@@ -209,7 +209,7 @@ export default function TCMVsManualPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>The 2-business-day contact is where automation delivers the most value.</li>
-                  <li>Hybrid models dominate in practice; this isn\u2019t an either/or choice.</li>
+                  <li>Hybrid models dominate in practice; this isn{'\u2019'}t an either/or choice.</li>
                   <li>Documentation quality is the difference between a billable TCM and a missed one.</li>
                   <li>Face-to-face visits remain human work and always will.</li>
                 </ul>

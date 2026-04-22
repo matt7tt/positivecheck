@@ -109,10 +109,10 @@ export default function CPT99457BillingGuidePage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     CPT 99457 reimburses the <strong>first 20 minutes</strong> of <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link>
-                    with an RPM patient per calendar month (\u007e$52 Medicare national average).
+                    with an RPM patient per calendar month ({'\u007e'}$52 Medicare national average).
                   </li>
                   <li>
-                    The 20-minute threshold is a <strong>hard minimum</strong> \u2014 if clinical staff spend
+                    The 20-minute threshold is a <strong>hard minimum</strong> {'\u2014'} if clinical staff spend
                     19 minutes, 99457 cannot be billed that month.
                   </li>
                   <li>
@@ -120,7 +120,7 @@ export default function CPT99457BillingGuidePage() {
                     secure messaging, or video) discussing physiologic data, symptoms, or care plan.
                   </li>
                   <li>
-                    CPT 99458 adds each additional 20 minutes in the same calendar month (\u007e$41 each),
+                    CPT 99458 adds each additional 20 minutes in the same calendar month ({'\u007e'}$41 each),
                     and can be billed up to twice per patient per month.
                   </li>
                   <li>
@@ -139,7 +139,7 @@ export default function CPT99457BillingGuidePage() {
                 </Link>
                 . Specifically, it covers the first 20 cumulative minutes per calendar month that clinical
                 staff spend engaged in real-time, two-way communication with a patient or caregiver about
-                that patient\u2019s physiologic data, symptoms, or care plan. It is billed once per patient
+                that patient{'\u2019'}s physiologic data, symptoms, or care plan. It is billed once per patient
                 per calendar month when the 20-minute threshold is met. The{' '}
                 <a
                   href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
@@ -164,7 +164,7 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Unlike CPT 99454, which rewards device data transmission, CPT 99457 rewards direct patient
                 engagement. This means the code is only billable in months where clinical staff actually
-                connect with the patient or caregiver in a real-time exchange \u2014 it cannot be billed
+                connect with the patient or caregiver in a real-time exchange {'\u2014'} it cannot be billed
                 for a month in which data was transmitted but no interactive communication occurred.
               </p>
 
@@ -172,13 +172,13 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The threshold for CPT 99457 is at least 20 cumulative minutes of interactive communication
                 in a single calendar month. Cumulative means that multiple shorter interactions during the
-                month can be combined to reach the threshold \u2014 a 10-minute call on the 5th and a
+                month can be combined to reach the threshold {'\u2014'} a 10-minute call on the 5th and a
                 12-minute call on the 22nd add up to 22 minutes and satisfy the requirement. CMS does not
                 require the 20 minutes to occur in a single session.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The 20-minute threshold is a hard minimum: 19 minutes and 59 seconds is not billable.
-                This is the single most common CPT 99457 billing error \u2014 practices that fail to
+                This is the single most common CPT 99457 billing error {'\u2014'} practices that fail to
                 track cumulative minutes per patient often either under-bill (billing 99457 for patients
                 who have exceeded 20 minutes but stopping there) or over-bill (claiming 99457 for months
                 where cumulative time fell just short). A per-patient time log that accumulates minutes
@@ -194,7 +194,7 @@ export default function CPT99457BillingGuidePage() {
                 breakdown between the two categories is not apparent to reviewers.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What counts as \u201cinteractive communication\u201d</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What counts as {'\u201c'}interactive communication{'\u201d'}</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS defines interactive communication for CPT 99457 as real-time, two-way engagement
                 between clinical staff and the patient or caregiver. The content of the communication
@@ -225,7 +225,7 @@ export default function CPT99457BillingGuidePage() {
                 participate. A clinical staff member who talks at a patient for 20 minutes without
                 eliciting responses has not engaged in interactive communication in the CMS sense.
                 Documentation of these interactions should capture both the questions or prompts
-                presented and the patient\u2019s substantive responses to make the two-way nature
+                presented and the patient{'\u2019'}s substantive responses to make the two-way nature
                 of the exchange clear to auditors.
               </p>
 
@@ -234,7 +234,7 @@ export default function CPT99457BillingGuidePage() {
                 CPT 99457 can be performed and billed by physicians of any specialty, as well as
                 non-physician practitioners (NPPs) including nurse practitioners, physician assistants,
                 clinical nurse specialists, and certified nurse-midwives. CMS also permits clinical
-                staff \u2014 registered nurses, medical assistants, and other qualified personnel \u2014
+                staff {'\u2014'} registered nurses, medical assistants, and other qualified personnel {'\u2014'}
                 to perform the interactive communication under the general supervision of the billing
                 provider. This means the billing physician or NPP does not need to be on the line
                 for every patient interaction; they set the care protocols and review outcomes, and
@@ -243,8 +243,8 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 AI-powered interactive calls represent an emerging modality that satisfies the CPT 99457
                 requirement when structured correctly. The AI system must be designed to capture clinical
-                content \u2014 asking structured questions about symptoms, device readings, and medication
-                adherence \u2014 rather than simply delivering information. Patient responses must be
+                content {'\u2014'} asking structured questions about symptoms, device readings, and medication
+                adherence {'\u2014'} rather than simply delivering information. Patient responses must be
                 recorded and time-stamped to support cumulative minute tracking. Real-time escalation
                 pathways to human clinical staff are required when the patient reports concerning symptoms
                 or indicates a need for direct intervention. See how Positive Check structures AI calls
@@ -255,8 +255,8 @@ export default function CPT99457BillingGuidePage() {
                 .
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Regardless of who performs the communication \u2014 physician, NPP, clinical staff, or
-                AI system \u2014 documentation must clearly identify the performer or system identifier.
+                Regardless of who performs the communication {'\u2014'} physician, NPP, clinical staff, or
+                AI system {'\u2014'} documentation must clearly identify the performer or system identifier.
                 Anonymous or unattributed interaction notes are a common audit finding. The billing
                 provider retains overall responsibility for documentation quality and compliance.
               </p>
@@ -264,8 +264,8 @@ export default function CPT99457BillingGuidePage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Required documentation elements</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99457 documentation must establish that every component of the billing requirement
-                was met. CMS auditors look for specific data points; a missing element \u2014 most
-                commonly the cumulative time log or a clear record of who performed the interaction \u2014
+                was met. CMS auditors look for specific data points; a missing element {'\u2014'} most
+                commonly the cumulative time log or a clear record of who performed the interaction {'\u2014'}
                 can result in claim denial or recoupment. The following elements are required for each
                 billing month:
               </p>
@@ -281,8 +281,8 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mt-4 mb-4">
                 The consent documentation requirement catches practices off guard because it is a
                 prerequisite for all RPM billing, not just 99457. If a patient has been enrolled in
-                an RPM program without documented consent, every CPT code in that program \u2014
-                99453, 99454, 99457, and 99458 \u2014 is at risk on audit. Verbal consent is
+                an RPM program without documented consent, every CPT code in that program {'\u2014'}
+                99453, 99454, 99457, and 99458 {'\u2014'} is at risk on audit. Verbal consent is
                 acceptable, but the record must reflect that consent was obtained, the date it was
                 obtained, and the form it took. Written consent, while not mandated, significantly
                 simplifies audit defense.
@@ -294,7 +294,7 @@ export default function CPT99457BillingGuidePage() {
                 month at approximately $52 national average. CPT 99458 is the add-on code that covers
                 each <em>additional</em> 20-minute block in the same calendar month at approximately $41
                 each. CPT 99458 can be billed up to twice per patient per month, corresponding to minutes
-                21\u201340 (first 99458) and minutes 41\u201360 (second 99458). A program that consistently
+                21{'\u2013'}40 (first 99458) and minutes 41{'\u2013'}60 (second 99458). A program that consistently
                 reaches 60 cumulative interactive minutes per patient per month bills 99457 plus two units
                 of 99458, for total interactive communication revenue of approximately $134 per patient.
               </p>
@@ -308,14 +308,14 @@ export default function CPT99457BillingGuidePage() {
                 programs seeking to maximize RPM revenue.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CPT 99458 is never billed without 99457 in the same month \u2014 it is an add-on that
+                CPT 99458 is never billed without 99457 in the same month {'\u2014'} it is an add-on that
                 requires the base code to have already been earned. A common billing error is attempting
                 to bill 99457 twice for a patient with 40 cumulative minutes; the correct coding is
                 99457 once plus 99458 once. See the full{' '}
                 <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   RPM solution overview
                 </Link>{' '}
-                for how Positive Check\u2019s platform tracks cumulative minutes automatically and surfaces
+                for how Positive Check{'\u2019'}s platform tracks cumulative minutes automatically and surfaces
                 coding opportunities before the end of each billing period.
               </p>
 
@@ -323,9 +323,9 @@ export default function CPT99457BillingGuidePage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 AI-powered wellness calls satisfy the CPT 99457 interactive communication requirement when
                 they are built around a structured clinical protocol that captures patient responses in real
-                time. The call must ask substantive questions \u2014 current symptoms, device readings
+                time. The call must ask substantive questions {'\u2014'} current symptoms, device readings
                 (blood pressure, weight, glucose, oxygen saturation), medication adherence, and changes
-                in functional status \u2014 and the patient\u2019s responses must be recorded and
+                in functional status {'\u2014'} and the patient{'\u2019'}s responses must be recorded and
                 time-stamped. Each completed call generates a structured summary mapped to the documentation
                 fields required for 99457 billing: interaction date, duration, content summary, and
                 performer identifier.
@@ -335,8 +335,8 @@ export default function CPT99457BillingGuidePage() {
                 staff taking accurate contemporaneous notes, and documentation quality varies. An AI call
                 produces a consistent structured transcript for every patient, every month, with cumulative
                 minute totals calculated automatically. For a direct comparison of AI-driven versus
-                device-only RPM programs \u2014 including the revenue difference from consistent 99457
-                billing \u2014 see the analysis of{' '}
+                device-only RPM programs {'\u2014'} including the revenue difference from consistent 99457
+                billing {'\u2014'} see the analysis of{' '}
                 <Link
                   href="/solutions/remote-patient-monitoring/vs-device-only-monitoring"
                   className="text-purple-700 underline hover:text-purple-900"
@@ -347,7 +347,7 @@ export default function CPT99457BillingGuidePage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Real-time escalation is the other operational requirement. When a patient reports a
-                concerning symptom \u2014 chest pain, sudden weight gain, abnormal glucose \u2014 the
+                concerning symptom {'\u2014'} chest pain, sudden weight gain, abnormal glucose {'\u2014'} the
                 AI system must surface the alert to clinical staff immediately rather than queuing it
                 for end-of-shift review. This escalation pathway is what distinguishes a compliant AI
                 RPM call from a simple automated questionnaire. Providers who have scaled interactive
@@ -366,8 +366,8 @@ export default function CPT99457BillingGuidePage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Common CPT 99457 billing errors</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 RPM claims are increasingly targeted in Medicare audits as program enrollment grows.
-                CPT 99457 errors are often systemic \u2014 affecting dozens or hundreds of patients
-                simultaneously \u2014 because they stem from practice-wide documentation or workflow
+                CPT 99457 errors are often systemic {'\u2014'} affecting dozens or hundreds of patients
+                simultaneously {'\u2014'} because they stem from practice-wide documentation or workflow
                 problems rather than individual case mistakes. The following errors account for the
                 majority of denied or recouped 99457 claims:
               </p>
@@ -401,7 +401,7 @@ export default function CPT99457BillingGuidePage() {
                 The most important constraint in concurrent billing is that the same minute cannot be
                 counted toward two different programs. A 15-minute call that covers RPM data review and
                 CCM care coordination cannot count as 15 minutes toward 99457 and 15 minutes toward CCM
-                \u2014 the time must be allocated to one program per the primary purpose of the interaction.
+                {'\u2014'} the time must be allocated to one program per the primary purpose of the interaction.
                 Practices that conflate RPM interactive time with CCM care coordination time in a single
                 undifferentiated note create audit risk for both programs.
               </p>
@@ -438,8 +438,8 @@ export default function CPT99457BillingGuidePage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>CPT 99457 reimburses the first 20 minutes of interactive communication per month at approximately $52.</li>
-                  <li>The 20-minute threshold is cumulative \u2014 multiple shorter interactions can combine.</li>
-                  <li>Interactive communication must be real-time and two-way; data review doesn\u2019t count.</li>
+                  <li>The 20-minute threshold is cumulative {'\u2014'} multiple shorter interactions can combine.</li>
+                  <li>Interactive communication must be real-time and two-way; data review doesn{'\u2019'}t count.</li>
                   <li>CPT 99458 adds each additional 20 minutes in the same month (up to twice), making consistent monthly engagement the single largest RPM revenue lever.</li>
                 </ul>
               </div>

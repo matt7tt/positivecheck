@@ -108,11 +108,11 @@ export default function RPMPatientSelectionPage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     CMS covers RPM for patients with <strong>one or more chronic conditions</strong> whose physiologic
-                    data informs ongoing care \u2014 no minimum number of chronic conditions required (unlike CCM).
+                    data informs ongoing care {'\u2014'} no minimum number of chronic conditions required (unlike CCM).
                   </li>
                   <li>
                     <strong>Highest-value conditions</strong> for RPM are hypertension, diabetes, heart failure, COPD,
-                    and post-surgical recovery \u2014 where actionable daily data changes decisions.
+                    and post-surgical recovery {'\u2014'} where actionable daily data changes decisions.
                   </li>
                   <li>
                     <strong>Adherence predictors</strong>: caregiver support, tech comfort, device-friendly environment,
@@ -124,7 +124,7 @@ export default function RPMPatientSelectionPage() {
                     clinical decisions.
                   </li>
                   <li>
-                    Enrollment is a <strong>clinical decision</strong> backed by documented rationale \u2014 the
+                    Enrollment is a <strong>clinical decision</strong> backed by documented rationale {'\u2014'} the
                     provider must establish that RPM data improves care for this specific patient.
                   </li>
                 </ul>
@@ -136,7 +136,7 @@ export default function RPMPatientSelectionPage() {
                 <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
                 </Link>{' '}
-                for Medicare patients with one or more chronic conditions \u2014 a meaningfully lower bar than the
+                for Medicare patients with one or more chronic conditions {'\u2014'} a meaningfully lower bar than the
                 two-condition minimum required for Chronic Care Management. This distinction matters: a patient with
                 isolated hypertension, a single-diagnosis diabetic, or a post-surgical patient with a known condition
                 can all be eligible for RPM under the{' '}
@@ -148,8 +148,8 @@ export default function RPMPatientSelectionPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . The provider must document that the patient\u2019s physiologic data \u2014 blood pressure readings,
-                glucose values, weight trends, oxygen saturation levels \u2014 will actively inform care management
+                . The provider must document that the patient{'\u2019'}s physiologic data {'\u2014'} blood pressure readings,
+                glucose values, weight trends, oxygen saturation levels {'\u2014'} will actively inform care management
                 decisions. Eligibility is not a checkbox; it is a clinical rationale recorded in the chart.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -157,12 +157,12 @@ export default function RPMPatientSelectionPage() {
                 consent must be documented in the medical record with the date it was obtained. The documentation
                 should reflect that the patient was informed about what data would be collected, who would have access
                 to it, how it would be used in their care, and what communication cadence to expect. Practices that
-                enroll patients without documented consent \u2014 or that backfill consent documentation after the
-                fact \u2014 are among the most common findings in RPM billing audits.
+                enroll patients without documented consent {'\u2014'} or that backfill consent documentation after the
+                fact {'\u2014'} are among the most common findings in RPM billing audits.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The patient must also have a connected medical device capable of automatic data transmission.
-                Manual self-reporting by the patient \u2014 texting blood pressure numbers or emailing glucose
+                Manual self-reporting by the patient {'\u2014'} texting blood pressure numbers or emailing glucose
                 readings — does not satisfy the <Link href="/resources/glossary/cpt-99454" className="text-purple-700 underline hover:text-purple-900">CPT 99454</Link> device requirement. The device must be capable of
                 transmitting data electronically to the clinical system. CPT 99454 further requires at least 16 days
                 of device transmission in any 30-day period, so device setup and patient education on consistent use
@@ -177,37 +177,37 @@ export default function RPMPatientSelectionPage() {
               </p>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Hypertension</strong> \u2014 daily blood pressure readings drive medication titration
+                  <strong>Hypertension</strong> {'\u2014'} daily blood pressure readings drive medication titration
                   decisions between office visits; hypertension is one of the most-billed RPM conditions and among
                   the easiest to justify clinically
                 </li>
                 <li>
-                  <strong>Diabetes</strong> \u2014 glucose trends support insulin and oral-agent adjustments; continuous
+                  <strong>Diabetes</strong> {'\u2014'} glucose trends support insulin and oral-agent adjustments; continuous
                   glucose monitors offer even higher data density for insulin-dependent patients
                 </li>
                 <li>
-                  <strong>Heart failure</strong> \u2014 daily weight and blood pressure changes predict decompensation
+                  <strong>Heart failure</strong> {'\u2014'} daily weight and blood pressure changes predict decompensation
                   before the patient becomes symptomatic; RPM-driven early intervention reduces 30-day readmission
                   rates meaningfully
                 </li>
                 <li>
-                  <strong>COPD</strong> \u2014 pulse oximetry trends catch exacerbations early; oxygen saturation
+                  <strong>COPD</strong> {'\u2014'} pulse oximetry trends catch exacerbations early; oxygen saturation
                   thresholds give clinical staff a clear escalation trigger before the patient deteriorates to an
                   emergency level
                 </li>
                 <li>
-                  <strong>Post-surgical recovery</strong> \u2014 short-term monitoring during the high-risk recovery
+                  <strong>Post-surgical recovery</strong> {'\u2014'} short-term monitoring during the high-risk recovery
                   window; combines well with Transitional Care Management and bridges the gap between discharge and
                   stable outpatient follow-up
                 </li>
                 <li>
-                  <strong>Chronic kidney disease</strong> \u2014 blood pressure and weight monitoring support
+                  <strong>Chronic kidney disease</strong> {'\u2014'} blood pressure and weight monitoring support
                   medication adjustments and can inform dialysis timing discussions as the disease progresses
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The strongest RPM programs start with one or two conditions where the care team already has clear
-                clinical protocols \u2014 typically hypertension or heart failure \u2014 and expand to additional
+                clinical protocols {'\u2014'} typically hypertension or heart failure {'\u2014'} and expand to additional
                 conditions once documentation workflows, device logistics, and patient engagement cadences are
                 established. Launching across six conditions simultaneously before the program has proven its
                 operational model usually results in inconsistent patient engagement, documentation gaps, and
@@ -227,16 +227,16 @@ export default function RPMPatientSelectionPage() {
                   reminder reinforcement
                 </li>
                 <li>
-                  Some baseline comfort with technology \u2014 even basic smartphone use or experience with
+                  Some baseline comfort with technology {'\u2014'} even basic smartphone use or experience with
                   automated phone calls predicts better engagement with RPM touchpoints
                 </li>
                 <li>
-                  Patient-expressed interest in monitoring their own condition \u2014 patients who ask questions
+                  Patient-expressed interest in monitoring their own condition {'\u2014'} patients who ask questions
                   about their readings, track their own data, or mention checking blood pressure at home are
                   strong candidates
                 </li>
                 <li>
-                  Active engagement with the condition being monitored \u2014 diabetics who already check their
+                  Active engagement with the condition being monitored {'\u2014'} diabetics who already check their
                   glucose, hypertensives who own a home cuff, heart failure patients who weigh themselves daily
                   are primed for the behavior pattern RPM requires
                 </li>
@@ -246,11 +246,11 @@ export default function RPMPatientSelectionPage() {
                 adherence. Elderly patients with strong caregiver support and a stable home environment often
                 outperform younger patients whose living situations are chaotic, whose engagement with their
                 condition is low, or who are managing competing priorities that displace daily device use. Programs
-                that screen patients for situational readiness \u2014 rather than using age or diagnosis as the
-                only filter \u2014 consistently achieve higher 90-day transmission rates and lower early dropout.
+                that screen patients for situational readiness {'\u2014'} rather than using age or diagnosis as the
+                only filter {'\u2014'} consistently achieve higher 90-day transmission rates and lower early dropout.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Positive Check\u2019s daily wellness calls reinforce adherence by making the device feel connected
+                Positive Check{'\u2019'}s daily wellness calls reinforce adherence by making the device feel connected
                 to a real interaction rather than an isolated data collection exercise. Patients who know a call
                 is coming that will reference their readings are more likely to take those readings consistently.
                 This behavioral link between the interactive communication requirement and device transmission
@@ -269,32 +269,32 @@ export default function RPMPatientSelectionPage() {
               </p>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Severe cognitive impairment without caregiver support</strong> \u2014 device use and data
+                  <strong>Severe cognitive impairment without caregiver support</strong> {'\u2014'} device use and data
                   interpretation require patient engagement; a patient who cannot reliably operate the device or
                   respond to interactive communication will not generate useful data, and enrollment creates
                   billing and compliance exposure without clinical benefit
                 </li>
                 <li>
-                  <strong>Patients who decline consent or have voiced reluctance</strong> \u2014 enrolling a
+                  <strong>Patients who decline consent or have voiced reluctance</strong> {'\u2014'} enrolling a
                   reluctant patient creates adversarial engagement; adherence will be poor and the relationship
                   cost exceeds any revenue benefit
                 </li>
                 <li>
-                  <strong>Patients whose physiologic data would not change care decisions</strong> \u2014 document
+                  <strong>Patients whose physiologic data would not change care decisions</strong> {'\u2014'} document
                   explicitly why RPM is not clinically indicated; the enrollment rationale requirement cuts both ways
                 </li>
                 <li>
-                  <strong>Terminal patients where monitoring adds burden without benefit</strong> \u2014 comfort-focused
+                  <strong>Terminal patients where monitoring adds burden without benefit</strong> {'\u2014'} comfort-focused
                   care goals are better served by palliative or hospice frameworks than daily physiologic tracking
                 </li>
                 <li>
-                  <strong>Patients with recent refusal-of-care histories</strong> \u2014 enrollment in a monitoring
+                  <strong>Patients with recent refusal-of-care histories</strong> {'\u2014'} enrollment in a monitoring
                   program may damage trust with patients who have previously declined clinical interventions or
                   expressed autonomy concerns about surveillance
                 </li>
                 <li>
                   <strong>Patients already in more intensive monitoring programs</strong> where RPM would add no
-                  incremental clinical value \u2014 duplicate enrollment in overlapping programs creates billing
+                  incremental clinical value {'\u2014'} duplicate enrollment in overlapping programs creates billing
                   complexity without improving care
                 </li>
               </ul>
@@ -313,29 +313,29 @@ export default function RPMPatientSelectionPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Blood pressure cuff</strong> \u2014 hypertension, congestive heart failure, chronic kidney
+                  <strong>Blood pressure cuff</strong> {'\u2014'} hypertension, congestive heart failure, chronic kidney
                   disease; the most broadly applicable RPM device
                 </li>
                 <li>
-                  <strong>Glucose monitor</strong> \u2014 diabetes; consider continuous glucose monitoring (CGM) for
+                  <strong>Glucose monitor</strong> {'\u2014'} diabetes; consider continuous glucose monitoring (CGM) for
                   Type 1 and insulin-dependent Type 2 patients where glucose variability is a primary concern
                 </li>
                 <li>
-                  <strong>Pulse oximeter</strong> \u2014 COPD, post-COVID respiratory conditions, pulmonary disease;
+                  <strong>Pulse oximeter</strong> {'\u2014'} COPD, post-COVID respiratory conditions, pulmonary disease;
                   oxygen saturation trending identifies exacerbations before the patient becomes acutely symptomatic
                 </li>
                 <li>
-                  <strong>Smart scale</strong> \u2014 heart failure, chronic kidney disease; daily weight is the
+                  <strong>Smart scale</strong> {'\u2014'} heart failure, chronic kidney disease; daily weight is the
                   most sensitive early indicator of fluid retention and decompensation
                 </li>
                 <li>
-                  <strong>ECG monitor</strong> \u2014 arrhythmias, post-cardiac event patients; rhythm data
+                  <strong>ECG monitor</strong> {'\u2014'} arrhythmias, post-cardiac event patients; rhythm data
                   supports medication management and reduces unnecessary emergency department visits
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Two non-negotiable device requirements apply regardless of condition. First, the device must be
-                FDA-cleared for the physiologic parameter it measures \u2014 consumer wellness devices that have
+                FDA-cleared for the physiologic parameter it measures {'\u2014'} consumer wellness devices that have
                 not received FDA clearance do not satisfy the CPT 99454 device standard. Second, the device must
                 be capable of automatic data transmission to the clinical system; manual entry by the patient
                 (logging readings into a portal or texting numbers) does not count. CPT 99454 requires the device
@@ -377,10 +377,10 @@ export default function RPMPatientSelectionPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Third, provide device training. CPT 99453 reimburses this one-time setup and education activity at
-                approximately \u007e$19. The training should cover device operation, connectivity confirmation,
+                approximately {'\u007e'}$19. The training should cover device operation, connectivity confirmation,
                 what to do if the device fails to transmit, and who to call for technical issues. Fourth, establish
                 the communication cadence with the patient. Positive Check schedules daily wellness calls that
-                create consistent touchpoints and reinforce device use \u2014 patients who know a call is coming
+                create consistent touchpoints and reinforce device use {'\u2014'} patients who know a call is coming
                 are more likely to have taken their readings beforehand. Fifth, set escalation expectations
                 explicitly: who the patient contacts for device issues (technical support), who they contact for
                 clinical concerns (practice nursing line or on-call), and what triggers an immediate escalation
@@ -389,36 +389,36 @@ export default function RPMPatientSelectionPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Measuring outcomes by patient cohort</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                RPM programs that measure outcomes by cohort \u2014 rather than across the entire enrolled panel
-                undifferentiated \u2014 can identify which patient archetypes produce the strongest clinical and
+                RPM programs that measure outcomes by cohort {'\u2014'} rather than across the entire enrolled panel
+                undifferentiated {'\u2014'} can identify which patient archetypes produce the strongest clinical and
                 financial return and which require a different intervention model. The most useful cohort-level
                 metrics are:
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Enrollment-to-active ratio</strong> \u2014 percentage of enrolled patients transmitting
+                  <strong>Enrollment-to-active ratio</strong> {'\u2014'} percentage of enrolled patients transmitting
                   device data at months 3, 6, and 12; dropout at month 3 is the most common inflection point
                 </li>
                 <li>
-                  <strong>Per-patient revenue captured vs. potential</strong> \u2014 patients who meet eligibility
+                  <strong>Per-patient revenue captured vs. potential</strong> {'\u2014'} patients who meet eligibility
                   criteria but consistently fall below the 16-day transmission threshold represent unbilled potential;
                   this metric identifies where operational intervention (device replacement, caregiver outreach,
                   education reinforcement) would recover revenue
                 </li>
                 <li>
-                  <strong>Clinical outcomes by cohort</strong> \u2014 blood pressure control rates in hypertension
+                  <strong>Clinical outcomes by cohort</strong> {'\u2014'} blood pressure control rates in hypertension
                   cohort, A1C trends in diabetes cohort, 30-day readmission rates in heart failure cohort; these
                   outcomes are the clinical justification for the program and the most compelling data for payer
                   negotiations and quality reporting
                 </li>
                 <li>
-                  <strong>Caregiver-supported vs. non-supported comparisons</strong> \u2014 programs consistently
+                  <strong>Caregiver-supported vs. non-supported comparisons</strong> {'\u2014'} programs consistently
                   find that caregiver-supported patients outperform non-supported patients on transmission rates,
                   interactive communication completion, and clinical outcomes; this comparison quantifies the
                   value of caregiver engagement in the enrollment process
                 </li>
                 <li>
-                  <strong>Patient archetypes with strongest RPM ROI</strong> \u2014 combining demographic, situational,
+                  <strong>Patient archetypes with strongest RPM ROI</strong> {'\u2014'} combining demographic, situational,
                   and condition data to identify the patient profile that generates the highest combination of
                   adherence, clinical improvement, and revenue per enrolled patient
                 </li>
@@ -438,7 +438,7 @@ export default function RPMPatientSelectionPage() {
                 is separating the activities that can be automated from those that require clinical judgment. Device
                 setup logistics, daily engagement calls, data transmission monitoring, and documentation generation
                 can all be systematized and scaled without clinical involvement at every step. The decision about
-                which patients to enroll \u2014 and which not to enroll \u2014 cannot be delegated to automation.
+                which patients to enroll {'\u2014'} and which not to enroll {'\u2014'} cannot be delegated to automation.
                 That decision requires a provider who knows the patient, can assess situational readiness, and can
                 document a defensible clinical rationale.
               </p>
@@ -446,8 +446,8 @@ export default function RPMPatientSelectionPage() {
                 Positive Check supports bulk enrollment workflows for practices with large eligible panels, but the
                 platform is designed around a per-patient review at onboarding. Automation handles everything that
                 happens after enrollment: daily wellness calls, transmission monitoring, documentation, escalation
-                routing, and billing support. The clinical gatekeeping role \u2014 deciding who enters the program
-                and why \u2014 remains with the provider. This division of labor is what allows programs to scale
+                routing, and billing support. The clinical gatekeeping role {'\u2014'} deciding who enters the program
+                and why {'\u2014'} remains with the provider. This division of labor is what allows programs to scale
                 to hundreds of patients without the enrollment quality degradation that occurs when the patient
                 selection step is treated as a throughput problem rather than a clinical one.
               </p>
@@ -481,7 +481,7 @@ export default function RPMPatientSelectionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    CMS requires only one chronic condition for RPM eligibility (unlike CCM\u2019s two-condition
+                    CMS requires only one chronic condition for RPM eligibility (unlike CCM{'\u2019'}s two-condition
                     minimum).
                   </li>
                   <li>
@@ -493,8 +493,8 @@ export default function RPMPatientSelectionPage() {
                     than demographics.
                   </li>
                   <li>
-                    RPM enrollment is a clinical decision \u2014 document rationale; don\u2019t enroll patients where
-                    monitoring won\u2019t change care.
+                    RPM enrollment is a clinical decision {'\u2014'} document rationale; don{'\u2019'}t enroll patients where
+                    monitoring won{'\u2019'}t change care.
                   </li>
                 </ul>
               </div>

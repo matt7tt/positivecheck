@@ -97,7 +97,7 @@ export default function PostDischargeContactTimingPage() {
                 Post-Discharge Contact Timing: The 2-Business-Day Rule Explained
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
-                What CMS actually requires for the initial post-discharge contact \u2014 business day
+                What CMS actually requires for the initial post-discharge contact {'\u2014'} business day
                 counting, weekend and holiday handling, what counts as valid contact, and how automation
                 enforces the window.
               </p>
@@ -114,7 +114,7 @@ export default function PostDischargeContactTimingPage() {
                     <strong>two business days</strong> of discharge.
                   </li>
                   <li>
-                    Business days <strong>exclude weekends and federal holidays</strong> \u2014 a Friday
+                    Business days <strong>exclude weekends and federal holidays</strong> {'\u2014'} a Friday
                     discharge means contact must happen by end of business Tuesday.
                   </li>
                   <li>
@@ -122,7 +122,7 @@ export default function PostDischargeContactTimingPage() {
                     face-to-face.
                   </li>
                   <li>
-                    Missed contacts cannot be billed \u2014 every miss is a lost ~$178 TCM encounter.
+                    Missed contacts cannot be billed {'\u2014'} every miss is a lost ~$178 TCM encounter.
                   </li>
                   <li>
                     Automated outreach enforces the window as a scheduling constraint and documents the
@@ -136,7 +136,7 @@ export default function PostDischargeContactTimingPage() {
                 The 2-business-day contact requirement is one of two hard gates that determine whether a{' '}
                 <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">TCM</Link> claim is billable. Both CPT 99495 (moderate medical decision-making complexity) and
                 CPT 99496 (high complexity) require a direct patient contact within two business days of
-                discharge \u2014 there is no exception for staffing shortfalls, patient unavailability on
+                discharge {'\u2014'} there is no exception for staffing shortfalls, patient unavailability on
                 the first attempt, or administrative delays. The{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
@@ -146,18 +146,18 @@ export default function PostDischargeContactTimingPage() {
                 >
                   CMS MLN TCM booklet specifies that the contact must address the discharge care plan
                 </a>
-                , which means it must cover at minimum: the patient\u2019s understanding of their
+                , which means it must cover at minimum: the patient{'\u2019'}s understanding of their
                 discharge medications, awareness of scheduled follow-up appointments, and any symptom
                 changes since leaving the hospital.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The contact does not have to be performed by the billing physician or non-physician
                 practitioner (NPP). CMS permits clinical staff to perform the initial contact under the
-                general supervision of the billing provider \u2014 meaning an RN, LPN, or medical
+                general supervision of the billing provider {'\u2014'} meaning an RN, LPN, or medical
                 assistant can make the call as long as the billing provider has reviewed the encounter as
                 part of ongoing care coordination. This flexibility is what makes scale possible: a
                 practice or hospital system with dozens of daily discharges can staff the contact function
-                separately from the billing provider\u2019s schedule. For a full overview of{' '}
+                separately from the billing provider{'\u2019'}s schedule. For a full overview of{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up"
                   className="text-purple-700 underline hover:text-purple-900"
@@ -171,14 +171,14 @@ export default function PostDischargeContactTimingPage() {
                 a late contact. The window is a hard billing condition: if the contact does not occur
                 within two business days of discharge, the TCM codes cannot be billed for that discharge
                 episode, regardless of how complete the subsequent care coordination and face-to-face
-                visit documentation is. This makes deadline accuracy \u2014 knowing precisely when the
-                window opens and closes \u2014 the most operationally critical element of a TCM program.
+                visit documentation is. This makes deadline accuracy {'\u2014'} knowing precisely when the
+                window opens and closes {'\u2014'} the most operationally critical element of a TCM program.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What counts as a &ldquo;business day&rdquo;</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 A business day, for TCM purposes, is Monday through Friday, excluding federal holidays.
-                This is the definition that governs the 2-business-day contact window \u2014 it is
+                This is the definition that governs the 2-business-day contact window {'\u2014'} it is
                 distinct from the 14-day face-to-face visit requirement, which runs on calendar days with
                 no weekend or holiday exclusions. Treating the face-to-face window as a business-day
                 window (or vice versa) is a common source of calculation errors that leads to either missed
@@ -194,8 +194,8 @@ export default function PostDischargeContactTimingPage() {
                 >
                   Office of Personnel Management (OPM) federal holiday schedule
                 </a>
-                . The eleven currently designated federal holidays are: New Year\u2019s Day (January 1),
-                Martin Luther King Jr. Day (third Monday in January), Presidents\u2019 Day (third Monday
+                . The eleven currently designated federal holidays are: New Year{'\u2019'}s Day (January 1),
+                Martin Luther King Jr. Day (third Monday in January), Presidents{'\u2019'} Day (third Monday
                 in February), Memorial Day (last Monday in May), Juneteenth National Independence Day
                 (June 19), Independence Day (July 4), Labor Day (first Monday in September), Columbus Day
                 (second Monday in October), Veterans Day (November 11), Thanksgiving Day (fourth Thursday
@@ -209,7 +209,7 @@ export default function PostDischargeContactTimingPage() {
                 patient leaves the facility. A patient discharged on a Monday means the window opens
                 Tuesday (business day 1) and closes at end of business Wednesday (business day 2). Any
                 contact that occurs on the discharge day itself does not satisfy the requirement because
-                the TCM framework is designed to capture the patient\u2019s post-discharge experience,
+                the TCM framework is designed to capture the patient{'\u2019'}s post-discharge experience,
                 not a pre-discharge check-in.
               </p>
 
@@ -221,55 +221,55 @@ export default function PostDischargeContactTimingPage() {
               </p>
               <ul className="list-none pl-0 space-y-3 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Monday morning discharge</strong> \u2014 <em>contact by end of business Wednesday.</em>{' '}
+                  <strong>Monday morning discharge</strong> {'\u2014'} <em>contact by end of business Wednesday.</em>{' '}
                   Monday is the discharge day (day 0). Tuesday is business day 1. Wednesday is business day 2.
                 </li>
                 <li>
-                  <strong>Friday afternoon discharge</strong> \u2014{' '}
+                  <strong>Friday afternoon discharge</strong> {'\u2014'}{' '}
                   <em>contact by end of business Tuesday.</em>{' '}
                   Friday is day 0. Saturday and Sunday are excluded. Monday is business day 1. Tuesday is
                   business day 2.
                 </li>
                 <li>
-                  <strong>Wednesday before Thanksgiving discharge</strong> \u2014 contact by end of business Monday (Thanksgiving and the weekend don\u2019t count).{' '}
+                  <strong>Wednesday before Thanksgiving discharge</strong> {'\u2014'} contact by end of business Monday (Thanksgiving and the weekend don{'\u2019'}t count).{' '}
                   Wednesday is day 0. Thursday (Thanksgiving) is excluded. Friday is business day 1. Saturday and Sunday are excluded. Monday is business day 2.
                 </li>
                 <li>
-                  <strong>Day before Christmas (weekday) discharge</strong> \u2014 Christmas and New
-                  Year\u2019s Day are both federal holidays. If Christmas falls on a Thursday and New
-                  Year\u2019s Day falls on the following Thursday,{' '}
-                  <em>the deadline is end of business Tuesday after New Year\u2019s.</em>{' '}
+                  <strong>Day before Christmas (weekday) discharge</strong> {'\u2014'} Christmas and New
+                  Year{'\u2019'}s Day are both federal holidays. If Christmas falls on a Thursday and New
+                  Year{'\u2019'}s Day falls on the following Thursday,{' '}
+                  <em>the deadline is end of business Tuesday after New Year{'\u2019'}s.</em>{' '}
                   Christmas Eve (Wednesday) is day 0. Christmas Day (Thursday) is excluded. Friday is
                   business day 1. The following Monday is business day 2, unless that Monday is a
-                  New Year\u2019s observed holiday, in which case Tuesday is business day 2.
+                  New Year{'\u2019'}s observed holiday, in which case Tuesday is business day 2.
                 </li>
                 <li>
-                  <strong>Saturday discharge</strong> \u2014{' '}
+                  <strong>Saturday discharge</strong> {'\u2014'}{' '}
                   <em>contact by end of business Tuesday.</em>{' '}
                   Saturday is not a business day and does not count as day 0. The window starts Monday
                   (business day 1). Tuesday is business day 2.
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The practical implication is that holiday-adjacent discharge patterns \u2014 discharges
+                The practical implication is that holiday-adjacent discharge patterns {'\u2014'} discharges
                 the Wednesday before Thanksgiving, or discharges in the days surrounding Christmas and
-                New Year\u2019s \u2014 require explicit deadline calculation rather than a simple
-                \u201cadd two\u201d rule. Manual workflows that rely on staff remembering holiday
+                New Year{'\u2019'}s {'\u2014'} require explicit deadline calculation rather than a simple
+                {'\u201c'}add two{'\u201d'} rule. Manual workflows that rely on staff remembering holiday
                 exclusions are unreliable during high-discharge-volume holiday periods.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What counts as a valid &ldquo;contact&rdquo;</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS defines the required contact as \u201cdirect contact\u201d that addresses the
+                CMS defines the required contact as {'\u201c'}direct contact{'\u201d'} that addresses the
                 discharge care plan. Three contact modalities satisfy the requirement, each with its own
                 operational considerations:
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Telephonic contact</strong> is the most common form. A live phone call \u2014
+                <strong>Telephonic contact</strong> is the most common form. A live phone call {'\u2014'}
                 whether answered by the patient directly or by an authorized caregiver speaking on the
-                patient\u2019s behalf \u2014 satisfies the requirement when the content of the call
+                patient{'\u2019'}s behalf {'\u2014'} satisfies the requirement when the content of the call
                 addresses medications, follow-up appointments, and symptoms. The key word is
-                \u201clive\u201d: the{' '}
+                {'\u201c'}live{'\u201d'}: the{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
                   target="_blank"
@@ -291,8 +291,8 @@ export default function PostDischargeContactTimingPage() {
                 messages and trigger a follow-up contact attempt.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Face-to-face contact</strong> \u2014 an in-office visit, home visit, or
-                telehealth video visit \u2014 satisfies both the initial contact requirement and,
+                <strong>Face-to-face contact</strong> {'\u2014'} an in-office visit, home visit, or
+                telehealth video visit {'\u2014'} satisfies both the initial contact requirement and,
                 if performed by the billing provider within 14 days, the face-to-face visit requirement
                 simultaneously. However, none of the following alone constitutes valid contact: a
                 voicemail with no engagement, a text message or email sent but not responded to, or
@@ -302,12 +302,12 @@ export default function PostDischargeContactTimingPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who can perform the contact</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The billing provider\u2019s personal involvement is not required for the initial contact.
+                The billing provider{'\u2019'}s personal involvement is not required for the initial contact.
                 CMS explicitly allows the 2-business-day contact to be performed by clinical staff under
                 the general supervision of the billing physician or NPP. This category includes registered
                 nurses, licensed practical nurses, and medical assistants operating within their scope
                 of practice. The billing provider does not need to be present or immediately available
-                during the call \u2014 general supervision means the provider has authorized the contact
+                during the call {'\u2014'} general supervision means the provider has authorized the contact
                 and is available to review the encounter as part of ongoing care coordination.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -316,8 +316,8 @@ export default function PostDischargeContactTimingPage() {
                 to clinical staff. The determining factor is not whether the contact is human or automated,
                 but whether the contact is direct, addresses the discharge care plan, and is documented.
                 An AI call that systematically covers medication understanding, follow-up appointment
-                awareness, and symptom status \u2014 and routes concerning responses immediately to the
-                care team \u2014 meets the CMS standard. For a complete breakdown of billing provider
+                awareness, and symptom status {'\u2014'} and routes concerning responses immediately to the
+                care team {'\u2014'} meets the CMS standard. For a complete breakdown of billing provider
                 eligibility and supervision requirements, see the{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up/cpt-99495-billing-guide"
@@ -331,8 +331,8 @@ export default function PostDischargeContactTimingPage() {
                 What is not permitted is delegating the contact to a non-clinical administrative staff
                 member without clinical oversight. A scheduling coordinator confirming a follow-up
                 appointment does not satisfy the TCM contact requirement, even if the call occurs within
-                the 2-business-day window. The contact must have clinical content \u2014 addressing the
-                care plan, not just logistics \u2014 and must be performed by someone with the clinical
+                the 2-business-day window. The contact must have clinical content {'\u2014'} addressing the
+                care plan, not just logistics {'\u2014'} and must be performed by someone with the clinical
                 competency to recognize and escalate concerning patient responses.
               </p>
 
@@ -353,7 +353,7 @@ export default function PostDischargeContactTimingPage() {
                 <li>Identifier of the staff member or system that performed the contact</li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
-                A documentation entry that reads only \u201cpatient called, doing well\u201d does not
+                A documentation entry that reads only {'\u201c'}patient called, doing well{'\u201d'} does not
                 satisfy the CMS standard. The record must reflect that the specific care plan elements
                 were addressed. Practices that use structured call scripts or AI-generated contact
                 summaries have a significant documentation compliance advantage: each content domain is
@@ -361,10 +361,10 @@ export default function PostDischargeContactTimingPage() {
                 auditors look for.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The contact record should be placed in the patient\u2019s chart in a location accessible
+                The contact record should be placed in the patient{'\u2019'}s chart in a location accessible
                 to the billing provider, who will need to review it as part of the overall TCM episode
-                documentation before the claim is submitted. The billing provider\u2019s attestation of
-                review \u2014 even if the contact itself was performed by clinical staff \u2014 closes
+                documentation before the claim is submitted. The billing provider{'\u2019'}s attestation of
+                review {'\u2014'} even if the contact itself was performed by clinical staff {'\u2014'} closes
                 the supervision loop that makes the delegation permissible under CMS rules.
               </p>
 
@@ -378,9 +378,9 @@ export default function PostDischargeContactTimingPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 A common practice is to make two contact attempts on different modalities within the
-                2-business-day window \u2014 for example, a phone call on the morning of business day 1
+                2-business-day window {'\u2014'} for example, a phone call on the morning of business day 1
                 and a portal message later that day if the call is unanswered. Documenting each attempt
-                (date, time, method, and outcome \u2014 no answer, voicemail left, portal message sent)
+                (date, time, method, and outcome {'\u2014'} no answer, voicemail left, portal message sent)
                 establishes the good-faith record. If the patient remains unreachable after documented
                 attempts within the window, TCM may not be billable for that discharge episode.
               </p>
@@ -415,7 +415,7 @@ export default function PostDischargeContactTimingPage() {
                   Positive Check post-discharge follow-up platform
                 </Link>{' '}
                 computes the 2-business-day deadline from the discharge timestamp at the moment of
-                discharge, using the full federal holiday calendar \u2014 including observed holiday
+                discharge, using the full federal holiday calendar {'\u2014'} including observed holiday
                 shifts when a federal holiday falls on a weekend.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -425,14 +425,14 @@ export default function PostDischargeContactTimingPage() {
                 platform surfaces an escalation alert as the deadline approaches. Clinical staff can
                 step in for any patient where automated contact has not succeeded, with the specific
                 deadline and patient context pre-populated. Real-time escalation is triggered
-                immediately when a patient\u2019s responses indicate a concerning symptom or a gap in
-                care plan follow-through \u2014 not at the end of the shift when notes are reviewed.
+                immediately when a patient{'\u2019'}s responses indicate a concerning symptom or a gap in
+                care plan follow-through {'\u2014'} not at the end of the shift when notes are reviewed.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Documentation is generated automatically: a structured summary of each contact, covering
-                every field that CMS auditors look for, is ready for the billing provider\u2019s review
+                every field that CMS auditors look for, is ready for the billing provider{'\u2019'}s review
                 as soon as the call concludes. This removes the documentation burden from the person
-                performing the contact and eliminates the \u201cpatient called, doing well\u201d
+                performing the contact and eliminates the {'\u201c'}patient called, doing well{'\u201d'}
                 note problem. For providers looking to understand how this scales across a high-discharge-volume
                 operation, the case study on{' '}
                 <Link
@@ -461,32 +461,32 @@ export default function PostDischargeContactTimingPage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
                   <strong>Capture the discharge timestamp in the EHR at the discharge disposition step</strong>
-                  \u2014 not from a daily census report pulled the next morning. Every hour of lag
+                  {'\u2014'} not from a daily census report pulled the next morning. Every hour of lag
                   increases the risk of a missed window on high-volume discharge days.
                 </li>
                 <li>
                   <strong>Integrate the discharge list to the outreach platform within one hour of discharge</strong>
-                  \u2014 ideally via automated HL7 ADT feed rather than manual CSV upload. Manual uploads
+                  {'\u2014'} ideally via automated HL7 ADT feed rather than manual CSV upload. Manual uploads
                   create gaps when staff are unavailable.
                 </li>
                 <li>
                   <strong>Schedule the automated contact for the morning of the first business day post-discharge</strong>
-                  \u2014 earlier in the day preserves time for retry attempts if the first contact is
+                  {'\u2014'} earlier in the day preserves time for retry attempts if the first contact is
                   unsuccessful.
                 </li>
                 <li>
-                  <strong>Set escalation rules calibrated to clinical priority</strong> \u2014 for example,
+                  <strong>Set escalation rules calibrated to clinical priority</strong> {'\u2014'} for example,
                   a new symptom warranting same-day clinical call-back within four hours; a missed
                   follow-up appointment escalated within 24 hours.
                 </li>
                 <li>
-                  <strong>Track missed-contact rate as a program KPI</strong> \u2014 the percentage of
+                  <strong>Track missed-contact rate as a program KPI</strong> {'\u2014'} the percentage of
                   discharges where no valid contact was completed within the 2-business-day window is
                   a direct measure of TCM revenue leakage and a quality signal.
                 </li>
                 <li>
                   <strong>Report TCM revenue captured vs. missed to leadership quarterly</strong>
-                  \u2014 attaching a dollar figure to each missed contact window makes the operational
+                  {'\u2014'} attaching a dollar figure to each missed contact window makes the operational
                   investment in automation and workflow improvement concrete.
                 </li>
               </ul>
@@ -505,15 +505,15 @@ export default function PostDischargeContactTimingPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    The 2-business-day rule applies to both CPT 99495 and 99496 \u2014 weekends and
+                    The 2-business-day rule applies to both CPT 99495 and 99496 {'\u2014'} weekends and
                     federal holidays do not count.
                   </li>
                   <li>
-                    Acceptable contact forms: telephonic, electronic, or face-to-face \u2014 two-way
+                    Acceptable contact forms: telephonic, electronic, or face-to-face {'\u2014'} two-way
                     engagement required (voicemail alone does not count).
                   </li>
                   <li>
-                    Documentation must capture date/time, method, content, and any escalations \u2014
+                    Documentation must capture date/time, method, content, and any escalations {'\u2014'}
                     CMS auditors may request this.
                   </li>
                   <li>
