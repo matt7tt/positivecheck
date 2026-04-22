@@ -94,8 +94,9 @@ export default function BillingGuideIndexPage() {
                 CMS Care Program Billing Guide
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
-                Provider reference for Medicare{'\u2019'}s four care management programs {'\u2014'} Remote Patient
-                Monitoring (RPM), Chronic Care Management (CCM), Transitional Care Management (TCM), and Principal
+                Provider reference for Medicare{'\u2019'}s four care management programs {'\u2014'}{' '}
+                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">Remote Patient Monitoring</Link>{' '}
+                (RPM), Chronic Care Management (CCM), Transitional Care Management (TCM), and Principal
                 Care Management (PCM). CPT codes, approximate rates, eligibility rules, stacking rules, and
                 documentation standards.
               </p>
