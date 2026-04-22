@@ -106,7 +106,7 @@ export default function RPMVsDeviceOnlyPage() {
                     leaving roughly two-thirds of available revenue untapped.
                   </li>
                   <li>
-                    99457/99458 require interactive communication \u2014 not just device transmissions \u2014 so
+                    99457/99458 require <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link> \u2014 not just device transmissions \u2014 so
                     device-only programs are ineligible.
                   </li>
                   <li>

@@ -131,7 +131,7 @@ export default function InteractiveCommunicationRequirementPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What CMS means by \u201cinteractive communication\u201d</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS defines interactive communication in the{' '}
+                The <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication requirement</Link> is defined by CMS in the{' '}
                 <a
                   href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
                   target="_blank"

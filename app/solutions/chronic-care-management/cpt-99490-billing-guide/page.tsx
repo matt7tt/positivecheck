@@ -188,8 +188,8 @@ export default function CPT99490BillingGuidePage() {
                 plus chronic kidney disease (CKD), and atrial fibrillation plus heart failure. CMS does not publish
                 an exhaustive list of qualifying diagnoses; the test is whether the conditions are chronic (expected
                 to persist) and whether together they create significant clinical risk. A single serious condition
-                does not qualify for 99490 {'\u2014'} if a patient has one complex condition, Principal Care
-                Management (PCM) may be more appropriate.
+                does not qualify for 99490 {'\u2014'} if a patient has one complex condition, <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">Principal Care
+                Management</Link> (PCM) may be more appropriate.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The chronic conditions must appear in the medical record with clinical documentation supporting

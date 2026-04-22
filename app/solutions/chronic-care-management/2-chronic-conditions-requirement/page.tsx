@@ -421,7 +421,7 @@ export default function CCMTwoChronicConditionsPage() {
                 </li>
                 <li>
                   <strong>Single high-risk chronic condition requiring intensive focused management</strong>{' '}
-                  {'\u2014'} consider Principal Care Management (CPT 99424{'\u2013'}99427), which is designed
+                  {'\u2014'} consider <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">Principal Care Management</Link> (CPT 99424{'\u2013'}99427), which is designed
                   specifically for this scenario.
                 </li>
                 <li>

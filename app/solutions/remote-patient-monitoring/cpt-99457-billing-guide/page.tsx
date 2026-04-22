@@ -108,7 +108,7 @@ export default function CPT99457BillingGuidePage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    CPT 99457 reimburses the <strong>first 20 minutes</strong> of interactive communication
+                    CPT 99457 reimburses the <strong>first 20 minutes</strong> of <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link>
                     with an RPM patient per calendar month (\u007e$52 Medicare national average).
                   </li>
                   <li>
@@ -391,7 +391,7 @@ export default function CPT99457BillingGuidePage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Combining CPT 99457 with CCM, TCM, and PCM</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS permits concurrent billing of CPT 99457 with Chronic Care Management (CCM), Transitional
-                Care Management (TCM), and Principal Care Management (PCM) for the same patient in the same
+                Care Management (TCM), and <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">Principal Care Management</Link> (PCM) for the same patient in the same
                 calendar month, provided the services are distinct and documented separately. This is a
                 meaningful revenue opportunity: a patient with multiple chronic conditions who has recently
                 been discharged may legitimately receive RPM, CCM, and TCM services simultaneously, each

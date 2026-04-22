@@ -172,7 +172,7 @@ export default function RemotePatientMonitoringPage() {
                   staff spend time reviewing data and interacting with patients.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  The challenge: CMS requires documented interactive communication with each patient — phone
+                  The challenge: CMS requires documented <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link> with each patient — phone
                   calls, secure messages, or video — at least once per billing period. For practices managing
                   hundreds or thousands of RPM patients, this is operationally demanding.
                 </p>
