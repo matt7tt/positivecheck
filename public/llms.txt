@@ -54,6 +54,11 @@
   - [Interactive communication requirement](https://positivecheck.com/resources/glossary/interactive-communication-requirement): CMS rule defining real-time two-way clinical engagement for RPM billing.
   - [Patient engagement](https://positivecheck.com/resources/glossary/patient-engagement): Active involvement of patients in their own care; core to CCM/RPM/TCM/PCM outcomes.
 
+## About
+
+- [About Positive Check](https://positivecheck.com/about): Positive Check LLC overview — mission, who we serve, compliance posture, and legal entity.
+- [Clinical standards](https://positivecheck.com/about/clinical-standards): HIPAA compliance framework, Security Rule safeguards, call content review, escalation protocols, CMS-aligned documentation standards.
+
 ## Comparisons
 
 - [Care outreach approach comparisons](https://positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.

@@ -16,8 +16,10 @@ interface Entry {
 const entries: Entry[] = [
   { path: "/", lastmod: "2026-04-19", changefreq: "weekly", priority: 1.0,
     images: ["/images/senior-talking-on-the-phone1.webp", "/images/lola-from-positive-check.webp", "/images/wellness-dash-2.png"] },
-  { path: "/about", lastmod: "2026-02-06", changefreq: "monthly", priority: 0.8,
+  { path: "/about", lastmod: "2026-04-22", changefreq: "monthly", priority: 0.8,
     images: ["/images/family-gathering-dinner.png"] },
+  { path: "/about/clinical-standards", lastmod: "2026-04-22", changefreq: "monthly", priority: 0.8,
+    images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/how-it-works", lastmod: "2026-02-06", changefreq: "monthly", priority: 0.9,
     images: ["/images/senior-talking-on-the-phone1.webp"] },
   { path: "/platform", lastmod: "2026-02-13", changefreq: "monthly", priority: 0.9,
