@@ -75,7 +75,7 @@ export default function CPT99489GlossaryPage() {
                 the same calendar month.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The 30-minute block is shorter than the non-complex 99439{'\u2014'}which uses
+                The 30-minute block is longer than the non-complex 99439{'\u2014'}which uses
                 20-minute add-on blocks. CMS designed it this way because complex-CCM coordination
                 tends to scale in longer increments, reflecting the greater depth of planning and
                 documentation involved at the complex level. The 2026 Medicare national average

@@ -10,11 +10,11 @@ import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 
 
 export const metadata: Metadata = {
   title: 'Chronic Care Management (CCM) Solution | Positive Check',
-  description: 'Automate CCM patient engagement with AI-powered wellness calls. Support CPT 99490, 99439, and 99487 billing — generating $66-$144/patient/month in Medicare revenue.',
+  description: 'Automate CCM patient engagement with AI-powered wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing — generating $66-$216+/patient/month in Medicare revenue.',
   alternates: { canonical: '/solutions/chronic-care-management' },
   openGraph: {
     title: 'Chronic Care Management (CCM) Solution',
-    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, and 99487 billing requirements.',
+    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing requirements.',
     url: '/solutions/chronic-care-management',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chronic Care Management Solution | Positive Check',
-    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, and 99487 billing.',
+    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -196,7 +196,7 @@ export default function ChronicCareManagementPage() {
                   { icon: HeartPulse, title: 'Medication Adherence', desc: 'Daily calls include medication check-ins, asking patients about doses taken, side effects, and refill needs — key documentation for CCM.' },
                   { icon: ClipboardList, title: 'Care Plan Follow-Up', desc: 'Structured wellness questions align to each patient\'s care plan, generating documented follow-up touchpoints for CCM billing.' },
                   { icon: Bell, title: 'Alert-Triggered Callbacks', desc: 'When a call flags a concern, care teams receive immediate alerts — generating additional documented care coordination time for CPT 99439.' },
-                  { icon: Users, title: 'Complex Patient Support', desc: 'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487.' },
+                  { icon: Users, title: 'Complex Patient Support', desc: 'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487 and 99489.' },
                 ].map((feature) => {
                   const Icon = feature.icon
                   return (
