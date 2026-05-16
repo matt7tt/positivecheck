@@ -9,8 +9,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'AI-Powered CCM vs. In-House Care Coordinators | Positive Check',
@@ -55,9 +55,9 @@ const comparisonFaqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Chronic Care Management', url: 'https://positivecheck.com/solutions/chronic-care-management' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Chronic Care Management', url: 'https://www.positivecheck.com/solutions/chronic-care-management' },
   { name: 'vs. In-House Care Coordinators', url: PAGE_URL },
 ])
 

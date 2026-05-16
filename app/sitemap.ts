@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const SITE = "https://positivecheck.com";
+const SITE = "https://www.positivecheck.com";
 
 type Priority = 0.3 | 0.7 | 0.8 | 0.9 | 1.0;
 type Freq = "weekly" | "monthly" | "yearly";

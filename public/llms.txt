@@ -4,95 +4,95 @@
 
 ## Care program solutions
 
-- [Remote Patient Monitoring](https://positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that satisfy CMS interactive communication requirements for RPM programs.
-  - [RPM FAQ](https://positivecheck.com/solutions/remote-patient-monitoring/faq): CPT 99453/99454/99457/99458 billing, interactive communication rule, eligibility, documentation.
-  - [AI-powered RPM vs. device-only monitoring](https://positivecheck.com/solutions/remote-patient-monitoring/vs-device-only-monitoring): Category-level comparison with six-dimension tradeoff table.
-  - [CPT 99457 billing guide](https://positivecheck.com/solutions/remote-patient-monitoring/cpt-99457-billing-guide): 20-minute threshold, interactive communication, documentation, combining with CCM/TCM/PCM.
-  - [CMS interactive communication requirement](https://positivecheck.com/solutions/remote-patient-monitoring/interactive-communication-requirement): Real-time two-way exchange, valid contact forms, documentation standards.
-  - [RPM patient selection](https://positivecheck.com/solutions/remote-patient-monitoring/patient-selection): CMS eligibility, highest-value chronic conditions, adherence predictors, enrollment guidance.
-- [Chronic Care Management](https://positivecheck.com/solutions/chronic-care-management): Daily patient touchpoints supporting CCM documentation and care plan follow-up.
-  - [CCM FAQ](https://positivecheck.com/solutions/chronic-care-management/faq): CPT 99490/99439/99487/99489 billing, 2-chronic-conditions rule, 20-minute threshold, documentation, HIPAA.
-  - [AI-powered CCM vs. in-house care coordinators](https://positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators): Category-level comparison with six-dimension tradeoff table.
-  - [CPT 99490 billing guide](https://positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, how 99439/99487/99489 stack, common errors.
-  - [CCM 2-chronic-conditions requirement](https://positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement): CMS eligibility rule, qualifying combinations, documentation, how CCM differs from RPM and PCM.
-  - [CCM 20-minute monthly requirement](https://positivecheck.com/solutions/chronic-care-management/20-minutes-monthly-requirement): What counts as CCM time, what doesn't, tracking standards, common pitfalls.
-- [Transitional Care Management](https://positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
-  - [TCM FAQ](https://positivecheck.com/solutions/post-discharge-follow-up/faq): CPT 99495/99496 billing, contact timing, documentation, HIPAA.
-  - [AI calls vs. manual discharge outreach](https://positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach): Category-level comparison with six-dimension tradeoff table.
-  - [CPT 99495 billing guide](https://positivecheck.com/solutions/post-discharge-follow-up/cpt-99495-billing-guide): Eligibility, documentation, 2-business-day rule, 14-day face-to-face, common billing errors.
-  - [30-day readmission reduction](https://positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction): HRRP mechanics, highest-risk scenarios, evidence-based interventions, TCM fit.
-  - [Post-discharge contact timing](https://positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing): The 2-business-day rule, weekend/holiday handling, valid contact forms, automation.
+- [Remote Patient Monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that satisfy CMS interactive communication requirements for RPM programs.
+  - [RPM FAQ](https://www.positivecheck.com/solutions/remote-patient-monitoring/faq): CPT 99453/99454/99457/99458 billing, interactive communication rule, eligibility, documentation.
+  - [AI-powered RPM vs. device-only monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring/vs-device-only-monitoring): Category-level comparison with six-dimension tradeoff table.
+  - [CPT 99457 billing guide](https://www.positivecheck.com/solutions/remote-patient-monitoring/cpt-99457-billing-guide): 20-minute threshold, interactive communication, documentation, combining with CCM/TCM/PCM.
+  - [CMS interactive communication requirement](https://www.positivecheck.com/solutions/remote-patient-monitoring/interactive-communication-requirement): Real-time two-way exchange, valid contact forms, documentation standards.
+  - [RPM patient selection](https://www.positivecheck.com/solutions/remote-patient-monitoring/patient-selection): CMS eligibility, highest-value chronic conditions, adherence predictors, enrollment guidance.
+- [Chronic Care Management](https://www.positivecheck.com/solutions/chronic-care-management): Daily patient touchpoints supporting CCM documentation and care plan follow-up.
+  - [CCM FAQ](https://www.positivecheck.com/solutions/chronic-care-management/faq): CPT 99490/99439/99487/99489 billing, 2-chronic-conditions rule, 20-minute threshold, documentation, HIPAA.
+  - [AI-powered CCM vs. in-house care coordinators](https://www.positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators): Category-level comparison with six-dimension tradeoff table.
+  - [CPT 99490 billing guide](https://www.positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, how 99439/99487/99489 stack, common errors.
+  - [CCM 2-chronic-conditions requirement](https://www.positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement): CMS eligibility rule, qualifying combinations, documentation, how CCM differs from RPM and PCM.
+  - [CCM 20-minute monthly requirement](https://www.positivecheck.com/solutions/chronic-care-management/20-minutes-monthly-requirement): What counts as CCM time, what doesn't, tracking standards, common pitfalls.
+- [Transitional Care Management](https://www.positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
+  - [TCM FAQ](https://www.positivecheck.com/solutions/post-discharge-follow-up/faq): CPT 99495/99496 billing, contact timing, documentation, HIPAA.
+  - [AI calls vs. manual discharge outreach](https://www.positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach): Category-level comparison with six-dimension tradeoff table.
+  - [CPT 99495 billing guide](https://www.positivecheck.com/solutions/post-discharge-follow-up/cpt-99495-billing-guide): Eligibility, documentation, 2-business-day rule, 14-day face-to-face, common billing errors.
+  - [30-day readmission reduction](https://www.positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction): HRRP mechanics, highest-risk scenarios, evidence-based interventions, TCM fit.
+  - [Post-discharge contact timing](https://www.positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing): The 2-business-day rule, weekend/holiday handling, valid contact forms, automation.
 
 ## Billing & CMS programs
 
-- [CMS Care Program Billing Guide](https://positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
+- [CMS Care Program Billing Guide](https://www.positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
 
 ## Glossary
 
-- [Healthcare billing & care program glossary](https://positivecheck.com/resources/glossary): Plain-English definitions of CMS billing codes, care programs, and compliance terms.
-  - [CPT 99495](https://positivecheck.com/resources/glossary/cpt-99495): Medicare TCM code for moderate-complexity post-discharge care.
-  - [CPT 99496](https://positivecheck.com/resources/glossary/cpt-99496): Medicare TCM code for high-complexity post-discharge care (7-day face-to-face).
-  - [Transitional Care Management (TCM)](https://positivecheck.com/resources/glossary/transitional-care-management): CMS care model for post-discharge transitions.
-  - [30-day readmission](https://positivecheck.com/resources/glossary/30-day-readmission): Unplanned inpatient admission within 30 days of discharge; HRRP context.
-  - [Care coordination](https://positivecheck.com/resources/glossary/care-coordination): Deliberate organization of patient care activities across participants.
-  - [CPT 99453](https://positivecheck.com/resources/glossary/cpt-99453): Medicare RPM one-time setup and patient education.
-  - [CPT 99454](https://positivecheck.com/resources/glossary/cpt-99454): Medicare RPM device supply with daily recordings, each 30 days.
-  - [CPT 99457](https://positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM interactive communication per month.
-  - [CPT 99458](https://positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM interactive communication per month.
-  - [Remote Patient Monitoring (RPM)](https://positivecheck.com/resources/glossary/remote-patient-monitoring): Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
-  - [CPT 99490](https://positivecheck.com/resources/glossary/cpt-99490): First 20 minutes of non-complex Chronic Care Management clinical staff time per month.
-  - [CPT 99439](https://positivecheck.com/resources/glossary/cpt-99439): Each additional 20 minutes of non-complex CCM (up to 2x per patient per month).
-  - [CPT 99487](https://positivecheck.com/resources/glossary/cpt-99487): First 60 minutes of complex Chronic Care Management per month.
-  - [CPT 99489](https://positivecheck.com/resources/glossary/cpt-99489): Each additional 30 minutes of complex CCM beyond the 99487 threshold.
-  - [Chronic Care Management (CCM)](https://positivecheck.com/resources/glossary/chronic-care-management): Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
-  - [HIPAA Compliance](https://positivecheck.com/resources/glossary/hipaa-compliance): Adherence to HIPAA rules governing covered entities and business associates handling PHI.
-  - [Business Associate Agreement (BAA)](https://positivecheck.com/resources/glossary/business-associate-agreement): HIPAA-required contract between covered entities and PHI-handling vendors.
-  - [ePHI](https://positivecheck.com/resources/glossary/ephi): Electronic Protected Health Information covered by the HIPAA Security Rule.
-  - [HITECH Act](https://positivecheck.com/resources/glossary/hitech-act): 2009 law expanding HIPAA enforcement and creating breach notification.
-  - [Principal Care Management (PCM)](https://positivecheck.com/resources/glossary/principal-care-management): Medicare-reimbursed single-condition care management (CPT 99424-99427).
-  - [Annual Wellness Visit (AWV)](https://positivecheck.com/resources/glossary/annual-wellness-visit): Medicare preventive yearly visit (HCPCS G0438/G0439).
-  - [Interactive communication requirement](https://positivecheck.com/resources/glossary/interactive-communication-requirement): CMS rule defining real-time two-way clinical engagement for RPM billing.
-  - [Patient engagement](https://positivecheck.com/resources/glossary/patient-engagement): Active involvement of patients in their own care; core to CCM/RPM/TCM/PCM outcomes.
+- [Healthcare billing & care program glossary](https://www.positivecheck.com/resources/glossary): Plain-English definitions of CMS billing codes, care programs, and compliance terms.
+  - [CPT 99495](https://www.positivecheck.com/resources/glossary/cpt-99495): Medicare TCM code for moderate-complexity post-discharge care.
+  - [CPT 99496](https://www.positivecheck.com/resources/glossary/cpt-99496): Medicare TCM code for high-complexity post-discharge care (7-day face-to-face).
+  - [Transitional Care Management (TCM)](https://www.positivecheck.com/resources/glossary/transitional-care-management): CMS care model for post-discharge transitions.
+  - [30-day readmission](https://www.positivecheck.com/resources/glossary/30-day-readmission): Unplanned inpatient admission within 30 days of discharge; HRRP context.
+  - [Care coordination](https://www.positivecheck.com/resources/glossary/care-coordination): Deliberate organization of patient care activities across participants.
+  - [CPT 99453](https://www.positivecheck.com/resources/glossary/cpt-99453): Medicare RPM one-time setup and patient education.
+  - [CPT 99454](https://www.positivecheck.com/resources/glossary/cpt-99454): Medicare RPM device supply with daily recordings, each 30 days.
+  - [CPT 99457](https://www.positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM interactive communication per month.
+  - [CPT 99458](https://www.positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM interactive communication per month.
+  - [Remote Patient Monitoring (RPM)](https://www.positivecheck.com/resources/glossary/remote-patient-monitoring): Medicare-reimbursed care model combining device data transmission with monthly interactive communication.
+  - [CPT 99490](https://www.positivecheck.com/resources/glossary/cpt-99490): First 20 minutes of non-complex Chronic Care Management clinical staff time per month.
+  - [CPT 99439](https://www.positivecheck.com/resources/glossary/cpt-99439): Each additional 20 minutes of non-complex CCM (up to 2x per patient per month).
+  - [CPT 99487](https://www.positivecheck.com/resources/glossary/cpt-99487): First 60 minutes of complex Chronic Care Management per month.
+  - [CPT 99489](https://www.positivecheck.com/resources/glossary/cpt-99489): Each additional 30 minutes of complex CCM beyond the 99487 threshold.
+  - [Chronic Care Management (CCM)](https://www.positivecheck.com/resources/glossary/chronic-care-management): Medicare-reimbursed care coordination program for patients with two or more chronic conditions.
+  - [HIPAA Compliance](https://www.positivecheck.com/resources/glossary/hipaa-compliance): Adherence to HIPAA rules governing covered entities and business associates handling PHI.
+  - [Business Associate Agreement (BAA)](https://www.positivecheck.com/resources/glossary/business-associate-agreement): HIPAA-required contract between covered entities and PHI-handling vendors.
+  - [ePHI](https://www.positivecheck.com/resources/glossary/ephi): Electronic Protected Health Information covered by the HIPAA Security Rule.
+  - [HITECH Act](https://www.positivecheck.com/resources/glossary/hitech-act): 2009 law expanding HIPAA enforcement and creating breach notification.
+  - [Principal Care Management (PCM)](https://www.positivecheck.com/resources/glossary/principal-care-management): Medicare-reimbursed single-condition care management (CPT 99424-99427).
+  - [Annual Wellness Visit (AWV)](https://www.positivecheck.com/resources/glossary/annual-wellness-visit): Medicare preventive yearly visit (HCPCS G0438/G0439).
+  - [Interactive communication requirement](https://www.positivecheck.com/resources/glossary/interactive-communication-requirement): CMS rule defining real-time two-way clinical engagement for RPM billing.
+  - [Patient engagement](https://www.positivecheck.com/resources/glossary/patient-engagement): Active involvement of patients in their own care; core to CCM/RPM/TCM/PCM outcomes.
 
 ## About
 
-- [About Positive Check](https://positivecheck.com/about): Positive Check LLC overview — mission, who we serve, compliance posture, and legal entity.
-- [Clinical standards](https://positivecheck.com/about/clinical-standards): HIPAA compliance framework, Security Rule safeguards, call content review, escalation protocols, CMS-aligned documentation standards.
+- [About Positive Check](https://www.positivecheck.com/about): Positive Check LLC overview — mission, who we serve, compliance posture, and legal entity.
+- [Clinical standards](https://www.positivecheck.com/about/clinical-standards): HIPAA compliance framework, Security Rule safeguards, call content review, escalation protocols, CMS-aligned documentation standards.
 
 ## Comparisons
 
-- [Care outreach approach comparisons](https://positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.
+- [Care outreach approach comparisons](https://www.positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.
 
 ## Case studies
 
-- [Scaling patient engagement](https://positivecheck.com/case-studies/scaling-patient-engagement): How Positive Check helps provider teams scale outreach without adding headcount.
+- [Scaling patient engagement](https://www.positivecheck.com/case-studies/scaling-patient-engagement): How Positive Check helps provider teams scale outreach without adding headcount.
 
 ## Platform & product
 
-- [How it works](https://positivecheck.com/how-it-works): Call cadence, prompt engineering, patient engagement, alerts.
-- [Platform overview](https://positivecheck.com/platform): Admin Console, dashboards, role-based access.
-- [ROI calculator](https://positivecheck.com/roi-calculator): Estimate reimbursement opportunity across RPM / CCM / TCM programs.
+- [How it works](https://www.positivecheck.com/how-it-works): Call cadence, prompt engineering, patient engagement, alerts.
+- [Platform overview](https://www.positivecheck.com/platform): Admin Console, dashboards, role-based access.
+- [ROI calculator](https://www.positivecheck.com/roi-calculator): Estimate reimbursement opportunity across RPM / CCM / TCM programs.
 
 ## Company
 
-- [About Positive Check](https://positivecheck.com/about)
-- [Frequently asked questions](https://positivecheck.com/faq)
-- [Contact](https://positivecheck.com/contact)
+- [About Positive Check](https://www.positivecheck.com/about)
+- [Frequently asked questions](https://www.positivecheck.com/faq)
+- [Contact](https://www.positivecheck.com/contact)
 
 ## Blog
 
-- [AI companions for senior loneliness and caregiver stress](https://positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress)
-- [Senior sleep health, fall prevention, and wellness monitoring](https://positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring)
-- [Importance of checking in on seniors in care communities](https://positivecheck.com/blog/importance-of-checking-in-care-communities)
-- [Maintaining social connections](https://positivecheck.com/blog/maintaining-social-connections)
-- [Senior phone check-ins: mental health and safety benefits](https://positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits)
-- [The role of technology in senior care](https://positivecheck.com/blog/role-of-technology-in-senior-care)
+- [AI companions for senior loneliness and caregiver stress](https://www.positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress)
+- [Senior sleep health, fall prevention, and wellness monitoring](https://www.positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring)
+- [Importance of checking in on seniors in care communities](https://www.positivecheck.com/blog/importance-of-checking-in-care-communities)
+- [Maintaining social connections](https://www.positivecheck.com/blog/maintaining-social-connections)
+- [Senior phone check-ins: mental health and safety benefits](https://www.positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits)
+- [The role of technology in senior care](https://www.positivecheck.com/blog/role-of-technology-in-senior-care)
 
 ## How to cite Positive Check
 
 - Company: Positive Check LLC
 - Short name: Positive Check
-- Website: https://positivecheck.com
-- Primary contact: https://positivecheck.com/contact
+- Website: https://www.positivecheck.com
+- Primary contact: https://www.positivecheck.com/contact
 - Email: info@positivecheck.com
 - Phone: 858-522-9524

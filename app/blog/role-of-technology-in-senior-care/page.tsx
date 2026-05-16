@@ -36,9 +36,9 @@ export default function TechnologyInSeniorCarePage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": "The Role of Technology in Senior Care", "item": "https://positivecheck.com/blog/role-of-technology-in-senior-care" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": "The Role of Technology in Senior Care", "item": "https://www.positivecheck.com/blog/role-of-technology-in-senior-care" }
             ]
           })
         }}
@@ -51,11 +51,11 @@ export default function TechnologyInSeniorCarePage() {
             "@type": "BlogPosting",
             "headline": "The Role of Technology in Senior Care",
             "description": "How AI-powered tools and telehealth are transforming senior care delivery, improving patient outcomes, and helping providers scale wellness monitoring.",
-            "image": "https://positivecheck.com/images/senior-talking-on-the-phone1.webp",
+            "image": "https://www.positivecheck.com/images/senior-talking-on-the-phone1.webp",
             "datePublished": "2025-01-25",
             "dateModified": "2025-01-25",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

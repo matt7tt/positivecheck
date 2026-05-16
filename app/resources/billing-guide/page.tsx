@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   },
 }
 
-const PAGE_URL = 'https://positivecheck.com/resources/billing-guide'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/resources/billing-guide'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Resources', url: 'https://positivecheck.com/resources' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Resources', url: 'https://www.positivecheck.com/resources' },
   { name: 'Billing Guide', url: PAGE_URL },
 ])
 

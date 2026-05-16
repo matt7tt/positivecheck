@@ -1,4 +1,4 @@
-# https://positivecheck.com/robots.txt
+# https://www.positivecheck.com/robots.txt
 # Allow all crawlers
 User-agent: *
 Allow: /
@@ -29,4 +29,4 @@ Disallow: /demo
 Allow: /llms.txt
 
 # Sitemap location
-Sitemap: https://positivecheck.com/sitemap.xml
+Sitemap: https://www.positivecheck.com/sitemap.xml

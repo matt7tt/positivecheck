@@ -9,8 +9,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'Reducing 30-Day Readmissions: What Works and Where TCM Fits | Positive Check',
@@ -65,9 +65,9 @@ const faqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Post-Discharge Follow-Up', url: 'https://positivecheck.com/solutions/post-discharge-follow-up' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Post-Discharge Follow-Up', url: 'https://www.positivecheck.com/solutions/post-discharge-follow-up' },
   { name: 'Reducing 30-Day Readmissions', url: PAGE_URL },
 ])
 

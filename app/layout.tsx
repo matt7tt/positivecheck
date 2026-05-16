@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "AI-Powered Patient Check-In Calls | Positive Check",
   description:
     "AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up for healthcare providers. HIPAA-compliant wellness monitoring at scale.",
-  metadataBase: new URL('https://positivecheck.com'),
+  metadataBase: new URL('https://www.positivecheck.com'),
   alternates: {
     canonical: '/',
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://positivecheck.com',
+    url: 'https://www.positivecheck.com',
     siteName: 'Positive Check',
     title: 'AI-Powered Patient Check-In Calls | Positive Check',
     description: 'AI-powered patient check-in calls supporting RPM, CCM, and post-discharge follow-up programs for healthcare providers. HIPAA-compliant wellness monitoring at scale.',

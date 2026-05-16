@@ -39,8 +39,8 @@ export default function AboutPage() {
       <StructuredData
         id="about-breadcrumb"
         data={buildBreadcrumbSchema([
-          { name: 'Home', url: 'https://positivecheck.com' },
-          { name: 'About', url: 'https://positivecheck.com/about' },
+          { name: 'Home', url: 'https://www.positivecheck.com' },
+          { name: 'About', url: 'https://www.positivecheck.com/about' },
         ])}
       />
       <StructuredData

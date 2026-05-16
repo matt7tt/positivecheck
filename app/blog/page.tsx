@@ -88,8 +88,8 @@ export default function BlogPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" }
             ]
           })
         }}

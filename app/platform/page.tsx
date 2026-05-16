@@ -34,8 +34,8 @@ export default function PlatformPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Platform", "item": "https://positivecheck.com/platform" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Platform", "item": "https://www.positivecheck.com/platform" }
             ]
           })
         }}

@@ -34,8 +34,8 @@ export default function ROICalculatorPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "ROI Calculator", "item": "https://positivecheck.com/roi-calculator" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "ROI Calculator", "item": "https://www.positivecheck.com/roi-calculator" }
             ]
           })
         }}
@@ -48,7 +48,7 @@ export default function ROICalculatorPage() {
             "@type": "WebApplication",
             "name": "Positive Check ROI & Reimbursement Calculator",
             "description": "Calculate projected Medicare reimbursement revenue for RPM, CCM, and post-discharge programs with Positive Check.",
-            "url": "https://positivecheck.com/roi-calculator",
+            "url": "https://www.positivecheck.com/roi-calculator",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Any",
             "offers": {

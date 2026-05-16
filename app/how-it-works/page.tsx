@@ -34,8 +34,8 @@ export default function HowItWorksPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://positivecheck.com/how-it-works" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "How It Works", "item": "https://www.positivecheck.com/how-it-works" }
             ]
           })
         }}

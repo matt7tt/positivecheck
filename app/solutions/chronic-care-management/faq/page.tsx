@@ -92,10 +92,10 @@ const faqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Chronic Care Management', url: 'https://positivecheck.com/solutions/chronic-care-management' },
-  { name: 'FAQ', url: 'https://positivecheck.com/solutions/chronic-care-management/faq' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Chronic Care Management', url: 'https://www.positivecheck.com/solutions/chronic-care-management' },
+  { name: 'FAQ', url: 'https://www.positivecheck.com/solutions/chronic-care-management/faq' },
 ])
 
 export default function CCMFaqPage() {

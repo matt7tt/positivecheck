@@ -36,9 +36,9 @@ export default function SeniorSleepHealthFallPreventionWellnessMonitoringPage() 
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": "Why Sleep Quality Is Critical for Senior Safety & Health", "item": "https://positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": "Why Sleep Quality Is Critical for Senior Safety & Health", "item": "https://www.positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring" }
             ]
           })
         }}
@@ -51,11 +51,11 @@ export default function SeniorSleepHealthFallPreventionWellnessMonitoringPage() 
             "@type": "BlogPosting",
             "headline": "Why Sleep Quality Is Critical for Senior Safety & Health",
             "description": "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help.",
-            "image": "https://positivecheck.com/images/senior-sleep-safety-bedroom.png",
+            "image": "https://www.positivecheck.com/images/senior-sleep-safety-bedroom.png",
             "datePublished": "2025-06-27",
             "dateModified": "2025-06-27",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

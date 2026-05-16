@@ -9,8 +9,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'CCM\u2019s 2-Chronic-Conditions Requirement: Eligibility and Documentation | Positive Check',
@@ -65,9 +65,9 @@ const faqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Chronic Care Management', url: 'https://positivecheck.com/solutions/chronic-care-management' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Chronic Care Management', url: 'https://www.positivecheck.com/solutions/chronic-care-management' },
   { name: 'The 2-Chronic-Conditions Requirement', url: PAGE_URL },
 ])
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "About Positive Check | Our Mission",
     description: "Helping seniors age safely at home with daily AI-powered wellness calls.",
     type: "website",
-    url: "https://positivecheck.com/about",
+    url: "https://www.positivecheck.com/about",
     images: [
       {
         url: "/images/lola-from-positive-check.webp",

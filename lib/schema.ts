@@ -2,7 +2,7 @@
 // Pure-function builders for schema.org JSON-LD. All builders return plain objects;
 // wrap with <StructuredData data={...} /> to render.
 
-export const SITE_URL = "https://positivecheck.com";
+export const SITE_URL = "https://www.positivecheck.com";
 export const LOGO_URL = `${SITE_URL}/images/positive-logo-dark-blue.png`;
 export const ORG_NAME_SHORT = "Positive Check";
 export const ORG_NAME_LEGAL = "Positive Check LLC";

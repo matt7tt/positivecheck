@@ -34,9 +34,9 @@ export default function CaseStudyPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://positivecheck.com/case-studies" },
-              { "@type": "ListItem", "position": 3, "name": "Scaling Patient Engagement", "item": "https://positivecheck.com/case-studies/scaling-patient-engagement" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.positivecheck.com/case-studies" },
+              { "@type": "ListItem", "position": 3, "name": "Scaling Patient Engagement", "item": "https://www.positivecheck.com/case-studies/scaling-patient-engagement" }
             ]
           })
         }}
@@ -49,11 +49,11 @@ export default function CaseStudyPage() {
             "@type": "Article",
             "headline": "Scaling Patient Engagement to 1,500+ Patients in 6 Months",
             "description": "How a healthcare partner scaled daily AI wellness calls to 1,500+ patients, reached ~50% monthly engagement, and caught 485 clinical alerts.",
-            "image": "https://positivecheck.com/images/admin-console-dashboard-new.png",
+            "image": "https://www.positivecheck.com/images/admin-console-dashboard-new.png",
             "datePublished": "2026-02-22",
             "dateModified": "2026-02-22",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

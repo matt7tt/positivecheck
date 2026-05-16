@@ -10,8 +10,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/about/clinical-standards'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/about/clinical-standards'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'Clinical Standards: Compliance, Security, and Content Review | Positive Check',
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 }
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'About', url: 'https://positivecheck.com/about' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'About', url: 'https://www.positivecheck.com/about' },
   { name: 'Clinical Standards', url: PAGE_URL },
 ])
 

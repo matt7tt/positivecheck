@@ -9,8 +9,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/solutions/remote-patient-monitoring/interactive-communication-requirement'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/solutions/remote-patient-monitoring/interactive-communication-requirement'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'CMS Interactive Communication Requirement for RPM: What Counts and What Doesn\u2019t | Positive Check',
@@ -63,9 +63,9 @@ const faqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Remote Patient Monitoring', url: 'https://positivecheck.com/solutions/remote-patient-monitoring' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Remote Patient Monitoring', url: 'https://www.positivecheck.com/solutions/remote-patient-monitoring' },
   { name: 'Interactive Communication Requirement', url: PAGE_URL },
 ])
 

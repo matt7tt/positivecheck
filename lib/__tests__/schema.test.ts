@@ -57,7 +57,7 @@ describe("Shared publisher org node", () => {
     expect(schema.publisher["@type"]).toBe("Organization");
     expect(schema.publisher.name).toBe("Positive Check");
     expect(schema.publisher.legalName).toBe("Positive Check LLC");
-    expect(schema.publisher.url).toBe("https://positivecheck.com");
+    expect(schema.publisher.url).toBe("https://www.positivecheck.com");
     expect(schema.publisher.logo["@type"]).toBe("ImageObject");
     expect(schema.publisher.logo.url).toContain("positive-logo-dark-blue.png");
   });
@@ -66,8 +66,8 @@ describe("Shared publisher org node", () => {
 describe("buildBreadcrumbSchema", () => {
   it("maps items to ListItem elements with 1-based position", () => {
     const schema = buildBreadcrumbSchema([
-      { name: "Home", url: "https://positivecheck.com" },
-      { name: "Solutions", url: "https://positivecheck.com/solutions" },
+      { name: "Home", url: "https://www.positivecheck.com" },
+      { name: "Solutions", url: "https://www.positivecheck.com/solutions" },
     ]);
     expect(schema["@type"]).toBe("BreadcrumbList");
     expect(schema.itemListElement).toHaveLength(2);
@@ -75,7 +75,7 @@ describe("buildBreadcrumbSchema", () => {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://positivecheck.com",
+      item: "https://www.positivecheck.com",
     });
     expect(schema.itemListElement[1].position).toBe(2);
   });
@@ -120,8 +120,8 @@ describe("buildArticleSchema", () => {
     const schema = buildArticleSchema({
       headline: "Test Article",
       description: "Test description",
-      url: "https://positivecheck.com/blog/test",
-      image: "https://positivecheck.com/images/test.png",
+      url: "https://www.positivecheck.com/blog/test",
+      image: "https://www.positivecheck.com/images/test.png",
       datePublished: "2026-04-19",
       dateModified: "2026-04-19",
     });
@@ -129,7 +129,7 @@ describe("buildArticleSchema", () => {
     expect(schema.author["@type"]).toBe("Organization");
     expect(schema.author.name).toBe("Positive Check");
     expect(schema.publisher["@type"]).toBe("Organization");
-    expect(schema.mainEntityOfPage["@id"]).toBe("https://positivecheck.com/blog/test");
+    expect(schema.mainEntityOfPage["@id"]).toBe("https://www.positivecheck.com/blog/test");
   });
 });
 
@@ -142,7 +142,7 @@ describe("buildDefinedTermSchema", () => {
     });
     expect(schema["@type"]).toBe("DefinedTerm");
     expect(schema.name).toBe("HIPAA Compliance");
-    expect(schema.url).toBe("https://positivecheck.com/resources/glossary/hipaa-compliance");
+    expect(schema.url).toBe("https://www.positivecheck.com/resources/glossary/hipaa-compliance");
     expect(schema.description).toBe("A definition.");
   });
 });
@@ -159,7 +159,7 @@ describe("buildCPTCodeSchema", () => {
     expect(schemas).toHaveLength(2);
     expect(schemas[0]["@type"]).toBe("DefinedTerm");
     expect(schemas[0].name).toBe("CPT 99457");
-    expect(schemas[0].url).toBe("https://positivecheck.com/resources/glossary/cpt-99457");
+    expect(schemas[0].url).toBe("https://www.positivecheck.com/resources/glossary/cpt-99457");
     expect(schemas[1]["@type"]).toBe("MedicalEntity");
     expect(schemas[1].code.codeValue).toBe("99457");
     expect(schemas[1].code.codingSystem).toBe("CPT");

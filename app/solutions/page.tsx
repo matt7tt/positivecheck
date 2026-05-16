@@ -67,8 +67,8 @@ export default function SolutionsIndexPage() {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://positivecheck.com' },
-              { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://positivecheck.com/solutions' },
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.positivecheck.com' },
+              { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://www.positivecheck.com/solutions' },
             ],
           }),
         }}
@@ -80,13 +80,13 @@ export default function SolutionsIndexPage() {
             '@context': 'https://schema.org',
             '@type': 'CollectionPage',
             name: 'Positive Check Solutions for Healthcare Providers',
-            url: 'https://positivecheck.com/solutions',
+            url: 'https://www.positivecheck.com/solutions',
             description:
               'Three billable programs automated with AI wellness calls: Remote Patient Monitoring, Chronic Care Management, and Post-Discharge Follow-Up.',
             hasPart: solutions.map((s) => ({
               '@type': 'Service',
               name: s.title,
-              url: `https://positivecheck.com/solutions/${s.slug}`,
+              url: `https://www.positivecheck.com/solutions/${s.slug}`,
               description: s.description,
             })),
           }),

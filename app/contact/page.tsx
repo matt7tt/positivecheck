@@ -69,7 +69,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}, {name: "Contact", url: "https://positivecheck.com/contact"}])} id="schema-breadcrumb" />
+      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://www.positivecheck.com"}, {name: "Contact", url: "https://www.positivecheck.com/contact"}])} id="schema-breadcrumb" />
       <PublicHeader currentPage="contact" />
 
       {/* Hero Section */}

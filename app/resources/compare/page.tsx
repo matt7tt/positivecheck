@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 };
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: "Home", url: "https://positivecheck.com" },
-  { name: "Resources", url: "https://positivecheck.com/resources" },
-  { name: "Compare", url: "https://positivecheck.com/resources/compare" },
+  { name: "Home", url: "https://www.positivecheck.com" },
+  { name: "Resources", url: "https://www.positivecheck.com/resources" },
+  { name: "Compare", url: "https://www.positivecheck.com/resources/compare" },
 ]);
 
 export default function CompareIndexPage() {

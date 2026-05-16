@@ -108,7 +108,7 @@ export default function HomePage() {
       <StructuredData data={organizationSchema} id="schema-organization" />
       <StructuredData data={medicalServiceSchema} id="schema-medical-service" />
       <StructuredData data={faqSchema} id="schema-faq" />
-      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://positivecheck.com"}])} id="schema-breadcrumb" />
+      <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://www.positivecheck.com"}])} id="schema-breadcrumb" />
       <PublicHeader currentPage="home" />
 
       {/* Hero Section */}

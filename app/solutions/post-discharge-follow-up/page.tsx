@@ -68,9 +68,9 @@ export default function PostDischargeFollowUpPage() {
       <StructuredData
         id="tcm-pillar-breadcrumb"
         data={buildBreadcrumbSchema([
-          { name: 'Home', url: 'https://positivecheck.com' },
-          { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-          { name: 'Post-Discharge Follow-Up', url: 'https://positivecheck.com/solutions/post-discharge-follow-up' },
+          { name: 'Home', url: 'https://www.positivecheck.com' },
+          { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+          { name: 'Post-Discharge Follow-Up', url: 'https://www.positivecheck.com/solutions/post-discharge-follow-up' },
         ])}
       />
       <StructuredData

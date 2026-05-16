@@ -9,8 +9,8 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 
-const PAGE_URL = 'https://positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach'
-const HERO_IMAGE = 'https://positivecheck.com/images/admin-console-dashboard-new.png'
+const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach'
+const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
   title: 'AI-Powered TCM Calls vs. Manual Discharge Outreach | Positive Check',
@@ -55,9 +55,9 @@ const comparisonFaqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Post-Discharge Follow-Up', url: 'https://positivecheck.com/solutions/post-discharge-follow-up' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Post-Discharge Follow-Up', url: 'https://www.positivecheck.com/solutions/post-discharge-follow-up' },
   { name: 'vs. Manual Discharge Outreach', url: PAGE_URL },
 ])
 

@@ -36,9 +36,9 @@ export default function AiCompanionsForSeniorLonelinessAndCaregiverStressPage() 
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://positivecheck.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": "Can AI Companions Help Seniors and Caregivers?", "item": "https://positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": "Can AI Companions Help Seniors and Caregivers?", "item": "https://www.positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress" }
             ]
           })
         }}
@@ -51,11 +51,11 @@ export default function AiCompanionsForSeniorLonelinessAndCaregiverStressPage() 
             "@type": "BlogPosting",
             "headline": "Can AI Companions Help Seniors and Caregivers?",
             "description": "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates.",
-            "image": "https://positivecheck.com/images/ai-companion-senior-wellness.png",
+            "image": "https://www.positivecheck.com/images/ai-companion-senior-wellness.png",
             "datePublished": "2025-07-05",
             "dateModified": "2025-07-05",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://positivecheck.com/images/positive-logo-dark-blue.png" } }
+            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
+            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } }
           })
         }}
       />

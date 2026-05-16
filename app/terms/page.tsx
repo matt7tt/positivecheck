@@ -32,8 +32,8 @@ export default function TermsPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://positivecheck.com/terms" }
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
+              { "@type": "ListItem", "position": 2, "name": "Terms and Conditions", "item": "https://www.positivecheck.com/terms" }
             ]
           })
         }}

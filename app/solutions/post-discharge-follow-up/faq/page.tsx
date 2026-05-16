@@ -92,10 +92,10 @@ const faqs = [
 ]
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Solutions', url: 'https://positivecheck.com/solutions' },
-  { name: 'Post-Discharge Follow-Up', url: 'https://positivecheck.com/solutions/post-discharge-follow-up' },
-  { name: 'FAQ', url: 'https://positivecheck.com/solutions/post-discharge-follow-up/faq' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' },
+  { name: 'Post-Discharge Follow-Up', url: 'https://www.positivecheck.com/solutions/post-discharge-follow-up' },
+  { name: 'FAQ', url: 'https://www.positivecheck.com/solutions/post-discharge-follow-up/faq' },
 ])
 
 export default function TCMFaqPage() {

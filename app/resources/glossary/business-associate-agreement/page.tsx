@@ -26,10 +26,10 @@ export const metadata: Metadata = {
 }
 
 const breadcrumb = buildBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'Resources', url: 'https://positivecheck.com/resources' },
-  { name: 'Glossary', url: 'https://positivecheck.com/resources/glossary' },
-  { name: 'Business Associate Agreement', url: 'https://positivecheck.com/resources/glossary/business-associate-agreement' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'Resources', url: 'https://www.positivecheck.com/resources' },
+  { name: 'Glossary', url: 'https://www.positivecheck.com/resources/glossary' },
+  { name: 'Business Associate Agreement', url: 'https://www.positivecheck.com/resources/glossary/business-associate-agreement' },
 ])
 
 const termSchema = buildDefinedTermSchema({

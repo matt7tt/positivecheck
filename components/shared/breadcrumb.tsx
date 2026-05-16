@@ -47,10 +47,10 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
 // Breadcrumb Schema Component for SEO
 export function BreadcrumbSchema({ items }: BreadcrumbProps) {
   const schemaItems = [
-    { name: 'Home', item: 'https://positivecheck.com/' },
+    { name: 'Home', item: 'https://www.positivecheck.com/' },
     ...items.map((item, index) => ({
       name: item.label,
-      item: item.href ? `https://positivecheck.com${item.href}` : undefined
+      item: item.href ? `https://www.positivecheck.com${item.href}` : undefined
     }))
   ]
 

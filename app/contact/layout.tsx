@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Contact Us | Positive Check",
     description: "Have questions about our daily wellness calls for seniors? Contact our support team.",
     type: "website",
-    url: "https://positivecheck.com/contact",
+    url: "https://www.positivecheck.com/contact",
     images: [
       {
         url: "/images/healthcare-care-coordinator.png",

@@ -34,8 +34,8 @@ const faqs = faqSchema.mainEntity.map((q) => ({
 }))
 
 const breadcrumb = generateBreadcrumbSchema([
-  { name: 'Home', url: 'https://positivecheck.com' },
-  { name: 'FAQ', url: 'https://positivecheck.com/faq' },
+  { name: 'Home', url: 'https://www.positivecheck.com' },
+  { name: 'FAQ', url: 'https://www.positivecheck.com/faq' },
 ])
 
 export default function FaqPage() {
