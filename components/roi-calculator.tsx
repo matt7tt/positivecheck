@@ -165,7 +165,7 @@ export function ROICalculator() {
 
   return (
     <div className="min-h-screen bg-white">
-      <PublicHeader currentPage="platform" />
+      <PublicHeader currentPage="roi-calculator" />
 
       <main>
         {/* ================================================================ */}

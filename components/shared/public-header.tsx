@@ -8,7 +8,7 @@ import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
 
 interface PublicHeaderProps {
-  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources"
+  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources" | "roi-calculator"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
@@ -44,16 +44,6 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
         <nav className="hidden lg:block">
           <div className="flex items-center gap-6">
             <Link
-              href="/"
-              className={`text-base font-medium ${
-                currentPage === 'home'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
-              }`}
-            >
-              Home
-            </Link>
-            <Link
               href="/solutions"
               className={`text-base font-medium ${
                 currentPage === 'solutions'
@@ -72,6 +62,16 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               }`}
             >
               How It Works
+            </Link>
+            <Link
+              href="/roi-calculator"
+              className={`text-base font-medium ${
+                currentPage === 'roi-calculator'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              ROI Calculator
             </Link>
             <Link
               href="/resources"
@@ -117,17 +117,6 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
             <nav className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
                 <Link
-                  href="/"
-                  className={`text-base font-medium ${
-                    currentPage === 'home'
-                      ? 'text-[#1a2642] font-bold'
-                      : 'text-gray-600'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
                   href="/solutions"
                   className={`text-base font-medium ${
                     currentPage === 'solutions'
@@ -148,6 +137,17 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   How It Works
+                </Link>
+                <Link
+                  href="/roi-calculator"
+                  className={`text-base font-medium ${
+                    currentPage === 'roi-calculator'
+                      ? 'text-[#1a2642] font-bold'
+                      : 'text-gray-600'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  ROI Calculator
                 </Link>
                 <Link
                   href="/resources"
