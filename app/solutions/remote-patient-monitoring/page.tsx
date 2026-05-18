@@ -160,6 +160,52 @@ export default function RemotePatientMonitoringPage() {
             </div>
           </section>
 
+          {/* 2026 CMS Final Rule update */}
+          <section className="px-6 py-10 bg-purple-50 border-y border-purple-200">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-xs uppercase tracking-widest text-purple-700 font-semibold mb-2">
+                2026 CMS Final Rule update
+              </p>
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                Two new RPM codes effective January 1, 2026
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                The CY 2026 Medicare Physician Fee Schedule Final Rule (published November 5,
+                2025) introduced two new CPT codes that lower the thresholds for billable RPM
+                services. Providers can now capture revenue from patients who don{'’'}t
+                meet the full 16-of-30-day or 20-minute thresholds under the legacy codes.
+              </p>
+              <ul className="space-y-2 text-gray-700 leading-relaxed">
+                <li>
+                  <Link
+                    href="/resources/glossary/cpt-99445"
+                    className="text-purple-700 underline hover:text-purple-900 font-semibold"
+                  >
+                    CPT 99445
+                  </Link>
+                  {' '}{'—'} device supply when data is transmitted on 2{'–'}15
+                  days within a 30-day period (alternative to CPT 99454, which still covers
+                  16{'–'}30 days).
+                </li>
+                <li>
+                  <Link
+                    href="/resources/glossary/cpt-99470"
+                    className="text-purple-700 underline hover:text-purple-900 font-semibold"
+                  >
+                    CPT 99470
+                  </Link>
+                  {' '}{'—'} first 10 minutes of treatment management per calendar
+                  month (alternative to CPT 99457, which still covers the first 20 minutes).
+                </li>
+              </ul>
+              <p className="text-sm text-gray-600 leading-relaxed mt-4">
+                The new codes are mutually exclusive with their legacy counterparts in the same
+                billing period{'—'}providers select one based on actual transmission days
+                or cumulative time.
+              </p>
+            </div>
+          </section>
+
           {/* What is RPM */}
           <section className="px-6 py-16 bg-white">
             <div className="max-w-7xl mx-auto">

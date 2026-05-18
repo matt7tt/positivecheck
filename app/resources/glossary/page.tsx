@@ -166,6 +166,26 @@ export default function GlossaryIndexPage() {
               </p>
             </Link>
             <Link
+              href="/resources/glossary/cpt-99445"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code &middot; New for 2026</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99445</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                RPM device supply when data is transmitted on 2 to 15 days within a 30-day period.
+              </p>
+            </Link>
+            <Link
+              href="/resources/glossary/cpt-99470"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code &middot; New for 2026</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99470</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                First 10 minutes of RPM treatment management per calendar month.
+              </p>
+            </Link>
+            <Link
               href="/resources/glossary/remote-patient-monitoring"
               className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
             >
