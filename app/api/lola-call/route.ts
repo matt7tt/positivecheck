@@ -39,10 +39,43 @@ export async function POST(request: Request) {
     })
 
     if (!upstream.ok) {
-      const body = await upstream.text().catch(() => "")
-      console.error("Lola backend error", upstream.status, body)
+      const rawBody = await upstream.text().catch(() => "")
+      console.error("Lola backend error", upstream.status, rawBody)
+
+      // Parse a structured error message if the backend returned JSON.
+      let backendMessage: string | undefined
+      try {
+        const parsed = JSON.parse(rawBody)
+        if (typeof parsed?.error === "string") backendMessage = parsed.error
+        else if (typeof parsed?.message === "string") backendMessage = parsed.message
+        else if (typeof parsed?.detail === "string") backendMessage = parsed.detail
+      } catch {
+        // not JSON
+      }
+
+      // 4xx → user-actionable; forward the backend message when present.
+      if (upstream.status === 429) {
+        return NextResponse.json(
+          { error: backendMessage || "You've made too many requests recently. Please wait a few minutes and try again." },
+          { status: 429 }
+        )
+      }
+      if (upstream.status === 409) {
+        return NextResponse.json(
+          { error: backendMessage || "You already have a pending request. Check your email for the confirmation link." },
+          { status: 409 }
+        )
+      }
+      if (upstream.status >= 400 && upstream.status < 500) {
+        return NextResponse.json(
+          { error: backendMessage || "We couldn't accept that request. Please double-check your details and try again." },
+          { status: 400 }
+        )
+      }
+
+      // 5xx → generic; don't leak server details.
       return NextResponse.json(
-        { error: "Could not submit your request right now. Please try again." },
+        { error: "Our system is having trouble right now. Please try again in a moment." },
         { status: 502 }
       )
     }

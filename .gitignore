@@ -38,3 +38,6 @@ next-env.d.ts
 # old/backup directories (not part of main app)
 /positive-check-homepage/
 /backup-before-homepage-migration/
+
+# playwright-mcp browser test artifacts
+.playwright-mcp/

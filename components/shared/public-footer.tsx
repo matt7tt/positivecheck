@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RequestDemoModal } from '@/components/request-demo-modal'
+import { LolaCallModal } from '@/components/lola-call-modal'
 
 export function PublicFooter() {
   return (
@@ -14,6 +15,11 @@ export function PublicFooter() {
                 <RequestDemoModal>
                   <button className="text-gray-600 hover:text-[#1a2642] text-sm">Request Demo</button>
                 </RequestDemoModal>
+              </li>
+              <li>
+                <LolaCallModal>
+                  <button className="text-gray-600 hover:text-[#1a2642] text-sm">Get a Call from Lola</button>
+                </LolaCallModal>
               </li>
               <li><Link href="/contact" className="text-gray-600 hover:text-[#1a2642]">Contact Support</Link></li>
             </ul>

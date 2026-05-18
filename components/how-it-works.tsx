@@ -7,6 +7,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
 import { CheckCircle } from 'lucide-react'
 import { RequestDemoModal } from '@/components/request-demo-modal'
+import { LolaCallModal } from '@/components/lola-call-modal'
 
 export function HowItWorksComponent() {
   return (
@@ -362,11 +363,18 @@ export function HowItWorksComponent() {
               Schedule a demo today and discover how Positive Check can support your patients and your staff.
             </p>
 
-            <RequestDemoModal>
-              <Button className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
-                Request Demo
-              </Button>
-            </RequestDemoModal>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <RequestDemoModal>
+                <Button className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                  Request Demo
+                </Button>
+              </RequestDemoModal>
+              <LolaCallModal>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#d946ef] px-8 py-4 text-lg font-bold bg-transparent">
+                  Get a Call from Lola
+                </Button>
+              </LolaCallModal>
+            </div>
           </div>
         </section>
       </main>
