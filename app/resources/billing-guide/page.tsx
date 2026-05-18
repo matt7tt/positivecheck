@@ -11,23 +11,23 @@ import {
 } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CMS Care Program Billing Guide: RPM, CCM, TCM | Positive Check',
+  title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
   description:
     'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458 plus new 2026 codes 99445 and 99470), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, rates, stacking rules, and documentation standards.',
   alternates: { canonical: '/resources/billing-guide' },
   openGraph: {
-    title: 'CMS Care Program Billing Guide: RPM, CCM, TCM',
+    title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM',
     description:
-      'Comprehensive Medicare care management billing reference. Programs, CPT codes, eligibility, combined revenue math, and documentation.',
+      'Comprehensive Medicare care management billing reference updated for the 2026 CMS Final Rule. Programs, CPT codes (including new 99445 and 99470), eligibility, combined revenue math, and documentation.',
     url: '/resources/billing-guide',
     siteName: 'Positive Check',
     locale: 'en_US',
     type: 'article',
-    images: [{ url: '/images/admin-console-dashboard-new.png', width: 1200, height: 630, alt: 'CMS Care Program Billing Guide' }],
+    images: [{ url: '/images/admin-console-dashboard-new.png', width: 1200, height: 630, alt: '2026 CMS Care Program Billing Guide' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CMS Care Program Billing Guide: RPM, CCM, TCM',
+    title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM',
     description: 'Medicare care management billing reference.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
@@ -43,12 +43,12 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'CMS Care Program Billing Guide: RPM, CCM, TCM',
-  description: 'Comprehensive reference for Medicare care management billing across RPM, CCM, TCM, and PCM programs.',
+  headline: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM',
+  description: 'Comprehensive reference for Medicare care management billing across RPM, CCM, TCM, and PCM programs, updated for the 2026 CMS Final Rule.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-21',
-  dateModified: '2026-04-21',
+  dateModified: '2026-05-17',
 })
 
 const faqs = [
@@ -91,7 +91,7 @@ export default function BillingGuideIndexPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Billing Guide</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                CMS Care Program Billing Guide
+                2026 CMS Care Program Billing Guide
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 Provider reference for Medicare{'\u2019'}s four care management programs {'\u2014'}{' '}

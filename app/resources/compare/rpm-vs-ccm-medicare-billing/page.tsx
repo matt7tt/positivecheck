@@ -350,6 +350,62 @@ export default function RPMvsCCMComparePage() {
                 </ul>
               </div>
 
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">References</h2>
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed text-sm">
+                <li>
+                  Centers for Medicare {'&'} Medicaid Services.{' '}
+                  <a
+                    href="https://www.cms.gov/medicare/payment/fee-schedules/physician/pfs-federal-regulation-notices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-700 underline hover:text-purple-900"
+                  >
+                    Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule
+                  </a>
+                  . Federal Register, published November 5, 2025. Effective January 1, 2026.
+                </li>
+                <li>
+                  Centers for Medicare {'&'} Medicaid Services.{' '}
+                  <a
+                    href="https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-700 underline hover:text-purple-900"
+                  >
+                    Remote Patient Monitoring coverage guidance
+                  </a>
+                  . cms.gov.
+                </li>
+                <li>
+                  Centers for Medicare {'&'} Medicaid Services.{' '}
+                  <a
+                    href="https://www.cms.gov/medicare/medicare-fee-for-service-payment/hospitaloutpatientpps/downloads/payment-chronic-care-management-services-faqs.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-700 underline hover:text-purple-900"
+                  >
+                    Chronic Care Management Services FAQs (PDF)
+                  </a>
+                  . cms.gov.
+                </li>
+                <li>
+                  Centers for Medicare {'&'} Medicaid Services.{' '}
+                  <a
+                    href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-700 underline hover:text-purple-900"
+                  >
+                    MLN 908628: Transitional Care Management Services (PDF)
+                  </a>
+                  . cms.gov.
+                </li>
+                <li>
+                  American Medical Association. CPT Editorial Panel actions, September 2024
+                  meeting (approved CPT codes 99445 and 99470 for inclusion in CPT 2026).
+                </li>
+              </ul>
+
               <div className="mt-12 text-center space-y-2">
                 <p>
                   <Link
