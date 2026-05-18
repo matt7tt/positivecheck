@@ -24,6 +24,7 @@ Disallow: /providers
 Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /demo
+Disallow: /onboarding-wizard
 
 # AI-friendly content
 Allow: /llms.txt
