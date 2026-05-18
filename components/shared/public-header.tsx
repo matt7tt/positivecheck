@@ -84,26 +84,6 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               Resources
             </Link>
             <Link
-              href="/blog"
-              className={`text-base font-medium ${
-                currentPage === 'blog'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
-              }`}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/about"
-              className={`text-base font-medium ${
-                currentPage === 'about'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
-              }`}
-            >
-              About
-            </Link>
-            <Link
               href="/contact" 
               className={`text-base font-medium ${
                 currentPage === 'contact' 
@@ -179,28 +159,6 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Resources
-                </Link>
-                <Link
-                  href="/blog"
-                  className={`text-base font-medium ${
-                    currentPage === 'blog'
-                      ? 'text-[#1a2642] font-bold'
-                      : 'text-gray-600'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/about"
-                  className={`text-base font-medium ${
-                    currentPage === 'about'
-                      ? 'text-[#1a2642] font-bold'
-                      : 'text-gray-600'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About
                 </Link>
                 <Link
                   href="/contact" 
