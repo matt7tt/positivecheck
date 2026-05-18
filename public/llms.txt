@@ -64,6 +64,7 @@
 ## Comparisons
 
 - [Care outreach approach comparisons](https://www.positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.
+  - [RPM vs. CCM Medicare billing comparison](https://www.positivecheck.com/resources/compare/rpm-vs-ccm-medicare-billing): Side-by-side comparison of Remote Patient Monitoring and Chronic Care Management on eligibility, CPT codes, time thresholds, interactive communication, and combined-billing rules.
 
 ## Case studies
 
