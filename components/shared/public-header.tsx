@@ -8,7 +8,7 @@ import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
 
 interface PublicHeaderProps {
-  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform"
+  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
@@ -43,47 +43,67 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
         {/* Desktop navigation */}
         <nav className="hidden lg:block">
           <div className="flex items-center gap-6">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className={`text-base font-medium ${
-                currentPage === 'home' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                currentPage === 'home'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
                   : 'text-gray-600 hover:text-[#1a2642]'
               }`}
             >
               Home
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/solutions"
               className={`text-base font-medium ${
-                currentPage === 'about' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                currentPage === 'solutions'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
                   : 'text-gray-600 hover:text-[#1a2642]'
               }`}
             >
-              About
+              Solutions
             </Link>
-            <Link 
-              href="/how-it-works" 
+            <Link
+              href="/how-it-works"
               className={`text-base font-medium ${
-                currentPage === 'how-it-works' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                currentPage === 'how-it-works'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
                   : 'text-gray-600 hover:text-[#1a2642]'
               }`}
             >
               How It Works
             </Link>
-            <Link 
-              href="/blog" 
+            <Link
+              href="/resources"
               className={`text-base font-medium ${
-                currentPage === 'blog' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
+                currentPage === 'resources'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              Resources
+            </Link>
+            <Link
+              href="/blog"
+              className={`text-base font-medium ${
+                currentPage === 'blog'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
                   : 'text-gray-600 hover:text-[#1a2642]'
               }`}
             >
               Blog
             </Link>
-            <Link 
+            <Link
+              href="/about"
+              className={`text-base font-medium ${
+                currentPage === 'about'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              About
+            </Link>
+            <Link
               href="/contact" 
               className={`text-base font-medium ${
                 currentPage === 'contact' 
@@ -116,51 +136,73 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
           <div className="lg:hidden fixed inset-x-0 top-16 bg-white border-b shadow-lg">
             <nav className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   className={`text-base font-medium ${
-                    currentPage === 'home' 
-                      ? 'text-[#1a2642] font-bold' 
+                    currentPage === 'home'
+                      ? 'text-[#1a2642] font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Home
                 </Link>
-                <Link 
-                  href="/about" 
+                <Link
+                  href="/solutions"
                   className={`text-base font-medium ${
-                    currentPage === 'about' 
-                      ? 'text-[#1a2642] font-bold' 
+                    currentPage === 'solutions'
+                      ? 'text-[#1a2642] font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  About
+                  Solutions
                 </Link>
-                <Link 
-                  href="/how-it-works" 
+                <Link
+                  href="/how-it-works"
                   className={`text-base font-medium ${
-                    currentPage === 'how-it-works' 
-                      ? 'text-[#1a2642] font-bold' 
+                    currentPage === 'how-it-works'
+                      ? 'text-[#1a2642] font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   How It Works
                 </Link>
-                <Link 
-                  href="/blog" 
+                <Link
+                  href="/resources"
                   className={`text-base font-medium ${
-                    currentPage === 'blog' 
-                      ? 'text-[#1a2642] font-bold' 
+                    currentPage === 'resources'
+                      ? 'text-[#1a2642] font-bold'
+                      : 'text-gray-600'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Resources
+                </Link>
+                <Link
+                  href="/blog"
+                  className={`text-base font-medium ${
+                    currentPage === 'blog'
+                      ? 'text-[#1a2642] font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Blog
                 </Link>
-                <Link 
+                <Link
+                  href="/about"
+                  className={`text-base font-medium ${
+                    currentPage === 'about'
+                      ? 'text-[#1a2642] font-bold'
+                      : 'text-gray-600'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
                   href="/contact" 
                   className={`text-base font-medium ${
                     currentPage === 'contact' 
