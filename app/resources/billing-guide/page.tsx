@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: 'CMS Care Program Billing Guide: RPM, CCM, TCM | Positive Check',
   description:
-    'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, rates, stacking rules, and documentation standards.',
+    'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458 plus new 2026 codes 99445 and 99470), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, rates, stacking rules, and documentation standards.',
   alternates: { canonical: '/resources/billing-guide' },
   openGraph: {
     title: 'CMS Care Program Billing Guide: RPM, CCM, TCM',
@@ -117,7 +117,7 @@ export default function BillingGuideIndexPage() {
                     high-risk condition.
                   </li>
                   <li>
-                    <strong>CPT code sets:</strong> RPM 99453/99454/99457/99458; CCM 99490/99439/99487/99489; TCM
+                    <strong>CPT code sets:</strong> RPM 99453/99454/99457/99458 (plus new 2026 codes 99445 and 99470); CCM 99490/99439/99487/99489; TCM
                     99495/99496; PCM 99424{'\u2013'}99427.
                   </li>
                   <li>
@@ -231,8 +231,10 @@ export default function BillingGuideIndexPage() {
                     {[
                       { code: '99453', program: 'RPM', desc: 'One-time setup and patient education', rate: '\u007e$19' },
                       { code: '99454', program: 'RPM', desc: 'Device supply + transmission, each 30 days (\u226516/30 days)', rate: '\u007e$47\u2013$56' },
+                      { code: '99445', program: 'RPM (new 2026)', desc: 'Device supply + transmission, 2\u201315 days within a 30-day period (alternative to 99454)', rate: '\u007e$47' },
                       { code: '99457', program: 'RPM', desc: 'First 20 min interactive communication per month', rate: '\u007e$52' },
                       { code: '99458', program: 'RPM', desc: 'Each additional 20 min interactive communication (up to 2x/month)', rate: '\u007e$41' },
+                      { code: '99470', program: 'RPM (new 2026)', desc: 'First 10 min interactive communication per month (alternative to 99457)', rate: '\u007e$26' },
                       { code: '99091', program: 'RPM (legacy)', desc: 'Clinician collection/interpretation of physiologic data, per 30 days', rate: '\u007e$54' },
                       { code: '99490', program: 'CCM', desc: 'First 20 min non-complex clinical staff time per month', rate: '\u007e$66' },
                       { code: '99439', program: 'CCM', desc: 'Each additional 20 min non-complex (up to 2x/month)', rate: '\u007e$48' },

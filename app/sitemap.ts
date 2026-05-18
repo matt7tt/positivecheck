@@ -114,7 +114,7 @@ const entries: Entry[] = [
   { path: "/resources/glossary/patient-engagement", lastmod: "2026-04-21", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/compare", lastmod: "2026-05-17", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/compare/rpm-vs-ccm-medicare-billing", lastmod: "2026-05-17", changefreq: "monthly", priority: 0.8 },
-  { path: "/resources/billing-guide", lastmod: "2026-04-21", changefreq: "monthly", priority: 0.9 },
+  { path: "/resources/billing-guide", lastmod: "2026-05-17", changefreq: "monthly", priority: 0.9 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

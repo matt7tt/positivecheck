@@ -33,7 +33,7 @@ const rpmPillarFaqs = [
   {
     question: 'What is Remote Patient Monitoring (RPM)?',
     answer:
-      "Remote Patient Monitoring is a Medicare-reimbursed care program where clinical staff review physiologic data (blood pressure, glucose, weight, SpO2, etc.) transmitted from a patient\u2019s connected device and conduct interactive communication with the patient at least monthly. CMS reimburses four codes: CPT 99453 (setup), 99454 (device supply), 99457 (first 20 minutes of interactive communication per calendar month), and 99458 (each additional 20 minutes).",
+      "Remote Patient Monitoring is a Medicare-reimbursed care program where clinical staff review physiologic data (blood pressure, glucose, weight, SpO2, etc.) transmitted from a patient\u2019s connected device and conduct interactive communication with the patient at least monthly. CMS reimburses six codes as of 2026: CPT 99453 (setup), 99454 (device supply, 16\u201330 days), 99445 (new for 2026: device supply, 2\u201315 days), 99457 (first 20 minutes of interactive communication), 99470 (new for 2026: first 10 minutes of interactive communication), and 99458 (each additional 20 minutes).",
   },
   {
     question: 'What does the CMS interactive communication requirement mean?',
