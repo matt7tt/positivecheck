@@ -65,6 +65,7 @@
 
 - [Care outreach approach comparisons](https://www.positivecheck.com/resources/compare): Category-level comparisons of AI-powered wellness calls versus alternatives.
   - [RPM vs. CCM Medicare billing comparison](https://www.positivecheck.com/resources/compare/rpm-vs-ccm-medicare-billing): Side-by-side comparison of Remote Patient Monitoring and Chronic Care Management on eligibility, CPT codes, time thresholds, interactive communication, and combined-billing rules.
+  - [TCM + CCM combined-month billing](https://www.positivecheck.com/resources/compare/tcm-and-ccm-combined-month-billing): How Transitional Care Management (CPT 99495/99496) and Chronic Care Management (CPT 99490) can be billed concurrently in the same calendar month, including CMS timing rules, documentation requirements, and combined revenue scenarios reaching $400+/month.
 
 ## Case studies
 

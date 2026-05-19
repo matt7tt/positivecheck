@@ -64,6 +64,18 @@ export default function CompareIndexPage() {
                 communication, and combined-billing rules.
               </p>
             </Link>
+            <Link
+              href="/resources/compare/tcm-and-ccm-combined-month-billing"
+              className="block bg-white p-5 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors"
+            >
+              <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Medicare programs</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">TCM + CCM Combined-Month Billing</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                How Transitional Care Management and Chronic Care Management can be billed
+                concurrently in the same calendar month: CMS rules, timing windows,
+                documentation, and combined revenue stacking.
+              </p>
+            </Link>
           </div>
           <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
             Other approach comparisons (program-level)
