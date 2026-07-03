@@ -32,15 +32,24 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const featuredArticle = {
-    title: "Can AI Companions Help Seniors and Caregivers?",
-    excerpt: "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-    slug: "ai-companions-for-senior-loneliness-and-caregiver-stress",
-    date: "July 5, 2025",
-    readTime: "8 min read",
-    image: "/images/ai-companion-senior-wellness.png",
+    title: "CCM Billing in 2026: The Complete Guide to CPT 99490, 99439, 99487, and 99489",
+    excerpt: "The CY 2026 Physician Fee Schedule raised rates across all four staff-directed CCM codes. Learn what each code covers, how to choose non-complex vs. complex CCM, and how to keep documentation audit-defensible.",
+    slug: "ccm-billing-2026-cpt-codes-guide",
+    date: "July 2, 2026",
+    readTime: "12 min read",
+    image: "/images/ccm-billing-2026-guide.png",
   }
 
   const articles = [
+    {
+      title: "Can AI Companions Help Seniors and Caregivers?",
+      excerpt:
+        "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
+      slug: "ai-companions-for-senior-loneliness-and-caregiver-stress",
+      date: "July 5, 2025",
+      readTime: "8 min read",
+      image: "/images/ai-companion-senior-wellness.png",
+    },
     {
       title: "Why Sleep Quality Is Critical for Senior Safety & Health",
       excerpt:
