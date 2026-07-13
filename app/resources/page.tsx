@@ -40,6 +40,12 @@ const sections = [
       "Overview of Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM) programs and the CPT codes that support them.",
   },
   {
+    href: "/resources/rpm-cpt-calculator",
+    title: "2026 RPM CPT Calculator",
+    description:
+      "Estimate monthly Medicare Remote Patient Monitoring reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470 based on your patient mix, including the two new 2026 codes.",
+  },
+  {
     href: "/resources/glossary",
     title: "Healthcare Billing & Care Program Glossary",
     description:

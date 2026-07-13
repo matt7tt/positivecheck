@@ -90,6 +90,8 @@ const entries: Entry[] = [
   { path: "/solutions/post-discharge-follow-up/vs-manual-discharge-outreach", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/resources", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
+  { path: "/resources/rpm-cpt-calculator", lastmod: "2026-07-12", changefreq: "monthly", priority: 0.8,
+    images: ["/images/2026-rpm-cpt-codes-billing-guide.png"] },
   { path: "/resources/glossary", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/glossary/cpt-99495", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/glossary/cpt-99496", lastmod: "2026-04-19", changefreq: "monthly", priority: 0.7 },

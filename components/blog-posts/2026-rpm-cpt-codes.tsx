@@ -111,7 +111,10 @@ export function RpmBilling2026CptCodesPost() {
         </div>
 
         <p className="mb-6">
-          Amounts are approximate 2026 Medicare non-facility national averages and vary by locality, provider status, and geographic adjustment. Multiple industry sources report slightly different point estimates for 99454/99445 (commonly $47–$52); rather than pick one, verify the current locality-specific amount in the CMS Physician Fee Schedule Look-Up Tool before finalizing program economics. Estimates throughout this table are provided for general comparison only and should not be used to forecast claims revenue.
+          Amounts are approximate 2026 Medicare non-facility national averages and vary by locality, provider status, and geographic adjustment. Multiple industry sources report slightly different point estimates for 99454/99445 (commonly $47–$52); rather than pick one, verify the current locality-specific amount in the CMS Physician Fee Schedule Look-Up Tool before finalizing program economics. Estimates throughout this table are provided for general comparison only and should not be used to forecast claims revenue. To model program-level revenue from your own patient mix, try our{' '}
+          <Link href="/resources/rpm-cpt-calculator" className="text-[#d946ef] hover:underline">
+            2026 RPM CPT calculator
+          </Link>.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -417,6 +420,13 @@ export function RpmBilling2026CptCodesPost() {
             >
               <h3 className="font-semibold text-gray-900 mb-1">Remote Patient Monitoring Solution</h3>
               <p className="text-sm text-gray-600">How Positive Check supports RPM programs with automated patient outreach.</p>
+            </Link>
+            <Link
+              href="/resources/rpm-cpt-calculator"
+              className="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              <h3 className="font-semibold text-gray-900 mb-1">2026 RPM CPT Calculator</h3>
+              <p className="text-sm text-gray-600">Estimate monthly Medicare RPM reimbursement from your patient mix across all six 2026 codes.</p>
             </Link>
           </div>
         </div>
