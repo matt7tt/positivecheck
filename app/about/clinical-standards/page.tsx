@@ -49,7 +49,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-22',
-  dateModified: '2026-04-22',
+  dateModified: '2026-07-12',
 })
 
 const faqs = [
@@ -77,6 +77,16 @@ const faqs = [
     question: 'Can AI-powered calls satisfy CMS clinical-engagement requirements?',
     answer:
       'Yes, when the call captures required clinical content, supports real-time two-way patient response, and escalates concerns to a qualified human. CMS defines the interactive communication requirement by content and structure, not by who conducts the call. See our interactive-communication-requirement glossary entry and the /solutions/remote-patient-monitoring/interactive-communication-requirement cluster post for a full deep-dive.',
+  },
+  {
+    question: 'How does Positive Check verify the accuracy of its AI calls?',
+    answer:
+      'Two independent layers sit on top of the conversational AI. First, deterministic clinical guardrails: rule-based alert thresholds for readings such as blood pressure, blood glucose, and oxygen saturation that trigger alerts even if the AI analysis misses them. Second, an independent quality-assurance engine re-analyzes call transcripts to audit recorded outcomes, detecting missed alerts and false positives and flagging incongruent calls for human review. AI output is verified, not assumed.',
+  },
+  {
+    question: 'Can a call be transferred to a live person?',
+    answer:
+      'Yes. When a conversation warrants human attention, the platform can transfer the call live to a provider-designated care team member, with urgency routing for routine, urgent, and emergency situations. Patients who call the inbound line can also request a live person at any time, without completing identity verification first. Live transfer supplements, and never replaces, 911 guidance for acute emergencies.',
   },
 ]
 
@@ -236,9 +246,10 @@ export default function ClinicalStandardsPage() {
                 cloud providers with their own physical access controls and compliance certifications{'\u2014'}controls
                 that are captured in our vendor management process and BAA chain. <strong>Technical safeguards</strong>{' '}
                 include access control mechanisms (unique user identifiers, automatic logoff, role-based permissions),
+                multi-factor authentication supporting authenticator apps (TOTP), backup codes, and email verification,
                 audit logs that record access and activity on ePHI, transmission security via TLS for all data in
                 transit, and encryption at rest for stored ePHI. Audit logs are retained and available for provider
-                review on request.
+                review on request, and report exports support de-identified options for sharing beyond the care team.
               </p>
 
               {/* Call content design and review */}
@@ -288,6 +299,13 @@ export default function ClinicalStandardsPage() {
                 nightly summary reviewed by the care coordinator at the start of business the following day. The
                 thresholds, notification channels, and designated recipients are all provider-defined.
               </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Escalation is not limited to after-the-call notifications. When a conversation warrants immediate
+                human attention, the platform supports live mid-call transfer to a provider-designated care team
+                member, with urgency routing across routine, urgent, and emergency levels. Live transfer supplements
+                {'\u2014'}and never replaces{'\u2014'}direction to call 911 for acute emergencies, which remains part
+                of the call protocol for red-flag symptom reports.
+              </p>
               <p className="text-gray-700 leading-relaxed mb-12">
                 Every escalation generates a documentation record: timestamp, triggering patient response content,
                 escalation level applied, and notification delivery confirmation. These records are available in the
@@ -298,6 +316,29 @@ export default function ClinicalStandardsPage() {
                   CMS Care Program Billing Guide
                 </Link>{' '}
                 for program-specific documentation elements.
+              </p>
+
+              {/* Quality assurance and AI verification */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Quality assurance: AI output is verified, not assumed</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Conversational AI in a clinical setting demands more than good prompts. Positive Check runs two
+                independent verification layers on top of the AI that conducts patient conversations, so that
+                alerting does not depend on any single analysis being right.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                <strong>Deterministic clinical guardrails.</strong> Rule-based alert thresholds{'\u2014'}covering
+                readings such as blood pressure bands, blood glucose, and oxygen saturation{'\u2014'}evaluate every
+                call independently of the AI{'\u2019'}s own analysis. If a patient reports a reading that crosses a
+                threshold and the AI analysis did not raise an alert, the guardrail raises it. These rules are
+                purely additive: they can add alerts the AI missed, but never suppress alerts the AI raised.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-12">
+                <strong>Independent call-outcome audit.</strong> A separate quality-assurance engine re-analyzes
+                call transcripts and audits the recorded outcome of each call: was the outcome classification
+                congruent with what the transcript shows, were any alerts missed, were any alerts false positives?
+                Incongruent calls are automatically flagged into a review queue with accuracy trends tracked over
+                time. Combined with call recordings and full transcripts available in the provider dashboard, this
+                gives providers a verifiable chain from what the patient said to what the platform reported.
               </p>
 
               {/* Documentation standards */}
@@ -517,7 +558,7 @@ export default function ClinicalStandardsPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-04-22.
+                . Last updated 2026-07-12.
               </p>
             </div>
           </section>

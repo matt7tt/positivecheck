@@ -1,6 +1,6 @@
 # Positive Check
 
-> Positive Check (legal entity: Positive Check LLC) is an AI-powered patient wellness call platform for healthcare providers running CMS-reimbursed care programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM). The platform's AI companion, Lola, conducts daily wellness calls covering medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking, and surfaces actionable insights to care teams through a secure HIPAA-compliant dashboard.
+> Positive Check (legal entity: Positive Check LLC) is an AI-powered patient wellness call platform for healthcare providers running CMS-reimbursed care programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM). The platform's AI companion, Lola, conducts wellness check-ins by outbound voice call and two-way SMS, answers inbound patient calls with identity-verified self-service, and can transfer a live call to the provider's care team. Check-ins cover medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking. AI analysis is backed by deterministic clinical guardrails (rule-based vitals alert thresholds) and an independent quality-assurance audit of every call outcome. Insights reach care teams through a secure HIPAA-compliant dashboard with AI natural-language reporting, weekly per-patient risk-trend analysis, and a developer REST API for integrations.
 
 ## Care program solutions
 
@@ -26,6 +26,7 @@
 ## Billing & CMS programs
 
 - [CMS Care Program Billing Guide](https://www.positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
+- [2026 RPM CPT Calculator](https://www.positivecheck.com/resources/rpm-cpt-calculator): Interactive estimator for monthly Medicare RPM reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470 based on patient mix.
 
 ## Glossary
 
@@ -73,8 +74,8 @@
 
 ## Platform & product
 
-- [How it works](https://www.positivecheck.com/how-it-works): Call cadence, prompt engineering, patient engagement, alerts.
-- [Platform overview](https://www.positivecheck.com/platform): Admin Console, dashboards, role-based access.
+- [How it works](https://www.positivecheck.com/how-it-works): Call cadence, prompt engineering, patient engagement by voice and SMS, inbound callback line, live transfer escalation, alerts.
+- [Platform overview](https://www.positivecheck.com/platform): Outbound AI voice calls, inbound call answering, two-way SMS check-ins, missed-call recovery, deterministic clinical guardrails, independent call QA audit, AI reporting chat, weekly risk-trend analysis, Admin Console with role-based access, developer REST API with OpenAPI docs, secure signed webhooks.
 - [ROI calculator](https://www.positivecheck.com/roi-calculator): Estimate reimbursement opportunity across RPM / CCM / TCM programs.
 
 ## Company
@@ -85,6 +86,8 @@
 
 ## Blog
 
+- [RPM billing in 2026: CPT codes, requirements and reimbursement](https://www.positivecheck.com/blog/2026-rpm-cpt-codes)
+- [CCM billing in 2026: the complete guide to CPT 99490, 99439, 99487, and 99489](https://www.positivecheck.com/blog/ccm-billing-2026-cpt-codes-guide)
 - [AI companions for senior loneliness and caregiver stress](https://www.positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress)
 - [Senior sleep health, fall prevention, and wellness monitoring](https://www.positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring)
 - [Importance of checking in on seniors in care communities](https://www.positivecheck.com/blog/importance-of-checking-in-care-communities)

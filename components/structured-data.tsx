@@ -43,7 +43,7 @@ export function StructuredData({ data, id }: StructuredDataProps) {
 // Backward-compatible constant exports — some pages import these directly.
 export const organizationSchema = buildOrganizationSchema();
 
-// FAQ schema matches the 6 items rendered on the homepage and /faq page.
+// FAQ schema matches the 10 items rendered on the /faq page (also emitted on the homepage).
 export const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -94,6 +94,38 @@ export const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Traditional wellness calls often depend on call center staff or individual caregivers, which can be inconsistent, costly, and difficult to scale. Positive Check provides a reliable, AI-powered system that ensures every patient receives consistent attention. The platform also produces objective data, real-time alerts, and clear reporting that providers can use to improve outcomes, demonstrate compliance, and achieve a stronger return on investment.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can patients text with Positive Check instead of taking phone calls?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Positive Check supports two-way conversational SMS check-ins alongside voice calls. Lola holds a real back-and-forth text conversation covering the same wellness questions as a call, with the same AI analysis and care-team alerting. Patients opt in and can opt out at any time with standard keywords, and all messaging follows TCPA requirements. Patients who repeatedly miss calls can be offered a switch to text check-ins so they stay connected on the channel that works for them.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What happens if a patient misses their check-in call?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Positive Check runs a full missed-call recovery workflow, not just a redial. Patients can receive a reminder text before the call, smart retries are scheduled within configured windows, voicemail is detected automatically, and the care team is notified of missed contacts. If calls keep going unanswered, the patient can be invited by text to complete the check-in as an SMS conversation instead. Patients can also call Lola back anytime on the inbound line to complete a check-in, reschedule, or reach a live person.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does Positive Check have an API for integrations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Positive Check provides a developer-ready REST API with programmatic access to patients, call records and transcripts, SMS conversations, alerts, queue status, and analytics. Access is secured with API keys, per-key rate limiting, and full OpenAPI documentation, with every request scoped to your organization. The platform can also receive events from your systems through secure signed webhooks.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How does Positive Check make sure the AI gets it right?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "AI output is verified, not assumed. Deterministic clinical guardrails — rule-based alert thresholds for readings like blood pressure, glucose, and oxygen saturation — fire even if the AI analysis misses them. An independent quality-assurance engine then re-analyzes every call to audit the recorded outcome, catching missed alerts and false positives and flagging incongruent calls for human review. When a live conversation needs a person, Lola can transfer the call to the care team in real time.",
       },
     },
   ],

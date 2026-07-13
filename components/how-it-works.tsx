@@ -45,7 +45,7 @@ export function HowItWorksComponent() {
               {
                 "@type": "HowToStep",
                 "name": "Engage with Patients",
-                "text": "Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns."
+                "text": "Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns. Patients can also call Lola back anytime, complete check-ins by two-way text message, or be transferred live to your care team."
               },
               {
                 "@type": "HowToStep",
@@ -233,15 +233,17 @@ export function HowItWorksComponent() {
                         <ul className="space-y-2">
                           <li>&#8226; Calls from 866-605-8571</li>
                           <li>&#8226; Consistent scheduled time</li>
+                          <li>&#8226; Optional reminder text before each call</li>
                           <li>&#8226; Natural, friendly conversation</li>
-                          <li>&#8226; Automatic retry if missed</li>
+                          <li>&#8226; Patients can call Lola back anytime &#8212; she answers</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-3">Escalation Protocol:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Follow-up questions for concerning responses</li>
-                          <li>&#8226; Multiple retry attempts if unanswered</li>
+                          <li>&#8226; Live transfer to your care team for urgent concerns</li>
+                          <li>&#8226; Smart retries if unanswered, then an opt-in switch to text check-ins</li>
                           <li>&#8226; Care team notification for missed calls</li>
                           <li>&#8226; Detailed call records in dashboard</li>
                         </ul>
@@ -279,9 +281,10 @@ export function HowItWorksComponent() {
                         <h4 className="font-semibold text-gray-900 mb-3">Dashboard Features:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Population wellness trends</li>
-                          <li>&#8226; Historical data and patterns</li>
-                          <li>&#8226; Compliance reporting</li>
-                          <li>&#8226; Call logs and audit trail</li>
+                          <li>&#8226; Call logs with transcripts and recording playback</li>
+                          <li>&#8226; AI reporting chat &#8212; ask questions in plain English</li>
+                          <li>&#8226; Weekly per-patient risk-trend analysis</li>
+                          <li>&#8226; Compliance reporting and audit trail</li>
                         </ul>
                       </div>
                     </div>
@@ -314,6 +317,20 @@ export function HowItWorksComponent() {
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
+                        <strong>Voice or Text &#8212; Their Choice</strong>
+                        <p className="text-gray-600">Phone calls or two-way SMS check-ins, whichever fits the patient</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <strong>Call Back Anytime</strong>
+                        <p className="text-gray-600">Lola answers inbound calls &#8212; reschedule, ask questions, or reach a live person</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
                         <strong>Familiar Routine</strong>
                         <p className="text-gray-600">Same friendly voice at the same time</p>
                       </div>
@@ -336,6 +353,20 @@ export function HowItWorksComponent() {
                       <div>
                         <strong>Real-Time Alerts</strong>
                         <p className="text-gray-600">Immediate notification when patients need attention</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <strong>Live Transfer Escalation</strong>
+                        <p className="text-gray-600">Urgent conversations hand off to your care team mid-call</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <strong>Verified AI Quality</strong>
+                        <p className="text-gray-600">Rule-based clinical safety nets plus an independent QA audit of every call</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
