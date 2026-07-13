@@ -32,15 +32,23 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const featuredArticle = {
-    title: "CCM Billing in 2026: The Complete Guide to CPT 99490, 99439, 99487, and 99489",
-    excerpt: "The CY 2026 Physician Fee Schedule raised rates across all four staff-directed CCM codes. Learn what each code covers, how to choose non-complex vs. complex CCM, and how to keep documentation audit-defensible.",
-    slug: "ccm-billing-2026-cpt-codes-guide",
-    date: "July 2, 2026",
+    title: "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement",
+    excerpt: "The CY 2026 Physician Fee Schedule added two new RPM codes — 99445 and 99470 — creating billable pathways for shorter transmission and treatment-management periods. Learn what each code covers and how to keep documentation defensible.",
+    slug: "2026-rpm-cpt-codes",
+    date: "July 12, 2026",
     readTime: "12 min read",
-    image: "/images/ccm-billing-2026-guide.png",
+    image: "/images/2026-rpm-cpt-codes-billing-guide.png",
   }
 
   const articles = [
+    {
+      title: "CCM Billing in 2026: The Complete Guide to CPT 99490, 99439, 99487, and 99489",
+      excerpt: "The CY 2026 Physician Fee Schedule raised rates across all four staff-directed CCM codes. Learn what each code covers, how to choose non-complex vs. complex CCM, and how to keep documentation audit-defensible.",
+      slug: "ccm-billing-2026-cpt-codes-guide",
+      date: "July 2, 2026",
+      readTime: "12 min read",
+      image: "/images/ccm-billing-2026-guide.png",
+    },
     {
       title: "Can AI Companions Help Seniors and Caregivers?",
       excerpt:
