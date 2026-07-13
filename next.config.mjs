@@ -49,6 +49,11 @@ const nextConfig = {
                 permanent: true,
             },
             {
+                source: '/blog/ccm-billing-2026-cpt-99490-99439-99487-99489',
+                destination: '/blog/ccm-billing-2026-cpt-codes-guide',
+                permanent: true,
+            },
+            {
                 source: '/provider-login',
                 destination: 'https://provider.positivecheck.com/admin-new/login',
                 permanent: true,
