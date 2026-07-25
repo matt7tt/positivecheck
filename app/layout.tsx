@@ -100,6 +100,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
+        {/* Blog feed discovery */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Positive Check Blog"
+          href="/feed.xml"
+        />
+
         {/* Resource Hints for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

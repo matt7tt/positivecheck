@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function MaintainingSocialConnectionsPost() {
+export function MaintainingSocialConnectionsPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
@@ -19,12 +20,29 @@ export function MaintainingSocialConnectionsPost() {
           Maintaining Social Connections in Senior Years
         </h1>
 
+        <PostMeta
+          datePublished="2025-03-10"
+          displayDate="March 10, 2025"
+          readTime="8 min read"
+        />
+
         <Image
           src="/images/happy-seniors.webp"
           alt="Group of senior friends enjoying social time together"
           width={800}
           height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="Social connections significantly impact seniors' mental, emotional, and physical well-being — and regular engagement can prevent isolation and enhance quality of life."
+          points={[
+            "Active social engagement helps prevent depression and anxiety while maintaining cognitive function.",
+            "Seniors with robust social networks often experience better physical health and healthier lifestyles.",
+            "Community involvement, technology adoption, hobby groups, and volunteer work are all effective ways to stay connected.",
+            "Barriers like transportation, technology challenges, health limitations, and location can be overcome with the right supports.",
+            "Regular friendly check-ins and family updates, like those from Positive Check, help seniors stay engaged and families stay informed.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -127,6 +145,8 @@ export function MaintainingSocialConnectionsPost() {
             Get Started Today
           </Link>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>

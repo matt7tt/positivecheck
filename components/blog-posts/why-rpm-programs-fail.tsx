@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function WhyRpmProgramsFailPost() {
+export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
@@ -20,6 +21,12 @@ export function WhyRpmProgramsFailPost() {
           Why RPM Programs Fail: Four Operational Problems and How to Fix Them
         </h1>
 
+        <PostMeta
+          datePublished="2026-07-20"
+          displayDate="July 20, 2026"
+          readTime="6 min read"
+        />
+
         <Image
           src="/images/why-rpm-programs-fail.jpg"
           alt="Why RPM programs fail: four operational problems — enrollment, adherence, alerts, and documentation — and how to fix them"
@@ -27,6 +34,17 @@ export function WhyRpmProgramsFailPost() {
           height={907}
           priority
           className="w-full h-auto rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="Most RPM and CCM programs don't fail on clinical grounds — they fail operationally, at four specific points: enrollment, adherence, alert triage, and documentation."
+          points={[
+            "Enrollment stalls when follow-up depends on staff remembering to call; structured multi-touch outreach campaigns fix it.",
+            "Patient adherence declines by weeks 8–12 without reinforcement, threatening both monitoring quality and billing eligibility.",
+            "Alert fatigue overwhelms care teams unless patient-specific thresholds triage which readings reach a clinician.",
+            "Revenue is lost when documentation is reconstructed at month-end instead of captured as each interaction happens.",
+            "All four failure points share one root cause: patients are hard to reach consistently at scale — that's the gap automated outreach closes.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -137,6 +155,8 @@ export function WhyRpmProgramsFailPost() {
             </Link>
           </div>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">

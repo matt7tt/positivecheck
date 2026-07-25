@@ -48,6 +48,9 @@ export interface ArticleInput {
   image: string;             // absolute URL
   datePublished: string;     // YYYY-MM-DD
   dateModified: string;      // YYYY-MM-DD
+  type?: "Article" | "BlogPosting";
+  articleSection?: string;   // e.g. "Provider Billing"
+  keywords?: string[];       // target + secondary keywords
 }
 
 // Internal helper — the Organization shape used when referenced from another schema
@@ -154,12 +157,14 @@ export function buildServiceSchema(input: ServiceInput) {
 export function buildArticleSchema(input: ArticleInput) {
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": input.type ?? "Article",
     headline: input.headline,
     description: input.description,
     image: input.image,
     datePublished: input.datePublished,
     dateModified: input.dateModified,
+    ...(input.articleSection ? { articleSection: input.articleSection } : {}),
+    ...(input.keywords?.length ? { keywords: input.keywords.join(", ") } : {}),
     author: {
       "@type": "Organization",
       name: ORG_NAME_SHORT,

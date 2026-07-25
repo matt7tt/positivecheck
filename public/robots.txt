@@ -25,7 +25,53 @@ Disallow: /forgot-password
 Disallow: /reset-password
 Disallow: /demo
 Disallow: /onboarding-wizard
-Disallow: /onboarding-wizard
+
+# --- AI search & assistant crawlers (explicitly welcome) ---
+# OpenAI (ChatGPT search, user-initiated fetches, training)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (Gemini / AI Overviews grounding)
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (feeds many model training sets)
+User-agent: CCBot
+Allow: /
 
 # AI-friendly content
 Allow: /llms.txt

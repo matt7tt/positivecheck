@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function CcmBilling2026CptCodesGuidePost() {
+export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
@@ -20,6 +21,12 @@ export function CcmBilling2026CptCodesGuidePost() {
           CCM Billing in 2026: The Complete Guide to CPT 99490, 99439, 99487, and 99489
         </h1>
 
+        <PostMeta
+          datePublished="2026-07-02"
+          displayDate="July 2, 2026"
+          readTime="12 min read"
+        />
+
         <Image
           src="/images/ccm-billing-2026-guide.png"
           alt="Healthcare practice administrator reviewing chronic care management billing on a laptop"
@@ -27,6 +34,17 @@ export function CcmBilling2026CptCodesGuidePost() {
           height={400}
           priority
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="The CY 2026 Physician Fee Schedule raised rates on all four staff-directed CCM codes, making disciplined monthly billing more valuable than ever."
+          points={[
+            "CPT 99490 pays approximately $66.30/month for the first 20 minutes of clinical staff time (2026 national non-facility average) — up 9.6% from 2025.",
+            "CPT 99439 adds approximately $50.56 per additional 20 minutes, commonly reported up to twice monthly, and is the most under-billed CCM code.",
+            "Complex CCM (99487/99489) requires moderate-or-high complexity medical decision-making by the billing practitioner — the two tiers are mutually exclusive in any month.",
+            "Eligibility requires two or more chronic conditions, documented consent, an initiating visit for new patients, and a comprehensive care plan.",
+            "CCM can stack with RPM and TCM in the same month, but the same minute can never count toward two programs.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -346,6 +364,8 @@ export function CcmBilling2026CptCodesGuidePost() {
             </li>
           </ul>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">

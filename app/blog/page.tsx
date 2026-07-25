@@ -6,6 +6,7 @@ import { Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
+import { featuredPost, gridPosts, type BlogPost } from "@/lib/blog-posts"
 
 export const metadata: Metadata = {
   title: 'Blog — Senior Care & Provider Insights | Positive Check',
@@ -31,79 +32,16 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  const featuredArticle = {
-    title: "Why RPM Programs Fail: Four Operational Problems and How to Fix Them",
-    excerpt: "RPM and CCM programs often struggle with enrollment, adherence, alert overload, and staff capacity. Learn how to fix each operational failure point with structured, automated patient outreach.",
-    slug: "why-rpm-programs-fail",
-    date: "July 20, 2026",
-    readTime: "6 min read",
-    image: "/images/why-rpm-programs-fail.jpg",
-  }
-
-  const articles = [
-    {
-      title: "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement",
-      excerpt:
-        "The CY 2026 Physician Fee Schedule added two new RPM codes — 99445 and 99470 — creating billable pathways for shorter transmission and treatment-management periods. Learn what each code covers and how to keep documentation defensible.",
-      slug: "2026-rpm-cpt-codes",
-      date: "July 12, 2026",
-      readTime: "12 min read",
-      image: "/images/2026-rpm-cpt-codes-billing-guide.png",
-    },
-    {
-      title: "CCM Billing in 2026: The Complete Guide to CPT 99490, 99439, 99487, and 99489",
-      excerpt: "The CY 2026 Physician Fee Schedule raised rates across all four staff-directed CCM codes. Learn what each code covers, how to choose non-complex vs. complex CCM, and how to keep documentation audit-defensible.",
-      slug: "ccm-billing-2026-cpt-codes-guide",
-      date: "July 2, 2026",
-      readTime: "12 min read",
-      image: "/images/ccm-billing-2026-guide.png",
-    },
-    {
-      title: "Can AI Companions Help Seniors and Caregivers?",
-      excerpt:
-        "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-      slug: "ai-companions-for-senior-loneliness-and-caregiver-stress",
-      date: "July 5, 2025",
-      readTime: "8 min read",
-      image: "/images/ai-companion-senior-wellness.png",
-    },
-    {
-      title: "Why Sleep Quality Is Critical for Senior Safety & Health",
-      excerpt:
-        "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help prevent issues.",
-      slug: "senior-sleep-health-fall-prevention-wellness-monitoring",
-      date: "June 27, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-sleep-safety-bedroom.png",
-    },
-    {
-      title: "The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention",
-      excerpt:
-        "While care communities strive to provide quality service, regular check-ins are crucial for ensuring seniors receive consistent, individualized attention and maintaining their well-being.",
-      slug: "importance-of-checking-in-care-communities",
-      date: "March 17, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-care-family-visit.png",
-    },
-    {
-      title: "Maintaining Social Connections in Senior Years",
-      excerpt:
-        "Social connections play a vital role in maintaining mental and physical health as we age. Learn effective strategies to help seniors stay socially active and engaged.",
-      slug: "maintaining-social-connections",
-      date: "March 10, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-social-connections.png",
-    },
-    {
-      title: "7 Ways Phone Check-ins Help Senior Mental Health",
-      excerpt:
-        "Discover how regular phone check-ins improve senior mental health and safety, providing proven benefits for aging in place and caregiver peace of mind.",
-      slug: "senior-phone-check-ins-mental-health-safety-benefits",
-      date: "January 25, 2025",
-      readTime: "8 min read",
-      image: "/images/senior-phone-check-in.png",
-    },
-  ]
+  const toCard = (p: BlogPost) => ({
+    title: p.title,
+    excerpt: p.description,
+    slug: p.slug,
+    date: p.displayDate,
+    readTime: p.readTime,
+    image: p.image,
+  })
+  const featuredArticle = toCard(featuredPost)
+  const articles = gridPosts.map(toCard)
 
   return (
     <div className="min-h-screen bg-white">

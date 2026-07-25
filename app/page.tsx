@@ -115,7 +115,7 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI Patient Engagement Platform for<br />
+            AI Patient Engagement Platform for{' '}<br />
             <span className="inline-block h-2"></span><br />
             <span className="text-[#e879f9]">{rotatingTexts[rotatingTextIndex]}</span>
           </h1>

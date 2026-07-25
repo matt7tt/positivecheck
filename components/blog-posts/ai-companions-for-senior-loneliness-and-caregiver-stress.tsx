@@ -1,56 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import Script from 'next/script'
 import Image from 'next/image'
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
+export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
-      <Script id="article-structured-data" type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Can AI Companions Help Seniors and Caregivers?",
-            "description": "Discover how AI companions like Positive Check reduce senior loneliness and caregiver stress with daily wellness calls and timely updates delivered to you.",
-            "image": "https://www.positivecheck.com/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp",
-            "author": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://www.positivecheck.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://www.positivecheck.com/images/positive-logo.png"
-            },
-            "datePublished": "2025-07-05",
-            "dateModified": "2025-07-05",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://www.positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress"
-            },
-            "articleSection": "Senior Technology",
-            "keywords": ["AI companions", "senior loneliness", "caregiver stress", "senior isolation", "wellness calls", "senior care technology", "caregiver support"],
-            "about": [
-              {
-                "@type": "Thing",
-                "name": "AI Technology"
-              },
-              {
-                "@type": "Thing", 
-                "name": "Senior Wellness"
-              },
-              {
-                "@type": "Thing",
-                "name": "Caregiver Support"
-              }
-            ]
-          }
-        `}
-      </Script>
-      <Link 
+      <Link
         href="/blog"
         className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
@@ -63,12 +20,29 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
           Can AI Companions Help Seniors and Caregivers?
         </h1>
 
+        <PostMeta
+          datePublished="2025-07-05"
+          displayDate="July 5, 2025"
+          readTime="8 min read"
+        />
+
         <Image
           src="/images/ai-companion-reduce-senior-isolation-and-caregiver-stress.webp"
           alt="A caregiver and senior sharing a supportive moment together"
           width={800}
           height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="AI companions like Positive Check's daily wellness calls ease two interconnected burdens at once — senior isolation and caregiver stress — not by replacing human connection, but by reinforcing it."
+          points={[
+            "More than one-third of adults over 65 live alone in the United States, and social isolation is linked to increased risks of depression, cognitive decline, and even heart disease.",
+            "Caregivers — often 'sandwich generation' adult children — carry a constant mental load that can lead to stress, fatigue, and burnout.",
+            "Daily AI check-in calls give seniors routine, mental stimulation through games and riddles, safety check-ins, and a friendly voice each day.",
+            "Caregivers gain peace of mind through daily updates, proactive alerts when something does not sound right, time back, and reduced guilt.",
+            "AI companions are an extension of human care, not a replacement — use AI for routine support and save your energy for quality moments together.",
+          ]}
         />
 
         <h2 className={`text-2xl font-bold text-gray-900 mt-8 mb-4`}>
@@ -202,6 +176,8 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost() {
             Get Started Today
           </Link>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>

@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function ImportanceOfCheckingInPost() {
+export function ImportanceOfCheckingInPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
@@ -20,12 +21,29 @@ export function ImportanceOfCheckingInPost() {
           The Importance of Checking In: Ensuring Seniors in Care Communities Receive Proper Attention
         </h1>
 
+        <PostMeta
+          datePublished="2025-03-17"
+          displayDate="March 17, 2025"
+          readTime="8 min read"
+        />
+
         <Image
           src="/images/seniors-in-community.webp"
           alt="Seniors in a care community setting"
           width={800}
           height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="Even the best care communities can fall short in providing consistent, individualized attention — regular family check-ins help ensure seniors receive the care they deserve."
+          points={[
+            "Staff shortages, high patient-to-caregiver ratios, and administrative oversight can lead to gaps in care.",
+            "Daily check-ins help families monitor physical health, medication management, and emotional well-being.",
+            "Consistent family involvement signals to staff that a resident has attentive loved ones, which can lead to better, more personalized care.",
+            "Regular check-ins help catch red flags — like neglect, medication errors, or depression — before a situation worsens.",
+            "A quick five-minute call, scheduled visits, engaging with staff, or automated wellness calls like Positive Check all keep families connected.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -81,6 +99,8 @@ export function ImportanceOfCheckingInPost() {
             </Button>
           </Link>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>

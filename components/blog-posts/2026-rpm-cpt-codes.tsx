@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
+import { PostMeta, KeyTakeaways } from "@/components/blog-posts/post-blocks"
 
 export function RpmBilling2026CptCodesPost() {
   return (
@@ -20,7 +21,11 @@ export function RpmBilling2026CptCodesPost() {
           RPM Billing in 2026: CPT Codes, Requirements and Reimbursement
         </h1>
 
-        <p className="text-sm text-gray-500 mb-4">Last updated: July 12, 2026</p>
+        <PostMeta
+          datePublished="2026-07-12"
+          displayDate="July 12, 2026"
+          readTime="12 min read"
+        />
 
         <Image
           src="/images/2026-rpm-cpt-codes-billing-guide.png"
@@ -29,6 +34,17 @@ export function RpmBilling2026CptCodesPost() {
           height={400}
           priority
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="The CY 2026 Physician Fee Schedule added two new RPM codes — 99445 and 99470 — creating billable pathways for engagement that previously fell below the reporting thresholds."
+          points={[
+            "The six principal 2026 RPM codes: 99453 (setup), 99445/99454 (device supply), and 99470/99457/99458 (treatment management).",
+            "CPT 99445 (new) covers 2–15 transmission days per 30-day period; 99454 still requires 16+ days. Only one applies per period.",
+            "CPT 99470 (new) covers 10–19 minutes of monthly treatment-management time; 99457 requires 20+. Only one applies per month.",
+            "Every treatment-management code still requires at least one real-time interactive communication during the month.",
+            "Time-based RPM codes were exempted from the 2026 -2.5% efficiency adjustment, and both conversion factors increased over 2025.",
+          ]}
         />
 
         <p className="lead-paragraph">

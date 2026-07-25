@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { RpmBilling2026CptCodesPost } from "@/components/blog-posts/2026-rpm-cpt-codes"
+import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } from "@/lib/schema"
 
 export const metadata: Metadata = {
   title: '2026 RPM CPT Codes: 99445, 99454, 99457, 99458 & 99470 | Positive Check',
@@ -59,46 +60,41 @@ export default function RpmBilling2026CptCodesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement", "item": "https://www.positivecheck.com/blog/2026-rpm-cpt-codes" }
-            ]
-          })
+          __html: JSON.stringify(buildBreadcrumbSchema([
+            { name: "Home", url: SITE_URL },
+            { name: "Blog", url: `${SITE_URL}/blog` },
+            { name: "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement", url: `${SITE_URL}/blog/2026-rpm-cpt-codes` },
+          ])),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement",
-            "description": "Learn 2026 Medicare RPM billing requirements for CPT 99445, 99454, 99457, 99458 and 99470, including reimbursement, transmission days, treatment time and stacking rules.",
-            "image": "https://www.positivecheck.com/images/2026-rpm-cpt-codes-billing-guide.png",
-            "datePublished": "2026-07-12",
-            "dateModified": "2026-07-12",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.positivecheck.com/blog/2026-rpm-cpt-codes" }
-          })
+          __html: JSON.stringify(buildArticleSchema({
+            type: "BlogPosting",
+            headline: "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement",
+            description: "Learn 2026 Medicare RPM billing requirements for CPT 99445, 99454, 99457, 99458 and 99470, including reimbursement, transmission days, treatment time and stacking rules.",
+            url: `${SITE_URL}/blog/2026-rpm-cpt-codes`,
+            image: `${SITE_URL}/images/2026-rpm-cpt-codes-billing-guide.png`,
+            datePublished: "2026-07-12",
+            dateModified: "2026-07-12",
+            articleSection: "CMS Billing & Compliance",
+            keywords: [
+              "RPM billing 2026",
+              "CPT 99445",
+              "CPT 99454",
+              "CPT 99457",
+              "CPT 99458",
+              "CPT 99470",
+              "remote patient monitoring reimbursement",
+            ],
+          })),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": FAQ_ITEMS.map(item => ({
-              "@type": "Question",
-              "name": item.question,
-              "acceptedAnswer": { "@type": "Answer", "text": item.answer }
-            }))
-          })
+          __html: JSON.stringify(buildFAQSchema(FAQ_ITEMS)),
         }}
       />
       <PublicHeader currentPage="blog" />

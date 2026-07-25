@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { MaintainingSocialConnectionsPost } from "@/components/blog-posts/maintaining-social-connections"
+import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } from "@/lib/schema"
+import type { PostFAQItem } from "@/components/blog-posts/post-blocks"
 
 export const metadata: Metadata = {
   title: 'Senior Social Connections Guide | Positive Check',
@@ -26,42 +28,69 @@ export const metadata: Metadata = {
   },
 }
 
+const FAQ_ITEMS: PostFAQItem[] = [
+  {
+    question: "Why are social connections important for seniors?",
+    answer: "Social connections significantly impact seniors' mental, emotional, and physical well-being. Active social engagement helps prevent depression and anxiety and maintains cognitive function, while seniors with robust social networks often experience better physical health, higher life satisfaction, and a stronger sense of purpose.",
+  },
+  {
+    question: "How can seniors stay socially connected?",
+    answer: "Effective options include participating in local senior centers, religious organizations, or community groups; using video calls, social media, and messaging apps to stay in touch with family and friends; joining hobby groups built around shared interests like gardening, knitting, or reading; and engaging in volunteer work that gives back to the community while meeting new people.",
+  },
+  {
+    question: "What barriers keep seniors from staying social, and how can they be overcome?",
+    answer: "Common barriers include transportation, technology challenges, health limitations, and location constraints. These can be addressed with senior transportation services or ride-sharing apps, training or assistance with digital tools, activities that accommodate physical capabilities, and virtual social opportunities and online communities that work regardless of location.",
+  },
+  {
+    question: "How does Positive Check help seniors maintain social connection?",
+    answer: "Positive Check provides regular friendly check-ins that ensure well-being and provide companionship, keeps families informed about their loved one's social activities and well-being, and suggests social activities and groups that align with individual preferences to encourage active participation.",
+  },
+]
+
+const POST_URL = `${SITE_URL}/blog/maintaining-social-connections`
+
 export default function MaintainingSocialConnectionsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.positivecheck.com/blog" },
-              { "@type": "ListItem", "position": 3, "name": "Maintaining Social Connections in Senior Years", "item": "https://www.positivecheck.com/blog/maintaining-social-connections" }
-            ]
-          })
+          __html: JSON.stringify(buildBreadcrumbSchema([
+            { name: "Home", url: SITE_URL },
+            { name: "Blog", url: `${SITE_URL}/blog` },
+            { name: "Maintaining Social Connections in Senior Years", url: POST_URL },
+          ])),
         }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "Maintaining Social Connections in Senior Years",
-            "description": "Social connections play a vital role in senior mental and physical health. Learn strategies to help seniors stay socially active and engaged.",
-            "image": "https://www.positivecheck.com/images/senior-social-connections.png",
-            "datePublished": "2025-03-10",
-            "dateModified": "2025-03-10",
-            "author": { "@type": "Organization", "name": "Positive Check", "url": "https://www.positivecheck.com" },
-            "publisher": { "@type": "Organization", "name": "Positive Check", "logo": { "@type": "ImageObject", "url": "https://www.positivecheck.com/images/positive-logo-dark-blue.png" } }
-          })
+          __html: JSON.stringify(buildArticleSchema({
+            type: "BlogPosting",
+            headline: "Maintaining Social Connections in Senior Years",
+            description: "Social connections play a vital role in senior mental and physical health. Learn strategies to help seniors stay socially active and engaged.",
+            url: POST_URL,
+            image: `${SITE_URL}/images/senior-social-connections.png`,
+            datePublished: "2025-03-10",
+            dateModified: "2025-03-10",
+            articleSection: "Senior Wellness",
+            keywords: [
+              "senior social connections",
+              "senior isolation",
+              "aging and mental health",
+            ],
+          })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildFAQSchema(FAQ_ITEMS)),
         }}
       />
       <PublicHeader currentPage="blog" />
       <main className="container mx-auto px-4 py-8">
-        <MaintainingSocialConnectionsPost />
+        <MaintainingSocialConnectionsPost faqs={FAQ_ITEMS} />
       </main>
       <PublicFooter />
     </div>

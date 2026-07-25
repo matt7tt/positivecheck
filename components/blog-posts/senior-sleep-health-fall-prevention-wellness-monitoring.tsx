@@ -1,55 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import Script from 'next/script'
 import Image from 'next/image'
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
+export function SeniorSleepHealthFallPreventionWellnessMonitoringPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
-      <Script id="article-structured-data" type="application/ld+json">
-        {`
-          {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Why Sleep Quality Is Critical for Senior Safety & Health",
-            "description": "Poor sleep increases fall risk by 30% in seniors. Learn why quality sleep matters for aging adults and how daily wellness monitoring can help prevent issues.",
-            "author": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://www.positivecheck.com"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Positive Check",
-              "url": "https://www.positivecheck.com/images/positive-logo.png"
-            },
-            "datePublished": "2025-06-27",
-            "dateModified": "2025-06-27",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://www.positivecheck.com/blog/senior-sleep-health-fall-prevention-wellness-monitoring"
-            },
-            "articleSection": "Senior Care",
-            "keywords": ["senior sleep health", "fall prevention", "wellness monitoring", "elderly sleep quality", "senior safety", "aging in place"],
-            "about": [
-              {
-                "@type": "Thing",
-                "name": "Senior Sleep Health"
-              },
-              {
-                "@type": "Thing", 
-                "name": "Fall Prevention"
-              },
-              {
-                "@type": "Thing",
-                "name": "Wellness Monitoring"
-              }
-            ]
-          }
-        `}
-      </Script>
-      <Link 
+      <Link
         href="/blog"
         className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
         aria-label="Back to blog"
@@ -62,12 +20,29 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
           The Critical Importance of Sleep for Senior Health: Why Quality Rest Can't Be Ignored
         </h1>
 
+        <PostMeta
+          datePublished="2025-06-27"
+          displayDate="June 27, 2025"
+          readTime="8 min read"
+        />
+
         <Image
           src="/images/critical-importance-of-sleep-for-senior-health.webp"
           alt="Senior sleeping peacefully, illustrating the importance of quality sleep for health and safety"
           width={800}
           height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="Quality sleep is not a luxury for seniors — it is a fundamental component of healthy aging, safety, and independence, and poor sleep carries documented risks families cannot afford to overlook."
+          points={[
+            "Poor sleep quality increases fall risk by 30% among seniors, while also raising the likelihood of adverse health outcomes by 15%.",
+            "Sleep patterns naturally change with age — earlier bedtimes, more fragmented sleep, and reduced deep sleep — but poor sleep is not inevitable.",
+            "Sleep deprivation creates a cascade of health challenges, affecting cognitive function, immune strength, medication management, mental health, and physical health.",
+            "Sleep problems often develop gradually and may not be obvious during occasional family visits, so warning signs like daytime fatigue, mood changes, and balance issues are easy to miss.",
+            "Daily wellness check-in calls track sleep quality over time, helping families spot declining trends and intervene early — with no devices or apps for seniors to learn.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -282,6 +257,8 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost() {
         <div className="mt-8 text-center text-sm text-gray-600">
           <p>#SeniorWellness #VirtualCaregiver #DailyCheckIns #CaregiverSupport #AgingInPlace #PositiveCheck</p>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>

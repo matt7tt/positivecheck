@@ -86,6 +86,9 @@
 
 ## Blog
 
+Feed: https://www.positivecheck.com/feed.xml
+
+- [Why RPM programs fail: four operational problems and how to fix them](https://www.positivecheck.com/blog/why-rpm-programs-fail)
 - [RPM billing in 2026: CPT codes, requirements and reimbursement](https://www.positivecheck.com/blog/2026-rpm-cpt-codes)
 - [CCM billing in 2026: the complete guide to CPT 99490, 99439, 99487, and 99489](https://www.positivecheck.com/blog/ccm-billing-2026-cpt-codes-guide)
 - [AI companions for senior loneliness and caregiver stress](https://www.positivecheck.com/blog/ai-companions-for-senior-loneliness-and-caregiver-stress)

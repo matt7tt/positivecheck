@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { Button } from "@/components/ui/button"
-import Script from 'next/script'
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
+export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="min-h-screen flex flex-col">
       <PublicHeader currentPage="blog" />
@@ -13,51 +13,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
-            <Script id="article-structured-data" type="application/ld+json">
-              {`
-                {
-                  "@context": "https://schema.org",
-                  "@type": "Article",
-                  "headline": "7 Ways Regular Phone Check-ins Improve Senior Mental Health and Safety",
-                  "description": "Discover 7 ways regular phone check-ins improve senior mental health and safety. Learn proven benefits of elderly wellness calls for aging in place and caregiver peace of mind.",
-                  "image": "https://www.positivecheck.com/images/senior-phone-check-in-mental-health.webp",
-                  "author": {
-                    "@type": "Organization",
-                    "name": "Positive Check",
-                    "url": "https://www.positivecheck.com"
-                  },
-                  "publisher": {
-                    "@type": "Organization",
-                    "name": "Positive Check",
-                    "url": "https://www.positivecheck.com/images/positive-logo.png"
-                  },
-                  "datePublished": "2025-01-25",
-                  "dateModified": "2025-01-25",
-                  "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://www.positivecheck.com/blog/senior-phone-check-ins-mental-health-safety-benefits"
-                  },
-                  "articleSection": "Senior Care",
-                  "keywords": ["senior mental health", "phone check-ins", "elderly wellness", "aging in place", "caregiver support", "senior safety"],
-                  "about": [
-                    {
-                      "@type": "Thing",
-                      "name": "Senior Mental Health"
-                    },
-                    {
-                      "@type": "Thing", 
-                      "name": "Elderly Wellness"
-                    },
-                    {
-                      "@type": "Thing",
-                      "name": "Caregiver Support"
-                    }
-                  ]
-                }
-              `}
-            </Script>
-
-            <Link 
+            <Link
               href="/blog"
               className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
               aria-label="Back to blog"
@@ -70,12 +26,29 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                 7 Ways Regular Phone Check-ins Improve Senior Mental Health and Safety
               </h1>
 
+              <PostMeta
+                datePublished="2025-01-25"
+                displayDate="January 25, 2025"
+                readTime="8 min read"
+              />
+
               <Image
                 src="/images/senior-phone-check-in-mental-health.webp"
                 alt="Senior person enjoying a phone conversation, representing the mental health benefits of regular check-ins"
                 width={800}
                 height={400}
                 className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+              />
+
+              <KeyTakeaways
+                summary="Regular phone check-ins create a comprehensive support system for seniors living alone, addressing both mental health and safety while helping them age in place."
+                points={[
+                  "Scheduled calls build routine and safety awareness, supporting regular sleep, meal, and medication schedules.",
+                  "Consistent conversation combats social isolation — studies show prolonged loneliness can be as harmful to health as smoking 15 cigarettes daily.",
+                  "Trained callers can catch subtle changes in speech, mood, or cognition that signal developing health issues early.",
+                  "Check-ins support medication adherence, a challenge for the up to 40% of older adults who don't take medications as prescribed.",
+                  "Phone check-in services typically cost a fraction of institutional care, helping seniors stay independent longer while giving families peace of mind.",
+                ]}
               />
 
               <p className="lead-paragraph">
@@ -201,6 +174,8 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost() {
                   Start Your Free Wellness Check-In Today
                 </Link>
               </div>
+
+              <PostFAQ items={faqs} />
 
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>

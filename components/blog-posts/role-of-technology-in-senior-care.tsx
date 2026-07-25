@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { PostMeta, KeyTakeaways, PostFAQ, type PostFAQItem } from "@/components/blog-posts/post-blocks"
 
-export function TechnologyInSeniorCarePost() {
+export function TechnologyInSeniorCarePost({ faqs = [] }: { faqs?: PostFAQItem[] }) {
   return (
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
@@ -19,12 +20,28 @@ export function TechnologyInSeniorCarePost() {
           The Role of Technology in Modern Senior Care
         </h1>
 
+        <PostMeta
+          datePublished="2025-01-25"
+          displayDate="January 25, 2025"
+          readTime="8 min read"
+        />
+
         <Image
           src="/images/senior-tech.webp"
           alt="Senior person using technology for health monitoring"
           width={800}
           height={400}
           className="w-full h-[400px] object-cover rounded-lg mb-8 shadow-md border border-gray-200"
+        />
+
+        <KeyTakeaways
+          summary="Technology is transforming senior care with new ways to ensure safety, maintain independence, and give families peace of mind."
+          points={[
+            "Key technologies include health monitoring systems, safety and security solutions, communication tools, and smart home automation.",
+            "Technology enables enhanced independence, improved health management, better communication, and increased safety with 24/7 monitoring.",
+            "When implementing solutions, start small, prioritize senior-friendly usability, choose proven technologies, and balance monitoring with privacy.",
+            "Positive Check combines human care with technology: regular check-ins, real-time family updates, and integration with emergency response services.",
+          ]}
         />
 
         <p className="lead-paragraph">
@@ -115,6 +132,8 @@ export function TechnologyInSeniorCarePost() {
             GET STARTED TODAY
           </Link>
         </div>
+
+        <PostFAQ items={faqs} />
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className={`text-2xl font-bold text-gray-900 mb-6`}>
