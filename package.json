@@ -10,7 +10,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "indexnow": "node scripts/indexnow-ping.mjs"
+    "indexnow": "node scripts/indexnow-ping.mjs",
+    "llms-full": "node scripts/generate-llms-full.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

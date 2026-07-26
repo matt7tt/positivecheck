@@ -10,7 +10,7 @@ import { RequestDemoModal } from "@/components/request-demo-modal"
 import { LolaCallModal } from "@/components/lola-call-modal"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { PublicHeader } from "@/components/shared/public-header"
-import { StructuredData, organizationSchema, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
+import { StructuredData, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 
 export default function HomePage() {
@@ -105,7 +105,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Toaster position="top-center" />
-      <StructuredData data={organizationSchema} id="schema-organization" />
+      {/* Organization schema is emitted site-wide by app/layout.tsx */}
       <StructuredData data={medicalServiceSchema} id="schema-medical-service" />
       <StructuredData data={faqSchema} id="schema-faq" />
       <StructuredData data={generateBreadcrumbSchema([{name: "Home", url: "https://www.positivecheck.com"}])} id="schema-breadcrumb" />

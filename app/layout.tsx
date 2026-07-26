@@ -160,6 +160,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         
+        {/* AI-assistant referral tracking: tags visits arriving from AI search
+            tools so they're segmentable in GA4 (event: ai_referral) and GTM
+            (dataLayer event). */}
+        <Script
+          id="ai-referral-tracking"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                try {
+                  var r = document.referrer;
+                  if (!r) return;
+                  var host = new URL(r).hostname;
+                  var aiSources = {
+                    'chatgpt.com': 'chatgpt', 'chat.openai.com': 'chatgpt',
+                    'perplexity.ai': 'perplexity', 'www.perplexity.ai': 'perplexity',
+                    'claude.ai': 'claude',
+                    'gemini.google.com': 'gemini', 'bard.google.com': 'gemini',
+                    'copilot.microsoft.com': 'copilot',
+                    'you.com': 'you', 'poe.com': 'poe', 'meta.ai': 'meta-ai'
+                  };
+                  var source = aiSources[host];
+                  if (!source) return;
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({ event: 'ai_referral', ai_source: source, ai_referrer: host });
+                  if (typeof window.gtag === 'function') {
+                    window.gtag('event', 'ai_referral', { ai_source: source, ai_referrer: host });
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-C6J8097SY5"

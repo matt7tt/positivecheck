@@ -90,8 +90,23 @@ export function buildOrganizationSchema() {
       "@type": "PostalAddress",
       addressCountry: "US",
     },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    knowsAbout: [
+      "Remote Patient Monitoring (RPM)",
+      "Chronic Care Management (CCM)",
+      "Transitional Care Management (TCM)",
+      "Medicare CPT billing codes",
+      "CMS care program compliance",
+      "HIPAA compliance",
+      "AI patient engagement",
+      "Senior wellness check-in calls",
+    ],
+    // NOTE: linkedin.com/company/positivecheck returned 404 (verified 2026-07-25);
+    // re-add when a live company page exists.
     sameAs: [
-      "https://www.linkedin.com/company/positivecheck",
       "https://www.facebook.com/positivecheck",
     ],
   } as const;

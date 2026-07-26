@@ -7,7 +7,6 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import {
   StructuredData,
   buildBreadcrumbSchema,
-  buildOrganizationSchema,
 } from '@/components/structured-data'
 
 export const metadata: Metadata = {
@@ -43,10 +42,7 @@ export default function AboutPage() {
           { name: 'About', url: 'https://www.positivecheck.com/about' },
         ])}
       />
-      <StructuredData
-        id="about-organization"
-        data={buildOrganizationSchema()}
-      />
+      {/* Organization schema is emitted site-wide by app/layout.tsx */}
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="about" />
 

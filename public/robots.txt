@@ -75,6 +75,7 @@ Allow: /
 
 # AI-friendly content
 Allow: /llms.txt
+Allow: /llms-full.txt
 
 # Sitemap location
 Sitemap: https://www.positivecheck.com/sitemap.xml

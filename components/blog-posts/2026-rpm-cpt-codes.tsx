@@ -59,7 +59,13 @@ export function RpmBilling2026CptCodesPost() {
           What are the RPM CPT codes for 2026?
         </h2>
         <p>
-          The principal Medicare RPM codes for 2026 are 99453 for setup and education; 99445 and 99454 for device supply and data transmission; and 99470, 99457, and 99458 for treatment management. CPT 99091 may additionally apply to qualifying physician or other qualified healthcare professional data collection and interpretation, as a distinct legacy service rather than an interchangeable part of the six-code framework above.
+          The principal Medicare RPM codes for 2026 are{' '}
+          <Link href="/resources/glossary/cpt-99453" className="text-[#d946ef] hover:underline">99453</Link> for setup and education;{' '}
+          <Link href="/resources/glossary/cpt-99445" className="text-[#d946ef] hover:underline">99445</Link> and{' '}
+          <Link href="/resources/glossary/cpt-99454" className="text-[#d946ef] hover:underline">99454</Link> for device supply and data transmission; and{' '}
+          <Link href="/resources/glossary/cpt-99470" className="text-[#d946ef] hover:underline">99470</Link>,{' '}
+          <Link href="/resources/glossary/cpt-99457" className="text-[#d946ef] hover:underline">99457</Link>, and{' '}
+          <Link href="/resources/glossary/cpt-99458" className="text-[#d946ef] hover:underline">99458</Link> for treatment management. CPT 99091 may additionally apply to qualifying physician or other qualified healthcare professional data collection and interpretation, as a distinct legacy service rather than an interchangeable part of the six-code framework above.
         </p>
         <p>
           Two of the six principal codes — 99445 and 99470 — are new for 2026. CPT 99453 covers initial device setup and patient education. Device-supply codes 99445 and 99454 are reported based on a 30-day monitoring period, while treatment-management codes 99470, 99457, and 99458 are reported based on a calendar month. Those periods don't always align exactly, and each component's requirements are evaluated independently.

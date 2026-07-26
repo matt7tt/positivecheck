@@ -1,5 +1,7 @@
 # Positive Check
 
+Full-text version: https://www.positivecheck.com/llms-full.txt
+
 > Positive Check (legal entity: Positive Check LLC) is an AI-powered patient wellness call platform for healthcare providers running CMS-reimbursed care programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM). The platform's AI companion, Lola, conducts wellness check-ins by outbound voice call and two-way SMS, answers inbound patient calls with identity-verified self-service, and can transfer a live call to the provider's care team. Check-ins cover medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking. AI analysis is backed by deterministic clinical guardrails (rule-based vitals alert thresholds) and an independent quality-assurance audit of every call outcome. Insights reach care teams through a secure HIPAA-compliant dashboard with AI natural-language reporting, weekly per-patient risk-trend analysis, and a developer REST API for integrations.
 
 ## Care program solutions

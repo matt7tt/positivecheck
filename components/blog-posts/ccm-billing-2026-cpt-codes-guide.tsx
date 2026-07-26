@@ -52,7 +52,11 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
         </p>
 
         <p>
-          There are four core staff-directed Chronic Care Management codes that determine the revenue picture for almost every CCM program. CPT 99490 is the foundation. CPT 99439 is the upside on a non-complex patient. CPT 99487 and 99489 are the complex tier, used when a patient's monthly care requires moderate or high complexity medical decision-making by the billing practitioner.
+          There are four core staff-directed Chronic Care Management codes that determine the revenue picture for almost every CCM program.{' '}
+          <Link href="/resources/glossary/cpt-99490" className="text-[#d946ef] hover:underline">CPT 99490</Link> is the foundation.{' '}
+          <Link href="/resources/glossary/cpt-99439" className="text-[#d946ef] hover:underline">CPT 99439</Link> is the upside on a non-complex patient.{' '}
+          <Link href="/resources/glossary/cpt-99487" className="text-[#d946ef] hover:underline">CPT 99487</Link> and{' '}
+          <Link href="/resources/glossary/cpt-99489" className="text-[#d946ef] hover:underline">99489</Link> are the complex tier, used when a patient's monthly care requires moderate or high complexity medical decision-making by the billing practitioner.
         </p>
 
         <p>
