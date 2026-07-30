@@ -8,7 +8,8 @@
 // Run after each production deploy that adds or updates public pages.
 
 const HOST = "www.positivecheck.com";
-const KEY = "de8e5f3f941aebd9153641b5cde88e56";
+// Key registered in Bing Webmaster Tools; served from public/<KEY>.txt
+const KEY = "8765cdc6f92c48a1ac9b8eb36e23daa2";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 
 async function urlsFromSitemap() {
