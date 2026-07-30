@@ -35,8 +35,7 @@ export default function CaseStudyPage() {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.positivecheck.com" },
-              { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "https://www.positivecheck.com/case-studies" },
-              { "@type": "ListItem", "position": 3, "name": "Scaling Patient Engagement", "item": "https://www.positivecheck.com/case-studies/scaling-patient-engagement" }
+              { "@type": "ListItem", "position": 2, "name": "Scaling Patient Engagement", "item": "https://www.positivecheck.com/case-studies/scaling-patient-engagement" }
             ]
           })
         }}

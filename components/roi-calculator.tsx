@@ -18,6 +18,7 @@ import {
   Calculator, Download, ArrowRight, DollarSign, TrendingUp,
   Users, CheckCircle,
 } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 // ---------------------------------------------------------------------------
 // Types & constants
@@ -161,7 +162,13 @@ export function ROICalculator() {
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
     pdf.save('Positive-Check-ROI-Summary.pdf')
-  }, [])
+    trackEvent('calculator_completed', {
+      calculator: 'roi_reimbursement',
+      patient_count: patients,
+      program_type: programType,
+    })
+    trackEvent('pdf_download', { document_name: 'roi_reimbursement_summary' })
+  }, [patients, programType])
 
   return (
     <div className="min-h-screen bg-white">

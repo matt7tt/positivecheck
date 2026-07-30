@@ -27,7 +27,7 @@ export function TechnologyInSeniorCarePost({ faqs = [] }: { faqs?: PostFAQItem[]
         />
 
         <Image
-          src="/images/senior-tech.webp"
+          src="/images/senior-talking-on-the-phone1.webp"
           alt="Senior person using technology for health monitoring"
           width={800}
           height={400}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useCallback } from 'react'
+import { useRef, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
@@ -15,6 +15,7 @@ import {
   Phone, ShieldAlert, LayoutDashboard, TrendingUp,
   Users, Bell, Clock, Download, ArrowRight, CheckCircle
 } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 // ---------------------------------------------------------------------------
 // Data
@@ -72,6 +73,10 @@ const callsByHourData = [
 export function CaseStudyAnchor() {
   const pdfRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    trackEvent('case_study_view', { case_study: 'scaling_patient_engagement' })
+  }, [])
+
   const handleDownloadPdf = useCallback(async () => {
     if (!pdfRef.current) return
     const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
@@ -89,6 +94,7 @@ export function CaseStudyAnchor() {
     const pdfHeight = (canvas.height * pdfWidth) / canvas.width
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
     pdf.save('Positive-Check-Case-Study.pdf')
+    trackEvent('pdf_download', { document_name: 'scaling_patient_engagement_case_study' })
   }, [])
 
   return (

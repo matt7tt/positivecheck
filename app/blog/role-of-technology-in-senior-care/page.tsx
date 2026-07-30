@@ -70,7 +70,7 @@ export default function TechnologyInSeniorCarePage() {
             headline: "The Role of Technology in Senior Care",
             description: "How AI-powered tools and telehealth are transforming senior care delivery, improving patient outcomes, and helping providers scale wellness monitoring.",
             url: POST_URL,
-            image: `${SITE_URL}/images/senior-technology-care.png`,
+            image: `${SITE_URL}/images/senior-talking-on-the-phone1.webp`,
             datePublished: "2025-01-25",
             dateModified: "2025-01-25",
             articleSection: "Senior Care",

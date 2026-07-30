@@ -13,6 +13,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Loader2 } from "lucide-react"
+import { trackEvent } from "@/lib/analytics"
 
 interface RequestDemoModalProps {
   children: React.ReactNode
@@ -53,6 +54,10 @@ export function RequestDemoModal({ children }: RequestDemoModalProps) {
         throw new Error("Failed to submit request")
       }
 
+      trackEvent("generate_lead", {
+        lead_type: "demo_request",
+        patient_volume: patientVolume || "not_provided",
+      })
       setIsSuccess(true)
       setTimeout(() => {
         setOpen(false)
@@ -71,7 +76,13 @@ export function RequestDemoModal({ children }: RequestDemoModalProps) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(nextOpen) => {
+        setOpen(nextOpen)
+        if (nextOpen && !open) trackEvent("request_demo_open")
+      }}
+    >
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
