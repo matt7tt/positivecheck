@@ -19,6 +19,26 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "2027-rpm-proposed-rule",
+    title: "2027 RPM Proposed Rule: Initiating Visits, Employed Staff, and What Could Change",
+    description:
+      "CMS has proposed material RPM and RTM policy changes for 2027, including an initiating-visit requirement and limits on contracted clinical staff. See what is proposed, what remains current law, and what practices should review before the September 14 comment deadline.",
+    datePublished: "2026-07-30",
+    dateModified: "2026-07-30",
+    displayDate: "July 30, 2026",
+    readTime: "9 min read",
+    image: "/images/healthcare-administrator-desk.png",
+    articleSection: "CMS Billing & Compliance",
+    keywords: [
+      "2027 RPM proposed rule",
+      "CMS 2027 RPM",
+      "remote patient monitoring 2027",
+      "RPM initiating visit",
+      "RPM employed clinical staff",
+      "CMS-1848-P",
+    ],
+  },
+  {
     slug: "why-rpm-programs-fail",
     title: "Why RPM Programs Fail: Four Operational Problems and How to Fix Them",
     description:
@@ -175,7 +195,7 @@ export const blogPosts: BlogPost[] = [
     dateModified: "2025-01-25",
     displayDate: "January 25, 2025",
     readTime: "8 min read",
-    image: "/images/senior-technology-care.png",
+    image: "/images/senior-talking-on-the-phone1.webp",
     articleSection: "Senior Care",
     keywords: [
       "technology in senior care",

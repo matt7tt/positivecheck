@@ -16,7 +16,6 @@ Allow: /resources/
 Disallow: /my-account
 Disallow: /api/
 Disallow: /admin/
-Disallow: /_next/
 Disallow: /private/
 Disallow: /sign-in
 Disallow: /provider-login

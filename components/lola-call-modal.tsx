@@ -14,6 +14,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Loader2 } from "lucide-react"
+import { trackEvent } from "@/lib/analytics"
 
 interface LolaCallModalProps {
   children: React.ReactNode
@@ -117,6 +118,8 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
       }
 
       setSubmittedEmail(cleanEmail)
+      trackEvent("generate_lead", { lead_type: "lola_call" })
+      trackEvent("lola_call_requested")
       setIsSuccess(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to submit request. Please try again.")

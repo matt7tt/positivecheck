@@ -47,6 +47,16 @@ export function RpmBilling2026CptCodesPost() {
           ]}
         />
 
+        <aside className="border border-purple-200 bg-purple-50 rounded-lg p-5 mb-8">
+          <p className="font-semibold text-gray-900 mb-1">Looking ahead to 2027?</p>
+          <p className="text-gray-700 mb-0">
+            CMS has proposed new initiating-visit and clinical-staff employment requirements. Read our{" "}
+            <Link href="/blog/2027-rpm-proposed-rule" className="text-[#d946ef] hover:underline">
+              analysis of the CY 2027 RPM proposed rule
+            </Link>.
+          </p>
+        </aside>
+
         <p className="lead-paragraph">
           Remote Patient Monitoring can create a meaningful per-patient reimbursement opportunity for eligible Medicare patients when all coverage, device, data-transmission, treatment-management, and documentation requirements are met. The CY 2026 Physician Fee Schedule final rule introduced two new CPT codes that create billable pathways for shorter data-transmission and treatment-management periods that previously fell below the applicable reporting thresholds. This guide walks through what each RPM code covers, how the new 99445 and 99470 codes change the billing decision, and what makes documentation defensible.
         </p>

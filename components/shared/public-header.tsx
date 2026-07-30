@@ -32,6 +32,9 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
         <button
           className="lg:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMenuOpen ? (
             <X className="h-6 w-6 text-[#1a2642]" />
@@ -114,7 +117,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
         {/* Mobile navigation */}
         {isMenuOpen && (
           <div className="lg:hidden fixed inset-x-0 top-16 bg-white border-b shadow-lg">
-            <nav className="container mx-auto px-4 py-4">
+            <nav id="mobile-navigation" className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
                 <Link
                   href="/solutions"
@@ -194,4 +197,4 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
       </div>
     </header>
   )
-} 
+}
