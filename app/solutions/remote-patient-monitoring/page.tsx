@@ -135,12 +135,11 @@ export default function RemotePatientMonitoringPage() {
           <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
             <div className="max-w-7xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">RPM Solution</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
                 Remote Patient Monitoring Made Simple
               </h1>
-              <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Positive Check automates the daily patient engagement your RPM program needs — satisfying
-                CMS interactive communication requirements while generating reimbursable revenue.
+              <p className="text-lg sm:text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Automated voice and SMS outreach for consistent RPM engagement, documentation, and care-team follow-up.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[

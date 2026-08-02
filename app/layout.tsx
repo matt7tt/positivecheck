@@ -8,6 +8,7 @@ import { AuthProvider } from "@/lib/auth-context";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
+import { DeferredFacebookPixel } from "@/components/deferred-facebook-pixel";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -109,7 +110,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Resource hints for third-party measurement loaded after page content */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://connect.facebook.net" />
         
         {/* Critical CSS for above-the-fold content */}
         <style dangerouslySetInnerHTML={{
@@ -120,39 +120,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .hero-text { font-display: swap; }
           `
         }} />
-        
-        {/* Facebook Pixel */}
-        <Script
-          id="fb-pixel"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function(f,b,e,v,n,t,s){
-                if(f.fbq)return;
-                n=f.fbq=function(){
-                  n.callMethod?
-                    n.callMethod.apply(n,arguments):
-                    n.queue.push(arguments);
-                };
-                if(!f._fbq)f._fbq=n;
-                n.push=n;
-                n.loaded=!0;
-                n.version='2.0';
-                n.queue=[];
-                t=b.createElement(e);
-                t.async=!0;
-                t.src=v;
-                s=b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t,s);
-              }(
-                window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js'
-              );
-              fbq('init', '2093713827815363');
-              fbq('track', 'PageView');
-            `,
-          }}
-        />
         
         {/* AI-assistant referral tracking: tags visits arriving from AI search
             tools so they're segmentable in GA4 (event: ai_referral) and GTM
@@ -188,23 +155,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-C6J8097SY5"
-          strategy="lazyOnload"
-        />
-        <Script
-          id="google-analytics"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-C6J8097SY5');
-            `,
-          }}
-        />
       </head>
       <body
         className={`${inter.className} antialiased`}
@@ -219,6 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <AuthProvider>
+          <DeferredFacebookPixel />
           {children}
           <Analytics />
           <SpeedInsights />
