@@ -98,10 +98,10 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="px-6 py-16 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
             AI Patient Engagement Platform for Healthcare Providers
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Automated voice and SMS outreach that expands patient coverage, protects reimbursement, and surfaces actionable clinical and operational alerts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
@@ -111,7 +111,7 @@ export default function HomePage() {
               </Button>
             </RequestDemoModal>
             <LolaCallModal>
-              <Button variant="outline" className="border-[#e879f9] text-[#e879f9] hover:bg-purple-50 px-8 py-4 text-lg font-bold">
+              <Button variant="outline" className="border-[#a21caf] text-[#a21caf] hover:bg-purple-50 px-8 py-4 text-lg font-bold">
                 GET A CALL FROM LOLA
               </Button>
             </LolaCallModal>
@@ -206,7 +206,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">Automated Check-Ins</h4>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Automated Check-Ins</h3>
                 <p className="text-gray-600">
                   Structured calls and SMS outreach that meets program requirements and increases patient contact completion.
                 </p>
@@ -216,7 +216,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">Actionable Insights</h4>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Actionable Insights</h3>
                 <p className="text-gray-600">
                   Track outreach performance, monitor patient responses, and receive real-time alerts for clinical and operational issues.
                 </p>
@@ -226,7 +226,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Shield className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-xl font-semibold text-gray-900 mb-3">HIPAA Compliant</h4>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">HIPAA Compliant</h3>
                 <p className="text-gray-600">
                   Enterprise-grade HIPAA-compliant infrastructure with secure data handling, audit-ready records, and role-based access controls.
                 </p>
@@ -274,7 +274,7 @@ export default function HomePage() {
             </div>
 
             <RequestDemoModal>
-              <Button className="bg-white text-[#e879f9] hover:bg-purple-50 px-6 py-3 font-bold">
+              <Button className="bg-white text-[#a21caf] hover:bg-purple-50 px-6 py-3 font-bold">
                 REQUEST DEMO
               </Button>
             </RequestDemoModal>
@@ -290,21 +290,21 @@ export default function HomePage() {
 
             <div className="space-y-6">
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 1: Personalized Scheduling</h4>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Step 1: Personalized Scheduling</h3>
                 <p className="text-gray-600">
                   Set up convenient call times at any cadence (daily, weekly, or custom) and select the questions you want Lola to ask for your patients.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 2: Automated Voice and SMS Check-Ins</h4>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Step 2: Automated Voice and SMS Check-Ins</h3>
                 <p className="text-gray-600">
                   Lola contacts patients on their existing phone numbers, conducts structured conversations, and adapts follow-up prompts based on patient responses.
                 </p>
               </div>
 
               <div>
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">Step 3: Real-Time Documentation and Alerts</h4>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Step 3: Real-Time Documentation and Alerts</h3>
                 <p className="text-gray-600">
                   Care teams receive structured data, compliance reporting, and automated alerts through a secure management console.
                 </p>
@@ -313,7 +313,7 @@ export default function HomePage() {
 
             {/* Why Providers Choose Positive Check */}
             <div className="mt-8">
-              <h4 className="text-xl font-semibold mb-4 text-gray-900">Why Providers Choose Positive Check:</h4>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Why Providers Choose Positive Check:</h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-[#e879f9]" />
@@ -409,7 +409,7 @@ export default function HomePage() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                  activeTab === tab.id ? "bg-[#e879f9] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  activeTab === tab.id ? "bg-[#a21caf] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {tab.title.toUpperCase()}
@@ -453,7 +453,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Users className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Expand Coverage</h4>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Expand Coverage</h3>
                 <p className="text-gray-600">Increase patient reach without increasing staff workload.</p>
               </CardContent>
             </Card>
@@ -461,7 +461,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Protect Reimbursement</h4>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Protect Reimbursement</h3>
                 <p className="text-gray-600">Improve RPM and CCM compliance with consistent, documented outreach.</p>
               </CardContent>
             </Card>
@@ -469,7 +469,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Improve Patient Experience</h4>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Improve Patient Experience</h3>
                 <p className="text-gray-600">Deliver reliable check-ins that support engagement and satisfaction.</p>
               </CardContent>
             </Card>
@@ -477,7 +477,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <AlertTriangle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Reduce Avoidable Risk</h4>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Reduce Avoidable Risk</h3>
                 <p className="text-gray-600">Identify meaningful changes earlier to lower downstream costs of care.</p>
               </CardContent>
             </Card>
@@ -485,7 +485,7 @@ export default function HomePage() {
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
                 <CheckCircle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">Scale with Flexibility</h4>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Scale with Flexibility</h3>
                 <p className="text-gray-600">
                   Deliver structured check-ins at any cadence, across any care program.
                 </p>
@@ -555,7 +555,7 @@ export default function HomePage() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-4">
                   <Stethoscope className="w-5 h-5 text-[#e879f9]" />
-                  <span className="text-sm font-medium text-[#e879f9] uppercase">Healthcare Provider</span>
+                  <span className="text-sm font-medium text-[#a21caf] uppercase">Healthcare Provider</span>
                 </div>
                 <blockquote className="text-lg text-gray-700 mb-4 italic leading-relaxed">
                   &ldquo;{testimonials[currentTestimonialIndex].quote}&rdquo;
@@ -571,11 +571,16 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonialIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentTestimonialIndex ? "bg-[#e879f9]" : "bg-gray-300"
-                  }`}
+                  className="w-6 h-6 inline-flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a21caf]"
                   aria-label={`Go to testimonial ${index + 1}`}
-                />
+                >
+                  <span
+                    className={`w-2 h-2 rounded-full transition-colors ${
+                      index === currentTestimonialIndex ? "bg-[#a21caf]" : "bg-gray-400"
+                    }`}
+                    aria-hidden="true"
+                  />
+                </button>
               ))}
             </div>
           </div>

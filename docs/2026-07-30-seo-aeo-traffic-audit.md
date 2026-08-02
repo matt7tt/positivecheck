@@ -156,6 +156,25 @@ Lighthouse results are lab measurements and can vary between runs. Production fi
 data in Search Console and the Chrome UX Report remains the source of truth after
 deployment.
 
+### Second mobile performance pass — August 2, 2026
+
+A second pass removed the duplicate standalone GA4 loader while retaining GTM,
+deferred Facebook Pixel loading until first interaction or eight seconds, reduced
+mobile hero text dimensions, shortened two oversized provider-page hero paragraphs,
+and repaired the homepage contrast, heading-order, and touch-target failures.
+
+Local production-mode mobile Lighthouse results after the changes:
+
+| Page | Performance | Accessibility | SEO | LCP | TBT | CLS |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Homepage | 99 | 100 | 100 | 2.2 s | 20 ms | 0 |
+| RPM solution | 98 | 100 | 100 | 2.4 s | 40 ms | 0 |
+| CMS billing guide | 100 | 100 | 100 | 1.9 s | 50 ms | 0 |
+
+The prior live measurements were 4.7 seconds, 7.3 seconds, and 6.4 seconds LCP,
+respectively. Because the post-change runs used a local production server, confirm the
+improvement with fresh production tests and field data after deployment.
+
 ## Next growth priorities after this implementation
 
 ### Trust and authorship

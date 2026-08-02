@@ -90,15 +90,11 @@ export default function BillingGuideIndexPage() {
           <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Billing Guide</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 2026 CMS Care Program Billing Guide
               </h1>
-              <p className="text-xl text-purple-100 leading-relaxed">
-                Provider reference for Medicare{'\u2019'}s four care management programs {'\u2014'}{' '}
-                <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">Remote Patient Monitoring</Link>{' '}
-                (RPM), Chronic Care Management (CCM), Transitional Care Management (TCM), and Principal
-                Care Management (PCM). CPT codes, approximate rates, eligibility rules, stacking rules, and
-                documentation standards.
+              <p className="text-lg sm:text-xl text-purple-100 leading-relaxed">
+                A practical 2026 reference for RPM, CCM, TCM, and PCM codes, eligibility, stacking rules, and documentation.
               </p>
             </div>
           </section>
