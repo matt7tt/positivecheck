@@ -1,17 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import toast from 'react-hot-toast'
+import { getAttributionContext, trackEvent } from '@/lib/analytics'
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const hasStarted = useRef(false)
 
   if (isSubmitted) {
     return (
@@ -25,8 +27,13 @@ export function ContactForm() {
   }
 
   return (
-    <form 
+    <form
       className="space-y-6"
+      onFocusCapture={() => {
+        if (hasStarted.current) return
+        hasStarted.current = true
+        trackEvent('form_start', { form_name: 'contact_form' })
+      }}
       onSubmit={async (e) => {
         e.preventDefault()
         const form = e.currentTarget as HTMLFormElement
@@ -47,7 +54,8 @@ export function ContactForm() {
               phone: formData.get('phone'),
               hearAboutUs: formData.get('hearAboutUs'),
               message: formData.get('message'),
-              newsletter: formData.get('newsletter') === 'on'
+              newsletter: formData.get('newsletter') === 'on',
+              attribution: getAttributionContext(),
             }),
           })
 
@@ -62,10 +70,13 @@ export function ContactForm() {
               color: "#FFFFFF",
             },
           })
+          trackEvent('form_submit', { form_name: 'contact_form' })
+          trackEvent('generate_lead', { lead_type: 'contact', form_name: 'contact_form' })
           form.reset()
           setIsSubmitted(true)
         } catch (error) {
           console.error('Error submitting form:', error)
+          trackEvent('form_error', { form_name: 'contact_form', error_type: 'submission_failed' })
           toast.error("Sorry, there was an error submitting the form. Please try again.", {
             duration: 5000,
             style: {
@@ -120,7 +131,6 @@ export function ContactForm() {
           name="newsletter" 
           type="checkbox" 
           className="h-5 w-5 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded cursor-pointer"
-          defaultChecked
         />
         <label htmlFor="newsletter" className="ml-3 block text-sm text-gray-700 cursor-pointer py-2">
           Sign up for news and updates
@@ -135,4 +145,4 @@ export function ContactForm() {
       </Button>
     </form>
   )
-} 
+}

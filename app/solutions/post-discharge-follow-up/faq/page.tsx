@@ -7,7 +7,7 @@ import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/compone
 export const metadata: Metadata = {
   title: 'Transitional Care Management (TCM) FAQ | Positive Check',
   description:
-    'Answers about Transitional Care Management: CPT 99495 and 99496 billing, 2-business-day contact requirement, documentation, HIPAA handling, and how AI-powered discharge follow-up calls satisfy CMS rules.',
+    'Answers about Transitional Care Management: CPT 99495 and 99496 billing, 2-business-day contact requirements, documentation, HIPAA, and how AI-powered outreach supports practice workflows.',
   alternates: { canonical: '/solutions/post-discharge-follow-up/faq' },
   openGraph: {
     title: 'Transitional Care Management (TCM) FAQ | Positive Check',
@@ -35,9 +35,9 @@ const faqs = [
       "Transitional Care Management is a Medicare-reimbursed care model designed to reduce hospital readmissions by ensuring patients receive structured follow-up after discharge. CMS pays providers for delivering two things within a 30-day window: an initial patient contact within two business days of discharge, and a face-to-face visit within 7\u201314 days depending on complexity. The billing codes are CPT 99495 (moderate complexity) and 99496 (high complexity).",
   },
   {
-    question: 'Can an AI-powered phone call satisfy the TCM contact requirement?',
+    question: 'Does an AI-powered phone call independently satisfy the TCM contact requirement?',
     answer:
-      'Yes. CMS specifies that the initial contact within two business days must be a "direct contact" that addresses the patient\u2019s discharge care plan \u2014 it can be telephonic, electronic, or face-to-face. An AI wellness call that captures medication understanding, symptom changes, follow-up appointment awareness, and home safety meets the contact requirement as long as the call is documented, escalates concerns to clinical staff, and occurs within the 2-business-day window.',
+      'CMS requires timely direct contact by permitted clinical personnel but does not expressly establish that a fully automated AI call independently satisfies the requirement. AI outreach can capture structured responses, document attempts, and route patients to clinical staff; the billing practice should determine which contacts meet current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: 'How quickly must post-discharge contact happen?',

@@ -7,7 +7,7 @@ import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/compone
 export const metadata: Metadata = {
   title: 'Remote Patient Monitoring (RPM) FAQ | Positive Check',
   description:
-    'Answers about Remote Patient Monitoring: CPT 99453/99454/99457/99458 billing, interactive communication requirement, patient eligibility, documentation, HIPAA, and how AI-powered wellness calls satisfy CMS rules.',
+    'Answers about Remote Patient Monitoring: CPT 99453/99454/99457/99458 billing, interactive communication, patient eligibility, documentation, HIPAA, and how AI-powered outreach supports practice workflows.',
   alternates: { canonical: '/solutions/remote-patient-monitoring/faq' },
   openGraph: {
     title: 'Remote Patient Monitoring (RPM) FAQ | Positive Check',
@@ -40,9 +40,9 @@ const faqs = [
       'CMS requires that clinical staff (or the physician) have at least one interactive communication with the patient or caregiver each calendar month in which CPT 99457 or 99458 is billed. The interaction can be telephonic, secure messaging, or video \u2014 and it must be real-time, two-way engagement that discusses the patient\u2019s physiologic data, symptoms, or care plan. A one-way notification or unresponded message does not satisfy the requirement.',
   },
   {
-    question: 'Can AI-powered wellness calls satisfy the interactive communication requirement?',
+    question: 'Do AI-powered wellness calls independently satisfy the interactive communication requirement?',
     answer:
-      'Yes, when the call includes real-time two-way engagement, captures structured clinical content, and supports human escalation. CMS defines \u201cinteractive communication\u201d by its content and two-way nature, not by who initiates it. An AI call that asks about symptoms, captures responses, and flags concerns to clinical staff meets the requirement as long as the interaction is documented.',
+      'CMS has not established that a fully automated AI interaction independently satisfies the requirement. AI outreach can collect structured responses, document attempts, and surface patients for clinical-staff follow-up, but the billing practice must determine which interactions and staff activities meet current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: 'What\u2019s the typical monthly revenue from an RPM patient?',
@@ -70,9 +70,9 @@ const faqs = [
       'No. CPT 99457 requires a minimum of 20 minutes of interactive communication in a calendar month. If the time threshold is not met, the service is not billable. Providers should track cumulative interactive-communication time per patient per month and bill 99457 only when the 20-minute threshold is reached.',
   },
   {
-    question: 'Who can perform the interactive communication \u2014 physicians, clinical staff, or AI?',
+    question: 'Who can perform the interactive communication?',
     answer:
-      'CMS permits physicians, non-physician practitioners (NPs, PAs, CNSs, CNMs), or clinical staff under general supervision to perform the interactive communication. The communication must be real-time and two-way. AI-powered calls can satisfy the requirement when structured to capture clinical content and escalate concerns to human staff, since CMS defines the requirement by content and interaction type, not staff role.',
+      'Applicable CPT and Medicare requirements identify physicians, non-physician practitioners, or clinical staff under the required supervision. The communication must meet the current real-time, two-way and content requirements. Automated outreach can support those staff workflows but should not be treated as a substitute for required qualified-personnel time without confirmation from the practice\u2019s billing and compliance advisers.',
   },
   {
     question: 'Do I need a specific type of device for RPM billing?',

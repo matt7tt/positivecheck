@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -8,6 +8,7 @@ import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import toast, { Toaster } from 'react-hot-toast'
 import { Space_Grotesk } from 'next/font/google'
+import { getAttributionContext, trackEvent } from '@/lib/analytics'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -17,6 +18,8 @@ const spaceGrotesk = Space_Grotesk({
 export function DemoComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const hasStarted = useRef(false)
+  const bookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
 
   if (isSubmitted) {
     return (
@@ -30,6 +33,18 @@ export function DemoComponent() {
               <p className="text-gray-600 mb-6">
                 Your demo request has been submitted successfully.
               </p>
+              {bookingUrl && (
+                <Button asChild className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white mb-3">
+                  <a
+                    href={bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackEvent('booking_link_click', { form_name: 'demo_page' })}
+                  >
+                    Choose a demo time
+                  </a>
+                </Button>
+              )}
               <Button 
                 onClick={() => setIsSubmitted(false)}
                 className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
@@ -56,12 +71,17 @@ export function DemoComponent() {
               Demo Request
             </CardTitle>
             <p className="text-gray-600 text-center">
-              Enter your details to request a demo
+              Share your contact details, then choose a convenient time.
             </p>
           </CardHeader>
           <CardContent>
-            <form 
+            <form
               className="space-y-6"
+              onFocusCapture={() => {
+                if (hasStarted.current) return
+                hasStarted.current = true
+                trackEvent('form_start', { form_name: 'demo_page' })
+              }}
               onSubmit={async (e) => {
                 e.preventDefault()
                 const form = e.currentTarget as HTMLFormElement
@@ -69,17 +89,16 @@ export function DemoComponent() {
                 
                 try {
                   const formData = new FormData(form)
-                  const response = await fetch('/api/contact', {
+                  const response = await fetch('/api/request-demo', {
                     method: 'POST',
                     headers: {
                       'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                      firstName: formData.get('firstName'),
-                      lastName: formData.get('lastName'),
-                      phone: formData.get('phone'),
-                      hearAboutUs: 'demo-page',
-                      message: 'Demo request from /demo page',
+                      name: formData.get('name'),
+                      email: formData.get('email'),
+                      organization: formData.get('organization'),
+                      attribution: getAttributionContext(),
                     }),
                   })
 
@@ -94,10 +113,13 @@ export function DemoComponent() {
                       color: "#FFFFFF",
                     },
                   })
+                  trackEvent('form_submit', { form_name: 'demo_page' })
+                  trackEvent('generate_lead', { lead_type: 'demo_request', form_name: 'demo_page' })
                   form.reset()
                   setIsSubmitted(true)
                 } catch (error) {
                   console.error('Error submitting demo request:', error)
+                  trackEvent('form_error', { form_name: 'demo_page', error_type: 'submission_failed' })
                   toast.error("Sorry, there was an error submitting your request. Please try again.", {
                     duration: 5000,
                     style: {
@@ -110,52 +132,33 @@ export function DemoComponent() {
                 }
               }}
             >
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                    First Name (required)
-                  </label>
-                  <Input 
-                    id="firstName" 
-                    name="firstName" 
-                    type="text"
-                    required 
-                    placeholder="First name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                    Last Name (required)
-                  </label>
-                  <Input 
-                    id="lastName" 
-                    name="lastName" 
-                    type="text"
-                    required 
-                    placeholder="Last name"
-                  />
-                </div>
-              </div>
-              
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                  Phone Number (required)
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  Full name (required)
                 </label>
-                <Input 
-                  id="phone" 
-                  name="phone" 
-                  type="tel" 
-                  required 
-                  placeholder="Enter your phone number"
-                />
+                <Input id="name" name="name" type="text" required autoComplete="name" placeholder="Jane Smith" />
               </div>
-              
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  Work email (required)
+                </label>
+                <Input id="email" name="email" type="email" required autoComplete="email" placeholder="you@healthcare.org" />
+              </div>
+
+              <div>
+                <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1">
+                  Organization (optional)
+                </label>
+                <Input id="organization" name="organization" type="text" autoComplete="organization" />
+              </div>
+
               <Button 
                 type="submit" 
                 className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-4 min-h-[44px]"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Submitting...' : 'Request Demo'}
+                {isSubmitting ? 'Submitting...' : bookingUrl ? 'Continue to scheduling' : 'Request Demo'}
               </Button>
             </form>
           </CardContent>

@@ -6,7 +6,7 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
 
 ## Care program solutions
 
-- [Remote Patient Monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that satisfy CMS interactive communication requirements for RPM programs.
+- [Remote Patient Monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that support practice-owned outreach, documentation, and clinical-staff escalation workflows. Automated interactions do not independently establish billable time or satisfy every CMS requirement.
   - [RPM FAQ](https://www.positivecheck.com/solutions/remote-patient-monitoring/faq): CPT 99453/99454/99457/99458 billing, interactive communication rule, eligibility, documentation.
   - [AI-powered RPM vs. device-only monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring/vs-device-only-monitoring): Category-level comparison with six-dimension tradeoff table.
   - [CPT 99457 billing guide](https://www.positivecheck.com/solutions/remote-patient-monitoring/cpt-99457-billing-guide): 20-minute threshold, interactive communication, documentation, combining with CCM/TCM/PCM.

@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
 import { DeferredFacebookPixel } from "@/components/deferred-facebook-pixel";
+import { ConversionAnalytics } from "@/components/conversion-analytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,6 +71,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // This property was used by the site before GA was removed as a presumed GTM
+  // duplicate. The public GTM container currently has no GA4 tag, so retain the
+  // known property as a safe default while allowing an environment override.
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-C6J8097SY5";
+
   return (
     <html lang="en">
       <head>
@@ -85,6 +91,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MKHVJ3LF');`,
           }}
         />
+
+        {gaMeasurementId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script
+              id="google-analytics-4"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${gaMeasurementId}');`,
+              }}
+            />
+          </>
+        )}
 
         {/* Site-wide structured data */}
         <script
@@ -170,6 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <AuthProvider>
           <DeferredFacebookPixel />
+          <ConversionAnalytics />
           {children}
           <Analytics />
           <SpeedInsights />

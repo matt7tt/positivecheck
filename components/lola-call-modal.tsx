@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -18,6 +18,7 @@ import { trackEvent } from "@/lib/analytics"
 
 interface LolaCallModalProps {
   children: React.ReactNode
+  source?: string
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -50,7 +51,7 @@ function toE164(display: string): string | null {
   return null
 }
 
-export function LolaCallModal({ children }: LolaCallModalProps) {
+export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalProps) {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
   const [email, setEmail] = useState("")
@@ -61,6 +62,7 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
   const [submittedEmail, setSubmittedEmail] = useState("")
   const [error, setError] = useState("")
   const [open, setOpen] = useState(false)
+  const hasStarted = useRef(false)
 
   const reset = () => {
     setFirstName("")
@@ -82,19 +84,23 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
     const cleanEmail = email.trim()
 
     if (cleanFirst.length < 1 || cleanLast.length < 1) {
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "invalid_name" })
       setError("Please enter your first and last name.")
       return
     }
     if (!EMAIL_RE.test(cleanEmail)) {
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "invalid_email" })
       setError("Please enter a valid email address.")
       return
     }
     const e164 = toE164(phone)
     if (!e164) {
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "invalid_phone" })
       setError("Please enter a valid phone number (US numbers can be entered as 415-555-1234; international numbers need a + prefix).")
       return
     }
     if (!consent) {
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "missing_consent" })
       setError("Please agree to receive an automated call before continuing.")
       return
     }
@@ -118,10 +124,12 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
       }
 
       setSubmittedEmail(cleanEmail)
-      trackEvent("generate_lead", { lead_type: "lola_call" })
-      trackEvent("lola_call_requested")
+      trackEvent("generate_lead", { lead_type: "lola_call", form_name: "lola_call", cta_location: source })
+      trackEvent("form_submit", { form_name: "lola_call", cta_location: source })
+      trackEvent("lola_call_requested", { cta_location: source })
       setIsSuccess(true)
     } catch (err) {
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "submission_failed" })
       setError(err instanceof Error ? err.message : "Failed to submit request. Please try again.")
     } finally {
       setIsSubmitting(false)
@@ -129,7 +137,17 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
   }
 
   return (
-    <Dialog open={open} onOpenChange={(o) => { setOpen(o); if (!o) reset() }}>
+    <Dialog open={open} onOpenChange={(o) => {
+      setOpen(o)
+      if (o && !open) {
+        trackEvent("cta_click", { cta_name: "lola_call", cta_location: source })
+        trackEvent("lola_call_open", { cta_location: source })
+      }
+      if (!o) {
+        hasStarted.current = false
+        reset()
+      }
+    }}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
@@ -156,7 +174,16 @@ export function LolaCallModal({ children }: LolaCallModalProps) {
             </Button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+          <form
+            onSubmit={handleSubmit}
+            onFocusCapture={() => {
+              if (hasStarted.current) return
+              hasStarted.current = true
+              trackEvent("form_start", { form_name: "lola_call", cta_location: source })
+            }}
+            className="space-y-4"
+            noValidate
+          >
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-2">
                 <Label htmlFor="lola-firstName">First name</Label>

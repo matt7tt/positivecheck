@@ -171,10 +171,10 @@ describe('ContactForm', () => {
     })
   })
 
-  it('newsletter checkbox is checked by default', () => {
+  it('newsletter checkbox requires an explicit opt-in', () => {
     render(<ContactForm />)
     
     const newsletterCheckbox = screen.getByLabelText(/Sign up for news/)
-    expect(newsletterCheckbox).toBeChecked()
+    expect(newsletterCheckbox).not.toBeChecked()
   })
 })

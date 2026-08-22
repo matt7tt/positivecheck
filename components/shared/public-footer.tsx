@@ -12,12 +12,12 @@ export function PublicFooter() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
               <li>
-                <RequestDemoModal>
+                <RequestDemoModal source="footer">
                   <button className="text-gray-600 hover:text-[#1a2642] text-sm">Request Demo</button>
                 </RequestDemoModal>
               </li>
               <li>
-                <LolaCallModal>
+                <LolaCallModal source="footer">
                   <button className="text-gray-600 hover:text-[#1a2642] text-sm">Get a Call from Lola</button>
                 </LolaCallModal>
               </li>
