@@ -17,6 +17,12 @@ npm run lint      # Run ESLint
 |----------|---------|
 | `RESEND_API_KEY` | Resend email service API key (required for contact/demo forms) |
 | `CONTACT_EMAIL` | Recipient for form submissions (default: `hello@positivecheck.com`) |
+| `LEAD_WEBHOOK_URL` | Optional CRM/automation webhook that receives every contact and demo lead |
+| `LEAD_WEBHOOK_SECRET` | Optional bearer token sent to the lead webhook |
+| `NEXT_PUBLIC_DEMO_BOOKING_URL` | Calendar URL shown immediately after a demo request |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional GA4 override (defaults to the existing `G-C6J8097SY5` property) |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML verification token |
+| `LLMS_SOURCE_URL` | Optional source host used by `npm run llms-full` (use `http://localhost:3000` to regenerate from local changes) |
 | `STRIPE_PUBLISHABLE_KEY` | Stripe public key |
 | `NEXT_PUBLIC_*` | Any client-side env vars |
 
@@ -183,7 +189,7 @@ Add an entry to either the `featuredArticle` object (to feature it) or the `arti
 | `/api/contact` | POST | Contact form submission — sends email via Resend |
 | `/api/request-demo` | POST | Demo request — sends email via Resend (used by `RequestDemoModal`) |
 
-Both routes send from `Positive Check <info@contact.positivecheck.com>` to the `CONTACT_EMAIL` env var.
+Both routes send from `Positive Check <info@contact.positivecheck.com>` to the `CONTACT_EMAIL` env var. When `LEAD_WEBHOOK_URL` is configured, they also deliver a normalized lead record containing a unique lead ID and first-touch attribution to the CRM/automation endpoint.
 
 ## Component Architecture
 
@@ -236,7 +242,9 @@ Wraps all pages. Provides:
 - Vercel `Analytics` and `SpeedInsights`
 - `PerformanceMonitor`
 - Facebook Pixel (inline script, pixel ID: `2093713827815363`)
-- Google Analytics (inline script, ID: `G-C6J8097SY5`)
+- Google Tag Manager (`GTM-MKHVJ3LF`)
+- Google Analytics 4 (defaults to `G-C6J8097SY5`, overridable with `NEXT_PUBLIC_GA_MEASUREMENT_ID`)
+- First-touch UTM/referrer attribution and client-side route/conversion events
 - Font loading (Inter, Space Grotesk, Raleway)
 - Resource preloading and DNS prefetching
 

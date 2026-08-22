@@ -124,8 +124,8 @@ export default function CPT99457BillingGuidePage() {
                     and can be billed up to twice per patient per month.
                   </li>
                   <li>
-                    AI-powered wellness calls satisfy the interactive communication requirement when structured
-                    to capture clinical content and support human escalation.
+                    AI-powered outreach can collect structured responses and support human escalation, but an
+                    automated interaction should not be assumed to independently satisfy the requirement.
                   </li>
                 </ul>
               </div>
@@ -241,13 +241,13 @@ export default function CPT99457BillingGuidePage() {
                 their staff handles the calls.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                AI-powered interactive calls represent an emerging modality that satisfies the CPT 99457
-                requirement when structured correctly. The AI system must be designed to capture clinical
+                AI-powered outreach is an emerging tool for supporting CPT 99457 workflows. The system can capture clinical
                 content {'\u2014'} asking structured questions about symptoms, device readings, and medication
                 adherence {'\u2014'} rather than simply delivering information. Patient responses must be
-                recorded and time-stamped to support cumulative minute tracking. Real-time escalation
-                pathways to human clinical staff are required when the patient reports concerning symptoms
-                or indicates a need for direct intervention. See how Positive Check structures AI calls
+                recorded and time-stamped to support clinical review. Escalation pathways to human clinical staff
+                help the practice respond when a patient reports concerning symptoms or indicates a need for
+                direct intervention. The billing practice must separately determine which qualified-personnel
+                time and patient interactions meet current CPT, CMS, MAC, and payer requirements. See how Positive Check structures AI calls
                 for RPM programs on the{' '}
                 <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring solution overview
@@ -255,8 +255,8 @@ export default function CPT99457BillingGuidePage() {
                 .
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Regardless of who performs the communication {'\u2014'} physician, NPP, clinical staff, or
-                AI system {'\u2014'} documentation must clearly identify the performer or system identifier.
+                Documentation should identify the physician, NPP, or clinical staff member performing billable
+                work, as well as any automated system involved in outreach or documentation.
                 Anonymous or unattributed interaction notes are a common audit finding. The billing
                 provider retains overall responsibility for documentation quality and compliance.
               </p>
@@ -319,16 +319,15 @@ export default function CPT99457BillingGuidePage() {
                 coding opportunities before the end of each billing period.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI-powered calls satisfy CPT 99457</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI-powered calls support CPT 99457 workflows</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                AI-powered wellness calls satisfy the CPT 99457 interactive communication requirement when
-                they are built around a structured clinical protocol that captures patient responses in real
-                time. The call must ask substantive questions {'\u2014'} current symptoms, device readings
+                AI-powered wellness calls can support a practice-owned RPM workflow by capturing patient responses
+                through a structured protocol. The call can ask substantive questions {'\u2014'} current symptoms, device readings
                 (blood pressure, weight, glucose, oxygen saturation), medication adherence, and changes
                 in functional status {'\u2014'} and the patient{'\u2019'}s responses must be recorded and
-                time-stamped. Each completed call generates a structured summary mapped to the documentation
-                fields required for 99457 billing: interaction date, duration, content summary, and
-                performer identifier.
+                time-stamped. Each completed call generates a structured summary for clinical-staff review.
+                Automated interactions do not independently establish billable treatment-management time or
+                replace required real-time communication by qualified personnel.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The documentation advantage of AI calls is significant at scale. Manual calls depend on
@@ -349,8 +348,8 @@ export default function CPT99457BillingGuidePage() {
                 Real-time escalation is the other operational requirement. When a patient reports a
                 concerning symptom {'\u2014'} chest pain, sudden weight gain, abnormal glucose {'\u2014'} the
                 AI system must surface the alert to clinical staff immediately rather than queuing it
-                for end-of-shift review. This escalation pathway is what distinguishes a compliant AI
-                RPM call from a simple automated questionnaire. Providers who have scaled interactive
+                for end-of-shift review. This escalation pathway is what makes AI outreach clinically actionable
+                rather than a simple automated questionnaire. Providers who have scaled interactive
                 RPM engagement using AI consistently report that the documentation consistency and
                 escalation reliability exceed what their staff could maintain manually at the same
                 patient volume. See the{' '}

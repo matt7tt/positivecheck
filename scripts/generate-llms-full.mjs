@@ -9,6 +9,7 @@
 import { writeFileSync } from "node:fs";
 
 const SITE = "https://www.positivecheck.com";
+const SOURCE_SITE = (process.env.LLMS_SOURCE_URL || SITE).replace(/\/$/, "");
 
 const PAGES = [
   "/resources/billing-guide",
@@ -87,7 +88,8 @@ let out = `# Positive Check — full reference content (llms-full.txt)
 
 for (const path of PAGES) {
   const url = `${SITE}${path}`;
-  const res = await fetch(url);
+  const sourceUrl = `${SOURCE_SITE}${path}`;
+  const res = await fetch(sourceUrl);
   if (!res.ok) {
     console.error(`SKIP ${path} (HTTP ${res.status})`);
     continue;

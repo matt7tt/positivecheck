@@ -74,9 +74,9 @@ const faqs = [
       'Every provider-facing page on the Positive Check site carries a Last Reviewed date and cites primary CMS or HHS sources (Medicare Physician Fee Schedule, CMS MLN booklets, HHS HIPAA for Professionals). When CMS publishes updates to care management rules (typically in the annual PFS rule) or HHS updates HIPAA guidance, we review and refresh affected content. The internal rhythm is quarterly at minimum, with accelerated review when rule changes land.',
   },
   {
-    question: 'Can AI-powered calls satisfy CMS clinical-engagement requirements?',
+    question: 'Do AI-powered calls independently satisfy CMS clinical-engagement requirements?',
     answer:
-      'Yes, when the call captures required clinical content, supports real-time two-way patient response, and escalates concerns to a qualified human. CMS defines the interactive communication requirement by content and structure, not by who conducts the call. See our interactive-communication-requirement glossary entry and the /solutions/remote-patient-monitoring/interactive-communication-requirement cluster post for a full deep-dive.',
+      'CMS has not established that a fully automated interaction independently satisfies RPM interactive-communication or qualified-personnel requirements. Positive Check supports practice-owned outreach, documentation, and escalation workflows; the billing practice remains responsible for determining which staff activities and patient interactions meet current CPT, CMS, MAC, and payer rules.',
   },
   {
     question: 'How does Positive Check verify the accuracy of its AI calls?',

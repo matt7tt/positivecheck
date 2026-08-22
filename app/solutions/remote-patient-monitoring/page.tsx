@@ -41,9 +41,9 @@ const rpmPillarFaqs = [
       'CMS requires that clinical staff (or the physician) have at least one interactive communication with the patient or caregiver each calendar month in which CPT 99457 or 99458 is billed. The interaction can be telephonic, secure messaging, or video \u2014 and it must be real-time, two-way engagement that discusses the patient\u2019s physiologic data, symptoms, or care plan. A one-way notification or unresponded message does not satisfy the requirement.',
   },
   {
-    question: 'Can AI-powered wellness calls satisfy the interactive communication requirement?',
+    question: 'Do AI-powered wellness calls independently satisfy the interactive communication requirement?',
     answer:
-      'Yes, when the call includes real-time two-way engagement, captures structured clinical content, and supports human escalation. CMS defines "interactive communication" by its content and two-way nature, not by who initiates it. An AI call that asks about symptoms, captures responses, and flags concerns to clinical staff meets the requirement as long as the interaction is documented.',
+      'CMS has not established that a fully automated AI interaction independently satisfies the requirement. Positive Check can support practice-owned RPM workflows by collecting structured responses, documenting outreach, and escalating concerns, but the billing practice must determine which clinical-staff activities and patient interactions meet current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: "What\u2019s the typical monthly revenue from an RPM patient?",
@@ -79,7 +79,7 @@ export default function RemotePatientMonitoringPage() {
           name: 'Remote Patient Monitoring (RPM) with AI Wellness Calls',
           serviceType: 'Remote Patient Monitoring',
           description:
-            'AI-powered daily patient engagement that satisfies CMS interactive communication requirements for RPM programs. Supports CPT 99457, 99458, and 99454 billing.',
+            'AI-powered patient outreach, structured documentation, and care-team escalation that support practice-owned RPM workflows for CPT 99457, 99458, and 99454.',
           category: 'Remote Patient Monitoring',
         })}
       />
@@ -94,14 +94,14 @@ export default function RemotePatientMonitoringPage() {
           '@type': 'HowTo',
           name: 'How Positive Check Supports Remote Patient Monitoring',
           description:
-            'Automate CMS-compliant RPM patient engagement in four steps: daily wellness calls, structured summaries, consistent cadence, and HIPAA-compliant data handling.',
+            'Support practice-owned RPM patient engagement in four steps: daily wellness calls, structured summaries, consistent cadence, and HIPAA-compliant data handling.',
           step: [
             {
               '@type': 'HowToStep',
               position: 1,
               name: 'Daily Wellness Calls',
               text:
-                'Automated voice calls collect vitals, symptoms, and wellness data \u2014 satisfying the interactive communication requirement for CPT 99457.',
+                'Automated voice calls collect vitals, symptoms, and wellness data for clinical-staff review and follow-up.',
             },
             {
               '@type': 'HowToStep',
@@ -237,7 +237,7 @@ export default function RemotePatientMonitoringPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { icon: Phone, title: 'Daily Wellness Calls', desc: 'Automated voice calls collect vitals, symptoms, and wellness data — satisfying the interactive communication requirement for CPT 99457.' },
+                  { icon: Phone, title: 'Daily Wellness Calls', desc: 'Automated voice calls collect vitals, symptoms, and wellness data for clinical-staff review and follow-up.' },
                   { icon: BarChart3, title: 'Structured Summaries', desc: 'Call results are organized into trend reports that reduce clinical review time, making the additional 20 minutes for CPT 99458 highly productive.' },
                   { icon: Clock, title: 'Consistent Cadence', desc: 'Every enrolled patient receives regular outreach without gaps — ensuring your practice meets the monthly engagement threshold.' },
                   { icon: ShieldCheck, title: 'HIPAA-Compliant', desc: 'All calls, transcripts, and data transmissions meet HIPAA standards. Business Associate Agreements available for all provider partners.' },
@@ -315,7 +315,7 @@ export default function RemotePatientMonitoringPage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     'Scale RPM to thousands of patients without adding staff',
-                    'Automated daily calls satisfy CMS interactive communication requirements',
+                    'Automated daily calls support practice-owned interactive communication workflows',
                     'Structured call summaries reduce clinical review time',
                     'Real-time alerts flag patients who need immediate attention',
                     'HIPAA-compliant platform with BAA support',
@@ -386,7 +386,7 @@ export default function RemotePatientMonitoringPage() {
                     CMS Interactive Communication Requirement
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    What &ldquo;interactive communication&rdquo; means for CPT 99457/99458 and how AI calls satisfy it.
+                    What &ldquo;interactive communication&rdquo; means for CPT 99457/99458 and how AI outreach can support the workflow.
                   </p>
                 </Link>
                 <Link

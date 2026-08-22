@@ -36,9 +36,9 @@ const tcmPillarFaqs = [
       "Transitional Care Management is a Medicare-reimbursed care model designed to reduce hospital readmissions by ensuring patients receive structured follow-up after discharge. CMS pays providers for delivering two things within a 30-day window: an initial patient contact within two business days of discharge, and a face-to-face visit within 7\u201314 days depending on complexity. The billing codes are CPT 99495 (moderate complexity) and 99496 (high complexity).",
   },
   {
-    question: 'Can an AI-powered phone call satisfy the TCM contact requirement?',
+    question: 'Does an AI-powered phone call independently satisfy the TCM contact requirement?',
     answer:
-      'Yes. CMS specifies that the initial contact within two business days must be a "direct contact" that addresses the patient\u2019s discharge care plan \u2014 it can be telephonic, electronic, or face-to-face. An AI wellness call that captures medication understanding, symptom changes, follow-up appointment awareness, and home safety meets the contact requirement as long as the call is documented, escalates concerns to clinical staff, and occurs within the 2-business-day window.',
+      'CMS does not expressly establish that a fully automated AI call independently satisfies the requirement. AI outreach can capture structured responses, document attempts, and route patients to clinical staff; the billing practice should determine which contacts meet current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: 'How quickly must post-discharge contact happen?',
@@ -79,7 +79,7 @@ export default function PostDischargeFollowUpPage() {
           name: 'Post-Discharge Follow-Up (TCM) with AI Calls',
           serviceType: 'Transitional Care Management',
           description:
-            'Automated post-discharge patient outreach within 24-48 hours. Satisfies CMS Transitional Care Management requirements, supports CPT 99495 billing, and reduces 30-day readmissions.',
+            'Automated post-discharge patient outreach within 24-48 hours that supports practice-owned Transitional Care Management workflows and clinical-staff follow-up.',
           category: 'Transitional Care Management',
         })}
       />
@@ -195,7 +195,7 @@ export default function PostDischargeFollowUpPage() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
-                  { icon: Timer, title: 'Automated 48-Hour Contact', desc: 'Patients are contacted within 24-48 hours of discharge — satisfying the initial patient contact requirement for CPT 99495 without manual scheduling.' },
+                  { icon: Timer, title: 'Automated 48-Hour Outreach', desc: 'Patients receive outreach within 24-48 hours of discharge, with responses documented and routed for clinical-staff follow-up.' },
                   { icon: PhoneCall, title: 'Structured Check-In Calls', desc: 'Calls assess medication understanding, follow-up appointment awareness, symptom changes, and home safety — the key areas that prevent readmissions.' },
                   { icon: AlertTriangle, title: 'Immediate Escalation', desc: 'If a patient reports confusion about medications, new symptoms, or missed follow-ups, care teams are alerted immediately for same-day intervention.' },
                   { icon: TrendingDown, title: 'Readmission Risk Reduction', desc: 'Consistent post-discharge engagement catches complications early, reducing 30-day readmission rates and HRRP penalty exposure.' },

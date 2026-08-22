@@ -134,9 +134,9 @@ export default function RemotePatientMonitoringGlossaryPage() {
                   who have a connected monitoring device
                 </li>
                 <li>
-                  Care coordinators, clinical staff, or AI-powered systems performing the
-                  monthly interactive communication under general supervision of the billing
-                  practitioner
+                  Care coordinators or clinical staff performing qualifying monthly interactive
+                  communication under the required supervision, with AI-powered systems supporting
+                  outreach, documentation, and escalation where appropriate
                 </li>
                 <li>
                   Most common conditions: hypertension, diabetes, heart failure, COPD, CKD,

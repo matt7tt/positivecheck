@@ -478,7 +478,7 @@ export default function BillingGuideIndexPage() {
                   <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Solution</p>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Remote Patient Monitoring</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    How AI wellness calls and device monitoring satisfy RPM interactive communication requirements.
+                    How AI wellness calls and device monitoring support practice-owned RPM communication workflows.
                   </p>
                 </Link>
                 <Link

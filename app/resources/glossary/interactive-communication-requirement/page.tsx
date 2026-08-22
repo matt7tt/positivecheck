@@ -160,9 +160,10 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How Positive Check relates</h2>
               <p className="text-gray-700 leading-relaxed">
-                Positive Check{'\u2019'}s daily wellness calls satisfy the interactive communication
-                requirement by capturing real-time two-way patient responses about physiologic data,
-                symptoms, and care-plan adherence, with human escalation for concerning responses.
+                Positive Check{'\u2019'}s daily wellness calls support practice-owned interactive-communication
+                workflows by capturing structured patient responses about physiologic data, symptoms, and
+                care-plan adherence, with human escalation for concerning responses. Automated interactions
+                do not independently establish billable clinical-staff time or satisfy every billing requirement.
                 Learn more about the{' '}
                 <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Positive Check RPM solution

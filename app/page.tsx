@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
@@ -12,6 +12,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { PublicHeader } from "@/components/shared/public-header"
 import { StructuredData, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
+import { getAttributionContext, trackEvent } from "@/lib/analytics"
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -78,6 +79,7 @@ export default function HomePage() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const contactFormStarted = useRef(false)
   useEffect(() => {
     const testimonialInterval = setInterval(() => {
       setCurrentTestimonialIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
@@ -96,46 +98,76 @@ export default function HomePage() {
       <PublicHeader currentPage="home" />
 
       {/* Hero Section */}
-      <section className="px-6 py-16 bg-white">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            AI Patient Engagement Platform for Healthcare Providers
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Automated voice and SMS outreach that expands patient coverage, protects reimbursement, and surfaces actionable clinical and operational alerts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <RequestDemoModal>
-              <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-8 py-4 text-lg font-bold">
-                REQUEST DEMO
-              </Button>
-            </RequestDemoModal>
-            <LolaCallModal>
-              <Button variant="outline" className="border-[#a21caf] text-[#a21caf] hover:bg-purple-50 px-8 py-4 text-lg font-bold">
-                GET A CALL FROM LOLA
-              </Button>
-            </LolaCallModal>
-            <Button asChild variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg font-bold">
-              <Link href="/how-it-works">HOW IT WORKS</Link>
-            </Button>
+      <section className="px-6 py-12 sm:py-16 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+          <div className="text-center lg:text-left min-w-0">
+            <p className="text-sm font-bold uppercase tracking-wider text-purple-700 mb-4">AI voice and SMS for care teams</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Reach every RPM and CCM patient—without adding call-center headcount
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Automate routine outreach, turn patient responses into structured documentation, and route urgent concerns to the right care-team member in real time.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center mb-8">
+              <RequestDemoModal source="homepage_hero">
+                <Button className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
+                  BOOK A 15-MINUTE DEMO
+                </Button>
+              </RequestDemoModal>
+              <LolaCallModal source="homepage_hero">
+                <Button variant="outline" className="w-full sm:w-auto border-[#a21caf] text-[#a21caf] hover:bg-purple-50 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
+                  HEAR A PATIENT CALL
+                </Button>
+              </LolaCallModal>
+            </div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-6 border-t border-gray-200 pt-6">
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">1,509</p>
+                <p className="text-xs sm:text-sm text-gray-600">patients reached</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">485</p>
+                <p className="text-xs sm:text-sm text-gray-600">alerts surfaced</p>
+              </div>
+              <div>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">100%</p>
+                <p className="text-xs sm:text-sm text-gray-600">alerts resolved</p>
+              </div>
+            </div>
+            <Link href="/case-studies/scaling-patient-engagement" className="inline-block mt-3 text-sm font-medium text-purple-700 hover:text-purple-900 underline underline-offset-4">
+              Read the six-month implementation study
+            </Link>
           </div>
+          <div className="relative min-w-0">
+            <div className="absolute -inset-4 bg-gradient-to-br from-purple-100 to-fuchsia-100 rounded-3xl -z-10" />
+            <Image
+              src="/images/admin-console-dashboard-new.png"
+              alt="Positive Check dashboard showing patient outreach, alerts, and engagement results"
+              width={1200}
+              height={760}
+              priority
+              className="w-full h-auto rounded-2xl border border-gray-200 shadow-xl"
+            />
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto mt-10">
           {/* Trust Signals */}
-          <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500 pt-4 border-t border-gray-100">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm text-gray-600 pt-6 border-t border-gray-100">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-[#e879f9]" />
-              <span style={{fontSize: '1.1em'}}>HIPAA Compliant</span>
+              <span>HIPAA Compliant</span>
             </div>
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-[#e879f9]" />
-              <span style={{fontSize: '1.1em'}}>No Apps or Devices Needed</span>
+              <span>No Apps or Devices Needed</span>
             </div>
             <div className="flex items-center gap-2">
               <Stethoscope className="w-5 h-5 text-[#e879f9]" />
-              <span style={{fontSize: '1.1em'}}>Built for Healthcare Providers</span>
+              <span>Built for Healthcare Providers</span>
             </div>
             <div className="flex items-center gap-2">
               <BarChart3 className="w-5 h-5 text-[#e879f9]" />
-              <span style={{fontSize: '1.1em'}}>Real-Time Alerts & Analytics</span>
+              <span>Real-Time Alerts & Analytics</span>
             </div>
           </div>
         </div>
@@ -704,7 +736,8 @@ export default function HomePage() {
       <section className="px-6 py-16 bg-white">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Talk through your workflow</h2>
+            <p className="text-gray-600">Share the challenge you are trying to solve. Only your name and work email are required.</p>
           </div>
 
           <Card className="p-8 bg-white shadow-lg">
@@ -739,7 +772,8 @@ export default function HomePage() {
                         customerType: formData.get('customerType'),
                         hearAboutUs: formData.get('hearAbout'),
                         message: formData.get('message'),
-                        newsletter: formData.get('newsletter') === 'on'
+                        newsletter: formData.get('newsletter') === 'on',
+                        attribution: getAttributionContext(),
                       }),
                     })
 
@@ -755,10 +789,13 @@ export default function HomePage() {
                         color: "#FFFFFF",
                       },
                     })
+                    trackEvent("form_submit", { form_name: "homepage_contact" })
+                    trackEvent("generate_lead", { lead_type: "contact", form_name: "homepage_contact" })
                     form.reset()
                     setIsSubmitted(true)
                   } catch (error) {
                     console.error('Error submitting form:', error)
+                    trackEvent("form_error", { form_name: "homepage_contact", error_type: "submission_failed" })
                     toast.error("Sorry, there was an error submitting the form. Please try again.", {
                       duration: 5000,
                       style: {
@@ -769,6 +806,11 @@ export default function HomePage() {
                   } finally {
                     setIsSubmitting(false)
                   }
+                }}
+                onFocusCapture={() => {
+                  if (contactFormStarted.current) return
+                  contactFormStarted.current = true
+                  trackEvent("form_start", { form_name: "homepage_contact" })
                 }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -786,13 +828,12 @@ export default function HomePage() {
                   </div>
                   <div>
                     <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name <span className="text-red-500">*</span>
+                      Last Name <span className="text-gray-500">(optional)</span>
                     </label>
                     <input
                       type="text"
                       id="lastName"
                       name="lastName"
-                      required
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
                       placeholder="Enter your last name"
                     />
@@ -815,13 +856,12 @@ export default function HomePage() {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone <span className="text-red-500">*</span>
+                    Phone <span className="text-gray-500">(optional)</span>
                   </label>
                   <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
                     placeholder="Enter your phone number"
                   />
@@ -829,12 +869,11 @@ export default function HomePage() {
 
                 <div>
                   <label htmlFor="customerType" className="block text-sm font-medium text-gray-700 mb-2">
-                    I am interested in <span className="text-red-500">*</span>
+                    I am interested in <span className="text-gray-500">(optional)</span>
                   </label>
                   <select
                     id="customerType"
                     name="customerType"
-                    required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
                   >
                     <option value="">Select a program</option>
@@ -847,12 +886,11 @@ export default function HomePage() {
 
                 <div>
                   <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear about us? <span className="text-red-500">*</span>
+                    How did you hear about us? <span className="text-gray-500">(optional)</span>
                   </label>
                   <select
                     id="hearAbout"
                     name="hearAbout"
-                    required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
                   >
                     <option value="">Select an option</option>
@@ -874,13 +912,12 @@ export default function HomePage() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message <span className="text-red-500">*</span>
+                    Message <span className="text-gray-500">(optional)</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] resize-vertical"
                     placeholder="Please share your questions or how we can help you..."
                   ></textarea>
@@ -891,7 +928,6 @@ export default function HomePage() {
                     type="checkbox"
                     id="newsletter"
                     name="newsletter"
-                    defaultChecked
                     className="w-4 h-4 text-[#e879f9] border-gray-300 rounded focus:ring-[#e879f9]"
                   />
                   <label htmlFor="newsletter" className="text-sm text-gray-700">

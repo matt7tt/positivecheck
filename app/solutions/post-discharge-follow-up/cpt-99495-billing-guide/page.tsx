@@ -48,9 +48,9 @@ const faqs = [
       'Both are requirements for billing CPT 99495 but they serve different purposes. The 2-business-day contact is a brief check-in addressing the discharge care plan (medication, symptoms, follow-up awareness) and can be performed by clinical staff under general supervision. The 14-day face-to-face visit is a comprehensive encounter performed by the billing provider (physician or NPP) and typically includes medication reconciliation and complete post-discharge assessment.',
   },
   {
-    question: 'Does an AI-powered phone call satisfy the 2-business-day contact rule?',
+    question: 'Does an AI-powered phone call independently satisfy the 2-business-day contact rule?',
     answer:
-      'Yes, when properly documented. CMS defines the contact as \u201cdirect contact\u201d that addresses the discharge care plan \u2014 it can be telephonic, electronic, or face-to-face. An AI call that captures medication understanding, symptom status, and follow-up awareness, documents the encounter with a structured summary, and escalates concerns to clinical staff satisfies the CMS requirement.',
+      'CMS does not expressly establish that a fully automated AI call independently satisfies the requirement. AI outreach can support the workflow by capturing medication understanding, symptom status, and follow-up awareness and routing the patient to clinical staff. The billing practice should determine whether each contact meets current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: 'Can I bill CPT 99495 and an office visit E/M code separately?',
@@ -127,9 +127,9 @@ export default function CPT99495BillingGuidePage() {
                     medication reconciliation.
                   </li>
                   <li>
-                    AI-powered wellness calls can satisfy the 2-business-day contact requirement as long as
-                    the contact is documented, addresses the discharge care plan, and escalates concerns to
-                    clinical staff.
+                    AI-powered outreach can support the 2-business-day contact workflow by documenting attempts,
+                    capturing structured responses, and escalating patients to clinical staff. The practice must
+                    determine whether each contact meets applicable billing requirements.
                   </li>
                 </ul>
               </div>
@@ -339,14 +339,13 @@ export default function CPT99495BillingGuidePage() {
                 pre-admission regimen and any changes made, with rationale.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI wellness calls satisfy CMS contact requirements</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI wellness calls support timely contact workflows</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS allows telephonic contact to satisfy the 2-business-day requirement, and the
-                regulation does not specify that the call must be conducted by a human. What matters
-                is that the contact is {'\u201c'}direct,{'\u201d'} addresses the discharge care plan, and is
-                documented. An AI-powered wellness call that systematically covers medication
-                understanding, symptom status, and follow-up appointment awareness meets this
-                standard when the encounter is properly recorded. See the full{' '}
+                CMS permits telephonic contact within the 2-business-day window. AI-powered outreach can help
+                practices make timely attempts, gather structured information about medication understanding,
+                symptom status, and follow-up awareness, and route the patient to clinical staff. CMS does not
+                expressly establish that a fully automated call independently satisfies the TCM contact requirement,
+                so the billing practice should verify each qualifying contact. See the full{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up"
                   className="text-purple-700 underline hover:text-purple-900"

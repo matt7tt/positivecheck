@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,10 +12,12 @@ import toast, { Toaster } from 'react-hot-toast'
 import { StructuredData, generateBreadcrumbSchema } from "@/components/structured-data"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
+import { getAttributionContext, trackEvent } from "@/lib/analytics"
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const hasStarted = useRef(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -36,7 +38,8 @@ export default function ContactPage() {
           phone: formData.get('phone'),
           hearAboutUs: formData.get('hearAbout'),
           message: formData.get('message'),
-          newsletter: formData.get('newsletter') === 'on'
+          newsletter: formData.get('newsletter') === 'on',
+          attribution: getAttributionContext(),
         }),
       })
 
@@ -51,10 +54,13 @@ export default function ContactPage() {
           color: "#FFFFFF",
         },
       })
+      trackEvent("form_submit", { form_name: "contact_page" })
+      trackEvent("generate_lead", { lead_type: "contact", form_name: "contact_page" })
       form.reset()
       setIsSubmitted(true)
     } catch (error) {
       console.error('Error submitting form:', error)
+      trackEvent("form_error", { form_name: "contact_page", error_type: "submission_failed" })
       toast.error("Sorry, there was an error submitting the form. Please try again.", {
         duration: 5000,
         style: {
@@ -77,8 +83,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Have questions or need support? The Positive Check team is here to help! Please fill out the form below, and
-            we will respond promptly to ensure you have the information and support you need.
+            Tell us what you are trying to improve. Only your name and work email are required, and our team will route your message to the right person.
           </p>
         </div>
       </section>
@@ -101,7 +106,15 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-              <form className="space-y-6" onSubmit={handleSubmit}>
+              <form
+                className="space-y-6"
+                onSubmit={handleSubmit}
+                onFocusCapture={() => {
+                  if (hasStarted.current) return
+                  hasStarted.current = true
+                  trackEvent("form_start", { form_name: "contact_page" })
+                }}
+              >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
@@ -111,9 +124,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <Label htmlFor="lastName" className="text-sm font-medium text-gray-700">
-                      Last Name <span className="text-red-500">*</span>
+                      Last Name <span className="text-gray-500">(optional)</span>
                     </Label>
-                    <Input id="lastName" name="lastName" type="text" required className="mt-1" placeholder="Enter your last name" disabled={isSubmitting} />
+                    <Input id="lastName" name="lastName" type="text" className="mt-1" placeholder="Enter your last name" disabled={isSubmitting} />
                   </div>
                 </div>
 
@@ -126,19 +139,18 @@ export default function ContactPage() {
 
                 <div>
                   <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
-                    Phone <span className="text-red-500">*</span>
+                    Phone <span className="text-gray-500">(optional)</span>
                   </Label>
-                  <Input id="phone" name="phone" type="tel" required className="mt-1" placeholder="Enter your phone number" disabled={isSubmitting} />
+                  <Input id="phone" name="phone" type="tel" className="mt-1" placeholder="Enter your phone number" disabled={isSubmitting} />
                 </div>
 
                 <div>
                   <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-700 mb-2">
-                    How did you hear about us? <span className="text-red-500">*</span>
+                    How did you hear about us? <span className="text-gray-500">(optional)</span>
                   </label>
                   <select
                     id="hearAbout"
                     name="hearAbout"
-                    required
                     disabled={isSubmitting}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
@@ -161,12 +173,11 @@ export default function ContactPage() {
 
                 <div>
                   <Label htmlFor="message" className="text-sm font-medium text-gray-700">
-                    Message <span className="text-red-500">*</span>
+                    Message <span className="text-gray-500">(optional)</span>
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
-                    required
                     className="mt-1"
                     rows={5}
                     placeholder="Please share your questions or how we can help you..."
@@ -179,7 +190,6 @@ export default function ContactPage() {
                     type="checkbox"
                     id="newsletter"
                     name="newsletter"
-                    defaultChecked
                     disabled={isSubmitting}
                     className="w-4 h-4 text-[#e879f9] border-gray-300 rounded focus:ring-[#e879f9] disabled:cursor-not-allowed"
                   />

@@ -15,11 +15,11 @@ const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard
 export const metadata: Metadata = {
   title: 'CMS Interactive Communication Requirement for RPM: What Counts and What Doesn\u2019t | Positive Check',
   description:
-    'Exact CMS rules for the interactive communication requirement that underpins CPT 99457 and 99458. Real-time two-way engagement, acceptable contact forms, documentation standards, and how AI-powered calls satisfy the rule.',
+    'CMS interactive communication requirements for CPT 99457 and 99458: real-time two-way engagement, documentation standards, and how AI-powered outreach can support practice workflows.',
   alternates: { canonical: '/solutions/remote-patient-monitoring/interactive-communication-requirement' },
   openGraph: {
     title: 'CMS Interactive Communication Requirement for RPM',
-    description: 'What counts as interactive communication under CPT 99457/99458, what doesn\u2019t, and how AI-powered calls satisfy the rule.',
+    description: 'What counts as interactive communication under CPT 99457/99458, what does not, and how AI-powered outreach can support the workflow.',
     url: '/solutions/remote-patient-monitoring/interactive-communication-requirement',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -51,9 +51,9 @@ const faqs = [
       'Yes, when both parties are engaged in real-time two-way exchange and the content addresses the patient\u2019s physiologic data, symptoms, or care plan. A single outbound text with no reply does not count. A live chat session with back-and-forth exchange does.',
   },
   {
-    question: 'Does AI-powered phone outreach satisfy the interactive communication requirement?',
+    question: 'Does AI-powered phone outreach independently satisfy the interactive communication requirement?',
     answer:
-      'Yes, when the AI call captures clinical content, supports real-time patient response, and escalates concerns to human clinical staff. CMS defines the requirement by content (clinical discussion of data/symptoms/care plan) and structure (real-time two-way) \u2014 not by who initiates or conducts the call.',
+      'CMS has not established that a fully automated interaction independently satisfies the requirement. AI outreach can capture structured responses, document attempts, and escalate concerns, but the billing practice must determine which qualified-personnel activities and patient interactions meet current CPT, CMS, MAC, and payer requirements.',
   },
   {
     question: 'How do I document interactive communication for a CMS audit?',
@@ -72,7 +72,7 @@ const breadcrumb = buildBreadcrumbSchema([
 const article = buildArticleSchema({
   headline: 'CMS Interactive Communication Requirement for RPM: What Counts and What Doesn\u2019t',
   description:
-    'Exact CMS rules for the interactive communication requirement that underpins CPT 99457 and 99458. Real-time two-way engagement, acceptable contact forms, documentation standards, and how AI-powered calls satisfy the rule.',
+    'CMS interactive communication requirements for CPT 99457 and 99458: real-time two-way engagement, documentation standards, and how AI-powered outreach can support practice workflows.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
@@ -119,8 +119,8 @@ export default function InteractiveCommunicationRequirementPage() {
                     don{'\u2019'}t discuss the patient{'\u2019'}s condition or care plan are not billable.
                   </li>
                   <li>
-                    <strong>AI-powered calls satisfy the requirement</strong> when structured to capture clinical
-                    content, support patient response, and escalate concerns.
+                    <strong>AI-powered outreach can support the workflow</strong> by capturing structured responses,
+                    documenting attempts, and escalating concerns to clinical staff.
                   </li>
                   <li>
                     Documentation must capture the date, method, content, and staff/system identifier for each
@@ -214,12 +214,11 @@ export default function InteractiveCommunicationRequirementPage() {
                 <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   RPM programs
                 </Link>
-                . An AI call qualifies when it asks structured clinical questions, captures patient responses
-                in real time, time-stamps the interaction, and escalates concerns to human clinical staff when
+                . An AI call can support the workflow by asking structured clinical questions, capturing patient responses,
+                time-stamping the interaction, and escalating concerns to human clinical staff when
                 warranted. The call must be genuinely two-way {'\u2014'} the patient responds to questions rather
-                than simply listening {'\u2014'} and the content must address clinical status. Generic wellness
-                check-ins that do not touch physiologic data, symptoms, medication, or care plan do not meet
-                the clinical content standard.
+                than simply listening {'\u2014'} to produce useful clinical context. The billing practice must
+                separately identify qualifying staff time and communication under applicable requirements.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What doesn{'\u2019'}t count alone</h2>
@@ -282,10 +281,10 @@ export default function InteractiveCommunicationRequirementPage() {
                 the interaction should always be documented inline.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI-powered calls satisfy the requirement</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How AI-powered calls support the workflow</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                AI-powered wellness calls satisfy the CMS interactive communication requirement when they are
-                built around a structured clinical protocol. The call asks targeted questions about medication
+                AI-powered wellness calls can support practice-owned RPM workflows when they are built around a
+                structured clinical protocol. The call asks targeted questions about medication
                 adherence, current symptoms, device readings such as blood pressure, weight, glucose, or oxygen
                 saturation, and functional wellness indicators. The patient{'\u2019'}s responses are captured and
                 time-stamped in real time. When a response indicates a clinical concern {'\u2014'} a symptom
@@ -293,10 +292,10 @@ export default function InteractiveCommunicationRequirementPage() {
                 to human clinical staff immediately rather than queuing the alert for later review.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS defines the interactive communication requirement by content and structure, not by who
-                conducts the call. An AI call that captures clinical content in a real-time two-way exchange
-                meets the same standard as a call conducted by a nurse or medical assistant. For a detailed
-                explanation of the billing codes the interactive communication requirement underpins, see the{' '}
+                CMS has not established that a fully automated interaction independently satisfies the requirement.
+                Practices should use AI output to support clinical-staff review and follow-up, and should not count
+                automated call duration as qualified-personnel time without confirmation under current guidance.
+                For a detailed explanation of the billing codes the interactive communication requirement underpins, see the{' '}
                 <Link
                   href="/solutions/remote-patient-monitoring/cpt-99457-billing-guide"
                   className="text-purple-700 underline hover:text-purple-900"
@@ -346,7 +345,7 @@ export default function InteractiveCommunicationRequirementPage() {
                   changes or confirmations
                 </li>
                 <li>
-                  Staff member name or AI system identifier that performed the interaction
+                  Qualified staff member who performed billable work, plus any automated system involved
                 </li>
                 <li>Any escalations, follow-up actions, or care plan adjustments made as a result of the interaction</li>
               </ul>
@@ -412,7 +411,7 @@ export default function InteractiveCommunicationRequirementPage() {
                   <li>
                     Voicemail, one-way alerts, and asynchronous data review do not satisfy the requirement alone.
                   </li>
-                  <li>AI-powered calls qualify when they capture clinical content and support human escalation.</li>
+                  <li>AI-powered calls can support outreach, documentation, and human escalation, but do not independently establish billability.</li>
                   <li>
                     Documentation (date, method, duration, content, identifier) is what makes 99457/99458 billable
                     at audit.

@@ -311,13 +311,11 @@ export default function PostDischargeContactTimingPage() {
                 and is available to review the encounter as part of ongoing care coordination.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                AI-powered wellness calls also satisfy the contact requirement when the platform is
-                configured to capture the CMS-required content elements and supports real-time escalation
-                to clinical staff. The determining factor is not whether the contact is human or automated,
-                but whether the contact is direct, addresses the discharge care plan, and is documented.
-                An AI call that systematically covers medication understanding, follow-up appointment
-                awareness, and symptom status {'\u2014'} and routes concerning responses immediately to the
-                care team {'\u2014'} meets the CMS standard. For a complete breakdown of billing provider
+                AI-powered wellness calls can support the contact workflow by capturing structured responses
+                and routing concerning answers to clinical staff. CMS does not expressly establish that a fully
+                automated call independently satisfies the requirement. The billing practice should verify that
+                each qualifying contact was performed by permitted personnel, addressed the discharge care plan,
+                and was documented under current guidance. For a complete breakdown of billing provider
                 eligibility and supervision requirements, see the{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up/cpt-99495-billing-guide"
