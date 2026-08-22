@@ -3,6 +3,7 @@
 ## Diagnosis
 
 - The live site was not sending data to GA4. The prior `G-C6J8097SY5` tag was removed on August 2 as a presumed duplicate, but the public GTM container has no active GA4 property tag.
+- GA4 property `properties/490940878` mixed the public site with `provider.positivecheck.com`. In the 90 days ending August 21, provider activity accounted for 1,076 of 1,907 sessions and 9,498 of 10,449 page views, obscuring the marketing funnel.
 - Funnel measurement was incomplete: the homepage contact form had no success event, form starts and errors were not captured, and attribution was not included with leads.
 - Demo requests required four fields and led to a delayed scheduling promise instead of an immediate booking option.
 - Contact forms required up to seven fields and opted visitors into the newsletter by default.
@@ -12,6 +13,7 @@
 ## Implemented in this pass
 
 - Restored direct GA4 collection to the existing property, with an environment override.
+- Restricted direct GA4 collection to `positivecheck.com` and `www.positivecheck.com`, preventing provider, Cloud Run, preview, and local traffic from entering the marketing dataset going forward.
 - Added client-side page-view tracking for App Router navigation.
 - Standardized `cta_click`, `form_start`, `form_error`, `form_submit`, `generate_lead`, and `booking_link_click` events.
 - Added first-touch UTM, click-ID, landing-page, referrer, page, and device context to analytics events and lead submissions.
@@ -27,7 +29,7 @@
 
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
-3. Confirm `matt@positivecheck.com` has Viewer access to GA4 property `G-C6J8097SY5` and Owner/Full access to the `https://www.positivecheck.com/` Search Console property.
+3. Add `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` as a Restricted user on the PositiveCheck Search Console property. The service account already has Viewer access to GA4 property `properties/490940878`.
 4. In GA4, mark `generate_lead` as a key event. Treat `form_submit` as diagnostic unless the business wants it as a second key event.
 5. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.
 
@@ -38,3 +40,23 @@ Report weekly by source/medium, landing page, device, and program:
 `session → cta_click → form_start → form_submit/generate_lead → booking_link_click → meeting_booked → qualified opportunity`
 
 The first four stages are instrumented in the site. The final two require calendar and CRM production configuration.
+
+## GA4 baseline retrieved August 22, 2026
+
+The comparable period below ends August 1 to avoid the August 2–21 measurement gap:
+
+- Public-site sessions fell from 2,263 to 1,135 across sequential 90-day periods, a 49.8% decline.
+- Public-site engagement rate fell from 24.5% to 11.7%.
+- U.S. sessions fell from 1,738 to 501, a 71.2% decline; U.S. engagement fell from 30.0% to 17.0%.
+- The 90 days ending August 21 contained 826 measured public-site sessions, 113 engaged sessions, seven form starts, and zero recorded key events.
+- Singapore produced 358 of those 826 sessions with 4.5% engagement, indicating likely automated or low-value traffic.
+- Organic search produced only 109 sessions. The billing guide was the strongest organic landing page, with 21 sessions and 81% engagement; most other organic landings produced little or no engagement.
+- The homepage generated 411 landing sessions at 12.2% engagement. Contact generated seven landing sessions; pricing generated six with no engaged session.
+
+### Immediate operating priorities
+
+1. Establish the clean baseline after the marketing-host analytics filter is live.
+2. Mark `generate_lead` as the primary GA4 key event and validate a real form submission end to end.
+3. Grant Search Console read access, then identify lost queries/pages and indexing or CTR opportunities.
+4. Build distribution and conversion paths around the billing guide and other high-intent reimbursement content.
+5. Review the homepage-to-demo journey weekly by U.S. traffic, source, landing page, device, and lead type.

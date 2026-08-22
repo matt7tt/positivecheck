@@ -102,7 +102,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               id="google-analytics-4"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
-                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${gaMeasurementId}');`,
+                __html: `(function(){
+var host=window.location.hostname;
+if(host!=='www.positivecheck.com'&&host!=='positivecheck.com')return;
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('js',new Date());
+gtag('config','${gaMeasurementId}');
+})();`,
               }}
             />
           </>
