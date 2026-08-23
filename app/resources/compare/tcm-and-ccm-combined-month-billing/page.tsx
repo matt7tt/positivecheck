@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import {
   StructuredData,
   buildBreadcrumbSchema,
@@ -13,12 +14,12 @@ const PAGE_URL = 'https://www.positivecheck.com/resources/compare/tcm-and-ccm-co
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'TCM + CCM Combined-Month Billing: How the Two Stack | Positive Check',
+  title: 'Can You Bill TCM and CCM Together? 2026 CMS Rules',
   description:
-    'How Transitional Care Management (TCM CPT 99495/99496) and Chronic Care Management (CCM CPT 99490) can be billed concurrently in the same month for the same patient. CMS rules, timing windows, documentation, and combined revenue.',
+    'Yes, TCM and CCM can be billed in the same month when each service meets CMS requirements. Learn the 2026 timing, documentation, and time-counting rules.',
   alternates: { canonical: '/resources/compare/tcm-and-ccm-combined-month-billing' },
   openGraph: {
-    title: 'TCM + CCM Combined-Month Billing: How the Two Stack',
+    title: 'Can You Bill TCM and CCM Together? 2026 CMS Rules',
     description:
       'CMS rules for billing TCM and CCM concurrently in the same month. Timing, documentation, and revenue stacking.',
     url: '/resources/compare/tcm-and-ccm-combined-month-billing',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TCM + CCM Combined-Month Billing: How the Two Stack',
+    title: 'Can You Bill TCM and CCM Together? 2026 CMS Rules',
     description:
       'How TCM (99495/99496) and CCM (99490) can be billed concurrently in the same month.',
     images: [HERO_IMAGE],
@@ -72,13 +73,13 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'TCM + CCM Combined-Month Billing: How the Two Stack',
+  headline: 'Can You Bill TCM and CCM Together? 2026 CMS Rules',
   description:
     'How Transitional Care Management (TCM CPT 99495/99496) and Chronic Care Management (CCM CPT 99490) can be billed concurrently in the same month, including CMS timing rules, documentation requirements, and combined revenue scenarios.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-05-19',
-  dateModified: '2026-05-19',
+  dateModified: '2026-08-23',
 })
 
 export default function TCMandCCMCombinedPage() {
@@ -94,7 +95,7 @@ export default function TCMandCCMCombinedPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Comparison</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                TCM + CCM Combined-Month Billing
+                Can You Bill TCM and CCM Together?
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 How{' '}
@@ -148,6 +149,12 @@ export default function TCMandCCMCombinedPage() {
                   </li>
                 </ul>
               </div>
+
+              <ContentConversionCta
+                source="tcm_ccm_combined_summary"
+                title="See how one outreach workflow can support both programs"
+                description="Explore how Positive Check captures patient responses and routes follow-up work so your team can maintain separate, practice-owned TCM and CCM documentation."
+              />
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">When does combined billing apply?</h2>
               <p className="text-gray-700 leading-relaxed mb-4">

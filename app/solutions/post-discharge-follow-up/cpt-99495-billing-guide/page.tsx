@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import {
   StructuredData,
   buildBreadcrumbSchema,
@@ -13,12 +14,12 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'CPT 99495 Billing Guide: TCM Requirements & Documentation | Positive Check',
+  title: 'CPT 99495 Requirements | 2026 TCM Billing Guide',
   description:
-    'Complete guide to billing CPT 99495 for Transitional Care Management: eligibility, the 2-business-day contact rule, 14-day face-to-face visit, moderate medical decision-making complexity, documentation, and common billing errors.',
+    'Learn 2026 CPT 99495 requirements for TCM, including eligibility, two-business-day contact, the 14-day visit, documentation, and common billing errors.',
   alternates: { canonical: '/solutions/post-discharge-follow-up/cpt-99495-billing-guide' },
   openGraph: {
-    title: 'CPT 99495 Billing Guide: TCM Requirements & Documentation',
+    title: 'CPT 99495 Requirements: 2026 TCM Billing Guide',
     description:
       'Eligibility, the 2-business-day contact rule, face-to-face visit, documentation, and common billing errors for CPT 99495.',
     url: '/solutions/post-discharge-follow-up/cpt-99495-billing-guide',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CPT 99495 Billing Guide: TCM Requirements & Documentation',
+    title: 'CPT 99495 Requirements: 2026 TCM Billing Guide',
     description:
       'Eligibility, the 2-business-day contact rule, face-to-face visit, documentation, and common billing errors for CPT 99495.',
     images: [HERO_IMAGE],
@@ -72,12 +73,12 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'CPT 99495 Billing Guide: Transitional Care Management Requirements',
+  headline: 'CPT 99495 Requirements: 2026 TCM Billing Guide',
   description: 'Complete guide to billing CPT 99495 for Transitional Care Management: eligibility, the 2-business-day contact rule, 14-day face-to-face visit, moderate medical decision-making complexity, documentation, and common billing errors.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-04-19',
+  dateModified: '2026-08-23',
 })
 
 export default function CPT99495BillingGuidePage() {
@@ -93,7 +94,7 @@ export default function CPT99495BillingGuidePage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Billing Guide</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                CPT 99495 Billing Guide: Transitional Care Management Requirements
+                CPT 99495 Requirements: 2026 TCM Billing Guide
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 Eligibility, the 2-business-day contact rule, the 14-day face-to-face visit,
@@ -133,6 +134,12 @@ export default function CPT99495BillingGuidePage() {
                   </li>
                 </ul>
               </div>
+
+              <ContentConversionCta
+                source="cpt_99495_summary"
+                title="See a CPT 99495 support workflow"
+                description="Walk through how Positive Check supports timely outreach, structured response capture, and escalation while your practice verifies eligibility and billing requirements."
+              />
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What CPT 99495 covers</h2>
               <p className="text-gray-700 leading-relaxed mb-4">

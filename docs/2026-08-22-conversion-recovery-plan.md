@@ -24,13 +24,15 @@
 - Escaped form content before inserting it into notification email HTML.
 - Reworked the homepage hero around an operational outcome, product screenshot, one primary CTA, and implementation proof.
 - Harmonized RPM and TCM language so automation is described as supporting practice-owned workflows, not independently creating billable time or satisfying every requirement.
+- Used Search Console opportunity data to rewrite titles and descriptions for four high-impression TCM/readmission pages.
+- Added contextual, tracked workflow-demo CTAs immediately after the answer summaries on those pages.
 
 ## Production configuration still required
 
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
 3. Create a dedicated GA4 property and web stream for `https://www.positivecheck.com/`, then set its measurement ID as `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Keep the current stream `G-C6J8097SY5` for the separate provider frontend so default marketing reports are no longer mixed.
-4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property and Restricted access to the PositiveCheck Search Console property.
+4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Restricted Search Console access is complete.
 5. In the new GA4 property, mark `generate_lead` as a key event. Treat `form_submit` as diagnostic unless the business wants it as a second key event.
 6. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.
 
@@ -61,3 +63,13 @@ The comparable period below ends August 1 to avoid the August 2–21 measurement
 3. Grant Search Console read access, then identify lost queries/pages and indexing or CTR opportunities.
 4. Build distribution and conversion paths around the billing guide and other high-intent reimbursement content.
 5. Review the homepage-to-demo journey weekly by U.S. traffic, source, landing page, device, and lead type.
+
+## Search Console baseline retrieved August 23, 2026
+
+- The 90 days ending August 21 produced 1 click from 1,875 Google Search impressions: 0.05% CTR at average position 48.6.
+- The preceding 90 days produced 1 click from 106 impressions. Google is discovering substantially more content, but most pages do not yet rank high enough to earn traffic.
+- The latest 28 days produced 579 impressions, zero clicks, and average position 33.3, improving from position 43.6 in the prior 28 days.
+- The United States represented 1,554 of 1,875 impressions. Desktop represented 1,771 impressions.
+- Near-term page opportunities were post-discharge contact timing (229 impressions, position 5.8), TCM + CCM combined billing (127, position 12.1), 30-day readmission reduction (84, position 10.6), and the CPT 99495 guide (14, position 7.9). All recorded zero clicks.
+- High-volume glossary visibility is mostly on pages 6–10. For example, the business associate agreement glossary page generated 309 impressions at position 81.2; this is discovery, not a near-term traffic opportunity.
+- GA4's reported Google-organic sessions are inconsistent with Search Console's single verified click, reinforcing that GA traffic should not be treated as qualified search traffic until the dedicated marketing property is live.

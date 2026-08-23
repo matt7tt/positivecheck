@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import {
   StructuredData,
   buildBreadcrumbSchema,
@@ -13,12 +14,12 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'Reducing 30-Day Readmissions: What Works and Where TCM Fits | Positive Check',
+  title: 'How to Reduce 30-Day Hospital Readmissions | TCM Guide',
   description:
-    'A provider-focused guide to reducing 30-day hospital readmissions. Which discharge scenarios carry the highest risk, root causes of avoidable readmissions, evidence-based interventions, and how Transitional Care Management fits a readmission reduction strategy.',
+    'Learn how healthcare teams reduce 30-day hospital readmissions with timely follow-up, medication reconciliation, escalation workflows, and TCM.',
   alternates: { canonical: '/solutions/post-discharge-follow-up/30-day-readmission-reduction' },
   openGraph: {
-    title: 'Reducing 30-Day Readmissions: What Works and Where TCM Fits',
+    title: 'How to Reduce 30-Day Hospital Readmissions | TCM Guide',
     description:
       'Root causes of avoidable readmissions, evidence-based interventions, and how TCM fits a readmission reduction strategy.',
     url: '/solutions/post-discharge-follow-up/30-day-readmission-reduction',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Reducing 30-Day Readmissions: What Works and Where TCM Fits',
+    title: 'How to Reduce 30-Day Hospital Readmissions | TCM Guide',
     description:
       'Root causes, evidence-based interventions, and how TCM fits a readmission reduction strategy.',
     images: [HERO_IMAGE],
@@ -72,13 +73,13 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'Reducing 30-Day Readmissions: What Works and Where TCM Fits',
+  headline: 'How to Reduce 30-Day Hospital Readmissions: A TCM Guide',
   description:
     'A provider-focused guide to reducing 30-day hospital readmissions. Which discharge scenarios carry the highest risk, root causes of avoidable readmissions, evidence-based interventions, and how Transitional Care Management fits a readmission reduction strategy.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-04-19',
+  dateModified: '2026-08-23',
 })
 
 export default function ReadmissionReductionPage() {
@@ -94,7 +95,7 @@ export default function ReadmissionReductionPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Clinical</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Reducing 30-Day Readmissions: What Works and Where TCM Fits
+                How to Reduce 30-Day Hospital Readmissions
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 Which discharge scenarios carry the highest readmission risk, what drives avoidable
@@ -134,6 +135,12 @@ export default function ReadmissionReductionPage() {
                   </li>
                 </ul>
               </div>
+
+              <ContentConversionCta
+                source="readmission_reduction_summary"
+                title="See a scalable post-discharge follow-up workflow"
+                description="See how Positive Check helps teams reach discharged patients, capture structured risk signals, and escalate concerns without replacing clinical judgment."
+              />
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Why 30-day readmissions matter</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
