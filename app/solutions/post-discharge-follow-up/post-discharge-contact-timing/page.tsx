@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import {
   StructuredData,
   buildBreadcrumbSchema,
@@ -13,12 +14,12 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'Post-Discharge Contact Timing: The 2-Business-Day Rule Explained | Positive Check',
+  title: 'TCM 2-Business-Day Contact Rule | CMS Timing Guide',
   description:
-    'Exact CMS rules for the 2-business-day post-discharge contact requirement: what counts as a business day, weekend and holiday handling, acceptable contact methods, documentation standards, and how automation enforces the window.',
+    'Learn the CMS TCM two-business-day contact rule, including deadlines, weekends and holidays, acceptable contact methods, and documentation requirements.',
   alternates: { canonical: '/solutions/post-discharge-follow-up/post-discharge-contact-timing' },
   openGraph: {
-    title: 'Post-Discharge Contact Timing: The 2-Business-Day Rule Explained',
+    title: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
     description:
       'Exact CMS rules for the 2-business-day post-discharge contact: business day definition, weekend/holiday handling, contact methods, documentation.',
     url: '/solutions/post-discharge-follow-up/post-discharge-contact-timing',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Post-Discharge Contact Timing: The 2-Business-Day Rule Explained',
+    title: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
     description:
       'Exact CMS rules for the 2-business-day post-discharge contact requirement.',
     images: [HERO_IMAGE],
@@ -72,13 +73,13 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'Post-Discharge Contact Timing: The 2-Business-Day Rule Explained',
+  headline: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
   description:
     'Exact CMS rules for the 2-business-day post-discharge contact requirement: what counts as a business day, weekend and holiday handling, acceptable contact methods, documentation standards, and how automation enforces the window.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-04-19',
+  dateModified: '2026-08-23',
 })
 
 export default function PostDischargeContactTimingPage() {
@@ -94,7 +95,7 @@ export default function PostDischargeContactTimingPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Workflow</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Post-Discharge Contact Timing: The 2-Business-Day Rule Explained
+                TCM 2-Business-Day Contact Rule: CMS Timing Guide
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 What CMS actually requires for the initial post-discharge contact {'\u2014'} business day
@@ -130,6 +131,12 @@ export default function PostDischargeContactTimingPage() {
                   </li>
                 </ul>
               </div>
+
+              <ContentConversionCta
+                source="tcm_contact_timing_summary"
+                title="See how the two-business-day workflow runs in practice"
+                description="Walk through how Positive Check schedules outreach, captures structured responses, and routes exceptions to your care team while your practice retains control of billing decisions."
+              />
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The CMS 2-business-day rule</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
