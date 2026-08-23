@@ -32,7 +32,7 @@
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
 3. Create a dedicated GA4 property and web stream for `https://www.positivecheck.com/`, then set its measurement ID as `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Keep the current stream `G-C6J8097SY5` for the separate provider frontend so default marketing reports are no longer mixed.
-4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Restricted Search Console access is complete.
+4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Full Search Console access is complete.
 5. In the new GA4 property, mark `generate_lead` as a key event. Treat `form_submit` as diagnostic unless the business wants it as a second key event.
 6. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.
 
@@ -73,5 +73,5 @@ The comparable period below ends August 1 to avoid the August 2–21 measurement
 - Near-term page opportunities were post-discharge contact timing (229 impressions, position 5.8), TCM + CCM combined billing (127, position 12.1), 30-day readmission reduction (84, position 10.6), and the CPT 99495 guide (14, position 7.9). All recorded zero clicks.
 - High-volume glossary visibility is mostly on pages 6–10. For example, the business associate agreement glossary page generated 309 impressions at position 81.2; this is discovery, not a near-term traffic opportunity.
 - GA4's reported Google-organic sessions are inconsistent with Search Console's single verified click, reinforcing that GA traffic should not be treated as qualified search traffic until the dedicated marketing property is live.
-- The Search Console sitemap record was last submitted May 20 and last downloaded May 27 with 68 URLs; the live sitemap now contains 73 indexable routes. Restricted access can read but cannot resubmit it, so the service account needs Full permission for this operation.
+- The Search Console sitemap record was last downloaded May 27 with 68 URLs; the live sitemap now contains 73 indexable routes. Full permission was granted and the refreshed sitemap was accepted for processing on August 23 with zero warnings or errors.
 - URL Inspection reports the homepage, billing guide, post-discharge contact timing, and TCM + CCM comparison as submitted and indexed. The readmission-reduction and CPT 99495 pages were successfully crawled but were not indexed at inspection time; both received substantial title, summary, and conversion-path updates on August 23.
