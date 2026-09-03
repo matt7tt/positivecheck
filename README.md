@@ -20,7 +20,7 @@ npm run lint      # Run ESLint
 | `LEAD_WEBHOOK_URL` | Optional CRM/automation webhook that receives every contact and demo lead |
 | `LEAD_WEBHOOK_SECRET` | Optional bearer token sent to the lead webhook |
 | `NEXT_PUBLIC_DEMO_BOOKING_URL` | Calendar URL shown immediately after a demo request |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional GA4 override (defaults to the existing `G-C6J8097SY5` property) |
+| `NEXT_PUBLIC_MARKETING_GA_MEASUREMENT_ID` | Optional marketing-site GA4 override (defaults to `G-EZQ4F5Q7FG`) |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console HTML verification token |
 | `LLMS_SOURCE_URL` | Optional source host used by `npm run llms-full` (use `http://localhost:3000` to regenerate from local changes) |
 | `STRIPE_PUBLISHABLE_KEY` | Stripe public key |
@@ -243,7 +243,7 @@ Wraps all pages. Provides:
 - `PerformanceMonitor`
 - Facebook Pixel (inline script, pixel ID: `2093713827815363`)
 - Google Tag Manager (`GTM-MKHVJ3LF`)
-- Google Analytics 4 (defaults to `G-C6J8097SY5`, overridable with `NEXT_PUBLIC_GA_MEASUREMENT_ID`)
+- Google Analytics 4 marketing property (defaults to `G-EZQ4F5Q7FG`, overridable with `NEXT_PUBLIC_MARKETING_GA_MEASUREMENT_ID`)
 - First-touch UTM/referrer attribution and client-side route/conversion events
 - Font loading (Inter, Space Grotesk, Raleway)
 - Resource preloading and DNS prefetching
@@ -276,7 +276,7 @@ Several pages have their own `layout.tsx` for metadata: `/about`, `/blog`, `/con
 
 | Service | ID/Config | Dashboard |
 |---------|-----------|-----------|
-| Google Analytics | `G-C6J8097SY5` | Google Analytics console |
+| Google Analytics (marketing) | `G-EZQ4F5Q7FG` | Google Analytics console |
 | Facebook Pixel | `2093713827815363` | Meta Events Manager |
 | Vercel Analytics | `@vercel/analytics` | Vercel project dashboard |
 | Vercel Speed Insights | `@vercel/speed-insights` | Vercel project dashboard |

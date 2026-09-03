@@ -1,10 +1,10 @@
 "use client"
 
+import { isMarketingAnalyticsPage, MARKETING_GA_MEASUREMENT_ID } from "@/lib/analytics-config"
+
 type EventParameters = Record<string, string | number | boolean | undefined>
 
 const ATTRIBUTION_STORAGE_KEY = "positive_check_attribution"
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-C6J8097SY5"
-const MARKETING_HOSTNAMES = new Set(["positivecheck.com", "www.positivecheck.com"])
 
 declare global {
   interface Window {
@@ -77,7 +77,7 @@ export function trackEvent(
   parameters: EventParameters = {},
   options: { sendToDirectGa?: boolean } = {}
 ) {
-  if (typeof window === "undefined") return
+  if (typeof window === "undefined" || !isMarketingAnalyticsPage(window.location)) return
 
   const eventParameters = {
     ...getAttributionContext(),
@@ -90,8 +90,7 @@ export function trackEvent(
   // When a direct GA4 property is configured, send events without depending on
   // unpublished GTM tags. GTM still receives the dataLayer event for other tags.
   if (
-    GA_MEASUREMENT_ID &&
-    MARKETING_HOSTNAMES.has(window.location.hostname) &&
+    MARKETING_GA_MEASUREMENT_ID &&
     options.sendToDirectGa !== false
   ) {
     window.gtag?.("event", eventName, eventParameters)

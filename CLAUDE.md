@@ -52,7 +52,7 @@ This is a Next.js 15 App Router application for Positive Check, a senior wellnes
 
 ### Analytics & Tracking
 - Facebook Pixel integration for marketing
-- Google Analytics (G-C6J8097SY5)
+- Google Analytics marketing property (G-EZQ4F5Q7FG)
 - Vercel Analytics and Speed Insights
 - Performance monitoring component
 

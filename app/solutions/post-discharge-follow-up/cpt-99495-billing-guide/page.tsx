@@ -78,7 +78,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-08-23',
+  dateModified: '2026-09-03',
 })
 
 export default function CPT99495BillingGuidePage() {
