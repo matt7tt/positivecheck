@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, within } from '@testing-library/react'
 import { PublicHeader } from '../public-header'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: ({ priority: _priority, ...props }: any) => <img {...props} />,
 }))
 
 jest.mock('next/link', () => ({
@@ -25,75 +25,93 @@ describe('PublicHeader', () => {
   })
 
   it('highlights the current page in desktop navigation', () => {
-    render(<PublicHeader currentPage="about" />)
+    render(<PublicHeader currentPage="solutions" />)
     
-    const aboutLink = screen.getAllByText('About')[0]
-    expect(aboutLink).toHaveClass('text-[#1a2642]', 'font-bold', 'border-b-2', 'border-[#1a2642]')
+    const solutionsLink = screen.getByRole('link', { name: 'Solutions' })
+    expect(solutionsLink).toHaveClass('text-[#1a2642]', 'font-bold', 'border-b-2', 'border-[#1a2642]')
   })
 
   it('shows mobile menu when menu button is clicked', () => {
     render(<PublicHeader currentPage="home" />)
     
-    const menuButton = screen.getByRole('button')
-    
+    const menuButton = screen.getByRole('button', { name: 'Open navigation menu' })
     fireEvent.click(menuButton)
-    
-    const mobileMenus = screen.getAllByText('Home')
-    expect(mobileMenus).toHaveLength(2)
-    expect(screen.getAllByText('About')).toHaveLength(2)
-    expect(screen.getAllByText('How It Works')).toHaveLength(2)
-    expect(screen.getAllByText('Blog')).toHaveLength(2)
-    expect(screen.getAllByText('Contact')).toHaveLength(2)
-    expect(screen.getAllByText('Sign In')).toHaveLength(2)
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'true')
+    const mobileNavigation = document.getElementById('mobile-navigation')
+    expect(mobileNavigation).toBeInTheDocument()
+
+    const mobile = within(mobileNavigation!)
+    expect(mobile.getByRole('link', { name: 'Solutions' })).toHaveAttribute('href', '/solutions')
+    expect(mobile.getByRole('link', { name: 'How It Works' })).toHaveAttribute('href', '/how-it-works')
+    expect(mobile.getByRole('link', { name: 'ROI Calculator' })).toHaveAttribute('href', '/roi-calculator')
+    expect(mobile.getByRole('link', { name: 'Resources' })).toHaveAttribute('href', '/resources')
+    expect(mobile.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact')
+    expect(mobile.getByRole('link', { name: 'Sign In' })).toHaveAttribute('href', '/sign-in')
   })
 
   it('closes mobile menu when a link is clicked', () => {
     render(<PublicHeader currentPage="home" />)
     
-    const menuButton = screen.getByRole('button')
+    const menuButton = screen.getByRole('button', { name: 'Open navigation menu' })
     fireEvent.click(menuButton)
-    
-    expect(screen.getAllByText('About')).toHaveLength(2)
-    
-    const mobileAboutLink = screen.getAllByText('About')[1]
-    fireEvent.click(mobileAboutLink)
-    
-    expect(screen.getAllByText('About')).toHaveLength(1)
+
+    const mobileNavigation = document.getElementById('mobile-navigation')
+    fireEvent.click(within(mobileNavigation!).getByRole('link', { name: 'Resources' }))
+
+    expect(document.getElementById('mobile-navigation')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Open navigation menu' })).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('renders all navigation links', () => {
     render(<PublicHeader currentPage="home" />)
-    
-    expect(screen.getByText('Home')).toBeInTheDocument()
-    expect(screen.getByText('About')).toBeInTheDocument()
-    expect(screen.getByText('How It Works')).toBeInTheDocument()
-    expect(screen.getByText('Blog')).toBeInTheDocument()
-    expect(screen.getByText('Contact')).toBeInTheDocument()
-    expect(screen.getByText('Sign In')).toBeInTheDocument()
+
+    const expectedLinks = [
+      ['Solutions', '/solutions'],
+      ['How It Works', '/how-it-works'],
+      ['ROI Calculator', '/roi-calculator'],
+      ['Resources', '/resources'],
+      ['Contact', '/contact'],
+      ['Sign In', '/sign-in'],
+    ]
+
+    expectedLinks.forEach(([name, href]) => {
+      expect(screen.getByRole('link', { name })).toHaveAttribute('href', href)
+    })
   })
 
   it('highlights different pages correctly', () => {
-    const pages = ['home', 'about', 'blog', 'contact', 'sign-in'] as const
-    
-    pages.forEach(page => {
-      const { rerender } = render(<PublicHeader currentPage={page} />)
-      
-      const pageText = page === 'sign-in' ? 'Sign In' : page.charAt(0).toUpperCase() + page.slice(1)
-      const link = screen.getAllByText(pageText)[0]
+    const pages = [
+      ['solutions', 'Solutions'],
+      ['how-it-works', 'How It Works'],
+      ['roi-calculator', 'ROI Calculator'],
+      ['resources', 'Resources'],
+      ['contact', 'Contact'],
+      ['sign-in', 'Sign In'],
+    ] as const
+
+    const { rerender } = render(<PublicHeader currentPage="solutions" />)
+
+    pages.forEach(([page, pageText]) => {
+      rerender(<PublicHeader currentPage={page} />)
+
+      const link = screen.getByRole('link', { name: pageText })
       expect(link).toHaveClass('text-[#1a2642]', 'font-bold')
-      
-      rerender(<div />)
     })
   })
 
   it('toggles menu icon when clicked', () => {
     render(<PublicHeader currentPage="home" />)
-    
-    const menuButton = screen.getByRole('button')
-    
+
+    const menuButton = screen.getByRole('button', { name: 'Open navigation menu' })
     fireEvent.click(menuButton)
-    fireEvent.click(menuButton)
-    
-    expect(screen.getAllByText('About')).toHaveLength(1)
+
+    const closeButton = screen.getByRole('button', { name: 'Close navigation menu' })
+    expect(closeButton).toHaveAttribute('aria-expanded', 'true')
+
+    fireEvent.click(closeButton)
+
+    expect(screen.getByRole('button', { name: 'Open navigation menu' })).toHaveAttribute('aria-expanded', 'false')
+    expect(document.getElementById('mobile-navigation')).not.toBeInTheDocument()
   })
 })
