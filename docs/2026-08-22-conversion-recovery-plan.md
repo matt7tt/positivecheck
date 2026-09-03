@@ -36,7 +36,7 @@
 5. Completed September 3: registered `generate_lead` as the primary key event in the new GA4 property. `form_submit` remains diagnostic.
 6. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.
 
-The existing domain-level Search Console property cannot be linked inside GA4 because the signed-in Google account has Full access but is not its verified owner. A matching `https://www.positivecheck.com/` URL-prefix property is being verified instead so the marketing hostname can be linked without changing DNS.
+Completed September 3: created and verified the `https://www.positivecheck.com/` URL-prefix Search Console property, then linked it to the dedicated GA4 web stream. The existing domain property remains the historical source of truth; the hostname-specific property supplies future Search Console data to GA4 without requiring a DNS change.
 
 ## Funnel report
 
