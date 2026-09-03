@@ -93,7 +93,7 @@ export default function SolutionsIndexPage() {
         }}
       />
       <div className="min-h-screen bg-white">
-        <PublicHeader currentPage="platform" />
+        <PublicHeader currentPage="solutions" />
 
         <main>
           <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">

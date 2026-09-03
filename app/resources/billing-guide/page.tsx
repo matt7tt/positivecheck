@@ -9,6 +9,7 @@ import {
   buildArticleSchema,
   buildFAQSchema,
 } from '@/components/structured-data'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 
 export const metadata: Metadata = {
   title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
@@ -48,7 +49,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-21',
-  dateModified: '2026-05-17',
+  dateModified: '2026-09-03',
 })
 
 const faqs = [
@@ -132,6 +133,13 @@ export default function BillingGuideIndexPage() {
                   </li>
                 </ul>
               </div>
+
+              <ContentConversionCta
+                source="billing_guide_summary"
+                title="Model the workflow behind the reimbursement"
+                description="Estimate your RPM, CCM, and post-discharge opportunity, then see how Positive Check supports outreach, documentation, and exception routing at scale."
+                buttonText="See the care workflow"
+              />
 
               {/* Programs at a glance */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
@@ -567,7 +575,7 @@ export default function BillingGuideIndexPage() {
                 >
                   CCM
                 </a>
-                . Last updated 2026-04-21.
+                . Last updated 2026-09-03.
               </p>
             </div>
           </section>

@@ -31,7 +31,7 @@
 
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
-3. Create a dedicated GA4 property and web stream for `https://www.positivecheck.com/`, then set its measurement ID as `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Keep the current stream `G-C6J8097SY5` for the separate provider frontend so default marketing reports are no longer mixed.
+3. Completed September 3: created dedicated GA4 property `Positive Check Marketing Website` (`properties/552721603`) and web stream `15714166114` for `https://www.positivecheck.com/`. The marketing site now sends to `G-EZQ4F5Q7FG`; the provider frontend can retain `G-C6J8097SY5`.
 4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Full Search Console access is complete.
 5. In the new GA4 property, mark `generate_lead` as a key event. Treat `form_submit` as diagnostic unless the business wants it as a second key event.
 6. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.

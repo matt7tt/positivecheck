@@ -14,14 +14,14 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/post-discharge-follow-
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'TCM 2-Business-Day Contact Rule | CMS Timing Guide',
+  title: 'TCM Contact Within 2 Business Days: CMS Rule & Examples',
   description:
     'Learn the CMS TCM two-business-day contact rule, including deadlines, weekends and holidays, acceptable contact methods, and documentation requirements.',
   alternates: { canonical: '/solutions/post-discharge-follow-up/post-discharge-contact-timing' },
   openGraph: {
-    title: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
+    title: 'TCM Contact Within 2 Business Days: CMS Rule & Examples',
     description:
-      'Exact CMS rules for the 2-business-day post-discharge contact: business day definition, weekend/holiday handling, contact methods, documentation.',
+      'When TCM contact is due, with Friday-discharge examples, weekend and holiday rules, accepted contact methods, and documentation requirements.',
     url: '/solutions/post-discharge-follow-up/post-discharge-contact-timing',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
+    title: 'TCM Contact Within 2 Business Days: CMS Rule & Examples',
     description:
       'Exact CMS rules for the 2-business-day post-discharge contact requirement.',
     images: [HERO_IMAGE],
@@ -73,13 +73,13 @@ const breadcrumb = buildBreadcrumbSchema([
 ])
 
 const article = buildArticleSchema({
-  headline: 'TCM 2-Business-Day Contact Rule: CMS Timing Guide',
+  headline: 'TCM Contact Within 2 Business Days: CMS Rule and Examples',
   description:
     'Exact CMS rules for the 2-business-day post-discharge contact requirement: what counts as a business day, weekend and holiday handling, acceptable contact methods, documentation standards, and how automation enforces the window.',
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-08-23',
+  dateModified: '2026-09-03',
 })
 
 export default function PostDischargeContactTimingPage() {
@@ -95,7 +95,7 @@ export default function PostDischargeContactTimingPage() {
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Workflow</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                TCM 2-Business-Day Contact Rule: CMS Timing Guide
+                TCM Contact Within 2 Business Days: CMS Rule and Examples
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 What CMS actually requires for the initial post-discharge contact {'\u2014'} business day

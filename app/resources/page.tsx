@@ -63,8 +63,25 @@ export default function ResourcesIndexPage() {
   return (
     <>
       <StructuredData data={breadcrumb} id="resources-breadcrumb" />
+      <StructuredData
+        id="resources-collection"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Positive Check Resources for Healthcare Providers",
+          url: "https://www.positivecheck.com/resources",
+          description:
+            "CMS billing guides, calculators, comparisons, and healthcare compliance references for provider teams.",
+          hasPart: sections.map((section) => ({
+            "@type": "CreativeWork",
+            name: section.title,
+            url: `https://www.positivecheck.com${section.href}`,
+            description: section.description,
+          })),
+        }}
+      />
       <div className="min-h-screen bg-white">
-        <PublicHeader currentPage="platform" />
+        <PublicHeader currentPage="resources" />
         <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
           <h1 className="text-4xl lg:text-5xl font-bold text-[#1a2642] mb-6 leading-tight">
             Resources for Healthcare Providers
