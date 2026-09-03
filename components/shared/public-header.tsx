@@ -24,6 +24,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
             height={56}
             width={210}
             priority
+            sizes="210px"
             className="h-14 w-auto -mt-1"
           />
         </Link>
