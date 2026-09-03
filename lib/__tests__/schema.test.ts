@@ -25,11 +25,11 @@ describe("buildOrganizationSchema", () => {
     expect(schema.contactPoint["@type"]).toBe("ContactPoint");
   });
 
-  it("includes sameAs with at least LinkedIn and Facebook", () => {
+  it("includes only verified social profiles in sameAs", () => {
     const schema = buildOrganizationSchema();
     expect(Array.isArray(schema.sameAs)).toBe(true);
-    expect(schema.sameAs.some((u: string) => u.includes("linkedin"))).toBe(true);
-    expect(schema.sameAs.some((u: string) => u.includes("facebook"))).toBe(true);
+    expect(schema.sameAs).toContain("https://www.facebook.com/positivecheck");
+    expect(schema.sameAs.every((url: string) => url.startsWith("https://"))).toBe(true);
   });
 });
 
