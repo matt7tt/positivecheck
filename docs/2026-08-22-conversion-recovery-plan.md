@@ -32,9 +32,11 @@
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
 3. Completed September 3: created dedicated GA4 property `Positive Check Marketing Website` (`properties/552721603`) and web stream `15714166114` for `https://www.positivecheck.com/`. The marketing site now sends to `G-EZQ4F5Q7FG`; the provider frontend can retain `G-C6J8097SY5`.
-4. Give `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Full Search Console access is complete.
-5. In the new GA4 property, mark `generate_lead` as a key event. Treat `form_submit` as diagnostic unless the business wants it as a second key event.
+4. Completed September 3: granted `g-force-service-account-v@advance-block-464601-c0.iam.gserviceaccount.com` Viewer access to the new GA4 property. Full Search Console access is complete.
+5. Completed September 3: registered `generate_lead` as the primary key event in the new GA4 property. `form_submit` remains diagnostic.
 6. Configure the scheduling service to send a server-side `meeting_booked` event or webhook after an appointment is actually booked; a calendar click is not the same as a completed meeting.
+
+Search Console cannot yet be linked inside GA4 because the signed-in Google account has Full Search Console access but is not a verified owner of the `positivecheck.com` domain property. A verified owner must complete that one-time link.
 
 ## Funnel report
 
@@ -75,3 +77,11 @@ The comparable period below ends August 1 to avoid the August 2–21 measurement
 - GA4's reported Google-organic sessions are inconsistent with Search Console's single verified click, reinforcing that GA traffic should not be treated as qualified search traffic until the dedicated marketing property is live.
 - The Search Console sitemap record was last downloaded May 27 with 68 URLs; the live sitemap now contains 73 indexable routes. Full permission was granted and the refreshed sitemap was accepted for processing on August 23 with zero warnings or errors.
 - URL Inspection reports the homepage, billing guide, post-discharge contact timing, and TCM + CCM comparison as submitted and indexed. The readmission-reduction and CPT 99495 pages were successfully crawled but were not indexed at inspection time; both received substantial title, summary, and conversion-path updates on August 23.
+
+## September 3 deployment follow-up
+
+- Deployed the dedicated marketing stream `G-EZQ4F5Q7FG` and excluded `/admin-new`, API routes, non-production hostnames, and the provider application from marketing-site measurement.
+- Added a tracked ROI-calculator action beside the demo action on high-intent content, including the billing guide.
+- Tightened the two strongest near-page-one result titles and added `CollectionPage` structured data to the resources hub.
+- Resubmitted `https://www.positivecheck.com/sitemap.xml`; Search Console accepted it with 73 discovered pages.
+- Requested priority recrawling for the post-discharge contact-timing and TCM/CCM comparison pages. Search Console accepted both requests. The resources hub remains `Discovered - currently not indexed`; its manual request returned a transient Search Console error, but it is included in the accepted sitemap.
