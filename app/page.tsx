@@ -134,7 +134,11 @@ export default function HomePage() {
                 <p className="text-xs sm:text-sm text-gray-600">alerts resolved</p>
               </div>
             </div>
-            <Link href="/case-studies/scaling-patient-engagement" className="inline-block mt-3 text-sm font-medium text-purple-700 hover:text-purple-900 underline underline-offset-4">
+            <Link
+              href="/case-studies/scaling-patient-engagement"
+              prefetch={false}
+              className="inline-block mt-3 text-sm font-medium text-purple-700 hover:text-purple-900 underline underline-offset-4"
+            >
               Read the six-month implementation study
             </Link>
           </div>
@@ -146,6 +150,7 @@ export default function HomePage() {
               width={1200}
               height={760}
               priority
+              sizes="(min-width: 1280px) 612px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="w-full h-auto rounded-2xl border border-gray-200 shadow-xl"
             />
           </div>
@@ -211,7 +216,7 @@ export default function HomePage() {
               alt="Healthcare provider using Positive Check admin dashboard to monitor patient wellness"
               width={800}
               height={400}
-              priority
+              sizes="(min-width: 1280px) 592px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="rounded-lg shadow-xl w-full object-cover"
               style={{
                 height: "400px",
@@ -277,6 +282,7 @@ export default function HomePage() {
               alt="Healthcare professional conducting daily wellness check-in calls for senior patients"
               width={600}
               height={400}
+              sizes="(min-width: 1280px) 592px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="rounded-lg shadow-xl w-full"
             />
           </div>
@@ -382,6 +388,7 @@ export default function HomePage() {
               alt="Senior citizen engaged in friendly wellness conversation with AI companion Lola"
               width={600}
               height={400}
+              sizes="(min-width: 1280px) 592px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="rounded-lg shadow-xl w-full"
             />
           </div>
@@ -397,6 +404,7 @@ export default function HomePage() {
               alt="Concerned senior during a wellness check-in call"
               width={600}
               height={400}
+              sizes="(min-width: 1280px) 592px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="rounded-lg shadow-xl w-full object-cover"
               style={{ height: "400px", objectPosition: "center center" }}
             />
@@ -462,6 +470,7 @@ export default function HomePage() {
                     alt={tab.alt}
                     width={1200}
                     height={600}
+                    sizes="(min-width: 1280px) 1152px, calc(100vw - 48px)"
                     className="rounded-lg shadow-xl w-full max-w-6xl"
                   />
                 </div>
@@ -556,6 +565,7 @@ export default function HomePage() {
               alt="Senior patient receiving automated wellness check-in call from healthcare provider"
               width={600}
               height={320}
+              sizes="(min-width: 1280px) 592px, (min-width: 1024px) 48vw, calc(100vw - 48px)"
               className="rounded-lg shadow-xl w-full h-80 object-cover"
             />
           </div>
@@ -580,8 +590,8 @@ export default function HomePage() {
                   alt={`${testimonials[currentTestimonialIndex].author} from ${testimonials[currentTestimonialIndex].location}`}
                   width={80}
                   height={80}
+                  sizes="80px"
                   className="w-20 h-20 rounded-full object-cover"
-                  unoptimized
                 />
               </div>
               <div className="flex-1">
