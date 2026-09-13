@@ -5,11 +5,38 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
-import { StructuredData, buildBreadcrumbSchema } from '@/components/structured-data'
+import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/components/structured-data'
 
 const title = 'Integration & Implementation Guide | Positive Check'
 const description = 'Plan your Positive Check rollout: explore patient imports, REST API access and webhooks, prepare your care team, and define a focused patient outreach pilot.'
 const pageUrl = 'https://www.positivecheck.com/resources/implementation-guide'
+
+const implementationFaqs = [
+  {
+    question: 'Does API access mean Positive Check already connects to our EHR?',
+    answer: 'No. API access is not a promise of a prebuilt EHR connector. Bring your system name, version, available interfaces and intended data flow to the technical review. Confirm which connection is supported, what requires custom work, who maintains it and how failures are handled before committing to a production rollout.',
+  },
+  {
+    question: 'Which patient fields should we prepare for an import?',
+    answer: 'Agree the current import template before transferring patient records. Review identifiers, contact details, language and call-window preferences with the implementation team, including required fields and validation rules. This page is a planning checklist, not an API or CSV specification. Use synthetic records for scoping and an approved secure transfer method for production data.',
+  },
+  {
+    question: 'Who owns consent, clinical review and escalations?',
+    answer: 'Assign named provider owners for patient eligibility and consent, clinical review, escalation coverage and documentation before launch. Agree the platform configuration and handoff process with Positive Check, including out-of-hours coverage and unsuccessful contacts. Automation supports the workflow; it does not replace clinical judgment or establish that every alert will receive an immediate human response.',
+  },
+  {
+    question: 'Can we evaluate the workflow before building a custom integration?',
+    answer: 'Discuss a dashboard-led pilot if your team can review calls and alerts in the provider console. Confirm how patients will be enrolled and how clinically relevant information will reach the care record. A limited pilot can test the operational fit, but any temporary manual transfer steps must be included in workload and security reviews.',
+  },
+  {
+    question: 'How should we decide whether a pilot is ready to expand?',
+    answer: 'Agree a baseline, reporting period and expansion criteria before launch. Measure completed contacts, staff review time, alert response times and patient opt-outs with clear denominators. Test missed calls, incorrect contact details and failed handoffs as well as successful calls. The clinical and operations owners should approve expansion only when coverage and follow-up responsibilities are workable.',
+  },
+  {
+    question: 'What should a rollout quote include?',
+    answer: 'Request written pricing for the agreed patient volume, outreach scope and integration requirements. Clarify any minimum commitment, onboarding or custom-work charges, support responsibilities and pilot terms. Separate one-time costs from recurring costs and include your own clinical staffing. Calculator assumptions are not a binding quote or a complete estimate of the cost to deliver care.',
+  },
+]
 
 export const metadata: Metadata = {
   title,
@@ -86,6 +113,7 @@ export default function ImplementationGuidePage() {
         ])}
       />
       <PublicHeader currentPage="resources" />
+      <StructuredData id="implementation-faq" data={buildFAQSchema(implementationFaqs)} />
       <main>
         <section className="bg-[#1a2642] px-6 py-16 md:py-20 text-white">
           <div className="max-w-5xl mx-auto">
@@ -168,6 +196,19 @@ export default function ImplementationGuidePage() {
               <Link href="/about/clinical-standards" className="inline-block mt-5 font-semibold text-purple-800 underline underline-offset-4">Read our Security & Clinical Standards</Link>
             </aside>
           </div>
+        </section>
+
+        <section aria-labelledby="qualification-heading" className="max-w-5xl mx-auto px-6 py-14">
+          <h2 id="qualification-heading" className="text-3xl font-bold text-[#1a2642]">Questions to resolve before a pilot</h2>
+          <div className="mt-8 space-y-7">
+            {implementationFaqs.map(faq => (
+              <div key={faq.question}>
+                <h3 className="text-xl font-semibold text-[#1a2642]">{faq.question}</h3>
+                <p className="mt-3 text-gray-700 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-gray-500">Published by Positive Check. Content updated September 13, 2026.</p>
         </section>
 
         <section className="bg-[#1a2642] px-6 py-14 text-center text-white">

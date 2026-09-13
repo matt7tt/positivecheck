@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo, useRef, useCallback } from 'react'
+import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
@@ -15,10 +16,10 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts'
 import {
-  Calculator, Download, ArrowRight, DollarSign, TrendingUp,
-  Users, CheckCircle,
+  Calculator, Download, ArrowRight,
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
+import { fitSummaryToPage } from '@/lib/pdf-layout'
 
 // ---------------------------------------------------------------------------
 // Types & constants
@@ -129,8 +130,8 @@ export function ROICalculator() {
 
   // Chart data
   const chartData = useMemo(() => [
-    { name: 'Monthly', Revenue: Math.round(results.monthlyRevenue), Cost: Math.round(results.monthlyCost) },
-    { name: 'Annual', Revenue: Math.round(results.annualRevenue), Cost: Math.round(results.annualCost) },
+    { name: 'Monthly', Revenue: Math.round(results.monthlyRevenue), 'Software Cost': Math.round(results.monthlyCost) },
+    { name: 'Annual', Revenue: Math.round(results.annualRevenue), 'Software Cost': Math.round(results.annualCost) },
   ], [results])
 
   // Scenario presets
@@ -158,9 +159,8 @@ export function ROICalculator() {
     })
     const imgData = canvas.toDataURL('image/png')
     const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
-    const pdfWidth = pdf.internal.pageSize.getWidth()
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
+    const layout = fitSummaryToPage(canvas.width, canvas.height, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight())
+    pdf.addImage(imgData, 'PNG', layout.x, layout.y, layout.width, layout.height)
     pdf.save('Positive-Check-ROI-Summary.pdf')
     trackEvent('calculator_completed', {
       calculator: 'roi_reimbursement',
@@ -187,15 +187,15 @@ export function ROICalculator() {
               ROI &amp; Reimbursement Calculator
             </h1>
             <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              See how Positive Check turns a low per-patient cost into significant Medicare
-              reimbursement revenue for your practice.
+              Explore illustrative reimbursement and software-cost scenarios. These estimates
+              exclude other delivery costs and are not a quote, guaranteed revenue or practice profit.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {[
-                { value: '$93–$237', label: 'Revenue / Patient / Mo' },
-                { value: '$8–$16', label: 'PC Cost / Patient / Mo' },
-                { value: '5–15x', label: 'Typical ROI Multiple' },
+                { value: '$93–$237', label: 'Illustrative Revenue / Patient / Mo' },
+                { value: '$8–$16', label: 'Software-Cost Assumptions / Patient / Mo' },
+                { value: 'Model', label: 'Not a Pricing Quote' },
                 { value: '2026', label: 'Medicare Rates' },
               ].map((m) => (
                 <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
@@ -272,7 +272,7 @@ export function ROICalculator() {
 
                   {/* PC tier */}
                   <div className="space-y-3">
-                    <Label>Positive Check Tier</Label>
+                    <Label>Assumed software cost</Label>
                     <Select value={String(pcTier)} onValueChange={(v) => setPcTier(Number(v))}>
                       <SelectTrigger>
                         <SelectValue />
@@ -284,6 +284,8 @@ export function ROICalculator() {
                       </SelectContent>
                     </Select>
                   </div>
+
+                  <p className="text-sm text-gray-600">The $8/$12/$16 inputs are modelling assumptions, not published contractual tiers. Confirm current pricing and terms with Positive Check.</p>
 
                   {/* Billing compliance */}
                   <div className="space-y-3">
@@ -317,7 +319,7 @@ export function ROICalculator() {
                 <CardContent className="space-y-6">
                   {/* ROI headline */}
                   <div className="text-center py-4">
-                    <p className="text-sm font-medium text-gray-500 mb-1">Return on Investment</p>
+                    <p className="text-sm font-medium text-gray-500 mb-1">Revenue / Software Cost</p>
                     <p className="text-5xl font-bold text-purple-600">
                       {results.roi.toFixed(1)}x
                     </p>
@@ -327,20 +329,22 @@ export function ROICalculator() {
                   </div>
 
                   {/* Monthly metrics */}
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="text-center p-3 bg-green-50 rounded-lg">
                       <p className="text-xs text-gray-500 mb-1">Monthly Revenue</p>
                       <p className="text-lg font-bold text-green-700">{formatCurrency(results.monthlyRevenue)}</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
-                      <p className="text-xs text-gray-500 mb-1">Monthly Cost</p>
+                      <p className="text-xs text-gray-500 mb-1">Monthly Software Cost</p>
                       <p className="text-lg font-bold text-gray-700">{formatCurrency(results.monthlyCost)}</p>
                     </div>
                     <div className="text-center p-3 bg-purple-50 rounded-lg">
-                      <p className="text-xs text-gray-500 mb-1">Monthly Net</p>
+                      <p className="text-xs text-gray-500 mb-1">After Software Cost*</p>
                       <p className="text-lg font-bold text-purple-700">{formatCurrency(results.monthlyNet)}</p>
                     </div>
                   </div>
+
+                  <p className="text-sm text-gray-600">*After software cost means revenue minus the assumed software charge only. It is not net profit. Clinical staffing, devices, integration, onboarding and other overhead are excluded. The multiple divides revenue by software cost; it is not a full return-on-investment calculation.</p>
 
                   {/* Chart */}
                   <div className="h-52">
@@ -354,7 +358,7 @@ export function ROICalculator() {
                           formatter={(value: number) => formatCurrency(value)}
                         />
                         <Bar dataKey="Revenue" fill="#d946ef" radius={[0, 4, 4, 0]} />
-                        <Bar dataKey="Cost" fill="#9ca3af" radius={[0, 4, 4, 0]} />
+                        <Bar dataKey="Software Cost" fill="#9ca3af" radius={[0, 4, 4, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -362,17 +366,17 @@ export function ROICalculator() {
                   {/* Annual projections */}
                   <div className="border-t pt-4">
                     <p className="text-sm font-medium text-gray-500 mb-3">Annual Projections</p>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="text-center">
                         <p className="text-xs text-gray-400">Revenue</p>
                         <p className="text-base font-bold text-green-700">{formatCurrency(results.annualRevenue)}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-gray-400">Cost</p>
+                        <p className="text-xs text-gray-400">Software Cost</p>
                         <p className="text-base font-bold text-gray-700">{formatCurrency(results.annualCost)}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-gray-400">Net</p>
+                        <p className="text-xs text-gray-400">After Software Cost*</p>
                         <p className="text-base font-bold text-purple-700">{formatCurrency(results.annualNet)}</p>
                       </div>
                     </div>
@@ -474,15 +478,15 @@ export function ROICalculator() {
                           <span className="font-semibold text-green-700">{formatCurrency(rev)}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">Monthly Cost</span>
+                          <span className="text-gray-500">Monthly Software Cost</span>
                           <span className="font-semibold text-gray-700">{formatCurrency(cost)}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">Monthly Net</span>
+                          <span className="text-gray-500">After Software Cost*</span>
                           <span className="font-semibold text-purple-700">{formatCurrency(net)}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-gray-500">ROI</span>
+                          <span className="text-gray-500">Revenue / Software Cost</span>
                           <span className="font-bold text-purple-600">{scenarioRoi.toFixed(1)}x</span>
                         </div>
                       </div>
@@ -548,7 +552,8 @@ export function ROICalculator() {
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Important Disclaimers</h2>
+            <h2 className="text-lg font-semibold text-gray-700 mb-4">Understand total cost before deciding</h2>
+            <p className="mb-4 text-gray-700 leading-relaxed">Budget for retained clinical staff, software, devices where relevant, integration, onboarding and ongoing support. Ask for a written quote stating the pricing unit, any minimum commitment, one-time charges and pilot terms. Do not infer those terms from the calculator presets. <Link href="/contact" className="text-purple-700 underline">Request pricing for your workflow</Link> or use the <Link href="/resources/implementation-guide" className="text-purple-700 underline">implementation checklist</Link> to prepare your scope.</p>
             <div className="space-y-4 text-sm text-gray-500 leading-relaxed">
               <p>
                 Estimates are based on 2026 Medicare national average reimbursement rates. Actual
@@ -632,16 +637,18 @@ export function ROICalculator() {
 
         {/* PDF Headline */}
         <div className="text-center mb-6">
-          <p className="text-4xl font-bold text-purple-600 mb-1">{results.roi.toFixed(1)}x ROI</p>
+          <p className="text-4xl font-bold text-purple-600 mb-1">{results.roi.toFixed(1)}x revenue / software cost</p>
           <p className="text-lg text-gray-700 font-medium">{PROGRAM_CONFIGS[programType].label}</p>
         </div>
+
+        <p className="text-xs text-gray-600 mb-4">Software-cost scenario only. See exclusions below before using these figures for a business case.</p>
 
         {/* PDF Inputs Summary */}
         <div className="grid grid-cols-4 gap-4 mb-6">
           {[
             { label: 'Patients', value: patients.toLocaleString() },
             { label: 'Program', value: PROGRAM_CONFIGS[programType].label },
-            { label: 'PC Tier', value: `$${pcTier}/pt/mo` },
+            { label: 'Assumed Software Cost', value: `$${pcTier}/pt/mo` },
             { label: 'Compliance', value: `${billingRate}%` },
           ].map((item) => (
             <div key={item.label} className="text-center p-3 bg-gray-50 rounded-lg">
@@ -688,11 +695,11 @@ export function ROICalculator() {
                 <span className="font-bold text-green-700">{formatCurrency(results.monthlyRevenue)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Cost</span>
+                <span className="text-gray-600">Software Cost</span>
                 <span className="font-bold text-gray-700">{formatCurrency(results.monthlyCost)}</span>
               </div>
               <div className="flex justify-between border-t border-purple-200 pt-1">
-                <span className="text-gray-600">Net</span>
+                <span className="text-gray-600">After Software Cost*</span>
                 <span className="font-bold text-purple-700">{formatCurrency(results.monthlyNet)}</span>
               </div>
             </div>
@@ -705,11 +712,11 @@ export function ROICalculator() {
                 <span className="font-bold text-green-700">{formatCurrency(results.annualRevenue)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Cost</span>
+                <span className="text-gray-600">Software Cost</span>
                 <span className="font-bold text-gray-700">{formatCurrency(results.annualCost)}</span>
               </div>
               <div className="flex justify-between border-t border-green-200 pt-1">
-                <span className="text-gray-600">Net</span>
+                <span className="text-gray-600">After Software Cost*</span>
                 <span className="font-bold text-purple-700">{formatCurrency(results.annualNet)}</span>
               </div>
             </div>
@@ -718,6 +725,7 @@ export function ROICalculator() {
 
         {/* PDF Disclaimers */}
         <div className="mb-6 text-xs text-gray-400 space-y-1">
+          <p>*After software cost is not net profit. Clinical staffing, devices, integration, onboarding and other overhead are excluded. The multiple is revenue divided by software cost, not a full return-on-investment calculation. Software inputs are illustrative assumptions, not a quote.</p>
           <p>Estimates based on 2026 Medicare national average reimbursement rates. Actual reimbursement varies by region and payer.</p>
           <p>This does not constitute billing, legal, or financial advice. Consult qualified professionals.</p>
           <p>CPT is a registered trademark of the American Medical Association.</p>

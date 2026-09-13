@@ -3,13 +3,13 @@ import { ROICalculator } from '@/components/roi-calculator'
 
 export const metadata: Metadata = {
   title: 'ROI & Reimbursement Calculator | Positive Check',
-  description: 'Calculate your projected Medicare reimbursement revenue with Positive Check. See how RPM, CCM, and post-discharge programs generate 5-15x ROI at $8-16/patient/month.',
+  description: 'Explore illustrative RPM, CCM and post-discharge reimbursement scenarios. Compare revenue with assumed software cost and understand which delivery costs are excluded.',
   alternates: {
     canonical: '/roi-calculator',
   },
   openGraph: {
     title: 'ROI & Reimbursement Calculator',
-    description: 'Calculate your projected Medicare reimbursement revenue with Positive Check. See how RPM, CCM, and post-discharge programs generate 5-15x ROI.',
+    description: 'Model reimbursement and assumed software cost for RPM, CCM and post-discharge workflows. These scenarios are not quotes or full practice-profit estimates.',
     url: '/roi-calculator',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ROI & Reimbursement Calculator | Positive Check',
-    description: 'Calculate your projected Medicare reimbursement revenue with Positive Check. See RPM, CCM, and post-discharge ROI at $8-16/patient/month.',
+    description: 'Explore reimbursement and software-cost assumptions, with clear exclusions for staffing and other delivery costs.',
     images: ['/images/senior-talking-on-the-phone1.webp'],
   },
 }
