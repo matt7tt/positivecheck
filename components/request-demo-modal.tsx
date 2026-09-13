@@ -111,7 +111,9 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
         <DialogHeader>
           <DialogTitle>Book a 15-minute workflow demo</DialogTitle>
           <DialogDescription>
-            Share your contact details, then choose a time that works for you.
+            {bookingUrl
+              ? "Share your contact details, then choose a time that works for you."
+              : "Share your contact details and we’ll reach out to arrange your workflow demo."}
           </DialogDescription>
         </DialogHeader>
         {isSuccess ? (

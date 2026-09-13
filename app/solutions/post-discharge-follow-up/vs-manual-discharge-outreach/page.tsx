@@ -45,12 +45,12 @@ const comparisonFaqs = [
   {
     question: 'When does manual outreach still make sense?',
     answer:
-      'Manual outreach is the right choice for the face-to-face visit requirement and for patients with complex psychosocial needs where a human conversation is clinically indicated. Many providers use a hybrid model: AI handles the 2-business-day contact for all discharges, and clinical staff handle the face-to-face visit and any escalations flagged by the AI.',
+      'Use permitted clinical personnel for qualifying clinical interactions and the billing practitioner for the required visit. AI can support outreach and route responses, but do not assume an AI-only call independently meets the TCM contact requirement. A hybrid workflow needs clear staff ownership for qualifying contact, unsuccessful attempts, escalations, and billing review.',
   },
   {
     question: "What\u2019s the typical cost comparison?",
     answer:
-      'Manual outreach runs roughly $3\u2013$8 per call in labor cost depending on staff type and call length. Automated AI calls are a small fraction of that per call. The larger cost driver is missed contacts: every missed 2-business-day window means an unbilled $178 TCM encounter.',
+      'Compare actual staff time, software fees, onboarding, and retained clinical review costs using your own discharge volume. Do not value every unsuccessful contact as a lost TCM claim: CMS permits reporting after two or more separate, timely, documented unsuccessful attempts if all other requirements are met. Continue outreach and have the practice review billing eligibility.',
   },
 ]
 
@@ -68,7 +68,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-04-19',
+  dateModified: '2026-09-13',
 })
 
 export default function TCMVsManualPage() {
@@ -185,14 +185,13 @@ export default function TCMVsManualPage() {
                 <li>Small discharge volumes where existing staff can reliably hit the 2-business-day window.</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The hybrid model most providers land on</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How to evaluate a hybrid workflow</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                In practice, most successful TCM programs run a hybrid: AI handles the 2-business-day
-                contact for every discharge, generating a structured summary and flagging concerns.
-                Clinical staff handle the 7- or 14-day face-to-face visit, follow up on any AI-flagged
-                escalations, and manage ongoing complex patients. This eliminates missed contacts
-                (the single largest source of unbilled TCM encounters) while keeping clinical
-                judgment in the loop where it matters.
+                A hybrid workflow can use AI to support outreach and route responses while permitted
+                clinical personnel perform qualifying interactions. The billing practitioner remains
+                responsible for the required visit. Assign staff owners for unsuccessful attempts,
+                concerning responses, and documentation review. Automation does not guarantee completed
+                contact or payment; validate its role against current CMS, MAC, and payer requirements.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Common questions</h2>

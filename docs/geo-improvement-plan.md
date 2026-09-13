@@ -58,10 +58,12 @@ Report mention share and citation share by turn and engine using completed compa
 - Rerun the fixed prompt set monthly; revisit the audience and full map quarterly.
 - Use existing session referrer/UTM attribution and demo events to segment known AI referral visits. Direct visits and missing referrers cannot reliably be assigned to AI.
 - Have the sales owner classify qualified demos by programme, cohort size, workflow need and next step. Do not put patient data in marketing analytics.
-- Google AI search traffic is included in Search Console's overall Web reporting; do not present that report as an isolated AI channel.
+- The Positive Check property now exposes a beta Generative AI features report (observed September 13, 2026). Record it separately from overall Web performance and from GA4 assistant referrals. Its impressions are not referral sessions, qualified leads, or evidence of multi-turn citations; do not infer assistant attribution from aggregate Web traffic.
 - Off-site experiment: secure permission for one partner/customer implementation account, then compare attributable referrals and qualified demos. Do not buy manufactured mentions or infer causation from simultaneous content and distribution changes.
 
 ## Reference checks
+
+The [September SEO implementation log](./seo-gsc-ga-follow-up-2026-09.md) records the GSC/GA baseline, targeted changes, verification, and remaining production checks.
 
 - [CMS CCM services](https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/chroniccaremanagement.pdf) — clinical staff time and broader service requirements, not evidence for staffing benchmarks.
 - [Google robots grouping guidance](https://developers.google.com/crawling/docs/robots-txt/useful-robots-txt-rules) — multiple agents may share one rule group.

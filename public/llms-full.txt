@@ -19,6 +19,10 @@ A practical 2026 reference for RPM, CCM, TCM, and PCM codes, eligibility, stacki
 - Per-patient monthly revenue ranges from ~ $66 (non-complex CCM only) to ~ $250+ (full RPM + CCM stack) depending on program mix and clinical complexity.
 - Rules to remember: Only one provider can bill CCM/PCM per patient per month. The same minute of clinical staff time cannot count toward two programs. RPM and CCM can stack; PCM and CCM are mutually exclusive.
 - Rates update annually. The figures in this guide are 2026 Medicare national averages; verify current rates in the Medicare Physician Fee Schedule before finalizing program economics.
+For healthcare operations teams
+## Model the workflow behind the reimbursement
+Estimate your RPM, CCM, and post-discharge opportunity, then see how Positive Check supports outreach, documentation, and exception routing at scale.
+See the care workflow Estimate program ROI
 ## The 3 CMS care management programs at a glance
 RPM, CCM, and TCM each address a different phase or dimension of chronic-condition care. Used together they form a complementary longitudinal strategy: TCM catches patients at the highest-risk post-discharge window, CCM provides ongoing multi-condition coordination, and RPM layers in continuous physiologic surveillance. Understanding where each program begins and ends is the foundation for compliant concurrent billing.
 RPM
@@ -137,7 +141,7 @@ The 20-minute interactive communication requirement, what counts, and how to doc
 Deep dive
 ### CPT 99490 Billing Guide
 Eligibility, the 20-minute requirement, documentation, and how 99439/99487/99489 stack.
-Reviewed against current CMS billing guidance. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Last updated 2026-04-21.
+Reviewed against current CMS billing guidance. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Last updated 2026-09-03.
 
 ---
 Source: https://www.positivecheck.com/resources/compare/rpm-vs-ccm-medicare-billing
@@ -207,7 +211,7 @@ Reviewed against current CMS billing guidance. Medicare Physician Fee Schedule .
 Source: https://www.positivecheck.com/resources/compare/tcm-and-ccm-combined-month-billing
 
 Comparison
-# TCM + CCM Combined-Month Billing
+# Can You Bill TCM and CCM in the Same Month?
 How Transitional Care Management and Chronic Care Management stack in the same month for a single patient — what CMS allows, how the 30-day TCM window interacts with the CCM calendar month, and how to document both programs cleanly.
 ## In short
 - TCM and CCM can be billed concurrently for the same patient in the same calendar month. Historically restricted, this combination has been allowed under CMS guidance since the CY 2022 Medicare Physician Fee Schedule.
@@ -215,6 +219,13 @@ How Transitional Care Management and Chronic Care Management stack in the same m
 - Clinical staff time cannot be double-counted between the two programs. TCM time covers the discharge transition; CCM time covers ongoing chronic disease management.
 - Typical combined claim for a moderate-complexity discharge with two chronic conditions: TCM 99495 ( ~ $178) + CCM 99490 ( ~ $66) = approximately $244 for the discharge month .
 - RPM can stack on top of both, pushing combined revenue above $400/month for eligible patients using a connected device.
+For healthcare operations teams
+## See how one outreach workflow can support both programs
+Explore how Positive Check captures patient responses and routes follow-up work so your team can maintain separate, practice-owned TCM and CCM documentation.
+See the workflow Estimate program ROI
+## A practical check before combining services
+Start with two independently supported records, not a target revenue total. Verify the TCM contact or timely unsuccessful-attempt history , the required visit, and the remaining TCM criteria. Separately check CCM eligibility, consent, care-plan requirements, and qualifying monthly time using the CCM code guide .
+Illustrative documentation check: if a staff member spends ten minutes on a discharge coordination task assigned to TCM, do not copy those ten minutes into the CCM total. Record any separate CCM work with its own activity, staff member, date, and duration. This example explains separation of work; it is not a determination that either claim is billable. Have the billing reviewer confirm both records before submission.
 ## When does combined billing apply?
 The combined-billing scenario applies when a single patient is independently eligible for both programs in the same month. The most common case: a Medicare patient discharged from inpatient care (qualifying for TCM) who also has two or more chronic conditions expected to last 12 months or longer (qualifying for CCM). Examples include CHF patients hospitalized for an acute exacerbation, diabetic patients admitted for hyperglycemia, or COPD patients post-discharge from a respiratory event.
 Before CY 2022, CMS treated TCM as comprehensive enough to preclude CCM during the same period. The current rule explicitly allows the two programs to coexist when documentation supports both independently. The change reflects CMS ’ s recognition that discharge-transition work (TCM) and ongoing chronic-care coordination (CCM) are clinically distinct activities even when performed for the same patient.
@@ -764,7 +775,7 @@ Reviewed against current CMS billing guidance. CMS MLN CCM Booklet . Last update
 Source: https://www.positivecheck.com/solutions/post-discharge-follow-up/cpt-99495-billing-guide
 
 Billing Guide
-# CPT 99495 Billing Guide: Transitional Care Management Requirements
+# CPT 99495 Requirements: 2026 TCM Billing Guide
 Eligibility, the 2-business-day contact rule, the 14-day face-to-face visit, documentation standards, and common billing errors for Transitional Care Management.
 ## In short
 - CPT 99495 reimburses providers for Transitional Care Management services with moderate medical decision-making complexity — 2026 Medicare national average is approximately $178 per patient per discharge.
@@ -772,6 +783,10 @@ Eligibility, the 2-business-day contact rule, the 14-day face-to-face visit, doc
 - Patient must be discharged to a community setting — home, domiciliary, assisted living. SNF, LTAC, and inpatient rehab discharges are not eligible.
 - Documentation must capture: discharge date, contact date/time, content of contact (medication review, follow-up plan, symptom assessment), face-to-face visit date, and medication reconciliation.
 - AI-powered outreach can support the 2-business-day contact workflow by documenting attempts, capturing structured responses, and escalating patients to clinical staff. The practice must determine whether each contact meets applicable billing requirements.
+For healthcare operations teams
+## See a CPT 99495 support workflow
+Walk through how Positive Check supports timely outreach, structured response capture, and escalation while your practice verifies eligibility and billing requirements.
+See the workflow Estimate program ROI
 ## What CPT 99495 covers
 CPT 99495 is the billing code for Transitional Care Management services delivered to patients with moderate medical decision-making complexity following a qualifying discharge. It bundles together the initial post-discharge contact, care coordination activities, and a face-to-face visit into a single billable episode, and it is billed exactly once per discharge event. The CMS MLN TCM booklet specifies the 2026 Medicare national average reimbursement at approximately $178 per patient per discharge , though actual reimbursement varies by geographic locality and payer.
 The 30-day TCM period begins on the discharge date itself. During that window the billing provider is responsible for managing the patient ’ s transition back to the community, coordinating follow-up services, and ensuring medication safety. CPT 99495 cannot be billed twice for the same discharge, even if the patient is seen multiple times during the 30-day window.
@@ -784,8 +799,8 @@ CPT 99495 applies to both new and established patients, so a practice does not n
 The discharge destination must be a community setting: home, domiciliary, rest home, or assisted living facility. Discharge to a skilled nursing facility, long-term acute care hospital, inpatient rehabilitation facility, or another inpatient stay does not qualify for TCM billing. If a patient is transferred to a SNF following an acute hospital stay, TCM cannot be initiated until the patient is subsequently discharged to a community setting — at which point the SNF discharge becomes the qualifying event.
 Patient consent is required for TCM services but formal written consent is not mandated by CMS. Verbal or implied consent through engagement with the care team — such as participating in the initial contact call or showing up for the face-to-face visit — is acceptable. Practices should document the form of consent obtained, as this may be scrutinized during audits.
 ## The 2-business-day contact requirement
-The initial contact must occur within two business days of discharge — this is the single hardest requirement to meet consistently at scale, and missing it disqualifies the entire TCM episode. The clock starts on the first business day after the discharge date; the discharge day itself is not counted. Saturdays, Sundays, and federal holidays are excluded from the business-day calculation. For a detailed walkthrough of how to count the window across common discharge scenarios, see our guide on post-discharge contact timing .
-CMS defines the contact as “ direct contact ” that addresses the discharge care plan. It can be telephonic, electronic (secure portal message, secure text), or face-to-face. The content of the contact matters: it must address the patient ’ s understanding of their medications, awareness of follow-up appointments, and any symptom changes since discharge. A purely administrative call to confirm an appointment does not satisfy the requirement; the clinical content elements must be present and documented. The CMS MLN booklet confirms that clinical staff under general supervision may perform the initial contact , giving practices flexibility to delegate this touchpoint without involving the billing provider directly.
+Plan interactive contact within two business days after discharge. If contact is unsuccessful, CMS permits reporting after two or more separate, timely, documented attempts when all other requirements are met, including the timely face-to-face visit. Continue outreach until successful. The clock starts on the first business day after the discharge date; the discharge day itself is not counted. Saturdays, Sundays, and federal holidays are excluded from the business-day calculation. For a detailed walkthrough of how to count the window across common discharge scenarios, see our guide on post-discharge contact timing .
+CMS permits phone, email, or face-to-face contact with the patient or caregiver. Clinical staff performing the contact must be able to address patient status and needs beyond appointment scheduling. Medication questions, symptom changes, and follow-up needs are useful discussion topics, not a universal three-item CMS script. The CMS MLN booklet confirms that clinical staff under general supervision may perform the initial contact , giving practices flexibility to delegate this touchpoint without involving the billing provider directly.
 ## The 14-day face-to-face visit requirement
 The face-to-face visit must occur within 14 calendar days of discharge — not business days. Unlike the initial contact, there is no exclusion for weekends or holidays; the 14-day window runs continuously from the discharge date. The visit must be performed by the billing provider — the physician or NPP who will submit the TCM claim — and it can take place in the office, in the patient ’ s home, or via telehealth with an appropriate billing modifier applied.
 The face-to-face visit is a separate and distinct requirement from the 2-business-day contact. However, if the billing provider personally performs the initial patient contact within two business days as a face-to-face encounter, that visit can satisfy both requirements simultaneously — a useful option for practices with small discharge volumes where the provider is directly available. The visit must include a complete post-discharge assessment and medication reconciliation; a brief check-in call does not meet the threshold.
@@ -845,7 +860,7 @@ Back to the TCM solution overview Reviewed against current CMS billing guidance.
 Source: https://www.positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction
 
 Clinical
-# Reducing 30-Day Readmissions: What Works and Where TCM Fits
+# How to Reduce 30-Day Hospital Readmissions
 Which discharge scenarios carry the highest readmission risk, what drives avoidable readmissions, evidence-based interventions, and where Transitional Care Management fits a reduction strategy.
 ## In short
 - The 30-day post-discharge window is when patients are most vulnerable — roughly 15% of Medicare discharges result in a readmission within 30 days.
@@ -853,6 +868,10 @@ Which discharge scenarios carry the highest readmission risk, what drives avoida
 - Avoidable readmissions most commonly trace to medication errors, missed follow-up appointments, and unrecognized clinical deterioration — all addressable in the 30-day window.
 - Evidence-based interventions include medication reconciliation, structured follow-up, transitional care management, and proactive patient engagement.
 - Transitional Care Management (TCM) is the CMS-reimbursed framework for delivering the 30-day post-discharge intervention at scale.
+For healthcare operations teams
+## See a scalable post-discharge follow-up workflow
+See how Positive Check helps teams reach discharged patients, capture structured risk signals, and escalate concerns without replacing clinical judgment.
+See the workflow Estimate program ROI
 ## Why 30-day readmissions matter
 A hospital readmission within 30 days is one of the most reliable signals that a care transition went wrong. Clinically, readmissions often indicate incomplete discharge planning, medication confusion, or a complication that a structured follow-up call could have caught in the first critical days at home. The patient who returns to the ED three days after discharge with uncontrolled heart failure typically missed a critical window for medication adjustment or symptom escalation — a window that targeted post-discharge contact is designed to capture.
 The financial stakes for hospitals are equally concrete. The Hospital Readmissions Reduction Program reduces base Medicare payments for hospitals with higher-than-expected readmission rates — up to 3% across all Medicare DRG payments, not just those tied to the six target conditions. For a hospital receiving $150M in annual Medicare fee-for-service payments, a penalty at the 2% level costs $3M per year. Even a modest reduction in excess readmissions — two percentage points at a mid-volume hospital — can translate to seven figures in avoided penalties.
@@ -926,83 +945,54 @@ Back to the TCM solution overview Reviewed against current CMS billing guidance.
 Source: https://www.positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing
 
 Workflow
-# Post-Discharge Contact Timing: The 2-Business-Day Rule Explained
-What CMS actually requires for the initial post-discharge contact — business day counting, weekend and holiday handling, what counts as valid contact, and how automation enforces the window.
+# TCM Contact Within 2 Business Days: CMS Rule and Examples
+Count the deadline, distinguish contact from attempts, and give your care team a clear follow-up checklist.
+Updated September 13, 2026. Educational workflow guidance; not a patient-specific billing determination.
 ## In short
-- CPT 99495 and 99496 both require direct patient contact within two business days of discharge.
-- Business days exclude weekends and federal holidays — a Friday discharge means contact must happen by end of business Tuesday.
-- Acceptable contact forms: telephonic, electronic (portal message, secure text), or face-to-face.
-- Missed contacts cannot be billed — every miss is a lost ~$178 TCM encounter.
-- Automated outreach enforces the window as a scheduling constraint and documents the contact for billing.
-## The CMS 2-business-day rule
-The 2-business-day contact requirement is one of two hard gates that determine whether a TCM claim is billable. Both CPT 99495 (moderate medical decision-making complexity) and CPT 99496 (high complexity) require a direct patient contact within two business days of discharge — there is no exception for staffing shortfalls, patient unavailability on the first attempt, or administrative delays. The CMS MLN TCM booklet specifies that the contact must address the discharge care plan , which means it must cover at minimum: the patient ’ s understanding of their discharge medications, awareness of scheduled follow-up appointments, and any symptom changes since leaving the hospital.
-The contact does not have to be performed by the billing physician or non-physician practitioner (NPP). CMS permits clinical staff to perform the initial contact under the general supervision of the billing provider — meaning an RN, LPN, or medical assistant can make the call as long as the billing provider has reviewed the encounter as part of ongoing care coordination. This flexibility is what makes scale possible: a practice or hospital system with dozens of daily discharges can staff the contact function separately from the billing provider ’ s schedule. For a full overview of post-discharge follow-up as a care delivery framework , see the TCM solution overview.
-Missing the 2-business-day window is not recoverable through retroactive documentation or a late contact. The window is a hard billing condition: if the contact does not occur within two business days of discharge, the TCM codes cannot be billed for that discharge episode, regardless of how complete the subsequent care coordination and face-to-face visit documentation is. This makes deadline accuracy — knowing precisely when the window opens and closes — the most operationally critical element of a TCM program.
-## What counts as a “business day”
-A business day, for TCM purposes, is Monday through Friday, excluding federal holidays. This is the definition that governs the 2-business-day contact window — it is distinct from the 14-day face-to-face visit requirement, which runs on calendar days with no weekend or holiday exclusions. Treating the face-to-face window as a business-day window (or vice versa) is a common source of calculation errors that leads to either missed billing opportunities or incorrect claims.
-The federal holiday calendar that governs the exclusions is defined by the Office of Personnel Management (OPM) federal holiday schedule . The eleven currently designated federal holidays are: New Year ’ s Day (January 1), Martin Luther King Jr. Day (third Monday in January), Presidents ’ Day (third Monday in February), Memorial Day (last Monday in May), Juneteenth National Independence Day (June 19), Independence Day (July 4), Labor Day (first Monday in September), Columbus Day (second Monday in October), Veterans Day (November 11), Thanksgiving Day (fourth Thursday in November), and Christmas Day (December 25). When a holiday falls on a Saturday, the preceding Friday is the observed holiday; when it falls on a Sunday, the following Monday is observed.
-One additional rule that trips up many practices: the discharge day itself does not count toward the 2-business-day window. The clock starts on the first business day after the patient leaves the facility. A patient discharged on a Monday means the window opens Tuesday (business day 1) and closes at end of business Wednesday (business day 2). Any contact that occurs on the discharge day itself does not satisfy the requirement because the TCM framework is designed to capture the patient ’ s post-discharge experience, not a pre-discharge check-in.
-## Timing examples across discharge scenarios
-Business-day counting becomes unintuitive when discharges fall near weekends or federal holidays. The following examples cover the most common scenarios that generate errors in manual workflows:
-- Monday morning discharge — contact by end of business Wednesday. Monday is the discharge day (day 0). Tuesday is business day 1. Wednesday is business day 2.
-- Friday afternoon discharge — contact by end of business Tuesday. Friday is day 0. Saturday and Sunday are excluded. Monday is business day 1. Tuesday is business day 2.
-- Wednesday before Thanksgiving discharge — contact by end of business Monday (Thanksgiving and the weekend don ’ t count). Wednesday is day 0. Thursday (Thanksgiving) is excluded. Friday is business day 1. Saturday and Sunday are excluded. Monday is business day 2.
-- Day before Christmas (weekday) discharge — Christmas and New Year ’ s Day are both federal holidays. If Christmas falls on a Thursday and New Year ’ s Day falls on the following Thursday, the deadline is end of business Tuesday after New Year ’ s. Christmas Eve (Wednesday) is day 0. Christmas Day (Thursday) is excluded. Friday is business day 1. The following Monday is business day 2, unless that Monday is a New Year ’ s observed holiday, in which case Tuesday is business day 2.
-- Saturday discharge — contact by end of business Tuesday. Saturday is not a business day and does not count as day 0. The window starts Monday (business day 1). Tuesday is business day 2.
-The practical implication is that holiday-adjacent discharge patterns — discharges the Wednesday before Thanksgiving, or discharges in the days surrounding Christmas and New Year ’ s — require explicit deadline calculation rather than a simple “ add two ” rule. Manual workflows that rely on staff remembering holiday exclusions are unreliable during high-discharge-volume holiday periods.
-## What counts as a valid “contact”
-CMS defines the required contact as “ direct contact ” that addresses the discharge care plan. Three contact modalities satisfy the requirement, each with its own operational considerations:
-Telephonic contact is the most common form. A live phone call — whether answered by the patient directly or by an authorized caregiver speaking on the patient ’ s behalf — satisfies the requirement when the content of the call addresses medications, follow-up appointments, and symptoms. The key word is “ live ” : the CMS MLN booklet makes clear that direct contact implies two-way engagement . A voicemail left with no subsequent patient response does not satisfy the requirement, even if the voicemail message was comprehensive and clinically appropriate.
-Electronic contact is permitted when the patient engages with the message. A secure patient portal message that the patient responds to, a secure text message exchange, or an email exchange through a HIPAA-compliant channel can all satisfy the contact requirement. The operative condition is patient response: a message sent but not responded to does not establish the two-way engagement CMS requires. Practices using portal messaging for TCM contacts should configure their systems to flag unanswered messages and trigger a follow-up contact attempt.
-Face-to-face contact — an in-office visit, home visit, or telehealth video visit — satisfies both the initial contact requirement and, if performed by the billing provider within 14 days, the face-to-face visit requirement simultaneously. However, none of the following alone constitutes valid contact: a voicemail with no engagement, a text message or email sent but not responded to, or general mass communications such as post-discharge care instruction letters sent to all patients.
-## Who can perform the contact
-The billing provider ’ s personal involvement is not required for the initial contact. CMS explicitly allows the 2-business-day contact to be performed by clinical staff under the general supervision of the billing physician or NPP. This category includes registered nurses, licensed practical nurses, and medical assistants operating within their scope of practice. The billing provider does not need to be present or immediately available during the call — general supervision means the provider has authorized the contact and is available to review the encounter as part of ongoing care coordination.
-AI-powered wellness calls can support the contact workflow by capturing structured responses and routing concerning answers to clinical staff. CMS does not expressly establish that a fully automated call independently satisfies the requirement. The billing practice should verify that each qualifying contact was performed by permitted personnel, addressed the discharge care plan, and was documented under current guidance. For a complete breakdown of billing provider eligibility and supervision requirements, see the CPT 99495 billing guide .
-What is not permitted is delegating the contact to a non-clinical administrative staff member without clinical oversight. A scheduling coordinator confirming a follow-up appointment does not satisfy the TCM contact requirement, even if the call occurs within the 2-business-day window. The contact must have clinical content — addressing the care plan, not just logistics — and must be performed by someone with the clinical competency to recognize and escalate concerning patient responses.
-## Documenting the contact
-Documentation of the initial contact is what transforms a clinical interaction into a billable TCM encounter. CMS auditors reviewing TCM claims during post-pay review look for specific data points in the contact record; missing any one of them can result in claim denial or recoupment. The documentation should capture:
-- Date and time of the contact (use 24-hour format or specify AM/PM unambiguously)
-- Contact method: phone, patient portal, secure text, in-person, or telehealth
-- Medication review: what medications were discussed, whether the patient confirmed filling and taking them, and any concerns raised
-- Symptom check: what symptoms the patient reported, whether any red-flag symptoms were present or absent
-- Follow-up appointment awareness: whether the patient has a scheduled post-discharge appointment and whether they understand how to access care if needed before then
-- Any care plan modifications or escalations resulting from the contact
-- Identifier of the staff member or system that performed the contact
-A documentation entry that reads only “ patient called, doing well ” does not satisfy the CMS standard. The record must reflect that the specific care plan elements were addressed. Practices that use structured call scripts or AI-generated contact summaries have a significant documentation compliance advantage: each content domain is captured systematically, and the resulting record maps directly to the fields CMS auditors look for.
-The contact record should be placed in the patient ’ s chart in a location accessible to the billing provider, who will need to review it as part of the overall TCM episode documentation before the claim is submitted. The billing provider ’ s attestation of review — even if the contact itself was performed by clinical staff — closes the supervision loop that makes the delegation permissible under CMS rules.
-## Handling unreachable patients
-Patient unreachability is one of the most operationally common challenges in TCM programs. Patients may not answer an unfamiliar number, be in the hospital for post-discharge procedures, have given an incorrect contact number, or simply be unavailable during business hours. The CMS framework requires good-faith effort to make contact, and that effort must be documented even when it does not succeed.
-A common practice is to make two contact attempts on different modalities within the 2-business-day window — for example, a phone call on the morning of business day 1 and a portal message later that day if the call is unanswered. Documenting each attempt (date, time, method, and outcome — no answer, voicemail left, portal message sent) establishes the good-faith record. If the patient remains unreachable after documented attempts within the window, TCM may not be billable for that discharge episode.
-An important fallback: contact with an authorized representative or caregiver is acceptable when that caregiver is the appropriate recipient of the care plan information. For patients with cognitive impairment, significant language barriers, or other contact limitations, reaching the designated caregiver and covering the care plan content with them satisfies the CMS requirement. For more on caregiver contacts and what CMS permits, see the TCM frequently asked questions .
-## How automation enforces the window
-Manual workflows fail the 2-business-day window in predictable ways: high discharge volume on Friday afternoons overwhelms the care coordination team on Monday morning, a single staff absence during a holiday week delays all pending contacts, and holiday deadline calculation errors send teams to work on the wrong day. Automation addresses each of these failure modes structurally rather than relying on individuals to remember the rules. The Positive Check post-discharge follow-up platform computes the 2-business-day deadline from the discharge timestamp at the moment of discharge, using the full federal holiday calendar — including observed holiday shifts when a federal holiday falls on a weekend.
-When a first contact attempt does not result in a completed engagement, the system schedules automatic retry attempts within the remaining window. Rather than placing the burden on a care coordinator to track which patients are still pending contact, the platform surfaces an escalation alert as the deadline approaches. Clinical staff can step in for any patient where automated contact has not succeeded, with the specific deadline and patient context pre-populated. Real-time escalation is triggered immediately when a patient ’ s responses indicate a concerning symptom or a gap in care plan follow-through — not at the end of the shift when notes are reviewed.
-Documentation is generated automatically: a structured summary of each contact, covering every field that CMS auditors look for, is ready for the billing provider ’ s review as soon as the call concludes. This removes the documentation burden from the person performing the contact and eliminates the “ patient called, doing well ” note problem. For providers looking to understand how this scales across a high-discharge-volume operation, the case study on scaling patient engagement walks through a deployment scenario. For the full post-discharge follow-up solution , including how the contact integrates with the 14-day face-to-face visit workflow, see the TCM solution overview.
-## Workflow best practices
-Even with automation in place, the operational setup of the discharge-to-contact pipeline determines how reliably the 2-business-day window is met. The following practices reflect what high-performing TCM programs have in common:
-- Capture the discharge timestamp in the EHR at the discharge disposition step — not from a daily census report pulled the next morning. Every hour of lag increases the risk of a missed window on high-volume discharge days.
-- Integrate the discharge list to the outreach platform within one hour of discharge — ideally via automated HL7 ADT feed rather than manual CSV upload. Manual uploads create gaps when staff are unavailable.
-- Schedule the automated contact for the morning of the first business day post-discharge — earlier in the day preserves time for retry attempts if the first contact is unsuccessful.
-- Set escalation rules calibrated to clinical priority — for example, a new symptom warranting same-day clinical call-back within four hours; a missed follow-up appointment escalated within 24 hours.
-- Track missed-contact rate as a program KPI — the percentage of discharges where no valid contact was completed within the 2-business-day window is a direct measure of TCM revenue leakage and a quality signal.
-- Report TCM revenue captured vs. missed to leadership quarterly — attaching a dollar figure to each missed contact window makes the operational investment in automation and workflow improvement concrete.
+TCM calls for interactive contact with the patient or caregiver within two business days after discharge . If contact is unsuccessful, at least two separate, timely, documented attempts may support reporting when every other requirement is met. Continue outreach; do not automatically mark an unreached patient as either billable or ineligible.
+Source: CMS TCM booklet, interactive contact section .
+## Count business days, not 48 hours
+Use weekdays excluding applicable holidays, not the hours your practice happens to be open. These examples assume no holidays except where noted. Confirm holiday handling with your billing team and payer guidance.
+Illustrative TCM contact deadlines after discharge Discharge Business days after discharge Contact deadline
+Monday Tuesday, Wednesday Wednesday
+Thursday Friday, Monday Monday
+Friday Monday, Tuesday Tuesday
+Friday, with a Monday holiday Tuesday, Wednesday Wednesday
+AAFP’s business-day explanation uses Monday through Friday except holidays, regardless of practice hours or when the discharge notification arrives.
+## An unsuccessful attempt is not a completed contact
+CMS allows phone, email, or face-to-face contact by the practitioner or clinical staff working under their direction. The interaction must address patient status and needs beyond appointment scheduling. Staff must be permitted to perform the service under applicable law and practice policies.
+For unsuccessful outreach, retain each attempt and continue trying to make contact. The exception does not remove the other service requirements or make late attempts timely. Have a billing reviewer assess an incomplete record rather than backdating or relabelling the activity.
+For example, keep Tuesday’s unanswered call and Wednesday’s unanswered call as two separate entries after a Monday discharge. Set a follow-up task and verify the remaining requirements. Do not change either entry to “patient contacted” just because a later visit is booked.
+## Track the visit deadline separately
+For 99495 , the visit is due within 14 calendar days with at least moderate medical decision-making; 99496 requires a visit within 7 calendar days and high complexity. Medication reconciliation is due no later than that visit. A timely call alone does not make the episode billable. See CMS’s face-to-face requirements .
+## A practical contact-attempt documentation checklist
+Use this suggested operational checklist to prepare a record for review, not as a substitute for the full CMS requirements or your approved clinical documentation template.
+- Discharge and deadlines : Record the discharge date, source of notification, calculated contact deadline, and separate visit deadline. Flag a late discharge notification for staff review.
+- Each separate attempt : Log the date, time, method, staff member, intended recipient, and outcome. Distinguish no answer, voicemail, wrong number, and completed interaction; do not overwrite earlier attempts.
+- Completed interaction : Identify whether the patient or caregiver responded, who performed the interaction, the needs discussed, and the clinical follow-up requested. Keep the record in the practice’s approved clinical system.
+- Next action and ownership : Assign a named owner and next action after an unsuccessful attempt or concerning response. Keep the task open until the team resolves it; a scheduled call is not a completed contact.
+- Billing review : Make the attempt history, visit record, medication reconciliation, and other supporting documentation available to the billing reviewer. Do not automatically convert a call status into a billable claim.
+## Where automation fits—and where staff retain responsibility
+Evaluate Positive Check as support for outreach, structured responses, and staff handoffs. Do not assume that an AI-only call independently satisfies a clinical contact requirement. Agree who reviews unsuccessful attempts, handles concerning responses, and makes billing decisions before running a pilot.
+Use the implementation guide to plan ownership and exception testing. For ongoing chronic care after discharge, review TCM and CCM in the same month and the 2026 CCM billing guide .
+For healthcare operations teams
+## Walk through your discharge follow-up workflow
+Bring your discharge-list process, contact-attempt rules, and staff handoff questions. Explore where Positive Check can support the team while your practice retains clinical and billing responsibility.
+See the workflow Estimate program ROI
 ## Common questions
-### If a patient is discharged on a Friday, when must contact happen?
-By end of business Tuesday. Friday counts as business day 0 (discharge day itself doesn’t count). Saturday and Sunday are excluded. Monday is business day 1 and Tuesday is business day 2 — the deadline. If Monday is a federal holiday (e.g., Memorial Day), the deadline extends to Wednesday.
-### Does the 2-business-day window start from the discharge time or the next calendar day?
-Per CMS, the window starts the next business day after discharge. A 3 AM Monday discharge and a 9 PM Monday discharge both have the same deadline — end of business Wednesday. The clock runs on business days, not hours.
-### Does a voicemail count as contact?
-A voicemail alone does not count. CMS requires “direct contact” that addresses the discharge care plan — this implies two-way engagement with the patient or their authorized caregiver. A voicemail left with no subsequent patient response does not satisfy the requirement, even if the message content would have met the CMS criteria if received.
-### What if I reach the patient’s family member instead of the patient?
-Contact with a caregiver or authorized representative is acceptable when the caregiver is the appropriate recipient — for patients with cognitive impairment, language barriers, or similar contact limitations. CMS permits this in the MLN TCM guidance. The contact must still address the discharge care plan and be documented.
-### Can I catch up later if the 2-business-day window is missed?
-No. Missing the 2-business-day window means CPT 99495 or 99496 cannot be billed for that discharge. Providers may still continue post-discharge care (and bill ordinary E/M services), but the TCM code specifically requires the timely contact. This is why automation as a safety net matters — every missed window is an unbilled TCM encounter worth roughly $178.
-### Key takeaways
-- The 2-business-day rule applies to both CPT 99495 and 99496 — weekends and federal holidays do not count.
-- Acceptable contact forms: telephonic, electronic, or face-to-face — two-way engagement required (voicemail alone does not count).
-- Documentation must capture date/time, method, content, and any escalations — CMS auditors may request this.
-- Automation enforces the window reliably across high-volume discharge days when manual workflows miss.
-Back to the TCM solution overview Reviewed against current CMS billing guidance. CMS MLN TCM Booklet . Last updated 2026-04-19.
+### If a patient is discharged on Friday, when is TCM contact due?
+The usual deadline is Tuesday, unless a holiday changes the business-day count. Monday and Tuesday are the two business days after Friday. Plan coverage before the weekend, rather than waiting for the discharge list to be reviewed on Monday. A late notification does not restart the discharge-based clock.
+### Can TCM still be reported if the patient cannot be reached?
+Sometimes. CMS permits reporting after at least two separate, timely, documented unsuccessful attempts if all other TCM requirements are met, including the timely face-to-face visit. Continue trying to reach the patient. A record with no timely attempts is different from a record showing unsuccessful outreach; send ambiguous cases to the billing reviewer.
+### Does leaving a voicemail complete the TCM contact requirement?
+A voicemail is an attempt, not a completed interactive contact. Label it that way in the record and assign the next attempt. Keep an unanswered message separate from a conversation about the patient’s status and needs. The documented-attempt exception may apply, but a voicemail alone is not a billing determination.
+### Does an AI call independently qualify as the required clinical contact?
+Do not assume that it does. CMS describes contact by the practitioner or permitted clinical staff; an automated call log alone does not establish that requirement. Use automation to support outreach and handoffs, and have the practice validate who performs the qualifying interaction, what is documented, and who reviews exceptions before billing.
+### What should a practice test before automating post-discharge outreach?
+Test a Friday discharge, a holiday, an unanswered call, an incorrect phone number, and a response needing clinical follow-up. For each scenario, check the deadline, attempt history, named staff owner, and next action. Use synthetic patient records during testing and agree how the team will handle failures before expanding the workflow.
+### How should TCM outreach connect with ongoing CCM work?
+Keep the discharge follow-up record and the monthly CCM activity record distinguishable, even when the same team manages both. Assign each activity to the service it supports and never count the same work twice. Review eligibility and documentation separately; completing an outreach call does not by itself establish either program’s billing requirements.
+Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed September 13, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.
 
 ---
 Source: https://www.positivecheck.com/blog/2027-rpm-proposed-rule
@@ -1255,6 +1245,7 @@ A particular CMS rule worth noting on multi-patient activities: if clinical staf
 CCM may be billed concurrently with Remote Patient Monitoring (RPM) and Transitional Care Management (TCM) when both programs are clinically appropriate, provided time and effort are not counted twice . This is confirmed in the CY 2020 and CY 2021 PFS final rules and reiterated in the CMS CCM FAQ.
 That last clause is where most stacking programs get into trouble. The same minute cannot be billed against both CCM and RPM. Reviewing RPM device data does not count toward the 20 minutes required for 99490, and a CCM care coordination call about an unrelated condition does not count toward RPM treatment management. The two programs share patients, not minutes.
 For more on how RPM and CCM compare and when each is the right fit, see our RPM vs. CCM Medicare Billing Comparison .
+Managing a recent discharge? Use the TCM and CCM combined-month guide to separate the overlapping service periods, and the TCM contact-attempt checklist to prepare the discharge outreach record for review. Assign shared activity to one service; do not duplicate its minutes in another program’s log.
 Several CCM-incompatible billings worth knowing about, per the CMS FAQ:
 - CCM cannot be billed during the same month as home health care supervision (HCPCS G0181) or hospice care supervision (HCPCS G0182).
 - CCM cannot be billed during the same month as certain ESRD-related services (CPT 90951 through 90970).

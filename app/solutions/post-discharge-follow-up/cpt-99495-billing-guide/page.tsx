@@ -78,7 +78,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-09-03',
+  dateModified: '2026-09-13',
 })
 
 export default function CPT99495BillingGuidePage() {
@@ -230,9 +230,10 @@ export default function CPT99495BillingGuidePage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The 2-business-day contact requirement</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The initial contact must occur within two business days of discharge {'\u2014'} this is the
-                single hardest requirement to meet consistently at scale, and missing it disqualifies
-                the entire TCM episode. The clock starts on the first business day after the discharge
+                Plan interactive contact within two business days after discharge. If contact is
+                unsuccessful, CMS permits reporting after two or more separate, timely, documented
+                attempts when all other requirements are met, including the timely face-to-face visit.
+                Continue outreach until successful. The clock starts on the first business day after the discharge
                 date; the discharge day itself is not counted. Saturdays, Sundays, and federal holidays
                 are excluded from the business-day calculation. For a detailed walkthrough of how to
                 count the window across common discharge scenarios, see our guide on{' '}
@@ -245,13 +246,10 @@ export default function CPT99495BillingGuidePage() {
                 .
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS defines the contact as {'\u201c'}direct contact{'\u201d'} that addresses the discharge care
-                plan. It can be telephonic, electronic (secure portal message, secure text), or
-                face-to-face. The content of the contact matters: it must address the patient{'\u2019'}s
-                understanding of their medications, awareness of follow-up appointments, and any
-                symptom changes since discharge. A purely administrative call to confirm an appointment
-                does not satisfy the requirement; the clinical content elements must be present and
-                documented. The{' '}
+                CMS permits phone, email, or face-to-face contact with the patient or caregiver.
+                Clinical staff performing the contact must be able to address patient status and needs
+                beyond appointment scheduling. Medication questions, symptom changes, and follow-up
+                needs are useful discussion topics, not a universal three-item CMS script. The{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
                   target="_blank"
