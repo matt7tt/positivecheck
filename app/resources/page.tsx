@@ -8,7 +8,7 @@ import { StructuredData, buildBreadcrumbSchema } from "@/components/structured-d
 export const metadata: Metadata = {
   title: "Resources for Healthcare Providers | Positive Check",
   description:
-    "Provider-facing resources from Positive Check: CMS billing guide, glossary of care program and compliance terms, and category-level comparisons of patient outreach approaches.",
+    "Provider resources from Positive Check: integration and implementation planning, CMS billing guides, calculators, care program glossary, and outreach comparisons.",
   alternates: { canonical: "/resources" },
   openGraph: {
     title: "Resources for Healthcare Providers | Positive Check",
@@ -33,6 +33,12 @@ const breadcrumb = buildBreadcrumbSchema([
 ]);
 
 const sections = [
+  {
+    href: "/resources/implementation-guide",
+    title: "Integration & Implementation Guide",
+    description:
+      "Plan patient imports, API access and webhooks, prepare your care team, and define a focused outreach pilot with Positive Check.",
+  },
   {
     href: "/resources/billing-guide",
     title: "CMS Care Program Billing Guide",
@@ -88,7 +94,8 @@ export default function ResourcesIndexPage() {
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed mb-12">
             Practical references for clinical and operational teams running CMS-reimbursed
-            care programs. Every entry is grounded in primary CMS and HHS sources.
+            care programs. Explore implementation planning alongside billing and compliance
+            references grounded in primary CMS and HHS sources.
           </p>
           <div className="space-y-10">
             {sections.map((s) => (

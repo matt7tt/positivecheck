@@ -6,7 +6,7 @@ AI-powered patient wellness call platform for healthcare providers. Built with N
 
 ```bash
 npm run dev       # Start dev server on localhost:3000
-npm run build     # Production build (ESLint errors ignored)
+npm run build     # Lint, production build, and SEO validation
 npm run start     # Start production server
 npm run lint      # Run ESLint
 ```
@@ -42,8 +42,9 @@ All pages live in `/app`. Each page typically imports a component from `/compone
 | `/demo` | `app/demo/page.tsx` | `components/demo.tsx` | Demo request page |
 | `/blog` | `app/blog/page.tsx` | Self-contained | Blog listing with featured article + grid |
 | `/blog/[slug]` | `app/blog/[slug]/page.tsx` | `components/blog-posts/[slug].tsx` | Individual blog posts (see Blog section below) |
-| `/sign-in` | `app/sign-in/page.tsx` | Self-contained | Provider sign-in form |
-| `/provider-login` | `app/provider-login/page.tsx` | Self-contained | Alternative login route |
+| `/sign-in` | `app/sign-in/page.tsx` | Self-contained | Entry point to the separate provider portal; password help goes to support |
+| `/provider-login` | `next.config.mjs` | — | Redirect to the provider portal login |
+| `/resources/implementation-guide` | `app/resources/implementation-guide/page.tsx` | Self-contained | Integration options, preparation checklist, and pilot rollout planning |
 | `/forgot-password` | `app/forgot-password/page.tsx` | `components/forgot-password.tsx` | Password recovery |
 | `/reset-password` | `app/reset-password/page.tsx` | `components/reset-password.tsx` | Password reset (with token) |
 | `/my-account` | `app/my-account/page.tsx` | `components/my-account.tsx` | Protected dashboard — call reports, wellness tracking, PDF export |

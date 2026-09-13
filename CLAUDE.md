@@ -5,9 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Development Commands
 
 - `npm run dev` - Start development server on localhost:3000
-- `npm run build` - Build for production
+- `npm run build` - Run lint, build for production, and validate SEO output
 - `npm run start` - Start production server
-- `npm run lint` - Run ESLint (note: ESLint errors are ignored during builds)
+- `npm run lint` - Run ESLint (errors block npm run build)
 
 ## Architecture Overview
 

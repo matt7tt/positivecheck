@@ -114,6 +114,12 @@ export function HowItWorksComponent() {
                   </div>
                 </div>
               </div>
+              <p className="text-gray-700 leading-relaxed">
+                Preparing to launch?{' '}
+                <Link href="/resources/implementation-guide" className="text-purple-700 underline underline-offset-4">
+                  Plan your integration, team responsibilities and pilot rollout
+                </Link>.
+              </p>
             </div>
           </div>
         </section>

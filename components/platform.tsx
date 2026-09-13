@@ -623,6 +623,12 @@ export function PlatformComponent() {
         {/* Section 7: Final CTA */}
         <section className="px-6 py-20 bg-white">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="mb-8 text-gray-700">
+              Planning a rollout?{' '}
+              <Link href="/resources/implementation-guide" className="text-purple-700 underline underline-offset-4">Read the Integration & Implementation Guide</Link>
+              {' '}and review our{' '}
+              <Link href="/about/clinical-standards" className="text-purple-700 underline underline-offset-4">Security & Clinical Standards</Link>.
+            </p>
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               Ready to Transform Your Patient Engagement?
             </h2>
