@@ -42,6 +42,7 @@ describe('PublicHeader', () => {
     expect(mobileNavigation).toBeInTheDocument()
 
     const mobile = within(mobileNavigation!)
+    expect(mobile.getByRole('link', { name: 'Platform' })).toHaveAttribute('href', '/platform')
     expect(mobile.getByRole('link', { name: 'Solutions' })).toHaveAttribute('href', '/solutions')
     expect(mobile.getByRole('link', { name: 'How It Works' })).toHaveAttribute('href', '/how-it-works')
     expect(mobile.getByRole('link', { name: 'ROI Calculator' })).toHaveAttribute('href', '/roi-calculator')
@@ -67,6 +68,7 @@ describe('PublicHeader', () => {
     render(<PublicHeader currentPage="home" />)
 
     const expectedLinks = [
+      ['Platform', '/platform'],
       ['Solutions', '/solutions'],
       ['How It Works', '/how-it-works'],
       ['ROI Calculator', '/roi-calculator'],
@@ -82,6 +84,7 @@ describe('PublicHeader', () => {
 
   it('highlights different pages correctly', () => {
     const pages = [
+      ['platform', 'Platform'],
       ['solutions', 'Solutions'],
       ['how-it-works', 'How It Works'],
       ['roi-calculator', 'ROI Calculator'],

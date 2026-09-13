@@ -31,7 +31,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden"
+          className="xl:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMenuOpen}
@@ -45,8 +45,18 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
         </button>
 
         {/* Desktop navigation */}
-        <nav className="hidden lg:block">
-          <div className="flex items-center gap-6">
+        <nav className="hidden xl:block" aria-label="Main navigation">
+          <div className="flex items-center gap-5">
+            <Link
+              href="/platform"
+              className={`text-base font-medium ${
+                currentPage === 'platform'
+                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
+                  : 'text-gray-600 hover:text-[#1a2642]'
+              }`}
+            >
+              Platform
+            </Link>
             <Link
               href="/solutions"
               className={`text-base font-medium ${
@@ -117,9 +127,16 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
 
         {/* Mobile navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-16 bg-white border-b shadow-lg">
-            <nav id="mobile-navigation" className="container mx-auto px-4 py-4">
+          <div className="xl:hidden fixed inset-x-0 top-16 max-h-[calc(100dvh-4rem)] overflow-y-auto bg-white border-b shadow-lg">
+            <nav id="mobile-navigation" aria-label="Mobile navigation" className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-4">
+                <Link
+                  href="/platform"
+                  className={`text-base font-medium ${currentPage === 'platform' ? 'text-[#1a2642] font-bold' : 'text-gray-600'}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Platform
+                </Link>
                 <Link
                   href="/solutions"
                   className={`text-base font-medium ${

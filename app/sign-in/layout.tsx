@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Sign In | Positive Check",
-  description: "Sign in to your Positive Check account. Access your family dashboard or provider admin console for senior wellness monitoring.",
+  description: "Access the Positive Check provider admin console to manage patient care programs, or get help signing in to your organization account.",
   robots: "noindex, nofollow",
   alternates: {
     canonical: null,

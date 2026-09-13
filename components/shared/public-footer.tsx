@@ -6,10 +6,11 @@ export function PublicFooter() {
   return (
     <footer className="border-t bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-6">
           <div>
             <h3 className="font-semibold text-[#1a2642] mb-3">Service</h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/platform" className="text-gray-600 hover:text-[#1a2642]">Platform</Link></li>
               <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
               <li>
                 <RequestDemoModal source="footer">
@@ -38,7 +39,7 @@ export function PublicFooter() {
             <h3 className="font-semibold text-[#1a2642] mb-3">Resources</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/blog" className="text-gray-600 hover:text-[#1a2642]">Blog</Link></li>
-              <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
+              <li><Link href="/resources/implementation-guide" className="text-gray-600 hover:text-[#1a2642]">Integration & Implementation Guide</Link></li>
               <li><Link href="/faq" className="text-gray-600 hover:text-[#1a2642]">FAQ</Link></li>
               <li><Link href="/case-studies/scaling-patient-engagement" className="text-gray-600 hover:text-[#1a2642]">Case Studies</Link></li>
               <li><Link href="/resources/glossary" className="text-gray-600 hover:text-[#1a2642]">Glossary</Link></li>
@@ -50,14 +51,14 @@ export function PublicFooter() {
             <h3 className="font-semibold text-[#1a2642] mb-3">Company</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about" className="text-gray-600 hover:text-[#1a2642]">About Us</Link></li>
-              <li><Link href="/how-it-works" className="text-gray-600 hover:text-[#1a2642]">How It Works</Link></li>
+              <li><Link href="/about/clinical-standards" className="text-gray-600 hover:text-[#1a2642]">Security & Clinical Standards</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-[#1a2642] mb-3">Account</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/sign-in" className="text-gray-600 hover:text-[#1a2642]">Sign In</Link></li>
-              <li><Link href="/my-account" className="text-gray-600 hover:text-[#1a2642]">My Dashboard</Link></li>
+              <li><a href="https://provider.positivecheck.com/admin-new" className="text-gray-600 hover:text-[#1a2642]">Provider Dashboard</a></li>
             </ul>
           </div>
         </div>

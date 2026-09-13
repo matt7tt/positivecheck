@@ -25,6 +25,10 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
   - [30-day readmission reduction](https://www.positivecheck.com/solutions/post-discharge-follow-up/30-day-readmission-reduction): HRRP mechanics, highest-risk scenarios, evidence-based interventions, TCM fit.
   - [Post-discharge contact timing](https://www.positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing): The 2-business-day rule, weekend/holiday handling, valid contact forms, automation.
 
+## Integration & implementation
+
+- [Integration & Implementation Guide](https://www.positivecheck.com/resources/implementation-guide): Connection options, patient import and API planning, team responsibilities, and a patient outreach pilot checklist.
+
 ## Billing & CMS programs
 
 - [CMS Care Program Billing Guide](https://www.positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
