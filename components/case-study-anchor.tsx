@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useCallback, useEffect } from 'react'
-import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
@@ -13,41 +12,15 @@ import {
 } from 'recharts'
 import {
   Phone, ShieldAlert, LayoutDashboard, TrendingUp,
-  Users, Bell, Clock, Download, ArrowRight, CheckCircle
+  Users, Bell, Download, ArrowRight, CheckCircle
 } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
+import { fitSummaryToPage } from '@/lib/pdf-layout'
+import { enrollmentData, engagementData, alertsData, caseStudyTitle, caseStudyMetrics, caseStudyLimitations } from '@/lib/case-study-data'
 
 // ---------------------------------------------------------------------------
 // Data
 // ---------------------------------------------------------------------------
-
-const enrollmentData = [
-  { month: "Jul '25", patients: 1 },
-  { month: "Aug '25", patients: 12 },
-  { month: "Sep '25", patients: 198 },
-  { month: "Oct '25", patients: 883 },
-  { month: "Nov '25", patients: 1042 },
-  { month: "Dec '25", patients: 1191 },
-  { month: "Jan '26", patients: 1302 },
-  { month: "Feb '26", patients: 1509 },
-]
-
-const engagementData = [
-  { month: 'Sep', rate: 40.0 },
-  { month: 'Oct', rate: 32.2 },
-  { month: 'Nov', rate: 49.8 },
-  { month: 'Dec', rate: 54.5 },
-  { month: 'Jan', rate: 49.4 },
-  { month: 'Feb', rate: 46.3 },
-]
-
-const alertsData = [
-  { month: 'Oct', alerts: 43 },
-  { month: 'Nov', alerts: 64 },
-  { month: 'Dec', alerts: 81 },
-  { month: 'Jan', alerts: 191 },
-  { month: 'Feb', alerts: 106 },
-]
 
 const callsByHourData = [
   { hour: '8 AM', calls: 12 },
@@ -90,9 +63,8 @@ export function CaseStudyAnchor() {
     })
     const imgData = canvas.toDataURL('image/png')
     const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
-    const pdfWidth = pdf.internal.pageSize.getWidth()
-    const pdfHeight = (canvas.height * pdfWidth) / canvas.width
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
+    const layout = fitSummaryToPage(canvas.width, canvas.height, pdf.internal.pageSize.getWidth(), pdf.internal.pageSize.getHeight())
+    pdf.addImage(imgData, 'PNG', layout.x, layout.y, layout.width, layout.height)
     pdf.save('Positive-Check-Case-Study.pdf')
     trackEvent('pdf_download', { document_name: 'scaling_patient_engagement_case_study' })
   }, [])
@@ -111,23 +83,18 @@ export function CaseStudyAnchor() {
               Case Study
             </p>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
-              Scaling Patient Engagement to 1,500+ Patients in 6&nbsp;Months
+              {caseStudyTitle}
             </h1>
             <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              How a healthcare partner used Positive Check to automate daily wellness calls,
-              catch 485&nbsp;clinical alerts, and reach ~50% of enrolled patients every&nbsp;month.
+              Reported enrollment grew from 1 in July 2025 to 1,509 in February 2026.
+              See one healthcare partner’s operational results, reporting periods and limitations.
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {[
-                { value: '1,509', label: 'Patients Enrolled' },
-                { value: '~50%', label: 'Monthly Engagement' },
-                { value: '485', label: 'Alerts Caught' },
-                { value: '100%', label: 'Alerts Resolved' },
-              ].map((m) => (
+              {caseStudyMetrics.map((m) => (
                 <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                   <CardContent className="p-5 text-center">
-                    <p className="text-3xl md:text-4xl font-bold text-white">{m.value}</p>
+                    <p className="text-xl sm:text-2xl font-bold tracking-tight text-white break-words">{m.value}</p>
                     <p className="text-purple-100 text-sm mt-1">{m.label}</p>
                   </CardContent>
                 </Card>
@@ -236,8 +203,9 @@ export function CaseStudyAnchor() {
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">The Results</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Within six months the program scaled from a single pilot patient to over 1,500
-                enrolled — with measurable clinical and operational impact.
+                The enrollment series runs from July 2025 through February 2026.
+                Engagement and alerts cover different periods; these are operational measures,
+                not demonstrated clinical outcomes.
               </p>
             </div>
 
@@ -276,7 +244,7 @@ export function CaseStudyAnchor() {
               <Card className="border-gray-200">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Monthly Engagement Rate</h3>
-                  <p className="text-sm text-gray-500 mb-4">Percentage of enrolled patients reached each month</p>
+                  <p className="text-sm text-gray-500 mb-4">Reported rates, September 2025–February 2026; denominator and contact definition are not supplied</p>
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={engagementData}>
@@ -298,7 +266,7 @@ export function CaseStudyAnchor() {
               <Card className="border-gray-200">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Clinical Alerts by Month</h3>
-                  <p className="text-sm text-gray-500 mb-4">Escalations flagged for care team review</p>
+                  <p className="text-sm text-gray-500 mb-4">Reported alerts, October 2025–February 2026; counts do not establish clinical resolution</p>
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={alertsData}>
@@ -320,7 +288,7 @@ export function CaseStudyAnchor() {
               <Card className="border-gray-200">
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">Calls by Time of Day</h3>
-                  <p className="text-sm text-gray-500 mb-4">Distribution of completed calls across hours</p>
+                  <p className="text-sm text-gray-500 mb-4">Reported call counts by hour; reporting period and time zone are not supplied</p>
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={callsByHourData}>
@@ -343,12 +311,10 @@ export function CaseStudyAnchor() {
             <div className="max-w-3xl mx-auto">
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  'Scaled from 1 to 1,509 patients in under 6 months',
-                  '~50% monthly engagement rate across the population',
-                  '485 clinical alerts identified and escalated',
-                  '100% alert resolution rate',
-                  'Peak engagement window: 2 PM – 9 PM',
-                  'Consistent engagement even as enrollment tripled',
+                  'Reported enrollment: 1 in July 2025 to 1,509 in February 2026',
+                  'Reported monthly engagement: 32.2%–54.5%, September 2025–February 2026',
+                  '485 reported alerts in total, October 2025–February 2026',
+                  'Alert resolution and clinical outcomes are not established by these aggregates',
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-purple-500 mt-0.5 shrink-0" />
@@ -361,20 +327,13 @@ export function CaseStudyAnchor() {
         </section>
 
         {/* ---------------------------------------------------------------- */}
-        {/* Customer Quote */}
+        {/* Reporting context replaces an unverified placeholder testimonial. */}
         {/* ---------------------------------------------------------------- */}
         <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
           <div className="max-w-3xl mx-auto text-center">
-            <svg className="w-10 h-10 mx-auto mb-6 text-white/40" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H0z" />
-            </svg>
-            <blockquote className="text-2xl md:text-3xl font-medium text-white leading-relaxed mb-8">
-              &ldquo;Positive Check lets us reach every patient, every day — something that
-              simply wasn&rsquo;t possible with our team alone.&rdquo;
-            </blockquote>
-            <p className="text-purple-100 font-medium">
-              — Clinical Operations Lead, [Healthcare Partner]
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Reporting periods and limitations</h2>
+            <p className="text-white leading-relaxed">{caseStudyLimitations}</p>
+            <p className="mt-4 text-purple-100">Published by Positive Check. Content updated September 13, 2026; reporting ends February 2026.</p>
           </div>
         </section>
 
@@ -386,8 +345,8 @@ export function CaseStudyAnchor() {
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">What&rsquo;s Next</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Building on six months of proven results, the program is expanding its reach and
-                deepening clinical impact.
+                Next evaluation priorities include wider outreach and longitudinal outcomes.
+                These are future goals, not results established by the charts above.
               </p>
             </div>
 
@@ -432,7 +391,7 @@ export function CaseStudyAnchor() {
         <section className="px-6 py-16 bg-white">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ready to See Similar Results?
+              Ready to Evaluate Your Own Workflow?
             </h2>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Learn how Positive Check can help your organization scale patient engagement,
@@ -483,21 +442,16 @@ export function CaseStudyAnchor() {
 
         {/* PDF Title */}
         <h2 className="text-xl font-bold text-gray-900 mb-2">
-          Scaling Patient Engagement to 1,500+ Patients in 6 Months
+          {caseStudyTitle}
         </h2>
         <p className="text-sm text-gray-600 mb-6">
-          A healthcare partner deployed Positive Check to automate daily wellness calls — achieving
-          ~50% monthly engagement and catching 485 clinical alerts with a 100% resolution rate.
+          Reported enrollment grew from 1 in July 2025 to 1,509 in February 2026.
+          Engagement and alerts cover separate reporting periods, as shown below.
         </p>
 
         {/* PDF Metrics */}
         <div className="grid grid-cols-4 gap-4 mb-6">
-          {[
-            { value: '1,509', label: 'Patients Enrolled' },
-            { value: '~50%', label: 'Monthly Engagement' },
-            { value: '485', label: 'Alerts Caught' },
-            { value: '100%', label: 'Alerts Resolved' },
-          ].map((m) => (
+          {caseStudyMetrics.map((m) => (
             <div key={m.label} className="text-center p-3 bg-purple-50 rounded-lg">
               <p className="text-xl font-bold text-purple-600">{m.value}</p>
               <p className="text-xs text-gray-600">{m.label}</p>
@@ -524,21 +478,16 @@ export function CaseStudyAnchor() {
         <div className="mb-6">
           <h3 className="text-sm font-semibold text-gray-900 mb-2">Key Results</h3>
           <ul className="text-sm text-gray-700 space-y-1">
-            <li>• Scaled from 1 to 1,509 patients in under 6 months</li>
-            <li>• ~50% of enrolled patients engaged each month</li>
-            <li>• 485 clinical alerts caught and escalated</li>
-            <li>• 100% alert resolution rate</li>
-            <li>• Peak engagement window: 2 PM – 9 PM</li>
+            <li>• Enrollment series: July 2025–February 2026</li>
+            <li>• Engagement series: September 2025–February 2026</li>
+            <li>• Alert series: October 2025–February 2026</li>
           </ul>
         </div>
 
-        {/* PDF Quote */}
+        {/* PDF limitations mirror the web page. */}
         <div className="bg-purple-50 p-4 rounded-lg mb-6">
-          <p className="text-sm italic text-gray-800">
-            &ldquo;Positive Check lets us reach every patient, every day — something that simply
-            wasn&rsquo;t possible with our team alone.&rdquo;
-          </p>
-          <p className="text-xs text-gray-500 mt-1">— Clinical Operations Lead, [Healthcare Partner]</p>
+          <h3 className="text-sm font-semibold mb-2">Reporting limitations</h3>
+          <p className="text-xs text-gray-800">{caseStudyLimitations}</p>
         </div>
 
         {/* PDF Footer */}

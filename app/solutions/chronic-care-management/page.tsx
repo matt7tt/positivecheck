@@ -10,7 +10,7 @@ import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 
 
 export const metadata: Metadata = {
   title: 'Chronic Care Management (CCM) Solution | Positive Check',
-  description: 'Automate CCM patient engagement with AI-powered wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing — generating $66-$216+/patient/month in Medicare revenue.',
+  description: 'Support CCM patient outreach with AI wellness calls, care-team summaries and alerts. Explore retained clinical responsibilities, workflow fit and pilot evaluation.',
   alternates: { canonical: '/solutions/chronic-care-management' },
   openGraph: {
     title: 'Chronic Care Management (CCM) Solution',
@@ -31,37 +31,30 @@ export const metadata: Metadata = {
 
 const ccmPillarFaqs = [
   {
-    question: 'What is Chronic Care Management (CCM)?',
-    answer:
-      "Chronic Care Management is a Medicare-reimbursed care coordination program for patients with two or more chronic conditions expected to last at least 12 months (or until death) and that place the patient at significant risk of death, acute exacerbation, or functional decline. Clinical staff deliver non-face-to-face care coordination \u2014 medication management, care plan updates, patient communication \u2014 and bill CPT 99490 (first 20 minutes non-complex), 99439 (each additional 20 minutes), 99487 (first 60 minutes complex), and 99489 (each additional 30 minutes complex).",
+    question: 'What does Lola do within a CCM program?',
+    answer: 'Lola supports routine patient outreach through scheduled wellness calls, structured responses and call summaries for the care team. Providers can use that information to identify follow-up needs and review concerns. The service supports patient engagement; it does not replace a comprehensive care plan, clinical judgment or the provider’s responsibility to deliver and document qualifying care.',
   },
   {
-    question: 'What is the two-chronic-conditions requirement?',
-    answer:
-      'To qualify for CCM, a patient must have two or more chronic conditions. This distinguishes CCM from RPM (which requires only one chronic condition) and from Principal Care Management (PCM, which is specifically for a single high-risk condition). The chronic conditions must be documented in the patient\u2019s medical record and must be expected to last at least 12 months or until death. Common qualifying combinations include hypertension + diabetes, COPD + heart failure, and diabetes + chronic kidney disease.',
+    question: 'What work remains with clinical staff?',
+    answer: 'Clinical staff remain responsible for reviewing relevant information, assessing concerns, coordinating care and documenting their work under the provider’s supervision. Automated call duration is not clinical staff time. The billing team must verify qualifying activities and all applicable requirements; an AI summary does not independently make a patient eligible for reimbursement or establish a billable service.',
   },
   {
-    question: 'What is the 20-minute monthly clinical staff time requirement?',
-    answer:
-      'CPT 99490 requires at least 20 minutes of clinical staff time per calendar month spent on CCM activities for a given patient. The time can be cumulative across multiple touchpoints in the month \u2014 a 5-minute medication check call, a 10-minute care plan update, and a 5-minute specialist-coordination task all count toward the threshold. If the cumulative time reaches the 20-minute mark, 99490 is billable. If it does not, no CCM code can be billed for that patient that month. Each additional 20 minutes may be billed under 99439 (up to twice per month for non-complex CCM).',
+    question: 'How are concerning patient responses handled?',
+    answer: 'Positive Check surfaces concerning responses for care-team review through its alert workflow. Before launch, agree the escalation rules, responsible staff, coverage hours and process for failed handoffs. Do not assume that an automated alert guarantees an immediate clinical response. Patient instructions should explain the service’s limits and the appropriate route for urgent or emergency care.',
   },
   {
-    question: 'Can AI-powered wellness calls count toward the 20-minute CCM time requirement?',
-    answer:
-      'AI calls themselves do not count as "clinical staff time" under the CMS definition, but clinical staff time spent reviewing AI call summaries, updating care plans based on flagged concerns, coordinating escalations, and documenting the interaction does count. In practice, AI calls generate structured summaries that make the 20-minute clinical review highly efficient \u2014 the call captures the patient content, clinical staff spend their time on care-plan action rather than data gathering.',
+    question: 'When is staff-led outreach a better fit?',
+    answer: 'Staff-led outreach can be the better fit when patients need complex conversations, established relationships or support that a structured call cannot provide. It may also be sufficient when the existing team reliably meets patient needs. Compare patient experience and staff workload before changing the process; automation should address a measured operational need, not an assumed staffing shortage.',
   },
   {
-    question: "What's the difference between non-complex (99490) and complex (99487) CCM?",
-    answer:
-      'Non-complex CCM (CPT 99490, \u007e$66/month) requires 20 minutes of clinical staff time and at least one moderate-complexity medical decision-making element per month. Complex CCM (CPT 99487, \u007e$144/month) requires 60 minutes of clinical staff time and substantial revision of the care plan for patients with moderate-to-high complexity medical decision-making. Complex CCM applies to patients with unstable conditions, recent hospitalizations, or significant care-plan changes. A patient can only be billed under one track per month \u2014 either non-complex or complex, not both.',
+    question: 'What should we prepare before launching a CCM pilot?',
+    answer: 'Choose a defined cohort and workflow, then identify clinical, operations and technical owners. Review patient eligibility and consent, data-transfer requirements, call preferences and escalation coverage before sharing production records. Confirm the implementation scope with Positive Check and test with synthetic data first. Public contact and demo forms should not contain patient health information.',
   },
   {
-    question: 'Does HIPAA permit AI-powered CCM wellness calls?',
-    answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+    question: 'How should we evaluate the first pilot?',
+    answer: 'Compare the pilot with a documented starting point for the same workflow. Track attempted and completed contacts, staff review time, alert response times and patient opt-outs using agreed definitions and reporting periods. Include software and retained staffing costs. Review unsuccessful calls and handoffs before expanding; enrollment growth alone does not establish clinical benefit or a financial return.',
   },
 ]
-
 export default function ChronicCareManagementPage() {
   return (
     <>
@@ -407,7 +400,7 @@ export default function ChronicCareManagementPage() {
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm text-gray-500">
-                Reviewed against current CMS billing guidance.{' '}
+                Billing reference:{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln909188-chronic-care-management-services.pdf"
                   target="_blank"
@@ -416,7 +409,7 @@ export default function ChronicCareManagementPage() {
                 >
                   CMS MLN CCM Booklet
                 </a>
-                . Last updated 2026-04-20.
+                . Published by Positive Check. Content updated September 13, 2026.
               </p>
             </div>
           </section>

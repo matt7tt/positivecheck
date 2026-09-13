@@ -3,6 +3,7 @@
 // wrap with <StructuredData data={...} /> to render.
 
 export const SITE_URL = "https://www.positivecheck.com";
+export const ORG_ID = `${SITE_URL}/#organization`;
 export const LOGO_URL = `${SITE_URL}/images/positive-logo-dark-blue.png`;
 export const ORG_NAME_SHORT = "Positive Check";
 export const ORG_NAME_LEGAL = "Positive Check LLC";
@@ -58,6 +59,7 @@ export interface ArticleInput {
 // full top-level Organization node.
 function buildPublisherOrgNode() {
   return {
+    "@id": ORG_ID,
     "@type": "Organization" as const,
     name: ORG_NAME_SHORT,
     legalName: ORG_NAME_LEGAL,
@@ -71,6 +73,7 @@ function buildPublisherOrgNode() {
 
 export function buildOrganizationSchema() {
   return {
+    "@id": ORG_ID,
     "@context": "https://schema.org",
     "@type": "Organization",
     name: ORG_NAME_SHORT,
@@ -181,6 +184,7 @@ export function buildArticleSchema(input: ArticleInput) {
     ...(input.articleSection ? { articleSection: input.articleSection } : {}),
     ...(input.keywords?.length ? { keywords: input.keywords.join(", ") } : {}),
     author: {
+      "@id": ORG_ID,
       "@type": "Organization",
       name: ORG_NAME_SHORT,
       url: SITE_URL,
