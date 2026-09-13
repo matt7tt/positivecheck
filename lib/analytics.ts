@@ -8,7 +8,7 @@ const ATTRIBUTION_STORAGE_KEY = "positive_check_attribution"
 
 declare global {
   interface Window {
-    dataLayer?: Array<Record<string, unknown>>
+    dataLayer?: Array<Record<string, unknown> | IArguments>
     gtag?: (...args: any[]) => void
   }
 }
@@ -69,8 +69,8 @@ export function getAttributionContext(): EventParameters {
  * Send the same event to GTM's dataLayer and directly configured GA4.
  *
  * The helper is intentionally safe before either analytics library has loaded:
- * GTM consumes queued dataLayer events, while direct GA4 receives the event when
- * gtag is already available.
+ * GTM consumes object events; direct GA4 consumes queued gtag commands even
+ * when its remote script has not finished loading.
  */
 export function trackEvent(
   eventName: string,
@@ -93,6 +93,16 @@ export function trackEvent(
     MARKETING_GA_MEASUREMENT_ID &&
     options.sendToDirectGa !== false
   ) {
-    window.gtag?.("event", eventName, eventParameters)
+    if (!window.gtag) {
+      window.gtag = function () {
+        // Google tag commands use arguments objects, not GTM event objects.
+        // eslint-disable-next-line prefer-rest-params
+        window.dataLayer!.push(arguments)
+      }
+    }
+    window.gtag("event", eventName, {
+      ...eventParameters,
+      send_to: MARKETING_GA_MEASUREMENT_ID,
+    })
   }
 }

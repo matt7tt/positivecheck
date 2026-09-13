@@ -34,6 +34,24 @@ const breadcrumb = buildBreadcrumbSchema([
 
 const sections = [
   {
+    href: "/solutions/post-discharge-follow-up/post-discharge-contact-timing",
+    title: "TCM Contact Timing & Attempt Checklist",
+    description:
+      "Work through two-business-day deadlines, unsuccessful contact attempts, and documentation handoffs for post-discharge follow-up.",
+  },
+  {
+    href: "/blog/ccm-billing-2026-cpt-codes-guide",
+    title: "2026 CCM Billing & CPT Code Guide",
+    description:
+      "Compare non-complex and complex CCM codes, review monthly time requirements, and prepare documentation for billing review.",
+  },
+  {
+    href: "/resources/compare/tcm-and-ccm-combined-month-billing",
+    title: "TCM and CCM in the Same Month",
+    description:
+      "Understand overlapping service periods and keep TCM and CCM activities separate without double-counting time.",
+  },
+  {
     href: "/resources/implementation-guide",
     title: "Integration & Implementation Guide",
     description:

@@ -79,7 +79,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-05-19',
-  dateModified: '2026-09-03',
+  dateModified: '2026-09-13',
 })
 
 export default function TCMandCCMCombinedPage() {
@@ -155,6 +155,22 @@ export default function TCMandCCMCombinedPage() {
                 title="See how one outreach workflow can support both programs"
                 description="Explore how Positive Check captures patient responses and routes follow-up work so your team can maintain separate, practice-owned TCM and CCM documentation."
               />
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">A practical check before combining services</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Start with two independently supported records, not a target revenue total. Verify the{' '}
+                <Link href="/solutions/post-discharge-follow-up/post-discharge-contact-timing#contact-checklist" className="text-purple-700 underline">TCM contact or timely unsuccessful-attempt history</Link>,
+                the required visit, and the remaining TCM criteria. Separately check CCM eligibility,
+                consent, care-plan requirements, and qualifying monthly time using the{' '}
+                <Link href="/blog/ccm-billing-2026-cpt-codes-guide" className="text-purple-700 underline">CCM code guide</Link>.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Illustrative documentation check: if a staff member spends ten minutes on a discharge
+                coordination task assigned to TCM, do not copy those ten minutes into the CCM total.
+                Record any separate CCM work with its own activity, staff member, date, and duration.
+                This example explains separation of work; it is not a determination that either
+                claim is billable. Have the billing reviewer confirm both records before submission.
+              </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">When does combined billing apply?</h2>
               <p className="text-gray-700 leading-relaxed mb-4">

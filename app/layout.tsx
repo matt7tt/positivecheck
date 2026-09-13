@@ -101,7 +101,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             />
             <Script
               id="google-analytics-4"
-              strategy="lazyOnload"
+              strategy="beforeInteractive"
               dangerouslySetInnerHTML={{
                 __html: `(function(){
 var host=window.location.hostname;

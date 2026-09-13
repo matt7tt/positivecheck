@@ -238,6 +238,15 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
           </Link>.
         </p>
 
+        <p>
+          Managing a recent discharge? Use the{' '}
+          <Link href="/resources/compare/tcm-and-ccm-combined-month-billing" className="text-[#d946ef] hover:underline">TCM and CCM combined-month guide</Link>{' '}
+          to separate the overlapping service periods, and the{' '}
+          <Link href="/solutions/post-discharge-follow-up/post-discharge-contact-timing#contact-checklist" className="text-[#d946ef] hover:underline">TCM contact-attempt checklist</Link>{' '}
+          to prepare the discharge outreach record for review. Assign shared activity to one service;
+          do not duplicate its minutes in another program’s log.
+        </p>
+
         <p>Several CCM-incompatible billings worth knowing about, per the CMS FAQ:</p>
 
         <ul className="list-disc pl-6 space-y-2 my-4">

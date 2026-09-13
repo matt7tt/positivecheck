@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import CCMPage from '@/app/solutions/chronic-care-management/page'
 import ComparisonPage from '@/app/solutions/chronic-care-management/vs-in-house-care-coordinators/page'
 import ImplementationPage from '@/app/resources/implementation-guide/page'
+import ContactTimingPage from '@/app/solutions/post-discharge-follow-up/post-discharge-contact-timing/page'
 import { CaseStudyAnchor } from '@/components/case-study-anchor'
 import { ROICalculator } from '@/components/roi-calculator'
 import { caseStudyTitle, caseStudyLimitations } from '@/lib/case-study-data'
@@ -18,6 +19,7 @@ jest.mock('recharts', () => ({
 describe('GEO buyer answers', () => {
   it.each([
     ['CCM', CCMPage], ['comparison', ComparisonPage], ['implementation', ImplementationPage],
+    ['TCM contact timing', ContactTimingPage],
   ])('%s renders six visible answers matching FAQ structured data', (_name, Page) => {
     const { container } = render(<Page />)
     const schemas = Array.from(container.querySelectorAll('script[type="application/ld+json"]'))

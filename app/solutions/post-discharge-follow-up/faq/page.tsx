@@ -77,7 +77,7 @@ const faqs = [
   {
     question: 'What happens if the 2-business-day contact is missed?',
     answer:
-      'If contact is not made within two business days, the TCM service cannot be billed for that discharge. Some providers track missed-contact rates as a key performance indicator and use automated outreach as a safety net to catch discharges that manual workflows miss. Positive Check\u2019s automation enforces the 2-day window as a hard constraint on scheduling.',
+      'Unsuccessful contact does not automatically rule out TCM billing. CMS permits reporting after two or more separate, timely, documented unsuccessful attempts when all other requirements are met, including the timely face-to-face visit. Continue outreach until successful and have the billing team review exceptions. An automated call log alone does not establish a qualifying clinical contact.',
   },
   {
     question: 'Can a family member or caregiver receive the TCM call instead of the patient?',
