@@ -12,8 +12,7 @@ const nextConfig = {
         loader: 'default',
     },
     eslint: {
-        // Warning: This allows production builds to successfully complete even if
-        // your project has ESLint errors.
+        // npm run build runs the ESLint CLI before Next.js; skip the duplicate pass.
         ignoreDuringBuilds: true,
     },
     experimental: {
