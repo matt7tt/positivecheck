@@ -1,6 +1,12 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ContactForm } from '../contact-form'
+import { trackEvent } from '@/lib/analytics'
+
+jest.mock('@/lib/analytics', () => ({
+  trackEvent: jest.fn(),
+  getAttributionContext: jest.fn(() => ({})),
+}))
 
 jest.mock('react-hot-toast', () => ({
   __esModule: true,
@@ -46,6 +52,17 @@ describe('ContactForm', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     mockFetch.mockClear()
+  })
+
+  it('records only one custom start when focusing multiple fields', async () => {
+    const user = userEvent.setup()
+    render(<ContactForm />)
+    await user.type(screen.getByLabelText(/First Name/), 'Synthetic Test')
+    await user.type(screen.getByLabelText(/Email/), 'synthetic@example.com')
+    await user.click(screen.getByLabelText(/First Name/))
+    expect(trackEvent).toHaveBeenCalledTimes(1)
+    expect(trackEvent).toHaveBeenCalledWith('lead_form_start', { form_name: 'contact_form' })
+    expect(mockFetch).not.toHaveBeenCalled()
   })
 
   it('renders all form fields', () => {

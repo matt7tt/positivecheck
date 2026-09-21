@@ -112,7 +112,7 @@ export default function ContactPage() {
                 onFocusCapture={() => {
                   if (hasStarted.current) return
                   hasStarted.current = true
-                  trackEvent("form_start", { form_name: "contact_page" })
+                  trackEvent("lead_form_start", { form_name: "contact_page" })
                 }}
               >
                 <div className="grid md:grid-cols-2 gap-6">

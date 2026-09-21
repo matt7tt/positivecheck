@@ -32,7 +32,7 @@ export function ContactForm() {
       onFocusCapture={() => {
         if (hasStarted.current) return
         hasStarted.current = true
-        trackEvent('form_start', { form_name: 'contact_form' })
+        trackEvent('lead_form_start', { form_name: 'contact_form' })
       }}
       onSubmit={async (e) => {
         e.preventDefault()

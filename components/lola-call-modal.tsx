@@ -179,7 +179,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
             onFocusCapture={() => {
               if (hasStarted.current) return
               hasStarted.current = true
-              trackEvent("form_start", { form_name: "lola_call", cta_location: source })
+              trackEvent("lead_form_start", { form_name: "lola_call", cta_location: source })
             }}
             className="space-y-4"
             noValidate

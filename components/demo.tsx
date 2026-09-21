@@ -80,7 +80,7 @@ export function DemoComponent() {
               onFocusCapture={() => {
                 if (hasStarted.current) return
                 hasStarted.current = true
-                trackEvent('form_start', { form_name: 'demo_page' })
+                trackEvent('lead_form_start', { form_name: 'demo_page' })
               }}
               onSubmit={async (e) => {
                 e.preventDefault()

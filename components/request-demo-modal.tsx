@@ -34,7 +34,7 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
   const trackFormStart = () => {
     if (hasStarted.current) return
     hasStarted.current = true
-    trackEvent("form_start", {
+    trackEvent("lead_form_start", {
       form_name: "demo_request",
       cta_location: source,
     })
