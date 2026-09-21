@@ -820,7 +820,7 @@ export default function HomePage() {
                 onFocusCapture={() => {
                   if (contactFormStarted.current) return
                   contactFormStarted.current = true
-                  trackEvent("form_start", { form_name: "homepage_contact" })
+                  trackEvent("lead_form_start", { form_name: "homepage_contact" })
                 }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>

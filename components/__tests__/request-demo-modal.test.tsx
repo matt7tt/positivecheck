@@ -46,7 +46,30 @@ describe('demo request conversions', () => {
     const leads = jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')
     expect(leads).toEqual([['generate_lead', { lead_type: 'demo_request', form_name: 'demo_request', cta_location: 'test_cta' }]])
     expect(JSON.stringify(jest.mocked(trackEvent).mock.calls)).not.toMatch(/synthetic@example.com|Synthetic Test/)
-    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'form_start')).toHaveLength(1)
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(1)
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'form_start')).toHaveLength(0)
+  })
+
+  it('records one custom start across field changes without submitting a lead', async () => {
+    const user = await fillForm()
+    await user.click(screen.getByLabelText('Full Name'))
+    await user.tab()
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toEqual([
+      ['lead_form_start', { form_name: 'demo_request', cta_location: 'test_cta' }],
+    ])
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => ['form_start', 'generate_lead', 'form_submit'].includes(event))).toEqual([])
+    expect(mockFetch).not.toHaveBeenCalled()
+    expect(JSON.stringify(jest.mocked(trackEvent).mock.calls)).not.toMatch(/synthetic@example.com|Synthetic Test/)
+  })
+
+  it('allows one new custom start after closing and reopening the modal', async () => {
+    const user = await fillForm()
+    await user.keyboard('{Escape}')
+    await user.click(screen.getByRole('button', { name: 'Open demo' }))
+    await user.click(screen.getByLabelText('Full Name'))
+    await user.tab()
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(2)
+    expect(mockFetch).not.toHaveBeenCalled()
   })
 
   it.each(['http', 'network'])('does not report a lead on a %s delivery failure', async (failure) => {

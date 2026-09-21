@@ -42,7 +42,9 @@ Completed September 3: created and verified the `https://www.positivecheck.com/`
 
 Report weekly by source/medium, landing page, device, and program:
 
-`session → cta_click → form_start → form_submit/generate_lead → booking_link_click → meeting_booked → qualified opportunity`
+`session → cta_click → lead_form_start → form_submit/generate_lead → booking_link_click → meeting_booked → qualified opportunity`
+
+September 21, 2026 tracking correction: custom starts on all six marketing forms now use `lead_form_start`, retaining their existing first-focus guard and `form_name`/CTA attribution. GA4 enhanced measurement keeps its automatic `form_start` event. Use only `lead_form_start` for the custom lead funnel going forward; do not add it to automatic `form_start` counts. Before this deployment, `form_start` mixed automatic and custom events and could double-count a single start, so historical counts are not directly comparable. Update any saved custom-funnel reports or GTM triggers that relied on the old custom name. No GA4 settings were changed. `generate_lead` remains the primary key event and still fires only after a successful submission.
 
 The first four stages are instrumented in the site. The final two require calendar and CRM production configuration.
 
