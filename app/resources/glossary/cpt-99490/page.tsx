@@ -7,7 +7,7 @@ import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/com
 export const metadata: Metadata = {
   title: 'CPT 99490: Definition and CCM Billing Requirements | Positive Check Glossary',
   description:
-    'CPT 99490 is the Medicare billing code for the first 20 minutes of non-complex Chronic Care Management clinical staff time per calendar month. Definition, eligibility, documentation, and how 99439/99487/99489 stack on top.',
+    'CPT 99490 is the Medicare billing code for the first 20 minutes of non-complex Chronic Care Management clinical staff time per calendar month. Definition, eligibility, documentation, and the separate non-complex and complex CCM pathways.',
   alternates: { canonical: '/resources/glossary/cpt-99490' },
   openGraph: {
     title: 'CPT 99490: Definition and CCM Billing Requirements',
@@ -74,7 +74,8 @@ export default function CPT99490GlossaryPage() {
                 time spent on non-complex Chronic Care Management activities for a patient in a
                 calendar month, reimbursed at approximately $66 and requiring two or more chronic
                 conditions plus documented patient consent. It is the base code in the CCM billing
-                family and must be billed before any add-on codes apply.
+                non-complex clinical staff pathway. Complex CCM uses a separate base code, 99487,
+                and must not be combined with non-complex CCM for the same patient and month.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99490 is billed once per calendar month per patient when at least 20 minutes of
@@ -106,8 +107,9 @@ export default function CPT99490GlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Annual updates to CCM billing policy are published in the Medicare Physician Fee
                 Schedule final rule. The non-complex designation distinguishes 99490 from the
-                complex CCM codes (99487/99489), which require higher-complexity medical decision
-                making and physician-directed time rather than clinical staff time.
+                complex CCM codes (99487/99489), which require their own time threshold,
+                moderate or high complexity medical decision-making, and required care-plan work.
+                Complex CCM can involve qualifying clinical staff time; it is not an add-on to 99490.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who uses it and when it applies</h2>
@@ -151,7 +153,7 @@ export default function CPT99490GlossaryPage() {
                     CPT 99487
                   </Link>{' '}
                   {'\u2014'} complex CCM 60 minutes, an alternative track for higher-complexity
-                  patients requiring physician-directed time
+                  patients meeting the complex CCM time, decision-making, and care-plan requirements
                 </li>
                 <li>
                   <Link
@@ -219,7 +221,7 @@ export default function CPT99490GlossaryPage() {
                 >
                   CMS MLN CCM Booklet
                 </a>
-                . Last updated 2026-04-20.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

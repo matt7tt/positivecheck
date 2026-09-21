@@ -152,7 +152,7 @@ export default function GlossaryIndexPage() {
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99457</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                First 20 minutes of RPM interactive communication per month.
+                First 20 minutes of RPM treatment management including required interactive communication per month.
               </p>
             </Link>
             <Link
@@ -162,7 +162,7 @@ export default function GlossaryIndexPage() {
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">CMS billing code</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">CPT 99458</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Each additional 20 minutes of RPM interactive communication per month.
+                Each additional 20 minutes of RPM treatment management including required interactive communication per month.
               </p>
             </Link>
             <Link

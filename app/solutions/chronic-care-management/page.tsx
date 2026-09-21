@@ -318,7 +318,7 @@ export default function ChronicCareManagementPage() {
                     CPT 99490 Billing Guide
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Eligibility, the 20-minute requirement, documentation, and how 99439/99487/99489 stack.
+                    Eligibility, the 20-minute requirement, documentation, and the separate non-complex and complex CCM pathways.
                   </p>
                 </Link>
                 <Link

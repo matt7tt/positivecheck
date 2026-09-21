@@ -32,12 +32,12 @@ const faqs = [
   {
     question: 'What is Remote Patient Monitoring (RPM)?',
     answer:
-      "Remote Patient Monitoring is a Medicare-reimbursed care program where clinical staff review physiologic data (blood pressure, glucose, weight, SpO2, etc.) transmitted from a patient\u2019s connected device and conduct interactive communication with the patient at least monthly. CMS reimburses four codes: CPT 99453 (setup), 99454 (device supply), 99457 (first 20 minutes of interactive communication per calendar month), and 99458 (each additional 20 minutes).",
+      "RPM uses automatically transmitted physiologic data to support management of an acute or chronic condition. Its codes distinguish device setup and collection periods from treatment-management work. In 2026, shorter collection and management pathways are also available. Check each code independently; qualifying management includes required communication rather than only call duration.",
   },
   {
     question: 'What does the CMS interactive communication requirement mean?',
     answer:
-      'CMS requires that clinical staff (or the physician) have at least one interactive communication with the patient or caregiver each calendar month in which CPT 99457 or 99458 is billed. The interaction can be telephonic, secure messaging, or video \u2014 and it must be real-time, two-way engagement that discusses the patient\u2019s physiologic data, symptoms, or care plan. A one-way notification or unresponded message does not satisfy the requirement.',
+      "RPM management requires a real-time, two-way conversation with the patient or caregiver under applicable personnel and service requirements. Video or other data may enhance the conversation. Do not assume every responsive text chat or automated call qualifies. The communication component and total qualifying management time are separate checks.",
   },
   {
     question: 'Do AI-powered wellness calls independently satisfy the interactive communication requirement?',
@@ -47,12 +47,12 @@ const faqs = [
   {
     question: 'What\u2019s the typical monthly revenue from an RPM patient?',
     answer:
-      'Combined, CPT 99457 (\u007e$52 for first 20 minutes) and 99458 (\u007e$41 for each additional 20 minutes) generate roughly $93 per patient per month in the typical case. Adding CPT 99454 for device supply ($47\u2013$56/month) brings the total per-patient monthly revenue to approximately $140\u2013$150 for a full RPM episode. CPT 99453 is a one-time \u007e$19 setup fee. Rates vary by locality and update annually.',
+      "There is no guaranteed monthly revenue per enrolled patient. Payment depends on the actual qualifying services, service year, payer, locality, and setting. Verify current fee-schedule information and include retained staffing, device, software and quality-review costs. Neither call volume nor a vendor projection determines whether an individual claim qualifies.",
   },
   {
     question: 'Which patients are eligible for RPM?',
     answer:
-      'Medicare covers RPM for patients with one or more chronic conditions whose physiologic data informs ongoing care decisions \u2014 hypertension, diabetes, heart failure, COPD, and post-surgical monitoring are the most common. The patient must have a connected device capable of transmitting data to the provider, and the provider must document a clinical rationale for monitoring.',
+      "RPM can be medically necessary for an acute or chronic condition when transmitted physiologic measurements inform management. CMS also requires an established relationship and consent, alongside the applicable device, personnel, supervision and service requirements. A diagnosis or connected device alone does not establish that a particular claim qualifies.",
   },
   {
     question: 'Does HIPAA permit AI-powered RPM wellness calls?',
@@ -62,12 +62,12 @@ const faqs = [
   {
     question: 'What\u2019s the difference between CPT 99457 and 99458?',
     answer:
-      'CPT 99457 covers the first 20 minutes of interactive communication per calendar month; CPT 99458 covers each additional 20 minutes in the same month. Both require the same content \u2014 real-time two-way patient engagement discussing physiologic data, symptoms, or the care plan. 99458 can be billed up to twice per patient per month (covering minutes 21\u201340 and 41\u201360), giving typical combined monthly revenue of roughly $93 per patient.',
+      "99457 covers the first 20 qualifying treatment-management minutes in a calendar month; 99458 is an add-on for additional qualifying 20-minute increments. These totals include qualifying care-management work as well as required communication. Check current reporting limits and other service requirements rather than treating every minute of automated outreach as clinical work.",
   },
   {
     question: 'Can I bill CPT 99457 if my clinical staff only spend 10 minutes this month?',
     answer:
-      'No. CPT 99457 requires a minimum of 20 minutes of interactive communication in a calendar month. If the time threshold is not met, the service is not billable. Providers should track cumulative interactive-communication time per patient per month and bill 99457 only when the 20-minute threshold is reached.',
+      "No. Ten qualifying minutes do not meet the 99457 threshold of at least 20 minutes. For 2026, assess the shorter 99470 pathway independently, including required communication and all other criteria. Do not round up or assume software runtime supplies missing staff time; document the actual qualifying treatment-management work.",
   },
   {
     question: 'Who can perform the interactive communication?',
@@ -82,12 +82,12 @@ const faqs = [
   {
     question: 'Can RPM be billed alongside CCM or TCM for the same patient?',
     answer:
-      'Yes. CMS permits RPM to be billed concurrently with Chronic Care Management (CCM), Transitional Care Management (TCM), and Principal Care Management (PCM) for the same patient, as long as the services are distinct and documented separately. Many providers use TCM during the 30-day post-discharge window, then transition stable patients into ongoing RPM.',
+      "Concurrent RPM and another care-management service may be appropriate when each is medically necessary and independently satisfies current requirements. Do not count the same time or effort twice. Keep the clinical activities distinguishable, check code-pair and payer restrictions, and review the actual services before submitting claims for the same patient.",
   },
   {
     question: 'What documentation does CMS expect for RPM services?',
     answer:
-      'Documentation must include: patient consent to receive RPM (verbal or written, documented in the chart), the device type and data transmitted, cumulative interactive-communication time for the month, dates and content of the interactive communications, and any care plan changes or escalations. Positive Check generates a structured summary of each interactive communication that maps to these documentation elements.',
+      "Document consent, medical necessity, the device and transmitted data, eligible personnel, and actual qualifying treatment-management activities. Record the live patient or caregiver conversation separately, with its content and resulting action. Reconcile monthly totals and exclude duplicated time. An automated transcript can support a handoff but does not establish the complete service.",
   },
 ]
 
@@ -173,7 +173,7 @@ export default function RPMFaqPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-04-19.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

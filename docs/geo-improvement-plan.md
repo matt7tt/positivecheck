@@ -63,6 +63,8 @@ Report mention share and citation share by turn and engine using completed compa
 
 ## Reference checks
 
+The [September 20 billing-guide review](./seo-billing-guide-review-2026-09-20.md) extends the hypothesis map into code requirements, synthetic documentation examples, and workflow objections on four existing pages. It records source scope, remaining inconsistent companion content, and the release/indexing sequence.
+
 The [September SEO implementation log](./seo-gsc-ga-follow-up-2026-09.md) records the GSC/GA baseline, targeted changes, verification, and remaining production checks.
 
 - [CMS CCM services](https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/chroniccaremanagement.pdf) — clinical staff time and broader service requirements, not evidence for staffing benchmarks.

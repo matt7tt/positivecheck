@@ -139,7 +139,7 @@ export default function CPT99453GlossaryPage() {
                   >
                     CPT 99457
                   </Link>{' '}
-                  \u2014 the first 20 minutes of interactive communication per month
+                  \u2014 the first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link
@@ -202,7 +202,7 @@ export default function CPT99453GlossaryPage() {
                   >
                     Medicare Physician Fee Schedule
                   </a>
-                  . Last updated 2026-04-19.
+                  . Last updated 2026-09-20.
                 </p>
               </div>
 

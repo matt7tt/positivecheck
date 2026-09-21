@@ -171,8 +171,7 @@ export default function CPT99445GlossaryPage() {
                   >
                     CPT 99470
                   </Link>
-                  {' '}{'\u2014'} the new 2026 treatment-management code for the first 10
-                  minutes of interactive communication
+                  {' '}{'\u2014'} the new 2026 treatment-management code for the first 10 minutes of RPM treatment management including required interactive communication
                 </li>
                 <li>
                   <Link
@@ -222,7 +221,7 @@ export default function CPT99445GlossaryPage() {
                   >
                     Medicare Physician Fee Schedule
                   </a>
-                  . Last updated 2026-05-17.
+                  . Last updated 2026-09-20.
                 </p>
               </div>
 

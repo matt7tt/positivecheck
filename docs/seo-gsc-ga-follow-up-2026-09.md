@@ -54,7 +54,7 @@ Have the provider-app owner decide whether its public root should redirect to th
 - Local browser inspection confirms the updated guide, deadline table, checklist, FAQs, links, and CTA render.
 - Local tests mock email/CRM transport. They do not prove a production email reached an inbox or an event arrived in GA4. No production test request has been sent; permission for one clearly labelled test was requested.
 - Billing reviewer approval remains pending. Source-based corrections are not a full certification of every billing/rate claim across the site.
-- Changes in this follow-up batch are not deployed yet. After deployment, verify the changed URLs, then use URL inspection for genuinely missing priority pages; request indexing only where warranted. Do not resubmit already indexed pages simply because they have low CTR.
+- This batch deployed September 13 via PR #19, production merge commit `8f541b6afe37f621f51af25b017d79c4084c26a9`. Ten changed live URLs were checked for HTTP 200 and expected content. The September 20 follow-up is recorded separately in [the billing-guide review log](./seo-billing-guide-review-2026-09-20.md); those later changes are not yet deployed. Request indexing only for warranted priority gaps, not already indexed pages with low CTR.
 
 ## Measurement procedure after deployment
 

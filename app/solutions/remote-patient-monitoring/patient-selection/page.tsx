@@ -38,7 +38,7 @@ const faqs = [
   {
     question: 'Does Medicare require a minimum number of chronic conditions for RPM?',
     answer:
-      'No. Unlike Chronic Care Management (which requires two or more chronic conditions), RPM requires only one chronic condition whose physiologic data informs care. The provider must document clinical rationale in the chart, but there\u2019s no count threshold.',
+      'No. Unlike Chronic Care Management (which requires two or more chronic conditions), RPM may address an acute or chronic condition when physiologic data informs care. The provider must document clinical rationale in the chart, but there\u2019s no count threshold.',
   },
   {
     question: 'Can I enroll Medicare Advantage patients in RPM?',
@@ -58,7 +58,7 @@ const faqs = [
   {
     question: 'How do I transition a TCM patient into an RPM program?',
     answer:
-      'TCM covers the 30-day post-discharge window with CPT 99495 or 99496. After the TCM period, patients who would benefit from ongoing monitoring transition into RPM with CPT 99453 (setup), 99454 (device), and 99457/99458 (interactive communication). Document that the TCM episode has concluded and that RPM enrollment is based on the patient\u2019s ongoing chronic condition \u2014 not the recent discharge itself.',
+      "TCM and RPM may overlap when each is medically necessary and independently qualifies. Do not require the TCM period to end before considering RPM. Document the actual monitoring need, separate services, and no duplicated time or effort; a discharge alone does not establish RPM eligibility.",
   },
 ]
 
@@ -76,7 +76,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-04-19',
+  dateModified: '2026-09-20',
 })
 
 export default function RPMPatientSelectionPage() {
@@ -107,7 +107,7 @@ export default function RPMPatientSelectionPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    CMS covers RPM for patients with <strong>one or more chronic conditions</strong> whose physiologic
+                    CMS covers RPM for patients with <strong>an acute or chronic condition</strong> whose physiologic
                     data informs ongoing care {'\u2014'} no minimum number of chronic conditions required (unlike CCM).
                   </li>
                   <li>
@@ -136,7 +136,7 @@ export default function RPMPatientSelectionPage() {
                 <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   Remote Patient Monitoring
                 </Link>{' '}
-                for Medicare patients with one or more chronic conditions {'\u2014'} a meaningfully lower bar than the
+                for Medicare patients with an acute or chronic condition {'\u2014'} a meaningfully lower bar than the
                 two-condition minimum required for Chronic Care Management. This distinction matters: a patient with
                 isolated hypertension, a single-diagnosis diabetic, or a post-surgical patient with a known condition
                 can all be eligible for RPM under the{' '}
@@ -481,8 +481,7 @@ export default function RPMPatientSelectionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    CMS requires only one chronic condition for RPM eligibility (unlike CCM{'\u2019'}s two-condition
-                    minimum).
+                    RPM may support acute or chronic conditions; CCM has a separate multiple-chronic-condition requirement.
                   </li>
                   <li>
                     Highest-value conditions are hypertension, diabetes, heart failure, COPD, and post-surgical
@@ -522,7 +521,7 @@ export default function RPMPatientSelectionPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-04-19.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

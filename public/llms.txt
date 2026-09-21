@@ -15,7 +15,7 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
 - [Chronic Care Management](https://www.positivecheck.com/solutions/chronic-care-management): Daily patient touchpoints supporting CCM documentation and care plan follow-up.
   - [CCM FAQ](https://www.positivecheck.com/solutions/chronic-care-management/faq): CPT 99490/99439/99487/99489 billing, 2-chronic-conditions rule, 20-minute threshold, documentation, HIPAA.
   - [AI-powered CCM vs. in-house care coordinators](https://www.positivecheck.com/solutions/chronic-care-management/vs-in-house-care-coordinators): Category-level comparison with six-dimension tradeoff table.
-  - [CPT 99490 billing guide](https://www.positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, how 99439/99487/99489 stack, common errors.
+  - [CPT 99490 billing guide](https://www.positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, the separate non-complex and complex CCM pathways, common errors.
   - [CCM 2-chronic-conditions requirement](https://www.positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement): CMS eligibility rule, qualifying combinations, documentation, how CCM differs from RPM and PCM.
   - [CCM 20-minute monthly requirement](https://www.positivecheck.com/solutions/chronic-care-management/20-minutes-monthly-requirement): What counts as CCM time, what doesn't, tracking standards, common pitfalls.
 - [Transitional Care Management](https://www.positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
@@ -31,7 +31,7 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
 
 ## Billing & CMS programs
 
-- [CMS Care Program Billing Guide](https://www.positivecheck.com/resources/billing-guide): Comprehensive provider reference for RPM (99453/99454/99457/99458), CCM (99490/99439/99487/99489), TCM (99495/99496), and PCM (99424-99427). Eligibility, combined-program revenue math, stacking rules, and documentation standards.
+- [CMS Care Program Billing Guide](https://www.positivecheck.com/resources/billing-guide): Provider reference for RPM, CCM, TCM, and PCM. Eligibility, code pathways, separate concurrent-service records, payment verification, and documentation standards.
 - [2026 RPM CPT Calculator](https://www.positivecheck.com/resources/rpm-cpt-calculator): Interactive estimator for monthly Medicare RPM reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470 based on patient mix.
 
 ## Glossary
@@ -44,8 +44,8 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
   - [Care coordination](https://www.positivecheck.com/resources/glossary/care-coordination): Deliberate organization of patient care activities across participants.
   - [CPT 99453](https://www.positivecheck.com/resources/glossary/cpt-99453): Medicare RPM one-time setup and patient education.
   - [CPT 99454](https://www.positivecheck.com/resources/glossary/cpt-99454): Medicare RPM device supply with daily recordings, each 30 days.
-  - [CPT 99457](https://www.positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM interactive communication per month.
-  - [CPT 99458](https://www.positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM interactive communication per month.
+  - [CPT 99457](https://www.positivecheck.com/resources/glossary/cpt-99457): First 20 minutes of RPM treatment management including required interactive communication per month.
+  - [CPT 99458](https://www.positivecheck.com/resources/glossary/cpt-99458): Each additional 20 minutes of RPM treatment management including required interactive communication per month.
   - [CPT 99445](https://www.positivecheck.com/resources/glossary/cpt-99445): New for 2026 — Medicare RPM device supply when data is transmitted on 2 to 15 days within a 30-day period.
   - [CPT 99470](https://www.positivecheck.com/resources/glossary/cpt-99470): New for 2026 — first 10 minutes of RPM treatment management per calendar month.
   - [Remote Patient Monitoring (RPM)](https://www.positivecheck.com/resources/glossary/remote-patient-monitoring): Medicare-reimbursed care model combining device data transmission with monthly interactive communication.

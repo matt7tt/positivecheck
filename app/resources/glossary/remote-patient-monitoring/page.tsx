@@ -75,11 +75,11 @@ export default function RemotePatientMonitoringGlossaryPage() {
                 staff review physiologic data (blood pressure, glucose, weight, SpO2, ECG, etc.)
                 transmitted from a patient\u2019s connected medical device and conduct interactive
                 communication with the patient at least monthly. RPM covers ongoing monthly care
-                for patients with chronic conditions where physiologic data informs clinical
+                for patients with acute or chronic conditions where physiologic data informs clinical
                 decisions, enabling proactive intervention before conditions worsen.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Four billing codes support the program:{' '}
+                Core billing codes include:{' '}
                 <Link href="/resources/glossary/cpt-99453" className="text-purple-700 underline hover:text-purple-900">
                   CPT 99453
                 </Link>{' '}
@@ -91,12 +91,13 @@ export default function RemotePatientMonitoringGlossaryPage() {
                 <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">
                   CPT 99457
                 </Link>{' '}
-                covers the first 20 minutes of interactive communication per month; and{' '}
+                covers the first 20 minutes of RPM treatment management including required interactive communication per month; and{' '}
                 <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">
                   CPT 99458
                 </Link>{' '}
-                covers each additional 20 minutes per month. Combined monthly revenue per patient
-                can reach \u007e$140\u2013$150 for a full RPM episode.
+                covers additional qualifying management time. In 2026, 99445 and 99470 also provide
+                shorter collection-day and management-time pathways, subject to their own requirements.
+                Verify payment for the actual service year, payer, locality, and setting.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Regulatory basis</h2>
@@ -110,8 +111,9 @@ export default function RemotePatientMonitoringGlossaryPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . To qualify, a patient must have a chronic condition and use an FDA-cleared
-                connected medical device capable of automatic data transmission to clinical staff.
+                . RPM may address an acute or chronic condition using a device that meets the applicable
+                medical-device definition and automatically collects and transmits physiologic data.
+                Confirm an established relationship, consent, medical necessity, and eligible personnel.
                 The device must collect and transmit physiologic data on at least 16 days per
                 30-day period for the supply code (CPT 99454) to apply.
               </p>
@@ -130,7 +132,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
                   chronic care under the Medicare Physician Fee Schedule
                 </li>
                 <li>
-                  Patients with one or more chronic conditions (no minimum count, unlike CCM)
+                  Patients with an acute or chronic condition for which monitoring is medically necessary
                   who have a connected monitoring device
                 </li>
                 <li>
@@ -162,7 +164,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
                   <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99457
                   </Link>{' '}
-                  \u2014 first 20 minutes of interactive communication per month
+                  \u2014 first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">
@@ -213,7 +215,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
                   >
                     Medicare Physician Fee Schedule
                   </a>
-                  . Last updated 2026-04-19.
+                  . Last updated 2026-09-20.
                 </p>
               </div>
 
