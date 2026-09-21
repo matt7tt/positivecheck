@@ -3,6 +3,12 @@ import CCMPage from '@/app/solutions/chronic-care-management/page'
 import ComparisonPage from '@/app/solutions/chronic-care-management/vs-in-house-care-coordinators/page'
 import ImplementationPage from '@/app/resources/implementation-guide/page'
 import ContactTimingPage from '@/app/solutions/post-discharge-follow-up/post-discharge-contact-timing/page'
+import CCMCodePage from '@/app/solutions/chronic-care-management/cpt-99490-billing-guide/page'
+import RPMCodePage from '@/app/solutions/remote-patient-monitoring/cpt-99457-billing-guide/page'
+import TCMCodePage from '@/app/solutions/post-discharge-follow-up/cpt-99495-billing-guide/page'
+import RPMCCMPage from '@/app/resources/compare/rpm-vs-ccm-medicare-billing/page'
+import RPMCommunicationPage from '@/app/solutions/remote-patient-monitoring/interactive-communication-requirement/page'
+import BillingHubPage from '@/app/resources/billing-guide/page'
 import { CaseStudyAnchor } from '@/components/case-study-anchor'
 import { ROICalculator } from '@/components/roi-calculator'
 import { caseStudyTitle, caseStudyLimitations } from '@/lib/case-study-data'
@@ -20,6 +26,9 @@ describe('GEO buyer answers', () => {
   it.each([
     ['CCM', CCMPage], ['comparison', ComparisonPage], ['implementation', ImplementationPage],
     ['TCM contact timing', ContactTimingPage],
+    ['99490 guide', CCMCodePage], ['99457 guide', RPMCodePage],
+    ['99495 guide', TCMCodePage], ['RPM versus CCM', RPMCCMPage],
+    ['RPM communication', RPMCommunicationPage], ['billing hub', BillingHubPage],
   ])('%s renders six visible answers matching FAQ structured data', (_name, Page) => {
     const { container } = render(<Page />)
     const schemas = Array.from(container.querySelectorAll('script[type="application/ld+json"]'))

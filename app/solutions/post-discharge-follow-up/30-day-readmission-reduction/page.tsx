@@ -79,7 +79,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-09-03',
+  dateModified: '2026-09-20',
 })
 
 export default function ReadmissionReductionPage() {
@@ -457,23 +457,7 @@ export default function ReadmissionReductionPage() {
                 </Link>
                 .
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Positive Check automates the 2-business-day contact at scale. Rather than relying on
-                care coordinators to manually call every patient within the tight business-day
-                window, Positive Check{'\u2019'}s AI-powered calls ensure every discharge receives a
-                structured contact attempt on time {'\u2014'} covering medications, symptoms, and
-                follow-up appointment status, with real-time escalation to clinical staff when
-                concerns surface. This eliminates the staffing bottleneck that causes most missed
-                TCM opportunities. Providers who have deployed this at volume describe the
-                operational shift in our case study on{' '}
-                <Link
-                  href="/case-studies/scaling-patient-engagement"
-                  className="text-purple-700 underline hover:text-purple-900"
-                >
-                  scaling patient engagement
-                </Link>
-                .
-              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">Positive Check can support timely outreach attempts and clinical-team handoffs after discharge. An automated attempt is not a completed qualifying TCM contact. The practice must assign permitted clinical personnel, document contact or the applicable unsuccessful-attempt exception, and verify the visit and other service requirements. Software does not guarantee contact, clinical outcomes, or payment.</p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Measuring readmission reduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -567,7 +551,7 @@ export default function ReadmissionReductionPage() {
                 >
                   CMS MLN TCM Booklet
                 </a>
-                . Last updated 2026-04-19.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

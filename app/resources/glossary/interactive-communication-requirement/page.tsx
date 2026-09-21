@@ -78,11 +78,10 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
                 caregiver discussing physiologic data, symptoms, or the care plan.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The phrase appears in the CMS Medicare Physician Fee Schedule for CPT 99457/99458
-                (RPM) but describes a general interaction standard increasingly applied across
-                Medicare remote-care codes. The definition is intentionally technology-agnostic{' '}
-                {'\u2014'} telephone, live video, live secure messaging all qualify if the exchange
-                is real-time and clinically substantive.
+                For RPM, CMS describes a real-time, synchronous two-way conversation with the patient
+                or caregiver, which may be enhanced with video or other data. Do not assume every
+                responsive text chat or automated interaction qualifies. Check the actual service,
+                personnel, modality, and current CPT, CMS, MAC, and payer requirements.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Regulatory basis</h2>
@@ -96,12 +95,10 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . The requirement distinguishes asynchronous data review {'\u2014'} which is not
-                billable under CPT 99457/99458 but is billable separately under CPT 99091 {'\u2014'}{' '}
-                from synchronous two-way exchange that discusses the patient{'\u2019'}s data,
-                symptoms, or care plan. This distinction is central to correct billing under the RPM
-                code set and shapes how clinical workflows must be structured to support compliant
-                documentation.
+                . Qualifying care-management work, including review and management of physiologic data,
+                can contribute to total 99457/99458 treatment-management time alongside the required
+                conversation. Data review alone does not satisfy the live communication component.
+                Document the two activity types separately and never count the same time twice.
               </p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">What counts as interactive communication</h2>
@@ -113,10 +110,10 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
                   Live video visit (including telehealth platforms)
                 </li>
                 <li>
-                  Secure messaging with real-time two-way exchange
+                  Other modalities: verify current requirements rather than assuming a text exchange qualifies
                 </li>
                 <li>
-                  AI-powered calls with structured clinical content and human escalation
+                  AI outreach supports staff follow-up; it does not independently establish qualifying clinical communication
                 </li>
                 <li>
                   NOT counted alone: voicemail without response, one-way alerts/reminders,
@@ -136,13 +133,13 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
                   <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99457
                   </Link>{' '}
-                  {'\u2014'} the first 20 minutes of interactive communication per month
+                  {'\u2014'} the first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99458
                   </Link>{' '}
-                  {'\u2014'} each additional 20 minutes of interactive communication
+                  {'\u2014'} each additional 20 minutes of RPM treatment management including required interactive communication
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
@@ -190,16 +187,16 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm text-gray-500">
-                Reviewed against current CMS guidance.{' '}
+                Editorial source check: September 20, 2026; not independent coding sign-off.{' '}
                 <a
-                  href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
+                  href="https://www.cms.gov/newsroom/fact-sheets/final-policy-payment-and-quality-provisions-changes-medicare-physician-fee-schedule-calendar-year-1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-700"
                 >
-                  Medicare Physician Fee Schedule
+                  CMS clarification of RPM management time and required communication
                 </a>
-                . Last updated 2026-04-21.
+                . Confirm current code-specific requirements before billing.
               </p>
             </div>
           </section>

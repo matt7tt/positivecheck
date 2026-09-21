@@ -33,12 +33,12 @@ const rpmPillarFaqs = [
   {
     question: 'What is Remote Patient Monitoring (RPM)?',
     answer:
-      "Remote Patient Monitoring is a Medicare-reimbursed care program where clinical staff review physiologic data (blood pressure, glucose, weight, SpO2, etc.) transmitted from a patient\u2019s connected device and conduct interactive communication with the patient at least monthly. CMS reimburses six codes as of 2026: CPT 99453 (setup), 99454 (device supply, 16\u201330 days), 99445 (new for 2026: device supply, 2\u201315 days), 99457 (first 20 minutes of interactive communication), 99470 (new for 2026: first 10 minutes of interactive communication), and 99458 (each additional 20 minutes).",
+      "RPM uses automatically transmitted physiologic data to support management of an acute or chronic condition. Its codes distinguish device setup and collection periods from treatment-management work. In 2026, shorter collection and management pathways are also available. Check each code independently; qualifying management includes required communication rather than only call duration.",
   },
   {
     question: 'What does the CMS interactive communication requirement mean?',
     answer:
-      'CMS requires that clinical staff (or the physician) have at least one interactive communication with the patient or caregiver each calendar month in which CPT 99457 or 99458 is billed. The interaction can be telephonic, secure messaging, or video \u2014 and it must be real-time, two-way engagement that discusses the patient\u2019s physiologic data, symptoms, or care plan. A one-way notification or unresponded message does not satisfy the requirement.',
+      "RPM management requires a real-time, two-way conversation with the patient or caregiver under applicable personnel and service requirements. Video or other data may enhance the conversation. Do not assume every responsive text chat or automated call qualifies. The communication component and total qualifying management time are separate checks.",
   },
   {
     question: 'Do AI-powered wellness calls independently satisfy the interactive communication requirement?',
@@ -48,12 +48,12 @@ const rpmPillarFaqs = [
   {
     question: "What\u2019s the typical monthly revenue from an RPM patient?",
     answer:
-      'Combined, CPT 99457 (\u007e$52 for first 20 minutes) and 99458 (\u007e$41 for each additional 20 minutes) generate roughly $93 per patient per month in the typical case. Adding CPT 99454 for device supply ($47\u2013$56/month) brings the total per-patient monthly revenue to approximately $140\u2013$150 for a full RPM episode. CPT 99453 is a one-time \u007e$19 setup fee. Rates vary by locality and update annually.',
+      "There is no guaranteed monthly revenue per enrolled patient. Payment depends on the actual qualifying services, service year, payer, locality, and setting. Verify current fee-schedule information and include retained staffing, device, software and quality-review costs. Neither call volume nor a vendor projection determines whether an individual claim qualifies.",
   },
   {
     question: 'Which patients are eligible for RPM?',
     answer:
-      'Medicare covers RPM for patients with one or more chronic conditions whose physiologic data informs ongoing care decisions \u2014 hypertension, diabetes, heart failure, COPD, and post-surgical monitoring are the most common. The patient must have a connected device capable of transmitting data to the provider, and the provider must document a clinical rationale for monitoring.',
+      "RPM can be medically necessary for an acute or chronic condition when transmitted physiologic measurements inform management. CMS also requires an established relationship and consent, alongside the applicable device, personnel, supervision and service requirements. A diagnosis or connected device alone does not establish that a particular claim qualifies.",
   },
   {
     question: 'Does HIPAA permit AI-powered RPM wellness calls?',
@@ -451,7 +451,7 @@ export default function RemotePatientMonitoringPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-04-19.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

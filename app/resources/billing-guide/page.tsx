@@ -14,12 +14,12 @@ import { ContentConversionCta } from '@/components/content-conversion-cta'
 export const metadata: Metadata = {
   title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
   description:
-    'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458 plus new 2026 codes 99445 and 99470), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, rates, stacking rules, and documentation standards.',
+    'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458 plus new 2026 codes 99445 and 99470), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, code pathways, payment verification, and documentation standards.',
   alternates: { canonical: '/resources/billing-guide' },
   openGraph: {
     title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM',
     description:
-      'Comprehensive Medicare care management billing reference updated for the 2026 CMS Final Rule. Programs, CPT codes (including new 99445 and 99470), eligibility, combined revenue math, and documentation.',
+      'Comprehensive Medicare care management billing reference updated for the 2026 CMS Final Rule. Programs, CPT codes (including new 99445 and 99470), eligibility, concurrent-service checks, and documentation.',
     url: '/resources/billing-guide',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -49,30 +49,16 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-21',
-  dateModified: '2026-09-03',
+  dateModified: '2026-09-20',
 })
 
 const faqs = [
-  {
-    question: 'Can the same patient be billed for multiple CMS care programs in the same month?',
-    answer:
-      'Yes, in specific combinations. RPM and CCM can be billed concurrently when services are distinct and documented separately. TCM is billed for the 30-day post-discharge window and typically transitions into CCM or RPM afterward. PCM and CCM are generally mutually exclusive in a given month because PCM focuses on one condition while CCM manages multiple. The key rule: the same minute of clinical staff time cannot be counted toward two programs.',
-  },
-  {
-    question: "What\u2019s the biggest eligibility difference between RPM and CCM?",
-    answer:
-      "RPM requires just one chronic condition whose physiologic data informs care; CCM requires two or more chronic conditions expected to last at least 12 months. Many patients qualify for both and are enrolled in both concurrently. PCM is the third alternative \u2014 it\u2019s designed for a single high-risk chronic condition requiring intensive focus (CPT 99424\u201399427).",
-  },
-  {
-    question: 'Do I need patient consent to bill these care management codes?',
-    answer:
-      'Yes for CCM and PCM (verbal or written, documented in the chart before billing begins). RPM does not have an explicit consent requirement in CMS rules, but documented clinical rationale for monitoring is required, and best practice is to obtain and document patient consent anyway. TCM consent is effectively implicit in the discharge workflow but the patient must agree to the follow-up contact.',
-  },
-  {
-    question: 'What documentation does CMS expect at audit?',
-    answer:
-      'Common elements across all four programs: patient consent (where required), comprehensive care plan accessible to the care team, cumulative clinical staff time for the month, descriptions of the care activities performed, staff identifier for each activity, and any care plan updates or escalations. Program-specific elements layer on top: RPM adds device transmission logs and interactive communication content; TCM adds the 2-business-day contact and face-to-face visit dates.',
-  },
+  { question: 'Can RPM and CCM be billed in the same month?', answer: 'Yes, when each service is medically necessary and independently satisfies its requirements. Record the actual activities and time assigned to each program, and never count the same time or effort twice. Concurrent enrollment alone is insufficient; check current payer and reporting restrictions before submitting either claim.' },
+  { question: 'What is the main eligibility difference between RPM and CCM?', answer: 'RPM can support an acute or chronic condition when physiologic monitoring informs care. CCM requires two or more qualifying chronic conditions expected to last at least 12 months or until death and creating significant risk. Both programs have additional requirements; diagnosis labels alone do not establish eligibility or claim approval.' },
+  { question: 'Does RPM require patient consent?', answer: 'Yes. CMS requires consent for RPM and allows it to be obtained when the service is furnished. Document consent alongside the established relationship, medical necessity, and other service requirements. CCM has its own consent disclosures, including potential cost sharing and the one-practitioner rule; check each program separately.' },
+  { question: 'Does 99457 require a 20-minute live conversation?', answer: 'No. The 20-minute threshold is total qualifying RPM treatment-management time, including required interactive communication. Qualifying care-management work may contribute alongside the live conversation. Distinguish staff work from automated activity, retain activity-level records, and verify all other requirements; a call transcript or timer alone does not establish claim eligibility.' },
+  { question: 'Can complex CCM be added to non-complex CCM?', answer: 'No. Complex CCM is a separate pathway, not an add-on to 99490. Do not report non-complex and complex CCM for the same patient in the same calendar month. Assess the time, decision-making, and care-plan requirements of the appropriate pathway; additional non-complex clinical staff time uses 99439 when its conditions are met.' },
+  { question: 'How should a practice estimate reimbursement before adopting software?', answer: 'Use current payer-specific payment information for the service year, locality, and setting, and count only independently qualifying services. Include retained staff, devices, software, training, and quality-review costs. A national average or vendor revenue projection is not a claim determination; test the workflow and documentation before relying on an estimate.' },
 ]
 
 const faqSchema = buildFAQSchema(faqs)
@@ -117,20 +103,9 @@ export default function BillingGuideIndexPage() {
                     <strong>CPT code sets:</strong> RPM 99453/99454/99457/99458 (plus new 2026 codes 99445 and 99470); CCM 99490/99439/99487/99489; TCM
                     99495/99496; PCM 99424{'\u2013'}99427.
                   </li>
-                  <li>
-                    <strong>Per-patient monthly revenue ranges</strong> from {'\u007e'}$66 (non-complex CCM only) to{' '}
-                    {'\u007e'}$250+ (full RPM + CCM stack) depending on program mix and clinical complexity.
-                  </li>
-                  <li>
-                    <strong>Rules to remember:</strong> Only one provider can bill CCM/PCM per patient per month.
-                    The same minute of clinical staff time cannot count toward two programs. RPM and CCM can stack;
-                    PCM and CCM are mutually exclusive.
-                  </li>
-                  <li>
-                    <strong>Rates update annually.</strong> The figures in this guide are 2026 Medicare national
-                    averages; verify current rates in the Medicare Physician Fee Schedule before finalizing program
-                    economics.
-                  </li>
+                  <li><strong>Verify each service independently.</strong> Time, clinical work, consent and other program requirements must be met; software activity does not establish billable care.</li>
+                  <li><strong>Rules to remember:</strong> Do not double-count time or effort. Complex CCM is a separate pathway from non-complex CCM. Check code-specific restrictions and practitioner responsibilities before concurrent billing.</li>
+                  <li><strong>Verify payment locally.</strong> Use the applicable service year, payer, locality and setting. This reference does not promise a national reimbursement amount.</li>
                 </ul>
               </div>
 
@@ -158,9 +133,9 @@ export default function BillingGuideIndexPage() {
                   <p className="text-sm text-purple-700 uppercase tracking-wider mb-2 font-medium">RPM</p>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Remote Patient Monitoring</h3>
                   <ul className="text-sm text-gray-700 space-y-2">
-                    <li><span className="font-medium">Criterion:</span> 1+ chronic condition with actionable physiologic data</li>
-                    <li><span className="font-medium">Time mechanic:</span> {'\u2265'}16 of 30 days device transmission + interactive communication</li>
-                    <li><span className="font-medium">Monthly revenue:</span> {'\u007e'}$140{'\u2013'}150 per engaged patient</li>
+                    <li><span className="font-medium">Criterion:</span> Acute or chronic condition with actionable physiologic data</li>
+                    <li><span className="font-medium">Time mechanic:</span> Device collection periods and qualifying management time have separate rules</li>
+                    <li><span className="font-medium">Payment:</span> Verify current payer, locality, setting, and service requirements</li>
                   </ul>
                   <Link
                     href="/solutions/remote-patient-monitoring"
@@ -176,7 +151,7 @@ export default function BillingGuideIndexPage() {
                   <ul className="text-sm text-gray-700 space-y-2">
                     <li><span className="font-medium">Criterion:</span> 2+ chronic conditions expected to last 12+ months</li>
                     <li><span className="font-medium">Time mechanic:</span> 20+ min (non-complex) or 60+ min (complex) of clinical staff time per month</li>
-                    <li><span className="font-medium">Monthly revenue:</span> {'\u007e'}$66{'\u2013'}162 non-complex, {'\u007e'}$144{'\u2013'}216+ complex</li>
+                    <li><span className="font-medium">Payment:</span> Verify current payer, locality, setting, and service requirements</li>
                   </ul>
                   <Link
                     href="/solutions/chronic-care-management"
@@ -192,7 +167,7 @@ export default function BillingGuideIndexPage() {
                   <ul className="text-sm text-gray-700 space-y-2">
                     <li><span className="font-medium">Criterion:</span> Recently discharged to community setting (home, AL, etc.)</li>
                     <li><span className="font-medium">Time mechanic:</span> 2-business-day contact + 7 or 14 day face-to-face visit</li>
-                    <li><span className="font-medium">Monthly revenue:</span> One-time {'\u007e'}$178 (99495) or higher (99496) per discharge episode</li>
+                    <li><span className="font-medium">Payment:</span> Verify current payer, locality, setting, and service requirements</li>
                   </ul>
                   <Link
                     href="/solutions/post-discharge-follow-up"
@@ -208,18 +183,16 @@ export default function BillingGuideIndexPage() {
                   Principal Care Management (PCM)
                 </Link>
                 {'\u2014'}covers patients with a single high-risk chronic condition requiring intensive, focused
-                management. PCM (CPT 99424{'\u2013'}99427) is generally mutually exclusive with CCM in a given
-                month and is the appropriate framework when the clinical focus is one condition rather than
-                multi-condition coordination.
+                management. Check PCM and CCM code-pair restrictions, practitioner roles and service requirements independently; a one-condition focus alone does not resolve concurrent-billing rules.
               </p>
 
               {/* CPT code reference table */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">CPT code reference</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 The table below lists the CPT codes for all four CMS care management programs, their program
-                assignment, a one-line description, and 2026 Medicare national average rates. Use this as a
-                quick-reference for billing setup; always confirm current rates against the Medicare Physician Fee
-                Schedule before locking in program economics.
+                assignment and a short summary. These are not complete code descriptors or claim approvals.
+                Check current coding instructions, reporting limits, payer rules and the Medicare Physician Fee
+                Schedule before billing or estimating payment.
               </p>
               <div className="overflow-x-auto rounded-lg border border-gray-200 mb-4">
                 <table className="w-full text-sm">
@@ -228,43 +201,41 @@ export default function BillingGuideIndexPage() {
                       <th className="text-left py-3 px-4 font-semibold text-gray-700">Code</th>
                       <th className="text-left py-3 px-4 font-semibold text-gray-700">Program</th>
                       <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
-                      <th className="text-right py-3 px-4 font-semibold text-gray-700">2026 Medicare avg (approx)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      { code: '99453', program: 'RPM', desc: 'One-time setup and patient education', rate: '\u007e$19' },
-                      { code: '99454', program: 'RPM', desc: 'Device supply + transmission, each 30 days (\u226516/30 days)', rate: '\u007e$47\u2013$56' },
-                      { code: '99445', program: 'RPM (new 2026)', desc: 'Device supply + transmission, 2\u201315 days within a 30-day period (alternative to 99454)', rate: '\u007e$47' },
-                      { code: '99457', program: 'RPM', desc: 'First 20 min interactive communication per month', rate: '\u007e$52' },
-                      { code: '99458', program: 'RPM', desc: 'Each additional 20 min interactive communication (up to 2x/month)', rate: '\u007e$41' },
-                      { code: '99470', program: 'RPM (new 2026)', desc: 'First 10 min interactive communication per month (alternative to 99457)', rate: '\u007e$26' },
-                      { code: '99091', program: 'RPM (legacy)', desc: 'Clinician collection/interpretation of physiologic data, per 30 days', rate: '\u007e$54' },
-                      { code: '99490', program: 'CCM', desc: 'First 20 min non-complex clinical staff time per month', rate: '\u007e$66' },
-                      { code: '99439', program: 'CCM', desc: 'Each additional 20 min non-complex (up to 2x/month)', rate: '\u007e$48' },
-                      { code: '99487', program: 'CCM', desc: 'First 60 min complex CCM per month', rate: '\u007e$144' },
-                      { code: '99489', program: 'CCM', desc: 'Each additional 30 min complex CCM', rate: '\u007e$72' },
-                      { code: '99491', program: 'CCM', desc: '30 min/month furnished personally by a physician or QHP (alternative to 99490)', rate: '\u007e$83' },
-                      { code: '99495', program: 'TCM', desc: 'Moderate complexity; face-to-face visit within 14 days of discharge', rate: '\u007e$178' },
-                      { code: '99496', program: 'TCM', desc: 'High complexity; face-to-face visit within 7 days of discharge', rate: '\u007e$237' },
-                      { code: '99424', program: 'PCM', desc: 'Physician, first 30 min of care management for single high-risk condition', rate: '(varies)' },
-                      { code: '99425', program: 'PCM', desc: 'Physician, each additional 30 min', rate: '(varies)' },
-                      { code: '99426', program: 'PCM', desc: 'Clinical staff, first 30 min', rate: '(varies)' },
-                      { code: '99427', program: 'PCM', desc: 'Clinical staff, each additional 30 min', rate: '(varies)' },
+                      { code: '99453', program: 'RPM', desc: 'One-time setup and patient education' },
+                      { code: '99454', program: 'RPM', desc: 'Device supply + transmission, each 30 days (\u226516/30 days)' },
+                      { code: '99445', program: 'RPM (new 2026)', desc: 'Device supply + transmission, 2\u201315 days within a 30-day period (alternative to 99454)' },
+                      { code: '99457', program: 'RPM', desc: 'First 20 min RPM treatment management including required interactive communication per month' },
+                      { code: '99458', program: 'RPM', desc: 'Each additional 20 min RPM treatment management including required interactive communication (up to 2x/month)' },
+                      { code: '99470', program: 'RPM (new 2026)', desc: 'First 10 min RPM treatment management including required interactive communication per month (alternative to 99457)' },
+                      { code: '99091', program: 'RPM (legacy)', desc: 'Clinician collection/interpretation of physiologic data, per 30 days' },
+                      { code: '99490', program: 'CCM', desc: 'First 20 min non-complex clinical staff time per month' },
+                      { code: '99439', program: 'CCM', desc: 'Each additional 20 min non-complex (up to 2x/month)' },
+                      { code: '99487', program: 'CCM', desc: 'First 60 min complex CCM; moderate/high MDM and required care-plan work' },
+                      { code: '99489', program: 'CCM', desc: 'Each additional 30 min complex CCM' },
+                      { code: '99491', program: 'CCM', desc: '30 min/month furnished personally by a physician or QHP (alternative to 99490)' },
+                      { code: '99495', program: 'TCM', desc: 'At least moderate complexity; face-to-face visit within 14 calendar days of discharge' },
+                      { code: '99496', program: 'TCM', desc: 'High complexity; face-to-face visit within 7 days of discharge' },
+                      { code: '99424', program: 'PCM', desc: 'Physician, first 30 min of care management for single high-risk condition' },
+                      { code: '99425', program: 'PCM', desc: 'Physician, each additional 30 min' },
+                      { code: '99426', program: 'PCM', desc: 'Clinical staff, first 30 min' },
+                      { code: '99427', program: 'PCM', desc: 'Clinical staff, each additional 30 min' },
                     ].map((row) => (
                       <tr key={row.code} className="border-b last:border-b-0">
                         <td className="py-3 px-4 font-medium text-purple-700 whitespace-nowrap">{row.code}</td>
                         <td className="py-3 px-4 text-gray-600 whitespace-nowrap">{row.program}</td>
                         <td className="py-3 px-4 text-gray-700">{row.desc}</td>
-                        <td className="py-3 px-4 text-right text-gray-900 whitespace-nowrap">{row.rate}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <p className="text-sm text-gray-500 mb-12">
-                Rates are illustrative 2026 Medicare national averages. Actual reimbursement varies by geographic
-                locality and payer mix. Verify current rates in the{' '}
+                Payment depends on the service year, setting, locality, payer, and services actually furnished.
+                Verify applicable payment information in the{' '}
                 <a
                   href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
                   target="_blank"
@@ -287,7 +258,7 @@ export default function BillingGuideIndexPage() {
               </p>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 leading-relaxed mb-6">
                 <li>
-                  <strong>Single chronic condition with actionable device data</strong> {'\u2192'}{' '}
+                  <strong>Acute or chronic condition with actionable device data</strong> {'\u2192'}{' '}
                   <Link href="/solutions/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">RPM</Link>.
                   The condition must generate physiologic data (blood pressure, glucose, weight, SpO2, etc.) that
                   meaningfully informs care decisions.
@@ -307,103 +278,34 @@ export default function BillingGuideIndexPage() {
                 <li>
                   <strong>Single high-risk chronic condition requiring intensive focus</strong> {'\u2192'}{' '}
                   <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">PCM</Link>{' '}
-                  (CPT 99424{'\u2013'}99427), not fitting CCM{'\u2019'}s multi-condition threshold. PCM and CCM are
-                  generally mutually exclusive in a given month.
+                  (CPT 99424{'\u2013'}99427). Verify the qualifying condition and all service and concurrent-billing requirements.
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-12">
                 Many patients qualify for more than one program. Concurrent enrollment is permitted when services
-                are distinct and documented separately. The combined-program revenue math in the next section
-                illustrates the most common stacking scenarios.
+                are distinct and documented separately. The next section explains how to keep concurrent-service records separate.
               </p>
 
-              {/* Combined program revenue math */}
-              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
-                Combined-program revenue math
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                RPM + CCM is the highest-value combination for patients with chronic conditions. When a patient
-                qualifies for both{'\u2014'}one or more conditions with device data, plus two or more conditions
-                total{'\u2014'}both programs can be billed concurrently as long as the services are documented
-                separately and no minute of clinical staff time is double-counted. The scenarios below illustrate
-                representative monthly revenue using 2026 Medicare national averages.
-              </p>
-
-              <div className="space-y-8 mb-12">
-                {/* Scenario 1 */}
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    Scenario 1: Hypertension + Diabetes, RPM + non-complex CCM
-                  </h3>
-                  <ul className="text-sm text-gray-700 space-y-1 mb-3">
-                    <li>99453 (one-time setup) {'\u007e'}$19</li>
-                    <li>99454 (device supply + transmission) {'\u007e'}$56/month</li>
-                    <li>99457 (first 20 min interactive communication) {'\u007e'}$52/month</li>
-                    <li>99458 {'\u00d7'} 2 (60 min total interactive communication) {'\u007e'}$82/month combined</li>
-                    <li>99490 (first 20 min non-complex CCM) {'\u007e'}$66/month</li>
-                    <li>99439 {'\u00d7'} 2 (full 60 min CCM) {'\u007e'}$96/month combined</li>
-                  </ul>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Monthly total: {'\u007e'}$352 per patient (after the one-time setup month)
-                  </p>
-                </div>
-
-                {/* Scenario 2 */}
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    Scenario 2: Post-discharge CHF patient, TCM followed by CCM
-                  </h3>
-                  <ul className="text-sm text-gray-700 space-y-1 mb-3">
-                    <li>Month of discharge: 99495 (TCM, moderate complexity) {'\u007e'}$178 one-time</li>
-                    <li>Month 2 onward: transition to RPM + CCM as appropriate</li>
-                    <li>Ongoing combined: similar to Scenario 1 ({'\u007e'}$250{'\u2013'}$352/month)</li>
-                  </ul>
-                  <p className="text-sm font-semibold text-gray-900">
-                    TCM bridges the high-risk discharge window; ongoing programs capture longitudinal revenue.
-                  </p>
-                </div>
-
-                {/* Scenario 3 */}
-                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                    Scenario 3: Complex oncology patient, complex CCM only
-                  </h3>
-                  <ul className="text-sm text-gray-700 space-y-1 mb-3">
-                    <li>99487 (first 60 min complex CCM) {'\u007e'}$144/month</li>
-                    <li>99489 (each additional 30 min complex CCM) {'\u007e'}$72 additional</li>
-                  </ul>
-                  <p className="text-sm font-semibold text-gray-900">
-                    Monthly total: {'\u007e'}$216+ per patient
-                  </p>
-                </div>
-              </div>
-              <p className="text-sm text-gray-500 mb-12">
-                These are per-patient illustrative figures using 2026 Medicare national averages. Actual
-                reimbursement varies by locality and payer mix.
-              </p>
+              {/* Concurrent-program review */}
+              <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Concurrent programs: document services before estimating payment</h2>
+              <p className="text-gray-700 leading-relaxed mb-6">RPM and CCM may complement each other when clinically appropriate and independently qualifying. Keep activity-level records with staff identity, clinical purpose, duration, program assignment and resulting action. Do not infer eligibility from enrollment or combine separate program minutes into one threshold.</p>
+              <p className="text-gray-700 leading-relaxed mb-6">Synthetic example: 15 qualifying RPM minutes plus 15 distinct CCM minutes do not meet either the 99457 or 99490 threshold. Assess any shorter RPM pathway independently. For TCM and CCM in the same month, verify both service requirements and exclude duplicated time or effort.</p>
+              <p className="text-gray-700 leading-relaxed mb-12">Build estimates using current payer and locality information, including retained staffing, device, software and quality-review costs. No per-patient revenue is guaranteed.</p>
 
               {/* Common pitfalls */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
                 Common pitfalls and double-billing rules
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMS audits of care management programs have intensified as enrollment grows. The following pitfalls
-                account for the majority of denied or recouped claims across all four programs.
+                Review these potential errors before releasing claims. This is an operational checklist, not a claim approval or an estimate of denial frequency.
               </p>
               <ul className="list-disc pl-6 space-y-3 text-gray-700 leading-relaxed mb-12">
                 <li>
-                  The same minute of clinical staff time cannot count toward two programs. A 15-minute interaction
-                  covering both RPM review and CCM coordination must be allocated to one program.
+                  The same minute of clinical staff time cannot count toward two programs. For an interaction
+                  involving both programs, document distinct qualifying activities and allocate actual time without duplication.
                 </li>
-                <li>
-                  CCM and PCM are generally mutually exclusive in a given month. CCM applies to multi-condition
-                  patients; PCM applies to single-high-risk-condition focus. Billing both for the same patient in
-                  the same month is not permitted.
-                </li>
-                <li>
-                  Only ONE provider can bill CCM or PCM for a given patient per month, even when multiple practices
-                  are involved in that patient{'\u2019'}s care.
-                </li>
+                <li>Check current code-pair restrictions, practitioner roles, and distinct-service requirements before combining PCM with another care-management program. Diagnosis count alone does not determine whether concurrent claims are permissible.</li>
+                <li>Only one practitioner may bill CCM for a patient in a calendar month. Other programs have their own practitioner and reporting rules; do not apply this rule indiscriminately across all codes.</li>
                 <li>
                   E/M visit time already billed under the E/M code cannot also count toward CCM or PCM time
                   thresholds. CCM and PCM time is specifically non-face-to-face care coordination.
@@ -416,11 +318,7 @@ export default function BillingGuideIndexPage() {
                   TCM is one-time per discharge episode. Billing for the same patient within 30 days of a separate
                   previous discharge episode requires careful episode tracking.
                 </li>
-                <li>
-                  Patients in inpatient, SNF, inpatient rehab, or hospice settings are NOT eligible for CCM
-                  because the facility per-diem already includes care coordination. See individual program MLN
-                  booklets for exact exclusions.
-                </li>
+                <li>Review setting-specific payment and overlapping-service restrictions. Do not apply a blanket facility or hospice exclusion without checking the relevant program, services, and payer requirements.</li>
               </ul>
 
               {/* Documentation standards */}
@@ -459,15 +357,12 @@ export default function BillingGuideIndexPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700 leading-relaxed">
                   <li>
-                    Four programs, four distinct clinical fits. RPM = device-driven single-condition; CCM =
+                    Four programs, four distinct clinical fits. RPM = physiologic monitoring for acute or chronic conditions; CCM =
                     multi-condition coordination; TCM = post-discharge; PCM = single-high-risk focus.
                   </li>
+                  <li>Concurrent programs require independently qualifying services, distinct records, and no duplicated time or effort.</li>
                   <li>
-                    Combined RPM + CCM is the highest-revenue stack for chronic-condition patients ({'\u007e'}$250+
-                    /patient/month typical).
-                  </li>
-                  <li>
-                    Time + consent + one-provider-per-month rules govern everything. Document or lose it.
+                    Verify time, consent, clinical work, practitioner rules and other requirements separately for each program.
                   </li>
                   <li>
                     Rates update annually {'\u2014'} check the Medicare Physician Fee Schedule before locking
@@ -526,7 +421,7 @@ export default function BillingGuideIndexPage() {
                   <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Deep dive</p>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">CPT 99457 Billing Guide</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    The 20-minute interactive communication requirement, what counts, and how to document it.
+                    The 20-minute total treatment-management threshold, required live communication, and sample activity log.
                   </p>
                 </Link>
                 <Link
@@ -536,8 +431,18 @@ export default function BillingGuideIndexPage() {
                   <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Deep dive</p>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">CPT 99490 Billing Guide</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Eligibility, the 20-minute requirement, documentation, and how 99439/99487/99489 stack.
+                    Eligibility, monthly documentation, and the distinction between non-complex and complex CCM pathways.
                   </p>
+                </Link>
+                <Link href="/solutions/post-discharge-follow-up/cpt-99495-billing-guide" className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors">
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Deep dive</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">CPT 99495 Billing Guide</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">A discharge-to-claim checklist covering contact attempts, visit timing, and clinical responsibility.</p>
+                </Link>
+                <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="block bg-white p-6 rounded-lg border border-gray-200 hover:border-purple-400 transition-colors">
+                  <p className="text-sm text-purple-700 uppercase tracking-wider mb-2">Comparison</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">RPM vs. CCM Medicare Billing</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">Choose around clinical need and keep activity records separate when both programs apply.</p>
                 </Link>
               </div>
 
@@ -548,7 +453,7 @@ export default function BillingGuideIndexPage() {
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-sm text-gray-500">
-                Reviewed against current CMS billing guidance.{' '}
+                Editorial source check; not independent clinical or coding sign-off.{' '}
                 <a
                   href="https://www.cms.gov/medicare/payment/fee-schedules/physician"
                   target="_blank"
@@ -575,7 +480,7 @@ export default function BillingGuideIndexPage() {
                 >
                   CCM
                 </a>
-                . Last updated 2026-09-03.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

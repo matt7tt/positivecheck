@@ -40,7 +40,7 @@ const comparisonFaqs = [
   {
     question: 'Is an AI-powered call legally equivalent to a nurse call for TCM billing?',
     answer:
-      'CMS does not require a specific staff role for the initial 2-business-day contact \u2014 it must be a "direct contact" that addresses the discharge care plan and is documented. An AI call that captures the required elements and escalates concerns to clinical staff satisfies the CMS requirement. The face-to-face visit that follows (within 7 or 14 days) still requires a qualified clinician.',
+      'The qualifying TCM contact must be furnished by permitted clinical personnel under applicable requirements. An AI call can support outreach and escalation but does not independently establish the required contact. The practice must document qualifying clinical interaction or the applicable timely unsuccessful-attempt exception, and still meet the visit and other TCM requirements.',
   },
   {
     question: 'When does manual outreach still make sense?',
@@ -68,7 +68,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-19',
-  dateModified: '2026-09-13',
+  dateModified: '2026-09-20',
 })
 
 export default function TCMVsManualPage() {
@@ -237,7 +237,7 @@ export default function TCMVsManualPage() {
                 >
                   CMS MLN TCM Booklet
                 </a>
-                . Last updated 2026-04-19.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

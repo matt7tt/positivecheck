@@ -50,7 +50,7 @@ const faqs = [
   {
     question: 'Can time spent on a single patient be split across multiple staff members in the same month?',
     answer:
-      'Yes. Cumulative time across multiple clinical staff members under the billing provider\u2019s supervision all counts toward the 20-minute threshold. An RN spending 8 minutes on medication reconciliation, an LPN spending 6 minutes on a caregiver call, and a medical assistant spending 7 minutes on specialist coordination together equal 21 minutes \u2014 billable as 99490.',
+      "Qualifying time may accumulate across eligible clinical staff under the required supervision. Synthetic example: eight minutes of eligible care-plan work, six minutes of qualifying clinical communication, and seven minutes of coordination total 21 minutes. That meets only the time component; eligibility, consent, service, personnel and other requirements must also be met.",
   },
   {
     question: 'Does coordination with the patient\u2019s pharmacy count toward CCM time?',
@@ -60,7 +60,7 @@ const faqs = [
   {
     question: 'How do I handle months where the patient needed less than 20 minutes of coordination?',
     answer:
-      'If cumulative CCM time for a patient is below 20 minutes in a calendar month, 99490 is not billable that month. This is a normal part of running a CCM program \u2014 some months a patient is stable and needs little coordination. Do not force time-tracking to reach 20 minutes; document what actually happened. Over time, the enrolled population averages well above 20 minutes across the month because most CCM-eligible patients have active coordination needs.',
+      'If cumulative CCM time for a patient is below 20 minutes in a calendar month, 99490 is not billable that month. This is a normal part of running a CCM program \u2014 some months a patient is stable and needs little coordination. Do not force time-tracking to reach 20 minutes; document what actually happened. Do not assume a population-wide average makes an individual patient month eligible.',
   },
 ]
 
@@ -77,7 +77,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-20',
-  dateModified: '2026-04-20',
+  dateModified: '2026-09-20',
 })
 
 export default function CCMTwentyMinutesPage() {
@@ -336,16 +336,7 @@ export default function CCMTwentyMinutesPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
                 How AI-powered calls interact with the 20-minute rule
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                AI wellness calls do not themselves count as clinical staff time {'\u2014'} no human clinician
-                is conducting the call, so no human minutes are accumulating. What the call produces is a
-                structured summary of the patient{'\u2019'}s reported status, medication adherence, and any
-                flagged concerns. The clinical value for CCM billing comes in what happens next. Clinical
-                staff time spent reviewing the AI call summary counts toward the 20-minute threshold. Time
-                spent acting on flagged concerns {'\u2014'} contacting the patient, updating the care plan,
-                coordinating with a specialist {'\u2014'} counts. Time spent documenting the outcome of that
-                review counts.
-              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">Automated calls do not themselves count as clinical staff time. Eligible staff review, care-plan work, clinical coordination and documentation may contribute when they are qualifying CCM activities under applicable requirements. Record the actual human work, clinical purpose and duration separately from the automated call. A generated summary alone does not establish billability.</p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The practical effect is a redistribution of clinical labor. Without AI calls, a clinical
                 staff member must spend time both gathering information (asking the patient how they{'\u2019'}re
@@ -364,21 +355,7 @@ export default function CCMTwentyMinutesPage() {
                 </Link>
                 .
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Enrolled CCM patients at scale become much easier to maintain at or above the 20-minute
-                threshold when every patient receives a monthly AI call that generates a reviewable summary.
-                Rather than hoping that clinical staff will initiate outreach across a 200-patient panel,
-                the AI call ensures that every patient produces a structured interaction that a staff member
-                can review and document efficiently. This systematic coverage is what separates high-performing{' '}
-                <Link
-                  href="/solutions/chronic-care-management"
-                  className="text-purple-700 underline hover:text-purple-900"
-                >
-                  Chronic Care Management
-                </Link>{' '}
-                programs from those that chronically miss the threshold for a significant fraction of their
-                enrolled population.
-              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">Outreach software may help organize follow-up, but it cannot guarantee contact with every patient or that every patient month meets a billing threshold. Assign ownership for unsuccessful outreach and unresolved clinical needs; count only actual qualifying services.</p>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Common documentation pitfalls</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -483,7 +460,7 @@ export default function CCMTwentyMinutesPage() {
                   </li>
                   <li>
                     AI-powered calls don{'\u2019'}t count directly but concentrate clinical staff time on
-                    decisions and documentation, making the threshold easier to hit reliably.
+                    decisions and documentation, without guaranteeing a qualifying monthly total.
                   </li>
                 </ul>
               </div>
@@ -550,7 +527,7 @@ export default function CCMTwentyMinutesPage() {
                 >
                   CMS MLN CCM Booklet
                 </a>
-                . Last updated 2026-04-20.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>

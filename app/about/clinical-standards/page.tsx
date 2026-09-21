@@ -49,7 +49,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-22',
-  dateModified: '2026-07-12',
+  dateModified: '2026-09-20',
 })
 
 const faqs = [
@@ -344,19 +344,19 @@ export default function ClinicalStandardsPage() {
               {/* Documentation standards */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Documentation standards (CMS-aligned)</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Every call Positive Check conducts generates a structured summary designed to map directly to the
-                documentation elements CMS auditors expect when reviewing care management claims. The principle is
-                straightforward: if the documentation is not there, the service was not rendered{'\u2014'}and our
-                call records are built to ensure that is never the auditor{'\u2019'}s conclusion.
+                Call summaries can support clinical handoffs and documentation review. They do not independently
+                establish that a covered care-management service was furnished or guarantee an audit outcome.
+                The practice must retain evidence of eligibility, consent, qualifying clinical work, and all
+                applicable service requirements.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Per-call data includes the call date and time, call duration, a summary of patient response content
                 (covering the questions asked and responses received), any concerns flagged and the escalation action
-                taken, and a system or staff identifier for the activity. For programs with monthly time thresholds
-                {'\u2014'}CCM{'\u2019'}s 20-minute non-complex minimum or RPM{'\u2019'}s interactive communication
-                tracking{'\u2014'}the platform aggregates per-call durations into monthly summaries that correspond
-                directly to the time-threshold arithmetic the billing team needs. This prevents the common audit
-                failure mode where time was spent but cannot be reconstructed from fragmented records.
+                taken, and a system or staff identifier for the activity. Automated call duration must remain
+                separate from qualifying clinical staff time. For CCM and RPM, the billing team must reconcile
+                actual eligible human work against the relevant threshold and other service requirements.
+                RPM management totals can include qualifying care-management work alongside required live
+                communication; adding automated call durations does not establish that total.
               </p>
               <p className="text-gray-700 leading-relaxed mb-12">
                 Where technically supported, call data integrates with the provider{'\u2019'}s care plan
@@ -558,7 +558,7 @@ export default function ClinicalStandardsPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-07-12.
+                . Last updated 2026-09-20.
               </p>
             </div>
           </section>
