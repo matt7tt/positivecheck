@@ -921,6 +921,86 @@ Keep the discharge follow-up record and the monthly CCM activity record distingu
 Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed September 13, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.
 
 ---
+Source: https://www.positivecheck.com/blog/apcm-billing-2026
+
+← Back to Blog
+# APCM Billing in 2026: G0556, G0557, and G0558 Requirements and Reimbursement
+By the Positive Check Team · Published September 20, 2026 · 11 min read Advanced Primary Care Management (APCM) is a Medicare care management billing option introduced in 2025: three HCPCS codes that bundle CCM-style services into a single monthly payment with no time-tracking requirement. Here's what the codes actually require, who can bill them, and what changed for 2026.
+## What APCM is
+CMS finalized Advanced Primary Care Management (APCM) in the CY 2025 Medicare Physician Fee Schedule final rule, effective January 1, 2025. APCM combines elements of several existing care management and communication technology-based services into a single monthly HCPCS code, billed once per patient per calendar month.
+One of the defining differences from Chronic Care Management (CCM) and Principal Care Management (PCM) is that APCM has no time-based thresholds. Where CCM requires practices to track and document 20, 30, or 60 minutes of staff time per month, APCM is billed based on meeting a defined set of service elements, not a clock. CMS designed it this way specifically to reduce the administrative and documentation burden that has historically limited CCM enrollment.
+To bill APCM, the billing practitioner must be responsible for all of the patient's primary care and serve as "the continuing focal point for all needed health care services." Only one practitioner can bill and be paid for APCM for a given patient in a given month.
+## The three codes and who qualifies
+APCM has three levels, priced by patient complexity rather than time spent. All three share the same service elements; what changes is eligibility.
+APCM codes and patient eligibility Code Level Eligibility (per the HCPCS descriptor)
+G0556 APCM Level 1 0 or 1 qualifying chronic condition
+G0557 APCM Level 2 2 or more qualifying chronic conditions
+G0558 APCM Level 3 2 or more qualifying chronic conditions, plus Qualified Medicare Beneficiary (QMB) status
+A "chronic condition" for this purpose is one expected to last at least 12 months, or until the patient's death, and that places the patient at significant risk of death, acute exacerbation or decompensation, or functional decline. This is the same complexity language CMS already uses to define CCM eligibility.
+Because G0556 covers patients with zero or one qualifying condition, it's the only one of the three that can apply to a relatively healthy patient. G0557 and G0558 use the same chronic-condition threshold; G0558 provides a higher payment tier for patients who also have QMB status.
+## Program requirements
+Required service elements. CMS requires APCM practices to have the capability to provide: patient consent, an initiating visit when one is required, 24/7 access for patients or caregivers with urgent needs to reach the care team, real-time access to the patient's medical information, comprehensive care management, an electronic patient-centered comprehensive care plan that's shared with the patient and available to the care team, management of care transitions, coordination with the patient's other practitioners and community-based care (including documenting the patient's psychosocial strengths, functional deficits, goals, and desired outcomes), enhanced communication, population-level management, and performance measurement. These elements must be furnished when clinically appropriate for the individual patient; not every element has to be used for every patient every month. Practices should maintain documentation supporting the APCM services actually furnished, including the patient's consent and the required care plan.
+The initiating visit. New patients need an initiating visit before APCM can start. So do existing patients, unless the billing practitioner or another practitioner in the same practice has seen them within the past three years, or the practice has already furnished them APCM, CCM, or PCM services within the past year. A qualifying initiating visit is an evaluation and management visit (levels 2 through 5), a Transitional Care Management face-to-face visit, an Annual Wellness Visit, or an Initial Preventive Physical Exam, provided APCM is discussed during that visit.
+Consent. The patient must consent once before APCM services begin (CMS allows either verbal or written consent, documented in the medical record). As part of that consent, the practice must tell the patient that only one practitioner can furnish and bill APCM for them in a given month, that they have the right to stop APCM services at any time, and that Medicare cost-sharing may apply. APCM doesn't qualify as a preventive service, so coinsurance generally isn't waived the way it is for some other Medicare services, with one major exception: patients billed under G0558 are Qualified Medicare Beneficiaries by definition, and federal law (Social Security Act sections 1902(n)(3) and 1866(a)(1)(A), among others) prohibits providers from billing QMB patients for Medicare Part A or B deductibles, coinsurance, or copayments at all. A practice billing G0558 should not be collecting cost-sharing from that patient.
+Who can bill, and who can perform the work. The billing practitioner must be a physician, nurse practitioner, physician assistant, or clinical nurse specialist who functions as the patient's continuing primary care focal point. That role can rotate between practitioners in a practice month to month. The clinical staff time and tasks that make up the service can be performed by auxiliary personnel under the billing practitioner's general supervision, not direct supervision, which is one of the operational advantages of the code.
+## What APCM cannot be billed with
+APCM is a bundle: it folds in several services that would otherwise be billed separately, so the practitioner billing APCM for a patient cannot also bill that patient's other overlapping codes in the same calendar month. Per AAFP's compliance guidance on the CY 2025 final rule, the excluded codes are:
+- Principal Care Management (CPT 99424-99427)
+- Chronic Care Management (CPT 99487-99491, 99437, 99439)
+- Transitional Care Management (CPT 99495-99496)
+- Interprofessional internet consultations (CPT 99446-99449, 99451-99452)
+- Remote evaluation of patient-submitted video or images (HCPCS G2250)
+- Virtual check-ins (HCPCS G2251-G2252)
+- Online digital evaluation and management services (CPT 98970-98972, 99421-99423)
+## Can you bill APCM and RPM together?
+Potentially, yes. Remote Patient Monitoring (RPM) uses its own separate family of CPT codes and covers distinct activities: physiologic data collection, device supply, monitoring, and treatment management, rather than the care-coordination and communication services APCM bundles. That's a meaningful distinction for practices already running RPM programs, but it isn't a blanket authorization to bill both.
+Practices furnishing both should confirm current CMS and Medicare Administrative Contractor guidance, make sure each service independently meets its own billing requirements, ensure the underlying work isn't counted twice toward two different services, and keep documentation that clearly supports both. This exclusion list also changes through annual rulemaking, so what's true this year isn't guaranteed to hold next year.
+## APCM vs. CCM: what's the difference?
+APCM and CCM both pay practices for ongoing chronic care management, but they're structured differently enough that the choice isn't automatic.
+APCM and CCM billing comparison Comparison APCM CCM
+Billing basis Monthly, by complexity tier Monthly, by staff time
+Time tracking required No Yes (20, 30, or 60+ minutes depending on the code)
+Chronic condition threshold 0-1 (G0556), 2+ (G0557), 2+ and QMB (G0558) Generally 2 or more chronic conditions
+Codes G0556, G0557, G0558 CPT 99487-99491, 99437, 99439
+Billable together for the same patient, same month No No
+The practical difference is administrative. CCM's value is well established, but its time-based codes require accurate minute-by-minute logging, which is one reason CCM enrollment and billing accuracy have historically lagged behind program potential. APCM trades that tracking burden for a fixed set of service elements, at the cost of giving up the ability to bill PCM, TCM, and the other bundled services for the same patient that month.
+## APCM reimbursement and what's new for 2026
+Like every code on the Medicare Physician Fee Schedule, G0556, G0557, and G0558 are priced by relative value units (RVUs) multiplied by the annual conversion factor, then adjusted for local practice costs. CMS finalized two separate CY 2026 conversion factors: $33.57 for clinicians who qualify as Advanced Alternative Payment Model (APM) participants, and $33.40 for everyone else, both up from $32.35 in 2025. That split, not just the usual locality adjustment, now affects the payment for every PFS code, APCM included. Because the RVU-to-dollar math still varies by locality and by QP status, the accurate number for a given practice is whatever the CMS Physician Fee Schedule Look-Up Tool returns for that ZIP code, provider type, and year, not a single generic figure.
+The more significant 2026 change for APCM specifically is new: CMS finalized three add-on codes that let a practice bill for behavioral health services on top of an APCM base code, when the same practitioner furnishes both in the same month. Per CMS's own billing guidance, G0568 and G0569 are for psychiatric Collaborative Care Model (CoCM) services delivered to APCM patients (G0568 for the initial month, G0569 for subsequent months), and G0570 is for general Behavioral Health Integration (BHI) services delivered to APCM patients. These are optional add-ons, not a replacement for G0556-G0558, and they're aimed at practices that are already coordinating a patient's behavioral health alongside their primary care.
+## APCM billing FAQ
+### Does APCM require 20 minutes of staff time per month?
+No. Unlike CCM, APCM has no time-based threshold. Payment is based on completing the required service elements when clinically appropriate, not on logging minutes.
+### Can G0556 be billed for a patient with no chronic conditions?
+Yes. G0556's HCPCS descriptor covers a patient with one qualifying chronic condition or fewer, so a patient with zero qualifying conditions is still eligible at that level.
+### Can APCM and CCM be billed in the same month?
+No. CCM (CPT 99487-99491, 99437, 99439) is one of the services bundled into APCM, so a practice bills one or the other for a given patient in a given month, not both.
+### Can APCM and RPM be billed together?
+Potentially, yes. RPM codes aren't among the services bundled into APCM, but practices should confirm that each service independently meets its billing requirements, avoid double-counting work, and maintain documentation supporting both services.
+### Does APCM require patient consent?
+Yes, once, before services begin, either verbally or in writing, documented in the patient's record. The patient must be told that only one practitioner can bill APCM for them per month, that they can stop at any time, and that Medicare cost-sharing may apply. QMB patients, including those billed under G0558, cannot be billed Medicare Part A or B cost-sharing.
+### Does APCM require an initiating visit?
+For new patients, yes. For existing patients, only if the billing practitioner or another practitioner in the same practice hasn't seen them in the past three years, and the practice hasn't already furnished them APCM, CCM, or PCM in the past year.
+### What changed for APCM in 2026?
+CMS applied new, separate conversion factors for Advanced APM participants ($33.57) and other clinicians ($33.40), and finalized three new add-on codes for behavioral health integration billed alongside an APCM base code.
+### What are G0568, G0569, and G0570?
+They're 2026 add-on codes for behavioral health services billed alongside an APCM base code by the same practitioner in the same month. Per CMS, G0568 and G0569 cover the initial and subsequent months of Psychiatric Collaborative Care Model (CoCM) services, and G0570 covers general Behavioral Health Integration (BHI).
+## Key takeaways
+APCM trades CCM's time-tracking burden for a defined set of service elements billed once per patient per month, which is why it's drawn attention from practices that have struggled to staff CCM's documentation requirements. The tradeoff is that it's a bundle: once a practice bills APCM for a patient, it gives up billing PCM, CCM, TCM, and several communication-technology codes for that same patient that month. The eligibility tiers are simple to check (chronic condition count, plus QMB status for the top tier), but the operational requirements (24/7 access, a comprehensive care plan, population-level management, performance measurement) still have to be built and run somewhere. APCM removes much of the minute-by-minute tracking that traditional care-management billing requires, but it doesn't remove the operational work. Practices still need reliable patient outreach, continuity of care, care-plan management, escalation workflows, population-level management, and performance measurement. For most practices, the real question isn't simply whether they qualify to bill APCM. It's whether they have the infrastructure to deliver it consistently across a patient population.
+Positive Check helps practices run the patient outreach, escalation, and population-level work that programs like APCM, CCM, and RPM depend on. See how the billing side compares on our RPM vs. CCM comparison page .
+## Sources
+- CY 2025 Medicare Physician Fee Schedule Final Rule fact sheet (CMS)
+- CY 2026 Medicare Physician Fee Schedule Final Rule fact sheet (CMS)
+- Advanced Primary Care Management Services (CMS)
+- Advanced Primary Care Management (APCM) Services FAQ (CMS)
+- MLN Matters MM13887: Medicare Physician Fee Schedule Final Rule Summary, CY 2025 (CMS)
+- MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary, CY 2026 (CMS)
+- Using Advanced Primary Care Management Services Codes G0556, G0557 and G0558 (AAFP)
+- HCPCS long descriptors for G0556 , G0557 , and G0558 (AAPC)
+- MLN006397: Federally Qualified Health Center (CMS), for the G0568/G0569/G0570 to CoCM/BHI mapping
+- Prohibition on Billing Qualified Medicare Beneficiaries (QMB) (CMS)
+- HCPCS long descriptors for G0568 and G0569 (AAPC), for the initial-vs-subsequent CoCM distinction
+
+---
 Source: https://www.positivecheck.com/blog/2027-rpm-proposed-rule
 
 ← Back to Blog

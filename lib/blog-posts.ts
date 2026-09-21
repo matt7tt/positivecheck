@@ -17,7 +17,21 @@ export interface BlogPost {
   listed?: boolean;         // default true; false = live route but not on /blog
 }
 
+export const APCM_BILLING_POST: BlogPost = {
+  slug: "apcm-billing-2026",
+  title: "APCM Billing in 2026: G0556, G0557, and G0558 Requirements and Reimbursement",
+  description: "APCM billing in 2026: G0556, G0557, and G0558 eligibility, required services, reimbursement, CCM and RPM billing rules, and new behavioral health add-ons.",
+  datePublished: "2026-09-20",
+  dateModified: "2026-09-20",
+  displayDate: "September 20, 2026",
+  readTime: "11 min read",
+  image: "/images/apcm-billing-2026.png",
+  articleSection: "CMS Billing & Compliance",
+  keywords: ["APCM billing 2026", "G0556", "G0557", "G0558", "advanced primary care management", "APCM reimbursement", "APCM vs CCM", "G0568", "G0569", "G0570"],
+}
+
 export const blogPosts: BlogPost[] = [
+  APCM_BILLING_POST,
   {
     slug: "2027-rpm-proposed-rule",
     title: "2027 RPM Proposed Rule: Initiating Visits, Employed Staff, and What Could Change",

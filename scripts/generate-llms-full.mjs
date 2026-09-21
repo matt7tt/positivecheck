@@ -24,6 +24,7 @@ const PAGES = [
   "/solutions/post-discharge-follow-up/cpt-99495-billing-guide",
   "/solutions/post-discharge-follow-up/30-day-readmission-reduction",
   "/solutions/post-discharge-follow-up/post-discharge-contact-timing",
+  "/blog/apcm-billing-2026",
   "/blog/2027-rpm-proposed-rule",
   "/blog/2026-rpm-cpt-codes",
   "/blog/ccm-billing-2026-cpt-codes-guide",
