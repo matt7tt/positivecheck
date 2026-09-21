@@ -75,12 +75,12 @@ export function KeyTakeaways({
   )
 }
 
-export function PostFAQ({ items }: { items: PostFAQItem[] }) {
+export function PostFAQ({ items, title = 'Frequently asked questions' }: { items: PostFAQItem[]; title?: string }) {
   if (!items.length) return null
   return (
     <section className="mt-12 pt-8 border-t border-gray-200">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">
-        Frequently asked questions
+        {title}
       </h2>
       <div className="space-y-6">
         {items.map((item, i) => (
