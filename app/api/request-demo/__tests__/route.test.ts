@@ -1,5 +1,6 @@
 import { POST } from '@/app/api/request-demo/route'
 import { forwardLeadToCrm } from '@/lib/server/lead-delivery'
+import { BILLING_WORKFLOW_OFFER as offer } from '@/lib/demo-offers'
 
 const mockSend = jest.fn()
 jest.mock('resend', () => ({ Resend: jest.fn().mockImplementation(() => ({ emails: { send: mockSend } })) }))
@@ -13,7 +14,7 @@ jest.mock('@/lib/server/lead-delivery', () => ({
 }))
 
 const originalKey = process.env.RESEND_API_KEY
-const request = (body = { name: 'Synthetic Test', email: 'synthetic@example.com' }) => ({ json: async () => body } as Request)
+const request = (body: Record<string, unknown> = { name: 'Synthetic Test', email: 'synthetic@example.com' }) => ({ json: async () => body } as Request)
 
 describe('demo request delivery contract', () => {
   beforeEach(() => {
@@ -50,5 +51,25 @@ describe('demo request delivery contract', () => {
     expect(response.status).toBe(200)
     expect(await response.json()).toMatchObject({ crmDelivered: false, emailDelivered: true })
     expect(mockSend).toHaveBeenCalledWith(expect.objectContaining({ replyTo: 'synthetic@example.com' }))
+  })
+
+  it('includes the allowlisted offer in both the CRM payload and notification', async () => {
+    process.env.RESEND_API_KEY = 'test-only-not-a-real-key'
+    mockSend.mockResolvedValue({ error: null })
+    const response = await POST(request({ name: 'Synthetic Test', email: 'synthetic@example.com', offer_id: offer.id }))
+    expect(response.status).toBe(200)
+    expect(forwardLeadToCrm).toHaveBeenCalledWith(expect.objectContaining({
+      fields: { name: 'Synthetic Test', email: 'synthetic@example.com', organization: '', offer_id: offer.id },
+    }))
+    expect(mockSend.mock.calls[0][0].html).toContain(offer.id)
+    expect(mockSend.mock.calls[0][0].html).toContain(offer.modalTitle)
+  })
+
+  it('ignores unknown offer values rather than forwarding arbitrary content', async () => {
+    process.env.RESEND_API_KEY = 'test-only-not-a-real-key'
+    mockSend.mockResolvedValue({ error: null })
+    await POST(request({ name: 'Synthetic Test', email: 'synthetic@example.com', offer_id: '<script>untrusted</script>' }))
+    expect(jest.mocked(forwardLeadToCrm).mock.calls[0][0].fields).not.toHaveProperty('offer_id')
+    expect(mockSend.mock.calls[0][0].html).not.toContain('untrusted')
   })
 })
