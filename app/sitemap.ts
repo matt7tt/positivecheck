@@ -128,7 +128,7 @@ const entries: Entry[] = [
   { path: "/resources/compare", lastmod: "2026-05-17", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/compare/rpm-vs-ccm-medicare-billing", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/compare/tcm-and-ccm-combined-month-billing", lastmod: "2026-09-13", changefreq: "monthly", priority: 0.8 },
-  { path: "/resources/billing-guide", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.9 },
+  { path: "/resources/billing-guide", lastmod: "2026-09-27", changefreq: "monthly", priority: 0.9 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

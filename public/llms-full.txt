@@ -20,9 +20,12 @@ A practical 2026 reference for RPM, CCM, TCM, and PCM codes, eligibility, stacki
 - Rules to remember: Do not double-count time or effort. Complex CCM is a separate pathway from non-complex CCM. Check code-specific restrictions and practitioner responsibilities before concurrent billing.
 - Verify payment locally. Use the applicable service year, payer, locality and setting. This reference does not promise a national reimbursement amount.
 For healthcare operations teams
-## Model the workflow behind the reimbursement
-Estimate your RPM, CCM, and post-discharge opportunity, then see how Positive Check supports outreach, documentation, and exception routing at scale.
-See the care workflow Estimate program ROI
+## See your RPM/CCM outreach workflow in a 15-minute demo
+Bring your outreach questions. We’ll discuss how Positive Check could support your practice’s enrollment, follow-up and care-team handoffs.
+- Discuss where enrollment or routine follow-up gets stuck.
+- Walk through outreach, documentation and exception routing.
+- Identify what your team would need to evaluate a pilot.
+Request a workflow demo Estimate program ROI This is a software workflow demo, not a clinical or billing-compliance review. Please do not share patient information.
 ## The 3 CMS care management programs at a glance
 RPM, CCM, and TCM each address a different phase or dimension of chronic-condition care. Used together they form a complementary longitudinal strategy: TCM catches patients at the highest-risk post-discharge window, CCM provides ongoing multi-condition coordination, and RPM layers in continuous physiologic surveillance. Understanding where each program begins and ends is the foundation for compliant concurrent billing.
 RPM
@@ -135,7 +138,7 @@ A discharge-to-claim checklist covering contact attempts, visit timing, and clin
 Comparison
 ### RPM vs. CCM Medicare Billing
 Choose around clinical need and keep activity records separate when both programs apply.
-Editorial source check; not independent clinical or coding sign-off. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Last updated 2026-09-20.
+Editorial source check; not independent clinical or coding sign-off. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Last updated 2026-09-27.
 
 ---
 Source: https://www.positivecheck.com/resources/compare/rpm-vs-ccm-medicare-billing

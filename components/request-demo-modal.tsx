@@ -14,13 +14,17 @@ import {
 } from "@/components/ui/dialog"
 import { CalendarDays, Loader2 } from "lucide-react"
 import { getAttributionContext, trackEvent } from "@/lib/analytics"
+import { getDemoOffer, type DemoOfferId } from "@/lib/demo-offers"
 
 interface RequestDemoModalProps {
   children: React.ReactNode
   source?: string
+  offerId?: DemoOfferId
 }
 
-export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoModalProps) {
+export function RequestDemoModal({ children, source = "site_cta", offerId }: RequestDemoModalProps) {
+  const offer = getDemoOffer(offerId)
+  const offerParameters = offer ? { offer_id: offer.id } : {}
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [organization, setOrganization] = useState("")
@@ -37,6 +41,7 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
     trackEvent("lead_form_start", {
       form_name: "demo_request",
       cta_location: source,
+      ...offerParameters,
     })
   }
 
@@ -55,6 +60,7 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
           name,
           email,
           organization,
+          ...offerParameters,
           attribution: getAttributionContext(),
         }),
       })
@@ -67,10 +73,12 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
         lead_type: "demo_request",
         form_name: "demo_request",
         cta_location: source,
+        ...offerParameters,
       })
       trackEvent("form_submit", {
         form_name: "demo_request",
         cta_location: source,
+        ...offerParameters,
       })
       setIsSuccess(true)
     } catch (err) {
@@ -78,6 +86,7 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
         form_name: "demo_request",
         cta_location: source,
         error_type: "submission_failed",
+        ...offerParameters,
       })
       setError("Failed to submit request. Please try again.")
     } finally {
@@ -94,8 +103,9 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
           trackEvent("cta_click", {
             cta_name: "request_demo",
             cta_location: source,
+            ...offerParameters,
           })
-          trackEvent("request_demo_open", { cta_location: source })
+          trackEvent("request_demo_open", { cta_location: source, ...offerParameters })
         }
         if (!nextOpen) {
           hasStarted.current = false
@@ -109,12 +119,13 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Book a 15-minute workflow demo</DialogTitle>
+          <DialogTitle>{offer?.modalTitle ?? 'Book a 15-minute workflow demo'}</DialogTitle>
           <DialogDescription>
             {bookingUrl
               ? "Share your contact details, then choose a time that works for you."
               : "Share your contact details and we’ll reach out to arrange your workflow demo."}
           </DialogDescription>
+          {offer && <p className="text-sm leading-relaxed text-gray-600">{offer.disclaimer}</p>}
         </DialogHeader>
         {isSuccess ? (
           <div className="py-8 text-center space-y-4">
@@ -131,6 +142,7 @@ export function RequestDemoModal({ children, source = "site_cta" }: RequestDemoM
                     onClick={() => trackEvent("booking_link_click", {
                       form_name: "demo_request",
                       cta_location: source,
+                      ...offerParameters,
                     })}
                   >
                     <CalendarDays className="mr-2 h-4 w-4" />

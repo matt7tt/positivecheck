@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { cleanText, createLeadPayload, escapeHtml, forwardLeadToCrm, isValidEmail } from '@/lib/server/lead-delivery'
+import { getDemoOffer } from '@/lib/demo-offers'
 
 export async function POST(request: Request) {
   try {
@@ -9,6 +10,7 @@ export async function POST(request: Request) {
     const email = cleanText(body.email, 254).toLowerCase()
     const organization = cleanText(body.organization, 200)
     const attribution = body.attribution
+    const offer = getDemoOffer(body.offer_id)
 
     if (!name || !isValidEmail(email)) {
       return NextResponse.json(
@@ -20,7 +22,7 @@ export async function POST(request: Request) {
     const contactEmail = process.env.CONTACT_EMAIL || 'hello@positivecheck.com'
     const lead = createLeadPayload(
       'demo_request',
-      { name, email, organization },
+      { name, email, organization, ...(offer ? { offer_id: offer.id } : {}) },
       attribution && typeof attribution === 'object' ? attribution : undefined
     )
 
@@ -47,6 +49,7 @@ export async function POST(request: Request) {
             <tr><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${safeName}</td></tr>
             <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;"><a href="mailto:${safeEmail}">${safeEmail}</a></td></tr>
             ${organization ? `<tr><td style="padding: 8px; font-weight: bold;">Organization:</td><td style="padding: 8px;">${safeOrganization}</td></tr>` : ''}
+            ${offer ? `<tr><td style="padding: 8px; font-weight: bold;">Requested offer:</td><td style="padding: 8px;">${escapeHtml(offer.modalTitle)} (${offer.id})</td></tr>` : ''}
             <tr><td style="padding: 8px; font-weight: bold;">Source:</td><td style="padding: 8px;">${safeSource}</td></tr>
             <tr><td style="padding: 8px; font-weight: bold;">Landing page:</td><td style="padding: 8px;">${safeLandingPage}</td></tr>
           </table>

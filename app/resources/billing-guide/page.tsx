@@ -10,6 +10,7 @@ import {
   buildFAQSchema,
 } from '@/components/structured-data'
 import { ContentConversionCta } from '@/components/content-conversion-cta'
+import { BILLING_WORKFLOW_OFFER } from '@/lib/demo-offers'
 
 export const metadata: Metadata = {
   title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
@@ -49,7 +50,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-21',
-  dateModified: '2026-09-20',
+  dateModified: '2026-09-27',
 })
 
 const faqs = [
@@ -111,9 +112,10 @@ export default function BillingGuideIndexPage() {
 
               <ContentConversionCta
                 source="billing_guide_summary"
-                title="Model the workflow behind the reimbursement"
-                description="Estimate your RPM, CCM, and post-discharge opportunity, then see how Positive Check supports outreach, documentation, and exception routing at scale."
-                buttonText="See the care workflow"
+                title={BILLING_WORKFLOW_OFFER.title}
+                description={BILLING_WORKFLOW_OFFER.description}
+                buttonText={BILLING_WORKFLOW_OFFER.buttonText}
+                offerId={BILLING_WORKFLOW_OFFER.id}
               />
 
               {/* Programs at a glance */}
@@ -480,7 +482,7 @@ export default function BillingGuideIndexPage() {
                 >
                   CCM
                 </a>
-                . Last updated 2026-09-20.
+                . Last updated 2026-09-27.
               </p>
             </div>
           </section>

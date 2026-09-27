@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { trackEvent, getAttributionContext } from '@/lib/analytics'
+import { BILLING_WORKFLOW_OFFER as offer } from '@/lib/demo-offers'
 
 jest.mock('@/lib/analytics', () => ({
   trackEvent: jest.fn(),
@@ -80,5 +81,52 @@ describe('demo request conversions', () => {
     await screen.findByText('Failed to submit request. Please try again.')
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
     await waitFor(() => expect(screen.getByRole('button', { name: 'Request demo' })).toBeEnabled())
+  })
+
+  it('retains the billing offer through successful submission without putting contact details in analytics', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true } as Response)
+    const user = userEvent.setup()
+    render(<RequestDemoModal source="billing_guide_summary" offerId={offer.id}><button>Open offer</button></RequestDemoModal>)
+    await user.click(screen.getByRole('button', { name: 'Open offer' }))
+    await user.type(screen.getByLabelText('Full Name'), 'Synthetic Test')
+    await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    await screen.findByText('Your request is in.')
+    expect(JSON.parse(mockFetch.mock.calls[0][1]!.body as string)).toMatchObject({ offer_id: offer.id })
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toEqual([
+      ['generate_lead', { lead_type: 'demo_request', form_name: 'demo_request', cta_location: 'billing_guide_summary', offer_id: offer.id }],
+    ])
+    expect(JSON.stringify(jest.mocked(trackEvent).mock.calls)).not.toMatch(/synthetic@example.com|Synthetic Test/)
+  })
+
+  it('retains the billing offer on errors without reporting a lead', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: false } as Response)
+    const user = userEvent.setup()
+    render(<RequestDemoModal source="billing_guide_summary" offerId={offer.id}><button>Open offer</button></RequestDemoModal>)
+    await user.click(screen.getByRole('button', { name: 'Open offer' }))
+    await user.type(screen.getByLabelText('Full Name'), 'Synthetic Test')
+    await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    await screen.findByText('Failed to submit request. Please try again.')
+    expect(trackEvent).toHaveBeenCalledWith('form_error', expect.objectContaining({ offer_id: offer.id }))
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
+  })
+
+  it('preserves optional scheduling and the offer label on the calendar click', async () => {
+    process.env.NEXT_PUBLIC_DEMO_BOOKING_URL = 'https://example.com/schedule'
+    mockFetch.mockResolvedValueOnce({ ok: true } as Response)
+    const user = userEvent.setup()
+    render(<RequestDemoModal source="billing_guide_summary" offerId={offer.id}><button>Open offer</button></RequestDemoModal>)
+    await user.click(screen.getByRole('button', { name: 'Open offer' }))
+    expect(screen.getByText(/then choose a time/)).toBeVisible()
+    await user.type(screen.getByLabelText('Full Name'), 'Synthetic Test')
+    await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
+    await user.click(screen.getByRole('button', { name: 'Continue to scheduling' }))
+    const calendar = await screen.findByRole('link', { name: 'Choose a demo time' })
+    expect(calendar).toHaveAttribute('href', 'https://example.com/schedule')
+    await user.click(calendar)
+    expect(trackEvent).toHaveBeenCalledWith('booking_link_click', {
+      form_name: 'demo_request', cta_location: 'billing_guide_summary', offer_id: offer.id,
+    })
   })
 })
