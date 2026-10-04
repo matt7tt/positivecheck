@@ -47,6 +47,8 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    // Covers submitting prefilled values after reopening without another edit.
+    trackFormStart()
     setError("")
     setIsSubmitting(true)
 
@@ -155,7 +157,8 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
             )}
           </div>
         ) : (
-          <form onSubmit={handleSubmit} onFocusCapture={trackFormStart} className="space-y-4">
+          <form onSubmit={handleSubmit} onChangeCapture={trackFormStart} className="space-y-4">
+            {/* Dialog autofocus is navigation, not evidence of form engagement. */}
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
               <Input

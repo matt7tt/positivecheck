@@ -13,7 +13,7 @@ import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { BILLING_WORKFLOW_OFFER } from '@/lib/demo-offers'
 
 export const metadata: Metadata = {
-  title: '2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
+  title: '2026 CMS Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
   description:
     'Comprehensive reference for Medicare care management billing: RPM (99453/99454/99457/99458 plus new 2026 codes 99445 and 99470), CCM (99490/99439/99487/99489), TCM (99495/99496), PCM (99424-99427). Eligibility, code pathways, payment verification, and documentation standards.',
   alternates: { canonical: '/resources/billing-guide' },
