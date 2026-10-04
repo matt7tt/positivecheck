@@ -5,7 +5,7 @@ import { RpmBilling2026CptCodesPost } from "@/components/blog-posts/2026-rpm-cpt
 import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } from "@/lib/schema"
 
 export const metadata: Metadata = {
-  title: '2026 RPM CPT Codes: 99445, 99454, 99457, 99458 & 99470 | Positive Check',
+  title: '2026 RPM CPT Codes 99445, 99454, 99457, 99458, 99470 | Positive Check',
   description: 'Learn 2026 Medicare RPM billing requirements for CPT 99445, 99454, 99457, 99458 and 99470, including reimbursement, transmission days, treatment time and stacking rules.',
   alternates: {
     canonical: '/blog/2026-rpm-cpt-codes',

@@ -21,7 +21,7 @@ describe('billing-guide workflow offer', () => {
     expect(screen.getByText(offer.disclaimer)).toBeVisible()
     expect(screen.getByRole('heading', { name: 'CPT 99490 Billing Guide' })).toBeVisible()
     expect(screen.getByRole('link', { name: 'Estimate program ROI' })).toHaveAttribute('href', '/roi-calculator')
-    expect(metadata.title).toBe('2026 CMS Care Program Billing Guide: RPM, CCM, TCM, PCM | Positive Check')
+    expect(metadata.title).toBe('2026 CMS Billing Guide: RPM, CCM, TCM, PCM | Positive Check')
     expect(metadata.alternates?.canonical).toBe('/resources/billing-guide')
   })
 
@@ -31,6 +31,8 @@ describe('billing-guide workflow offer', () => {
     await user.click(screen.getByRole('button', { name: offer.buttonText }))
     const dialog = screen.getByRole('dialog', { name: offer.modalTitle })
     expect(within(dialog).getByText(offer.disclaimer)).toBeVisible()
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(0)
+    await user.type(within(dialog).getByLabelText('Full Name'), 'Synthetic Test')
     await user.click(within(dialog).getByLabelText('Email Address'))
     await user.click(within(dialog).getByLabelText('Full Name'))
     const calls = jest.mocked(trackEvent).mock.calls

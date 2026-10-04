@@ -6,7 +6,7 @@ import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } f
 import type { PostFAQItem } from "@/components/blog-posts/post-blocks"
 
 export const metadata: Metadata = {
-  title: 'CCM Billing in 2026: CPT 99490, 99439, 99487 & 99489 Guide | Positive Check',
+  title: '2026 CCM Billing: CPT 99490, 99439, 99487, 99489 | Positive Check',
   description: 'The complete 2026 guide to Chronic Care Management billing: CPT 99490, 99439, 99487, and 99489 rates, non-complex vs. complex CCM, audit-defensible documentation, and the CY 2026 Physician Fee Schedule changes.',
   alternates: {
     canonical: '/blog/ccm-billing-2026-cpt-codes-guide',

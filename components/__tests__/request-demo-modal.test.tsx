@@ -31,6 +31,16 @@ describe('demo request conversions', () => {
     return user
   }
 
+  it('does not count automatic modal focus or field navigation as a form start', async () => {
+    const user = userEvent.setup()
+    render(<RequestDemoModal source="test_cta"><button>Open demo</button></RequestDemoModal>)
+    await user.click(screen.getByRole('button', { name: 'Open demo' }))
+    expect(screen.getByLabelText('Full Name')).toHaveFocus()
+    await user.tab()
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(0)
+    expect(mockFetch).not.toHaveBeenCalled()
+  })
+
   it('sends attribution to the API and records one lead only after delivery succeeds', async () => {
     let resolveResponse!: (response: Response) => void
     mockFetch.mockReturnValueOnce(new Promise(resolve => { resolveResponse = resolve }))
@@ -69,6 +79,8 @@ describe('demo request conversions', () => {
     await user.click(screen.getByRole('button', { name: 'Open demo' }))
     await user.click(screen.getByLabelText('Full Name'))
     await user.tab()
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(1)
+    await user.type(screen.getByLabelText('Full Name'), ' Updated')
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(2)
     expect(mockFetch).not.toHaveBeenCalled()
   })
@@ -81,6 +93,18 @@ describe('demo request conversions', () => {
     await screen.findByText('Failed to submit request. Please try again.')
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
     await waitFor(() => expect(screen.getByRole('button', { name: 'Request demo' })).toBeEnabled())
+  })
+
+  it('records a start when submitting retained values after reopening', async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true } as Response)
+    const user = await fillForm()
+    await user.keyboard('{Escape}')
+    await user.click(screen.getByRole('button', { name: 'Open demo' }))
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(1)
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    await screen.findByText('Your request is in.')
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'lead_form_start')).toHaveLength(2)
+    expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(1)
   })
 
   it('retains the billing offer through successful submission without putting contact details in analytics', async () => {
