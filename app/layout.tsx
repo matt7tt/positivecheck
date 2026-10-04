@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     google:
       process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ||
       "Y3AxSEQKmZ578d6JTTK8MpFhtslQBH6qtVV_PiH-4qQ",
+    other: {
+      "msvalidate.01": "E026608C8E0DC60A01B44A1576DC350C",
+    },
   },
   openGraph: {
     type: 'website',
