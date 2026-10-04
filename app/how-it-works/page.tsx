@@ -1,15 +1,17 @@
 import type { Metadata } from 'next'
 import { HowItWorksComponent } from '@/components/how-it-works'
 
+const description = 'Plan patient check-ins, call prompts, alerts, and care-team handoffs. Rollout timing depends on data readiness, security review, and integration scope.'
+
 export const metadata: Metadata = {
   title: 'How AI Patient Check-In Calls Work | Positive Check',
-  description: 'Set up in minutes: configure call schedules, customize wellness prompts, and receive real-time patient insights via a HIPAA-compliant dashboard.',
+  description,
   alternates: {
     canonical: '/how-it-works',
   },
   openGraph: {
     title: 'How AI Patient Check-In Calls Work',
-    description: 'Set up in minutes: configure call schedules, customize wellness prompts, and receive real-time patient insights via a HIPAA-compliant dashboard.',
+    description,
     url: '/how-it-works',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'How AI Patient Check-In Calls Work',
-    description: 'Set up in minutes: configure call schedules, customize wellness prompts, and receive real-time patient insights.',
+    description,
     images: ['/images/senior-talking-on-the-phone1.webp'],
   },
 }
@@ -43,4 +45,4 @@ export default function HowItWorksPage() {
       <HowItWorksComponent />
     </>
   )
-} 
+}

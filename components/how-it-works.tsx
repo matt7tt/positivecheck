@@ -18,9 +18,8 @@ export function HowItWorksComponent() {
             "@context": "https://schema.org",
             "@type": "HowTo",
             "name": "How AI-Powered Patient Check-In Calls Work",
-            "description": "Simple setup and implementation process for healthcare providers: configure call schedules, customize prompts, and receive real-time patient insights.",
+            "description": "Plan patient check-ins, call prompts, alerts, and care-team handoffs. Rollout timing depends on data readiness, security review, and integration scope.",
             "image": "https://www.positivecheck.com/images/how-it-works-guide.webp",
-            "totalTime": "PT15M",
             "supply": [
               {
                 "@type": "HowToSupply",
@@ -40,17 +39,17 @@ export function HowItWorksComponent() {
               {
                 "@type": "HowToStep",
                 "name": "Engineer the Call Prompts",
-                "text": "Positive Check will work with your team to design the right set of questions. We make sure each call captures the information your program needs."
+                "text": "Positive Check works with your team to configure questions and follow-up prompts for your program. Your team reviews and approves the questions before patient outreach begins."
               },
               {
                 "@type": "HowToStep",
                 "name": "Engage with Patients",
-                "text": "Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns. Patients can also call Lola back anytime, complete check-ins by two-way text message, or be transferred live to your care team."
+                "text": "Lola follows the configured call schedule, asks the approved questions, and uses follow-up prompts to gather more information. Live transfer depends on routing configuration and staff availability."
               },
               {
                 "@type": "HowToStep",
                 "name": "Get Alerts and Insights",
-                "text": "Providers receive timely notifications and can review results anytime in the secure HIPAA-compliant dashboard."
+                "text": "Your team reviews call summaries and flagged responses in the dashboard, with notifications configured for your workflow. Alerts support clinical review; they do not guarantee detection of every concern or an immediate staff response."
               }
             ]
           }
@@ -66,8 +65,8 @@ export function HowItWorksComponent() {
               How Positive Check Works
             </h1>
             <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Simple setup and implementation that integrates seamlessly with your existing
-              care workflow. From configuration to real-time patient insights.
+              Plan patient check-ins, call prompts, alerts, and care-team handoffs.
+              Rollout timing depends on data readiness, security review, and integration scope.
             </p>
           </div>
         </section>
@@ -192,7 +191,7 @@ export function HowItWorksComponent() {
                       Engineer the Call Prompts
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Positive Check will work with your team to design the right set of questions. We make sure each call captures the information your program needs.
+                      Positive Check works with your team to configure questions and follow-up prompts for your program. Your team reviews and approves the questions before patient outreach begins.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -230,7 +229,7 @@ export function HowItWorksComponent() {
                       Engage with Patients
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Lola makes the calls, asks the chosen questions, and if needed triggers escalation questions to dig deeper into patient concerns.
+                      Lola follows the configured call schedule, asks the approved questions, and uses follow-up prompts to gather more information. Live transfer depends on routing configuration and staff availability.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -248,7 +247,7 @@ export function HowItWorksComponent() {
                         <h4 className="font-semibold text-gray-900 mb-3">Escalation Protocol:</h4>
                         <ul className="space-y-2">
                           <li>&#8226; Follow-up questions for concerning responses</li>
-                          <li>&#8226; Live transfer to your care team for urgent concerns</li>
+                          <li>&#8226; Live transfer based on configured routing and staff availability</li>
                           <li>&#8226; Smart retries if unanswered, then an opt-in switch to text check-ins</li>
                           <li>&#8226; Care team notification for missed calls</li>
                           <li>&#8226; Detailed call records in dashboard</li>
@@ -270,14 +269,14 @@ export function HowItWorksComponent() {
                       Get Alerts and Insights
                     </h3>
                     <p className="text-lg text-gray-700 mb-6">
-                      Providers receive timely notifications and can review results anytime in the secure HIPAA-compliant dashboard.
+                      Your team reviews call summaries and flagged responses in the dashboard, with notifications configured for your workflow. Alerts support clinical review; they do not guarantee detection of every concern or an immediate staff response.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-3">Real-Time Alerts:</h4>
                         <ul className="space-y-2">
-                          <li>&#8226; Immediate notification for concerning responses</li>
+                          <li>&#8226; Configured notifications for flagged responses</li>
                           <li>&#8226; Missed call alerts</li>
                           <li>&#8226; Medication non-adherence flags</li>
                           <li>&#8226; Symptom change detection</li>
@@ -331,7 +330,7 @@ export function HowItWorksComponent() {
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Call Back Anytime</strong>
-                        <p className="text-gray-600">Lola answers inbound calls &#8212; reschedule, ask questions, or reach a live person</p>
+                        <p className="text-gray-600">Lola answers inbound calls &#8212; reschedule, ask questions, or request a live transfer</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
@@ -358,20 +357,20 @@ export function HowItWorksComponent() {
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Real-Time Alerts</strong>
-                        <p className="text-gray-600">Immediate notification when patients need attention</p>
+                        <p className="text-gray-600">Configured notifications help your team review flagged responses</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Live Transfer Escalation</strong>
-                        <p className="text-gray-600">Urgent conversations hand off to your care team mid-call</p>
+                        <p className="text-gray-600">Mid-call transfer depends on configured routing and staff availability</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <strong>Verified AI Quality</strong>
+                        <strong>AI Quality Checks</strong>
                         <p className="text-gray-600">Rule-based clinical safety nets plus an independent QA audit of every call</p>
                       </div>
                     </li>

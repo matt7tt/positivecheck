@@ -45,7 +45,7 @@ const dashboardTabs = [
     id: 'alerts',
     title: 'Alerts',
     description:
-      'Every concerning response is classified by severity and routed to the right person. Review, acknowledge, and document follow-up actions with full audit trail.',
+      'Review flagged responses by severity, acknowledge alerts, and document follow-up actions with an audit trail. Routing follows your configured escalation rules; your care team remains responsible for review and response.',
     image: '/images/admin-console-alert-management-new.png',
     alt: 'Alert management console showing clinical alerts prioritized by severity',
   },
@@ -70,7 +70,7 @@ const dashboardTabs = [
 const capabilities = [
   {
     icon: CalendarClock,
-    title: 'Reach Every Patient, Every Time',
+    title: 'Schedule Outreach and Retry Missed Calls',
     problem: 'Staff can only make so many calls in a day. Patients fall through the cracks.',
     solution:
       'Automated scheduling handles thousands of check-ins daily while your team focuses on patients who need human attention. Set cadence per patient or cohort — daily, weekly, or custom — and let the platform do the rest.',
@@ -83,14 +83,14 @@ const capabilities = [
   },
   {
     icon: AlertTriangle,
-    title: 'Never Miss a Warning Sign',
+    title: 'Flag Concerning Responses for Care-Team Review',
     problem: 'Critical changes in patient condition go undetected between office visits.',
     solution:
-      'AI-powered alert classification analyzes every response in real time. Concerning answers trigger immediate escalation to the right care team member, with severity levels and recommended actions.',
+      'AI-powered analysis and configured alert rules flag concerning responses for care-team review. Alerts support clinical review; they do not guarantee detection of every concern or an immediate staff response.',
     bullets: [
       'Clinical alert classification with severity levels',
       'Configurable escalation thresholds',
-      'Immediate notifications via dashboard and email',
+      'Dashboard alerts and configured email notifications',
       'Full audit trail for compliance documentation',
     ],
   },
@@ -160,11 +160,12 @@ export function PlatformComponent() {
         <section className="px-6 py-20 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              The Patient Engagement Platform That Pays for Itself
+              AI Patient Outreach for Your Care Team
             </h1>
             <p className="text-xl text-purple-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-              Reduce readmissions, close care gaps, and scale patient outreach — without adding staff.
-              AI-powered check-in calls that deliver clinical intelligence your team can act on.
+              Support RPM, CCM, and post-discharge follow-up with AI-powered check-ins,
+              response summaries, and configured alerts. Your care team retains clinical review,
+              follow-up, and care decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <RequestDemoModal>
@@ -202,12 +203,12 @@ export function PlatformComponent() {
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Conversations That Feel Human, Powered by AI That Thinks Like a Clinician
+                Adaptive AI Conversations, Guided by Your Care Team
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Forget rigid IVR menus and robocalls. Lola uses real-time voice AI to have natural, adaptive conversations
-                that patients actually enjoy. She remembers context from previous calls, follows clinically structured
-                question flows, and knows when to dig deeper.
+                Lola uses real-time voice AI to ask your team&apos;s configured wellness questions,
+                use context from previous responses, and ask follow-up questions.
+                AI-generated summaries and flags support your team; they do not replace clinical judgment.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -241,14 +242,14 @@ export function PlatformComponent() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
                   <div>
-                    <strong className="text-gray-900">Hands off to a human in real time</strong>
-                    <p className="text-gray-600">When a conversation needs a person, Lola transfers the call to your care team on the spot</p>
+                    <strong className="text-gray-900">Configured live handoffs</strong>
+                    <p className="text-gray-600">Live transfer depends on your routing configuration and staff availability. Agree coverage and fallback steps before launch.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
                   <div>
-                    <strong className="text-gray-900">Gets better with every conversation</strong>
+                    <strong className="text-gray-900">Context for future conversations</strong>
                     <p className="text-gray-600">Weekly AI analysis learns each patient’s preferences, favorite topics, and rapport cues — and applies them to future calls</p>
                   </div>
                 </div>
@@ -285,9 +286,9 @@ export function PlatformComponent() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Outbound wellness calls</h3>
                 <p className="text-gray-600 mb-4">
-                  Lola calls each patient at their preferred time, follows your approved clinical script,
-                  and escalates concerning responses in real time — including a live transfer to your care
-                  team when a conversation needs a human.
+                  Lola follows your configured call schedule and approved questions.
+                  Responses that meet configured escalation rules are flagged for review;
+                  live transfer depends on routing configuration and staff availability.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
@@ -317,7 +318,7 @@ export function PlatformComponent() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
-                    <span>Reschedule call times, pause calls, or reach a live person</span>
+                    <span>Reschedule call times, pause calls, or request a live transfer</span>
                   </li>
                 </ul>
               </div>
@@ -633,8 +634,8 @@ export function PlatformComponent() {
               Ready to Transform Your Patient Engagement?
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-              See how Positive Check can help your team reach more patients, catch problems earlier,
-              and deliver measurable outcomes.
+              See the outreach, summary, and escalation workflow, and discuss how to evaluate
+              patient engagement, retained staff workload, and total cost in a pilot.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <RequestDemoModal>
