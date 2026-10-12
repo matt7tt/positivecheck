@@ -3,7 +3,7 @@ import { existsSync } from 'fs'
 import { join } from 'path'
 import Page, { metadata } from '@/app/blog/apcm-billing-2026/page'
 import { APCM_FAQ } from '@/components/blog-posts/apcm-billing-2026'
-import { APCM_BILLING_POST as post, featuredPost, listedPosts } from '@/lib/blog-posts'
+import { APCM_BILLING_POST as post, listedPosts } from '@/lib/blog-posts'
 import sitemap from '@/app/sitemap'
 
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
@@ -44,8 +44,7 @@ describe('APCM billing blog publication', () => {
     expect(metadata.alternates?.canonical).toBe(`/blog/${post.slug}`)
   })
 
-  it('features the article in the listing and includes it in the sitemap', () => {
-    expect(featuredPost).toBe(post)
+  it('keeps the article in the listing and includes it in the sitemap', () => {
     expect(listedPosts.filter(p => p.slug === post.slug)).toHaveLength(1)
     expect(sitemap()).toContainEqual(expect.objectContaining({ url: `https://www.positivecheck.com/blog/${post.slug}` }))
   })

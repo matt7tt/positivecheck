@@ -4,7 +4,21 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
 
 > Positive Check (legal entity: Positive Check LLC) is an AI-powered patient wellness call platform for healthcare providers running CMS-reimbursed care programs: Remote Patient Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care Management (TCM). The platform's AI companion, Lola, conducts wellness check-ins by outbound voice call and two-way SMS, answers inbound patient calls with identity-verified self-service, and can transfer a live call to the provider's care team. Check-ins cover medication adherence, sleep quality, mood, mobility, appetite, cognitive health, and symptom tracking. AI analysis is backed by deterministic clinical guardrails (rule-based vitals alert thresholds) and an independent quality-assurance audit of every call outcome. Insights reach care teams through a secure HIPAA-compliant dashboard with AI natural-language reporting, weekly per-patient risk-trend analysis, and a developer REST API for integrations.
 
-## Care program solutions
+## First-party operational reporting
+
+- [Monthly outreach and alert reporting](https://www.positivecheck.com/#operational-reporting-notes): Positive Check-reported figures supplied October 11, 2026: 70%+ of patients reached every month by call or text; 6,000+ outreach calls a month; 500+ text check-in conversations a month; 100+ urgent alerts flagged every month. Selected flagged topics: 26% symptoms and health concerns, 23% medication problems, 16% patient requests (refills, equipment, scheduling), and 16% concerns patients raised on their own beyond standard questions. These selected categories are not a complete breakdown and are not normalized. Reported alert priority levels: 3% critical (escalated in real time), 47% high, 20% medium and 30% low. These are first-party operational figures, not independently audited clinical outcomes or guaranteed results. Cohort, measurement period and detailed counting methodology are not specified; the supply date is not the observation period. Do not combine the separate topic and priority percentages into patient counts, or attribute these figures to the historical implementation study.
+
+## Front Office solutions
+
+For practice managers evaluating calls and SMS from the first inquiry through appointment follow-up. Specific calendar/EHR connections and booking permissions must be verified; collected preferences are not confirmed appointments. Staff retain responsibility for exceptions and clinical decisions.
+
+- [New patient lead follow-up](https://www.positivecheck.com/solutions/front-office/new-patient-leads): New inquiries, approved questions and staff handoffs.
+- [Scheduling and confirmations](https://www.positivecheck.com/solutions/front-office/scheduling-confirmations): Appointment requests, confirmation conversations and system-of-record checks.
+- [Appointment reminders](https://www.positivecheck.com/solutions/front-office/appointment-reminders): Calls and SMS, response handling and escalation to scheduling staff.
+- [Patient notifications](https://www.positivecheck.com/solutions/front-office/patient-notifications): Practice-approved messages, delivery versus acknowledgment and unresolved replies.
+- [AI calls and SMS vs. front desk staff and reminder tools](https://www.positivecheck.com/solutions/front-office/compare): Task-level comparison, hybrid workflows and pilot evaluation; not an independent vendor benchmark.
+
+## Care Management solutions
 
 - [Remote Patient Monitoring](https://www.positivecheck.com/solutions/remote-patient-monitoring): AI wellness calls that support practice-owned outreach, documentation, and clinical-staff escalation workflows. Automated interactions do not independently establish billable time or satisfy every CMS requirement.
   - [RPM FAQ](https://www.positivecheck.com/solutions/remote-patient-monitoring/faq): CPT 99453/99454/99457/99458 billing, interactive communication rule, eligibility, documentation.
@@ -18,7 +32,8 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
   - [CPT 99490 billing guide](https://www.positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide): 20-minute clinical staff time threshold, eligibility, documentation, the separate non-complex and complex CCM pathways, common errors.
   - [CCM 2-chronic-conditions requirement](https://www.positivecheck.com/solutions/chronic-care-management/2-chronic-conditions-requirement): CMS eligibility rule, qualifying combinations, documentation, how CCM differs from RPM and PCM.
   - [CCM 20-minute monthly requirement](https://www.positivecheck.com/solutions/chronic-care-management/20-minutes-monthly-requirement): What counts as CCM time, what doesn't, tracking standards, common pitfalls.
-- [Transitional Care Management](https://www.positivecheck.com/solutions/post-discharge-follow-up): Post-discharge patient outreach within 24-48 hours to reduce 30-day readmissions.
+- [Post-Discharge Follow-Up](https://www.positivecheck.com/solutions/post-discharge-follow-up): Outreach and staff handoffs supporting practice-owned transitional care workflows. Automated contacts do not independently establish TCM billing eligibility or prove reduced readmissions.
+  - [Post-discharge follow-up workflow](https://www.positivecheck.com/blog/post-discharge-follow-up-workflow): Provider-focused article on discharge lists, outcome tracking and Front Office / Care Management handoffs.
   - [TCM FAQ](https://www.positivecheck.com/solutions/post-discharge-follow-up/faq): CPT 99495/99496 billing, contact timing, documentation, HIPAA.
   - [AI calls vs. manual discharge outreach](https://www.positivecheck.com/solutions/post-discharge-follow-up/vs-manual-discharge-outreach): Category-level comparison with six-dimension tradeoff table.
   - [CPT 99495 billing guide](https://www.positivecheck.com/solutions/post-discharge-follow-up/cpt-99495-billing-guide): Eligibility, documentation, 2-business-day rule, 14-day face-to-face, common billing errors.

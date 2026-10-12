@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/components/structured-data'
@@ -61,7 +62,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
       <StructuredData id="ccm-compare-article" data={buildArticleSchema({
         headline: title, description, url: PAGE_URL,
         image: 'https://www.positivecheck.com/images/admin-console-dashboard-new.png',
-        datePublished: '2026-04-20', dateModified: '2026-09-13',
+        datePublished: '2026-04-20', dateModified: '2026-10-06',
       })} />
       <StructuredData id="ccm-compare-faq" data={buildFAQSchema(comparisonFaqs)} />
       <PublicHeader currentPage="platform" />
@@ -89,6 +90,15 @@ export default function CCMVsInHouseCoordinatorsPage() {
               ))}</tbody>
             </table>
           </div>
+          <ContentConversionCta
+            source="ccm_comparison_evaluation"
+            title="Compare your current workflow with a software-supported pilot"
+            description="Bring your outreach bottleneck, staff coverage and integration questions. In a 15-minute demo, discuss what could change, what stays with your team, and what you would need to measure before expanding. Please do not share patient information."
+            buttonText="Discuss a CCM workflow pilot"
+            secondaryText="See the call-to-follow-up example"
+            secondaryHref="/resources/billing-guide#workflow-example"
+            secondaryCtaName="view_workflow_example"
+          />
           <h2 className="text-2xl font-bold mt-12 mb-4">Keep clinical work separate from automated outreach</h2>
           <p className="text-gray-700 leading-relaxed">Automated call duration is not clinical staff time. CPT 99490 requires at least 20 minutes of qualifying clinical staff time per calendar month, together with other applicable requirements. Clinicians and billing professionals must determine which documented activities qualify; a call summary or a time total does not independently establish billing eligibility.</p>
           <p className="text-sm text-gray-600 mt-4">Source: <a className="underline text-purple-700" href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/downloads/chroniccaremanagement.pdf">CMS Chronic Care Management Services</a>. The CMS reference supports billing context, not staffing ratios, salary estimates or product outcomes.</p>
@@ -102,7 +112,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
               <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
             </div>
           ))}</div>
-          <p className="mt-10 text-sm text-gray-500">Published by Positive Check. Content updated September 13, 2026.</p>
+          <p className="mt-10 text-sm text-gray-500">Published by Positive Check. Content updated October 6, 2026.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-5">
             <Link href="/demo" className="text-purple-700 font-semibold underline">Discuss your workflow</Link>
             <Link href="/solutions/chronic-care-management" className="text-purple-700 underline">Back to the CCM overview</Link>

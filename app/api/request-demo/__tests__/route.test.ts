@@ -72,4 +72,19 @@ describe('demo request delivery contract', () => {
     expect(jest.mocked(forwardLeadToCrm).mock.calls[0][0].fields).not.toHaveProperty('offer_id')
     expect(mockSend.mock.calls[0][0].html).not.toContain('untrusted')
   })
+
+  it('preserves CTA context for follow-up without claiming an appointment is booked', async () => {
+    process.env.RESEND_API_KEY = 'test-only-not-a-real-key'
+    mockSend.mockResolvedValue({ error: null })
+    await POST(request({ name: 'Synthetic Test', email: 'synthetic@example.com', cta_location: 'ccm_comparison_evaluation' }))
+    expect(jest.mocked(forwardLeadToCrm).mock.calls[0][0].fields.cta_location).toBe('ccm_comparison_evaluation')
+    expect(mockSend.mock.calls[0][0].html).toContain('ccm_comparison_evaluation')
+    expect(mockSend.mock.calls[0][0].html).toContain('not a confirmed booking')
+  })
+
+  it.each(['<script>untrusted</script>', 'synthetic@example.com', 'x'.repeat(81)])('ignores invalid CTA identifiers: %s', async ctaLocation => {
+    jest.mocked(forwardLeadToCrm).mockResolvedValue(true)
+    await POST(request({ name: 'Synthetic Test', email: 'synthetic@example.com', cta_location: ctaLocation }))
+    expect(jest.mocked(forwardLeadToCrm).mock.calls[0][0].fields).not.toHaveProperty('cta_location')
+  })
 })

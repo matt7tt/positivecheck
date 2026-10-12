@@ -2,10 +2,248 @@
 
 > Companion to https://www.positivecheck.com/llms.txt containing the full text
 > of Positive Check's evergreen billing, compliance, and program reference
-> pages. Positive Check LLC provides AI-powered patient wellness calls for
-> healthcare providers running Medicare RPM, CCM, and TCM programs.
+> pages. Positive Check LLC provides AI-powered calls and SMS for practice
+> Front Office workflows and Care Management outreach supporting RPM, CCM
+> and post-discharge programs. Staff retain clinical and scheduling decisions.
 > Site: https://www.positivecheck.com · Contact: info@positivecheck.com
 
+
+---
+Source: https://www.positivecheck.com/solutions/front-office/new-patient-leads
+
+Front Office · For practice managers
+# New Patient Lead Follow-Up Calls & SMS
+Lola helps your front office respond to new patient inquiries by call and SMS, collect the next step the person wants, and route requests to your team. Your practice owns the response policy and any appointment or service commitments.
+## Where this fits your practice
+For practice managers whose team splits its attention between incoming inquiries, phones and patients at the desk. Start with one inquiry source and one service so you can distinguish a new lead from an existing patient, a duplicate submission or a support request.
+For healthcare operations teams
+## Evaluate the workflow with your front office team
+Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information.
+Request a Front Office demo Compare staff and reminder tools
+## Plan the workflow and handoffs
+- ### 1 . Define eligible inquiries Agree which form or lead source can trigger outreach, how contact permission is recorded, and when a repeat submission should be suppressed. A submitted email address alone is not a phone number or a request for an automated call.
+- ### 2 . Respond with an approved conversation Use practice-approved service information and call or SMS timing. Keep questions focused on the requested next step. Do not ask a prospect to disclose medical history in a marketing demonstration.
+- ### 3 . Make the handoff explicit Separate a request for an appointment from a confirmed booking. Assign staff ownership for unanswered questions, failed contacts and appointments that require manual confirmation.
+## Measure outcomes, not just activity
+Track inquiry received → first response attempted → connected or replied → next step requested → appointment confirmed. Report elapsed time to first attempt separately from connection time; a queued message is not a successful conversation.
+## Questions to answer before launch
+### Can Lola call or text people who submit a new patient inquiry?
+Yes, calls and SMS can support new lead follow-up when the source, contact permission, timing and script are configured for the practice. Agree which inquiries qualify before enabling the workflow. A form submission should not silently turn into permission for every outreach channel, and staff need a fallback when the number is missing or contact fails.
+### Will every inquiry receive an immediate call?
+Do not promise an immediate connected call. Response timing depends on the approved contact window, valid contact details, delivery availability and whether the person answers. Set an operational target for the first attempt and a fallback for failures. Keep attempted, connected and completed conversations separate when measuring how reliably the workflow responds.
+### Can a lead be marked booked as soon as they request a time?
+No. A preferred time or positive reply is an appointment request until the scheduling system or authorized staff confirms it. Evaluate how availability is checked, who handles exceptions, and where confirmation is recorded. Reporting should distinguish interest, scheduling requests and confirmed appointments so staff do not overlook a patient who is still waiting.
+### Does Lola replace our front desk team?
+No. Lola supports repeatable calls and SMS; your staff still own exceptions, complex questions and the patient relationship. Compare the work your team does today with what remains after automation. A pilot should measure review and follow-up effort as well as successful conversations, rather than assume every automated interaction saves a fixed amount of staff time.
+### What should we confirm about integrations before starting?
+Confirm where contact and appointment data originate, how changes reach the outreach workflow, and which results can be written back. Do not assume a named EHR or calendar integration is included. Ask for a demonstration using synthetic records, including changed appointments, duplicate records and failed updates, and agree which system and staff member own the final outcome.
+### How should we evaluate a pilot?
+Start with one task and an agreed population, message and human handoff. Record the current baseline, then compare contact success, completed next steps, staff follow-up time, opt-outs and errors using the same definitions. Review failures as well as successes. Expand only when practice operations owners agree that the process and exception workload are supportable.
+## Related Front Office tasks
+- Scheduling & Confirmations
+- Appointment Reminders
+- Patient Notifications
+Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
+Published by Positive Check. Workflow content updated October 9, 2026.
+
+---
+Source: https://www.positivecheck.com/solutions/front-office/scheduling-confirmations
+
+Front Office · For practice managers
+# Patient Appointment Scheduling & Confirmation Calls
+Lola supports appointment-setting and confirmation conversations by call and SMS. The workflow needs an agreed source of availability, scheduling rules and a clear distinction between a requested time and a confirmed appointment.
+## Where this fits your practice
+For practice managers handling scheduling callbacks and confirmation queues. Define the appointment types, locations and providers in scope first; workflows with complex eligibility or preparation requirements may need staff review before a time can be confirmed.
+For healthcare operations teams
+## Evaluate the workflow with your front office team
+Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information.
+Request a Front Office demo Compare staff and reminder tools
+## Plan the workflow and handoffs
+- ### 1 . Establish the scheduling source Decide which system owns availability and appointment status. Verify supported data access and write-back during implementation rather than assuming a universal calendar connection.
+- ### 2 . Handle a request or confirmation Use approved prompts to establish the scheduling need or confirm an existing appointment. Identify changes that require a staff member, rather than treating every response as an automatic calendar update.
+- ### 3 . Reconcile the final status Record requested, confirmed, reschedule requested and unresolved separately. Check the authoritative schedule before communicating a final appointment commitment.
+## Measure outcomes, not just activity
+Track confirmed appointments against actual calendar records, unresolved scheduling requests and staff reconciliation time. Include conflicts, cancellations and stale availability in testing—not only a successful appointment request.
+## Questions to answer before launch
+### Can Lola help with appointment setting and confirmations?
+Yes. Lola supports scheduling and confirmation conversations using calls and SMS. The exact booking action depends on the scheduling system, approved rules and integration scope. During evaluation, distinguish collecting a preferred time from writing a confirmed appointment to the calendar, and agree how staff will handle conflicts, unavailable slots and requests outside the configured workflow.
+### Does a patient saying yes mean an appointment is booked?
+Not necessarily. A yes may confirm interest, acknowledge a reminder or accept a proposed time. The workflow must interpret the reply in context and reconcile it with the authoritative schedule. Only an actual confirmed appointment should be reported as booked; ambiguous replies and unsuccessful updates need a staff-owned queue rather than a success label.
+### How should rescheduling and cancellations work?
+Define which changes Lola may support and which require a person. A cancellation request should not be confused with a completed cancellation, and a reschedule request should not leave two appointments active. Test how schedule changes propagate to future messages, and assign staff responsibility for requests that cannot be completed through the configured integration.
+### Does Lola replace our front desk team?
+No. Lola supports repeatable calls and SMS; your staff still own exceptions, complex questions and the patient relationship. Compare the work your team does today with what remains after automation. A pilot should measure review and follow-up effort as well as successful conversations, rather than assume every automated interaction saves a fixed amount of staff time.
+### What should we confirm about integrations before starting?
+Confirm where contact and appointment data originate, how changes reach the outreach workflow, and which results can be written back. Do not assume a named EHR or calendar integration is included. Ask for a demonstration using synthetic records, including changed appointments, duplicate records and failed updates, and agree which system and staff member own the final outcome.
+### How should we evaluate a pilot?
+Start with one task and an agreed population, message and human handoff. Record the current baseline, then compare contact success, completed next steps, staff follow-up time, opt-outs and errors using the same definitions. Review failures as well as successes. Expand only when practice operations owners agree that the process and exception workload are supportable.
+## Related Front Office tasks
+- New Patient Leads
+- Appointment Reminders
+- Patient Notifications
+Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
+Published by Positive Check. Workflow content updated October 9, 2026.
+
+---
+Source: https://www.positivecheck.com/solutions/front-office/appointment-reminders
+
+Front Office · For practice managers
+# Appointment Reminder Calls & SMS for Medical Practices
+Lola supports appointment reminder calls and SMS so your practice can reach patients about upcoming visits and identify who needs help. A delivered reminder, a patient reply and an attended appointment are different outcomes.
+## Where this fits your practice
+For practice managers reviewing reminder queues and patients who need a callback. Begin with a defined appointment type and compare the proposed workflow with your current reminder tool. If simple one-way messages already meet the need, conversational outreach may not add enough value.
+For healthcare operations teams
+## Evaluate the workflow with your front office team
+Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information.
+Request a Front Office demo Compare staff and reminder tools
+## Plan the workflow and handoffs
+- ### 1 . Keep the appointment list current Use the practice’s agreed schedule source and contact preferences. Decide how cancellations, reschedules and duplicate patient records are handled before reminders are sent.
+- ### 2 . Set reminder timing and message scope Approve the call or SMS wording and contact window. Keep messages limited to the operational details appropriate for the channel, and define what happens when someone does not respond.
+- ### 3 . Route replies that need action Separate confirmed attendance intentions, requests for help and changes requiring staff. Make sure a reply is not simply counted and forgotten while the patient waits for a callback.
+## Measure outcomes, not just activity
+Measure attempted and delivered messages, replies, help requests resolved and appointment attendance. Compare comparable visit types and time periods; reminder delivery alone does not demonstrate fewer missed appointments.
+## Questions to answer before launch
+### Does Positive Check support both reminder calls and texts?
+Yes. Calls and SMS can support appointment reminders. Choose channels and timing around the practice’s approved contact policy and patient preferences, and confirm the required sender and integration setup. The evaluation should include missing numbers, unanswered calls, delivery failures and opt-outs, with a clear staff-owned process for patients who need additional help.
+### Can reminders guarantee fewer no-shows?
+No. An appointment reminder is an outreach activity, not a guarantee that a patient will attend. Transportation, cost, scheduling and other factors can still affect attendance. Compare attendance for comparable appointment groups and report the evaluation period and limitations. Also measure whether reminders create additional staff work through replies, cancellations or requests for assistance.
+### How is conversational outreach different from a basic reminder tool?
+A basic reminder tool may be sufficient when the task is simply sending a standard message. Evaluate conversational calls or SMS when replies need clarification or a staff handoff. Compare both approaches on schedule accuracy, handling of exceptions, patient preferences and total workload. Do not assume every reminder needs an AI conversation to be effective.
+### Does Lola replace our front desk team?
+No. Lola supports repeatable calls and SMS; your staff still own exceptions, complex questions and the patient relationship. Compare the work your team does today with what remains after automation. A pilot should measure review and follow-up effort as well as successful conversations, rather than assume every automated interaction saves a fixed amount of staff time.
+### What should we confirm about integrations before starting?
+Confirm where contact and appointment data originate, how changes reach the outreach workflow, and which results can be written back. Do not assume a named EHR or calendar integration is included. Ask for a demonstration using synthetic records, including changed appointments, duplicate records and failed updates, and agree which system and staff member own the final outcome.
+### How should we evaluate a pilot?
+Start with one task and an agreed population, message and human handoff. Record the current baseline, then compare contact success, completed next steps, staff follow-up time, opt-outs and errors using the same definitions. Review failures as well as successes. Expand only when practice operations owners agree that the process and exception workload are supportable.
+## Related Front Office tasks
+- New Patient Leads
+- Scheduling & Confirmations
+- Patient Notifications
+Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
+Published by Positive Check. Workflow content updated October 9, 2026.
+
+---
+Source: https://www.positivecheck.com/solutions/front-office/patient-notifications
+
+Front Office · For practice managers
+# Patient Notification Calls & SMS for Practices
+Lola supports calls and SMS for practice-approved patient notifications, such as scheduling updates and operational notices. Your practice decides the audience, wording, timing and human response path; Lola does not make clinical decisions.
+## Where this fits your practice
+For practice managers coordinating updates that otherwise require repeated manual calls. Separate operational notices from messages that contain sensitive information or need clinical interpretation. Different messages can need different review and delivery processes.
+For healthcare operations teams
+## Evaluate the workflow with your front office team
+Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information.
+Request a Front Office demo Compare staff and reminder tools
+## Plan the workflow and handoffs
+- ### 1 . Choose the audience and purpose Define who needs the notice and why. Review contact records and preferences, and exclude people who should not receive that message rather than treating every list as a broadcast audience.
+- ### 2 . Approve the message for the channel Agree on wording for a live call, voicemail or text. Decide what can be disclosed in each channel and when the recipient should instead contact the practice through an approved route.
+- ### 3 . Own delivery exceptions and replies Track delivery separately from acknowledgement. Assign a team member to questions, failed contacts and requests that fall outside the operational script.
+## Measure outcomes, not just activity
+Report delivery attempts, delivery outcomes, replies requiring action and resolved follow-ups. A text marked delivered is not proof that the patient read or understood it, and a call attempt is not an acknowledgement.
+## Questions to answer before launch
+### What kinds of patient notifications fit this workflow?
+Practice-approved operational notices, including appointment-related updates, are a starting point. Define the exact message and audience during implementation. Do not treat a general notification workflow as permission to send any health information through any channel. Messages that require clinical interpretation, sensitive details or urgent action need their own reviewed process and appropriate human ownership.
+### Can Lola explain a diagnosis or decide what a patient should do?
+Lola does not make clinical decisions. Front Office notifications should stay within the approved operational message and route clinical questions to the care team. When a recipient asks something outside that scope, the workflow needs a clear handoff rather than an improvised answer. Confirm staffing and response expectations before enabling a message that could prompt clinical questions.
+### Does delivered mean the patient understood the notification?
+No. Delivery, acknowledgement and understanding are different measures. A text delivery receipt does not show that the message was read, and an answered call may still require follow-up. Decide what evidence the specific notice requires, identify unanswered questions and keep a staff-owned route for people who need the information repeated or explained.
+### Does Lola replace our front desk team?
+No. Lola supports repeatable calls and SMS; your staff still own exceptions, complex questions and the patient relationship. Compare the work your team does today with what remains after automation. A pilot should measure review and follow-up effort as well as successful conversations, rather than assume every automated interaction saves a fixed amount of staff time.
+### What should we confirm about integrations before starting?
+Confirm where contact and appointment data originate, how changes reach the outreach workflow, and which results can be written back. Do not assume a named EHR or calendar integration is included. Ask for a demonstration using synthetic records, including changed appointments, duplicate records and failed updates, and agree which system and staff member own the final outcome.
+### How should we evaluate a pilot?
+Start with one task and an agreed population, message and human handoff. Record the current baseline, then compare contact success, completed next steps, staff follow-up time, opt-outs and errors using the same definitions. Review failures as well as successes. Expand only when practice operations owners agree that the process and exception workload are supportable.
+## Related Front Office tasks
+- New Patient Leads
+- Scheduling & Confirmations
+- Appointment Reminders
+Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
+Published by Positive Check. Workflow content updated October 9, 2026.
+
+---
+Source: https://www.positivecheck.com/solutions/front-office/compare
+
+Front Office · For practice managers
+# AI Calls & SMS vs. Front Desk Staff and Reminder Tools
+Choose the smallest workflow that solves the problem. A simple reminder tool can be sufficient for routine messages; trained staff remain essential for exceptions. AI calls and SMS are worth evaluating when repeatable outreach needs a conversation and a clear handoff.
+A Positive Check-authored category comparison, not an independent vendor benchmark. Features vary by product and configuration. We do not assume guaranteed cost savings, bookings or staff replacement.
+## Compare the work, not just the communication channel
+Evaluation considerations for staff, basic reminder tools and AI calls and SMS Task or consideration Front desk staff Basic reminder tools AI calls and SMS
+New patient inquiry A person can discuss unusual requests and practice policies; coverage depends on staffing. A basic reminder workflow may not handle new inquiries; check the actual product. Evaluate prompt follow-up, approved questions and an explicit handoff for exceptions.
+Appointment confirmation Staff can check availability and resolve conflicts directly. Often suitable for scheduled messages and simple confirmation responses. Evaluate conversational clarification and whether a requested change reaches an authorized scheduler.
+Reminder or notification Useful when the message needs judgment or sensitive context. May be sufficient for predictable, one-way messages or simple reply options. Consider calls and SMS when follow-up questions or response capture justify the added workflow.
+Calendar updates Staff use the practice’s existing scheduling system. Capabilities depend on the specific integration and permissions. Confirm supported connections and write access; a patient’s requested slot is not a booking.
+Exceptions and ownership A trained person can resolve issues within their role. Unrecognized replies may need a separate staff queue. Define who handles uncertainty, failed contact, opt-outs and clinical concerns before launch.
+Cost and effort Include outreach time, interruptions, coverage and training. Include subscription costs, setup and manual work outside the tool. Include configuration, usage, integration, staff review and quality checks—not just call cost.
+For healthcare operations teams
+## Compare one real front office workflow
+Bring your current process, volume and scheduling system to a 15-minute demo. Use synthetic examples only. We’ll discuss what to verify before a pilot.
+Request a Front Office demo Plan an implementation
+## Include the hybrid and do-nothing options
+Keeping the existing process may be the right choice when volumes are low and follow-up is reliable. A hybrid workflow keeps people responsible for exceptions while using software for repeatable outreach. Building a workflow internally is another option, but assign owners for integrations, message changes, delivery failures and ongoing quality checks—not just the initial build.
+## Decide how the pilot can fail before it starts
+Select one task and define a successful outcome in your system of record. Review a wrong-number scenario, an opt-out, an unanswered attempt, a scheduling conflict and a request needing a person. Confirm who sees each outcome and how quickly they should act. Pause expansion if staff cannot reliably find and resolve the exceptions.
+## Questions from practice managers
+### When is a basic appointment reminder tool enough?
+A basic reminder tool may be enough when the appointment is already booked, the message is predictable and responses need little interpretation. Check how it handles cancellations, wrong numbers and replies outside its expected choices. If staff still spend substantial time resolving those replies, evaluate that specific gap before replacing a working reminder system.
+### Does AI front office outreach replace reception staff?
+AI outreach should not be assumed to replace reception staff. Practice staff still own exceptions, scheduling commitments, sensitive conversations and decisions outside an approved workflow. Evaluate which repeatable calls or messages can be supported, then measure the review and follow-up work that remains. Headcount savings cannot be inferred from the number of automated contacts.
+### How is Positive Check different from a one-way reminder?
+Positive Check offers Lola voice calls and SMS for front office tasks as well as care management outreach. The relevant evaluation is whether a configured conversation can capture the response your team needs and support its next action. Test your actual task, including unexpected replies and staff handoffs, rather than assuming every reminder requires conversational AI.
+### What should we verify about scheduling integrations?
+Verify the exact calendar or practice-management system, available permissions and where the confirmed appointment record will live. Ask to see both a successful request and a failed or conflicting request. Until a supported booking connection is confirmed, treat collected preferences as requests for staff review, not appointments automatically written into your calendar.
+### Can we keep our existing process and test one task?
+Yes—evaluate a narrowly scoped task before considering a wider change. Keep a defined staff fallback and agree on the outcomes, review process and stop conditions for the evaluation. Comparing the new workflow with the existing process is more useful than changing every channel at once, because it makes failures and additional staff work easier to identify.
+### How should a practice compare return on investment?
+Compare total workflow cost with useful outcomes, such as a completed staff follow-up or a confirmed appointment in the system of record. Include setup, usage, oversight and exception handling alongside staff time. Keep contacted, booked and attended counts separate. A practice-specific baseline and pilot are needed before making claims about savings or additional revenue.
+## Explore the task you want to improve
+- New Patient Leads
+- Scheduling & Confirmations
+- Appointment Reminders
+- Patient Notifications
+Published by Positive Check. Updated October 9, 2026.
+
+---
+Source: https://www.positivecheck.com/blog/post-discharge-follow-up-workflow
+
+## Keep TCM requirements separate from automation
+CMS describes TCM as a 30-day service period beginning on discharge. Required interactive contact is generally within two business days and must address patient status and needs beyond scheduling. CPT 99495 requires at least moderate-complexity medical decision-making and a visit within 14 calendar days; 99496 requires high-complexity decision-making and a visit within seven. Medication reconciliation is due on or before that visit. These are selected requirements, not a complete billing checklist. Source: CMS TCM Services booklet, August 2025, pages 3–6 .
+An AI call, reminder or appointment request should not be treated as proof that the practice has met those requirements. Lola supports outreach and information handoffs; the practice retains clinical responsibility and determines whether its documented services qualify for billing.
+## 1. Start with an owned discharge list
+Identify who supplies and reviews the discharge list, when it is refreshed and how corrections are handled. Confirm the intended recipient and contact channel through the practice’s approved process. A duplicate or stale record should be resolved before it creates another outreach attempt.
+For a pilot, define one cohort and one accountable care manager. Document the source of each record and how the team will reconcile new discharges with existing follow-up activity. Test the intake process with synthetic records before using patient information.
+## 2. Make each outreach outcome actionable
+Use distinct outcomes for no answer, voicemail, wrong number, a completed conversation and a request needing staff attention. Agree on the approved questions, contact windows and escalation instructions before launch. Unexpected responses should have a human owner rather than being forced into a successful-contact category.
+Record what is known and what still needs confirmation. For example, a patient saying they want help arranging a visit creates a scheduling request. It does not establish that an appointment exists or that the patient has received clinical guidance.
+## 3. Close the handoff between Front Office and Care Management
+Front Office can handle appointment logistics while Care Management reviews concerns and coordinates the appropriate professional follow-up. The two queues should share an explicit ownership rule: who accepts the next task, what information they receive and how the originating team learns that action was taken.
+Walk through a fictional example: an outreach conversation produces a request for a visit and a question for the care team. Send the appointment request to the scheduler and the question to the care manager. Keep both open until the responsible person records the outcome. This is a planning example, not a customer result or a promise of a particular integration.
+For healthcare operations teams
+## Walk through a post-discharge workflow
+Bring your discharge-list process and staff handoff questions to a 15-minute demo. We’ll use synthetic examples; please do not send patient information.
+Request a workflow demo Review the TCM solution
+## 4. Review unresolved work, not just completed calls
+A daily operational review should reveal contacts still awaiting action, handoffs without an acknowledged owner and mismatches between the outreach record and the practice’s system. Choose thresholds and stop conditions that the care team can actually support. Confirm the response process during staffed and unstaffed hours.
+For evaluation, keep attempted, reached, reviewed and resolved counts separate. State the denominator and reporting period for every rate. Review staff time spent on follow-up as well as automation activity. Do not infer reduced readmissions or reimbursement gains from a contact rate alone.
+## Questions to settle before a pilot
+### What should a post-discharge outreach queue show?
+A useful outreach queue shows who owns the next action, the discharge date, contact attempts, the latest outcome and unresolved requests. Keep successful contact separate from an attempted call or delivered message. The team should be able to find patients still awaiting review without searching individual transcripts or assuming that a completed automated task means follow-up is finished.
+### Who owns scheduling versus clinical questions?
+Assign scheduling questions to an authorized scheduling team and clinical questions to the appropriate care team. A request for an appointment is not a confirmed booking, and a reported concern is not a clinical assessment. Define how the recipient acknowledges the handoff and where the final action is recorded so that neither team assumes the other has finished it.
+### What should happen when an automated call is unsuccessful?
+An unsuccessful call should remain an unresolved outreach outcome, not be marked as a completed conversation. Follow the practice-approved contact plan, record what happened and send unresolved cases to the designated staff owner. Evaluate wrong numbers, voicemail and requests to stop contact during testing, so the workflow has an explicit next step rather than unlimited automatic retries.
+### Can a practice start without a complex integration?
+Start by confirming how the team can provide an accurate discharge list and receive actionable results. A limited pilot may use a simpler supported handoff, but someone must own updates, duplicate checks and reconciliation with the system of record. Do not assume a live EHR feed or automatic write-back until the specific connection has been verified.
+### How should a care manager evaluate a pilot?
+Evaluate whether the workflow reliably puts the right next action in front of the right person. Review unresolved contacts, handoff delays, staff follow-up workload and discrepancies between the outreach record and the practice record. Use a defined patient cohort and reporting period; a high volume of calls alone does not demonstrate better care or a reduction in readmissions.
+### Where should the team review billing requirements?
+Use the current CMS materials and the practice’s billing review process for reimbursement decisions. This article is an operational planning guide, not a complete code checklist or a billing determination. Keep an explicit distinction between software-generated outreach records and the professional services documented by the practice, and verify payer-specific requirements before submitting claims.
+## Related provider resources
+- Post-discharge contact timing
+- CPT 99495 billing guide
+- Scheduling and confirmation workflows
+- Implementation and pilot planning
+Operational guidance from Positive Check, not patient-specific medical advice or a reimbursement guarantee. No independent clinical reviewer is claimed. Confirm clinical protocols and billing decisions with the appropriate professionals at your practice.
 
 ---
 Source: https://www.positivecheck.com/resources/billing-guide
@@ -26,6 +264,15 @@ Bring your outreach questions. We’ll discuss how Positive Check could support 
 - Walk through outreach, documentation and exception routing.
 - Identify what your team would need to evaluate a pilot.
 Request a workflow demo Estimate program ROI This is a software workflow demo, not a clinical or billing-compliance review. Please do not share patient information.
+Synthetic workflow example · No real patient data
+## From patient call to care-team follow-up
+Positive Check supports outreach and review; your team remains responsible for follow-up. This illustrative scenario shows the handoffs to discuss in a demo—not a customer result, a live product session, or a guarantee of your configured workflow.
+- ### 1 . Patient call Illustrative exchange Lola: “Is there anything you would like your care team to follow up on?” Patient: “I would like help arranging my next appointment.” The patient shares a request. This example contains no real patient information.
+- ### 2 . Call summary Illustrative summary Patient requests help arranging the next appointment. Staff review is needed to confirm the request and next steps. The care team checks the summary against the conversation before acting.
+- ### 3 . Alert for review Illustrative handoff Follow-up needed: appointment support. Route to the practice’s designated outreach owner using the agreed workflow. Confirm routing, staff coverage and response expectations during evaluation; this is not an emergency-response demonstration.
+- ### 4 . Staff follow-up Illustrative staff action A team member contacts the patient, confirms the appointment request, and records the action and any remaining follow-up. Staff own the outcome. Automated outreach and summaries do not establish billable clinical work.
+Explore the existing voice and dashboard previews Optional voice preview: the existing Lola greeting. The written scenario above is a separate synthetic example, not a transcript of this recording.
+Your browser does not support audio playback. The written workflow example is available above. Existing product-preview image. Displayed figures are illustrative, not evidence of customer results or the scenario above. Confirm current screens and configuration in your demo. Evaluating the staffing fit? Compare software-supported and staff-led outreach . Explore the RPM workflow or CCM workflow for your program.
 ## The 3 CMS care management programs at a glance
 RPM, CCM, and TCM each address a different phase or dimension of chronic-condition care. Used together they form a complementary longitudinal strategy: TCM catches patients at the highest-risk post-discharge window, CCM provides ongoing multi-condition coordination, and RPM layers in continuous physiologic surveillance. Understanding where each program begins and ends is the foundation for compliant concurrent billing.
 RPM
@@ -138,7 +385,7 @@ A discharge-to-claim checklist covering contact attempts, visit timing, and clin
 Comparison
 ### RPM vs. CCM Medicare Billing
 Choose around clinical need and keep activity records separate when both programs apply.
-Editorial source check; not independent clinical or coding sign-off. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Last updated 2026-09-27.
+Editorial source check; not independent clinical or coding sign-off. Medicare Physician Fee Schedule . Program-specific guidance: CMS MLN TCM , CCM . Billing reference last updated 2026-09-27. Workflow example added 2026-10-06.
 
 ---
 Source: https://www.positivecheck.com/resources/compare/rpm-vs-ccm-medicare-billing

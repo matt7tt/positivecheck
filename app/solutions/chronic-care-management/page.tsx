@@ -2,11 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
-import { RequestDemoModal } from '@/components/request-demo-modal'
-import { Button } from '@/components/ui/button'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
+import { CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Chronic Care Management (CCM) Solution | Positive Check',
@@ -133,18 +132,18 @@ export default function ChronicCareManagementPage() {
               </h1>
               <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Daily AI wellness calls give your CCM patients consistent touchpoints, medication
-                adherence checks, and care plan follow-up — all documented and ready for billing.
+                adherence questions, and care plan follow-up — with summaries for your team to review.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { value: '$66', label: 'Non-Complex CCM / Mo' },
-                  { value: '$144', label: 'Complex CCM / Mo' },
-                  { value: '99490', label: 'First 20 Min — $66' },
-                  { value: '99487', label: 'Complex 60 Min — $144' },
+                  { value: 'Outreach', label: 'Routine patient check-ins' },
+                  { value: 'Review', label: 'Call summaries for staff' },
+                  { value: 'Alerts', label: 'Concerns for your care team' },
+                  { value: 'Follow-up', label: 'Practice-owned next steps' },
                 ].map((m) => (
                   <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                     <CardContent className="p-5 text-center">
-                      <p className="text-2xl md:text-3xl font-bold text-white">{m.value}</p>
+                      <p className="text-lg sm:text-2xl md:text-3xl font-bold text-white">{m.value}</p>
                       <p className="text-purple-100 text-sm mt-1">{m.label}</p>
                     </CardContent>
                   </Card>
@@ -154,6 +153,17 @@ export default function ChronicCareManagementPage() {
           </section>
 
           {/* What is CCM */}
+          <div className="mx-auto max-w-4xl px-6">
+            <ContentConversionCta
+              source="ccm_solution_evaluation"
+              title="See how outreach could fit your CCM team"
+              description="Discuss routine check-ins, review workload and staff handoffs in a 15-minute workflow demo. Bring your current process and integration questions; please do not share patient information."
+              buttonText="Evaluate your CCM workflow"
+              secondaryText="Compare with staff-led outreach"
+              secondaryHref="/solutions/chronic-care-management/vs-in-house-care-coordinators"
+              secondaryCtaName="compare_staff_led_outreach"
+            />
+          </div>
           <section className="px-6 py-16 bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="max-w-4xl mx-auto">
@@ -363,24 +373,16 @@ export default function ChronicCareManagementPage() {
 
           {/* CTA */}
           <section className="px-6 py-16 bg-white">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Scale Your CCM Program?</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                See how Positive Check can automate your CCM patient engagement and maximize
-                reimbursable revenue across your chronic care population.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <RequestDemoModal>
-                  <Button size="lg" className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8">
-                    Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </RequestDemoModal>
-                <Link href="/roi-calculator">
-                  <Button size="lg" variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 px-8">
-                    Calculate Your ROI
-                  </Button>
-                </Link>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <ContentConversionCta
+                source="ccm_solution_bottom"
+                title="Define what a CCM pilot would need to prove"
+                description="Review patient contact, staff review time, exception handling and total delivery cost. Your team retains clinical decisions and responsibility for determining which services qualify for billing."
+                buttonText="Discuss a CCM workflow pilot"
+                secondaryText="See the call-to-follow-up example"
+                secondaryHref="/resources/billing-guide#workflow-example"
+                secondaryCtaName="view_workflow_example"
+              />
             </div>
           </section>
           <section className="px-6 py-6 bg-white border-t border-gray-100">
@@ -409,7 +411,7 @@ export default function ChronicCareManagementPage() {
                 >
                   CMS MLN CCM Booklet
                 </a>
-                . Published by Positive Check. Content updated September 13, 2026.
+                . Published by Positive Check. Workflow content updated October 6, 2026.
               </p>
             </div>
           </section>

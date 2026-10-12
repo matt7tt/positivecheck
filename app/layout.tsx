@@ -5,11 +5,8 @@ import Script from "next/script";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { AuthProvider } from "@/lib/auth-context";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
-import { DeferredFacebookPixel } from "@/components/deferred-facebook-pixel";
-import { ConversionAnalytics } from "@/components/conversion-analytics";
+import { MarketingTelemetry } from "@/components/marketing-telemetry";
 import { MARKETING_GA_MEASUREMENT_ID } from "@/lib/analytics-config";
 
 const inter = Inter({
@@ -88,6 +85,7 @@ export default function RootLayout({
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){
+if(location.hostname!=='www.positivecheck.com'&&location.hostname!=='positivecheck.com')return;
 if(location.pathname==='/admin-new'||location.pathname.indexOf('/admin-new/')===0)return;
 w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -98,10 +96,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {gaMeasurementId && (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-              strategy="lazyOnload"
-            />
             <Script
               id="google-analytics-4"
               strategy="beforeInteractive"
@@ -166,6 +160,8 @@ gtag('config','${gaMeasurementId}');
             __html: `
               (function(){
                 try {
+                  if(location.hostname!=='www.positivecheck.com'&&location.hostname!=='positivecheck.com')return;
+                  if(location.pathname==='/admin-new'||location.pathname.indexOf('/admin-new/')===0)return;
                   var r = document.referrer;
                   if (!r) return;
                   var host = new URL(r).hostname;
@@ -194,21 +190,10 @@ gtag('config','${gaMeasurementId}');
       <body
         className={`${inter.className} antialiased`}
 >
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MKHVJ3LF"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {/* No unconditional noscript tracker: it bypasses the marketing-host guard. */}
         <AuthProvider>
-          <DeferredFacebookPixel />
-          <ConversionAnalytics />
+          <MarketingTelemetry />
           {children}
-          <Analytics />
-          <SpeedInsights />
         </AuthProvider>
       </body>
     </html>

@@ -2,15 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
-import { RequestDemoModal } from '@/components/request-demo-modal'
-import { Button } from '@/components/ui/button'
+import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSchema } from '@/components/structured-data'
 import { Card, CardContent } from '@/components/ui/card'
-import { ArrowRight, CheckCircle, Phone, BarChart3, Clock, ShieldCheck } from 'lucide-react'
+import { CheckCircle, Phone, BarChart3, Clock, ShieldCheck } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Remote Patient Monitoring (RPM) Solution | Positive Check',
-  description: 'Support RPM billing with AI-powered daily wellness calls. Positive Check automates patient engagement for CPT 99457, 99458, and 99454 — generating $93+/patient/month in Medicare revenue.',
+  description: 'Evaluate AI-supported outreach for your RPM program: patient check-ins, call summaries, alerts and staff follow-up. Discuss workflow fit in a 15-minute demo.',
   alternates: { canonical: '/solutions/remote-patient-monitoring' },
   openGraph: {
     title: 'Remote Patient Monitoring (RPM) Solution',
@@ -143,14 +142,14 @@ export default function RemotePatientMonitoringPage() {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { value: '$93', label: 'Revenue / Patient / Mo' },
-                  { value: '99457', label: 'First 20 Min — $52' },
-                  { value: '99458', label: 'Add\'l 20 Min — $41' },
-                  { value: '99454', label: 'Device Supply — $56' },
+                  { value: 'Outreach', label: 'Routine patient check-ins' },
+                  { value: 'Review', label: 'Call summaries for staff' },
+                  { value: 'Alerts', label: 'Concerns for your care team' },
+                  { value: 'Follow-up', label: 'Practice-owned next steps' },
                 ].map((m) => (
                   <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                     <CardContent className="p-5 text-center">
-                      <p className="text-2xl md:text-3xl font-bold text-white">{m.value}</p>
+                      <p className="text-lg sm:text-2xl md:text-3xl font-bold text-white">{m.value}</p>
                       <p className="text-purple-100 text-sm mt-1">{m.label}</p>
                     </CardContent>
                   </Card>
@@ -160,6 +159,17 @@ export default function RemotePatientMonitoringPage() {
           </section>
 
           {/* 2026 CMS Final Rule update */}
+          <div className="mx-auto max-w-4xl px-6">
+            <ContentConversionCta
+              source="rpm_solution_evaluation"
+              title="See where outreach fits your RPM workflow"
+              description="Bring your device workflow, outreach bottleneck and staff coverage questions to a 15-minute demo. Discuss patient responses, review and follow-up alongside your existing monitoring process. Please do not share patient information."
+              buttonText="Evaluate your RPM workflow"
+              secondaryText="See the call-to-follow-up example"
+              secondaryHref="/resources/billing-guide#workflow-example"
+              secondaryCtaName="view_workflow_example"
+            />
+          </div>
           <section className="px-6 py-10 bg-purple-50 border-y border-purple-200">
             <div className="max-w-4xl mx-auto">
               <p className="text-xs uppercase tracking-widest text-purple-700 font-semibold mb-2">
@@ -419,24 +429,16 @@ export default function RemotePatientMonitoringPage() {
 
           {/* CTA */}
           <section className="px-6 py-16 bg-white">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Scale Your RPM Program?</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                See how Positive Check can automate your RPM patient engagement and generate reimbursable
-                revenue at scale.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <RequestDemoModal>
-                  <Button size="lg" className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8">
-                    Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </RequestDemoModal>
-                <Link href="/roi-calculator">
-                  <Button size="lg" variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-50 px-8">
-                    Calculate Your ROI
-                  </Button>
-                </Link>
-              </div>
+            <div className="max-w-4xl mx-auto">
+              <ContentConversionCta
+                source="rpm_solution_bottom"
+                title="Define what an RPM outreach pilot would need to prove"
+                description="Discuss contact success, staff review workload and escalation ownership before expanding. Software outreach does not replace your device workflow, clinical judgment or billing review."
+                buttonText="Discuss an RPM workflow pilot"
+                secondaryText="Review implementation steps"
+                secondaryHref="/resources/implementation-guide"
+                secondaryCtaName="review_implementation"
+              />
             </div>
           </section>
           <section className="px-6 py-6 bg-white border-t border-gray-100">
@@ -451,7 +453,7 @@ export default function RemotePatientMonitoringPage() {
                 >
                   Medicare Physician Fee Schedule
                 </a>
-                . Last updated 2026-09-20.
+                . Billing reference last updated 2026-09-20. Workflow content updated 2026-10-06.
               </p>
             </div>
           </section>

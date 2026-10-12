@@ -50,7 +50,7 @@ describe('demo request conversions', () => {
     expect(screen.getByRole('button', { name: /Submitting/ })).toBeDisabled()
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
     expect(JSON.parse(mockFetch.mock.calls[0][1]!.body as string)).toEqual({
-      name: 'Synthetic Test', email: 'synthetic@example.com', organization: '', attribution: getAttributionContext(),
+      name: 'Synthetic Test', email: 'synthetic@example.com', organization: '', cta_location: 'test_cta', attribution: getAttributionContext(),
     })
     resolveResponse({ ok: true } as Response)
     await screen.findByText('Your request is in.')
@@ -147,10 +147,21 @@ describe('demo request conversions', () => {
     await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
     await user.click(screen.getByRole('button', { name: 'Continue to scheduling' }))
     const calendar = await screen.findByRole('link', { name: 'Choose a demo time' })
+    expect(screen.getByText(/Your demo is not booked yet/)).toBeVisible()
     expect(calendar).toHaveAttribute('href', 'https://example.com/schedule')
     await user.click(calendar)
     expect(trackEvent).toHaveBeenCalledWith('booking_link_click', {
       form_name: 'demo_request', cta_location: 'billing_guide_summary', offer_id: offer.id,
     })
+    expect(jest.mocked(trackEvent).mock.calls.some(([event]) => ['meeting_booked', 'meeting_attended', 'qualify_lead'].includes(event))).toBe(false)
+  })
+
+  it('falls back to email scheduling when the calendar configuration is unsafe', async () => {
+    process.env.NEXT_PUBLIC_DEMO_BOOKING_URL = 'javascript:alert(1)'
+    mockFetch.mockResolvedValueOnce({ ok: true } as Response)
+    const user = await fillForm()
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    expect(await screen.findByText(/No appointment has been booked yet/)).toBeVisible()
+    expect(screen.queryByRole('link', { name: 'Choose a demo time' })).not.toBeInTheDocument()
   })
 })

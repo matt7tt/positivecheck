@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { CheckCircle } from 'lucide-react'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { LolaCallModal } from '@/components/lola-call-modal'
+import { PatientJourney } from '@/components/patient-journey'
 
 export function HowItWorksComponent() {
   return (
@@ -71,6 +72,7 @@ export function HowItWorksComponent() {
           </div>
         </section>
 
+        <PatientJourney />
         {/* Overview Section */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">

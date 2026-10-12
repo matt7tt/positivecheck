@@ -97,6 +97,12 @@ export function ROICalculator() {
 
   const calculatorRef = useRef<HTMLDivElement>(null)
   const pdfRef = useRef<HTMLDivElement>(null)
+  const hasUsedCalculator = useRef(false)
+  const trackCalculatorUse = useCallback(() => {
+    if (hasUsedCalculator.current) return
+    hasUsedCalculator.current = true
+    trackEvent('calculator_used', { calculator: 'roi_reimbursement' })
+  }, [])
 
   // Derived calculations
   const results = useMemo(() => {
@@ -136,6 +142,7 @@ export function ROICalculator() {
 
   // Scenario presets
   const applyScenario = useCallback((type: ProgramType) => {
+    trackCalculatorUse()
     setPatients(100)
     setProgramType(type)
     setBillingRate(85)
@@ -143,7 +150,7 @@ export function ROICalculator() {
     setTimeout(() => {
       calculatorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 100)
-  }, [])
+  }, [trackCalculatorUse])
 
   // PDF download
   const handleDownloadPdf = useCallback(async () => {
@@ -239,7 +246,7 @@ export function ROICalculator() {
                     </div>
                     <Slider
                       value={[patients]}
-                      onValueChange={(v) => setPatients(v[0])}
+                      onValueChange={(v) => { trackCalculatorUse(); setPatients(v[0]) }}
                       min={10}
                       max={5000}
                       step={10}
@@ -254,7 +261,7 @@ export function ROICalculator() {
                   {/* Program type */}
                   <div className="space-y-3">
                     <Label>Program Type</Label>
-                    <Select value={programType} onValueChange={(v) => setProgramType(v as ProgramType)}>
+                    <Select value={programType} onValueChange={(v) => { trackCalculatorUse(); setProgramType(v as ProgramType) }}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -273,7 +280,7 @@ export function ROICalculator() {
                   {/* PC tier */}
                   <div className="space-y-3">
                     <Label>Assumed software cost</Label>
-                    <Select value={String(pcTier)} onValueChange={(v) => setPcTier(Number(v))}>
+                    <Select value={String(pcTier)} onValueChange={(v) => { trackCalculatorUse(); setPcTier(Number(v)) }}>
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -297,7 +304,7 @@ export function ROICalculator() {
                     </div>
                     <Slider
                       value={[billingRate]}
-                      onValueChange={(v) => setBillingRate(v[0])}
+                      onValueChange={(v) => { trackCalculatorUse(); setBillingRate(v[0]) }}
                       min={50}
                       max={100}
                       step={1}

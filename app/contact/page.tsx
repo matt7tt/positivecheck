@@ -13,6 +13,7 @@ import { StructuredData, generateBreadcrumbSchema } from "@/components/structure
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { getAttributionContext, trackEvent } from "@/lib/analytics"
+import { SolutionInterestOptions } from '@/components/solution-interest-options'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -36,6 +37,7 @@ export default function ContactPage() {
           lastName: formData.get('lastName'),
           email: formData.get('email'),
           phone: formData.get('phone'),
+          customerType: formData.get('customerType'),
           hearAboutUs: formData.get('hearAbout'),
           message: formData.get('message'),
           newsletter: formData.get('newsletter') === 'on',
@@ -144,6 +146,10 @@ export default function ContactPage() {
                   <Input id="phone" name="phone" type="tel" className="mt-1" placeholder="Enter your phone number" disabled={isSubmitting} />
                 </div>
 
+                <div>
+                  <label htmlFor="customerType" className="block text-sm font-medium text-gray-700 mb-2">I am interested in <span className="text-gray-500">(optional)</span></label>
+                  <select id="customerType" name="customerType" disabled={isSubmitting} className="w-full rounded-md border border-gray-300 px-3 py-2"><SolutionInterestOptions /></select>
+                </div>
                 <div>
                   <label htmlFor="hearAbout" className="block text-sm font-medium text-gray-700 mb-2">
                     How did you hear about us? <span className="text-gray-500">(optional)</span>

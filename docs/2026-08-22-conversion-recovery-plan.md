@@ -29,6 +29,15 @@
 
 ## Production configuration still required
 
+### October 6 implementation handoff
+
+- The current change adds a labelled synthetic call → summary → alert → staff-follow-up example beside the unchanged `billing_workflow_demo_v1` offer. Voice and dashboard previews are optional and explicitly distinguished from the scenario and customer evidence.
+- RPM, CCM and the staff-led comparison have tracked evaluation CTAs. `cta_location` now travels with demo requests to notification email and the existing CRM webhook, alongside the lead ID and attribution.
+- Scheduling URLs must use HTTPS without embedded credentials. The success screen explicitly distinguishes a request from a confirmed booking; calendar links do not include visitor contact details.
+- **Still pending:** an approved calendar URL, named follow-up owner and CRM/provider details. No calendar, recipient, response-time promise or booked/attended/qualified integration has been configured by this change.
+- Record requested → booked → attended → qualified as separate outcomes. Use the existing lead ID to reconcile CRM records; only the calendar's confirmed appointment event establishes booked, and staff/CRM outcomes establish attended and qualified. Deduplicate provider callbacks by their event/appointment IDs and account for reschedules/cancellations when implementing the provider integration. Do not infer these outcomes from `booking_link_click`, `form_submit` or an audio preview.
+- Compare qualified requests and attended demos by landing page and CTA location after release. Keep the billing offer stable while evaluating the new example and commercial links. This is an experiment, not a promise of search or AI citations.
+
 1. Set `NEXT_PUBLIC_DEMO_BOOKING_URL` to the team calendar.
 2. Set `LEAD_WEBHOOK_URL` and, if needed, `LEAD_WEBHOOK_SECRET` to the CRM ingestion endpoint.
 3. Completed September 3: created dedicated GA4 property `Positive Check Marketing Website` (`properties/552721603`) and web stream `15714166114` for `https://www.positivecheck.com/`. The marketing site now sends to `G-EZQ4F5Q7FG`; the provider frontend can retain `G-C6J8097SY5`.
@@ -87,3 +96,60 @@ The comparable period below ends August 1 to avoid the August 2–21 measurement
 - Tightened the two strongest near-page-one result titles and added `CollectionPage` structured data to the resources hub.
 - Resubmitted `https://www.positivecheck.com/sitemap.xml`; Search Console accepted it with 73 discovered pages.
 - Requested priority recrawling for the post-discharge contact-timing and TCM/CCM comparison pages. Search Console accepted both requests. The resources hub remains `Discovered - currently not indexed`; its manual request returned a transient Search Console error, but it is included in the accepted sitemap.
+
+## October 9 implementation — unpublished
+
+The user approved the recommended implementation order. This workspace remains unpublished; no real callback, test lead, customer-pilot activation or GTM account change was performed.
+
+1. **Call experience: partial, not a closed POS-229.** The hero now offers a clearly labelled seven-second existing Lola greeting, with native playback, a direct audio link, a fictional written example (not a transcript) and separate callback/demo paths. It is not a full patient conversation. The callback form sends explicit one-time consent, starts tracking on an edit rather than dialog autofocus, suppresses duplicate clicks, and distinguishes request acceptance from a connected call. The proxy validates input, bounds upstream waiting and avoids exposing upstream response bodies. Consent is checked at this boundary but not yet persisted in the backend contract. Production confirmation-email delivery and call completion still need verification.
+2. **Solutions structure: implemented locally.** Front Office / Care Management groups are shared across the Solutions hub, desktop/mobile navigation, footer and homepage/contact options. Four task-specific Front Office pages and a category comparison are linked in the sitemap. Existing Care Management URLs remain unchanged. Homepage and How It Works show both sides of the patient journey, with Care Management first.
+3. **Proof: partially corrected.** Homepage labels now distinguish reported enrollment and alerts; the unsupported 100% resolved claim is removed. The user-confirmed 70% contact rate is not yet published because cohort, period and successful-contact definition remain outstanding. The approximately 40% industry comparator needs an attributable, like-for-like source. No assumption has been made that contact rate equals the case study’s monthly engagement rate. Existing testimonials still require approval/evidence review; this is not a complete claims audit.
+4. **Automatic lead response: not activated.** The website currently delivers lead notifications through its existing channels. A service found in the platform repository belongs to a separate customer pilot and must not be reused as the Positive Check configuration. Need the approved Positive Check endpoint/tenant, caller/sender identity, consent wording and record, contact windows, deduplication, opt-out/failure handling and staff owner before enabling call/SMS follow-up. Do not convert ordinary demo or contact submissions into automated calls implicitly. Calendar/CRM choice remains deferred by the user.
+5. **Tracking: code-side preparation, user owns GTM.** Third-party marketing loaders are now gated by the public marketing hostname; the unconditional GTM noscript iframe was removed. Direct GA4 event delivery remains active. Do not publish GTM GA4 tags for these same events into the same property without an explicit cutover, or they will be duplicated. The separate provider deployment has not been inspected or changed.
+6. **Content: implemented locally.** Added a provider-oriented TCM workflow post with a linked CMS source and explicit automation/clinical boundaries, plus the Front Office comparison. The GEO hypothesis map informed distinct task pages and adjacent evaluation FAQs, not a guarantee of AI citations. Earlier 2025 consumer articles remain accessible and indexed at their existing URLs but appear in a separate archive section, preserving links while the main blog focuses on providers. The user's proposed Front Office blog post is still theirs to supply.
+
+### GTM handoff: event meanings
+
+| Event | Meaning | Conversion treatment |
+| --- | --- | --- |
+| `cta_click` / `lola_call_open` | A visitor opened a CTA or callback form | Intent only; not a lead |
+| `sample_audio_play` / `sample_audio_complete` | The existing greeting started / reached its end | Content engagement; not a lead or a complete patient-call demo |
+| `sample_audio_error` | The player reported a load/playback error | Diagnostic |
+| `lead_form_start` | Custom form start; Lola now requires an edit or submit attempt | Keep separate from GA4 automatic `form_start` |
+| `generate_lead` | The submission endpoint accepted delivery | Primary lead event; does not prove email receipt, a connected call or qualification |
+| `form_submit` / `lola_call_requested` | Accepted submission diagnostics | Do not add these to `generate_lead` counts |
+| `calculator_used` | First ROI input or scenario change per mounted calculator | Calculator interaction, not a reimbursement result |
+| `calculator_completed` | Existing ROI PDF-export action | Legacy name; not all calculator use |
+| `booking_link_click` | An optional configured booking link was clicked | Not a confirmed booking |
+
+Never send names, email addresses, phone numbers or free-text form content as analytics parameters. Use `cta_location`, `form_name` and `sample_id` for event breakdowns. Confirmed bookings, attended demos, qualified leads and actual callback outcomes must come from their systems of record, with stable IDs for deduplication.
+
+### Remaining release gates
+
+- POS-229 link and production backend/project access; the current Vercel CLI account cannot access the Positive Check project.
+- Recipient and explicit authorization for one labelled callback test, including confirmation email and completed call checks. No prior one-off deployment test approval is being reused.
+- An approved full scripted fictional-patient recording if the hero is to promise “Hear a patient call” again.
+- Superseded October 11: the user approved replacement first-party operational figures below; publish those with first-party attribution and limitations, not an industry comparison. No approximately 40% comparator is approved.
+- Positive Check-specific automatic response setup and human follow-up ownership before activation.
+- User GTM coordination and production DebugView/lead-delivery checks after an approved release. Paid ads remain on hold. G2/Capterra profiles, cold-email changes and partner outreach have not been created or sent.
+
+### Local verification
+
+- Production build, TypeScript and SEO validation pass: 81 indexable routes, no broken internal links or missing image references. Existing lint warnings remain; no lint errors.
+- Automated tests cover callback input/consent/failure behavior and single-request handling, preview event deduplication, the shared solution taxonomy, content/schema consistency, tracking host guards and ROI usage.
+- Browser checks: the existing 7.12-second greeting starts and plays to completion without a media error; nested callback dialog opens/closes without submission; desktop two-category menu works; 390px mobile navigation reaches a task page and closes; task/comparison pages have no document-wide horizontal overflow; the voice-preview controls and next-step buttons fit the phone viewport.
+- Search reference content regenerated from the local production build, not the unchanged live site. No analytics lead event, email or phone call was generated by browser QA.
+
+## October 11 approved operational proof — unpublished
+
+The user explicitly approved these replacement figures for website use: 70%+ of patients reached every month by call or text; 6,000+ outreach calls a month; 500+ text check-in conversations a month; 100+ urgent alerts flagged every month. The homepage hero now uses this set rather than the older implementation-study counts. The historical case study remains unchanged and linked separately.
+
+The homepage's new alert section shows selected topics exactly as supplied: 26% symptoms and health concerns; 23% medication problems; 16% patient requests (refills, equipment, scheduling); 16% concerns raised by patients beyond the standard questions. These sum to 81%; they are not presented as exhaustive or necessarily mutually exclusive, normalized, or completed with an invented 19% category.
+
+The separate priority breakdown is 3% critical (escalated in real time), 47% high, 20% medium and 30% low. Do not interpret these as a distribution of the monthly urgent-alert count or derive patient counts by multiplying the percentages. No clinical outcomes or staff response times are inferred.
+
+Source attribution is Positive Check operational reporting, supplied October 11, 2026. That date is approval/provenance, not a measurement window. No cohort, observation dates, detailed counting methodology, external audit or approximately 40% industry comparator has been invented. Reporting notes make these limitations explicit. This follows the existing GEO decision-stage proof gap on the homepage; no new page or new claim of AI-search visibility was added.
+
+Linear recheck: the plugin directory reports Linear as not installed in this session, with no Linear tools exposed. Browser sign-in through the existing matt7t@gmail.com Google session reaches “Create a workspace,” not the Positive Check workspace. No workspace was created and POS-229 was not read, edited or closed. Correct-account/workspace access remains necessary. No live callback recipient or new test-call authorization was supplied.
+
+Validation: 180 tests pass across 30 suites; production build and SEO checks pass for 81 indexable routes. Existing lint warnings remain, with no lint errors. Changes remain unpublished.

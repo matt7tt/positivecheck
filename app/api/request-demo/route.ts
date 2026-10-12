@@ -11,6 +11,9 @@ export async function POST(request: Request) {
     const organization = cleanText(body.organization, 200)
     const attribution = body.attribution
     const offer = getDemoOffer(body.offer_id)
+    // Accept a bounded identifier, not arbitrary prose or visitor contact data.
+    const ctaLocation = typeof body.cta_location === 'string' && /^[a-z0-9_]{1,80}$/.test(body.cta_location)
+      ? body.cta_location : undefined
 
     if (!name || !isValidEmail(email)) {
       return NextResponse.json(
@@ -22,7 +25,7 @@ export async function POST(request: Request) {
     const contactEmail = process.env.CONTACT_EMAIL || 'hello@positivecheck.com'
     const lead = createLeadPayload(
       'demo_request',
-      { name, email, organization, ...(offer ? { offer_id: offer.id } : {}) },
+      { name, email, organization, ...(offer ? { offer_id: offer.id } : {}), ...(ctaLocation ? { cta_location: ctaLocation } : {}) },
       attribution && typeof attribution === 'object' ? attribution : undefined
     )
 
@@ -52,7 +55,9 @@ export async function POST(request: Request) {
             ${offer ? `<tr><td style="padding: 8px; font-weight: bold;">Requested offer:</td><td style="padding: 8px;">${escapeHtml(offer.modalTitle)} (${offer.id})</td></tr>` : ''}
             <tr><td style="padding: 8px; font-weight: bold;">Source:</td><td style="padding: 8px;">${safeSource}</td></tr>
             <tr><td style="padding: 8px; font-weight: bold;">Landing page:</td><td style="padding: 8px;">${safeLandingPage}</td></tr>
+            ${ctaLocation ? `<tr><td style="padding: 8px; font-weight: bold;">CTA location:</td><td style="padding: 8px;">${escapeHtml(ctaLocation)}</td></tr>` : ''}
           </table>
+          <p>Demo requested — not a confirmed booking. Arrange a time with the prospect, then record booking, attendance and qualification from actual outcomes.</p>
         `,
       })
 
