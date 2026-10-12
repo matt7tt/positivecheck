@@ -13,6 +13,7 @@ interface ContentConversionCtaProps {
   buttonText?: string
   secondaryText?: string
   secondaryHref?: string
+  secondaryCtaName?: string
   offerId?: DemoOfferId
 }
 
@@ -23,6 +24,7 @@ export function ContentConversionCta({
   buttonText = 'See the workflow',
   secondaryText = 'Estimate program ROI',
   secondaryHref = '/roi-calculator',
+  secondaryCtaName = 'estimate_program_roi',
   offerId,
 }: ContentConversionCtaProps) {
   const offer = getDemoOffer(offerId)
@@ -44,12 +46,12 @@ export function ContentConversionCta({
             {buttonText}
           </Button>
         </RequestDemoModal>
-        <Button asChild variant="outline" className="min-h-11 border-purple-300 bg-white px-6 text-purple-800">
+        <Button asChild variant="outline" className="min-h-11 h-auto whitespace-normal border-purple-300 bg-white px-6 py-3 text-purple-800">
           <Link
             href={secondaryHref}
             onClick={() =>
               trackEvent('cta_click', {
-                cta_name: 'estimate_program_roi',
+                cta_name: secondaryCtaName,
                 cta_location: source,
                 ...(offer ? { offer_id: offer.id } : {}),
               })

@@ -11,6 +11,7 @@ import {
 } from '@/components/structured-data'
 import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { BILLING_WORKFLOW_OFFER } from '@/lib/demo-offers'
+import { WorkflowDemonstration } from '@/components/workflow-demonstration'
 
 export const metadata: Metadata = {
   title: '2026 CMS Billing Guide: RPM, CCM, TCM, PCM | Positive Check',
@@ -50,7 +51,7 @@ const article = buildArticleSchema({
   url: PAGE_URL,
   image: HERO_IMAGE,
   datePublished: '2026-04-21',
-  dateModified: '2026-09-27',
+  dateModified: '2026-10-06',
 })
 
 const faqs = [
@@ -117,6 +118,7 @@ export default function BillingGuideIndexPage() {
                 buttonText={BILLING_WORKFLOW_OFFER.buttonText}
                 offerId={BILLING_WORKFLOW_OFFER.id}
               />
+              <WorkflowDemonstration />
 
               {/* Programs at a glance */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">
@@ -482,7 +484,7 @@ export default function BillingGuideIndexPage() {
                 >
                   CCM
                 </a>
-                . Last updated 2026-09-27.
+                . Billing reference last updated 2026-09-27. Workflow example added 2026-10-06.
               </p>
             </div>
           </section>

@@ -6,11 +6,11 @@ import { Calendar, Clock } from "lucide-react"
 import Link from "next/link"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
-import { featuredPost, gridPosts, type BlogPost } from "@/lib/blog-posts"
+import { featuredPost, providerGridPosts, earlierCarePosts, type BlogPost } from "@/lib/blog-posts"
 
 export const metadata: Metadata = {
-  title: 'Blog — Senior Care & Provider Insights | Positive Check',
-  description: 'Tips, research, and resources on AI-powered patient check-in calls, remote patient monitoring, senior wellness, and healthcare best practices.',
+  title: 'Blog — Care Management & Practice Operations | Positive Check',
+  description: 'Provider insights on care management, post-discharge follow-up, patient outreach and practice operations, with billing references and workflow guidance.',
   alternates: {
     canonical: '/blog',
   },
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     siteName: 'Positive Check',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/images/ai-companion-senior-wellness.png', width: 1200, height: 630, alt: 'Positive Check blog — senior wellness insights' }],
+    images: [{ url: featuredPost.image, alt: 'Positive Check provider and practice operations insights' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Positive Check Blog',
     description: 'Insights, tips, and resources for healthcare providers and care teams supporting patient wellness.',
-    images: ['/images/ai-companion-senior-wellness.png'],
+    images: [featuredPost.image],
   },
 }
 
@@ -41,7 +41,7 @@ export default function BlogPage() {
     image: p.image,
   })
   const featuredArticle = toCard(featuredPost)
-  const articles = gridPosts.map(toCard)
+  const articles = providerGridPosts.map(toCard)
 
   return (
     <div className="min-h-screen bg-white">
@@ -107,7 +107,7 @@ export default function BlogPage() {
 
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">All Articles</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Provider and Practice Operations Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
               <Card key={index} className="overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
@@ -145,6 +145,11 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-4xl px-6 py-12">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900">Earlier senior-care articles</h2>
+        <p className="mb-5 text-gray-600">Our 2025 archive covers broader senior-care and family topics. For current practice workflows and care-program guidance, start with the provider articles above.</p>
+        <ul className="list-disc space-y-3 pl-5">{earlierCarePosts.map(post => <li key={post.slug}><Link href={`/blog/${post.slug}`} className="text-purple-700 underline">{post.title}</Link> <span className="text-sm text-gray-500">({post.displayDate})</span></li>)}</ul>
+      </section>
       <PublicFooter />
     </div>
   )

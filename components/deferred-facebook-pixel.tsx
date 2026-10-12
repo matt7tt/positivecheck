@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import { isMarketingAnalyticsPage } from '@/lib/analytics-config'
 
 type FacebookQueue = ((...args: unknown[]) => void) & {
   callMethod?: (...args: unknown[]) => void
@@ -17,12 +18,14 @@ type FacebookQueue = ((...args: unknown[]) => void) & {
  */
 export function DeferredFacebookPixel() {
   useEffect(() => {
+    if (!isMarketingAnalyticsPage(window.location)) return
     let started = false
 
     const start = () => {
       if (started) return
       started = true
       cleanup()
+      if (!isMarketingAnalyticsPage(window.location)) return
 
       const facebookWindow = window as Window & {
         fbq?: FacebookQueue

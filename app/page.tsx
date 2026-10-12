@@ -7,12 +7,15 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { RequestDemoModal } from "@/components/request-demo-modal"
-import { LolaCallModal } from "@/components/lola-call-modal"
+import { LolaVoicePreview } from "@/components/lola-voice-preview"
 import { PublicFooter } from "@/components/shared/public-footer"
 import { PublicHeader } from "@/components/shared/public-header"
 import { StructuredData, medicalServiceSchema, faqSchema, generateBreadcrumbSchema } from "@/components/structured-data"
 import toast, { Toaster } from 'react-hot-toast'
 import { getAttributionContext, trackEvent } from "@/lib/analytics"
+import { PatientJourney } from '@/components/patient-journey'
+import { SolutionInterestOptions } from '@/components/solution-interest-options'
+import { MonthlyOutreachStats, OperationalAlertProof } from '@/components/operational-proof'
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("dashboard")
@@ -103,44 +106,25 @@ export default function HomePage() {
           <div className="text-center lg:text-left min-w-0">
             <p className="text-sm font-bold uppercase tracking-wider text-purple-700 mb-4">AI voice and SMS for care teams</p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Reach every RPM and CCM patient—without adding call-center headcount
+              AI outreach for RPM and CCM, with your care team in control
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-gray-600 mb-4 max-w-2xl mx-auto lg:mx-0">
               Automate routine outreach, turn patient responses into structured documentation, and route urgent concerns to the right care-team member in real time.
             </p>
+            <p className="mb-8 text-base text-gray-600">Also for your <Link href="/solutions#front-office" className="font-semibold text-purple-700 underline">Front Office</Link>: calls and SMS for new inquiries, scheduling, reminders and notifications.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center mb-8">
               <RequestDemoModal source="homepage_hero">
                 <Button className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
                   BOOK A 15-MINUTE DEMO
                 </Button>
               </RequestDemoModal>
-              <LolaCallModal source="homepage_hero">
+              <LolaVoicePreview source="homepage_hero">
                 <Button variant="outline" className="w-full sm:w-auto border-[#a21caf] text-[#a21caf] hover:bg-purple-50 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
-                  HEAR A PATIENT CALL
+                  HEAR LOLA’S VOICE
                 </Button>
-              </LolaCallModal>
+              </LolaVoicePreview>
             </div>
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 border-t border-gray-200 pt-6">
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900">1,509</p>
-                <p className="text-xs sm:text-sm text-gray-600">patients reached</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900">485</p>
-                <p className="text-xs sm:text-sm text-gray-600">alerts surfaced</p>
-              </div>
-              <div>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900">100%</p>
-                <p className="text-xs sm:text-sm text-gray-600">alerts resolved</p>
-              </div>
-            </div>
-            <Link
-              href="/case-studies/scaling-patient-engagement"
-              prefetch={false}
-              className="inline-block mt-3 text-sm font-medium text-purple-700 hover:text-purple-900 underline underline-offset-4"
-            >
-              Read the six-month implementation study
-            </Link>
+            <MonthlyOutreachStats />
           </div>
           <div className="relative min-w-0">
             <div className="absolute -inset-4 bg-gradient-to-br from-purple-100 to-fuchsia-100 rounded-3xl -z-10" />
@@ -179,6 +163,7 @@ export default function HomePage() {
       </section>
 
       {/* Provider Value Proposition */}
+      <PatientJourney />
       <section className="px-6 py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -431,6 +416,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <OperationalAlertProof />
 
       {/* Admin Console Section */}
       <section className="px-6 py-16 bg-gray-50">
@@ -886,11 +873,7 @@ export default function HomePage() {
                     name="customerType"
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
                   >
-                    <option value="">Select a program</option>
-                    <option value="rpm">RPM Program</option>
-                    <option value="ccm">CCM Program</option>
-                    <option value="post-discharge">Post-Discharge Follow-Up</option>
-                    <option value="other">Other</option>
+                    <SolutionInterestOptions />
                   </select>
                 </div>
 

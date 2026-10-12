@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { LolaCallModal } from '@/components/lola-call-modal'
+import { solutionGroups } from '@/lib/solution-catalog'
 
 export function PublicFooter() {
   return (
@@ -29,9 +30,7 @@ export function PublicFooter() {
             <h3 className="font-semibold text-[#1a2642] mb-3">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/solutions" className="text-gray-600 hover:text-[#1a2642]">All Solutions</Link></li>
-              <li><Link href="/solutions/remote-patient-monitoring" className="text-gray-600 hover:text-[#1a2642]">Remote Patient Monitoring</Link></li>
-              <li><Link href="/solutions/chronic-care-management" className="text-gray-600 hover:text-[#1a2642]">Chronic Care Management</Link></li>
-              <li><Link href="/solutions/post-discharge-follow-up" className="text-gray-600 hover:text-[#1a2642]">Post-Discharge Follow-Up</Link></li>
+              {solutionGroups.map(group => <li key={group.name} className="pt-3"><h4 className="mb-2 font-semibold text-gray-800">{group.name}</h4><ul className="space-y-2">{group.items.map(item => <li key={item.href}><Link href={item.href} className="text-gray-600 hover:text-[#1a2642]">{item.name}</Link></li>)}</ul></li>)}
               <li><Link href="/roi-calculator" className="text-gray-600 hover:text-[#1a2642]">ROI Calculator</Link></li>
             </ul>
           </div>

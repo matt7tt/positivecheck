@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dialog"
 import { Loader2 } from "lucide-react"
 import { trackEvent } from "@/lib/analytics"
+import Link from 'next/link'
 
 interface LolaCallModalProps {
   children: React.ReactNode
@@ -63,6 +64,13 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
   const [error, setError] = useState("")
   const [open, setOpen] = useState(false)
   const hasStarted = useRef(false)
+  const submitting = useRef(false)
+
+  const trackStart = () => {
+    if (hasStarted.current) return
+    hasStarted.current = true
+    trackEvent('lead_form_start', { form_name: 'lola_call', cta_location: source })
+  }
 
   const reset = () => {
     setFirstName("")
@@ -77,6 +85,8 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (submitting.current) return
+    trackStart()
     setError("")
 
     const cleanFirst = firstName.trim()
@@ -105,6 +115,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
       return
     }
 
+    submitting.current = true
     setIsSubmitting(true)
     try {
       const response = await fetch("/api/lola-call", {
@@ -115,6 +126,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
           lastName: cleanLast,
           email: cleanEmail,
           phone: e164,
+          consent: true,
         }),
       })
 
@@ -132,12 +144,14 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
       trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "submission_failed" })
       setError(err instanceof Error ? err.message : "Failed to submit request. Please try again.")
     } finally {
+      submitting.current = false
       setIsSubmitting(false)
     }
   }
 
   return (
     <Dialog open={open} onOpenChange={(o) => {
+      if (submitting.current) return
       setOpen(o)
       if (o && !open) {
         trackEvent("cta_click", { cta_name: "lola_call", cta_location: source })
@@ -149,26 +163,26 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
       }
     }}>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Get a call from Lola now</DialogTitle>
+          <DialogTitle>Request a call from Lola</DialogTitle>
           <DialogDescription>
-            Lola is our AI voice agent. Tell us where to reach you and we&apos;ll send a confirmation email &mdash; click the link and Lola calls you instantly.
+            Lola is our AI voice agent. Submit your details, then use the confirmation link sent by email to request your demo call. Please use your own phone number, not a patient’s.
           </DialogDescription>
         </DialogHeader>
         {isSuccess ? (
-          <div className="py-6 text-center space-y-4">
+          <div role="status" className="py-6 text-center space-y-4">
             <div className="text-green-600 text-3xl" aria-hidden="true">&#x2713;</div>
             <p className="text-lg font-semibold">Check your inbox</p>
             <p className="text-gray-600">
-              We sent a confirmation email to <span className="font-medium">{submittedEmail}</span>. Click the button inside and Lola will call you.
+              Your request was accepted. Look for a confirmation email at <span className="font-medium">{submittedEmail}</span>, then follow its instructions. A submitted request does not confirm that a call connected.
             </p>
-            <p className="text-xs text-gray-500">Don&apos;t see it? Check your spam folder, or wait a minute and try again.</p>
+            <p className="text-xs text-gray-500">Check your spam folder. If the email or call does not arrive, <Link href="/contact" className="underline text-purple-700">contact our team</Link> rather than submitting repeated requests.</p>
             <Button
               type="button"
               variant="outline"
               className="w-full"
-              onClick={() => { setOpen(false); reset() }}
+              onClick={() => { setOpen(false); hasStarted.current = false; reset() }}
             >
               Close
             </Button>
@@ -176,11 +190,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
         ) : (
           <form
             onSubmit={handleSubmit}
-            onFocusCapture={() => {
-              if (hasStarted.current) return
-              hasStarted.current = true
-              trackEvent("lead_form_start", { form_name: "lola_call", cta_location: source })
-            }}
+            onChangeCapture={trackStart}
             className="space-y-4"
             noValidate
           >
@@ -243,7 +253,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
               <Checkbox
                 id="lola-consent"
                 checked={consent}
-                onCheckedChange={(v) => setConsent(v === true)}
+                onCheckedChange={(v) => { trackStart(); setConsent(v === true) }}
                 disabled={isSubmitting}
                 className="mt-0.5"
               />
@@ -252,7 +262,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
               </Label>
             </div>
             {error && (
-              <p className="text-sm text-red-600" role="alert" aria-live="polite">{error}</p>
+              <p className="text-sm text-red-600" role="alert" aria-live="polite">{error} <Link href="/contact" className="underline">Contact our team for help</Link>.</p>
             )}
             <Button
               type="submit"

@@ -6,6 +6,8 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { Button } from '@/components/ui/button'
+import { SolutionsMenu } from '@/components/solutions-menu'
+import { solutionGroups } from '@/lib/solution-catalog'
 
 interface PublicHeaderProps {
   currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources" | "roi-calculator"
@@ -57,16 +59,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
             >
               Platform
             </Link>
-            <Link
-              href="/solutions"
-              className={`text-base font-medium ${
-                currentPage === 'solutions'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
-              }`}
-            >
-              Solutions
-            </Link>
+            <SolutionsMenu active={currentPage === 'solutions'} />
             <Link
               href="/how-it-works"
               className={`text-base font-medium ${
@@ -148,6 +141,10 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                 >
                   Solutions
                 </Link>
+                {solutionGroups.map(group => <section key={group.name} className="border-l-2 border-purple-100 pl-4">
+                  <h2 className="mb-2 font-semibold text-gray-900">{group.name}</h2>
+                  <ul className="space-y-1">{group.items.map(item => <li key={item.href}><Link href={item.href} className="block py-2 text-gray-600" onClick={() => setIsMenuOpen(false)}>{item.name}</Link></li>)}</ul>
+                </section>)}
                 <Link
                   href="/how-it-works"
                   className={`text-base font-medium ${

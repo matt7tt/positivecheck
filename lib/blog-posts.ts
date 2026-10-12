@@ -30,7 +30,21 @@ export const APCM_BILLING_POST: BlogPost = {
   keywords: ["APCM billing 2026", "G0556", "G0557", "G0558", "advanced primary care management", "APCM reimbursement", "APCM vs CCM", "G0568", "G0569", "G0570"],
 }
 
+export const TCM_WORKFLOW_POST: BlogPost = {
+  slug: 'post-discharge-follow-up-workflow',
+  title: 'Post-Discharge Follow-Up: A TCM Workflow With Clear Staff Handoffs',
+  description: 'Plan post-discharge outreach from the discharge list to staff review. Separate automated contact, scheduling and clinical responsibilities in a TCM workflow.',
+  datePublished: '2026-10-09',
+  dateModified: '2026-10-09',
+  displayDate: 'October 9, 2026',
+  readTime: '6 min read',
+  image: '/images/healthcare-care-coordinator.png',
+  articleSection: 'Care Management Operations',
+  keywords: ['post-discharge follow-up workflow', 'TCM outreach', 'care management handoffs', 'transitional care management'],
+}
+
 export const blogPosts: BlogPost[] = [
+  TCM_WORKFLOW_POST,
   APCM_BILLING_POST,
   {
     slug: "2027-rpm-proposed-rule",
@@ -223,3 +237,5 @@ export const blogPosts: BlogPost[] = [
 export const featuredPost = blogPosts[0];
 export const listedPosts = blogPosts.filter((p) => p.listed !== false);
 export const gridPosts = listedPosts.slice(1);
+export const providerGridPosts = gridPosts.filter(p => !p.datePublished.startsWith('2025-'));
+export const earlierCarePosts = gridPosts.filter(p => p.datePublished.startsWith('2025-'));

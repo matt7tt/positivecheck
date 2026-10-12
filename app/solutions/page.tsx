@@ -5,14 +5,15 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, HeartPulse, Activity, PhoneCall } from 'lucide-react'
+import { frontOfficeSolutions } from '@/lib/solution-catalog'
 
 export const metadata: Metadata = {
   title: 'Solutions for Healthcare Providers | Positive Check',
-  description: 'Automate RPM, CCM, and post-discharge follow-up with AI-powered patient wellness calls. Support Medicare billing (CPT 99457, 99490, 99495) at scale.',
+  description: 'AI calls and SMS for Front Office and Care Management: new patient leads, appointments, reminders, notifications, RPM, CCM and post-discharge follow-up.',
   alternates: { canonical: '/solutions' },
   openGraph: {
     title: 'Solutions for Healthcare Providers | Positive Check',
-    description: 'Automate RPM, CCM, and post-discharge follow-up with AI-powered patient wellness calls.',
+    description: 'Explore Front Office and Care Management workflows with AI calls and SMS.',
     url: '/solutions',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Solutions for Healthcare Providers | Positive Check',
-    description: 'Automate RPM, CCM, and post-discharge follow-up with AI-powered patient wellness calls.',
+    description: 'Explore Front Office and Care Management workflows with AI calls and SMS.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -43,7 +44,7 @@ const solutions = [
     eyebrow: 'CCM',
     title: 'Chronic Care Management',
     description:
-      'Daily touchpoints for CCM patients — medication adherence, care plan follow-up, and documentation ready for CPT 99490, 99439, and 99487 billing ($66–$144/patient/month).',
+      'Support CCM patient check-ins, care-plan follow-up and staff review. Clinical and billing teams determine which services and documentation qualify.',
     cpts: ['CPT 99490', 'CPT 99439', 'CPT 99487'],
   },
   {
@@ -52,7 +53,7 @@ const solutions = [
     eyebrow: 'TCM',
     title: 'Post-Discharge Follow-Up',
     description:
-      'Contact patients within 24–48 hours of discharge to catch complications early. Supports CPT 99495 ($178/patient) and reduces 30-day readmission risk.',
+      'Support practice-owned post-discharge outreach and care-team handoffs. Your team retains clinical decisions, required follow-up and billing review.',
     cpts: ['CPT 99495'],
   },
 ]
@@ -82,13 +83,13 @@ export default function SolutionsIndexPage() {
             name: 'Positive Check Solutions for Healthcare Providers',
             url: 'https://www.positivecheck.com/solutions',
             description:
-              'Three billable programs automated with AI wellness calls: Remote Patient Monitoring, Chronic Care Management, and Post-Discharge Follow-Up.',
-            hasPart: solutions.map((s) => ({
+              'AI calls and SMS for Front Office and Care Management workflows.',
+            hasPart: [...solutions.map((s) => ({
               '@type': 'Service',
               name: s.title,
               url: `https://www.positivecheck.com/solutions/${s.slug}`,
               description: s.description,
-            })),
+            })), ...frontOfficeSolutions.map(s => ({ '@type': 'Service', name: s.name, url: `https://www.positivecheck.com/solutions/front-office/${s.slug}`, description: s.description }))],
           }),
         }}
       />
@@ -100,16 +101,17 @@ export default function SolutionsIndexPage() {
             <div className="max-w-5xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Solutions</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Three Billable Programs, One Platform
+                Front Office and Care Management, One Platform
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed max-w-3xl mx-auto">
-                Positive Check automates the patient engagement your RPM, CCM, and post-discharge
-                programs need — so your team can focus on the patients who need hands-on care.
+                Support ongoing RPM, CCM and post-discharge outreach—and the front office conversations
+                that bring patients into your practice. Lola handles calls and SMS; your team owns decisions and follow-up.
               </p>
             </div>
           </section>
 
-          <section className="px-6 py-16 md:py-24 bg-gray-50">
+          <section id="care-management" className="scroll-mt-20 px-6 py-16 md:py-24 bg-gray-50">
+            <div className="mx-auto mb-8 max-w-6xl"><h2 className="mb-3 text-3xl font-bold">Care Management</h2><p className="text-gray-700">For care managers and clinical directors supporting routine outreach, review and patient follow-up. Lola does not make clinical decisions.</p></div>
             <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
               {solutions.map((s) => {
                 const Icon = s.icon
@@ -122,7 +124,7 @@ export default function SolutionsIndexPage() {
                       <p className="text-sm uppercase tracking-widest text-[#d946ef] font-semibold mb-2">
                         {s.eyebrow}
                       </p>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-3">{s.title}</h2>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{s.title}</h3>
                       <p className="text-gray-600 mb-5 leading-relaxed flex-1">{s.description}</p>
                       <div className="flex flex-wrap gap-2 mb-6">
                         {s.cpts.map((c) => (
@@ -146,12 +148,19 @@ export default function SolutionsIndexPage() {
             </div>
           </section>
 
+          <section id="front-office" className="scroll-mt-20 px-6 py-16 bg-white">
+            <div className="mx-auto max-w-6xl">
+              <h2 className="mb-3 text-3xl font-bold">Front Office</h2>
+              <p className="mb-8 text-gray-700">For practice managers handling new inquiries, appointments and operational communication. Start with the task your team needs help with.</p>
+              <div className="grid gap-6 md:grid-cols-2">{frontOfficeSolutions.map(s => <article key={s.slug} className="rounded-xl border p-6"><h3 className="mb-3 text-2xl font-semibold">{s.name}</h3><p className="mb-5 leading-relaxed text-gray-700">{s.description}</p><Link href={`/solutions/front-office/${s.slug}`} className="font-semibold text-purple-700 underline">Explore {s.name.toLowerCase()}</Link></article>)}</div>
+              <p className="mt-6"><Link href="/solutions/front-office/compare" className="text-purple-700 underline">Compare AI outreach, front desk staff and basic reminder tools</Link></p>
+            </div>
+          </section>
           <section className="px-6 py-16 bg-white">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Not sure which fits your program?</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Talk to our team about mapping your patient population to the right billable program —
-                or combining all three.
+                Bring your front office or care management workflow. We can discuss fit, integration scope and what your team would need to evaluate a pilot.
               </p>
               <Link href="/contact">
                 <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white px-8 py-6 text-lg font-semibold">

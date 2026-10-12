@@ -12,6 +12,12 @@ const SITE = "https://www.positivecheck.com";
 const SOURCE_SITE = (process.env.LLMS_SOURCE_URL || SITE).replace(/\/$/, "");
 
 const PAGES = [
+  "/solutions/front-office/new-patient-leads",
+  "/solutions/front-office/scheduling-confirmations",
+  "/solutions/front-office/appointment-reminders",
+  "/solutions/front-office/patient-notifications",
+  "/solutions/front-office/compare",
+  "/blog/post-discharge-follow-up-workflow",
   "/resources/billing-guide",
   "/resources/compare/rpm-vs-ccm-medicare-billing",
   "/resources/compare/tcm-and-ccm-combined-month-billing",
@@ -81,8 +87,9 @@ let out = `# Positive Check — full reference content (llms-full.txt)
 
 > Companion to https://www.positivecheck.com/llms.txt containing the full text
 > of Positive Check's evergreen billing, compliance, and program reference
-> pages. Positive Check LLC provides AI-powered patient wellness calls for
-> healthcare providers running Medicare RPM, CCM, and TCM programs.
+> pages. Positive Check LLC provides AI-powered calls and SMS for practice
+> Front Office workflows and Care Management outreach supporting RPM, CCM
+> and post-discharge programs. Staff retain clinical and scheduling decisions.
 > Site: ${SITE} · Contact: info@positivecheck.com
 
 `;

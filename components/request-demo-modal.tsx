@@ -15,6 +15,7 @@ import {
 import { CalendarDays, Loader2 } from "lucide-react"
 import { getAttributionContext, trackEvent } from "@/lib/analytics"
 import { getDemoOffer, type DemoOfferId } from "@/lib/demo-offers"
+import { getDemoBookingUrl } from "@/lib/demo-booking"
 
 interface RequestDemoModalProps {
   children: React.ReactNode
@@ -33,7 +34,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
   const [error, setError] = useState("")
   const [open, setOpen] = useState(false)
   const hasStarted = useRef(false)
-  const bookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
+  const bookingUrl = getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL)
 
   const trackFormStart = () => {
     if (hasStarted.current) return
@@ -62,6 +63,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
           name,
           email,
           organization,
+          cta_location: source,
           ...offerParameters,
           attribution: getAttributionContext(),
         }),
@@ -83,7 +85,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
         ...offerParameters,
       })
       setIsSuccess(true)
-    } catch (err) {
+    } catch {
       trackEvent("form_error", {
         form_name: "demo_request",
         cta_location: source,
@@ -130,12 +132,12 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
           {offer && <p className="text-sm leading-relaxed text-gray-600">{offer.disclaimer}</p>}
         </DialogHeader>
         {isSuccess ? (
-          <div className="py-8 text-center space-y-4">
+          <div role="status" className="py-8 text-center space-y-4">
             <div className="text-green-600 mb-2">✓</div>
             <p className="text-lg font-semibold">Your request is in.</p>
             {bookingUrl ? (
               <>
-                <p className="text-gray-600">Choose a convenient time to complete your booking.</p>
+                <p className="text-gray-600">Your demo is not booked yet. Choose a time and complete the calendar confirmation.</p>
                 <Button asChild className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white">
                   <a
                     href={bookingUrl}
@@ -153,8 +155,9 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
                 </Button>
               </>
             ) : (
-              <p className="text-gray-600">We&apos;ll reach out shortly to schedule your personalized demo.</p>
+              <p className="text-gray-600">Our team will contact you by email to arrange a time. No appointment has been booked yet.</p>
             )}
+            <p className="text-sm text-gray-600">For the demo, bring your outreach bottleneck and integration questions—not patient information.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} onChangeCapture={trackFormStart} className="space-y-4">
@@ -164,6 +167,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
               <Input
                 id="name"
                 type="text"
+                autoComplete="name"
                 placeholder="Jane Smith"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -176,6 +180,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
               <Input
                 id="email"
                 type="email"
+                autoComplete="email"
                 placeholder="your.email@healthcare.org"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -187,6 +192,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
               <Label htmlFor="organization">Organization <span className="text-gray-500 font-normal">(optional)</span></Label>
               <Input
                 id="organization"
+                autoComplete="organization"
                 type="text"
                 placeholder="Sunrise Senior Living"
                 value={organization}
@@ -195,7 +201,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
               />
             </div>
             {error && (
-              <p className="text-sm text-red-600">{error}</p>
+              <p role="alert" className="text-sm text-red-600">{error}</p>
             )}
             <Button
               type="submit"

@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { cleanText } from '@/lib/server/lead-delivery'
 
 const E164_RE = /^\+[1-9]\d{7,14}$/
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -8,20 +9,32 @@ export async function POST(request: Request) {
     const backendUrl = process.env.LOLA_BACKEND_URL
     const apiKey = process.env.LOLA_BACKEND_API_KEY
 
-    if (!backendUrl || !apiKey) {
-      return NextResponse.json({ error: "Lola backend not configured" }, { status: 500 })
+    const body = await request.json().catch(() => null)
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Please send a valid request.' }, { status: 400 })
     }
+    const firstName = cleanText(body?.firstName, 80)
+    const lastName = cleanText(body?.lastName, 80)
+    // Never truncate a delivery address: doing so could change the recipient.
+    const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : ''
+    const phone = typeof body.phone === 'string' ? body.phone.trim() : ''
 
-    const { firstName, lastName, email, phone } = await request.json()
+    if (body?.consent !== true) {
+      return NextResponse.json({ error: 'Please agree to the one-time automated demo call.' }, { status: 400 })
+    }
 
     if (!firstName || !lastName || !email || !phone) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 })
     }
-    if (!EMAIL_RE.test(email)) {
+    if (email.length > 254 || !EMAIL_RE.test(email)) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 })
     }
     if (!E164_RE.test(phone)) {
       return NextResponse.json({ error: "Phone must be E.164 (e.g. +14155551234)" }, { status: 400 })
+    }
+
+    if (!backendUrl || !apiKey) {
+      return NextResponse.json({ error: "Callback requests are temporarily unavailable. Please contact our team." }, { status: 503 })
     }
 
     const upstream = await fetch(`${backendUrl.replace(/\/$/, "")}/api/leads`, {
@@ -36,39 +49,29 @@ export async function POST(request: Request) {
         email,
         phone_e164: phone,
       }),
+      signal: AbortSignal.timeout(15000),
     })
 
     if (!upstream.ok) {
-      const rawBody = await upstream.text().catch(() => "")
-      console.error("Lola backend error", upstream.status, rawBody)
+      // Never echo or log upstream bodies: they may contain contact data or secrets.
+      console.error("Lola backend returned a non-success status", upstream.status)
 
-      // Parse a structured error message if the backend returned JSON.
-      let backendMessage: string | undefined
-      try {
-        const parsed = JSON.parse(rawBody)
-        if (typeof parsed?.error === "string") backendMessage = parsed.error
-        else if (typeof parsed?.message === "string") backendMessage = parsed.message
-        else if (typeof parsed?.detail === "string") backendMessage = parsed.detail
-      } catch {
-        // not JSON
-      }
-
-      // 4xx → user-actionable; forward the backend message when present.
+      // Only known user-actionable statuses receive specific, fixed messages.
       if (upstream.status === 429) {
         return NextResponse.json(
-          { error: backendMessage || "You've made too many requests recently. Please wait a few minutes and try again." },
+          { error: "You've made too many requests recently. Please wait a few minutes and try again." },
           { status: 429 }
         )
       }
       if (upstream.status === 409) {
         return NextResponse.json(
-          { error: backendMessage || "You already have a pending request. Check your email for the confirmation link." },
+          { error: "You already have a pending request. Check your email for the confirmation link." },
           { status: 409 }
         )
       }
-      if (upstream.status >= 400 && upstream.status < 500) {
+      if ([400, 422].includes(upstream.status)) {
         return NextResponse.json(
-          { error: backendMessage || "We couldn't accept that request. Please double-check your details and try again." },
+          { error: "We couldn't accept that request. Please double-check your details and try again." },
           { status: 400 }
         )
       }
@@ -81,8 +84,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ ok: true }, { status: 200 })
-  } catch (error) {
-    console.error("Error processing Lola call request:", error)
-    return NextResponse.json({ error: "Failed to process request" }, { status: 500 })
+  } catch {
+    // A timeout can happen after acceptance; do not automatically retry a dial request.
+    return NextResponse.json({ error: "We could not confirm your request. Check your inbox before trying again, or contact our team." }, { status: 502 })
   }
 }
