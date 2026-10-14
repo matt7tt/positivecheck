@@ -43,7 +43,21 @@ export const TCM_WORKFLOW_POST: BlogPost = {
   keywords: ['post-discharge follow-up workflow', 'TCM outreach', 'care management handoffs', 'transitional care management'],
 }
 
+export const AI_PATIENT_CALLS_POST: BlogPost = {
+  slug: 'ai-patient-calls-sms-front-office-ongoing-care',
+  title: 'AI Patient Calls and SMS: From Front Office to Ongoing Care',
+  description: 'How AI patient calls and SMS support new inquiries, scheduling, reminders, RPM, CCM and post-discharge follow-up while keeping practice staff in control.',
+  datePublished: '2026-10-14',
+  dateModified: '2026-10-14',
+  displayDate: 'October 14, 2026',
+  readTime: '6 min read',
+  image: '/images/ai-patient-calls-sms-front-office-ongoing-care.jpg',
+  articleSection: 'Patient Communication & Practice Operations',
+  keywords: ['AI patient calls', 'patient SMS', 'front office automation', 'appointment reminders', 'RPM outreach', 'CCM check-ins', 'patient communication'],
+}
+
 export const blogPosts: BlogPost[] = [
+  AI_PATIENT_CALLS_POST,
   TCM_WORKFLOW_POST,
   APCM_BILLING_POST,
   {

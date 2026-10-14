@@ -10,6 +10,8 @@ Full-text version: https://www.positivecheck.com/llms-full.txt
 
 ## Front Office solutions
 
+- [AI patient calls and SMS: from Front Office to ongoing care](https://www.positivecheck.com/blog/ai-patient-calls-sms-front-office-ongoing-care): How practice-defined calls and SMS support inquiries, scheduling, reminders and care management, with staff responsibilities and a fictional patient journey.
+
 For practice managers evaluating calls and SMS from the first inquiry through appointment follow-up. Specific calendar/EHR connections and booking permissions must be verified; collected preferences are not confirmed appointments. Staff retain responsibility for exceptions and clinical decisions.
 
 - [New patient lead follow-up](https://www.positivecheck.com/solutions/front-office/new-patient-leads): New inquiries, approved questions and staff handoffs.

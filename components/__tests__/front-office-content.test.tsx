@@ -6,7 +6,7 @@ import { frontOfficeContent } from '@/lib/front-office-content'
 import { solutionGroups } from '@/lib/solution-catalog'
 import { SolutionsMenu } from '@/components/solutions-menu'
 import { SolutionInterestOptions } from '@/components/solution-interest-options'
-import { featuredPost, TCM_WORKFLOW_POST, providerGridPosts, earlierCarePosts } from '@/lib/blog-posts'
+import { listedPosts, TCM_WORKFLOW_POST, providerGridPosts, earlierCarePosts } from '@/lib/blog-posts'
 import sitemap from '@/app/sitemap'
 
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
@@ -54,9 +54,9 @@ describe('Front Office and Care Management content structure', () => {
     expect(screen.getByRole('heading', { name: 'Include the hybrid and do-nothing options' })).toBeVisible()
     expect(screen.getByRole('link', { name: 'Plan an implementation' })).toHaveAttribute('href', '/resources/implementation-guide')
   })
-  it('features the TCM workflow while preserving earlier article URLs', () => {
+  it('keeps the TCM workflow listed while preserving earlier article URLs', () => {
     render(<TcmPage />)
-    expect(featuredPost).toBe(TCM_WORKFLOW_POST)
+    expect(listedPosts).toContain(TCM_WORKFLOW_POST)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(TCM_WORKFLOW_POST.title)
     expect(screen.getByRole('link', { name: /Source: CMS/ })).toHaveAttribute('href', 'https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf')
     expect(providerGridPosts.every(p => !p.datePublished.startsWith('2025-'))).toBe(true)
