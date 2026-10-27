@@ -45,9 +45,34 @@ export default function PrivacyPage() {
       <main className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy for Positive Check</h1>
-          <p className="text-gray-600 mb-8">Effective Date: August 31, 2025</p>
+          <p className="text-gray-600 mb-8">Effective Date: August 31, 2025. Website heatmap disclosure updated October 27, 2026.</p>
 
           <div className="prose prose-lg max-w-none">
+            <section id="website-heatmaps" className="mb-8 scroll-mt-24">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Optional website heatmaps and session recordings</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                With your permission, we use Microsoft Clarity on public marketing pages to understand
+                clicks, scrolling, and where visitors encounter difficulty. Clarity processes website
+                interactions, device and browser information, and cookie-based session identifiers to
+                provide heatmaps and session recordings. We use these insights to improve the website
+                and its contact and demo experience. Advertising consent is disabled in our Clarity integration.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Clarity loads only after you choose “Allow heatmaps.” We mask page text and form entries,
+                exclude provider, login, and account pages, and skip visits with URL parameters or other
+                potentially identifying URL information. Do not submit patient or sensitive health information
+                through public website forms. This tool is for the marketing website, not patient care.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Use “Heatmap privacy choices” in the footer to allow or turn off recording at any time.
+                Your choice is stored in this browser for up to 180 days. We also honor Global Privacy Control
+                and Do Not Track signals for Clarity. Turning it off stops future recording and clears
+                Clarity’s first-party cookies; it does not delete previously collected data. This preference
+                applies to Clarity, independently of other website analytics.
+                Microsoft also processes this data as described in the{' '}
+                <a href="https://privacy.microsoft.com/privacystatement" className="underline" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a>.
+              </p>
+            </section>
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">

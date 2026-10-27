@@ -17,7 +17,7 @@ export function ContactForm() {
 
   if (isSubmitted) {
     return (
-      <div className="p-12 text-center">
+      <div className="p-12 text-center" data-clarity-mask="true">
         <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
         <p className="text-gray-600">
           Thanks for your message. We will be in touch soon.
@@ -28,6 +28,7 @@ export function ContactForm() {
 
   return (
     <form
+      data-clarity-mask="true"
       className="space-y-6"
       onFocusCapture={() => {
         if (hasStarted.current) return

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { RequestDemoModal } from '@/components/request-demo-modal'
 import { LolaCallModal } from '@/components/lola-call-modal'
 import { solutionGroups } from '@/lib/solution-catalog'
+import { HeatmapChoicesButton } from '@/components/heatmap-privacy'
 
 export function PublicFooter() {
   return (
@@ -61,12 +62,14 @@ export function PublicFooter() {
             </ul>
           </div>
         </div>
-        <div className="text-center text-gray-600 text-sm flex items-center justify-center gap-2 pt-6 border-t border-gray-200">
+        <div className="text-center text-gray-600 text-sm flex flex-wrap items-center justify-center gap-2 pt-6 border-t border-gray-200">
           <span>&copy; Positive Check {new Date().getFullYear()}</span>
           <span>|</span>
           <Link href="/terms" className="hover:text-[#1a2642]">Terms</Link>
           <span>|</span>
           <Link href="/privacy" className="hover:text-[#1a2642]">Privacy</Link>
+          <span>|</span>
+          <HeatmapChoicesButton />
         </div>
       </div>
     </footer>

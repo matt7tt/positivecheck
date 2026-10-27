@@ -79,6 +79,10 @@ export function trackEvent(
 ) {
   if (typeof window === "undefined" || !isMarketingAnalyticsPage(window.location)) return
 
+  // Only the event name is offered to the opt-in heatmap recorder. Never forward
+  // form values, attribution, user identifiers, or arbitrary event parameters.
+  window.dispatchEvent(new CustomEvent('pc:conversion', { detail: eventName }))
+
   const eventParameters = {
     ...getAttributionContext(),
     ...parameters,
