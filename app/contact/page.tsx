@@ -109,6 +109,7 @@ export default function ContactPage() {
                 </div>
               ) : (
               <form
+                data-clarity-mask="true"
                 className="space-y-6"
                 onSubmit={handleSubmit}
                 onFocusCapture={() => {

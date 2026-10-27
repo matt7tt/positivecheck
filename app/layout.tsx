@@ -8,6 +8,8 @@ import { AuthProvider } from "@/lib/auth-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
 import { MarketingTelemetry } from "@/components/marketing-telemetry";
 import { MARKETING_GA_MEASUREMENT_ID } from "@/lib/analytics-config";
+import { HeatmapPrivacy } from "@/components/heatmap-privacy";
+import sitemap from "./sitemap";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -188,11 +190,13 @@ gtag('config','${gaMeasurementId}');
 
       </head>
       <body
+        data-clarity-mask="true"
         className={`${inter.className} antialiased`}
 >
         {/* No unconditional noscript tracker: it bypasses the marketing-host guard. */}
         <AuthProvider>
           <MarketingTelemetry />
+          <HeatmapPrivacy publicPaths={sitemap().map(entry => new URL(entry.url).pathname)} />
           {children}
         </AuthProvider>
       </body>

@@ -60,7 +60,7 @@ const entries: Entry[] = [
     images: ["/images/senior-phone-check-in.png"] },
   { path: "/blog/role-of-technology-in-senior-care", lastmod: "2025-01-25", changefreq: "monthly", priority: 0.7,
     images: ["/images/senior-talking-on-the-phone1.webp"] },
-  { path: "/privacy", lastmod: "2026-03-18", changefreq: "yearly", priority: 0.3 },
+  { path: "/privacy", lastmod: "2026-10-27", changefreq: "yearly", priority: 0.3 },
   { path: "/terms", lastmod: "2026-03-18", changefreq: "yearly", priority: 0.3 },
   { path: "/case-studies/scaling-patient-engagement", lastmod: "2026-02-22", changefreq: "monthly", priority: 0.8,
     images: ["/images/healthcare-care-coordinator.png"] },
