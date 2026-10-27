@@ -41,11 +41,12 @@ export function HeatmapPrivacy({ publicPaths }: { publicPaths: string[] }) {
   }, [pathname, publicPaths])
 
   function save(next: HeatmapChoice) {
+    // Stop the current recording even if the browser cannot persist the choice.
+    stop.current?.()
     try { localStorage.setItem(HEATMAP_CHOICE_KEY, JSON.stringify({ choice: next, at: Date.now() })) }
     catch { setBlocked(true); return }
     setChoice(next)
     setVisible(false)
-    stop.current?.()
     // Clear first-party Clarity cookies even if the SDK was blocked or failed.
     if (next === 'declined') {
       for (const name of ['_clck', '_clsk']) {
