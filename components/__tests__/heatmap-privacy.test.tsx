@@ -40,3 +40,16 @@ it('respects a saved decline and keeps settings accessible', () => {
   fireEvent.click(screen.getByRole('button', { name: 'Heatmap privacy choices' }))
   expect(screen.getByText('Your saved choice: off.')).toBeVisible()
 })
+
+it('stops an active recorder even if saving the withdrawal fails', () => {
+  localStorage.setItem(HEATMAP_CHOICE_KEY, JSON.stringify({ choice: 'accepted', at: Date.now() }))
+  const stop = jest.fn()
+  ;(startHeatmapRecorder as jest.Mock).mockReturnValueOnce(stop)
+  render(<><HeatmapPrivacy publicPaths={paths} /><HeatmapChoicesButton /></>)
+  fireEvent.click(screen.getByRole('button', { name: 'Heatmap privacy choices' }))
+  const write = jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('Storage unavailable') })
+  fireEvent.click(screen.getByRole('button', { name: 'No thanks' }))
+  expect(stop).toHaveBeenCalledTimes(1)
+  expect(screen.getByRole('button', { name: 'Allow heatmaps' })).toBeDisabled()
+  write.mockRestore()
+})
