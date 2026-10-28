@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { cleanText, createLeadPayload, escapeHtml, forwardLeadToCrm, isValidEmail } from '@/lib/server/lead-delivery'
+import { cleanText, createLeadPayload, escapeHtml, forwardLeadToCrm, isValidEmail, readLeadBody, settleLeadDelivery } from '@/lib/server/lead-delivery'
 import { getDemoOffer } from '@/lib/demo-offers'
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    const body = await readLeadBody(request)
+    if (!body) return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     const name = cleanText(body.name, 120)
-    const email = cleanText(body.email, 254).toLowerCase()
+    const email = (typeof body.email === 'string' ? body.email.trim() : '').toLowerCase()
     const organization = cleanText(body.organization, 200)
     const attribution = body.attribution
     const offer = getDemoOffer(body.offer_id)
@@ -26,7 +27,7 @@ export async function POST(request: Request) {
     const lead = createLeadPayload(
       'demo_request',
       { name, email, organization, ...(offer ? { offer_id: offer.id } : {}), ...(ctaLocation ? { cta_location: ctaLocation } : {}) },
-      attribution && typeof attribution === 'object' ? attribution : undefined
+      attribution && typeof attribution === 'object' && !Array.isArray(attribution) ? attribution as Record<string, unknown> : undefined
     )
 
     const safeName = escapeHtml(name)
@@ -35,37 +36,35 @@ export async function POST(request: Request) {
     const safeSource = escapeHtml(lead.attribution?.utm_source || lead.attribution?.initial_referrer || 'Direct / unknown')
     const safeLandingPage = escapeHtml(lead.attribution?.landing_page || lead.attribution?.page_path || 'Unknown')
 
-    const crmDelivery = forwardLeadToCrm(lead)
-    let emailDelivered = false
+    const { crmDelivered, emailDelivered } = await settleLeadDelivery(lead,
+      () => forwardLeadToCrm(lead),
+      async () => {
+        if (!process.env.RESEND_API_KEY) return false
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        const { error: resendError } = await resend.emails.send({
+          from: 'Positive Check <info@contact.positivecheck.com>',
+          to: [contactEmail],
+          replyTo: email,
+          subject: `Demo Request from ${safeName}${organization ? ` at ${safeOrganization}` : ''}`,
+          html: `
+            <h2>New Demo Request</h2>
+            <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
+              <tr><td style="padding: 8px; font-weight: bold;">Lead ID:</td><td style="padding: 8px;">${lead.id}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${safeName}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;"><a href="mailto:${safeEmail}">${safeEmail}</a></td></tr>
+              ${organization ? `<tr><td style="padding: 8px; font-weight: bold;">Organization:</td><td style="padding: 8px;">${safeOrganization}</td></tr>` : ''}
+              ${offer ? `<tr><td style="padding: 8px; font-weight: bold;">Requested offer:</td><td style="padding: 8px;">${escapeHtml(offer.modalTitle)} (${offer.id})</td></tr>` : ''}
+              <tr><td style="padding: 8px; font-weight: bold;">Source:</td><td style="padding: 8px;">${safeSource}</td></tr>
+              <tr><td style="padding: 8px; font-weight: bold;">Landing page:</td><td style="padding: 8px;">${safeLandingPage}</td></tr>
+              ${ctaLocation ? `<tr><td style="padding: 8px; font-weight: bold;">CTA location:</td><td style="padding: 8px;">${escapeHtml(ctaLocation)}</td></tr>` : ''}
+            </table>
+            <p>Demo requested — not a confirmed booking. Arrange a time with the prospect, then record booking, attendance and qualification from actual outcomes.</p>
+          `,
+        })
 
-    if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY)
-      const { error: resendError } = await resend.emails.send({
-        from: 'Positive Check <info@contact.positivecheck.com>',
-        to: [contactEmail],
-        replyTo: email,
-        subject: `Demo Request from ${safeName}${organization ? ` at ${safeOrganization}` : ''}`,
-        html: `
-          <h2>New Demo Request</h2>
-          <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
-            <tr><td style="padding: 8px; font-weight: bold;">Lead ID:</td><td style="padding: 8px;">${lead.id}</td></tr>
-            <tr><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${safeName}</td></tr>
-            <tr><td style="padding: 8px; font-weight: bold;">Email:</td><td style="padding: 8px;"><a href="mailto:${safeEmail}">${safeEmail}</a></td></tr>
-            ${organization ? `<tr><td style="padding: 8px; font-weight: bold;">Organization:</td><td style="padding: 8px;">${safeOrganization}</td></tr>` : ''}
-            ${offer ? `<tr><td style="padding: 8px; font-weight: bold;">Requested offer:</td><td style="padding: 8px;">${escapeHtml(offer.modalTitle)} (${offer.id})</td></tr>` : ''}
-            <tr><td style="padding: 8px; font-weight: bold;">Source:</td><td style="padding: 8px;">${safeSource}</td></tr>
-            <tr><td style="padding: 8px; font-weight: bold;">Landing page:</td><td style="padding: 8px;">${safeLandingPage}</td></tr>
-            ${ctaLocation ? `<tr><td style="padding: 8px; font-weight: bold;">CTA location:</td><td style="padding: 8px;">${escapeHtml(ctaLocation)}</td></tr>` : ''}
-          </table>
-          <p>Demo requested — not a confirmed booking. Arrange a time with the prospect, then record booking, attendance and qualification from actual outcomes.</p>
-        `,
-      })
-
-      if (resendError) console.error('Resend API error:', resendError)
-      else emailDelivered = true
-    }
-
-    const crmDelivered = await crmDelivery
+        return !resendError
+      }
+    )
 
     if (!emailDelivered && !crmDelivered) {
       return NextResponse.json(
@@ -78,8 +77,8 @@ export async function POST(request: Request) {
       { message: 'Demo request submitted successfully', leadId: lead.id, crmDelivered, emailDelivered },
       { status: 200 }
     )
-  } catch (error) {
-    console.error('Error processing demo request:', error)
+  } catch {
+    console.error('Error processing demo request')
     return NextResponse.json(
       { error: 'Failed to process request' },
       { status: 500 }

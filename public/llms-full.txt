@@ -394,7 +394,7 @@ Comparison
 # RPM vs. CCM: Medicare Billing Comparison
 Compare RPM and CCM by patient need, device requirements, clinical work, monthly time, and documentation. Use separate activity logs when both programs apply.
 By Positive Check · Updated 2026-09-20
-## In short
+## Quick answer
 RPM manages a patient using remotely collected physiologic data; CCM coordinates longitudinal care for eligible patients with multiple chronic conditions. They can be complementary, but neither enrollment nor software usage makes the other service billable. Choose around clinical need and staff capacity, then verify each program’s requirements separately.
 Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
 ## Choose the program around the clinical job
@@ -461,78 +461,65 @@ Source: https://www.positivecheck.com/resources/compare/tcm-and-ccm-combined-mon
 
 Comparison
 # Can You Bill TCM and CCM in the Same Month?
-How Transitional Care Management and Chronic Care Management stack in the same month for a single patient — what CMS allows, how the 30-day TCM window interacts with the CCM calendar month, and how to document both programs cleanly.
-## In short
-- TCM and CCM can be billed concurrently for the same patient in the same calendar month. Historically restricted, this combination has been allowed under CMS guidance since the CY 2022 Medicare Physician Fee Schedule.
-- The TCM service period is 30 days from the date of discharge , which can span two calendar months. CCM is billed per calendar month — the two windows overlap but are not the same.
-- Clinical staff time cannot be double-counted between the two programs. TCM time covers the discharge transition; CCM time covers ongoing chronic disease management.
-- Typical combined claim for a moderate-complexity discharge with two chronic conditions: TCM 99495 ( ~ $178) + CCM 99490 ( ~ $66) = approximately $244 for the discharge month .
-- RPM can stack on top of both, pushing combined revenue above $400/month for eligible patients using a connected device.
+Yes, when each service independently qualifies. Compare the TCM 30-day window with CCM calendar months, see a worked example, and check for duplicate time.
+By Positive Check · Updated 2026-10-27
+## Quick answer
+Yes. Medicare permits CCM during a TCM service period when each service independently meets its requirements. Keep the same staff time and effort out of both records. TCM follows a 30-day discharge episode; CCM follows a calendar month. Overlapping dates alone neither establish nor prohibit payment.
+Evaluating your outreach process? View the patient-response and staff-handoff example before requesting a demo.
+Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
+## Check two services independently
+Use the TCM episode checklist and the CCM monthly checklist side by side. Do not infer that a patient qualifies for CCM simply because a discharge occurred, or that completing a CCM record satisfies the TCM episode.
+- TCM review: qualifying transition, timely contact or the applicable unsuccessful-attempt exception, required visit, medication reconciliation, and remaining service criteria.
+- CCM review: qualifying chronic conditions, consent, care plan, required service elements, and qualifying time for the selected code.
+- Release each claim only after checking current payer, practitioner, setting, and coding restrictions.
+- CMS CCM guidance: concurrent billing
+- CPT 99490 requirements and monthly activity log
+- CPT 99495 episode checklist
+## A TCM episode can overlap two CCM months
+Count the discharge date as day one of the 30-day TCM episode. CCM records restart with each calendar month. The examples below illustrate dates, not eligibility or guaranteed payment.
+- A short portion of a month does not reduce a CCM code’s requirements.
+- Do not carry a January CCM time shortfall into February.
+- The TCM contact and visit deadlines remain separate from the episode end date.
+Synthetic discharge dates and separate monthly records Discharge date TCM episode: discharge plus 29 days CCM records to review separately
+January 3, 2026 January 3–February 1 January and February
+January 20, 2026 January 20–February 18 January and February
+April 1, 2026 April 1–April 30 April
+- Two-business-day TCM contact deadlines, weekends, and holidays
+## Worked example: avoid counting the same work twice
+In a synthetic January 20 discharge workflow, a staff member records ten minutes of transition coordination assigned to TCM. That entry is not also added to the January CCM total. A separate CCM entry identifies a different activity, its purpose, staff member, date, and duration.
+If the CCM record contains only 15 qualifying minutes, copying five minutes from the TCM entry does not make 99490 eligible. Review the actual work performed and the applicable code requirements. Do not relabel an activity solely to meet a threshold.
+Suggested review fields for the practice’s approved records Record What the reviewer needs
+TCM episode Discharge and deadline dates, contact or attempt history, visit, transition work, and responsible practitioner
+CCM month Eligibility and consent, care-plan connection, staff activity entries, qualifying durations, and monthly total
+Overlap review Activity-level reconciliation showing that the same work was not counted twice
+## Estimate payment only after checking eligibility
+Do not use a fixed “TCM plus CCM” revenue total as a billing rule. Verify each code’s current allowed amount for the service year, locality, setting, and payer, then distinguish allowed amounts from actual collections.
+For planning, keep each service on a separate line with its assumptions and source. Reconcile actual paid claims later; a patient enrolled in two programs does not establish two payable claims.
+- CMS Physician Fee Schedule lookup
 For healthcare operations teams
-## See how one outreach workflow can support both programs
-Explore how Positive Check captures patient responses and routes follow-up work so your team can maintain separate, practice-owned TCM and CCM documentation.
-See the workflow Estimate program ROI
-## A practical check before combining services
-Start with two independently supported records, not a target revenue total. Verify the TCM contact or timely unsuccessful-attempt history , the required visit, and the remaining TCM criteria. Separately check CCM eligibility, consent, care-plan requirements, and qualifying monthly time using the CCM code guide .
-Illustrative documentation check: if a staff member spends ten minutes on a discharge coordination task assigned to TCM, do not copy those ten minutes into the CCM total. Record any separate CCM work with its own activity, staff member, date, and duration. This example explains separation of work; it is not a determination that either claim is billable. Have the billing reviewer confirm both records before submission.
-## When does combined billing apply?
-The combined-billing scenario applies when a single patient is independently eligible for both programs in the same month. The most common case: a Medicare patient discharged from inpatient care (qualifying for TCM) who also has two or more chronic conditions expected to last 12 months or longer (qualifying for CCM). Examples include CHF patients hospitalized for an acute exacerbation, diabetic patients admitted for hyperglycemia, or COPD patients post-discharge from a respiratory event.
-Before CY 2022, CMS treated TCM as comprehensive enough to preclude CCM during the same period. The current rule explicitly allows the two programs to coexist when documentation supports both independently. The change reflects CMS ’ s recognition that discharge-transition work (TCM) and ongoing chronic-care coordination (CCM) are clinically distinct activities even when performed for the same patient.
-## How the timing windows interact
-The TCM service period is 30 days starting from the date of discharge. The CCM billing window is the calendar month. These do not align — understanding the interaction is essential for correct billing.
-Discharge date TCM service period CCM billing months covered
-January 3 Jan 3 – Feb 2 CCM billable in January (and February if time threshold separately met)
-January 20 Jan 20 – Feb 18 TCM straddles two calendar months; CCM billable in both Jan and Feb independently
-January 28 Jan 28 – Feb 26 Most TCM activity occurs in February; CCM billable in Feb (and Jan if separate criteria met)
-A practical implication: when a discharge lands late in a calendar month, the bulk of TCM activity may fall in the following month. CCM eligibility and timing are tracked per calendar month, independent of the TCM 30-day window. Both can be billed in the same calendar month when documentation supports both.
-## Documentation that proves both are separate
-CMS auditors look for distinct documentation per program. The cleanest pattern:
-- TCM time covers discharge-transition activities: the 2-business-day interactive contact , medication reconciliation tied to the discharge event, the face-to-face visit within 7 days (99496) or 14 days (99495), and coordination of immediate post-discharge services (home health, DME, follow-up specialist appointments tied to the admission).
-- CCM time covers ongoing chronic-disease management not tied to the discharge: revision of the comprehensive care plan for the chronic conditions, coordination with non-discharge specialists, long-term medication management, patient education on chronic disease self-management, and the 24/7 patient access channel required for CCM.
-- Borderline activities (e.g., a single medication discussion that touches both discharge meds and chronic-care meds) should be documented under one program only. Pick the dominant clinical purpose and stick with it.
-- Time logs must show distinct minutes per program — a single combined timer is an audit risk. Most platforms support per-program time allocation; if yours does not, log separately in a structured note.
-## Revenue stacking math
-Combined revenue for a typical discharge month, using 2026 Medicare national averages:
-Patient scenario CPT codes billed Approximate revenue
-Moderate-complexity discharge, 2+ chronic conditions 99495 + 99490 ~ $244
-High-complexity discharge, 2+ chronic conditions 99496 + 99490 ~ $303
-Moderate-complexity, 2+ chronic conditions, 40+ min CCM time 99495 + 99490 + 99439 ~ $292
-Above + RPM device-based monitoring Above + 99454 + 99457 ~ $391
-High-complexity discharge + complex CCM + RPM 99496 + 99487 + 99454 + 99457 ~ $481+
-Rates are illustrative 2026 Medicare national averages. Actual reimbursement varies by locality. Verify current rates in the Medicare Physician Fee Schedule .
-## What CMS does not allow in the same month
-- Non-complex CCM (99490/99439) and complex CCM (99487/99489) cannot be reported together for the same patient in the same calendar month — providers pick one tier based on medical decision-making complexity.
-- Practitioner-only CCM (99491/99437) cannot be reported in a calendar month when 99487, 99489, 99490, or 99439 is used for the same patient.
-- Complex CCM (99487) cannot be reported with prolonged E/M services in the same calendar month.
-- Time spent on TCM activities cannot also count toward CCM time thresholds (or vice versa). Each program ’ s time threshold must be met independently.
-- RPM and RTM are mutually exclusive — a patient cannot be billed for both in the same month — but either can stack with CCM/TCM.
-## How AI-powered wellness calls fit both programs
-Structured AI-driven engagement supports both programs without double-counting when the call workflow segments time by clinical purpose. A 30-minute monthly touchpoint can be split into 12 minutes covering discharge transition items (post-discharge symptoms, medication adherence for discharge meds, follow-up scheduling) logged toward TCM, and 18 minutes covering chronic-condition management (care plan review, long-term medication adherence, lifestyle coordination) logged toward CCM. Positive Check ’ s platform supports per-program time allocation and structured documentation at the call level.
+## Review the handoff from discharge outreach to ongoing care
+Walk through patient responses, escalation ownership, and the records your team needs to reconcile. Positive Check supports outreach; your practice determines clinical work and billing eligibility.
+Request a care-management demo View the workflow example
 ## Common questions
-### Can you bill TCM and CCM in the same calendar month for the same patient?
-Yes. Current CMS guidance (per MLN 909188 and the CY 2022 Medicare Physician Fee Schedule onward) explicitly permits CCM codes 99490, 99439, 99487, 99489, and 99491 to be reported during the 30-day TCM service period (CPT 99495 or 99496). The two programs were historically mutually exclusive but are now stackable when documentation supports both independently. Clinical staff time cannot be double-counted between programs.
-### How do the TCM 30-day period and the CCM calendar month interact?
-TCM is billed once for a 30-day post-discharge period that begins on the date of discharge. CCM is billed per calendar month. These two windows can overlap. The TCM 30-day window can span two calendar months (e.g., discharge January 20 → TCM period ends February 18). CCM is billable in either January or February (or both, if eligibility and time thresholds are met in each calendar month) provided the CCM time is separate from time logged toward TCM.
-### What CMS code combinations are NOT allowed in the same month?
-Non-complex CCM (99490/99439) and complex CCM (99487/99489) cannot be reported together for the same patient in the same calendar month—providers must choose one tier based on medical decision-making complexity. Practitioner-only CCM (99491/99437) cannot be reported in a month when 99487, 99489, 99490, or 99439 is used. Complex CCM (99487) cannot be reported with prolonged E/M services in the same calendar month. TCM does not have a "complex" tier conflict with CCM, so TCM + non-complex CCM is fully stackable.
-### What does the combined revenue look like for a discharged patient with two chronic conditions?
-For a patient discharged with moderate-complexity medical decision-making and two qualifying chronic conditions, the typical combined claim is TCM 99495 (~$178) + CCM 99490 (~$66) = approximately $244 for the discharge month, assuming both eligibility and time requirements are independently met. High-complexity discharges (99496, ~$237) raise the combined total to approximately $303. RPM (CPT 99454/99457 or the new 2026 codes 99445/99470) can stack on top when the patient also uses a connected device, pushing combined revenue past $400 for the discharge month.
-### What documentation pattern proves TCM and CCM are separate services?
-The cleanest pattern is to keep distinct time logs and activity types. TCM time covers the discharge transition: the 2-business-day interactive contact, medication reconciliation tied to discharge, the face-to-face visit within 7 or 14 days, and coordination of post-discharge services. CCM time covers ongoing chronic disease management unrelated to the discharge event: care plan revision for the chronic conditions, coordination with non-discharge specialists, medication management for long-term meds, and patient education on chronic disease self-management. If the same activity could plausibly serve either program, document it under one and only one—never both.
-### Key takeaways
-- TCM and CCM are independently billable in the same calendar month when eligibility is met for each and time is documented separately.
-- The 30-day TCM service period can straddle two calendar months; CCM is tracked per calendar month, independent of the TCM window.
-- Combined revenue typically reaches $244 – $303 for a discharge month, rising past $400 when RPM is also billable.
-- Non-complex CCM and complex CCM are mutually exclusive within a month — as are 99491 and 99490 for the same patient.
-## References
-- Centers for Medicare & Medicaid Services. MLN 909188: Chronic Care Management Services (PDF) . Updated June 2025. cms.gov.
-- Centers for Medicare & Medicaid Services. MLN 908628: Transitional Care Management Services (PDF) . cms.gov.
-- Centers for Medicare & Medicaid Services. Medicare Physician Fee Schedule Final Rules . Concurrent CCM + TCM billing finalized in CY 2022 PFS.
-Back to the TCM solution overview
-Back to the CCM solution overview
-Related: RPM vs. CCM Medicare Billing
-All comparisons
-Reviewed against current CMS billing guidance. MLN 909188 and MLN 908628 . Last updated 2026-05-19.
+### Can 99495 and 99490 be billed for the same patient in the same month?
+Yes, when the TCM episode and the CCM month independently satisfy their requirements and no time or effort is duplicated. Check the records and current payer rules before submitting either claim.
+### Does CCM have to wait until the TCM episode ends?
+Medicare permits concurrent CCM during the TCM period. This does not waive either service’s requirements or permit counting the same work twice.
+### What happens when the TCM period crosses into another month?
+The discharge episode continues, while CCM is reviewed separately for each calendar month. For example, a January 20, 2026 discharge has a TCM episode ending February 18; January and February CCM records each need their own review.
+### Does an automated call make both services billable?
+No. A call log does not independently establish either service’s requirements. Keep software activity distinguishable from qualifying staff work, and have the practice review clinical contact, documentation, and billing eligibility.
+### Can complex and non-complex CCM be combined in one month?
+No. These are separate CCM pathways. Do not combine 99490/99439 with 99487/99489 for the same patient in the same calendar month. Review the selected pathway and other reporting restrictions with the billing team.
+## Sources and review scope
+Source-checked on 2026-10-27 . This is an editorial source check, not independent clinical or coding-review sign-off. Published payment amounts must be verified for the service year, locality, setting, and payer; this guide does not promise a national reimbursement amount.
+- CMS: Chronic Care Management Services, concurrent billing (June 2025)
+- CMS: Transitional Care Management Services (August 2025)
+- CMS: Physician Fee Schedule lookup
+## Related guides and next steps
+- Post-discharge outreach with Positive Check
+- Ongoing chronic care outreach with Positive Check
+- Plan workflow ownership and implementation
 
 ---
 Source: https://www.positivecheck.com/solutions/remote-patient-monitoring/cpt-99457-billing-guide
@@ -541,7 +528,7 @@ Billing Guide
 # CPT 99457 Billing Guide: RPM Interactive Communication Requirements
 Understand CPT 99457’s 20-minute total treatment-management threshold, required live communication, device rules, and documentation with a worked activity log.
 By Positive Check · Updated 2026-09-20
-## In short
+## Quick answer
 CPT 99457 requires at least 20 minutes of qualifying RPM treatment-management time in a calendar month, including required interactive communication with the patient or caregiver. It does not require all 20 minutes to be a live conversation. Device data collection and treatment-management time have separate requirements.
 Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
 ## Separate total treatment time from live communication
@@ -602,7 +589,7 @@ Billing Guide
 # CMS Interactive Communication Requirement for RPM: What Counts and What Doesn’t
 Separate required live RPM communication from total treatment-management time. Check data review, outreach attempts, AI support, and clinical documentation boundaries.
 By Positive Check · Updated 2026-09-20
-## In short
+## Quick answer
 RPM treatment-management codes require real-time, two-way communication with the patient or caregiver. That communication is one component of the service: qualifying care-management work can also contribute to the total time. Neither an unanswered message nor automated call duration independently establishes the required clinical service.
 Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
 ## Communication and total time are different checks
@@ -741,11 +728,12 @@ Back to the RPM solution overview Reviewed against current CMS billing guidance.
 Source: https://www.positivecheck.com/solutions/chronic-care-management/cpt-99490-billing-guide
 
 Billing Guide
-# CPT 99490 Billing Guide: Chronic Care Management Requirements
-Check CPT 99490 eligibility, consent, qualifying monthly time, and care-plan documentation. Compare non-complex and complex CCM with a sample activity log.
-By Positive Check · Updated 2026-09-20
-## In short
+# CPT 99490: Requirements, Reimbursement and Time Records
+What does CPT 99490 cover? Check the 20-minute CCM threshold, eligibility, 2026 reimbursement lookup, and a sample monthly time record.
+By Positive Check · Updated 2026-10-27
+## Quick answer
 CPT 99490 requires at least 20 minutes of qualifying clinical staff CCM time in a calendar month, directed by an eligible practitioner. Time alone is insufficient: patient eligibility, consent, the care plan, service elements, and billing restrictions must also be satisfied. Complex CCM is a separate pathway, not an add-on to 99490.
+Evaluating your outreach process? View the patient-response and staff-handoff example before requesting a demo.
 Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
 ## Check eligibility before tracking minutes
 CCM addresses two or more chronic conditions expected to last at least 12 months, or until death, that create significant risk of death, acute exacerbation or decompensation, or functional decline. A diagnosis count alone does not establish eligibility; document the conditions and why longitudinal management is needed.
@@ -773,15 +761,21 @@ CCM pathways to check against current coding instructions Pathway Initial thresh
 99487: complex clinical staff CCM 60 qualifying minutes, moderate or high complexity decision-making, and care-plan establishment or substantial revision 99489: each additional 30 minutes
 99491: practitioner-personally furnished CCM 30 qualifying practitioner minutes per calendar month 99437: each additional 30 minutes
 - CMS: Chronic Care Management Services (June 2025)
+## CPT 99490 reimbursement: verify your 2026 rate
+There is no single 99490 payment amount that applies to every practice. Use the CMS Physician Fee Schedule lookup for the service year and code, then select your Medicare Administrative Contractor locality and applicable facility or non-facility setting. Check payer-specific coverage separately.
+Keep the lookup date, year, locality, setting, and fee schedule result with your planning assumptions. An allowed amount is not a guaranteed collection: eligibility, claim acceptance, patient cost sharing, and actual payment can differ. Do not apply a national illustration to every enrolled patient.
+- CMS: Physician Fee Schedule lookup and locality guidance
 ## What to review before adopting outreach software
 Ask who performs the qualifying clinical work, who supervises it, and how records distinguish software activity from staff activity. An outreach transcript can support a handoff, but does not independently establish eligibility, medical necessity, consent, or billable staff time.
 Positive Check can be evaluated as an outreach workflow tool while the practice retains clinical and billing responsibility. Before rollout, review sample exports, escalation ownership, access controls, and how the team reconciles records with its existing care plan and billing process.
 - Implementation: responsibilities, workflow, and rollout questions
 For healthcare operations teams
-## Review the workflow behind the billing record
-Bring your eligibility checks, activity logs, and handoff questions. Explore how Positive Check can support outreach while your practice retains clinical and billing responsibility.
-See the workflow Estimate program ROI
+## See how outreach becomes a staff follow-up task
+Review a CCM workflow with your care manager: patient responses, staff ownership, escalation, and records to reconcile with the care plan. Your practice retains clinical and billing responsibility.
+Request a CCM workflow demo View the workflow example
 ## Common questions
+### How much does Medicare reimburse for CPT 99490 in 2026?
+Look up 99490 in the CMS Physician Fee Schedule for 2026 using your MAC locality and applicable setting. A national example is not your practice’s guaranteed payment. Verify the payer’s coverage and the patient’s eligibility separately, and distinguish the allowed amount from actual collections.
 ### What does CPT 99490 cover?
 CPT 99490 is a non-complex chronic care management pathway requiring at least 20 minutes of qualifying clinical staff time in a calendar month under an eligible practitioner’s direction. The patient must also meet CCM eligibility requirements, and the practice must satisfy consent, care-plan, access, documentation, and billing rules.
 ### Does reaching 20 minutes make a CCM claim billable?
@@ -795,10 +789,12 @@ An automated call’s duration does not by itself establish qualifying clinical 
 ### What should a practice check before switching CCM workflows?
 Check whether the new workflow preserves consent, care plans, activity-level time records, escalation ownership, and continuity of care. Ask to see an example export and how overlapping services are reconciled. Evaluate staff training and clinical coverage alongside software cost; projected reimbursement is not evidence that a particular claim qualifies.
 ## Sources and review scope
-Source-checked on 2026-09-20 . This is an editorial source check, not independent clinical or coding-review sign-off. Published payment amounts must be verified for the service year, locality, setting, and payer; this guide does not promise a national reimbursement amount.
+Source-checked on 2026-10-27 . This is an editorial source check, not independent clinical or coding-review sign-off. Published payment amounts must be verified for the service year, locality, setting, and payer; this guide does not promise a national reimbursement amount.
 - CMS: Chronic Care Management Services (June 2025)
+- CMS: Physician Fee Schedule lookup and locality guidance
 - CMS: Telehealth & Remote Monitoring (December 2025)
 ## Related guides and next steps
+- Can TCM and CCM be billed in the same month?
 - RPM versus CCM: program fit and separate time records
 - CPT 99457: RPM time and communication documentation
 - CPT 99495: TCM episode checklist
@@ -981,7 +977,7 @@ Billing Guide
 # CPT 99495 Requirements: 2026 TCM Billing Guide
 Check CPT 99495 discharge eligibility, two-business-day contact, the 14-day visit, decision-making, medication reconciliation, and unsuccessful outreach documentation.
 By Positive Check · Updated 2026-09-20
-## In short
+## Quick answer
 CPT 99495 is a transitional care management service for an eligible discharge to a community setting. It requires timely interactive contact, at least moderate-complexity medical decision-making, and a face-to-face visit within 14 calendar days. The episode spans the discharge date and the next 29 days; completing a call alone does not establish eligibility.
 Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.
 ## Confirm the discharge and the correct TCM pathway
@@ -1121,9 +1117,9 @@ Back to the TCM solution overview Reviewed against current CMS billing guidance.
 Source: https://www.positivecheck.com/solutions/post-discharge-follow-up/post-discharge-contact-timing
 
 Workflow
-# TCM Contact Within 2 Business Days: CMS Rule and Examples
+# TCM Contact Within 2 Business Days: Friday and Holiday Examples
 Count the deadline, distinguish contact from attempts, and give your care team a clear follow-up checklist.
-Updated September 13, 2026. Educational workflow guidance; not a patient-specific billing determination.
+Updated October 27, 2026. Educational workflow guidance; not a patient-specific billing determination.
 ## In short
 TCM calls for interactive contact with the patient or caregiver within two business days after discharge . If contact is unsuccessful, at least two separate, timely, documented attempts may support reporting when every other requirement is met. Continue outreach; do not automatically mark an unreached patient as either billable or ineligible.
 Source: CMS TCM booklet, interactive contact section .
@@ -1148,13 +1144,22 @@ Use this suggested operational checklist to prepare a record for review, not as 
 - Completed interaction : Identify whether the patient or caregiver responded, who performed the interaction, the needs discussed, and the clinical follow-up requested. Keep the record in the practice’s approved clinical system.
 - Next action and ownership : Assign a named owner and next action after an unsuccessful attempt or concerning response. Keep the task open until the team resolves it; a scheduled call is not a completed contact.
 - Billing review : Make the attempt history, visit record, medication reconciliation, and other supporting documentation available to the billing reviewer. Do not automatically convert a call status into a billable claim.
+## A blank contact-record template for your team
+Adapt these suggested fields inside your approved clinical system. Keep a separate entry for every attempt and have your billing reviewer validate the complete episode.
+- Discharge date and source of notification
+- Contact deadline and separate visit deadline
+- Attempt date, time, method, and staff member
+- Recipient: patient or caregiver; outcome: contacted, no answer, voicemail, or wrong number
+- If contacted: needs discussed and action requested
+- Next action, named owner, and follow-up deadline
+This is an operational starting point, not a complete clinical note or evidence that a claim qualifies.
 ## Where automation fits—and where staff retain responsibility
 Evaluate Positive Check as support for outreach, structured responses, and staff handoffs. Do not assume that an AI-only call independently satisfies a clinical contact requirement. Agree who reviews unsuccessful attempts, handles concerning responses, and makes billing decisions before running a pilot.
-Use the implementation guide to plan ownership and exception testing. For ongoing chronic care after discharge, review TCM and CCM in the same month and the 2026 CCM billing guide .
+Use the implementation guide to plan ownership and exception testing. For ongoing chronic care after discharge, review TCM and CCM in the same month and the 99490 requirements and monthly time record .
 For healthcare operations teams
 ## Walk through your discharge follow-up workflow
 Bring your discharge-list process, contact-attempt rules, and staff handoff questions. Explore where Positive Check can support the team while your practice retains clinical and billing responsibility.
-See the workflow Estimate program ROI
+Request a discharge-workflow demo View the workflow example
 ## Common questions
 ### If a patient is discharged on Friday, when is TCM contact due?
 The usual deadline is Tuesday, unless a holiday changes the business-day count. Monday and Tuesday are the two business days after Friday. Plan coverage before the weekend, rather than waiting for the discharge list to be reviewed on Monday. A late notification does not restart the discharge-based clock.
@@ -1168,7 +1173,7 @@ Do not assume that it does. CMS describes contact by the practitioner or permitt
 Test a Friday discharge, a holiday, an unanswered call, an incorrect phone number, and a response needing clinical follow-up. For each scenario, check the deadline, attempt history, named staff owner, and next action. Use synthetic patient records during testing and agree how the team will handle failures before expanding the workflow.
 ### How should TCM outreach connect with ongoing CCM work?
 Keep the discharge follow-up record and the monthly CCM activity record distinguishable, even when the same team manages both. Assign each activity to the service it supports and never count the same work twice. Review eligibility and documentation separately; completing an outreach call does not by itself establish either program’s billing requirements.
-Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed September 13, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.
+Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed October 27, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.
 
 ---
 Source: https://www.positivecheck.com/blog/apcm-billing-2026

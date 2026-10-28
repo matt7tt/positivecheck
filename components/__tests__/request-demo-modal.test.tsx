@@ -90,8 +90,14 @@ describe('demo request conversions', () => {
     else mockFetch.mockRejectedValueOnce(new Error('Network unavailable'))
     const user = await fillForm()
     await user.click(screen.getByRole('button', { name: 'Request demo' }))
-    await screen.findByText('Failed to submit request. Please try again.')
+    expect(await screen.findByRole('alert')).toHaveTextContent('We could not confirm your submission')
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
+    expect(screen.getByLabelText('Email Address')).toHaveValue('synthetic@example.com')
+    expect(screen.getByRole('link', { name: 'Email Positive Check' })).toHaveAttribute('href', 'mailto:hello@positivecheck.com')
+    expect(trackEvent).toHaveBeenCalledWith('form_error', expect.objectContaining({
+      error_type: failure === 'http' ? 'delivery_unavailable' : 'network_or_unknown',
+      response_status: failure === 'http' ? 502 : 0,
+    }))
     await waitFor(() => expect(screen.getByRole('button', { name: 'Request demo' })).toBeEnabled())
   })
 
@@ -131,7 +137,7 @@ describe('demo request conversions', () => {
     await user.type(screen.getByLabelText('Full Name'), 'Synthetic Test')
     await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
     await user.click(screen.getByRole('button', { name: 'Request demo' }))
-    await screen.findByText('Failed to submit request. Please try again.')
+    expect(await screen.findByRole('alert')).toHaveTextContent('We could not confirm your submission')
     expect(trackEvent).toHaveBeenCalledWith('form_error', expect.objectContaining({ offer_id: offer.id }))
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(0)
   })

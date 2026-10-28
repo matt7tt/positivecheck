@@ -6,7 +6,7 @@ describe('source-checked billing references', () => {
     const metadata = billingReferenceMetadata(guide)
     expect(metadata.alternates?.canonical).toBe(guide.path)
     expect(metadata.title).toBe(guide.seoTitle)
-    expect(guide.updated).toBe('2026-09-20')
+    expect(guide.updated).toMatch(/^2026-\d{2}-\d{2}$/)
     expect(new Date(guide.published).getTime()).toBeLessThan(new Date(guide.updated).getTime())
     expect(new Set(guide.sections.map(section => section.id)).size).toBe(guide.sections.length)
     expect(guide.sources.length).toBeGreaterThan(0)

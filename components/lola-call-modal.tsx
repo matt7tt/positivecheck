@@ -1,5 +1,7 @@
 "use client"
 
+import { LeadSubmissionError, leadFailureDetails } from '@/lib/lead-form-feedback'
+
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -132,7 +134,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
 
       const body = await response.json().catch(() => ({}))
       if (!response.ok) {
-        throw new Error(body.error || "Failed to submit request")
+        throw new LeadSubmissionError(response.status, body.error || "Failed to submit request")
       }
 
       setSubmittedEmail(cleanEmail)
@@ -141,7 +143,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
       trackEvent("lola_call_requested", { cta_location: source })
       setIsSuccess(true)
     } catch (err) {
-      trackEvent("form_error", { form_name: "lola_call", cta_location: source, error_type: "submission_failed" })
+      trackEvent("form_error", { form_name: "lola_call", cta_location: source, ...leadFailureDetails(err) })
       setError(err instanceof Error ? err.message : "Failed to submit request. Please try again.")
     } finally {
       submitting.current = false

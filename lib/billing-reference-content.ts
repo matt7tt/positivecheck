@@ -5,6 +5,7 @@ const rpmSource = { label: 'CMS: Telehealth & Remote Monitoring (December 2025)'
 const rpmTimeSource = { label: 'CMS: Physician Fee Schedule clarification of RPM treatment-management time', href: 'https://www.cms.gov/newsroom/fact-sheets/final-policy-payment-and-quality-provisions-changes-medicare-physician-fee-schedule-calendar-year-1' }
 const rpm2026Source = { label: 'Noridian Medicare: 2026 RPM code updates', href: 'https://med.noridianmedicare.com/web/jeb/article-detail/-/view/10525/remote-physiologic-monitoring-rpm-2026-evaluation-and-management-em-updates' }
 const tcmSource = { label: 'CMS: Transitional Care Management Services (August 2025)', href: 'https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf' }
+const paymentSource = { label: 'CMS: Physician Fee Schedule lookup and locality guidance', href: 'https://www.cms.gov/medicare/physician-fee-schedule/search/overview' }
 const ccmLink = { label: 'CPT 99490: CCM eligibility and monthly documentation', href: '/solutions/chronic-care-management/cpt-99490-billing-guide' }
 const rpmLink = { label: 'CPT 99457: RPM time and communication documentation', href: '/solutions/remote-patient-monitoring/cpt-99457-billing-guide' }
 const tcmLink = { label: 'CPT 99495: TCM episode checklist', href: '/solutions/post-discharge-follow-up/cpt-99495-billing-guide' }
@@ -13,12 +14,13 @@ const implementationLink = { label: 'Implementation: responsibilities, workflow,
 
 export const ccmBillingGuide: BillingReference = {
   id: 'cpt-99490', path: ccmLink.href,
-  title: 'CPT 99490 Billing Guide: Chronic Care Management Requirements',
-  seoTitle: 'CPT 99490 Billing Guide: Chronic Care Management Requirements | Positive Check',
-  description: 'Check CPT 99490 eligibility, consent, qualifying monthly time, and care-plan documentation. Compare non-complex and complex CCM with a sample activity log.',
-  published: '2026-04-20', updated: '2026-09-20',
+  title: 'CPT 99490: Requirements, Reimbursement and Time Records',
+  seoTitle: 'CPT 99490: Requirements & Reimbursement (2026)',
+  description: 'What does CPT 99490 cover? Check the 20-minute CCM threshold, eligibility, 2026 reimbursement lookup, and a sample monthly time record.',
+  published: '2026-04-20', updated: '2026-10-27',
   parent: { label: 'Chronic Care Management', href: '/solutions/chronic-care-management' },
   summary: 'CPT 99490 requires at least 20 minutes of qualifying clinical staff CCM time in a calendar month, directed by an eligible practitioner. Time alone is insufficient: patient eligibility, consent, the care plan, service elements, and billing restrictions must also be satisfied. Complex CCM is a separate pathway, not an add-on to 99490.',
+  conversion: { title: 'See how outreach becomes a staff follow-up task', description: 'Review a CCM workflow with your care manager: patient responses, staff ownership, escalation, and records to reconcile with the care plan. Your practice retains clinical and billing responsibility.', buttonText: 'Request a CCM workflow demo' },
   sections: [
     { id: 'eligibility', title: 'Check eligibility before tracking minutes', paragraphs: [
       'CCM addresses two or more chronic conditions expected to last at least 12 months, or until death, that create significant risk of death, acute exacerbation or decompensation, or functional decline. A diagnosis count alone does not establish eligibility; document the conditions and why longitudinal management is needed.',
@@ -39,12 +41,17 @@ export const ccmBillingGuide: BillingReference = {
       ['99487: complex clinical staff CCM', '60 qualifying minutes, moderate or high complexity decision-making, and care-plan establishment or substantial revision', '99489: each additional 30 minutes'],
       ['99491: practitioner-personally furnished CCM', '30 qualifying practitioner minutes per calendar month', '99437: each additional 30 minutes'],
     ] }, links: [ccmSource] },
+    { id: 'reimbursement', title: 'CPT 99490 reimbursement: verify your 2026 rate', paragraphs: [
+      'There is no single 99490 payment amount that applies to every practice. Use the CMS Physician Fee Schedule lookup for the service year and code, then select your Medicare Administrative Contractor locality and applicable facility or non-facility setting. Check payer-specific coverage separately.',
+      'Keep the lookup date, year, locality, setting, and fee schedule result with your planning assumptions. An allowed amount is not a guaranteed collection: eligibility, claim acceptance, patient cost sharing, and actual payment can differ. Do not apply a national illustration to every enrolled patient.',
+    ], links: [paymentSource] },
     { id: 'workflow-review', title: 'What to review before adopting outreach software', paragraphs: [
       'Ask who performs the qualifying clinical work, who supervises it, and how records distinguish software activity from staff activity. An outreach transcript can support a handoff, but does not independently establish eligibility, medical necessity, consent, or billable staff time.',
       'Positive Check can be evaluated as an outreach workflow tool while the practice retains clinical and billing responsibility. Before rollout, review sample exports, escalation ownership, access controls, and how the team reconciles records with its existing care plan and billing process.',
     ], links: [implementationLink] },
   ],
   faqs: [
+    { question: 'How much does Medicare reimburse for CPT 99490 in 2026?', answer: 'Look up 99490 in the CMS Physician Fee Schedule for 2026 using your MAC locality and applicable setting. A national example is not your practice’s guaranteed payment. Verify the payer’s coverage and the patient’s eligibility separately, and distinguish the allowed amount from actual collections.' },
     { question: 'What does CPT 99490 cover?', answer: 'CPT 99490 is a non-complex chronic care management pathway requiring at least 20 minutes of qualifying clinical staff time in a calendar month under an eligible practitioner’s direction. The patient must also meet CCM eligibility requirements, and the practice must satisfy consent, care-plan, access, documentation, and billing rules.' },
     { question: 'Does reaching 20 minutes make a CCM claim billable?', answer: 'No. Twenty qualifying minutes satisfy only the time component of 99490. The practice must also establish patient eligibility, consent, the required care plan and service elements, and eligible staff and supervision. Review overlapping services and payer rules before submitting a claim; a timer or transcript alone is insufficient evidence.' },
     { question: 'Can 99487 be added to 99490 for a complex patient?', answer: 'No. Complex CCM is a separate coding pathway, not an add-on to 99490. CMS does not allow non-complex and complex CCM for the same patient in the same calendar month. Evaluate 99487 and its requirements separately; additional non-complex clinical staff time instead uses the 99439 pathway when its conditions are met.' },
@@ -52,7 +59,7 @@ export const ccmBillingGuide: BillingReference = {
     { question: 'Does an automated outreach call count toward CCM time?', answer: 'An automated call’s duration does not by itself establish qualifying clinical staff CCM time. Separately document any eligible staff work that follows, including its clinical purpose, duration, care-plan connection, and supervision. Software may support outreach and handoffs, but it does not replace the practice’s eligibility, care-management, and billing responsibilities.' },
     { question: 'What should a practice check before switching CCM workflows?', answer: 'Check whether the new workflow preserves consent, care plans, activity-level time records, escalation ownership, and continuity of care. Ask to see an example export and how overlapping services are reconciled. Evaluate staff training and clinical coverage alongside software cost; projected reimbursement is not evidence that a particular claim qualifies.' },
   ],
-  sources: [ccmSource, rpmSource], related: [compareLink, rpmLink, tcmLink, implementationLink],
+  sources: [ccmSource, paymentSource, rpmSource], related: [{ label: 'Can TCM and CCM be billed in the same month?', href: '/resources/compare/tcm-and-ccm-combined-month-billing' }, compareLink, rpmLink, tcmLink, implementationLink],
 }
 
 export const rpmBillingGuide: BillingReference = {

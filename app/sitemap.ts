@@ -84,7 +84,7 @@ const entries: Entry[] = [
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/solutions/chronic-care-management/faq", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
-  { path: "/solutions/chronic-care-management/cpt-99490-billing-guide", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.8,
+  { path: "/solutions/chronic-care-management/cpt-99490-billing-guide", lastmod: "2026-10-27", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/solutions/chronic-care-management/2-chronic-conditions-requirement", lastmod: "2026-04-20", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
@@ -100,7 +100,7 @@ const entries: Entry[] = [
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/solutions/post-discharge-follow-up/30-day-readmission-reduction", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
-  { path: "/solutions/post-discharge-follow-up/post-discharge-contact-timing", lastmod: "2026-09-13", changefreq: "monthly", priority: 0.8,
+  { path: "/solutions/post-discharge-follow-up/post-discharge-contact-timing", lastmod: "2026-10-27", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
   { path: "/solutions/post-discharge-follow-up/vs-manual-discharge-outreach", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.8,
     images: ["/images/admin-console-dashboard-new.png"] },
@@ -136,7 +136,7 @@ const entries: Entry[] = [
   { path: "/resources/glossary/patient-engagement", lastmod: "2026-04-21", changefreq: "monthly", priority: 0.7 },
   { path: "/resources/compare", lastmod: "2026-05-17", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/compare/rpm-vs-ccm-medicare-billing", lastmod: "2026-09-20", changefreq: "monthly", priority: 0.8 },
-  { path: "/resources/compare/tcm-and-ccm-combined-month-billing", lastmod: "2026-09-13", changefreq: "monthly", priority: 0.8 },
+  { path: "/resources/compare/tcm-and-ccm-combined-month-billing", lastmod: "2026-10-27", changefreq: "monthly", priority: 0.8 },
   { path: "/resources/billing-guide", lastmod: "2026-10-06", changefreq: "monthly", priority: 0.9 },
 ];
 

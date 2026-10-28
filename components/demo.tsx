@@ -1,5 +1,8 @@
 'use client'
 
+import { LeadSubmissionError, leadFailureDetails, leadFailureMessage } from '@/lib/lead-form-feedback'
+import { LeadFormError } from '@/components/lead-form-error'
+
 import { useRef, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -8,6 +11,7 @@ import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import toast, { Toaster } from 'react-hot-toast'
 import { Space_Grotesk } from 'next/font/google'
+import { getDemoBookingUrl } from '@/lib/demo-booking'
 import { getAttributionContext, trackEvent } from '@/lib/analytics'
 
 const spaceGrotesk = Space_Grotesk({
@@ -18,8 +22,9 @@ const spaceGrotesk = Space_Grotesk({
 export function DemoComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submissionError, setSubmissionError] = useState('')
   const hasStarted = useRef(false)
-  const bookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
+  const bookingUrl = getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL)
 
   if (isSubmitted) {
     return (
@@ -28,10 +33,10 @@ export function DemoComponent() {
         <PublicHeader currentPage="contact" />
         <main className="flex-1 flex items-center justify-center bg-gray-50">
           <Card className="w-full max-w-md">
-            <CardContent className="p-12 text-center">
+            <CardContent role="status" className="p-12 text-center">
               <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
               <p className="text-gray-600 mb-6">
-                Your demo request has been submitted successfully.
+                {bookingUrl ? "Your request is in. Your demo is not booked yet. Choose a time and complete the calendar confirmation." : "Your request is in. Our team will contact you by email to arrange a time. No appointment has been booked yet."}
               </p>
               {bookingUrl && (
                 <Button asChild className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white mb-3">
@@ -71,7 +76,7 @@ export function DemoComponent() {
               Demo Request
             </CardTitle>
             <p className="text-gray-600 text-center">
-              Share your contact details, then choose a convenient time.
+              {bookingUrl ? "Share your contact details, then choose a convenient time." : "Share your contact details and we’ll reach out by email to arrange your workflow demo."}
             </p>
           </CardHeader>
           <CardContent>
@@ -85,6 +90,7 @@ export function DemoComponent() {
               onSubmit={async (e) => {
                 e.preventDefault()
                 const form = e.currentTarget as HTMLFormElement
+                setSubmissionError('')
                 setIsSubmitting(true)
                 
                 try {
@@ -103,7 +109,7 @@ export function DemoComponent() {
                   })
 
                   if (!response.ok) {
-                    throw new Error('Failed to submit demo request')
+                    throw new LeadSubmissionError(response.status)
                   }
 
                   toast.success("Demo request submitted successfully!", {
@@ -118,9 +124,9 @@ export function DemoComponent() {
                   form.reset()
                   setIsSubmitted(true)
                 } catch (error) {
-                  console.error('Error submitting demo request:', error)
-                  trackEvent('form_error', { form_name: 'demo_page', error_type: 'submission_failed' })
-                  toast.error("Sorry, there was an error submitting your request. Please try again.", {
+                  setSubmissionError(leadFailureMessage(error))
+                  trackEvent('form_error', { form_name: 'demo_page', ...leadFailureDetails(error) })
+                  toast.error(leadFailureMessage(error), {
                     duration: 5000,
                     style: {
                       background: "#EF4444",
@@ -132,6 +138,7 @@ export function DemoComponent() {
                 }
               }}
             >
+              <LeadFormError message={submissionError} />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Full name (required)
