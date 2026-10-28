@@ -49,8 +49,8 @@ export async function forwardLeadToCrm(lead: LeadPayload): Promise<boolean> {
     }
 
     return true
-  } catch (error) {
-    console.error("Lead webhook delivery failed", { leadId: lead.id, error })
+  } catch {
+    console.error("Lead webhook delivery failed", { leadId: lead.id })
     return false
   } finally {
     clearTimeout(timeout)
@@ -64,6 +64,36 @@ export function escapeHtml(value: unknown): string {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;")
+}
+
+// Provider acceptance is not proof of inbox delivery or completed follow-up.
+export async function settleLeadDelivery(
+  lead: LeadPayload,
+  crm: () => Promise<boolean>,
+  email: () => Promise<boolean>
+) {
+  const results = await Promise.allSettled([
+    Promise.resolve().then(crm),
+    Promise.resolve().then(email),
+  ])
+  const [crmDelivered, emailDelivered] = results.map(result =>
+    result.status === 'fulfilled' && result.value === true
+  )
+  const outcome = { leadId: lead.id, leadType: lead.type, crmDelivered, emailDelivered }
+  // Omit contact details, payloads, and raw provider errors.
+  if (crmDelivered || emailDelivered) console.info('Lead accepted', outcome)
+  else console.error('Lead not accepted by any delivery channel', outcome)
+  return { crmDelivered, emailDelivered }
+}
+
+export async function readLeadBody(request: Request): Promise<Record<string, unknown> | null> {
+  try {
+    const body: unknown = await request.json()
+    return body !== null && typeof body === 'object' && !Array.isArray(body)
+      ? body as Record<string, unknown> : null
+  } catch {
+    return null
+  }
 }
 
 export function cleanText(value: unknown, maxLength = 500): string {

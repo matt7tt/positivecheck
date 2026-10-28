@@ -1,5 +1,8 @@
 "use client"
 
+import { LeadSubmissionError, leadFailureDetails, leadFailureMessage } from '@/lib/lead-form-feedback'
+import { LeadFormError } from '@/components/lead-form-error'
+
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -18,11 +21,13 @@ import { SolutionInterestOptions } from '@/components/solution-interest-options'
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submissionError, setSubmissionError] = useState('')
   const hasStarted = useRef(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
+    setSubmissionError('')
     setIsSubmitting(true)
 
     try {
@@ -46,7 +51,7 @@ export default function ContactPage() {
       })
 
       if (!response.ok) {
-        throw new Error('Failed to submit form')
+        throw new LeadSubmissionError(response.status)
       }
 
       toast.success("Thank you for your message. We will be in touch soon!", {
@@ -61,9 +66,9 @@ export default function ContactPage() {
       form.reset()
       setIsSubmitted(true)
     } catch (error) {
-      console.error('Error submitting form:', error)
-      trackEvent("form_error", { form_name: "contact_page", error_type: "submission_failed" })
-      toast.error("Sorry, there was an error submitting the form. Please try again.", {
+      setSubmissionError(leadFailureMessage(error))
+      trackEvent("form_error", { form_name: "contact_page", ...leadFailureDetails(error) })
+      toast.error(leadFailureMessage(error), {
         duration: 5000,
         style: {
           background: "#EF4444",
@@ -100,11 +105,11 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Contact Form</h2>
 
               {isSubmitted ? (
-                <div className="p-12 text-center">
+                <div role="status" className="p-12 text-center">
                   <div className="text-green-600 text-4xl mb-4">✓</div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
                   <p className="text-gray-600">
-                    Thanks for your message. We will be in touch soon.
+                    Your message has been received. Our team will use the email address you provided to follow up about your workflow. No appointment has been booked.
                   </p>
                 </div>
               ) : (
@@ -118,6 +123,7 @@ export default function ContactPage() {
                   trackEvent("lead_form_start", { form_name: "contact_page" })
                 }}
               >
+                <LeadFormError message={submissionError} />
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">

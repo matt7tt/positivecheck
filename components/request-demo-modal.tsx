@@ -1,5 +1,8 @@
 "use client"
 
+import { LeadSubmissionError, leadFailureDetails, leadFailureMessage } from '@/lib/lead-form-feedback'
+import { LeadFormError } from '@/components/lead-form-error'
+
 import { useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -70,7 +73,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
       })
 
       if (!response.ok) {
-        throw new Error("Failed to submit request")
+        throw new LeadSubmissionError(response.status)
       }
 
       trackEvent("generate_lead", {
@@ -85,14 +88,14 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
         ...offerParameters,
       })
       setIsSuccess(true)
-    } catch {
+    } catch (error) {
       trackEvent("form_error", {
         form_name: "demo_request",
         cta_location: source,
-        error_type: "submission_failed",
+        ...leadFailureDetails(error),
         ...offerParameters,
       })
-      setError("Failed to submit request. Please try again.")
+      setError(leadFailureMessage(error))
     } finally {
       setIsSubmitting(false)
     }
@@ -200,9 +203,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
                 disabled={isSubmitting}
               />
             </div>
-            {error && (
-              <p role="alert" className="text-sm text-red-600">{error}</p>
-            )}
+            <LeadFormError message={error} />
             <Button
               type="submit"
               className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white"

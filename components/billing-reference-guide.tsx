@@ -24,6 +24,7 @@ export interface BillingReference {
   updated: string
   parent: GuideLink
   comparison?: boolean
+  conversion?: { title: string; description: string; buttonText: string }
   summary: string
   sections: GuideSection[]
   faqs: { question: string; answer: string }[]
@@ -82,9 +83,10 @@ export function BillingReferenceGuide({ guide }: { guide: BillingReference }) {
           <article className="max-w-3xl mx-auto px-6 py-12 text-gray-700 leading-relaxed">
             <p className="text-sm mb-6">By Positive Check · Updated <time dateTime={guide.updated}>{guide.updated}</time></p>
             <aside className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
-              <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
+              <h2 className="text-lg font-semibold text-purple-900 mb-3">Quick answer</h2>
               <p>{guide.summary}</p>
             </aside>
+            {guide.conversion && <p className="mb-6">Evaluating your outreach process? <Link href="/resources/billing-guide#workflow-example" className="text-purple-700 underline">View the patient-response and staff-handoff example</Link> before requesting a demo.</p>}
             <p className="text-sm mb-8">Educational reference for Medicare fee-for-service workflows, not a claim-level billing determination. Confirm current CPT instructions, payer and Medicare Administrative Contractor (MAC) requirements, setting-specific rules, and applicable edits before billing. Examples below are synthetic, not patient records or payment guarantees.</p>
             <nav aria-label="On this page" className="border-y border-gray-200 py-4 mb-10">
               <ul className="flex flex-wrap gap-x-5 gap-y-2 text-purple-700 underline">
@@ -109,7 +111,12 @@ export function BillingReferenceGuide({ guide }: { guide: BillingReference }) {
                 {section.links && <GuideLinks links={section.links} />}
               </section>
             ))}
-            <ContentConversionCta source={`${guide.id.replaceAll('-', '_')}_summary`} title="Review the workflow behind the billing record" description="Bring your eligibility checks, activity logs, and handoff questions. Explore how Positive Check can support outreach while your practice retains clinical and billing responsibility." />
+            <ContentConversionCta
+              source={`${guide.id.replaceAll('-', '_')}_summary`}
+              title={guide.conversion?.title ?? "Review the workflow behind the billing record"}
+              description={guide.conversion?.description ?? "Bring your eligibility checks, activity logs, and handoff questions. Explore how Positive Check can support outreach while your practice retains clinical and billing responsibility."}
+              {...(guide.conversion ? { buttonText: guide.conversion.buttonText, secondaryText: 'View the workflow example', secondaryHref: '/resources/billing-guide#workflow-example', secondaryCtaName: 'view_workflow_example' } : {})}
+            />
             <section aria-labelledby="common-questions">
               <h2 id="common-questions" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-24">Common questions</h2>
               <div className="space-y-6">{guide.faqs.map(faq => <section key={faq.question}>

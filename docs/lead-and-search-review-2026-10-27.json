@@ -1,0 +1,128 @@
+{
+  "reviewed_on": "2026-10-27",
+  "scope": "User-requested priorities 1 (lead handoff audit and fixes) and 3 (improve three existing search pages)",
+  "analytics": {
+    "ga4_property": "552721603",
+    "ga4_period": [
+      "2026-09-29",
+      "2026-10-26"
+    ],
+    "form_errors": {
+      "events": 5,
+      "users": 2,
+      "date": "2026-10-10",
+      "pages": {
+        "/how-it-works": 4,
+        "/contact": 1
+      },
+      "interpretation": "Not five verified lost leads. Client validation, testing, and delivery failures are not distinguishable from this aggregate. No form_error events after October 10 in this period."
+    },
+    "generate_lead": {
+      "events": 7,
+      "users": 6,
+      "by_date": {
+        "2026-10-09": 2,
+        "2026-10-10": 1,
+        "2026-10-11": 1,
+        "2026-10-12": 1,
+        "2026-10-24": 1,
+        "2026-10-26": 1
+      },
+      "interpretation": "Accepted requests, not verified sales-qualified leads. Test versus real enquiry and inbox receipt remain unverified."
+    },
+    "gsc_period": [
+      "2026-09-28",
+      "2026-10-25"
+    ],
+    "pages": [
+      {
+        "path": "/solutions/chronic-care-management/cpt-99490-billing-guide",
+        "clicks": 1,
+        "impressions": 105,
+        "position": 82,
+        "visible_query_examples": {
+          "99490": 20,
+          "99490 cpt code": 12,
+          "cpt code 99490 reimbursement": 6
+        },
+        "priority": "Ranking and intent coverage; not merely CTR."
+      },
+      {
+        "path": "/resources/compare/tcm-and-ccm-combined-month-billing",
+        "clicks": 1,
+        "impressions": 101,
+        "position": 6.1,
+        "queries": "No rows exposed by Search Console for this page/date filter."
+      },
+      {
+        "path": "/solutions/post-discharge-follow-up/post-discharge-contact-timing",
+        "clicks": 1,
+        "impressions": 98,
+        "position": 5.6,
+        "queries": "No rows exposed by Search Console for this page/date filter."
+      }
+    ]
+  },
+  "delivery_audit": {
+    "production_email_configuration": "RESEND_API_KEY and CONTACT_EMAIL present for all environments. Values not retrieved.",
+    "crm": "No LEAD_WEBHOOK_URL project variable found.",
+    "limitations": [
+      "Hosting runtime-log history available on this account does not cover October 10.",
+      "Connected matt7t Gmail search returned no matching lead notifications; it does not establish the configured receiving inbox.",
+      "Resend delivery records require an authenticated session not available during this audit.",
+      "No new live enquiry, notification email, or Lola call was triggered."
+    ],
+    "fixes": [
+      "Independently settle email and CRM results; accept if either channel accepted.",
+      "Reject malformed bodies and overlong or invalid emails before delivery.",
+      "Persist visitor-facing errors, retain entered fields, and offer a public email fallback.",
+      "Separate HTTP error categories from network/unknown failures, including Lola requests.",
+      "Log channel acceptance without visitor payloads or raw provider errors.",
+      "Explain email follow-up and unbooked appointment state when no calendar is configured."
+    ],
+    "note": "The cross-channel exception bug was reproduced in mocked tests. With no CRM webhook currently configured, it is not evidence of the cause of the October 10 events. Provider acceptance is not inbox delivery."
+  },
+  "search_changes": [
+    "99490: clearer definition/reimbursement intent and source-linked payment lookup.",
+    "TCM/CCM: independent eligibility, separate records, corrected inclusive 30-day examples, removed unsupported fixed combined-revenue totals.",
+    "TCM timing: clearer Friday/holiday snippet and suggested blank contact-record template.",
+    "All three: explicit demo labels, public workflow preview links, current modification dates and consistent structured data."
+  ],
+  "remaining_backlog": [
+    {
+      "priority": 2,
+      "item": "Full fictional product demonstration",
+      "scope": "Show a complete care-management or front-office interaction and staff handoff. Current voice sample is only a greeting; avoid PHI and unsupported product claims."
+    },
+    {
+      "priority": 4,
+      "item": "Distribution and external credibility",
+      "scope": "Partner outreach to RPM vendors and billing firms; suitable G2/Capterra profiles. Do not create accounts or send messages without requested authorization."
+    },
+    {
+      "priority": 5,
+      "item": "Decision-stage content",
+      "scope": "Pricing, pilot expectations, integration fit, and approved evidence based on actual product capabilities."
+    },
+    {
+      "priority": 6,
+      "item": "Clarity-led conversion iteration",
+      "scope": "Use consented masked sessions after sufficient data to identify friction and change one important element at a time."
+    },
+    {
+      "item": "Sales follow-up ownership and calendar/CRM",
+      "status": "Deferred by user; still needed to verify booked, attended, and qualified outcomes."
+    },
+    {
+      "item": "Reconcile real/test requests with receiving inbox or Resend",
+      "status": "Requires access to actual delivery records; do not equate GA4 events with verified leads."
+    }
+  ],
+  "measurement_plan": "Compare these same three URLs after 28 days using clicks, impressions, position, qualified enquiries, and CTA-to-accepted-request progression. Keep low-volume results directional; do not infer improvement immediately after deployment.",
+  "validation": {
+    "tests": "243 tests in 36 suites passed",
+    "build": "Production build, type check, lint (35 existing warnings, zero errors), and SEO check passed",
+    "seo": "82 indexable routes, 3363 internal links, 151 image references, 369 JSON-LD blocks",
+    "browser": "Local comparison CTA opens demo; no-delivery-channel submission shows persistent error, retains synthetic fields and email fallback. Standalone demo explains email follow-up. No live lead or call sent."
+  }
+}

@@ -8,8 +8,8 @@ import { StructuredData, buildBreadcrumbSchema, buildArticleSchema, buildFAQSche
 const PAGE_PATH = '/solutions/post-discharge-follow-up/post-discharge-contact-timing'
 const PAGE_URL = 'https://www.positivecheck.com' + PAGE_PATH
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
-const TITLE = 'TCM Contact Within 2 Business Days: CMS Rule & Examples'
-const DESCRIPTION = 'TCM contact deadlines with weekend and holiday examples, the unsuccessful-attempt exception, and a practical documentation checklist for care teams.'
+const TITLE = 'TCM 2-Business-Day Contact: Friday & Holiday Deadlines'
+const DESCRIPTION = 'Friday discharge? TCM contact is usually due Tuesday. See holiday deadlines, unsuccessful-attempt rules, and a practical contact-record template.'
 const CMS_SOURCE = 'https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf'
 const AAFP_SOURCE = 'https://www.aafp.org/practice-operations/billing-and-coding/transitional-care-management'
 
@@ -78,7 +78,7 @@ export default function PostDischargeContactTimingPage() {
       ])} />
       <StructuredData id="contact-timing-article" data={buildArticleSchema({
         headline: TITLE, description: DESCRIPTION, url: PAGE_URL, image: HERO_IMAGE,
-        datePublished: '2026-04-19', dateModified: '2026-09-13',
+        datePublished: '2026-04-19', dateModified: '2026-10-27',
       })} />
       <StructuredData id="contact-timing-faq" data={buildFAQSchema(faqs)} />
       <div className="min-h-screen bg-white">
@@ -87,13 +87,13 @@ export default function PostDischargeContactTimingPage() {
           <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Workflow</p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">TCM Contact Within 2 Business Days: CMS Rule and Examples</h1>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">TCM Contact Within 2 Business Days: Friday and Holiday Examples</h1>
               <p className="text-xl text-purple-100 leading-relaxed">Count the deadline, distinguish contact from attempts, and give your care team a clear follow-up checklist.</p>
             </div>
           </section>
           <section className="px-6 py-12">
             <div className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
-              <p className="text-sm mb-6">Updated September 13, 2026. Educational workflow guidance; not a patient-specific billing determination.</p>
+              <p className="text-sm mb-6">Updated October 27, 2026. Educational workflow guidance; not a patient-specific billing determination.</p>
               <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8">
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <p>TCM calls for interactive contact with the patient or caregiver within <strong>two business days after discharge</strong>. If contact is unsuccessful, at least two separate, timely, documented attempts may support reporting when every other requirement is met. Continue outreach; do not automatically mark an unreached patient as either billable or ineligible.</p>
@@ -103,6 +103,7 @@ export default function PostDischargeContactTimingPage() {
                 <a href="#deadline-examples">Deadline examples</a>
                 <a href="#unsuccessful-attempts">Unsuccessful attempts</a>
                 <a href="#contact-checklist">Documentation checklist</a>
+                <a href="#contact-template">Contact-record template</a>
                 <a href="#common-questions">Common questions</a>
               </nav>
 
@@ -129,14 +130,28 @@ export default function PostDischargeContactTimingPage() {
               <p className="mb-5">Use this suggested operational checklist to prepare a record for review, not as a substitute for the full CMS requirements or your approved clinical documentation template.</p>
               <ol className="list-decimal pl-6 space-y-4">{checklist.map(([label, detail]) => <li key={label}><strong>{label}:</strong> {detail}</li>)}</ol>
 
+              <section aria-labelledby="contact-template" className="mt-10 rounded-lg border border-gray-200 p-6">
+                <h2 id="contact-template" className="text-2xl font-bold text-gray-900 mb-4">A blank contact-record template for your team</h2>
+                <p className="mb-4">Adapt these suggested fields inside your approved clinical system. Keep a separate entry for every attempt and have your billing reviewer validate the complete episode.</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Discharge date and source of notification</li>
+                  <li>Contact deadline and separate visit deadline</li>
+                  <li>Attempt date, time, method, and staff member</li>
+                  <li>Recipient: patient or caregiver; outcome: contacted, no answer, voicemail, or wrong number</li>
+                  <li>If contacted: needs discussed and action requested</li>
+                  <li>Next action, named owner, and follow-up deadline</li>
+                </ul>
+                <p className="mt-4">This is an operational starting point, not a complete clinical note or evidence that a claim qualifies.</p>
+              </section>
+
               <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">Where automation fits—and where staff retain responsibility</h2>
               <p className="mb-4">Evaluate Positive Check as support for outreach, structured responses, and staff handoffs. Do not assume that an AI-only call independently satisfies a clinical contact requirement. Agree who reviews unsuccessful attempts, handles concerning responses, and makes billing decisions before running a pilot.</p>
-              <p className="mb-8">Use the <Link href="/resources/implementation-guide" className="text-purple-700 underline">implementation guide</Link> to plan ownership and exception testing. For ongoing chronic care after discharge, review <Link href="/resources/compare/tcm-and-ccm-combined-month-billing" className="text-purple-700 underline">TCM and CCM in the same month</Link> and the <Link href="/blog/ccm-billing-2026-cpt-codes-guide" className="text-purple-700 underline">2026 CCM billing guide</Link>.</p>
-              <ContentConversionCta source="tcm_contact_timing_summary" title="Walk through your discharge follow-up workflow" description="Bring your discharge-list process, contact-attempt rules, and staff handoff questions. Explore where Positive Check can support the team while your practice retains clinical and billing responsibility." />
+              <p className="mb-8">Use the <Link href="/resources/implementation-guide" className="text-purple-700 underline">implementation guide</Link> to plan ownership and exception testing. For ongoing chronic care after discharge, review <Link href="/resources/compare/tcm-and-ccm-combined-month-billing" className="text-purple-700 underline">TCM and CCM in the same month</Link> and the <Link href="/solutions/chronic-care-management/cpt-99490-billing-guide" className="text-purple-700 underline">99490 requirements and monthly time record</Link>.</p>
+              <ContentConversionCta source="tcm_contact_timing_summary" title="Walk through your discharge follow-up workflow" description="Bring your discharge-list process, contact-attempt rules, and staff handoff questions. Explore where Positive Check can support the team while your practice retains clinical and billing responsibility." buttonText="Request a discharge-workflow demo" secondaryText="View the workflow example" secondaryHref="/resources/billing-guide#workflow-example" secondaryCtaName="view_workflow_example" />
 
               <h2 id="common-questions" className="text-2xl font-bold text-gray-900 mt-10 mb-6">Common questions</h2>
               <div className="space-y-6">{faqs.map((faq) => <section key={faq.question}><h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3><p>{faq.answer}</p></section>)}</div>
-              <p className="mt-10 text-sm">Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed September 13, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.</p>
+              <p className="mt-10 text-sm">Source check: CMS MLN908628 (August 2025) and AAFP’s TCM guidance, accessed October 27, 2026. Have a qualified billing reviewer validate your workflow against current CMS, CPT, MAC, and payer requirements. This page does not assert clinical reviewer approval.</p>
             </div>
           </section>
         </main>

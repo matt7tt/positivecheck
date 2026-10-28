@@ -1,5 +1,8 @@
 "use client"
 
+import { LeadSubmissionError, leadFailureDetails, leadFailureMessage } from '@/lib/lead-form-feedback'
+import { LeadFormError } from '@/components/lead-form-error'
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Phone, BarChart3, Shield, Stethoscope, Users, AlertTriangle } from "lucide-react"
@@ -82,6 +85,7 @@ export default function HomePage() {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [submissionError, setSubmissionError] = useState('')
   const contactFormStarted = useRef(false)
   useEffect(() => {
     const testimonialInterval = setInterval(() => {
@@ -740,10 +744,10 @@ export default function HomePage() {
           <Card className="p-8 bg-white shadow-lg">
             <CardContent className="p-0">
               {isSubmitted ? (
-                <div className="p-12 text-center">
+                <div role="status" className="p-12 text-center">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
                   <p className="text-gray-600">
-                    Thanks for your message. We will be in touch soon.
+                    Your message has been received. Our team will use the email address you provided to follow up about your workflow. No appointment has been booked.
                   </p>
                 </div>
               ) : (
@@ -752,6 +756,7 @@ export default function HomePage() {
                 onSubmit={async (e) => {
                   e.preventDefault()
                   const form = e.currentTarget as HTMLFormElement
+                  setSubmissionError('')
                   setIsSubmitting(true)
 
                   try {
@@ -775,8 +780,7 @@ export default function HomePage() {
                     })
 
                     if (!response.ok) {
-                      const errData = await response.json().catch(() => ({}))
-                      throw new Error(errData.error || 'Failed to submit form')
+                      throw new LeadSubmissionError(response.status)
                     }
 
                     toast.success("Thank you for your message. We will be in touch soon!", {
@@ -791,9 +795,9 @@ export default function HomePage() {
                     form.reset()
                     setIsSubmitted(true)
                   } catch (error) {
-                    console.error('Error submitting form:', error)
-                    trackEvent("form_error", { form_name: "homepage_contact", error_type: "submission_failed" })
-                    toast.error("Sorry, there was an error submitting the form. Please try again.", {
+                    setSubmissionError(leadFailureMessage(error))
+                    trackEvent("form_error", { form_name: "homepage_contact", ...leadFailureDetails(error) })
+                    toast.error(leadFailureMessage(error), {
                       duration: 5000,
                       style: {
                         background: "#EF4444",
@@ -809,6 +813,7 @@ export default function HomePage() {
                   contactFormStarted.current = true
                   trackEvent("lead_form_start", { form_name: "homepage_contact" })
                 }}>
+                <LeadFormError message={submissionError} />
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">

@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { cleanText, createLeadPayload, escapeHtml, forwardLeadToCrm, isValidEmail } from '@/lib/server/lead-delivery'
+import { cleanText, createLeadPayload, escapeHtml, forwardLeadToCrm, isValidEmail, readLeadBody, settleLeadDelivery } from '@/lib/server/lead-delivery'
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    const body = await readLeadBody(request)
+    if (!body) return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     const firstName = cleanText(body.firstName, 80)
     const lastName = cleanText(body.lastName, 80)
-    const email = cleanText(body.email, 254).toLowerCase()
+    const email = (typeof body.email === 'string' ? body.email.trim() : '').toLowerCase()
     const phone = cleanText(body.phone, 40)
     const customerType = cleanText(body.customerType, 80)
     const hearAboutUs = cleanText(body.hearAboutUs, 100)
@@ -15,9 +16,9 @@ export async function POST(request: Request) {
     const newsletter = body.newsletter === true
     const attribution = body.attribution
 
-    if (!firstName || (!isValidEmail(email) && phone.replace(/\D/g, '').length < 7)) {
+    if (!firstName || (email && !isValidEmail(email)) || (!email && phone.replace(/\D/g, '').length < 7)) {
       return NextResponse.json(
-        { error: 'Name and either email or phone are required' },
+        { error: 'A name and valid email or phone are required' },
         { status: 400 }
       )
     }
@@ -27,7 +28,7 @@ export async function POST(request: Request) {
     const lead = createLeadPayload(
       'contact',
       { firstName, lastName, email, phone, customerType, hearAboutUs, message, newsletter },
-      attribution && typeof attribution === 'object' ? attribution : undefined
+      attribution && typeof attribution === 'object' && !Array.isArray(attribution) ? attribution as Record<string, unknown> : undefined
     )
     const safeFullName = escapeHtml(fullName)
     const safeEmail = escapeHtml(email)
@@ -44,6 +45,7 @@ export async function POST(request: Request) {
       subject: `New Contact Form Submission from ${safeFullName}`,
       html: `
         <h2>New Contact Form Submission</h2>
+        <p>Follow up using the contact details below. This enquiry is not a confirmed appointment; record follow-up and qualification from actual outcomes.</p>
         <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
           <tr><td style="padding: 8px; font-weight: bold;">Lead ID:</td><td style="padding: 8px;">${lead.id}</td></tr>
           <tr><td style="padding: 8px; font-weight: bold;">Name:</td><td style="padding: 8px;">${safeFullName}</td></tr>
@@ -63,17 +65,15 @@ export async function POST(request: Request) {
       emailOptions.replyTo = email
     }
 
-    const crmDelivery = forwardLeadToCrm(lead)
-    let emailDelivered = false
-
-    if (process.env.RESEND_API_KEY) {
-      const resend = new Resend(process.env.RESEND_API_KEY)
-      const { error: resendError } = await resend.emails.send(emailOptions)
-      if (resendError) console.error('Resend API error:', resendError)
-      else emailDelivered = true
-    }
-
-    const crmDelivered = await crmDelivery
+    const { crmDelivered, emailDelivered } = await settleLeadDelivery(lead,
+      () => forwardLeadToCrm(lead),
+      async () => {
+        if (!process.env.RESEND_API_KEY) return false
+        const resend = new Resend(process.env.RESEND_API_KEY)
+        const { error: resendError } = await resend.emails.send(emailOptions)
+        return !resendError
+      }
+    )
 
     if (!emailDelivered && !crmDelivered) {
       return NextResponse.json(
@@ -86,8 +86,8 @@ export async function POST(request: Request) {
       { message: 'Message sent successfully', leadId: lead.id, crmDelivered, emailDelivered },
       { status: 200 }
     )
-  } catch (error) {
-    console.error('Error sending contact email:', error)
+  } catch {
+    console.error('Error processing contact request')
     return NextResponse.json(
       { error: 'Failed to send message' },
       { status: 500 }

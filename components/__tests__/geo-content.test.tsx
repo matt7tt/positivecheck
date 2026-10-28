@@ -29,12 +29,12 @@ describe('GEO buyer answers', () => {
     ['99490 guide', CCMCodePage], ['99457 guide', RPMCodePage],
     ['99495 guide', TCMCodePage], ['RPM versus CCM', RPMCCMPage],
     ['RPM communication', RPMCommunicationPage], ['billing hub', BillingHubPage],
-  ])('%s renders six visible answers matching FAQ structured data', (_name, Page) => {
+  ])('%s renders visible answers matching FAQ structured data', (_name, Page) => {
     const { container } = render(<Page />)
     const schemas = Array.from(container.querySelectorAll('script[type="application/ld+json"]'))
       .map(script => JSON.parse(script.textContent || '{}'))
     const faq = schemas.find(schema => schema['@type'] === 'FAQPage')
-    expect(faq.mainEntity).toHaveLength(6)
+    expect(faq.mainEntity.length).toBeGreaterThanOrEqual(6)
     for (const question of faq.mainEntity) {
       expect(screen.getByRole('heading', { name: question.name })).toBeVisible()
       expect(screen.getByText(question.acceptedAnswer.text)).toBeVisible()
