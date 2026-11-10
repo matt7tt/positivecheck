@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef, useState } from 'react'
+import Link from 'next/link'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 import { LolaCallModal } from '@/components/lola-call-modal'
@@ -44,6 +45,7 @@ export function LolaVoicePreview({ children, source }: { children: React.ReactNo
         </audio>
         {failed && <p role="alert" className="text-sm text-red-700">The recording could not load. You can still read the example below or request a workflow demo.</p>}
         <a href="/audio/Positive_Check_Greeting.mp3" className="text-sm text-purple-700 underline">Open the greeting audio directly</a>
+        <Link href="/solutions/front-office/appointment-reminders#reminder-workflow-example" className="rounded-lg border border-purple-200 bg-purple-50 p-4 font-semibold text-purple-800 underline" onClick={() => trackEvent('cta_click', { cta_name: 'view_complete_reminder_example', cta_location: source })}>Explore a complete fictional call and SMS workflow</Link>
         <details className="rounded-lg border p-4 text-sm text-gray-700">
           <summary className="cursor-pointer font-semibold">Read a fictional call example</summary>
           <p className="mt-3">Written illustration only—not a transcript of the greeting. No real patient information.</p>

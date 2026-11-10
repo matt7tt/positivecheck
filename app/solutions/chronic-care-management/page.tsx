@@ -7,13 +7,21 @@ import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSche
 import { Card, CardContent } from '@/components/ui/card'
 import { CheckCircle, HeartPulse, ClipboardList, Users, Bell } from 'lucide-react'
 
+const description = 'Support CCM patient outreach with AI wellness calls, care-team summaries and alerts. Explore retained clinical responsibilities, workflow fit and pilot evaluation.'
+const ccmFeatures = [
+  { icon: HeartPulse, title: 'Medication Check-Ins', desc: 'Calls can ask about medication routines, reported concerns and refill requests. Your care team reviews responses and decides what follow-up is appropriate.' },
+  { icon: ClipboardList, title: 'Care Plan Follow-Up', desc: 'Practice-approved questions support routine outreach. Staff reconcile patient responses with the care plan and document any qualifying work they perform.' },
+  { icon: Bell, title: 'Alerts for Staff Review', desc: 'Flagged responses help staff prioritize follow-up under the agreed escalation workflow. An alert or automated call does not itself establish billable clinical staff time.' },
+  { icon: Users, title: 'Support for Complex Patients', desc: 'Summaries help the care team review patient concerns. Clinical staff retain assessment, care planning and responsibility for determining whether complex CCM requirements are met.' },
+]
+
 export const metadata: Metadata = {
   title: 'Chronic Care Management (CCM) Solution | Positive Check',
-  description: 'Support CCM patient outreach with AI wellness calls, care-team summaries and alerts. Explore retained clinical responsibilities, workflow fit and pilot evaluation.',
+  description,
   alternates: { canonical: '/solutions/chronic-care-management' },
   openGraph: {
     title: 'Chronic Care Management (CCM) Solution',
-    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing requirements.',
+    description,
     url: '/solutions/chronic-care-management',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -23,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chronic Care Management Solution | Positive Check',
-    description: 'Automate CCM patient engagement with AI wellness calls. Support CPT 99490, 99439, 99487, and 99489 billing.',
+    description,
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -70,8 +78,7 @@ export default function ChronicCareManagementPage() {
         data={buildServiceSchema({
           name: 'Chronic Care Management (CCM) with AI Wellness Calls',
           serviceType: 'Chronic Care Management',
-          description:
-            'Daily AI wellness calls for CCM patients \u2014 medication adherence checks, care plan follow-up, and documentation ready for CPT 99490, 99439, 99487, and 99489 billing.',
+          description,
           category: 'Chronic Care Management',
         })}
       />
@@ -87,36 +94,7 @@ export default function ChronicCareManagementPage() {
           name: 'How Positive Check Supports Chronic Care Management',
           description:
             'Automate CCM patient engagement in four steps: medication adherence checks, care plan follow-up, alert-triggered escalation, and support for complex patients.',
-          step: [
-            {
-              '@type': 'HowToStep',
-              position: 1,
-              name: 'Medication Adherence Checks',
-              text:
-                'Daily calls include medication check-ins, asking patients about doses taken, side effects, and refill needs \u2014 key documentation for CCM.',
-            },
-            {
-              '@type': 'HowToStep',
-              position: 2,
-              name: 'Care Plan Follow-Up',
-              text:
-                "Structured wellness questions align to each patient's care plan, generating documented follow-up touchpoints for CCM billing.",
-            },
-            {
-              '@type': 'HowToStep',
-              position: 3,
-              name: 'Alert-Triggered Callbacks',
-              text:
-                'When a call flags a concern, care teams receive immediate alerts \u2014 generating additional documented care coordination time for CPT 99439.',
-            },
-            {
-              '@type': 'HowToStep',
-              position: 4,
-              name: 'Complex Patient Support',
-              text:
-                'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487 and 99489.',
-            },
-          ],
+          step: ccmFeatures.map((feature, index) => ({ '@type': 'HowToStep', position: index + 1, name: feature.title, text: feature.desc })),
         }}
       />
       <div className="min-h-screen bg-white">
@@ -175,10 +153,10 @@ export default function ChronicCareManagementPage() {
                   ongoing patient communication.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  CMS requires at least 20 minutes of clinical staff time per patient per month for
-                  standard CCM (99490), with additional codes for more complex patients (99487) and
-                  additional time blocks (99439). The challenge is documenting this time and maintaining
-                  consistent patient contact across large populations.
+                  CPT 99490 includes at least 20 minutes of qualifying clinical staff time per calendar month,
+                  alongside eligibility, consent, care-plan and other service requirements. Complex CCM is a separate
+                  pathway. Automated outreach duration is not clinical staff time; your practice must deliver and
+                  document the qualifying care. Review the <Link href="/solutions/chronic-care-management/cpt-99490-billing-guide" className="text-purple-700 underline">CCM billing guide</Link> before making reimbursement assumptions.
                 </p>
               </div>
             </div>
@@ -195,12 +173,7 @@ export default function ChronicCareManagementPage() {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {[
-                  { icon: HeartPulse, title: 'Medication Adherence', desc: 'Daily calls include medication check-ins, asking patients about doses taken, side effects, and refill needs — key documentation for CCM.' },
-                  { icon: ClipboardList, title: 'Care Plan Follow-Up', desc: 'Structured wellness questions align to each patient\'s care plan, generating documented follow-up touchpoints for CCM billing.' },
-                  { icon: Bell, title: 'Alert-Triggered Callbacks', desc: 'When a call flags a concern, care teams receive immediate alerts — generating additional documented care coordination time for CPT 99439.' },
-                  { icon: Users, title: 'Complex Patient Support', desc: 'For patients with multiple chronic conditions, daily monitoring with escalation protocols supports the higher documentation bar for CPT 99487 and 99489.' },
-                ].map((feature) => {
+                {ccmFeatures.map((feature) => {
                   const Icon = feature.icon
                   return (
                     <Card key={feature.title} className="border-gray-200 bg-white">
@@ -224,7 +197,7 @@ export default function ChronicCareManagementPage() {
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">CCM Billing Codes</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  2026 Medicare national average reimbursement rates for Chronic Care Management.
+                  Common clinical-staff CCM pathways. Time is one requirement; outreach software does not establish eligibility or a billable service.
                 </p>
               </div>
               <div className="max-w-4xl mx-auto">
@@ -235,26 +208,25 @@ export default function ChronicCareManagementPage() {
                         <tr className="border-b bg-gray-50">
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">CPT Code</th>
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
-                          <th className="text-right py-3 px-4 font-semibold text-gray-700">2026 Rate</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { code: '99490', desc: 'CCM \u2014 first 20 min non-complex chronic care management', rate: '$66' },
-                          { code: '99439', desc: 'CCM \u2014 each additional 20 min non-complex CCM (up to 2x/month)', rate: '$48' },
-                          { code: '99487', desc: 'Complex CCM \u2014 first 60 min for patients with multiple chronic conditions', rate: '$144' },
-                          { code: '99489', desc: 'Complex CCM \u2014 each additional 30 min beyond the 99487 threshold', rate: '$72' },
+                          { code: '99490', desc: 'Non-complex CCM: first 20 qualifying clinical staff minutes per calendar month' },
+                          { code: '99439', desc: 'Additional non-complex CCM: each further 20 qualifying minutes, subject to reporting limits' },
+                          { code: '99487', desc: 'Complex CCM: first 60 qualifying minutes, moderate or high complexity decision-making and care-plan requirements' },
+                          { code: '99489', desc: 'Additional complex CCM: each further 30 qualifying minutes, subject to reporting limits' },
                         ].map((row) => (
                           <tr key={row.code} className="border-b last:border-b-0">
                             <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>
                             <td className="py-3 px-4 text-gray-700">{row.desc}</td>
-                            <td className="py-3 px-4 text-right font-semibold text-gray-900">{row.rate}</td>
                           </tr>
                         ))}
                       </tbody>
                     </table>
                   </div>
                 </Card>
+                <p className="mt-5 leading-relaxed text-gray-700">Payment varies by service year, payer, locality and setting. Verify your applicable rate and the full service requirements using the <Link href="/solutions/chronic-care-management/cpt-99490-billing-guide" className="text-purple-700 underline">CCM reimbursement guide</Link>. Projected reimbursement is not guaranteed revenue.</p>
               </div>
             </div>
           </section>
@@ -269,12 +241,12 @@ export default function ChronicCareManagementPage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
                     'Consistent daily patient touchpoints without manual outreach',
-                    'Medication adherence tracking built into every call',
-                    'Documented care coordination time supports 99490 and 99439 billing',
-                    'Escalation protocols for complex patients meet 99487 requirements',
+                    'Medication questions within practice-approved conversations',
+                    'Call summaries for staff to review alongside the care plan',
+                    'Flagged concerns for clinician-led assessment and follow-up',
                     'Real-time alerts when patients report changes or concerns',
                     'Works alongside your existing care management workflows',
-                    'Combine with RPM for $159-$237/patient/month in revenue',
+                    'Supports outreach alongside RPM, with separate staff work and billing review',
                     'HIPAA-compliant with full audit trail',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
@@ -404,14 +376,14 @@ export default function ChronicCareManagementPage() {
               <p className="text-sm text-gray-500">
                 Billing reference:{' '}
                 <a
-                  href="https://www.cms.gov/files/document/mln909188-chronic-care-management-services.pdf"
+                  href="https://www.cms.gov/files/document/chroniccaremanagement.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-700"
                 >
                   CMS MLN CCM Booklet
                 </a>
-                . Published by Positive Check. Workflow content updated October 6, 2026.
+                . Published by Positive Check. Workflow and claims updated November 9, 2026. Editorial source check; not independent coding-review sign-off.
               </p>
             </div>
           </section>

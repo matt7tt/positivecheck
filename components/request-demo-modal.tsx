@@ -124,7 +124,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{offer?.modalTitle ?? 'Book a 15-minute workflow demo'}</DialogTitle>
           <DialogDescription>
@@ -197,7 +197,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
                 id="organization"
                 autoComplete="organization"
                 type="text"
-                placeholder="Sunrise Senior Living"
+                placeholder="Example Medical Group"
                 value={organization}
                 onChange={(e) => setOrganization(e.target.value)}
                 disabled={isSubmitting}

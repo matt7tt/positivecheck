@@ -9,6 +9,232 @@
 
 
 ---
+Source: https://www.positivecheck.com/solutions/remote-patient-monitoring
+
+RPM Solution
+# Remote Patient Monitoring Made Simple
+Automated voice and SMS outreach for consistent RPM engagement, documentation, and care-team follow-up.
+Outreach
+Routine patient check-ins
+Review
+Call summaries for staff
+Alerts
+Concerns for your care team
+Follow-up
+Practice-owned next steps
+For healthcare operations teams
+## See where outreach fits your RPM workflow
+Bring your device workflow, outreach bottleneck and staff coverage questions to a 15-minute demo. Discuss patient responses, review and follow-up alongside your existing monitoring process. Please do not share patient information.
+Evaluate your RPM workflow See the call-to-follow-up example 2026 CMS Final Rule update
+## Two new RPM codes effective January 1, 2026
+The CY 2026 Medicare Physician Fee Schedule Final Rule (published November 5, 2025) introduced two new CPT codes that lower the thresholds for billable RPM services. Providers can now capture revenue from patients who don ’ t meet the full 16-of-30-day or 20-minute thresholds under the legacy codes.
+- CPT 99445 — device supply when data is transmitted on 2 – 15 days within a 30-day period (alternative to CPT 99454, which still covers 16 – 30 days).
+- CPT 99470 — first 10 minutes of treatment management per calendar month (alternative to CPT 99457, which still covers the first 20 minutes).
+The new codes are mutually exclusive with their legacy counterparts in the same billing period — providers select one based on actual transmission days or cumulative time.
+## What Is Remote Patient Monitoring?
+Remote Patient Monitoring (RPM) allows healthcare providers to track patient health data between office visits using connected devices and structured communication. Medicare reimburses providers for RPM services under CPT codes CPT 99457 , 99458, and 99454 when clinical staff spend time reviewing data and interacting with patients.
+The challenge: CMS requires documented interactive communication with each patient — phone calls, secure messages, or video — at least once per billing period. For practices managing hundreds or thousands of RPM patients, this is operationally demanding.
+## How Positive Check Supports RPM
+Our AI-powered daily calls handle the patient engagement your RPM program requires.
+### Daily Wellness Calls Automated voice calls collect vitals, symptoms, and wellness data for clinical-staff review and follow-up.
+### Structured Summaries Call summaries help staff review reported concerns and plan follow-up. Staff must separately document qualifying work and time.
+### Consistent Cadence Scheduled attempts support a consistent outreach cadence. Review unsuccessful contacts and staff follow-up; call frequency does not establish billing eligibility.
+### HIPAA-Compliant All calls, transcripts, and data transmissions meet HIPAA standards. Business Associate Agreements available for all provider partners.
+## RPM Billing Codes
+Examples of RPM code pathways. Each service has independent requirements; calls and summaries do not replace qualifying device data or clinical work.
+CPT Code Description
+99457 RPM — first 20 min clinical staff time per month
+99458 RPM — each additional 20 min clinical staff time per month
+99454 RPM — device(s) supply with daily recordings or alert transmission, each 30 days
+Verify payment for the service year, payer, locality and setting. Review the RPM billing guide for qualifying time and communication requirements. No fixed revenue per enrolled patient is promised.
+## Why Providers Choose Positive Check for RPM
+Support repeated outreach across your enrolled patient cohort
+Automated daily calls support practice-owned interactive communication workflows
+Structured summaries for care-team review and follow-up
+Real-time alerts flag patients who need immediate attention
+HIPAA-compliant platform with BAA support
+Confirm data exchange and EHR workflow scope during implementation
+Request a scoped quote including software, setup and retained staffing
+Agree rollout timing after data, security and workflow review
+## Frequently Asked Questions
+### What is Remote Patient Monitoring (RPM)?
+RPM uses automatically transmitted physiologic data to support management of an acute or chronic condition. Its codes distinguish device setup and collection periods from treatment-management work. In 2026, shorter collection and management pathways are also available. Check each code independently; qualifying management includes required communication rather than only call duration.
+### What does the CMS interactive communication requirement mean?
+RPM management requires a real-time, two-way conversation with the patient or caregiver under applicable personnel and service requirements. Video or other data may enhance the conversation. Do not assume every responsive text chat or automated call qualifies. The communication component and total qualifying management time are separate checks.
+### Do AI-powered wellness calls independently satisfy the interactive communication requirement?
+CMS has not established that a fully automated AI interaction independently satisfies the requirement. Positive Check can support practice-owned RPM workflows by collecting structured responses, documenting outreach, and escalating concerns, but the billing practice must determine which clinical-staff activities and patient interactions meet current CPT, CMS, MAC, and payer requirements.
+### What’s the typical monthly revenue from an RPM patient?
+There is no guaranteed monthly revenue per enrolled patient. Payment depends on the actual qualifying services, service year, payer, locality, and setting. Verify current fee-schedule information and include retained staffing, device, software and quality-review costs. Neither call volume nor a vendor projection determines whether an individual claim qualifies.
+### Which patients are eligible for RPM?
+RPM can be medically necessary for an acute or chronic condition when transmitted physiologic measurements inform management. CMS also requires an established relationship and consent, alongside the applicable device, personnel, supervision and service requirements. A diagnosis or connected device alone does not establish that a particular claim qualifies.
+### Does HIPAA permit AI-powered RPM wellness calls?
+Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards — encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.
+See all Remote Patient Monitoring questions
+## Further Reading
+Billing guide
+### CPT 99457 Billing Guide
+Interactive communication requirement, 20-minute threshold, documentation, and common errors.
+CMS rule
+### CMS Interactive Communication Requirement
+What “interactive communication” means for CPT 99457/99458 and how AI outreach can support the workflow.
+Program design
+### RPM Patient Selection
+Which chronic conditions, demographics, and clinical scenarios drive the best RPM outcomes.
+Comparison
+### AI Engagement vs. Device-Only Monitoring
+Why devices alone leave Medicare revenue on the table, and what the interactive layer adds.
+For healthcare operations teams
+## Define what an RPM outreach pilot would need to prove
+Discuss contact success, staff review workload and escalation ownership before expanding. Software outreach does not replace your device workflow, clinical judgment or billing review.
+Discuss an RPM workflow pilot Review implementation steps Reviewed against current CMS billing guidance. Medicare Physician Fee Schedule . Billing reference last updated 2026-09-20. Workflow content updated 2026-10-06.
+
+---
+Source: https://www.positivecheck.com/solutions/chronic-care-management
+
+CCM Solution
+# Chronic Care Management at Scale
+Daily AI wellness calls give your CCM patients consistent touchpoints, medication adherence questions, and care plan follow-up — with summaries for your team to review.
+Outreach
+Routine patient check-ins
+Review
+Call summaries for staff
+Alerts
+Concerns for your care team
+Follow-up
+Practice-owned next steps
+For healthcare operations teams
+## See how outreach could fit your CCM team
+Discuss routine check-ins, review workload and staff handoffs in a 15-minute workflow demo. Bring your current process and integration questions; please do not share patient information.
+Evaluate your CCM workflow Compare with staff-led outreach
+## What Is Chronic Care Management?
+Chronic Care Management (CCM) is a Medicare program that reimburses providers for non-face-to-face care coordination services for patients with two or more chronic conditions. Services include care plan development, medication management, and ongoing patient communication.
+CPT 99490 includes at least 20 minutes of qualifying clinical staff time per calendar month, alongside eligibility, consent, care-plan and other service requirements. Complex CCM is a separate pathway. Automated outreach duration is not clinical staff time; your practice must deliver and document the qualifying care. Review the CCM billing guide before making reimbursement assumptions.
+## How Positive Check Supports CCM
+Structured daily calls provide the consistent patient touchpoints your CCM program needs.
+### Medication Check-Ins Calls can ask about medication routines, reported concerns and refill requests. Your care team reviews responses and decides what follow-up is appropriate.
+### Care Plan Follow-Up Practice-approved questions support routine outreach. Staff reconcile patient responses with the care plan and document any qualifying work they perform.
+### Alerts for Staff Review Flagged responses help staff prioritize follow-up under the agreed escalation workflow. An alert or automated call does not itself establish billable clinical staff time.
+### Support for Complex Patients Summaries help the care team review patient concerns. Clinical staff retain assessment, care planning and responsibility for determining whether complex CCM requirements are met.
+## CCM Billing Codes
+Common clinical-staff CCM pathways. Time is one requirement; outreach software does not establish eligibility or a billable service.
+CPT Code Description
+99490 Non-complex CCM: first 20 qualifying clinical staff minutes per calendar month
+99439 Additional non-complex CCM: each further 20 qualifying minutes, subject to reporting limits
+99487 Complex CCM: first 60 qualifying minutes, moderate or high complexity decision-making and care-plan requirements
+99489 Additional complex CCM: each further 30 qualifying minutes, subject to reporting limits
+Payment varies by service year, payer, locality and setting. Verify your applicable rate and the full service requirements using the CCM reimbursement guide . Projected reimbursement is not guaranteed revenue.
+## Why Providers Choose Positive Check for CCM
+Consistent daily patient touchpoints without manual outreach
+Medication questions within practice-approved conversations
+Call summaries for staff to review alongside the care plan
+Flagged concerns for clinician-led assessment and follow-up
+Real-time alerts when patients report changes or concerns
+Works alongside your existing care management workflows
+Supports outreach alongside RPM, with separate staff work and billing review
+HIPAA-compliant with full audit trail
+## Frequently Asked Questions
+### What does Lola do within a CCM program?
+Lola supports routine patient outreach through scheduled wellness calls, structured responses and call summaries for the care team. Providers can use that information to identify follow-up needs and review concerns. The service supports patient engagement; it does not replace a comprehensive care plan, clinical judgment or the provider’s responsibility to deliver and document qualifying care.
+### What work remains with clinical staff?
+Clinical staff remain responsible for reviewing relevant information, assessing concerns, coordinating care and documenting their work under the provider’s supervision. Automated call duration is not clinical staff time. The billing team must verify qualifying activities and all applicable requirements; an AI summary does not independently make a patient eligible for reimbursement or establish a billable service.
+### How are concerning patient responses handled?
+Positive Check surfaces concerning responses for care-team review through its alert workflow. Before launch, agree the escalation rules, responsible staff, coverage hours and process for failed handoffs. Do not assume that an automated alert guarantees an immediate clinical response. Patient instructions should explain the service’s limits and the appropriate route for urgent or emergency care.
+### When is staff-led outreach a better fit?
+Staff-led outreach can be the better fit when patients need complex conversations, established relationships or support that a structured call cannot provide. It may also be sufficient when the existing team reliably meets patient needs. Compare patient experience and staff workload before changing the process; automation should address a measured operational need, not an assumed staffing shortage.
+### What should we prepare before launching a CCM pilot?
+Choose a defined cohort and workflow, then identify clinical, operations and technical owners. Review patient eligibility and consent, data-transfer requirements, call preferences and escalation coverage before sharing production records. Confirm the implementation scope with Positive Check and test with synthetic data first. Public contact and demo forms should not contain patient health information.
+### How should we evaluate the first pilot?
+Compare the pilot with a documented starting point for the same workflow. Track attempted and completed contacts, staff review time, alert response times and patient opt-outs using agreed definitions and reporting periods. Include software and retained staffing costs. Review unsuccessful calls and handoffs before expanding; enrollment growth alone does not establish clinical benefit or a financial return.
+See all Chronic Care Management questions
+## Further Reading
+Billing guide
+### CPT 99490 Billing Guide
+Eligibility, the 20-minute requirement, documentation, and the separate non-complex and complex CCM pathways.
+Eligibility
+### The 2-Chronic-Conditions Requirement
+Which combinations qualify, documentation expectations, and the line between CCM and PCM.
+Workflow
+### The 20-Minute Monthly Requirement
+How time is tracked, what counts as clinical staff time, and common documentation pitfalls.
+Comparison
+### AI Calls vs. In-House Care Coordinators
+Category-level comparison of automated engagement versus staffing an in-house CCM team.
+For healthcare operations teams
+## Define what a CCM pilot would need to prove
+Review patient contact, staff review time, exception handling and total delivery cost. Your team retains clinical decisions and responsibility for determining which services qualify for billing.
+Discuss a CCM workflow pilot See the call-to-follow-up example Related glossary entries: CPT 99490 , CPT 99439 , CPT 99487 .
+Billing reference: CMS MLN CCM Booklet . Published by Positive Check. Workflow and claims updated November 9, 2026. Editorial source check; not independent coding-review sign-off.
+
+---
+Source: https://www.positivecheck.com/solutions/post-discharge-follow-up
+
+TCM Solution
+# Post-Discharge Follow-Up, Automated
+Positive Check supports post-discharge outreach, captures patient responses and flags requests for care-team follow-up. Your practice retains clinical review, contact deadlines and responsibility for qualifying TCM services.
+Outreach
+Planned contact attempts
+Review
+Patient responses for staff
+Handoff
+Care-team ownership
+Follow-up
+Practice-recorded outcomes
+## What Is Transitional Care Management?
+Transitional Care Management (TCM) is a Medicare-reimbursed service designed to reduce hospital readmissions by ensuring patients receive timely follow-up after discharge. CPT 99495 requires that a clinical staff member contacts the patient within two business days of discharge.
+The 30-day post-discharge window is when patients are most vulnerable to complications, medication errors, and avoidable readmissions. CMS Hospital Readmissions Reduction Program (HRRP) penalties make this a financial imperative as well as a clinical one. The challenge: ensuring every discharged patient gets timely outreach when discharge volumes fluctuate daily.
+## How Positive Check Supports Post-Discharge Care
+Plan outreach timing, staff review and a fallback for unsuccessful contacts.
+### Planned Outreach
+Schedule outreach from an agreed discharge source. Track attempts, successful contacts and unresolved follow-up separately; staff own the contact deadline and fallback.
+### Structured Check-Ins Practice-approved questions capture patient-reported medication concerns, symptoms and appointment needs for care-team review.
+### Care-Team Handoff Flagged responses support staff prioritization. Agree escalation rules, coverage hours and fallback steps; an alert does not guarantee immediate intervention.
+### Review the Outcome Staff assess concerns, complete appropriate follow-up and record what happened. Evaluate patient contact and follow-up outcomes without assuming a reduction in readmissions.
+## TCM Billing Code
+TCM includes clinical services and documentation beyond an outreach call.
+CPT Code Description
+99495 TCM — interactive contact within 2 business days, at least moderate medical decision-making and a visit within 14 calendar days, alongside other service requirements
+Verify the full service requirements and applicable payment for the service year, payer, locality and setting. See the CPT 99495 billing guide . A call sequence alone does not establish billable TCM.
+## Why Providers Choose Positive Check for TCM
+Scheduled outreach with unsuccessful contacts visible for staff follow-up
+Repeatable outreach alongside practice-owned clinical coverage
+Structured questions capture patient-reported concerns for review
+Flagged responses for the designated care-team owner
+Summaries to reconcile with clinical records and staff actions
+Track contact and follow-up outcomes against a defined baseline
+Works alongside existing discharge planning workflows
+Combine with RPM/CCM for ongoing monitoring after initial TCM contact
+## Frequently Asked Questions
+### What is Transitional Care Management (TCM)?
+TCM supports a patient’s transition from an eligible facility to community care during a 30-day service period. It includes timely interactive contact, an appropriate visit, medication reconciliation and other required services. Outreach software can support the workflow; the practice remains responsible for delivering and documenting qualifying care.
+### Does an AI-powered phone call independently satisfy the TCM contact requirement?
+CMS does not expressly establish that a fully automated AI call independently satisfies the requirement. AI outreach can capture structured responses, document attempts, and route patients to clinical staff; the billing practice should determine which contacts meet current CPT, CMS, MAC, and payer requirements.
+### How quickly must post-discharge contact happen?
+The TCM interactive-contact requirement is within two business days after discharge, not a universal 48-hour window. Plan for weekends, holidays and unsuccessful attempts. Agree the discharge-data source and staff follow-up process before launch; a scheduled automated call does not demonstrate that qualifying contact occurred.
+### What’s the difference between CPT 99495 and 99496?
+CPT 99495 requires at least moderate medical decision-making and a visit within 14 calendar days; 99496 requires high complexity and a visit within 7 calendar days. Both have interactive-contact and other service requirements. Verify payment for your year, locality, setting and payer rather than assuming a single national amount.
+### How does TCM relate to the Hospital Readmissions Reduction Program (HRRP)?
+HRRP and TCM address related care-transition concerns, but using outreach software does not establish a reduction in readmissions or hospital penalties. Evaluate contact completion and staff follow-up first. Any clinical-outcome claim needs an appropriate population, comparison, measurement period and evidence beyond the number of calls made.
+### Does HIPAA permit automated discharge follow-up calls?
+Review the proposed workflow with your privacy and security owners before sharing patient information. Confirm the BAA, access controls, approved message details, identity checks, retention and escalation responsibilities. A BAA alone does not establish that every message, integration or configured process meets all applicable requirements.
+See all Transitional Care Management questions
+## Further Reading
+Billing guide
+### CPT 99495 Billing Guide
+Eligibility, documentation requirements, and how interactive communication is handled.
+Clinical
+### Reducing 30-Day Readmissions
+Which discharge scenarios carry the highest readmission risk and where TCM fits.
+Workflow
+### Post-Discharge Contact Timing
+The 2-business-day window, weekend/holiday handling, and documentation.
+Comparison
+### AI Calls vs. Manual Outreach
+Category-level comparison of automated versus manual discharge follow-up workflows.
+## Ready to Automate Post-Discharge Follow-Up?
+Walk through discharge data, outreach timing, staff coverage and unsuccessful-contact handling. Define what your team needs to evaluate a supported workflow.
+Request a Demo Calculate Your ROI Reviewed against current CMS billing guidance. CMS TCM service requirements . Workflow and claims updated November 9, 2026. Editorial source check; not independent coding-review sign-off.
+
+---
 Source: https://www.positivecheck.com/solutions/front-office/new-patient-leads
 
 Front Office · For practice managers
@@ -44,7 +270,7 @@ Start with one task and an agreed population, message and human handoff. Record 
 - Appointment Reminders
 - Patient Notifications
 Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
-Published by Positive Check. Workflow content updated October 9, 2026.
+Published by Positive Check. Workflow content updated October 9, 2026 .
 
 ---
 Source: https://www.positivecheck.com/solutions/front-office/scheduling-confirmations
@@ -82,20 +308,58 @@ Start with one task and an agreed population, message and human handoff. Record 
 - Appointment Reminders
 - Patient Notifications
 Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
-Published by Positive Check. Workflow content updated October 9, 2026.
+Published by Positive Check. Workflow content updated October 9, 2026 .
 
 ---
 Source: https://www.positivecheck.com/solutions/front-office/appointment-reminders
 
 Front Office · For practice managers
 # Appointment Reminder Calls & SMS for Medical Practices
-Lola supports appointment reminder calls and SMS so your practice can reach patients about upcoming visits and identify who needs help. A delivered reminder, a patient reply and an attended appointment are different outcomes.
+Lola supports appointment reminder calls and SMS for medical practices, captures patient replies and helps your front desk identify who needs follow-up. Explore how a request to change an appointment becomes a staff-owned task, then evaluate the setup and cost for your practice.
+Explore the call and SMS example
 ## Where this fits your practice
 For practice managers reviewing reminder queues and patients who need a callback. Begin with a defined appointment type and compare the proposed workflow with your current reminder tool. If simple one-way messages already meet the need, conversational outreach may not add enough value.
+Fictional interactive example · No real patient data
+## See a reminder become a resolved follow-up
+Explore a complete scripted call or SMS exchange, then follow the request through summary, staff review and resolution. This is an illustration, not a live product session, recorded patient call or customer result. No call or text is sent.
+Call example SMS example
+### Full scripted call
+Assumes the practice has confirmed the recipient, contact permission and permitted message details. Names, appointment times and responses are fictional. Confirm identity checks, voicemail wording and contact rules for your workflow.
+- Lola : Hello, I’m Lola, the automated assistant for Example Practice. Is now a good time to discuss your appointment reminder?
+- Patient : Yes.
+- Lola : Your appointment is Tuesday at 10 a.m. Will that time still work for you?
+- Patient : I need to move it. Could someone call me about a Thursday afternoon appointment?
+- Lola : I can note that request for the front desk. Your appointment has not changed yet; the team will need to check availability and confirm a new time.
+- Patient : That works, thank you.
+- Lola : I’ll include your preference in the follow-up request. Please contact the practice directly if you need to speak with someone sooner.
+Follow the request All steps are readable below. Follow the request to highlight each handoff.
+- ### 1 . Patient reply Reschedule requested The patient asks for Thursday afternoon and a callback. Tuesday at 10 a.m. remains the scheduled appointment until staff confirm a change.
+- ### 2 . Summary and staff task Awaiting front desk review Summary: reschedule requested; Thursday afternoon preferred; callback requested. Assigned role: front desk scheduling owner. Next action: check availability and contact the patient.
+- ### 3 . Staff resolution Resolved by staff in this example A staff member checks the schedule, calls the patient, agrees a new time and updates the authoritative appointment record. The team reconciles future reminders with the updated schedule.
+A reschedule request is not a confirmed booking. Your practice owns availability checks, calendar updates and unresolved requests. The handoff method and any automated write-back must be agreed during implementation. This example does not demonstrate an EHR integration.
 For healthcare operations teams
-## Evaluate the workflow with your front office team
-Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information.
-Request a Front Office demo Compare staff and reminder tools
+## Evaluate appointment reminders with your front office team
+Bring your current reminder process, monthly appointment volume and scheduling system. Review calls, SMS, staff handoffs and a scoped pilot.
+- Walk through a reminder reply and the staff follow-up it creates.
+- Confirm appointment data, schedule changes and integration scope.
+- Discuss pilot measures, total cost and what remains with your team.
+Request a reminder workflow demo Compare staff and reminder tools Use fictional examples in the demo. Please do not share patient information.
+## Reminder calls, basic tools or staff follow-up?
+Conversational reminders are worth evaluating when patient replies create a callback queue: a different appointment time, a question for the practice or help reaching the right person. Compare the full follow-up workload with the process you already use.
+Typical approaches; capabilities vary by tool and configuration. Approach Useful when Work to account for
+Basic reminder tool Standard messages and simple replies cover most appointment needs. Check how unexpected replies reach staff and how schedule changes update messages.
+Lola calls and SMS Your practice needs repeatable conversations and requests captured for follow-up. Configure the conversation and data source; retain staff review, scheduling decisions and exception handling.
+Front desk staff Requests need judgment, complex scheduling or an established relationship. Include calling time, repeat attempts, coverage and documentation alongside patient-facing work.
+Compare Front Office approaches in more detail
+## What your reminder workflow needs to go live
+Appointment source Identify the system that owns the schedule, the appointment fields available and how cancellations or changes reach the outreach list. Confirm the transfer method and update frequency. Contact rules Bring approved call and SMS wording, patient channel preferences, contact windows, retry limits and an opt-out process. Decide which details may be used in messages or voicemail. A staff owner Name the front desk role that handles callback requests, ambiguous replies and failed contacts. Agree coverage hours and how unresolved work is reviewed. A tested handoff Walk through a confirmed reply, reschedule request, no answer, failed message and stale appointment using fictional records. Confirm who updates the calendar in every case. Dashboard-led setup, bulk import and API options are described in the implementation guide . Confirm appointment-data support, scheduling access and any write-back for your specific system in the demo; a named EHR connector is not assumed.
+## Scope a pilot and its total cost
+Start with one appointment type and a defined outreach volume. In the demo, bring an estimate of monthly appointments, your call/SMS mix and the reminder tool you use today. Ask for a written scope and quote before committing.
+- Confirm software charges, included usage, any overages and setup or integration fees.
+- Include staff time for reviewing replies, scheduling callbacks and resolving exceptions.
+- Agree the pilot duration, success measures, support arrangements and expansion or exit terms.
+- Compare resolved requests, contact outcomes and attendance against your starting baseline.
+These are evaluation questions, not published package terms. Pricing and launch timing require confirmation of the workflow and implementation scope.
 ## Plan the workflow and handoffs
 - ### 1 . Keep the appointment list current Use the practice’s agreed schedule source and contact preferences. Decide how cancellations, reschedules and duplicate patient records are handled before reminders are sent.
 - ### 2 . Set reminder timing and message scope Approve the call or SMS wording and contact window. Keep messages limited to the operational details appropriate for the channel, and define what happens when someone does not respond.
@@ -109,10 +373,10 @@ Yes. Calls and SMS can support appointment reminders. Choose channels and timing
 No. An appointment reminder is an outreach activity, not a guarantee that a patient will attend. Transportation, cost, scheduling and other factors can still affect attendance. Compare attendance for comparable appointment groups and report the evaluation period and limitations. Also measure whether reminders create additional staff work through replies, cancellations or requests for assistance.
 ### How is conversational outreach different from a basic reminder tool?
 A basic reminder tool may be sufficient when the task is simply sending a standard message. Evaluate conversational calls or SMS when replies need clarification or a staff handoff. Compare both approaches on schedule accuracy, handling of exceptions, patient preferences and total workload. Do not assume every reminder needs an AI conversation to be effective.
-### Does Lola replace our front desk team?
-No. Lola supports repeatable calls and SMS; your staff still own exceptions, complex questions and the patient relationship. Compare the work your team does today with what remains after automation. A pilot should measure review and follow-up effort as well as successful conversations, rather than assume every automated interaction saves a fixed amount of staff time.
 ### What should we confirm about integrations before starting?
 Confirm where contact and appointment data originate, how changes reach the outreach workflow, and which results can be written back. Do not assume a named EHR or calendar integration is included. Ask for a demonstration using synthetic records, including changed appointments, duplicate records and failed updates, and agree which system and staff member own the final outcome.
+### What does an appointment-reminder pilot cost?
+Request a scoped quote using your monthly appointment volume, call and SMS mix, scheduling system and handoff requirements. Confirm software charges, included usage, overages, setup and integration fees, and support terms. Include retained staff time when comparing options. This page does not publish a fixed package price or promise a standard launch timeline.
 ### How should we evaluate a pilot?
 Start with one task and an agreed population, message and human handoff. Record the current baseline, then compare contact success, completed next steps, staff follow-up time, opt-outs and errors using the same definitions. Review failures as well as successes. Expand only when practice operations owners agree that the process and exception workload are supportable.
 ## Related Front Office tasks
@@ -120,7 +384,7 @@ Start with one task and an agreed population, message and human handoff. Record 
 - Scheduling & Confirmations
 - Patient Notifications
 Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
-Published by Positive Check. Workflow content updated October 9, 2026.
+Published by Positive Check. Workflow content updated November 9, 2026 .
 
 ---
 Source: https://www.positivecheck.com/solutions/front-office/patient-notifications
@@ -158,7 +422,7 @@ Start with one task and an agreed population, message and human handoff. Record 
 - Scheduling & Confirmations
 - Appointment Reminders
 Supporting ongoing care too? Explore Care Management for RPM, CCM and post-discharge follow-up , or review the implementation guide .
-Published by Positive Check. Workflow content updated October 9, 2026.
+Published by Positive Check. Workflow content updated October 9, 2026 .
 
 ---
 Source: https://www.positivecheck.com/solutions/front-office/compare

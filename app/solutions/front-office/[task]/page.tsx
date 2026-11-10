@@ -6,6 +6,9 @@ import { frontOfficeSolutions } from '@/lib/solution-catalog'
 import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { ContentConversionCta } from '@/components/content-conversion-cta'
+import { ReminderWorkflowDemo } from '@/components/reminder-workflow-demo'
+import { ReminderEvaluation } from '@/components/reminder-evaluation'
+import { REMINDER_WORKFLOW_OFFER } from '@/lib/demo-offers'
 import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/components/structured-data'
 
 type Props = { params: Promise<{ task: string }> }
@@ -25,6 +28,7 @@ export default async function FrontOfficeTaskPage({ params }: Props) {
   const { task } = await params
   const content = getContent(task)
   if (!content) notFound()
+  const isReminders = task === 'appointment-reminders'
   const url = `https://www.positivecheck.com/solutions/front-office/${task}`
   return <>
     <StructuredData id="front-office-breadcrumb" data={buildBreadcrumbSchema([{ name: 'Home', url: 'https://www.positivecheck.com' }, { name: 'Solutions', url: 'https://www.positivecheck.com/solutions' }, { name: content.title, url }])} />
@@ -37,12 +41,17 @@ export default async function FrontOfficeTaskPage({ params }: Props) {
           <Link href="/solutions#front-office" className="font-semibold text-purple-700 underline">Front Office · For practice managers</Link>
           <h1 className="my-5 text-3xl font-bold leading-tight text-gray-900 md:text-5xl">{content.title}</h1>
           <p className="text-xl leading-relaxed text-gray-700">{content.intro}</p>
+          {isReminders && <Link href="#reminder-workflow-example" className="mt-6 inline-flex min-h-11 items-center rounded-lg bg-purple-800 px-5 py-3 font-semibold text-white hover:bg-purple-900">Explore the call and SMS example</Link>}
         </div>
       </section>
       <div className="mx-auto max-w-4xl px-6 py-12">
         <h2 className="mb-4 text-2xl font-bold">Where this fits your practice</h2>
         <p className="leading-relaxed text-gray-700">{content.fit}</p>
-        <ContentConversionCta source={`front_office_${task.replaceAll('-', '_')}`} title="Evaluate the workflow with your front office team" description="Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information." buttonText="Request a Front Office demo" secondaryText="Compare staff and reminder tools" secondaryHref="/solutions/front-office/compare" secondaryCtaName="compare_front_office" />
+        {isReminders ? <>
+          <ReminderWorkflowDemo />
+          <ContentConversionCta source="appointment_reminders_example" offerId={REMINDER_WORKFLOW_OFFER.id} title={REMINDER_WORKFLOW_OFFER.title} description={REMINDER_WORKFLOW_OFFER.description} buttonText={REMINDER_WORKFLOW_OFFER.buttonText} secondaryText="Compare staff and reminder tools" secondaryHref="/solutions/front-office/compare" secondaryCtaName="compare_front_office" />
+          <ReminderEvaluation />
+        </> : <ContentConversionCta source={`front_office_${task.replaceAll('-', '_')}`} title="Evaluate the workflow with your front office team" description="Bring one task, your current process and integration questions to a 15-minute demo. Please use synthetic examples and do not share patient information." buttonText="Request a Front Office demo" secondaryText="Compare staff and reminder tools" secondaryHref="/solutions/front-office/compare" secondaryCtaName="compare_front_office" />}
         <h2 className="mb-6 text-2xl font-bold">Plan the workflow and handoffs</h2>
         <ol className="space-y-6">{content.steps.map(([title, text], i) => <li key={title} className="rounded-lg border p-6"><h3 className="mb-3 text-xl font-semibold">{i + 1}. {title}</h3><p className="leading-relaxed text-gray-700">{text}</p></li>)}</ol>
         <h2 className="mb-4 mt-10 text-2xl font-bold">Measure outcomes, not just activity</h2>
@@ -52,7 +61,7 @@ export default async function FrontOfficeTaskPage({ params }: Props) {
         <h2 className="mb-4 mt-10 text-2xl font-bold">Related Front Office tasks</h2>
         <ul className="list-disc space-y-2 pl-5">{frontOfficeSolutions.filter(s => s.slug !== task).map(s => <li key={s.slug}><Link href={`/solutions/front-office/${s.slug}`} className="text-purple-700 underline">{s.name}</Link></li>)}</ul>
         <p className="mt-6 text-gray-700">Supporting ongoing care too? Explore <Link href="/solutions#care-management" className="text-purple-700 underline">Care Management for RPM, CCM and post-discharge follow-up</Link>, or review the <Link href="/resources/implementation-guide" className="text-purple-700 underline">implementation guide</Link>.</p>
-        <p className="mt-8 text-sm text-gray-500">Published by Positive Check. Workflow content updated October 9, 2026.</p>
+        <p className="mt-8 text-sm text-gray-500">Published by Positive Check. Workflow content updated {isReminders ? 'November 9, 2026' : 'October 9, 2026'}.</p>
       </div>
     </main>
     <PublicFooter />

@@ -70,11 +70,11 @@ const PROGRAM_CONFIGS: Record<ProgramType, ProgramConfig> = {
 
 const CPT_CODES: CPTCode[] = [
   { code: '99457', description: 'RPM — first 20 min clinical staff time per month', rate: 52, pcSupport: 'Automated daily calls collect structured responses and surface patients for qualifying clinical-staff follow-up.' },
-  { code: '99458', description: 'RPM — each additional 20 min clinical staff time per month', rate: 41, pcSupport: 'Structured call summaries and trend reports reduce clinical review time, making the additional 20 minutes highly productive.' },
-  { code: '99454', description: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: 56, pcSupport: 'Positive Check serves as the patient-facing data collection layer, transmitting structured responses to the provider dashboard.' },
+  { code: '99458', description: 'RPM — each additional 20 min clinical staff time per month', rate: 41, pcSupport: 'Summaries support staff review; staff must separately perform and document qualifying work.' },
+  { code: '99454', description: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: 56, pcSupport: 'Patient outreach can complement device monitoring; reported answers do not replace qualifying connected-device transmissions.' },
   { code: '99490', description: 'CCM — first 20 min non-complex chronic care management', rate: 66, pcSupport: 'Daily wellness calls provide documented patient touchpoints, medication adherence checks, and care plan follow-up.' },
-  { code: '99439', description: 'CCM — each additional 20 min non-complex CCM', rate: 48, pcSupport: 'Automated follow-ups and alert-triggered callbacks generate additional documented care coordination time.' },
-  { code: '99487', description: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: 144, pcSupport: 'Daily monitoring with escalation protocols supports the higher documentation bar for complex patients.' },
+  { code: '99439', description: 'CCM — each additional 20 min non-complex CCM', rate: 48, pcSupport: 'Outreach can surface follow-up needs; clinical staff separately perform and document qualifying care coordination.' },
+  { code: '99487', description: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: 144, pcSupport: 'Summaries support care-team review; the practice retains clinical decision-making, care-plan and qualifying-time requirements.' },
   { code: '99495', description: 'TCM — post-discharge follow-up contact within 2 business days', rate: 178, pcSupport: 'Automated post-discharge outreach supports timely contact workflows and routes patients to clinical staff.' },
 ]
 
@@ -203,7 +203,7 @@ export function ROICalculator() {
                 { value: '$93–$237', label: 'Illustrative Revenue / Patient / Mo' },
                 { value: '$8–$16', label: 'Software-Cost Assumptions / Patient / Mo' },
                 { value: 'Model', label: 'Not a Pricing Quote' },
-                { value: '2026', label: 'Medicare Rates' },
+                { value: 'Verify', label: 'Payment Assumptions' },
               ].map((m) => (
                 <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                   <CardContent className="p-5 text-center">
@@ -521,7 +521,7 @@ export function ROICalculator() {
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">CPT Code Reference</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                2026 Medicare national average reimbursement rates and how Positive Check supports each code.
+                Illustrative payment assumptions used in this calculator. Verify current rates and all service requirements before using these examples in a budget.
               </p>
             </div>
 
@@ -533,7 +533,7 @@ export function ROICalculator() {
                       <tr className="border-b bg-gray-50">
                         <th className="text-left py-3 px-4 font-semibold text-gray-700">Code</th>
                         <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
-                        <th className="text-right py-3 px-4 font-semibold text-gray-700 whitespace-nowrap">2026 Rate</th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-700 whitespace-nowrap">Example Amount</th>
                         <th className="text-left py-3 px-4 font-semibold text-gray-700">How PC Supports</th>
                       </tr>
                     </thead>
@@ -563,7 +563,7 @@ export function ROICalculator() {
             <p className="mb-4 text-gray-700 leading-relaxed">Budget for retained clinical staff, software, devices where relevant, integration, onboarding and ongoing support. Ask for a written quote stating the pricing unit, any minimum commitment, one-time charges and pilot terms. Do not infer those terms from the calculator presets. <Link href="/contact" className="text-purple-700 underline">Request pricing for your workflow</Link> or use the <Link href="/resources/implementation-guide" className="text-purple-700 underline">implementation checklist</Link> to prepare your scope.</p>
             <div className="space-y-4 text-sm text-gray-500 leading-relaxed">
               <p>
-                Estimates are based on 2026 Medicare national average reimbursement rates. Actual
+                These presets are illustrative payment assumptions, not a verified current fee schedule. Actual
                 reimbursement varies by geographic region (GPCI adjustments), payer mix, and
                 individual claim adjudication. These projections are illustrative and should not be
                 interpreted as guaranteed revenue.
@@ -733,7 +733,7 @@ export function ROICalculator() {
         {/* PDF Disclaimers */}
         <div className="mb-6 text-xs text-gray-400 space-y-1">
           <p>*After software cost is not net profit. Clinical staffing, devices, integration, onboarding and other overhead are excluded. The multiple is revenue divided by software cost, not a full return-on-investment calculation. Software inputs are illustrative assumptions, not a quote.</p>
-          <p>Estimates based on 2026 Medicare national average reimbursement rates. Actual reimbursement varies by region and payer.</p>
+          <p>Illustrative payment assumptions, not a verified current fee schedule. Verify applicable rates, service requirements and total costs before budgeting.</p>
           <p>This does not constitute billing, legal, or financial advice. Consult qualified professionals.</p>
           <p>CPT is a registered trademark of the American Medical Association.</p>
         </div>

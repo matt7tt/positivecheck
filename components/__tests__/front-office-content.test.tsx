@@ -31,6 +31,13 @@ describe('Front Office and Care Management content structure', () => {
     expect(generateStaticParams()).toHaveLength(4)
     await expect(FrontOfficePage({ params: Promise.resolve({ task: 'unknown' }) })).rejects.toThrow('NOT_FOUND')
   })
+  it('connects reminder evaluation to a relevant, identified demo offer', async () => {
+    render(await FrontOfficePage({ params: Promise.resolve({ task: 'appointment-reminders' }) }))
+    expect(screen.getByRole('link', { name: 'Explore the call and SMS example' })).toHaveAttribute('href', '#reminder-workflow-example')
+    expect(screen.getByRole('table')).toBeVisible()
+    fireEvent.click(screen.getByRole('button', { name: 'Request a reminder workflow demo' }))
+    expect(screen.getByRole('dialog', { name: 'Request your appointment-reminder demo' })).toBeVisible()
+  })
   it('uses the same seven solution options in grouped contact choices', () => {
     render(<select aria-label="Program"><SolutionInterestOptions /></select>)
     for (const group of solutionGroups) {

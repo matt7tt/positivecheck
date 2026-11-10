@@ -12,6 +12,9 @@ const SITE = "https://www.positivecheck.com";
 const SOURCE_SITE = (process.env.LLMS_SOURCE_URL || SITE).replace(/\/$/, "");
 
 const PAGES = [
+  "/solutions/remote-patient-monitoring",
+  "/solutions/chronic-care-management",
+  "/solutions/post-discharge-follow-up",
   "/solutions/front-office/new-patient-leads",
   "/solutions/front-office/scheduling-confirmations",
   "/solutions/front-office/appointment-reminders",

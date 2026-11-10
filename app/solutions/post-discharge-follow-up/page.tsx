@@ -8,13 +8,21 @@ import { StructuredData, buildBreadcrumbSchema, buildServiceSchema, buildFAQSche
 import { Card, CardContent } from '@/components/ui/card'
 import { ArrowRight, CheckCircle, PhoneCall, Timer, AlertTriangle, TrendingDown } from 'lucide-react'
 
+const description = 'Support post-discharge outreach with scheduled calls, summaries and staff follow-up. Evaluate contact timing, escalation ownership and TCM workflow fit.'
+const tcmFeatures = [
+  { icon: Timer, title: 'Planned Outreach', desc: 'Schedule outreach from an agreed discharge source. Track attempts, successful contacts and unresolved follow-up separately; staff own the contact deadline and fallback.' },
+  { icon: PhoneCall, title: 'Structured Check-Ins', desc: 'Practice-approved questions capture patient-reported medication concerns, symptoms and appointment needs for care-team review.' },
+  { icon: AlertTriangle, title: 'Care-Team Handoff', desc: 'Flagged responses support staff prioritization. Agree escalation rules, coverage hours and fallback steps; an alert does not guarantee immediate intervention.' },
+  { icon: TrendingDown, title: 'Review the Outcome', desc: 'Staff assess concerns, complete appropriate follow-up and record what happened. Evaluate patient contact and follow-up outcomes without assuming a reduction in readmissions.' },
+]
+
 export const metadata: Metadata = {
   title: 'Post-Discharge Follow-Up (TCM) Solution | Positive Check',
-  description: 'Automate post-discharge patient follow-up calls within 2 business days. Support CPT 99495 billing and reduce 30-day readmissions with AI-powered outreach.',
+  description,
   alternates: { canonical: '/solutions/post-discharge-follow-up' },
   openGraph: {
     title: 'Post-Discharge Follow-Up (TCM) Solution',
-    description: 'Automate post-discharge follow-up calls within 2 business days. Support CPT 99495 billing and reduce readmissions.',
+    description,
     url: '/solutions/post-discharge-follow-up',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -24,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Post-Discharge Follow-Up Solution | Positive Check',
-    description: 'Automate post-discharge follow-up calls within 2 business days. Support CPT 99495 billing.',
+    description,
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -33,7 +41,7 @@ const tcmPillarFaqs = [
   {
     question: 'What is Transitional Care Management (TCM)?',
     answer:
-      "Transitional Care Management is a Medicare-reimbursed care model designed to reduce hospital readmissions by ensuring patients receive structured follow-up after discharge. CMS pays providers for delivering two things within a 30-day window: an initial patient contact within two business days of discharge, and a face-to-face visit within 7\u201314 days depending on complexity. The billing codes are CPT 99495 (moderate complexity) and 99496 (high complexity).",
+      'TCM supports a patient’s transition from an eligible facility to community care during a 30-day service period. It includes timely interactive contact, an appropriate visit, medication reconciliation and other required services. Outreach software can support the workflow; the practice remains responsible for delivering and documenting qualifying care.',
   },
   {
     question: 'Does an AI-powered phone call independently satisfy the TCM contact requirement?',
@@ -43,22 +51,22 @@ const tcmPillarFaqs = [
   {
     question: 'How quickly must post-discharge contact happen?',
     answer:
-      'Within two business days of discharge for both CPT 99495 and 99496. Weekends and federal holidays do not count. A patient discharged on a Friday must be contacted by end of business Tuesday. Positive Check schedules calls automatically based on the discharge timestamp from your EHR or discharge list import.',
+      'The TCM interactive-contact requirement is within two business days after discharge, not a universal 48-hour window. Plan for weekends, holidays and unsuccessful attempts. Agree the discharge-data source and staff follow-up process before launch; a scheduled automated call does not demonstrate that qualifying contact occurred.',
   },
   {
     question: "What\u2019s the difference between CPT 99495 and 99496?",
     answer:
-      'Both require contact within two business days of discharge. CPT 99495 requires moderate medical decision-making complexity and a face-to-face visit within 14 calendar days \u2014 2026 Medicare reimburses it at roughly $178. CPT 99496 requires high medical decision-making complexity and a face-to-face visit within 7 calendar days, reimbursed at a higher rate. See the CMS MLN booklet for current rates.',
+      'CPT 99495 requires at least moderate medical decision-making and a visit within 14 calendar days; 99496 requires high complexity and a visit within 7 calendar days. Both have interactive-contact and other service requirements. Verify payment for your year, locality, setting and payer rather than assuming a single national amount.',
   },
   {
     question: 'How does TCM relate to the Hospital Readmissions Reduction Program (HRRP)?',
     answer:
-      'HRRP penalizes hospitals for higher-than-expected 30-day readmission rates across six conditions. TCM is the CMS-recognized intervention for reducing avoidable readmissions in the critical 30-day post-discharge window. Effective TCM programs reduce readmissions, which directly reduces HRRP penalty exposure.',
+      'HRRP and TCM address related care-transition concerns, but using outreach software does not establish a reduction in readmissions or hospital penalties. Evaluate contact completion and staff follow-up first. Any clinical-outcome claim needs an appropriate population, comparison, measurement period and evidence beyond the number of calls made.',
   },
   {
     question: 'Does HIPAA permit automated discharge follow-up calls?',
     answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+      'Review the proposed workflow with your privacy and security owners before sharing patient information. Confirm the BAA, access controls, approved message details, identity checks, retention and escalation responsibilities. A BAA alone does not establish that every message, integration or configured process meets all applicable requirements.',
   },
 ];
 
@@ -78,8 +86,7 @@ export default function PostDischargeFollowUpPage() {
         data={buildServiceSchema({
           name: 'Post-Discharge Follow-Up (TCM) with AI Calls',
           serviceType: 'Transitional Care Management',
-          description:
-            'Automated post-discharge patient outreach within 24-48 hours that supports practice-owned Transitional Care Management workflows and clinical-staff follow-up.',
+          description,
           category: 'Transitional Care Management',
         })}
       />
@@ -93,38 +100,8 @@ export default function PostDischargeFollowUpPage() {
           '@context': 'https://schema.org',
           '@type': 'HowTo',
           name: 'How Positive Check Supports Post-Discharge Care',
-          description:
-            'Automate CMS-compliant post-discharge outreach in four steps: auto-trigger within 48 hours, conduct a structured check-in, escalate concerns, and document for CPT 99495 billing.',
-          step: [
-            {
-              '@type': 'HowToStep',
-              position: 1,
-              name: 'Automated 48-Hour Contact',
-              text:
-                'Patients are contacted within 24-48 hours of discharge, satisfying the initial patient contact requirement for CPT 99495 without manual scheduling.',
-            },
-            {
-              '@type': 'HowToStep',
-              position: 2,
-              name: 'Structured Check-In Calls',
-              text:
-                'Calls assess medication understanding, follow-up appointment awareness, symptom changes, and home safety \u2014 the key areas that prevent readmissions.',
-            },
-            {
-              '@type': 'HowToStep',
-              position: 3,
-              name: 'Immediate Escalation',
-              text:
-                'If a patient reports confusion about medications, new symptoms, or missed follow-ups, care teams are alerted immediately for same-day intervention.',
-            },
-            {
-              '@type': 'HowToStep',
-              position: 4,
-              name: 'Readmission Risk Reduction',
-              text:
-                'Consistent post-discharge engagement catches complications early, reducing 30-day readmission rates and HRRP penalty exposure.',
-            },
-          ],
+          description: 'Plan discharge outreach, capture responses, route concerns and review staff follow-up.',
+          step: tcmFeatures.map((feature, index) => ({ '@type': 'HowToStep', position: index + 1, name: feature.title, text: feature.desc })),
         }}
       />
       <div className="min-h-screen bg-white">
@@ -139,16 +116,16 @@ export default function PostDischargeFollowUpPage() {
                 Post-Discharge Follow-Up, Automated
               </h1>
               <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Positive Check contacts patients within 24-48 hours of discharge — satisfying
-                Transitional Care Management requirements and catching complications before they
-                become readmissions.
+                Positive Check supports post-discharge outreach, captures patient responses and
+                flags requests for care-team follow-up. Your practice retains clinical review,
+                contact deadlines and responsibility for qualifying TCM services.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[
-                  { value: '$178', label: 'Revenue / Patient' },
-                  { value: '99495', label: 'TCM Within 2 Days' },
-                  { value: '24-48h', label: 'Contact Window' },
-                  { value: '~20%', label: 'Readmission Risk Reduced' },
+                  { value: 'Outreach', label: 'Planned contact attempts' },
+                  { value: 'Review', label: 'Patient responses for staff' },
+                  { value: 'Handoff', label: 'Care-team ownership' },
+                  { value: 'Follow-up', label: 'Practice-recorded outcomes' },
                 ].map((m) => (
                   <Card key={m.label} className="bg-white/15 border-white/20 backdrop-blur-sm">
                     <CardContent className="p-5 text-center">
@@ -189,17 +166,12 @@ export default function PostDischargeFollowUpPage() {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">How Positive Check Supports Post-Discharge Care</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Automated calls within the critical 48-hour window, every time.
+                  Plan outreach timing, staff review and a fallback for unsuccessful contacts.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {[
-                  { icon: Timer, title: 'Automated 48-Hour Outreach', desc: 'Patients receive outreach within 24-48 hours of discharge, with responses documented and routed for clinical-staff follow-up.' },
-                  { icon: PhoneCall, title: 'Structured Check-In Calls', desc: 'Calls assess medication understanding, follow-up appointment awareness, symptom changes, and home safety — the key areas that prevent readmissions.' },
-                  { icon: AlertTriangle, title: 'Immediate Escalation', desc: 'If a patient reports confusion about medications, new symptoms, or missed follow-ups, care teams are alerted immediately for same-day intervention.' },
-                  { icon: TrendingDown, title: 'Readmission Risk Reduction', desc: 'Consistent post-discharge engagement catches complications early, reducing 30-day readmission rates and HRRP penalty exposure.' },
-                ].map((feature) => {
+                {tcmFeatures.map((feature) => {
                   const Icon = feature.icon
                   return (
                     <Card key={feature.title} className="border-gray-200 bg-white">
@@ -223,7 +195,7 @@ export default function PostDischargeFollowUpPage() {
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">TCM Billing Code</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  2026 Medicare national average reimbursement rate for Transitional Care Management.
+                  TCM includes clinical services and documentation beyond an outreach call.
                 </p>
               </div>
               <div className="max-w-4xl mx-auto">
@@ -234,21 +206,19 @@ export default function PostDischargeFollowUpPage() {
                         <tr className="border-b bg-gray-50">
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">CPT Code</th>
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
-                          <th className="text-right py-3 px-4 font-semibold text-gray-700">2026 Rate</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr className="border-b">
                           <td className="py-3 px-4 font-medium text-purple-700">99495</td>
-                          <td className="py-3 px-4 text-gray-700">TCM — post-discharge follow-up contact within 2 business days, moderate medical decision complexity</td>
-                          <td className="py-3 px-4 text-right font-bold text-gray-900">$178</td>
+                          <td className="py-3 px-4 text-gray-700">TCM — interactive contact within 2 business days, at least moderate medical decision-making and a visit within 14 calendar days, alongside other service requirements</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                 </Card>
                 <p className="text-sm text-gray-500 mt-4 text-center">
-                  TCM is billed once per patient per discharge event during the 30-day post-discharge period.
+                  Verify the full service requirements and applicable payment for the service year, payer, locality and setting. See the <Link href="/solutions/post-discharge-follow-up/cpt-99495-billing-guide" className="text-purple-700 underline">CPT 99495 billing guide</Link>. A call sequence alone does not establish billable TCM.
                 </p>
               </div>
             </div>
@@ -263,12 +233,12 @@ export default function PostDischargeFollowUpPage() {
               <div className="max-w-3xl mx-auto">
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    'Guaranteed patient contact within the 48-hour CMS window',
-                    'No staffing bottlenecks during high-discharge periods',
-                    'Structured calls assess medication, symptoms, and follow-up plans',
-                    'Immediate alerts for patients at risk of complications',
-                    '$178/patient revenue for a single post-discharge call sequence',
-                    'Reduces 30-day readmission rates and HRRP penalty exposure',
+                    'Scheduled outreach with unsuccessful contacts visible for staff follow-up',
+                    'Repeatable outreach alongside practice-owned clinical coverage',
+                    'Structured questions capture patient-reported concerns for review',
+                    'Flagged responses for the designated care-team owner',
+                    'Summaries to reconcile with clinical records and staff actions',
+                    'Track contact and follow-up outcomes against a defined baseline',
                     'Works alongside existing discharge planning workflows',
                     'Combine with RPM/CCM for ongoing monitoring after initial TCM contact',
                   ].map((item) => (
@@ -371,8 +341,8 @@ export default function PostDischargeFollowUpPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Automate Post-Discharge Follow-Up?</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                See how Positive Check ensures every discharged patient receives timely follow-up —
-                reducing readmissions while generating reimbursable revenue.
+                Walk through discharge data, outreach timing, staff coverage and unsuccessful-contact
+                handling. Define what your team needs to evaluate a supported workflow.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <RequestDemoModal>
@@ -398,9 +368,9 @@ export default function PostDischargeFollowUpPage() {
                   rel="noopener noreferrer"
                   className="underline hover:text-gray-700"
                 >
-                  CMS MLN TCM Booklet
+                  CMS TCM service requirements
                 </a>
-                . Last updated 2026-04-19.
+                . Workflow and claims updated November 9, 2026. Editorial source check; not independent coding-review sign-off.
               </p>
             </div>
           </section>

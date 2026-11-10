@@ -28,6 +28,8 @@ describe('billing consistency', () => {
       /An AI call that captures the required elements[^.]*satisfies the CMS requirement/i,
       /unlocking 99458 billings/i,
       /per-call durations into monthly summaries that correspond directly to the time-threshold/i,
+      /Escalation protocols for complex patients meet 99487 requirements/i,
+      /generating additional documented care coordination time for CPT 99439/i,
     ]
     for (const root of roots) {
       const files = fs.readdirSync(path.join(process.cwd(), root), { recursive: true }) as string[]
