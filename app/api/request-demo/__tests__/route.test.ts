@@ -1,6 +1,6 @@
 import { POST } from '@/app/api/request-demo/route'
 import { forwardLeadToCrm } from '@/lib/server/lead-delivery'
-import { BILLING_WORKFLOW_OFFER as offer } from '@/lib/demo-offers'
+import { BILLING_WORKFLOW_OFFER, REMINDER_WORKFLOW_OFFER } from '@/lib/demo-offers'
 
 const mockSend = jest.fn()
 jest.mock('resend', () => ({ Resend: jest.fn().mockImplementation(() => ({ emails: { send: mockSend } })) }))
@@ -53,7 +53,7 @@ describe('demo request delivery contract', () => {
     expect(mockSend).toHaveBeenCalledWith(expect.objectContaining({ replyTo: 'synthetic@example.com' }))
   })
 
-  it('includes the allowlisted offer in both the CRM payload and notification', async () => {
+  it.each([BILLING_WORKFLOW_OFFER, REMINDER_WORKFLOW_OFFER])('includes $id in both the CRM payload and notification', async offer => {
     process.env.RESEND_API_KEY = 'test-only-not-a-real-key'
     mockSend.mockResolvedValue({ error: null })
     const response = await POST(request({ name: 'Synthetic Test', email: 'synthetic@example.com', offer_id: offer.id }))

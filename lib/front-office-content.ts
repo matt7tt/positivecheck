@@ -52,8 +52,8 @@ export const frontOfficeContent = {
   },
   'appointment-reminders': {
     title: 'Appointment Reminder Calls & SMS for Medical Practices',
-    description: 'Use AI calls and SMS for appointment reminders, patient replies and staff follow-up. Evaluate timing, schedule changes and delivery outcomes.',
-    intro: 'Lola supports appointment reminder calls and SMS so your practice can reach patients about upcoming visits and identify who needs help. A delivered reminder, a patient reply and an attended appointment are different outcomes.',
+    description: 'Explore appointment reminder calls and SMS with a complete fictional example. See patient replies, front desk handoffs, setup requirements and pilot planning.',
+    intro: 'Lola supports appointment reminder calls and SMS for medical practices, captures patient replies and helps your front desk identify who needs follow-up. Explore how a request to change an appointment becomes a staff-owned task, then evaluate the setup and cost for your practice.',
     fit: 'For practice managers reviewing reminder queues and patients who need a callback. Begin with a defined appointment type and compare the proposed workflow with your current reminder tool. If simple one-way messages already meet the need, conversational outreach may not add enough value.',
     steps: [
       ['Keep the appointment list current', 'Use the practice’s agreed schedule source and contact preferences. Decide how cancellations, reschedules and duplicate patient records are handled before reminders are sent.'],
@@ -65,7 +65,9 @@ export const frontOfficeContent = {
       { question: 'Does Positive Check support both reminder calls and texts?', answer: 'Yes. Calls and SMS can support appointment reminders. Choose channels and timing around the practice’s approved contact policy and patient preferences, and confirm the required sender and integration setup. The evaluation should include missing numbers, unanswered calls, delivery failures and opt-outs, with a clear staff-owned process for patients who need additional help.' },
       { question: 'Can reminders guarantee fewer no-shows?', answer: 'No. An appointment reminder is an outreach activity, not a guarantee that a patient will attend. Transportation, cost, scheduling and other factors can still affect attendance. Compare attendance for comparable appointment groups and report the evaluation period and limitations. Also measure whether reminders create additional staff work through replies, cancellations or requests for assistance.' },
       { question: 'How is conversational outreach different from a basic reminder tool?', answer: 'A basic reminder tool may be sufficient when the task is simply sending a standard message. Evaluate conversational calls or SMS when replies need clarification or a staff handoff. Compare both approaches on schedule accuracy, handling of exceptions, patient preferences and total workload. Do not assume every reminder needs an AI conversation to be effective.' },
-      ...evaluationFaqs,
+      evaluationFaqs[1],
+      { question: 'What does an appointment-reminder pilot cost?', answer: 'Request a scoped quote using your monthly appointment volume, call and SMS mix, scheduling system and handoff requirements. Confirm software charges, included usage, overages, setup and integration fees, and support terms. Include retained staff time when comparing options. This page does not publish a fixed package price or promise a standard launch timeline.' },
+      evaluationFaqs[2],
     ],
   },
   'patient-notifications': {

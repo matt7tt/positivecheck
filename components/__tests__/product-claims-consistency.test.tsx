@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import HowItWorksPage, { metadata } from '@/app/how-it-works/page'
 import { PlatformComponent } from '@/components/platform'
+import CcmPage, { metadata as ccmMetadata } from '@/app/solutions/chronic-care-management/page'
+import TcmPage, { metadata as tcmMetadata } from '@/app/solutions/post-discharge-follow-up/page'
 
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
 jest.mock('@/components/shared/public-footer', () => ({ PublicFooter: () => null }))
@@ -12,6 +14,26 @@ jest.mock('next/script', () => ({
 }))
 
 describe('product claims consistency', () => {
+  it('describes post-discharge outreach without guaranteeing contact, reimbursement or clinical outcomes', () => {
+    const { container } = render(<TcmPage />)
+    const schemas = Array.from(container.querySelectorAll('script[type="application/ld+json"]')).map(script => JSON.parse(script.textContent || '{}'))
+    const howTo = schemas.find(schema => schema['@type'] === 'HowTo')
+    for (const step of howTo.step) expect(screen.getByText(step.text)).toBeVisible()
+    expect(tcmMetadata.openGraph?.description).toBe(tcmMetadata.description)
+    expect(tcmMetadata.twitter?.description).toBe(tcmMetadata.description)
+    expect(container.textContent).not.toMatch(/Guaranteed patient contact|48-hour CMS window|\$178|~20%|satisfying the initial patient contact/)
+    expect(screen.getByText(/A call sequence alone does not establish billable TCM/)).toBeVisible()
+  })
+  it('keeps CCM workflow claims aligned across visible content, metadata and schema', () => {
+    const { container } = render(<CcmPage />)
+    const schemas = Array.from(container.querySelectorAll('script[type="application/ld+json"]')).map(script => JSON.parse(script.textContent || '{}'))
+    const howTo = schemas.find(schema => schema['@type'] === 'HowTo')
+    for (const step of howTo.step) expect(screen.getByText(step.text)).toBeVisible()
+    expect(ccmMetadata.openGraph?.description).toBe(ccmMetadata.description)
+    expect(ccmMetadata.twitter?.description).toBe(ccmMetadata.description)
+    expect(container.textContent).not.toMatch(/meet 99487 requirements|\$159|\$237|2026 Rate|generating additional documented care coordination time/)
+    expect(screen.getByText(/Payment varies by service year/)).toBeVisible()
+  })
   it('describes outreach support without guaranteed financial or clinical outcomes', () => {
     const { container } = render(<PlatformComponent />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('AI Patient Outreach for Your Care Team')

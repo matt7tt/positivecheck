@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solutions/remote-patient-monitoring' },
   openGraph: {
     title: 'Remote Patient Monitoring (RPM) Solution',
-    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99454 billing requirements.',
+    description: 'Evaluate AI-supported RPM outreach, patient summaries and staff follow-up. Confirm workflow scope and retained clinical responsibilities.',
     url: '/solutions/remote-patient-monitoring',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Remote Patient Monitoring Solution | Positive Check',
-    description: 'Automate RPM patient engagement with AI wellness calls. Support CPT 99457, 99458, and 99454 billing.',
+    description: 'Evaluate AI-supported RPM outreach, patient summaries and staff follow-up. Confirm workflow scope and retained clinical responsibilities.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }
@@ -107,14 +107,14 @@ export default function RemotePatientMonitoringPage() {
               position: 2,
               name: 'Structured Summaries',
               text:
-                'Call results are organized into trend reports that reduce clinical review time, making the additional 20 minutes for CPT 99458 highly productive.',
+                'Call summaries help staff review reported concerns and plan follow-up. Staff must separately document qualifying work and time.',
             },
             {
               '@type': 'HowToStep',
               position: 3,
               name: 'Consistent Cadence',
               text:
-                'Every enrolled patient receives regular outreach without gaps \u2014 ensuring your practice meets the monthly engagement threshold.',
+                'Scheduled attempts support a consistent outreach cadence. Review unsuccessful contacts and staff follow-up; call frequency does not establish billing eligibility.',
             },
             {
               '@type': 'HowToStep',
@@ -248,8 +248,8 @@ export default function RemotePatientMonitoringPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {[
                   { icon: Phone, title: 'Daily Wellness Calls', desc: 'Automated voice calls collect vitals, symptoms, and wellness data for clinical-staff review and follow-up.' },
-                  { icon: BarChart3, title: 'Structured Summaries', desc: 'Call results are organized into trend reports that reduce clinical review time, making the additional 20 minutes for CPT 99458 highly productive.' },
-                  { icon: Clock, title: 'Consistent Cadence', desc: 'Every enrolled patient receives regular outreach without gaps — ensuring your practice meets the monthly engagement threshold.' },
+                  { icon: BarChart3, title: 'Structured Summaries', desc: 'Call summaries help staff review reported concerns and plan follow-up. Staff must separately document qualifying work and time.' },
+                  { icon: Clock, title: 'Consistent Cadence', desc: 'Scheduled attempts support a consistent outreach cadence. Review unsuccessful contacts and staff follow-up; call frequency does not establish billing eligibility.' },
                   { icon: ShieldCheck, title: 'HIPAA-Compliant', desc: 'All calls, transcripts, and data transmissions meet HIPAA standards. Business Associate Agreements available for all provider partners.' },
                 ].map((feature) => {
                   const Icon = feature.icon
@@ -275,7 +275,7 @@ export default function RemotePatientMonitoringPage() {
               <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">RPM Billing Codes</h2>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  2026 Medicare national average reimbursement rates for Remote Patient Monitoring.
+                  Examples of RPM code pathways. Each service has independent requirements; calls and summaries do not replace qualifying device data or clinical work.
                 </p>
               </div>
               <div className="max-w-4xl mx-auto">
@@ -286,31 +286,24 @@ export default function RemotePatientMonitoringPage() {
                         <tr className="border-b bg-gray-50">
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">CPT Code</th>
                           <th className="text-left py-3 px-4 font-semibold text-gray-700">Description</th>
-                          <th className="text-right py-3 px-4 font-semibold text-gray-700">2026 Rate</th>
                         </tr>
                       </thead>
                       <tbody>
                         {[
-                          { code: '99457', desc: 'RPM — first 20 min clinical staff time per month', rate: '$52' },
-                          { code: '99458', desc: 'RPM — each additional 20 min clinical staff time per month', rate: '$41' },
-                          { code: '99454', desc: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: '$56' },
+                          { code: '99457', desc: 'RPM — first 20 min clinical staff time per month' },
+                          { code: '99458', desc: 'RPM — each additional 20 min clinical staff time per month' },
+                          { code: '99454', desc: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days' },
                         ].map((row) => (
                           <tr key={row.code} className="border-b last:border-b-0">
                             <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>
                             <td className="py-3 px-4 text-gray-700">{row.desc}</td>
-                            <td className="py-3 px-4 text-right font-semibold text-gray-900">{row.rate}</td>
                           </tr>
                         ))}
                       </tbody>
-                      <tfoot>
-                        <tr className="bg-purple-50">
-                          <td colSpan={2} className="py-3 px-4 font-semibold text-purple-700">Combined Monthly Revenue (99457 + 99458)</td>
-                          <td className="py-3 px-4 text-right font-bold text-purple-700">$93/patient</td>
-                        </tr>
-                      </tfoot>
                     </table>
                   </div>
                 </Card>
+                <p className="mt-5 leading-relaxed text-gray-700">Verify payment for the service year, payer, locality and setting. Review the <Link href="/solutions/remote-patient-monitoring/cpt-99457-billing-guide" className="text-purple-700 underline">RPM billing guide</Link> for qualifying time and communication requirements. No fixed revenue per enrolled patient is promised.</p>
               </div>
             </div>
           </section>
@@ -324,14 +317,14 @@ export default function RemotePatientMonitoringPage() {
               <div className="max-w-3xl mx-auto">
                 <div className="grid sm:grid-cols-2 gap-4">
                   {[
-                    'Scale RPM to thousands of patients without adding staff',
+                    'Support repeated outreach across your enrolled patient cohort',
                     'Automated daily calls support practice-owned interactive communication workflows',
-                    'Structured call summaries reduce clinical review time',
+                    'Structured summaries for care-team review and follow-up',
                     'Real-time alerts flag patients who need immediate attention',
                     'HIPAA-compliant platform with BAA support',
-                    'Integrates with existing EHR and billing workflows',
-                    '$8-$16/patient/month — a fraction of the reimbursement generated',
-                    'Launch in days, not months',
+                    'Confirm data exchange and EHR workflow scope during implementation',
+                    'Request a scoped quote including software, setup and retained staffing',
+                    'Agree rollout timing after data, security and workflow review',
                   ].map((item) => (
                     <div key={item} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-purple-500 mt-0.5 shrink-0" />

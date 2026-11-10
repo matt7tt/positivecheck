@@ -3,7 +3,7 @@ import { CLARITY_PROJECT_ID, hasPrivacySignal, isHeatmapVisit, readHeatmapChoice
 type Clarity = ((...args: unknown[]) => void) & { q?: unknown[][] }
 declare global { interface Window { clarity?: Clarity } }
 
-const EVENTS = new Set(['lead_form_start', 'generate_lead', 'sample_audio_play', 'sample_audio_complete', 'calculator_used'])
+const EVENTS = new Set(['lead_form_start', 'generate_lead', 'sample_audio_play', 'sample_audio_complete', 'calculator_used', 'workflow_demo_start', 'workflow_demo_complete'])
 
 // One recorder per document. A fresh document at navigation boundaries prevents
 // the SDK from following Next.js into account pages or collecting URL parameters.

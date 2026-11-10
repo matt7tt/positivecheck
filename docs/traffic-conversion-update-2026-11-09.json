@@ -1,0 +1,127 @@
+{
+  "reviewed_at": "2026-11-09",
+  "purpose": "Qualified traffic and conversion update",
+  "gsc": {
+    "window": [
+      "2026-10-11",
+      "2026-11-07"
+    ],
+    "clicks": 15,
+    "impressions_display": "1.02K",
+    "ctr_percent": 1.5,
+    "average_position": 32.8,
+    "reminders": {
+      "impressions": 148,
+      "clicks": 0,
+      "average_position": 47.6,
+      "appointment_reminder_calls_query_impressions": 97
+    }
+  },
+  "ga4": {
+    "property_id": "552721603",
+    "window": [
+      "2026-10-12",
+      "2026-11-08"
+    ],
+    "total_users": 563,
+    "sessions": 635,
+    "generate_lead_events": 6,
+    "generate_lead_users": 5,
+    "request_demo_open_users": 16,
+    "lead_form_start_users": 7,
+    "sample_audio_play_users": 3,
+    "channels": {
+      "google_organic": {
+        "sessions": 47,
+        "lead_events": 1
+      },
+      "bing_organic": {
+        "sessions": 42,
+        "lead_events": 0
+      },
+      "chatgpt_ai_assistant": {
+        "sessions": 4,
+        "lead_events": 1
+      }
+    },
+    "caveats": [
+      "Attribution does not establish qualified leads. No inbox reconciliation completed.",
+      "Event-user counts across different forms are not a measured sequential funnel.",
+      "GSC baseline windows overlap and do not establish the causal impact of October 27 changes."
+    ]
+  },
+  "diagnostics": {
+    "november_form_error": {
+      "date": "2026-11-02",
+      "page": "/",
+      "events": 1,
+      "status": "Unresolved historical cause",
+      "evidence": "Vercel runtime log picker rejected November 2 as Outside of allowed range on November 9. No delivery failure was inferred from this alone."
+    },
+    "clarity": {
+      "project": "z4i8uo2fud",
+      "sessions_last_30_days": 1,
+      "assessment": "Collection exists but insufficient behavioral evidence. Opt-in, browser privacy signals, exact public-route allowlist, query/hash exclusion and sensitive-referrer exclusion restrict recording. No privacy guard was weakened."
+    }
+  },
+  "implemented": [
+    "Expanded appointment-reminders page with fictional interactive call/SMS scenario, complete written exchanges, summary, staff task and resolution. No outbound call or text is sent.",
+    "Added comparison, setup checklist, scoped pilot/cost questions and matching FAQ schema on existing page.",
+    "Added allowlisted appointment_reminder_demo_v1 offer across CTA, modal, analytics and lead notification.",
+    "Linked homepage greeting preview to the complete reminder example.",
+    "Removed fixed revenue/contact/clinical-outcome promises from CCM, RPM and TCM commercial pages; aligned visible content and schema; relabelled calculator/PDF payment amounts as illustrative assumptions.",
+    "Updated sitemap dates and crawlable content export, including commercial care-management pages.",
+    "Added workflow_demo_start and workflow_demo_complete; neither is a lead event. Only fixed event names are forwarded to opt-in Clarity."
+  ],
+  "geo_map": {
+    "evidence_type": "Hypothesis-only; no cross-model prompt/citation test performed",
+    "icp": "Practice managers evaluating calls/SMS against reminder tools and front desk follow-up; relevant workflow demo enquiry is the conversion.",
+    "turns": [
+      {
+        "turn": 1,
+        "prompt": "Can AI handle our appointment reminder calls and texts?",
+        "intent": "orientation",
+        "who_gets_cited": "Not tested",
+        "asset": "/solutions/front-office/appointment-reminders",
+        "verdict": "Covered"
+      },
+      {
+        "turn": 2,
+        "prompt": "Is it worth adding alongside our existing reminder tool?",
+        "intent": "comparison",
+        "who_gets_cited": "Not tested",
+        "asset": "Existing reminder page comparison and /solutions/front-office/compare",
+        "verdict": "Covered"
+      },
+      {
+        "turn": 3,
+        "prompt": "How does a reschedule request get back to our front desk and schedule?",
+        "intent": "qualification",
+        "who_gets_cited": "Not tested",
+        "asset": "Existing reminder page scenario, setup checklist and /resources/implementation-guide",
+        "verdict": "Covered"
+      },
+      {
+        "turn": 4,
+        "prompt": "What would our pilot cost and what would prove it works?",
+        "intent": "decision",
+        "who_gets_cited": "Not tested",
+        "asset": "Reminder page pilot scope and quote checklist",
+        "verdict": "Weak",
+        "remaining_gap": "Confirmed package pricing and terms remain operator-dependent; no invented rates or launch commitments."
+      }
+    ]
+  },
+  "next_review": [
+    "Reconcile genuine enquiries and qualification outcomes with lead owner.",
+    "Measure reminder search impressions, ranking and relevant clicks after a full post-release window.",
+    "Compare reminder offer enquiries with walkthrough starts/completions without labelling walkthrough activity as leads.",
+    "Review Clarity only when opt-in sample size supports a meaningful conclusion.",
+    "Retain partner referrals, vendor profiles and verified pricing/integration specifics as follow-up priorities."
+  ],
+  "outbound_test_leads_sent": 0,
+  "sources": [
+    "https://www.cms.gov/files/document/chroniccaremanagement.pdf",
+    "https://www.cms.gov/medicare/payment/fee-schedules/physician-fee-schedule/care-management/transitional-care-management-services"
+  ]
+}
