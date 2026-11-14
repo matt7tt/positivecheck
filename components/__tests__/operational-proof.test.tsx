@@ -6,7 +6,7 @@ import { enrollmentData, alertsData } from '@/lib/case-study-data'
 describe('approved first-party operational figures', () => {
   it('preserves the four supplied monthly measures and channel distinction', () => {
     render(<MonthlyOutreachStats />)
-    expect(monthlyOperationalStats.map(s => s.value)).toEqual(['70%+', '6,000+', '500+', '100+'])
+    expect(monthlyOperationalStats.map(s => s.value)).toEqual(['75%+', '6,000+', '1,400+', '250+'])
     for (const stat of monthlyOperationalStats) {
       expect(screen.getByText(stat.value)).toBeVisible()
       expect(screen.getByText(stat.label)).toBeVisible()
