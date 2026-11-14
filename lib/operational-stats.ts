@@ -1,14 +1,13 @@
-// First-party figures supplied and approved for website use on 2026-10-11; the reach, text-conversation and
-// alert counts were updated on 2026-11-14 (the outreach-call count was not resupplied).
-// These are approval dates, not an inferred measurement period or cohort.
+// First-party program figures for September to November 2026 (approved for website use 2026-11-14).
+// The outreach-call count was not resupplied and is unchanged from the 2026-10-11 set.
 // Keep these separate from the historical implementation-study dataset.
-export const operationalStatsSource = 'Source: Positive Check operational reporting. Figures supplied October 11, 2026; reach, text conversation and alert figures updated November 14, 2026.'
+export const operationalStatsSource = 'First-party program figures, September to November 2026.'
 
 export const monthlyOperationalStats = [
   { value: '75%+', label: 'of patients reached every month by call or text' },
   { value: '6,000+', label: 'outreach calls a month' },
-  { value: '1,400+', label: 'text check-in conversations a month' },
-  { value: '250+', label: 'urgent alerts flagged every month' },
+  { value: '1,400+', label: 'two-way conversations a month' },
+  { value: '250+', label: 'alerts routed to care teams monthly' },
 ] as const
 
 // Selected reported categories, not an exhaustive or mutually exclusive partition.
