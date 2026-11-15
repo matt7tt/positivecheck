@@ -41,7 +41,7 @@ export function OperationalAlertProof() {
       </div>
       <div id="operational-reporting-notes" className="mt-8 scroll-mt-24 border-t pt-6 text-sm leading-relaxed text-gray-600">
         <h3 className="mb-2 font-semibold text-gray-900">Reporting notes</h3>
-        <p>{operationalStatsSource} These first-party figures describe reported outreach and alert activity, not independently audited clinical outcomes or guaranteed results for an individual practice. The supply date is not a measurement period; cohort, observation dates and detailed counting methodology are not specified here. Topic percentages and priority levels are separate views and should not be combined into patient counts.</p>
+        <p>{operationalStatsSource} These first-party figures describe reported outreach and alert activity, not independently audited clinical outcomes or guaranteed results for an individual practice. Cohort and detailed counting methodology are not specified here. Topic percentages and priority levels are separate views and should not be combined into patient counts.</p>
         <p className="mt-3">For a separate, earlier dataset, <Link href="/case-studies/scaling-patient-engagement" className="text-purple-700 underline">read the July 2025–February 2026 implementation study and its reporting limitations</Link>. That study is not the source of the monthly figures above.</p>
       </div>
     </div>

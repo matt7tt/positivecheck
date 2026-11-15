@@ -6,12 +6,12 @@ import { enrollmentData, alertsData } from '@/lib/case-study-data'
 describe('approved first-party operational figures', () => {
   it('preserves the four supplied monthly measures and channel distinction', () => {
     render(<MonthlyOutreachStats />)
-    expect(monthlyOperationalStats.map(s => s.value)).toEqual(['70%+', '6,000+', '500+', '100+'])
+    expect(monthlyOperationalStats.map(s => s.value)).toEqual(['75%+', '6,000+', '1,400+', '250+'])
     for (const stat of monthlyOperationalStats) {
       expect(screen.getByText(stat.value)).toBeVisible()
       expect(screen.getByText(stat.label)).toBeVisible()
     }
-    expect(screen.getByText(/Source: Positive Check operational reporting/)).toBeVisible()
+    expect(screen.getAllByText(/First-party program figures, September to November 2026\./)[0]).toBeVisible()
     expect(screen.getByRole('link', { name: 'Reporting notes' })).toHaveAttribute('href', '#operational-reporting-notes')
   })
   it('does not normalize the selected topics or invent a missing category', () => {
@@ -33,9 +33,10 @@ describe('approved first-party operational figures', () => {
     expect(screen.getByText('Escalated in real time')).toBeVisible()
     expect(screen.getByText(/not diagnoses, confirmed emergencies or completed clinical interventions/)).toBeVisible()
   })
-  it('retains the earlier study and distinguishes supply date from observation period', () => {
+  it('retains the earlier study and states the reporting period', () => {
     render(<OperationalAlertProof />)
-    expect(screen.getByText(/The supply date is not a measurement period/)).toBeVisible()
+    expect(screen.getByText(/First-party program figures, September to November 2026\. These first-party figures/)).toBeVisible()
+    expect(screen.getByText(/Cohort and detailed counting methodology are not specified here/)).toBeVisible()
     expect(screen.getByText(/That study is not the source of the monthly figures above/)).toBeVisible()
     expect(screen.getByRole('link', { name: /July 2025–February 2026 implementation study/ })).toHaveAttribute('href', '/case-studies/scaling-patient-engagement')
     expect(enrollmentData.at(-1)?.patients).toBe(1509)
