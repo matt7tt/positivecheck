@@ -101,7 +101,7 @@ export default function CPT99495GlossaryPage() {
                 documentation standards.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The \u201cmoderate\u201d medical decision-making complexity designation is assessed per
+                The “moderate” medical decision-making complexity designation is assessed per
                 standard Evaluation &amp; Management (E/M) guidelines. In practice, moderate
                 complexity is the most common post-discharge scenario and covers the majority
                 of patients transitioning from an acute hospital stay to a community setting.
@@ -119,7 +119,7 @@ export default function CPT99495GlossaryPage() {
                 </li>
                 <li>
                   Patients discharged to a community setting (home, assisted living,
-                  domiciliary) \u2014 NOT to SNF, LTAC, or inpatient rehab
+                  domiciliary), NOT to SNF, LTAC, or inpatient rehab
                 </li>
                 <li>
                   Cases where medical decision-making complexity is moderate (most common
@@ -135,8 +135,8 @@ export default function CPT99495GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99496
-                  </Link>{' '}
-                  \u2014 the high-complexity TCM code (7-day face-to-face window)
+                  </Link>:{' '}
+                  the high-complexity TCM code (7-day face-to-face window)
                 </li>
                 <li>
                   <Link
@@ -144,8 +144,8 @@ export default function CPT99495GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Transitional Care Management (TCM)
-                  </Link>{' '}
-                  \u2014 the CMS care model CPT 99495 bills
+                  </Link>:{' '}
+                  the CMS care model CPT 99495 bills
                 </li>
                 <li>
                   <Link
@@ -153,8 +153,8 @@ export default function CPT99495GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     30-day readmission
-                  </Link>{' '}
-                  \u2014 the clinical outcome TCM aims to reduce
+                  </Link>:{' '}
+                  the clinical outcome TCM aims to reduce
                 </li>
                 <li>
                   <Link
@@ -162,8 +162,8 @@ export default function CPT99495GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Care coordination
-                  </Link>{' '}
-                  \u2014 the broader function TCM operationalizes
+                  </Link>:{' '}
+                  the broader function TCM operationalizes
                 </li>
               </ul>
 

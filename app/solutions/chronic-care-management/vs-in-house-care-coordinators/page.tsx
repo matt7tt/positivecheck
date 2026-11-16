@@ -71,7 +71,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
           <div className="max-w-4xl mx-auto">
             <p className="text-sm uppercase tracking-widest mb-4">Workflow comparison</p>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">{title}</h1>
-            <p className="text-xl leading-relaxed">AI outreach can support a care team; it does not remove the need for clinical staff. Choose a workflow based on patient needs, retained workload and total delivery cost—not an assumed patients-per-coordinator ratio.</p>
+            <p className="text-xl leading-relaxed">AI outreach can support a care team; it does not remove the need for clinical staff. Choose a workflow based on patient needs, retained workload, and total delivery cost, not an assumed patients-per-coordinator ratio.</p>
           </div>
         </section>
         <section className="max-w-4xl mx-auto px-6 py-14">

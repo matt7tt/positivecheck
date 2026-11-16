@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Does HIPAA permit AI-powered RPM wellness calls?',
     answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards: encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
   },
   {
     question: 'What\u2019s the difference between CPT 99457 and 99458?',

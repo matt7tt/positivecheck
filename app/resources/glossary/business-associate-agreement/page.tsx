@@ -76,7 +76,7 @@ export default function BusinessAssociateAgreementGlossaryPage() {
                 disclosing Protected Health Information. The covered entity may be a healthcare
                 provider, health plan, or healthcare clearinghouse. The business associate is any
                 vendor, contractor, or subcontractor that creates, receives, maintains, or transmits
-                PHI on the covered entity{'\u2019'}s behalf {'\u2014'} a broad category that
+                PHI on the covered entity{'\u2019'}s behalf, a broad category that
                 encompasses cloud software platforms, EHR integration partners, medical transcription
                 services, billing companies, AI call platforms, and analytics vendors, among others.
               </p>
@@ -119,7 +119,7 @@ export default function BusinessAssociateAgreementGlossaryPage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>
                   Required between any covered entity and any business associate before PHI is
-                  disclosed {'\u2014'} the BAA must be in place prior to, not after, the first
+                  disclosed; the BAA must be in place prior to, not after, the first
                   disclosure
                 </li>
                 <li>
@@ -145,26 +145,26 @@ export default function BusinessAssociateAgreementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/hipaa-compliance" className="text-purple-700 underline hover:text-purple-900">
                     HIPAA Compliance
-                  </Link>{' '}
-                  {'\u2014'} the broader regulatory framework that mandates the BAA requirement
+                  </Link>:{' '}
+                  the broader regulatory framework that mandates the BAA requirement
                 </li>
                 <li>
                   <Link href="/resources/glossary/ephi" className="text-purple-700 underline hover:text-purple-900">
                     ePHI
-                  </Link>{' '}
-                  {'\u2014'} the electronic PHI most commonly in scope for vendor BAAs
+                  </Link>:{' '}
+                  the electronic PHI most commonly in scope for vendor BAAs
                 </li>
                 <li>
                   <Link href="/resources/glossary/hitech-act" className="text-purple-700 underline hover:text-purple-900">
                     HITECH Act
-                  </Link>{' '}
-                  {'\u2014'} the law that extended direct HIPAA liability to business associates
+                  </Link>:{' '}
+                  the law that extended direct HIPAA liability to business associates
                 </li>
                 <li>
                   <Link href="/resources/glossary/patient-engagement" className="text-purple-700 underline hover:text-purple-900">
                     Patient engagement
-                  </Link>{' '}
-                  {'\u2014'} programs that typically require vendor BAAs before deploying digital
+                  </Link>:{' '}
+                  programs that typically require vendor BAAs before deploying digital
                   touchpoints involving PHI
                 </li>
               </ul>

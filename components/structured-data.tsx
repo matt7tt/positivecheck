@@ -40,7 +40,7 @@ export function StructuredData({ data, id }: StructuredDataProps) {
   );
 }
 
-// Backward-compatible constant exports — some pages import these directly.
+// Backward-compatible constant exports: some pages import these directly.
 export const organizationSchema = buildOrganizationSchema();
 
 // FAQ schema matches the 10 items rendered on the /faq page (also emitted on the homepage).
@@ -125,7 +125,7 @@ export const faqSchema = {
       name: "How does Positive Check make sure the AI gets it right?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "AI output is verified, not assumed. Deterministic clinical guardrails — rule-based alert thresholds for readings like blood pressure, glucose, and oxygen saturation — fire even if the AI analysis misses them. An independent quality-assurance engine then re-analyzes every call to audit the recorded outcome, catching missed alerts and false positives and flagging incongruent calls for human review. When a live conversation needs a person, Lola can transfer the call to the care team in real time.",
+        text: "AI output is verified, not assumed. Deterministic clinical guardrails (rule-based alert thresholds for readings like blood pressure, glucose, and oxygen saturation) fire even if the AI analysis misses them. An independent quality-assurance engine then re-analyzes every call to audit the recorded outcome, catching missed alerts and false positives and flagging incongruent calls for human review. When a live conversation needs a person, Lola can transfer the call to the care team in real time.",
       },
     },
   ],
@@ -182,5 +182,5 @@ export const productSchemaProviders = {
   },
 } as const;
 
-// Backward-compatible function export — existing pages call generateBreadcrumbSchema.
+// Backward-compatible function export: existing pages call generateBreadcrumbSchema.
 export const generateBreadcrumbSchema = buildBreadcrumbSchemaImpl;

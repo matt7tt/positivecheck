@@ -41,7 +41,7 @@ export function BlogPostComponent() {
             The Importance of Checking in on Aging Parents
           </h2>
           <p>
-            As our loved ones grow older, ensuring their safety, health, and well-being becomes an increasingly significant priority. Life often gets busy, but making time to check in on aging parents regularly is not just a kind gesture—it's a vital part of supporting their physical and emotional health.
+            As our loved ones grow older, ensuring their safety, health, and well-being becomes an increasingly significant priority. Life often gets busy, but making time to check in on aging parents regularly is not just a kind gesture. It's a vital part of supporting their physical and emotional health.
           </p>
 
           <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
@@ -81,7 +81,7 @@ export function BlogPostComponent() {
             Start Supporting Your Loved Ones Today
           </h2>
           <p>
-            Every senior deserves the assurance that someone is looking out for them. Regular check-ins are more than just a phone call—they're a lifeline. Positive Check makes it easy to provide that care and connection.
+            Every senior deserves the assurance that someone is looking out for them. Regular check-ins are more than just a phone call. They're a lifeline. Positive Check makes it easy to provide that care and connection.
           </p>
           <p>
             <Link href="/contact" className="text-[#1a2642] font-medium hover:text-[#2a3752]">

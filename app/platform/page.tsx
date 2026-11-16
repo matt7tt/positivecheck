@@ -3,13 +3,13 @@ import { PlatformComponent } from '@/components/platform'
 
 export const metadata: Metadata = {
   title: 'AI Patient Engagement Platform | Positive Check',
-  description: 'Explore the Positive Check platform: AI voice and SMS check-ins, inbound call answering, live human transfer, clinical alert classification with rule-based safety nets, AI reporting chat, and a developer REST API — HIPAA compliant.',
+  description: 'Explore the Positive Check platform: AI voice and SMS check-ins, inbound call answering, live human transfer, clinical alert classification with rule-based safety nets, AI reporting chat, and a developer REST API, all HIPAA compliant.',
   alternates: {
     canonical: '/platform',
   },
   openGraph: {
     title: 'AI Patient Engagement Platform',
-    description: 'AI voice and SMS check-ins, inbound answering, live human transfer, clinical safety nets, and a developer API — built for healthcare at scale.',
+    description: 'AI voice and SMS check-ins, inbound answering, live human transfer, clinical safety nets, and a developer API, built for healthcare at scale.',
     url: '/platform',
     siteName: 'Positive Check',
     locale: 'en_US',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AI Patient Engagement Platform',
-    description: 'Real-time voice AI, clinical alerts, cognitive health monitoring, and population analytics — built for healthcare at scale.',
+    description: 'Real-time voice AI, clinical alerts, cognitive health monitoring, and population analytics, built for healthcare at scale.',
     images: ['/images/admin-console-dashboard-new.png'],
   },
 }

@@ -82,8 +82,8 @@ export default function CareCoordinationGlossaryPage() {
                 In practice, care coordination spans inpatient-to-outpatient transitions,
                 ongoing chronic care management, medication reconciliation, specialist referral
                 and follow-up scheduling, patient and caregiver education, and cross-specialty
-                communication. It is both a clinical function and an organizational capability
-                \u2014 one that CMS has progressively built reimbursement frameworks around to
+                communication. It is both a clinical function and an organizational capability,
+                one that CMS has progressively built reimbursement frameworks around to
                 incentivize structured coordination activities in outpatient and community settings.
               </p>
 
@@ -95,8 +95,8 @@ export default function CareCoordinationGlossaryPage() {
                 programs under the Medicare Physician Fee Schedule: Transitional Care Management
                 (TCM) for the post-discharge transition, Chronic Care Management (CCM) for
                 patients with two or more chronic conditions, and Principal Care Management (PCM)
-                for single-condition management. Details on TCM reimbursement specifics \u2014
-                including contact requirements, billing codes, and documentation standards \u2014
+                for single-condition management. Details on TCM reimbursement specifics,
+                including contact requirements, billing codes, and documentation standards,
                 are available in the{' '}
                 <a
                   href="https://www.cms.gov/files/document/mln908628-transitional-care-management-services.pdf"
@@ -111,8 +111,8 @@ export default function CareCoordinationGlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Together, TCM, CCM, and PCM give providers a reimbursement pathway for
                 structured care coordination work that has historically been uncompensated.
-                Quality measurement programs \u2014 including HEDIS, CMS Star Ratings, and
-                value-based contract metrics \u2014 further reinforce care coordination by tying
+                Quality measurement programs, including HEDIS, CMS Star Ratings, and
+                value-based contract metrics, further reinforce care coordination by tying
                 it to financial performance across payer types.
               </p>
 
@@ -141,26 +141,26 @@ export default function CareCoordinationGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management (TCM)
-                  </Link>{' '}
-                  \u2014 the CMS-reimbursed post-discharge coordination program
+                  </Link>:{' '}
+                  the CMS-reimbursed post-discharge coordination program
                 </li>
                 <li>
                   <Link href="/resources/glossary/30-day-readmission" className="text-purple-700 underline hover:text-purple-900">
                     30-day readmission
-                  </Link>{' '}
-                  \u2014 a clinical outcome care coordination aims to reduce
+                  </Link>:{' '}
+                  a clinical outcome care coordination aims to reduce
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99495
-                  </Link>{' '}
-                  \u2014 a billing code enabling reimbursed care coordination
+                  </Link>:{' '}
+                  a billing code enabling reimbursed care coordination
                 </li>
               </ul>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How Positive Check relates</h2>
               <p className="text-gray-700 leading-relaxed">
-                Positive Check automates the patient-engagement layer of care coordination \u2014
+                Positive Check automates the patient-engagement layer of care coordination:
                 consistent daily or weekly wellness check-ins, structured data capture, and
                 real-time escalation to clinical staff. See the{' '}
                 <Link href="/solutions/post-discharge-follow-up" className="text-purple-700 underline hover:text-purple-900">

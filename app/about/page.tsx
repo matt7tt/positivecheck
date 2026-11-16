@@ -55,7 +55,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-purple-100 leading-relaxed">
               Positive Check LLC operates an AI-powered patient wellness call platform for healthcare
-              providers running Medicare-reimbursed care programs {'\u2014'} Remote Patient Monitoring,
+              providers running Medicare-reimbursed care programs: Remote Patient Monitoring,
               Chronic Care Management, and Transitional Care Management.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">How it works in practice</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Provider partners integrate Positive Check with their patient list for an enrolled
-                population {'\u2014'} typically patients in one or more of the CMS care management
+                population, typically patients in one or more of the CMS care management
                 programs above. The platform runs structured daily calls, captures patient responses,
                 surfaces flagged concerns to clinical staff in real time, and generates documentation
                 that maps to CMS billing requirements.
@@ -307,7 +307,7 @@ export default function AboutPage() {
           {/* Legal entity + area served */}
           <section className="px-6 py-6 bg-white border-t border-gray-100">
             <div className="max-w-4xl mx-auto text-center text-sm text-gray-500 space-y-1">
-              <p>Positive Check LLC {'\u2014'} United States</p>
+              <p>Positive Check LLC, United States</p>
               <p>
                 Legal entity: Positive Check LLC. Area served: United States. Subject to HIPAA and
                 CMS billing rules. For compliance inquiries, see our{' '}

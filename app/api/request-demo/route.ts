@@ -58,7 +58,7 @@ export async function POST(request: Request) {
               <tr><td style="padding: 8px; font-weight: bold;">Landing page:</td><td style="padding: 8px;">${safeLandingPage}</td></tr>
               ${ctaLocation ? `<tr><td style="padding: 8px; font-weight: bold;">CTA location:</td><td style="padding: 8px;">${escapeHtml(ctaLocation)}</td></tr>` : ''}
             </table>
-            <p>Demo requested — not a confirmed booking. Arrange a time with the prospect, then record booking, attendance and qualification from actual outcomes.</p>
+            <p>Demo requested, not a confirmed booking. Arrange a time with the prospect, then record booking, attendance and qualification from actual outcomes.</p>
           `,
         })
 

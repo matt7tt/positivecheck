@@ -75,7 +75,7 @@ export default function CPT99489GlossaryPage() {
                 the same calendar month.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The 30-minute block is longer than the non-complex 99439{'\u2014'}which uses
+                The 30-minute block is longer than the non-complex 99439, which uses
                 20-minute add-on blocks. CMS designed it this way because complex-CCM coordination
                 tends to scale in longer increments, reflecting the greater depth of planning and
                 documentation involved at the complex level. The 2026 Medicare national average
@@ -87,7 +87,7 @@ export default function CPT99489GlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Regulatory basis</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99489 is established under the CMS Medicare Physician Fee Schedule as an add-on
-                to CPT 99487. It is not combinable with the non-complex CCM codes (99490/99439){'\u2014'}
+                to CPT 99487. It is not combinable with the non-complex CCM codes (99490/99439):
                 providers must choose either the complex track (99487 + 99489) or the non-complex
                 track (99490 + 99439) for a given patient in a given month. Each 30-minute block
                 billed under 99489 must meet the same complexity-of-medical-decision-making standard
@@ -120,7 +120,7 @@ export default function CPT99489GlossaryPage() {
                 </li>
                 <li>
                   Requires CPT 99487 to also be billed for the same patient in the same calendar
-                  month{'\u2014'}99489 cannot stand alone
+                  month; 99489 cannot stand alone
                 </li>
               </ul>
 
@@ -132,8 +132,8 @@ export default function CPT99489GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99487
-                  </Link>{' '}
-                  {'\u2014'} the base complex CCM code that 99489 adds onto; must be billed in the
+                  </Link>:{' '}
+                  the base complex CCM code that 99489 adds onto; must be billed in the
                   same month
                 </li>
                 <li>
@@ -142,8 +142,8 @@ export default function CPT99489GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99490
-                  </Link>{' '}
-                  {'\u2014'} alternative non-complex CCM track, not combinable with 99487 or 99489
+                  </Link>:{' '}
+                  alternative non-complex CCM track, not combinable with 99487 or 99489
                 </li>
                 <li>
                   <Link
@@ -151,8 +151,8 @@ export default function CPT99489GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} the broader care model CPT 99489 operationalizes at the complex level
+                  </Link>:{' '}
+                  the broader care model CPT 99489 operationalizes at the complex level
                 </li>
               </ul>
 
@@ -160,7 +160,7 @@ export default function CPT99489GlossaryPage() {
               <p className="text-gray-700 leading-relaxed">
                 For high-complexity patients enrolled in complex CCM, Positive Check{'\u2019'}s daily
                 wellness calls generate the documentation density that supports stacked 99489
-                billings{'\u2014'}particularly for patients with frequent care-plan revisions or
+                billings, particularly for patients with frequent care-plan revisions or
                 escalation events. See the{' '}
                 <Link
                   href="/solutions/chronic-care-management"

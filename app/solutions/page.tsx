@@ -104,7 +104,7 @@ export default function SolutionsIndexPage() {
                 Front Office and Care Management, One Platform
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed max-w-3xl mx-auto">
-                Support ongoing RPM, CCM and post-discharge outreach—and the front office conversations
+                Support ongoing RPM, CCM and post-discharge outreach, and the front office conversations
                 that bring patients into your practice. Lola handles calls and SMS; your team owns decisions and follow-up.
               </p>
             </div>

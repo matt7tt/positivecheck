@@ -80,7 +80,7 @@ export default function CPT99490GlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99490 is billed once per calendar month per patient when at least 20 minutes of
                 clinical staff time on CCM activities have been documented. Time must be
-                non-face-to-face {'\u2014'} minutes spent during evaluation and management visits do
+                non-face-to-face. Minutes spent during evaluation and management visits do
                 not count toward the 20-minute threshold. The 2026 Medicare national average
                 reimbursement is approximately $66 per patient per month; rates are updated annually
                 and providers should verify current figures on CMS.gov before projecting program
@@ -141,8 +141,8 @@ export default function CPT99490GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99439
-                  </Link>{' '}
-                  {'\u2014'} each additional 20 minutes of non-complex CCM clinical staff time in
+                  </Link>:{' '}
+                  each additional 20 minutes of non-complex CCM clinical staff time in
                   the same calendar month
                 </li>
                 <li>
@@ -151,8 +151,8 @@ export default function CPT99490GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99487
-                  </Link>{' '}
-                  {'\u2014'} complex CCM 60 minutes, an alternative track for higher-complexity
+                  </Link>:{' '}
+                  complex CCM 60 minutes, an alternative track for higher-complexity
                   patients meeting the complex CCM time, decision-making, and care-plan requirements
                 </li>
                 <li>
@@ -161,8 +161,8 @@ export default function CPT99490GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} the broader care model CPT 99490 operationalizes
+                  </Link>:{' '}
+                  the broader care model CPT 99490 operationalizes
                 </li>
                 <li>
                   <Link
@@ -170,8 +170,8 @@ export default function CPT99490GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the function CCM supports through structured patient outreach and
+                  </Link>:{' '}
+                  the function CCM supports through structured patient outreach and
                   care-plan management
                 </li>
               </ul>
@@ -179,7 +179,7 @@ export default function CPT99490GlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How Positive Check relates</h2>
               <p className="text-gray-700 leading-relaxed">
                 Positive Check supports CCM by generating structured wellness call summaries that
-                make the 20-minute clinical staff review productive {'\u2014'} concentrating time on
+                make the 20-minute clinical staff review productive, concentrating time on
                 care plan action and documentation rather than data gathering. See the{' '}
                 <Link
                   href="/solutions/chronic-care-management"

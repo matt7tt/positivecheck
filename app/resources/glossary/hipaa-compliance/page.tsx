@@ -84,7 +84,7 @@ export default function HIPAAComplianceGlossaryPage() {
                 requires covered entities and business associates to notify affected individuals,
                 HHS, and in some cases the media, following a breach of unsecured PHI. The
                 Enforcement Rule sets out the procedures for investigations and the civil monetary
-                penalties that apply when violations are found {'\u2014'} penalties that can reach
+                penalties that apply when violations are found, penalties that can reach
                 into the millions of dollars per violation category per year.
               </p>
 
@@ -117,7 +117,7 @@ export default function HIPAAComplianceGlossaryPage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>
                   Covered entities: health plans, healthcare clearinghouses, and healthcare
-                  providers that transmit PHI electronically {'\u2014'} including hospitals,
+                  providers that transmit PHI electronically, including hospitals,
                   physician practices, and health insurers
                 </li>
                 <li>
@@ -141,32 +141,32 @@ export default function HIPAAComplianceGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/business-associate-agreement" className="text-purple-700 underline hover:text-purple-900">
                     Business Associate Agreement
-                  </Link>{' '}
-                  {'\u2014'} the contract required between covered entities and business associates
+                  </Link>:{' '}
+                  the contract required between covered entities and business associates
                 </li>
                 <li>
                   <Link href="/resources/glossary/ephi" className="text-purple-700 underline hover:text-purple-900">
                     ePHI
-                  </Link>{' '}
-                  {'\u2014'} the electronic subset of PHI covered by the Security Rule
+                  </Link>:{' '}
+                  the electronic subset of PHI covered by the Security Rule
                 </li>
                 <li>
                   <Link href="/resources/glossary/hitech-act" className="text-purple-700 underline hover:text-purple-900">
                     HITECH Act
-                  </Link>{' '}
-                  {'\u2014'} the 2009 law expanding HIPAA penalties and breach notification
+                  </Link>:{' '}
+                  the 2009 law expanding HIPAA penalties and breach notification
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} a common workflow requiring HIPAA-compliant PHI handling
+                  </Link>:{' '}
+                  a common workflow requiring HIPAA-compliant PHI handling
                 </li>
                 <li>
                   <Link href="/resources/glossary/patient-engagement" className="text-purple-700 underline hover:text-purple-900">
                     Patient engagement
-                  </Link>{' '}
-                  {'\u2014'} digital engagement programs that must operate within HIPAA constraints
+                  </Link>:{' '}
+                  digital engagement programs that must operate within HIPAA constraints
                 </li>
               </ul>
 

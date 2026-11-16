@@ -594,7 +594,7 @@ export default function HomePage() {
                   &ldquo;{testimonials[currentTestimonialIndex].quote}&rdquo;
                 </blockquote>
                 <cite className="text-gray-900 font-semibold">
-                  — {testimonials[currentTestimonialIndex].author}, {testimonials[currentTestimonialIndex].location}
+                  {testimonials[currentTestimonialIndex].author}, {testimonials[currentTestimonialIndex].location}
                 </cite>
               </div>
             </div>

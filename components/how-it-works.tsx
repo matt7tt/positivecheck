@@ -242,7 +242,7 @@ export function HowItWorksComponent() {
                           <li>&#8226; Consistent scheduled time</li>
                           <li>&#8226; Optional reminder text before each call</li>
                           <li>&#8226; Natural, friendly conversation</li>
-                          <li>&#8226; Patients can call Lola back anytime &#8212; she answers</li>
+                          <li>&#8226; Patients can call Lola back anytime, and she answers</li>
                         </ul>
                       </div>
                       <div>
@@ -289,7 +289,7 @@ export function HowItWorksComponent() {
                         <ul className="space-y-2">
                           <li>&#8226; Population wellness trends</li>
                           <li>&#8226; Call logs with transcripts and recording playback</li>
-                          <li>&#8226; AI reporting chat &#8212; ask questions in plain English</li>
+                          <li>&#8226; AI reporting chat: ask questions in plain English</li>
                           <li>&#8226; Weekly per-patient risk-trend analysis</li>
                           <li>&#8226; Compliance reporting and audit trail</li>
                         </ul>
@@ -324,7 +324,7 @@ export function HowItWorksComponent() {
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
-                        <strong>Voice or Text &#8212; Their Choice</strong>
+                        <strong>Voice or Text: Their Choice</strong>
                         <p className="text-gray-600">Phone calls or two-way SMS check-ins, whichever fits the patient</p>
                       </div>
                     </li>
@@ -332,7 +332,7 @@ export function HowItWorksComponent() {
                       <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong>Call Back Anytime</strong>
-                        <p className="text-gray-600">Lola answers inbound calls &#8212; reschedule, ask questions, or request a live transfer</p>
+                        <p className="text-gray-600">Lola answers inbound calls to reschedule, ask questions, or request a live transfer</p>
                       </div>
                     </li>
                     <li className="flex items-start gap-3">

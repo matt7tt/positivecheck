@@ -58,7 +58,7 @@ export default function CPT99453GlossaryPage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 CPT 99453 is the Medicare billing code for the one-time setup and patient education
-                component of a Remote Patient Monitoring program \u2014 reimbursed at approximately
+                component of a Remote Patient Monitoring program, reimbursed at approximately
                 $19 per patient when the device is delivered and the patient is trained.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function CPT99453GlossaryPage() {
                   Medicare Physician Fee Schedule
                 </a>{' '}
                 as the foundational setup code in the RPM billing family. It belongs to a family of
-                RPM codes \u2014 99453, 99454, 99457, and 99458 \u2014 that together reimburse
+                RPM codes (99453, 99454, 99457, and 99458) that together reimburse
                 the full lifecycle of a Remote Patient Monitoring program from initial onboarding
                 through ongoing interactive communication.
               </p>
@@ -129,8 +129,8 @@ export default function CPT99453GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99454
-                  </Link>{' '}
-                  \u2014 the device supply code billed monthly after setup
+                  </Link>:
+                  the device supply code billed monthly after setup
                 </li>
                 <li>
                   <Link
@@ -138,8 +138,8 @@ export default function CPT99453GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99457
-                  </Link>{' '}
-                  \u2014 the first 20 minutes of RPM treatment management including required interactive communication per month
+                  </Link>:
+                  the first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link
@@ -147,8 +147,8 @@ export default function CPT99453GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  \u2014 the broader care model CPT 99453 initiates
+                  </Link>:
+                  the broader care model CPT 99453 initiates
                 </li>
                 <li>
                   <Link
@@ -156,8 +156,8 @@ export default function CPT99453GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     30-day readmission
-                  </Link>{' '}
-                  \u2014 a clinical outcome RPM programs aim to reduce
+                  </Link>:
+                  a clinical outcome RPM programs aim to reduce
                 </li>
               </ul>
 

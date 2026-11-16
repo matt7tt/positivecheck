@@ -115,8 +115,8 @@ export default function HITECHActGlossaryPage() {
                 </li>
                 <li>
                   Business associate direct liability: BAs are now directly accountable to HHS for
-                  Security Rule compliance {'\u2014'} pre-HITECH, only covered entities faced
-                  direct enforcement
+                  Security Rule compliance (pre-HITECH, only covered entities faced
+                  direct enforcement)
                 </li>
                 <li>
                   EHR incentives: HITECH established the Meaningful Use program (now Promoting
@@ -129,26 +129,26 @@ export default function HITECHActGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/hipaa-compliance" className="text-purple-700 underline hover:text-purple-900">
                     HIPAA Compliance
-                  </Link>{' '}
-                  {'\u2014'} the broader framework HITECH expanded
+                  </Link>:
+                  the broader framework HITECH expanded
                 </li>
                 <li>
                   <Link href="/resources/glossary/business-associate-agreement" className="text-purple-700 underline hover:text-purple-900">
                     Business Associate Agreement
-                  </Link>{' '}
-                  {'\u2014'} the contract vehicle HITECH made directly enforceable
+                  </Link>:
+                  the contract vehicle HITECH made directly enforceable
                 </li>
                 <li>
                   <Link href="/resources/glossary/ephi" className="text-purple-700 underline hover:text-purple-900">
                     ePHI
-                  </Link>{' '}
-                  {'\u2014'} the electronic subset whose protection HITECH strengthened
+                  </Link>:
+                  the electronic subset whose protection HITECH strengthened
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} a workflow HITECH{'\u2019'}s EHR incentives accelerated
+                  </Link>:
+                  a workflow HITECH{'\u2019'}s EHR incentives accelerated
                 </li>
               </ul>
 

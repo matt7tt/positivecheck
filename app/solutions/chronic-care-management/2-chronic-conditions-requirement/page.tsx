@@ -40,7 +40,7 @@ const faqs = [
   {
     question: 'Does a single worsening chronic condition count as two for CCM eligibility?',
     answer:
-      'No. CMS requires two distinct chronic conditions, not two stages or complications of the same condition. For example, Type 2 diabetes with neuropathy is still one condition for CCM purposes \u2014 the diabetes and its complication are part of the same clinical entity. Adding a separate qualifying condition (hypertension, depression, CKD, etc.) is what creates CCM eligibility.',
+      'No. CMS requires two distinct chronic conditions, not two stages or complications of the same condition. For example, Type 2 diabetes with neuropathy is still one condition for CCM purposes: the diabetes and its complication are part of the same clinical entity. Adding a separate qualifying condition (hypertension, depression, CKD, etc.) is what creates CCM eligibility.',
   },
   {
     question: 'Can a behavioral health condition serve as one of the two chronic conditions?',
@@ -50,7 +50,7 @@ const faqs = [
   {
     question: 'What if a patient\u2019s second chronic condition is newly diagnosed?',
     answer:
-      'A newly diagnosed condition qualifies when the clinician documents it as expected to last 12+ months \u2014 which is true of most chronic conditions at diagnosis (diabetes, hypertension, COPD, CHF, depression). The patient becomes CCM-eligible once the second qualifying diagnosis is documented in the record along with clinical rationale for ongoing care coordination.',
+      'A newly diagnosed condition qualifies when the clinician documents it as expected to last 12+ months, which is true of most chronic conditions at diagnosis (diabetes, hypertension, COPD, CHF, depression). The patient becomes CCM-eligible once the second qualifying diagnosis is documented in the record along with clinical rationale for ongoing care coordination.',
   },
   {
     question: 'Can a patient be enrolled in both RPM and CCM based on overlapping conditions?',
@@ -119,7 +119,7 @@ export default function CCMTwoChronicConditionsPage() {
                     <strong>PCM is specifically for a single high-risk condition</strong>.
                   </li>
                   <li>
-                    {'\u201c'}Chronic condition{'\u201d'} is broadly defined {'\u2014'} diabetes, hypertension, COPD,
+                    {'\u201c'}Chronic condition{'\u201d'} is broadly defined: diabetes, hypertension, COPD,
                     heart failure, CKD, cancer, dementia, depression, and more all qualify.
                   </li>
                   <li>
@@ -138,7 +138,7 @@ export default function CCMTwoChronicConditionsPage() {
                 CMS requires two or more chronic conditions expected to last at least 12 months, or until the death
                 of the patient, that place the patient at significant risk of death, acute
                 exacerbation/decompensation, or functional decline. Both the duration threshold and the risk
-                criterion must be met simultaneously {'\u2014'} a long-lasting but clinically stable condition
+                criterion must be met simultaneously. A long-lasting but clinically stable condition
                 that poses no significant risk does not satisfy the rule on its own. The definition comes directly
                 from the CMS Medicare Physician Fee Schedule and is explained in detail in the{' '}
                 <a
@@ -160,7 +160,7 @@ export default function CCMTwoChronicConditionsPage() {
                 management across multiple conditions.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The risk language {'\u2014'} significant risk of death, exacerbation, or functional decline {'\u2014'}
+                The risk language (significant risk of death, exacerbation, or functional decline)
                 is intentionally broad. CMS does not require a patient to be at imminent risk. Rather, the
                 combination of chronic conditions must create a clinical picture where, without coordinated
                 management, the patient is at meaningful risk of a negative health outcome. For most patients with
@@ -218,7 +218,7 @@ export default function CCMTwoChronicConditionsPage() {
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Because CMS does not publish a closed list, physicians make the clinical determination based on the
-                duration and risk criteria. This gives practices meaningful flexibility {'\u2014'} a patient with
+                duration and risk criteria. This gives practices meaningful flexibility: a patient with
                 chronic fatigue syndrome or fibromyalgia that is well-documented, expected to persist, and creating
                 significant functional risk can qualify, provided the clinical record supports that determination.
                 The documentation burden is on the practice to establish that criteria were met, not on CMS to
@@ -266,7 +266,7 @@ export default function CCMTwoChronicConditionsPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 PCM and CCM are generally mutually exclusive for the same patient in the same month. PCM{'\u2019'}s
-                design intent is intensive focus on one condition {'\u2014'} if a patient has two or more qualifying
+                design intent is intensive focus on one condition. If a patient has two or more qualifying
                 chronic conditions, CCM is the more appropriate program. Billing both PCM and CCM for the same
                 patient in the same month raises audit flags and should be avoided unless there is a clearly
                 documented clinical rationale for why each service is distinct.
@@ -281,31 +281,31 @@ export default function CCMTwoChronicConditionsPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Hypertension + Diabetes</strong> {'\u2014'} the most common CCM combination in primary
+                  <strong>Hypertension + Diabetes</strong>: the most common CCM combination in primary
                   care; highly manageable with structured monthly touchpoints and medication adherence monitoring.
                 </li>
                 <li>
-                  <strong>COPD + Heart Failure</strong> {'\u2014'} both are exacerbation-prone; structured
+                  <strong>COPD + Heart Failure</strong>: both are exacerbation-prone; structured
                   monitoring and early symptom detection can prevent costly hospitalizations.
                 </li>
                 <li>
-                  <strong>Diabetes + CKD</strong> {'\u2014'} medication management is complex given renal dosing
+                  <strong>Diabetes + CKD</strong>: medication management is complex given renal dosing
                   adjustments; coordination across endocrinology and nephrology is clinically critical.
                 </li>
                 <li>
-                  <strong>Dementia + Any Medical Chronic Condition</strong> {'\u2014'} caregiver coordination,
+                  <strong>Dementia + Any Medical Chronic Condition</strong>: caregiver coordination,
                   medication management, and safety planning drive significant value in this population.
                 </li>
                 <li>
-                  <strong>Depression + Chronic Pain</strong> {'\u2014'} behavioral health integration with medical
+                  <strong>Depression + Chronic Pain</strong>: behavioral health integration with medical
                   care is a documented gap; CCM provides structured coordination across these domains.
                 </li>
                 <li>
-                  <strong>Heart Failure + Diabetes</strong> {'\u2014'} fluid management and glycemic control are
+                  <strong>Heart Failure + Diabetes</strong>: fluid management and glycemic control are
                   clinically intertwined; medication adjustments for one condition often affect the other.
                 </li>
                 <li>
-                  <strong>Any Cancer + Metabolic or Cardiovascular Comorbidity</strong> {'\u2014'} treatment
+                  <strong>Any Cancer + Metabolic or Cardiovascular Comorbidity</strong>: treatment
                   side-effect management frequently requires close coordination with the primary care team.
                 </li>
               </ul>
@@ -331,7 +331,7 @@ export default function CCMTwoChronicConditionsPage() {
                   supporting clinical context.
                 </li>
                 <li>
-                  Each condition has supporting clinical documentation {'\u2014'} recent visit notes, lab results,
+                  Each condition has supporting clinical documentation: recent visit notes, lab results,
                   imaging, or specialist correspondence that corroborates the diagnosis and its chronicity.
                 </li>
                 <li>
@@ -370,13 +370,13 @@ export default function CCMTwoChronicConditionsPage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
                   <strong>One active condition + one resolved or controlled condition:</strong> A patient whose
-                  second condition is truly quiescent {'\u2014'} controlled to the point where it poses no
-                  meaningful ongoing risk {'\u2014'} may not satisfy the significant-risk criterion. The clinical
+                  second condition is truly quiescent (controlled to the point where it poses no
+                  meaningful ongoing risk) may not satisfy the significant-risk criterion. The clinical
                   documentation should address this explicitly if the condition appears well-controlled.
                 </li>
                 <li>
                   <strong>Newly diagnosed condition:</strong> CCM eligibility begins when the expected-to-last-12-months
-                  criterion is met {'\u2014'} typically immediately at diagnosis for conditions like diabetes,
+                  criterion is met, typically immediately at diagnosis for conditions like diabetes,
                   hypertension, CHF, or COPD. The practice does not need to wait 12 months after diagnosis.
                 </li>
                 <li>
@@ -400,7 +400,7 @@ export default function CCMTwoChronicConditionsPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 In gray-zone cases, the standard practice recommendation is to document the clinical reasoning
                 explicitly in the care plan and in the enrollment note. An auditor reviewing a borderline case
-                is looking for evidence that a clinician made a thoughtful determination {'\u2014'} not that
+                is looking for evidence that a clinician made a thoughtful determination, not that
                 the condition appears on a preapproved list. The documentation of reasoning is as important
                 as the documentation of the conditions themselves.
               </p>
@@ -412,20 +412,20 @@ export default function CCMTwoChronicConditionsPage() {
                 A patient with one qualifying chronic condition is not eligible for CCM, but may be a strong
                 candidate for other CMS care management programs. Practices that evaluate patients for CCM
                 and find they fall short of the two-condition requirement should not simply forgo care
-                management revenue {'\u2014'} they should route the patient to the appropriate alternative.
+                management revenue. They should route the patient to the appropriate alternative.
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Single chronic condition with actionable physiologic data</strong> {'\u2014'} consider{' '}
+                  <strong>Single chronic condition with actionable physiologic data</strong>: consider{' '}
                   Remote Patient Monitoring (CPT 99453/99454/99457/99458) as the primary program.
                 </li>
                 <li>
-                  <strong>Single high-risk chronic condition requiring intensive focused management</strong>{' '}
-                  {'\u2014'} consider <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">Principal Care Management</Link> (CPT 99424{'\u2013'}99427), which is designed
+                  <strong>Single high-risk chronic condition requiring intensive focused management</strong>:{' '}
+                  consider <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">Principal Care Management</Link> (CPT 99424{'\u2013'}99427), which is designed
                   specifically for this scenario.
                 </li>
                 <li>
-                  <strong>Neither CCM nor RPM nor PCM appropriate</strong> {'\u2014'} standard E/M care
+                  <strong>Neither CCM nor RPM nor PCM appropriate</strong>: standard E/M care
                   coordination remains available; document the clinical rationale for the program choice.
                 </li>
               </ul>
@@ -457,9 +457,9 @@ export default function CCMTwoChronicConditionsPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Patients who meet the two-condition threshold typically have 3{'\u2013'}7 medications and multiple
                 specialist touchpoints per year. Their care coordination needs span at least two distinct clinical
-                domains, and the interactions between conditions {'\u2014'} glycemic control affecting kidney
+                domains, and the interactions between conditions (glycemic control affecting kidney
                 function, fluid management affecting blood pressure, medication side effects overlapping across
-                conditions {'\u2014'} require active monitoring rather than passive follow-up. This is exactly
+                conditions) require active monitoring rather than passive follow-up. This is exactly
                 the patient population where structured monthly engagement delivers the most clinical and
                 financial value under{' '}
                 <Link
@@ -477,7 +477,7 @@ export default function CCMTwoChronicConditionsPage() {
                 staff update care plans efficiently, covering both conditions without siloing the documentation
                 into two separate workflows. A diabetes plus hypertension patient whose AI call flags a missed
                 metformin dose and a home BP reading above 150/95 triggers a single care-plan update that
-                addresses both issues simultaneously {'\u2014'} exactly the coordinated, multi-condition
+                addresses both issues simultaneously, exactly the coordinated, multi-condition
                 oversight that CCM is designed to support.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -526,7 +526,7 @@ export default function CCMTwoChronicConditionsPage() {
                     significant risk.
                   </li>
                   <li>
-                    The criteria are clinical {'\u2014'} CMS does not publish a closed list of qualifying
+                    The criteria are clinical: CMS does not publish a closed list of qualifying
                     conditions.
                   </li>
                   <li>

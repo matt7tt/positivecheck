@@ -29,7 +29,7 @@ export function LolaVoicePreview({ children, source }: { children: React.ReactNo
       <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>Listen to Lola’s greeting</DialogTitle>
-          <DialogDescription>An existing voice preview—not a complete patient call or a customer recording. No form is required to listen.</DialogDescription>
+          <DialogDescription>An existing voice preview, not a complete patient call or a customer recording. No form is required to listen.</DialogDescription>
         </DialogHeader>
         <audio controls preload="none" aria-label="Lola greeting recording" className="w-full" onError={handleAudioError} onPlay={() => {
           if (played.current) return
@@ -48,7 +48,7 @@ export function LolaVoicePreview({ children, source }: { children: React.ReactNo
         <Link href="/solutions/front-office/appointment-reminders#reminder-workflow-example" className="rounded-lg border border-purple-200 bg-purple-50 p-4 font-semibold text-purple-800 underline" onClick={() => trackEvent('cta_click', { cta_name: 'view_complete_reminder_example', cta_location: source })}>Explore a complete fictional call and SMS workflow</Link>
         <details className="rounded-lg border p-4 text-sm text-gray-700">
           <summary className="cursor-pointer font-semibold">Read a fictional call example</summary>
-          <p className="mt-3">Written illustration only—not a transcript of the greeting. No real patient information.</p>
+          <p className="mt-3">Written illustration only, not a transcript of the greeting. No real patient information.</p>
           <p className="mt-3"><strong>Assistant:</strong> Is there anything you would like your care team to follow up on?</p>
           <p className="mt-2"><strong>Patient:</strong> I would like help arranging my next appointment.</p>
           <p className="mt-2"><strong>Assistant:</strong> I’ll note your request for your care team to review. They will need to confirm the next steps with you.</p>

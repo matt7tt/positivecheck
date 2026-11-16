@@ -88,9 +88,9 @@ export default function AnnualWellnessVisitGlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The AWV was established by the Affordable Care Act of 2010 (section 4103) and is
                 covered under Medicare Part B. Two HCPCS codes govern billing: G0438 applies to
-                the initial AWV {'\u2014'} the first AWV a beneficiary receives after 12 or more
+                the initial AWV (the first AWV a beneficiary receives after 12 or more
                 months of Medicare Part B enrollment, and is generally billed approximately once
-                per lifetime for a given beneficiary {'\u2014'} while G0439 applies to each
+                per lifetime for a given beneficiary), while G0439 applies to each
                 subsequent AWV, which may be billed every 12 months thereafter.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -110,7 +110,7 @@ export default function AnnualWellnessVisitGlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who uses it and when it applies</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>
-                  Medicare Part B beneficiaries who have been enrolled for 12 or more months {'\u2014'} the
+                  Medicare Part B beneficiaries who have been enrolled for 12 or more months: the
                   IPPE (Welcome to Medicare) covers the first 12 months, after which the AWV applies
                 </li>
                 <li>
@@ -122,7 +122,7 @@ export default function AnnualWellnessVisitGlossaryPage() {
                   from the date of the previous AWV
                 </li>
                 <li>
-                  The AWV is not the same as a routine annual physical exam {'\u2014'} Medicare does
+                  The AWV is not the same as a routine annual physical exam: Medicare does
                   NOT cover traditional annual physicals; the AWV is a distinct preventive framework
                   that is separately defined and separately reimbursed
                 </li>
@@ -133,28 +133,28 @@ export default function AnnualWellnessVisitGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} often billed alongside the AWV for beneficiaries with multiple chronic
+                  </Link>:
+                  often billed alongside the AWV for beneficiaries with multiple chronic
                   conditions
                 </li>
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management
-                  </Link>{' '}
-                  {'\u2014'} a post-discharge program distinct from the AWV preventive framework
+                  </Link>:
+                  a post-discharge program distinct from the AWV preventive framework
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the broader function that the AWV{'\u2019'}s personalized prevention
+                  </Link>:
+                  the broader function that the AWV{'\u2019'}s personalized prevention
                   plan supports
                 </li>
                 <li>
                   <Link href="/resources/glossary/patient-engagement" className="text-purple-700 underline hover:text-purple-900">
                     Patient engagement
-                  </Link>{' '}
-                  {'\u2014'} the engagement framework that makes the AWV{'\u2019'}s prevention plan
+                  </Link>:
+                  the engagement framework that makes the AWV{'\u2019'}s prevention plan
                   actionable between annual visits
                 </li>
               </ul>

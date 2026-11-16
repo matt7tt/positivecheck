@@ -35,7 +35,7 @@ const breadcrumb = buildBreadcrumbSchema([
 const termSchema = buildDefinedTermSchema({
   term: 'Patient Engagement',
   definition:
-    'Patient engagement is the active, structured involvement of patients in their own care \u2014 including understanding their conditions, participating in decisions, adhering to care plans, and communicating with the care team \u2014 a core quality and outcomes lever in chronic care management, remote patient monitoring, and transitional care programs.',
+    'Patient engagement is the active, structured involvement of patients in their own care, including understanding their conditions, participating in decisions, adhering to care plans, and communicating with the care team. It is a core quality and outcomes lever in chronic care management, remote patient monitoring, and transitional care programs.',
   slug: 'patient-engagement',
   inDefinedTermSet: 'Clinical operations',
 })
@@ -58,8 +58,8 @@ export default function PatientEngagementGlossaryPage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 Patient engagement is the active, structured involvement of patients in their own
-                care {'\u2014'} including understanding their conditions, participating in decisions,
-                adhering to care plans, and communicating with the care team {'\u2014'} a core
+                care, including understanding their conditions, participating in decisions,
+                adhering to care plans, and communicating with the care team. It is a core
                 quality and outcomes lever in chronic care management, remote patient monitoring,
                 and transitional care programs.
               </p>
@@ -72,8 +72,8 @@ export default function PatientEngagementGlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Definition</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Patient engagement is the active, structured involvement of patients in their own
-                care {'\u2014'} including understanding their conditions, participating in decisions,
-                adhering to care plans, and communicating with the care team {'\u2014'} a core
+                care, including understanding their conditions, participating in decisions,
+                adhering to care plans, and communicating with the care team. It is a core
                 quality and outcomes lever in chronic care management, remote patient monitoring,
                 and transitional care programs.
               </p>
@@ -89,8 +89,8 @@ export default function PatientEngagementGlossaryPage() {
                 Patient engagement is embedded implicitly in CMS programs: Chronic Care Management,
                 Remote Patient Monitoring, Transitional Care Management, and Principal Care
                 Management all reimburse sustained engagement, not episodic care. The structure of
-                these codes {'\u2014'} with monthly time requirements, contact frequency thresholds,
-                and care-plan documentation mandates {'\u2014'} is itself an engagement framework.
+                these codes (with monthly time requirements, contact frequency thresholds,
+                and care-plan documentation mandates) is itself an engagement framework.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Peer-reviewed literature consistently correlates higher patient engagement with
@@ -134,32 +134,32 @@ export default function PatientEngagementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the broader function patient engagement supports
+                  </Link>:{' '}
+                  the broader function patient engagement supports
                 </li>
                 <li>
                   <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} a CMS program engagement is core to
+                  </Link>:{' '}
+                  a CMS program engagement is core to
                 </li>
                 <li>
                   <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  {'\u2014'} another engagement-intensive program
+                  </Link>:{' '}
+                  another engagement-intensive program
                 </li>
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management
-                  </Link>{' '}
-                  {'\u2014'} the 30-day post-discharge engagement window
+                  </Link>:{' '}
+                  the 30-day post-discharge engagement window
                 </li>
                 <li>
                   <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">
                     Interactive communication requirement
-                  </Link>{' '}
-                  {'\u2014'} the CMS definition of billable engagement for RPM
+                  </Link>:{' '}
+                  the CMS definition of billable engagement for RPM
                 </li>
               </ul>
 

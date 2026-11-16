@@ -74,7 +74,7 @@ export default function ChronicCareManagementGlossaryPage() {
                 where clinical staff deliver non-face-to-face care management for patients with two
                 or more chronic conditions expected to last at least 12 months. CCM covers ongoing
                 monthly care where care coordination, medication management, and patient
-                communication drive outcomes {'\u2014'} enabling providers to proactively manage
+                communication drive outcomes, enabling providers to proactively manage
                 complex patients between face-to-face visits.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -113,8 +113,8 @@ export default function ChronicCareManagementGlossaryPage() {
                 </a>
                 . To qualify, a patient must have two or more chronic conditions expected to last at
                 least 12 months (or until death) and that place the patient at significant risk of
-                death, exacerbation, or functional decline. Patient consent {'\u2014'} verbal or
-                written {'\u2014'} must be documented before CCM services begin.
+                death, exacerbation, or functional decline. Patient consent (verbal or
+                written) must be documented before CCM services begin.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Only one provider can bill CCM for a given patient per calendar month; patients
@@ -164,45 +164,45 @@ export default function ChronicCareManagementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99490
-                  </Link>{' '}
-                  {'\u2014'} first 20 minutes of non-complex CCM clinical staff time per month
+                  </Link>:{' '}
+                  first 20 minutes of non-complex CCM clinical staff time per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99439" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99439
-                  </Link>{' '}
-                  {'\u2014'} each additional 20 minutes of non-complex CCM (up to 2x per month)
+                  </Link>:{' '}
+                  each additional 20 minutes of non-complex CCM (up to 2x per month)
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99487" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99487
-                  </Link>{' '}
-                  {'\u2014'} first 60 minutes of complex CCM
+                  </Link>:{' '}
+                  first 60 minutes of complex CCM
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99489" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99489
-                  </Link>{' '}
-                  {'\u2014'} each additional 30 minutes of complex CCM
+                  </Link>:{' '}
+                  each additional 30 minutes of complex CCM
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the broader function CCM operationalizes
+                  </Link>:{' '}
+                  the broader function CCM operationalizes
                 </li>
                 <li>
                   <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  {'\u2014'} the analogous CMS program for single-condition patients with device
+                  </Link>:{' '}
+                  the analogous CMS program for single-condition patients with device
                   data
                 </li>
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management
-                  </Link>{' '}
-                  {'\u2014'} the 30-day post-discharge program that often transitions patients into
+                  </Link>:{' '}
+                  the 30-day post-discharge program that often transitions patients into
                   CCM
                 </li>
               </ul>

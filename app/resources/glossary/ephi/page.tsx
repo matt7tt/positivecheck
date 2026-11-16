@@ -35,7 +35,7 @@ const breadcrumb = buildBreadcrumbSchema([
 const termSchema = buildDefinedTermSchema({
   term: 'Electronic Protected Health Information (ePHI)',
   definition:
-    'Electronic Protected Health Information (ePHI) is Protected Health Information (PHI) that is created, stored, transmitted, or received in electronic form \u2014 the subset of PHI specifically covered by the HIPAA Security Rule, which mandates administrative, physical, and technical safeguards.',
+    'Electronic Protected Health Information (ePHI) is Protected Health Information (PHI) that is created, stored, transmitted, or received in electronic form. It is the subset of PHI specifically covered by the HIPAA Security Rule, which mandates administrative, physical, and technical safeguards.',
   slug: 'ephi',
   inDefinedTermSet: 'Healthcare compliance',
 })
@@ -58,8 +58,8 @@ export default function ePHIGlossaryPage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 Electronic Protected Health Information (ePHI) is Protected Health Information
-                (PHI) that is created, stored, transmitted, or received in electronic form{' '}
-                {'\u2014'} the subset of PHI specifically covered by the HIPAA Security Rule,
+                (PHI) that is created, stored, transmitted, or received in electronic form.
+                It is the subset of PHI specifically covered by the HIPAA Security Rule,
                 which mandates administrative, physical, and technical safeguards.
               </p>
             </div>
@@ -71,14 +71,14 @@ export default function ePHIGlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Definition</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Electronic Protected Health Information (ePHI) is Protected Health Information
-                (PHI) that is created, stored, transmitted, or received in electronic form{' '}
-                {'\u2014'} the subset of PHI specifically covered by the HIPAA Security Rule,
+                (PHI) that is created, stored, transmitted, or received in electronic form.
+                It is the subset of PHI specifically covered by the HIPAA Security Rule,
                 which mandates administrative, physical, and technical safeguards.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                ePHI includes any of the 18 HIPAA identifiers {'\u2014'} such as names, dates,
+                ePHI includes any of the 18 HIPAA identifiers (such as names, dates,
                 geographic data, phone numbers, addresses, medical record numbers (MRNs), and
-                account numbers {'\u2014'} when they appear in electronic form combined with
+                account numbers) when they appear in electronic form combined with
                 health-related information. Practical examples include: electronic health record
                 (EHR) records, secure patient messages, voice recordings of clinical calls,
                 cloud-stored lab or imaging results, and billing transactions that include
@@ -94,15 +94,15 @@ export default function ePHIGlossaryPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed mb-4">
                 <li>
-                  <strong>Administrative safeguards</strong> {'\u2014'} policies and procedures,
+                  <strong>Administrative safeguards:</strong> policies and procedures,
                   workforce training, access management, and risk analysis
                 </li>
                 <li>
-                  <strong>Physical safeguards</strong> {'\u2014'} facility access controls,
+                  <strong>Physical safeguards:</strong> facility access controls,
                   workstation use policies, and device and media controls
                 </li>
                 <li>
-                  <strong>Technical safeguards</strong> {'\u2014'} access controls, audit logs,
+                  <strong>Technical safeguards:</strong> access controls, audit logs,
                   integrity controls, and transmission security
                 </li>
               </ul>
@@ -124,7 +124,7 @@ export default function ePHIGlossaryPage() {
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>
                   Applies to all covered entities and business associates that handle PHI in any
-                  electronic form {'\u2014'} regardless of whether that form is a database, a
+                  electronic form, regardless of whether that form is a database, a
                   file, an email, or a streaming audio recording
                 </li>
                 <li>
@@ -133,7 +133,7 @@ export default function ePHIGlossaryPage() {
                 </li>
                 <li>
                   Encryption is classified as {'\u201c'}addressable{'\u201d'} rather than strictly
-                  required {'\u2014'} but de-facto expected and strongly recommended for any ePHI
+                  required, but de-facto expected and strongly recommended for any ePHI
                   at rest or in transit; failure to encrypt without documented justification is
                   treated as a compliance gap in OCR audits
                 </li>
@@ -149,29 +149,29 @@ export default function ePHIGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/hipaa-compliance" className="text-purple-700 underline hover:text-purple-900">
                     HIPAA Compliance
-                  </Link>{' '}
-                  {'\u2014'} the broader regulatory framework within which the ePHI Security Rule
+                  </Link>:{' '}
+                  the broader regulatory framework within which the ePHI Security Rule
                   sits
                 </li>
                 <li>
                   <Link href="/resources/glossary/business-associate-agreement" className="text-purple-700 underline hover:text-purple-900">
                     Business Associate Agreement
-                  </Link>{' '}
-                  {'\u2014'} the contract framework required when vendors handle ePHI on behalf
+                  </Link>:{' '}
+                  the contract framework required when vendors handle ePHI on behalf
                   of a covered entity
                 </li>
                 <li>
                   <Link href="/resources/glossary/hitech-act" className="text-purple-700 underline hover:text-purple-900">
                     HITECH Act
-                  </Link>{' '}
-                  {'\u2014'} the 2009 law that tightened ePHI breach notification requirements
+                  </Link>:{' '}
+                  the 2009 law that tightened ePHI breach notification requirements
                   and expanded enforcement
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} a workflow that routinely generates and transmits ePHI across care
+                  </Link>:{' '}
+                  a workflow that routinely generates and transmits ePHI across care
                   teams
                 </li>
               </ul>
@@ -180,7 +180,7 @@ export default function ePHIGlossaryPage() {
               <p className="text-gray-700 leading-relaxed">
                 Positive Check handles ePHI end-to-end: call transcripts, structured summaries,
                 patient identifiers, and clinical flag data all qualify as ePHI under the HIPAA
-                Security Rule. The platform implements Security Rule safeguards {'\u2014'}{' '}
+                Security Rule. The platform implements Security Rule safeguards:{' '}
                 encryption in transit (TLS) and at rest, role-based access controls, comprehensive
                 audit logging, and minimum-necessary data handling. Learn more about the platform
                 architecture on the{' '}

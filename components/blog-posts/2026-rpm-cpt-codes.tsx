@@ -37,7 +37,7 @@ export function RpmBilling2026CptCodesPost() {
         />
 
         <KeyTakeaways
-          summary="The CY 2026 Physician Fee Schedule added two new RPM codes — 99445 and 99470 — creating billable pathways for engagement that previously fell below the reporting thresholds."
+          summary="The CY 2026 Physician Fee Schedule added two new RPM codes, 99445 and 99470, creating billable pathways for engagement that previously fell below the reporting thresholds."
           points={[
             "The six principal 2026 RPM codes: 99453 (setup), 99445/99454 (device supply), and 99470/99457/99458 (treatment management).",
             "CPT 99445 (new) covers 2–15 transmission days per 30-day period; 99454 still requires 16+ days. Only one applies per period.",
@@ -78,7 +78,7 @@ export function RpmBilling2026CptCodesPost() {
           <Link href="/resources/glossary/cpt-99458" className="text-[#d946ef] hover:underline">99458</Link> for treatment management. CPT 99091 may additionally apply to qualifying physician or other qualified healthcare professional data collection and interpretation, as a distinct legacy service rather than an interchangeable part of the six-code framework above.
         </p>
         <p>
-          Two of the six principal codes — 99445 and 99470 — are new for 2026. CPT 99453 covers initial device setup and patient education. Device-supply codes 99445 and 99454 are reported based on a 30-day monitoring period, while treatment-management codes 99470, 99457, and 99458 are reported based on a calendar month. Those periods don't always align exactly, and each component's requirements are evaluated independently.
+          Two of the six principal codes, 99445 and 99470, are new for 2026. CPT 99453 covers initial device setup and patient education. Device-supply codes 99445 and 99454 are reported based on a 30-day monitoring period, while treatment-management codes 99470, 99457, and 99458 are reported based on a calendar month. Those periods don't always align exactly, and each component's requirements are evaluated independently.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -106,13 +106,13 @@ export function RpmBilling2026CptCodesPost() {
                 <td className="border border-gray-200 p-3 font-semibold">99454</td>
                 <td className="border border-gray-200 p-3">Device supply (16–30 days)</td>
                 <td className="border border-gray-200 p-3">Device supply with recordings or programmed alerts transmitted on 16 or more days within a 30-day period.</td>
-                <td className="border border-gray-200 p-3">Same valuation as 99445 — verify current amount in the CMS PFS Look-Up Tool</td>
+                <td className="border border-gray-200 p-3">Same valuation as 99445. Verify current amount in the CMS PFS Look-Up Tool</td>
               </tr>
               <tr>
                 <td className="border border-gray-200 p-3 font-semibold">99445 (new 2026)</td>
                 <td className="border border-gray-200 p-3">Device supply (2–15 days)</td>
                 <td className="border border-gray-200 p-3">Device supply with recordings or programmed alerts transmitted on 2–15 days within a 30-day period. CMS finalized the same valuation as 99454, reasoning that practice expense doesn't change based on transmission days since the device is supplied for the full period either way.</td>
-                <td className="border border-gray-200 p-3">Same valuation as 99454 — verify current amount in the CMS PFS Look-Up Tool</td>
+                <td className="border border-gray-200 p-3">Same valuation as 99454. Verify current amount in the CMS PFS Look-Up Tool</td>
               </tr>
               <tr className="bg-gray-50">
                 <td className="border border-gray-200 p-3 font-semibold">99457</td>
@@ -123,7 +123,7 @@ export function RpmBilling2026CptCodesPost() {
               <tr>
                 <td className="border border-gray-200 p-3 font-semibold">99458</td>
                 <td className="border border-gray-200 p-3">Treatment management add-on</td>
-                <td className="border border-gray-200 p-3">Each additional 20 minutes of cumulative treatment-management time in the same calendar month, add-on to 99457. Unit limits are subject to CPT instructions, MUE, and payer/MAC policy — verify before billing multiple units.</td>
+                <td className="border border-gray-200 p-3">Each additional 20 minutes of cumulative treatment-management time in the same calendar month, add-on to 99457. Unit limits are subject to CPT instructions, MUE, and payer/MAC policy. Verify before billing multiple units.</td>
                 <td className="border border-gray-200 p-3">~$41</td>
               </tr>
               <tr className="bg-gray-50">
@@ -153,21 +153,21 @@ export function RpmBilling2026CptCodesPost() {
           What RPM actually requires
         </h2>
         <p>
-          Medicare RPM generally involves three separately billable components — device setup and education, device supply and data transmission, and treatment management — each governed by its own code and requirements. Across all of them, the monitoring must be medically reasonable and necessary, the device must meet the FDA definition of a medical device and digitally transmit physiologic data, and the billing practitioner should obtain and document patient consent before monitoring begins.
+          Medicare RPM generally involves three separately billable components (device setup and education, device supply and data transmission, and treatment management), each governed by its own code and requirements. Across all of them, the monitoring must be medically reasonable and necessary, the device must meet the FDA definition of a medical device and digitally transmit physiologic data, and the billing practitioner should obtain and document patient consent before monitoring begins.
         </p>
 
         <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">
           An acute or chronic condition requiring medically necessary physiologic monitoring
         </h3>
         <p>
-          Unlike Chronic Care Management, RPM does not require two or more chronic conditions — Medicare covers RPM for an acute or chronic condition when monitoring is medically reasonable and necessary and produces physiologic data (blood pressure, glucose, weight, SpO2, and similar measures) that informs care decisions. That's a different eligibility framework from CCM, which generally requires two or more chronic conditions, and it's part of why many patients who don't qualify for CCM still qualify for RPM.
+          Unlike Chronic Care Management, RPM does not require two or more chronic conditions. Medicare covers RPM for an acute or chronic condition when monitoring is medically reasonable and necessary and produces physiologic data (blood pressure, glucose, weight, SpO2, and similar measures) that informs care decisions. That's a different eligibility framework from CCM, which generally requires two or more chronic conditions, and it's part of why many patients who don't qualify for CCM still qualify for RPM.
         </p>
 
         <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">
           Device setup and patient education
         </h3>
         <p>
-          Before ongoing monitoring begins, the patient needs a one-time setup and education session on how to use the device — this is what 99453 covers.
+          Before ongoing monitoring begins, the patient needs a one-time setup and education session on how to use the device. This is what 99453 covers.
         </p>
 
         <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">
@@ -186,19 +186,19 @@ export function RpmBilling2026CptCodesPost() {
         </blockquote>
 
         <p>
-          The first 2026 decision concerns the number of qualifying data-transmission days within the 30-day monitoring period. The threshold is based on the number of qualifying days during which physiologic data is collected and transmitted, not the total number of individual measurements — multiple measurements transmitted on the same calendar day do not create multiple transmission days.
+          The first 2026 decision concerns the number of qualifying data-transmission days within the 30-day monitoring period. The threshold is based on the number of qualifying days during which physiologic data is collected and transmitted, not the total number of individual measurements. Multiple measurements transmitted on the same calendar day do not create multiple transmission days.
         </p>
 
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li><strong>CPT 99454</strong> applies when the patient transmits data on 16 or more of the 30 days in the monitoring period. This has been the standard RPM device-supply code since the program began.</li>
-          <li><strong>CPT 99445 (new for 2026)</strong> applies when the patient transmits data on 2 to 15 days within the 30-day period. Before 2026, patients who transmitted fewer than 16 days of data in a period fell short of the reporting threshold for device supply entirely — 99445 creates a billable pathway for that shorter transmission window.</li>
+          <li><strong>CPT 99445 (new for 2026)</strong> applies when the patient transmits data on 2 to 15 days within the 30-day period. Before 2026, patients who transmitted fewer than 16 days of data in a period fell short of the reporting threshold for device supply entirely. 99445 creates a billable pathway for that shorter transmission window.</li>
         </ul>
 
         <p>
           99445 and 99454 cannot both be billed in the same 30-day period for the same patient. The transmission-day count in that specific period determines which single code applies. A patient who transmits 20 days in one 30-day period and 10 days in the next would be billed 99454 for the first period and 99445 for the second.
         </p>
         <p>
-          This change helps practices correctly report qualifying monitoring for patients whose device engagement varies across 30-day monitoring periods — a common real-world pattern, especially early in enrollment — where the prior all-or-nothing 16-day threshold left shorter engagement unreportable.
+          This change helps practices correctly report qualifying monitoring for patients whose device engagement varies across 30-day monitoring periods (a common real-world pattern, especially early in enrollment), where the prior all-or-nothing 16-day threshold left shorter engagement unreportable.
         </p>
         <p>
           <strong>Example:</strong> A patient transmits blood-pressure data on 12 separate days during a 30-day monitoring period. All other RPM requirements (medical necessity, device standards, consent) are met. That period's device-supply activity may support 99445 rather than 99454, since transmission fell within the 2–15 day range. Verify the applicable code against the actual dates logged, not an estimate.
@@ -217,28 +217,28 @@ export function RpmBilling2026CptCodesPost() {
         </p>
 
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li><strong>CPT 99457</strong> covers the first 20 minutes of cumulative RPM treatment-management time (clinical staff/physician/QHP) in a calendar month, including at least one real-time interactive communication with the patient or caregiver. 99458 is billable for each additional 20 minutes of cumulative time in the same month — unit limits are subject to CPT instructions, medical necessity, and payer/MAC policy, so verify limits before billing more than one additional unit.</li>
-          <li><strong>CPT 99470 (new for 2026)</strong> covers the first 10 minutes of cumulative RPM treatment-management time in a calendar month, also including at least one real-time interactive communication. It's used instead of 99457 when the documented monthly time reaches this level but doesn't reach the 20-minute threshold — time that, before 2026, fell short of what could be billed at all.</li>
+          <li><strong>CPT 99457</strong> covers the first 20 minutes of cumulative RPM treatment-management time (clinical staff/physician/QHP) in a calendar month, including at least one real-time interactive communication with the patient or caregiver. 99458 is billable for each additional 20 minutes of cumulative time in the same month. Unit limits are subject to CPT instructions, medical necessity, and payer/MAC policy, so verify limits before billing more than one additional unit.</li>
+          <li><strong>CPT 99470 (new for 2026)</strong> covers the first 10 minutes of cumulative RPM treatment-management time in a calendar month, also including at least one real-time interactive communication. It's used instead of 99457 when the documented monthly time reaches this level but doesn't reach the 20-minute threshold: time that, before 2026, fell short of what could be billed at all.</li>
         </ul>
 
         <p>
           99457 and 99470 cannot both be billed in the same calendar month for the same patient. If a patient's monthly cumulative treatment-management time totals 20 minutes or more (with the required interactive communication), bill 99457, plus 99458 for additional 20-minute increments. If it totals 10–19 minutes, bill 99470 instead.
         </p>
         <p>
-          Like 99445, this change helps practices correctly report qualifying monthly engagement that falls short of the traditional 20-minute bar — previously an all-or-nothing threshold, now a two-tier system that creates a billable pathway for shorter, real engagement.
+          Like 99445, this change helps practices correctly report qualifying monthly engagement that falls short of the traditional 20-minute bar. It was previously an all-or-nothing threshold, now a two-tier system that creates a billable pathway for shorter, real engagement.
         </p>
         <p>
-          <strong>Example:</strong> Fourteen minutes of qualifying monthly treatment-management work, including the required real-time interactive communication, may support 99470. Twenty-six minutes may support 99457 only — 99458 covers each additional 20 minutes, not any amount beyond the initial 20, so 26 minutes doesn't reach a billable additional unit. Forty minutes may support 99457 plus one unit of 99458, subject to medical necessity, CPT instructions, MUEs, and payer or MAC rules. No time may also be counted toward CCM, TCM, or another billed service.
+          <strong>Example:</strong> Fourteen minutes of qualifying monthly treatment-management work, including the required real-time interactive communication, may support 99470. Twenty-six minutes may support 99457 only, because 99458 covers each additional 20 minutes, not any amount beyond the initial 20, so 26 minutes doesn't reach a billable additional unit. Forty minutes may support 99457 plus one unit of 99458, subject to medical necessity, CPT instructions, MUEs, and payer or MAC rules. No time may also be counted toward CCM, TCM, or another billed service.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
           What counts as interactive communication?
         </h2>
         <p>
-          Interactive communication is a defined term, not just any contact with the patient. In the CY 2021 Physician Fee Schedule final rule, CMS stated that interactive communication for these codes "involves, at a minimum, real-time synchronous, two-way audio interaction that is capable of being enhanced with video or other kinds of data transmission" — between the patient or caregiver and clinical staff, a physician, or another qualified healthcare professional, actively exchanging information about the monitored condition. A one-way text alert or an unreturned voicemail doesn't qualify.
+          Interactive communication is a defined term, not just any contact with the patient. In the CY 2021 Physician Fee Schedule final rule, CMS stated that interactive communication for these codes "involves, at a minimum, real-time synchronous, two-way audio interaction that is capable of being enhanced with video or other kinds of data transmission" between the patient or caregiver and clinical staff, a physician, or another qualified healthcare professional, actively exchanging information about the monitored condition. A one-way text alert or an unreturned voicemail doesn't qualify.
         </p>
         <p>
-          CMS has not established that a fully automated AI interaction independently satisfies the interactive-communication requirement. In the CY 2026 final rule, commenters specifically asked CMS to clarify whether automated bi-directional messaging and AI prompts could count toward this requirement — and CMS declined to give an affirmative answer, instead adopting the CPT Manual's language and stating it is "not specifying further exclusions for the types of communications that can be had with the patient/caregiver, so long as they meet the CPT specifications." Practices should treat that as an open question, not a green light.
+          CMS has not established that a fully automated AI interaction independently satisfies the interactive-communication requirement. In the CY 2026 final rule, commenters specifically asked CMS to clarify whether automated bi-directional messaging and AI prompts could count toward this requirement, and CMS declined to give an affirmative answer, instead adopting the CPT Manual's language and stating it is "not specifying further exclusions for the types of communications that can be had with the patient/caregiver, so long as they meet the CPT specifications." Practices should treat that as an open question, not a green light.
         </p>
         <p>
           Interactive communication does not have to represent the entirety of the reported treatment-management time: the code requires cumulative time that includes at least one qualifying interactive communication, not 20 (or 10) minutes composed entirely of that conversation. Time spent reviewing device data without patient interaction contributes to that cumulative time, but at least one real-time interactive communication must still occur during the reported period.
@@ -248,7 +248,7 @@ export function RpmBilling2026CptCodesPost() {
           Can RPM and CCM be billed together?
         </h2>
         <p>
-          RPM may be reported concurrently with Chronic Care Management and Transitional Care Management when all requirements for each service are independently met. The governing rule is that the same staff time, interaction, or work may not be counted toward more than one billed service — documentation should clearly identify which activities support each program. RPM and CCM can create a meaningful concurrent reimbursement opportunity for patients with chronic conditions generating device data, since RPM's device-driven billing (setup, device supply, and treatment-management time) is separate from CCM's care-coordination time, as long as no minute is counted twice. CMS confirms this concurrent-billing structure in its CCM guidance. See our{' '}
+          RPM may be reported concurrently with Chronic Care Management and Transitional Care Management when all requirements for each service are independently met. The governing rule is that the same staff time, interaction, or work may not be counted toward more than one billed service. Documentation should clearly identify which activities support each program. RPM and CCM can create a meaningful concurrent reimbursement opportunity for patients with chronic conditions generating device data, since RPM's device-driven billing (setup, device supply, and treatment-management time) is separate from CCM's care-coordination time, as long as no minute is counted twice. CMS confirms this concurrent-billing structure in its CCM guidance. See our{' '}
           <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-[#d946ef] hover:underline">
             RPM vs. CCM Medicare billing comparison
           </Link>{' '}
@@ -259,13 +259,13 @@ export function RpmBilling2026CptCodesPost() {
           What changed for RPM in the 2026 Medicare Physician Fee Schedule
         </h2>
         <p>
-          CMS's CY 2026 Physician Fee Schedule final rule (CMS-1832-F), effective January 1, 2026, introduced the two new RPM codes described above — 99445 and 99470 — to create billable pathways for partial-period engagement that the prior all-or-nothing thresholds excluded. Beyond the new codes:
+          CMS's CY 2026 Physician Fee Schedule final rule (CMS-1832-F), effective January 1, 2026, introduced the two new RPM codes described above (99445 and 99470) to create billable pathways for partial-period engagement that the prior all-or-nothing thresholds excluded. Beyond the new codes:
         </p>
 
         <ul className="list-disc pl-6 space-y-2 my-4">
           <li>Two conversion factors took effect in CY 2026: approximately $33.5675 for qualifying APM participants and $33.4009 for non-QPs, both increases over CY 2025.</li>
-          <li>CMS finalized a -2.5% efficiency adjustment for non-time-based work RVUs, but exempted time-based care-management services — including RPM's treatment-management codes (99457, 99458, 99470) — from that cut. CMS also revised aspects of its practice-expense methodology for certain remote-monitoring services, including finalizing equal valuation for 99445 and 99454.</li>
-          <li>Net effect: final code-level payment amounts reflect the conversion factor, finalized RVUs, geographic adjustments, and other Physician Fee Schedule methodology — not a single uniform percentage change. Verify locality-specific amounts in the CMS PFS Look-Up Tool rather than applying a flat adjustment.</li>
+          <li>CMS finalized a -2.5% efficiency adjustment for non-time-based work RVUs, but exempted time-based care-management services, including RPM's treatment-management codes (99457, 99458, 99470), from that cut. CMS also revised aspects of its practice-expense methodology for certain remote-monitoring services, including finalizing equal valuation for 99445 and 99454.</li>
+          <li>Net effect: final code-level payment amounts reflect the conversion factor, finalized RVUs, geographic adjustments, and other Physician Fee Schedule methodology, not a single uniform percentage change. Verify locality-specific amounts in the CMS PFS Look-Up Tool rather than applying a flat adjustment.</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -287,7 +287,7 @@ export function RpmBilling2026CptCodesPost() {
         </ul>
 
         <p>
-          A single unsupported monthly total may not provide enough detail to substantiate the billed service — documentation should allow the practice or a reviewer to trace billed time back to the specific dates, staff, and activities above. Practices should also follow any additional documentation requirements from their MAC or payer.
+          A single unsupported monthly total may not provide enough detail to substantiate the billed service. Documentation should allow the practice or a reviewer to trace billed time back to the specific dates, staff, and activities above. Practices should also follow any additional documentation requirements from their MAC or payer.
         </p>
 
         <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
@@ -295,7 +295,7 @@ export function RpmBilling2026CptCodesPost() {
         </h2>
 
         <ul className="list-disc pl-6 space-y-2 my-4">
-          <li><strong>99454 or 99445 billed without meeting the transmission-day threshold for that specific code.</strong> The count resets every 30-day period — a strong period doesn't carry over data-transmission credit to a weak one.</li>
+          <li><strong>99454 or 99445 billed without meeting the transmission-day threshold for that specific code.</strong> The count resets every 30-day period. A strong period doesn't carry over data-transmission credit to a weak one.</li>
           <li><strong>99454 and 99445 both billed for the same patient in the same 30-day period.</strong> Only one device-supply code applies per period, determined by that period's actual transmission-day count.</li>
           <li><strong>99457 or 99470 billed without a qualifying real-time interactive communication occurring during the reported month.</strong> Cumulative time built entirely from passive device-data review, with no live patient or caregiver contact, does not satisfy the requirement underlying either code.</li>
           <li><strong>99457 and 99470 both billed for the same patient in the same month.</strong> Only one treatment-management code applies per month, based on actual cumulative time logged.</li>
@@ -310,7 +310,7 @@ export function RpmBilling2026CptCodesPost() {
           RPM's 2026 additions create reporting pathways when activity meets the new 2–15 transmission-day threshold or the new 10-minute treatment-management threshold, even when it doesn't meet the older 16-day or 20-minute thresholds. The tradeoff is that RPM programs now have two separate threshold decisions to track and correctly apply for every enrolled patient, every period.
         </p>
         <p>
-          Positive Check supports RPM operations by automating structured outreach, documenting patient responses, and surfacing patients who may need follow-up from clinical staff. These automated interactions do not independently establish billable RPM treatment-management time or satisfy the required real-time interactive communication with clinical staff, a physician, or another qualified healthcare professional — the billing practice must determine which staff activities and patient interactions meet applicable CPT and Medicare requirements, and practitioner oversight, care plan management, and claim submission remain with the billing practice throughout.
+          Positive Check supports RPM operations by automating structured outreach, documenting patient responses, and surfacing patients who may need follow-up from clinical staff. These automated interactions do not independently establish billable RPM treatment-management time or satisfy the required real-time interactive communication with clinical staff, a physician, or another qualified healthcare professional. The billing practice must determine which staff activities and patient interactions meet applicable CPT and Medicare requirements, and practitioner oversight, care plan management, and claim submission remain with the billing practice throughout.
         </p>
 
         <div className="bg-blue-50 p-6 rounded-lg mt-8">
@@ -375,7 +375,7 @@ export function RpmBilling2026CptCodesPost() {
           Can an automated call or AI-driven check-in satisfy the interactive communication requirement?
         </h3>
         <p>
-          It has not been established that an automated interaction independently satisfies the requirement. CMS was directly asked whether automated bidirectional messaging and AI prompts could qualify and did not give an affirmative answer, instead referring back to CPT specifications. Practices should therefore not assume automated outreach alone creates billable treatment-management time or satisfies the required interactive communication — qualified clinical and billing personnel should determine which human interactions meet current CPT, CMS, MAC, and payer requirements.
+          It has not been established that an automated interaction independently satisfies the requirement. CMS was directly asked whether automated bidirectional messaging and AI prompts could qualify and did not give an affirmative answer, instead referring back to CPT specifications. Practices should therefore not assume automated outreach alone creates billable treatment-management time or satisfies the required interactive communication. Qualified clinical and billing personnel should determine which human interactions meet current CPT, CMS, MAC, and payer requirements.
         </p>
 
         <p className="text-sm text-gray-500 mt-8">
@@ -386,35 +386,35 @@ export function RpmBilling2026CptCodesPost() {
           <h2 className="text-xl font-bold text-gray-900 mb-3">Primary sources cited</h2>
           <ul className="list-disc pl-6 space-y-2 text-sm text-gray-600">
             <li>
-              CMS Physician Fee Schedule Look-Up Tool —{' '}
+              CMS Physician Fee Schedule Look-Up Tool.{' '}
               <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
             </li>
             <li>
-              CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026 —{' '}
+              CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026.{' '}
               <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
             </li>
             <li>
-              CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F) —{' '}
+              CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F).{' '}
               <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
             </li>
             <li>
-              Federal Register: Medicare and Medicaid Programs; CY 2026 Payment Policies Under the Physician Fee Schedule —{' '}
+              Federal Register: Medicare and Medicaid Programs; CY 2026 Payment Policies Under the Physician Fee Schedule.{' '}
               <a href="https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other</a>
             </li>
             <li>
-              CMS: Remote Patient Monitoring coverage page —{' '}
+              CMS: Remote Patient Monitoring coverage page.{' '}
               <a href="https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring</a>
             </li>
             <li>
-              Telehealth.HHS.gov: Billing for Remote Patient Monitoring —{' '}
+              Telehealth.HHS.gov: Billing for Remote Patient Monitoring.{' '}
               <a href="https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient</a>
             </li>
             <li>
-              CMS MLN909188: Chronic Care Management Services (concurrent-billing guidance) —{' '}
+              CMS MLN909188: Chronic Care Management Services (concurrent-billing guidance).{' '}
               <a href="https://www.cms.gov/files/document/chroniccaremanagement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/chroniccaremanagement.pdf</a>
             </li>
             <li>
-              Nixon Law Group: CMS Finalizes 2026 Remote Monitoring Reimbursement Updates (secondary analysis quoting the CY 2026 final rule's comment/response on interactive communication and AI prompts) —{' '}
+              Nixon Law Group: CMS Finalizes 2026 Remote Monitoring Reimbursement Updates (secondary analysis quoting the CY 2026 final rule's comment/response on interactive communication and AI prompts).{' '}
               <a href="https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm</a>
             </li>
           </ul>

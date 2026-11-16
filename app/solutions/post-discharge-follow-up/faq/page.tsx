@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "What\u2019s the difference between CPT 99495 and 99496?",
     answer:
-      'Both require contact within two business days of discharge. CPT 99495 requires moderate medical decision-making complexity and a face-to-face visit within 14 calendar days \u2014 2026 Medicare reimburses it at roughly $178. CPT 99496 requires high medical decision-making complexity and a face-to-face visit within 7 calendar days, reimbursed at a higher rate. See the CMS MLN booklet for current rates.',
+      'Both require contact within two business days of discharge. CPT 99495 requires moderate medical decision-making complexity and a face-to-face visit within 14 calendar days. 2026 Medicare reimburses it at roughly $178. CPT 99496 requires high medical decision-making complexity and a face-to-face visit within 7 calendar days, reimbursed at a higher rate. See the CMS MLN booklet for current rates.',
   },
   {
     question: 'How does TCM relate to the Hospital Readmissions Reduction Program (HRRP)?',
@@ -57,7 +57,7 @@ const faqs = [
   {
     question: 'Does HIPAA permit automated discharge follow-up calls?',
     answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards: encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
   },
   {
     question: 'Who can bill TCM codes?',
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: 'Can TCM be billed for patients discharged to skilled nursing facilities?',
     answer:
-      'No. TCM is for patients discharged to a community setting \u2014 their home, domiciliary, rest home, or assisted living. Patients discharged to a skilled nursing facility (SNF), inpatient rehabilitation, or long-term care hospital are not eligible for TCM. See the CMS MLN booklet for the full eligibility list.',
+      'No. TCM is for patients discharged to a community setting: their home, domiciliary, rest home, or assisted living. Patients discharged to a skilled nursing facility (SNF), inpatient rehabilitation, or long-term care hospital are not eligible for TCM. See the CMS MLN booklet for the full eligibility list.',
   },
   {
     question: 'What happens if the 2-business-day contact is missed?',

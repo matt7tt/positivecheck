@@ -50,7 +50,7 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can an automated call or AI-driven check-in satisfy the interactive communication requirement?",
-    answer: "It has not been established that an automated interaction independently satisfies the requirement. CMS was directly asked whether automated bidirectional messaging and AI prompts could qualify and did not give an affirmative answer, instead referring back to CPT specifications. Practices should therefore not assume automated outreach alone creates billable treatment-management time or satisfies the required interactive communication — qualified clinical and billing personnel should determine which human interactions meet current CPT, CMS, MAC, and payer requirements."
+    answer: "It has not been established that an automated interaction independently satisfies the requirement. CMS was directly asked whether automated bidirectional messaging and AI prompts could qualify and did not give an affirmative answer, instead referring back to CPT specifications. Practices should therefore not assume automated outreach alone creates billable treatment-management time or satisfies the required interactive communication. Qualified clinical and billing personnel should determine which human interactions meet current CPT, CMS, MAC, and payer requirements."
   },
 ]
 

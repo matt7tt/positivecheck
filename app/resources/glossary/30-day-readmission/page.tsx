@@ -35,7 +35,7 @@ const breadcrumb = buildBreadcrumbSchema([
 const termSchema = buildDefinedTermSchema({
   term: '30-day readmission',
   definition:
-    'A 30-day readmission is an unplanned hospital admission occurring within 30 days of a prior inpatient discharge \u2014 a key clinical quality and financial metric tracked by CMS under the Hospital Readmissions Reduction Program (HRRP).',
+    'A 30-day readmission is an unplanned hospital admission occurring within 30 days of a prior inpatient discharge. It is a key clinical quality and financial metric tracked by CMS under the Hospital Readmissions Reduction Program (HRRP).',
   slug: '30-day-readmission',
   inDefinedTermSet: 'Clinical outcomes',
 })
@@ -58,7 +58,7 @@ export default function ThirtyDayReadmissionGlossaryPage() {
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
                 A 30-day readmission is an unplanned hospital admission occurring within 30 days
-                of a prior inpatient discharge \u2014 a key clinical quality and financial metric
+                of a prior inpatient discharge. It is a key clinical quality and financial metric
                 tracked by CMS under the Hospital Readmissions Reduction Program (HRRP).
               </p>
             </div>
@@ -70,14 +70,14 @@ export default function ThirtyDayReadmissionGlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Definition</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 A 30-day readmission is an unplanned hospital admission occurring within 30 days
-                of a prior inpatient discharge \u2014 a key clinical quality and financial metric
+                of a prior inpatient discharge. It is a key clinical quality and financial metric
                 tracked by CMS under the Hospital Readmissions Reduction Program (HRRP). The
                 30-day window begins on the day of discharge; readmission to the same hospital
                 or any other acute-care hospital counts toward the measure.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Planned readmissions \u2014 such as scheduled chemotherapy or elective procedures
-                \u2014 are excluded from HRRP measures. The national Medicare fee-for-service
+                Planned readmissions (such as scheduled chemotherapy or elective procedures)
+                are excluded from HRRP measures. The national Medicare fee-for-service
                 all-cause 30-day readmission rate is approximately 15%, though condition-specific
                 rates vary widely; heart failure alone carries a readmission rate of roughly 22%,
                 making it a primary HRRP target.
@@ -87,8 +87,8 @@ export default function ThirtyDayReadmissionGlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The Hospital Readmissions Reduction Program (HRRP) was established by the
                 Affordable Care Act (2010) and implemented beginning in fiscal year 2013. CMS
-                assesses hospitals against an excess readmission ratio \u2014 comparing actual to
-                expected readmission rates \u2014 across six target conditions: acute myocardial
+                assesses hospitals against an excess readmission ratio (comparing actual to
+                expected readmission rates) across six target conditions: acute myocardial
                 infarction (AMI), heart failure (HF), pneumonia (PN), chronic obstructive
                 pulmonary disease (COPD), coronary artery bypass graft surgery (CABG), and
                 elective total hip arthroplasty and total knee arthroplasty (THA/TKA).
@@ -122,7 +122,7 @@ export default function ThirtyDayReadmissionGlossaryPage() {
                   readmission reduction effectiveness
                 </li>
                 <li>
-                  Regulators and payers \u2014 CMS under HRRP, and commercial insurers adopting
+                  Regulators and payers: CMS under HRRP, and commercial insurers adopting
                   similar readmission measures in value-based contracts
                 </li>
               </ul>
@@ -132,27 +132,27 @@ export default function ThirtyDayReadmissionGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management (TCM)
-                  </Link>{' '}
-                  \u2014 the CMS-reimbursed framework for 30-day readmission reduction
+                  </Link>:{' '}
+                  the CMS-reimbursed framework for 30-day readmission reduction
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99495
-                  </Link>{' '}
-                  \u2014 the moderate-complexity TCM billing code
+                  </Link>:{' '}
+                  the moderate-complexity TCM billing code
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  \u2014 the broader function that spans the 30-day window
+                  </Link>:{' '}
+                  the broader function that spans the 30-day window
                 </li>
               </ul>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How Positive Check relates</h2>
               <p className="text-gray-700 leading-relaxed">
-                Positive Check\u2019s automated post-discharge wellness calls target the 30-day window
-                \u2014 especially the highest-risk first 7 days. See the{' '}
+                Positive Check’s automated post-discharge wellness calls target the 30-day window,
+                especially the highest-risk first 7 days. See the{' '}
                 <Link href="/solutions/post-discharge-follow-up" className="text-purple-700 underline hover:text-purple-900">
                   Post-Discharge Follow-Up solution
                 </Link>{' '}

@@ -54,7 +54,7 @@ export interface ArticleInput {
   keywords?: string[];       // target + secondary keywords
 }
 
-// Internal helper — the Organization shape used when referenced from another schema
+// Internal helper: the Organization shape used when referenced from another schema
 // (publisher, provider, author). Not exported; use buildOrganizationSchema for the
 // full top-level Organization node.
 function buildPublisherOrgNode() {

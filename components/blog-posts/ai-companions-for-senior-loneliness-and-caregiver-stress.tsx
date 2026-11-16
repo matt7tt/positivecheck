@@ -35,13 +35,13 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost({ faqs = [
         />
 
         <KeyTakeaways
-          summary="AI companions like Positive Check's daily wellness calls ease two interconnected burdens at once — senior isolation and caregiver stress — not by replacing human connection, but by reinforcing it."
+          summary="AI companions like Positive Check's daily wellness calls ease two interconnected burdens at once (senior isolation and caregiver stress), not by replacing human connection, but by reinforcing it."
           points={[
             "More than one-third of adults over 65 live alone in the United States, and social isolation is linked to increased risks of depression, cognitive decline, and even heart disease.",
-            "Caregivers — often 'sandwich generation' adult children — carry a constant mental load that can lead to stress, fatigue, and burnout.",
+            "Caregivers, often 'sandwich generation' adult children, carry a constant mental load that can lead to stress, fatigue, and burnout.",
             "Daily AI check-in calls give seniors routine, mental stimulation through games and riddles, safety check-ins, and a friendly voice each day.",
             "Caregivers gain peace of mind through daily updates, proactive alerts when something does not sound right, time back, and reduced guilt.",
-            "AI companions are an extension of human care, not a replacement — use AI for routine support and save your energy for quality moments together.",
+            "AI companions are an extension of human care, not a replacement. Use AI for routine support and save your energy for quality moments together.",
           ]}
         />
 
@@ -167,7 +167,7 @@ export function AiCompanionsForSeniorLonelinessAndCaregiverStressPost({ faqs = [
 
         <div className="bg-blue-50 p-6 rounded-lg mt-8">
           <p className="font-medium text-lg mb-4">
-            Try Positive Check for FREE — start your first wellness call today.
+            Try Positive Check for FREE. Start your first wellness call today.
           </p>
           <Link
             href="/contact"

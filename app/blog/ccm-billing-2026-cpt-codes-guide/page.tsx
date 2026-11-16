@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS: PostFAQItem[] = [
   {
     question: "How much does CPT 99490 reimburse in 2026?",
-    answer: "Approximately $66.30 per patient per month at the 2026 Medicare national non-facility average — a 9.6% increase over 2025 — for the first 20 minutes of clinical staff CCM time. Actual reimbursement varies by locality, setting, payer, and MAC; verify amounts in the CMS Physician Fee Schedule Look-Up Tool.",
+    answer: "Approximately $66.30 per patient per month at the 2026 Medicare national non-facility average (a 9.6% increase over 2025) for the first 20 minutes of clinical staff CCM time. Actual reimbursement varies by locality, setting, payer, and MAC; verify amounts in the CMS Physician Fee Schedule Look-Up Tool.",
   },
   {
     question: "What is the difference between complex and non-complex CCM?",
@@ -39,11 +39,11 @@ const FAQ_ITEMS: PostFAQItem[] = [
   },
   {
     question: "How many times can CPT 99439 be billed per month?",
-    answer: "CPT 99439 is commonly reported as billable up to two times per calendar month as an add-on to 99490, covering 40 and 60 total minutes of clinical staff time. A patient with 60 documented minutes may support 99490 plus two units of 99439 — approximately $167 of monthly revenue at 2026 national non-facility planning rates. Verify current CPT, NCCI/MUE, payer, and MAC guidance before billing.",
+    answer: "CPT 99439 is commonly reported as billable up to two times per calendar month as an add-on to 99490, covering 40 and 60 total minutes of clinical staff time. A patient with 60 documented minutes may support 99490 plus two units of 99439, for approximately $167 of monthly revenue at 2026 national non-facility planning rates. Verify current CPT, NCCI/MUE, payer, and MAC guidance before billing.",
   },
   {
     question: "Can CCM and RPM be billed for the same patient in the same month?",
-    answer: "Yes — CCM may be billed concurrently with RPM and TCM when each program is clinically appropriate and its requirements are independently met, provided no time or effort is counted twice. The same minute can never be billed against both CCM and RPM: the two programs share patients, not minutes.",
+    answer: "Yes. CCM may be billed concurrently with RPM and TCM when each program is clinically appropriate and its requirements are independently met, provided no time or effort is counted twice. The same minute can never be billed against both CCM and RPM: the two programs share patients, not minutes.",
   },
   {
     question: "What are the eligibility requirements for CCM billing?",

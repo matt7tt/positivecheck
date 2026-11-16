@@ -69,13 +69,13 @@ const PROGRAM_CONFIGS: Record<ProgramType, ProgramConfig> = {
 }
 
 const CPT_CODES: CPTCode[] = [
-  { code: '99457', description: 'RPM — first 20 min clinical staff time per month', rate: 52, pcSupport: 'Automated daily calls collect structured responses and surface patients for qualifying clinical-staff follow-up.' },
-  { code: '99458', description: 'RPM — each additional 20 min clinical staff time per month', rate: 41, pcSupport: 'Summaries support staff review; staff must separately perform and document qualifying work.' },
-  { code: '99454', description: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days', rate: 56, pcSupport: 'Patient outreach can complement device monitoring; reported answers do not replace qualifying connected-device transmissions.' },
-  { code: '99490', description: 'CCM — first 20 min non-complex chronic care management', rate: 66, pcSupport: 'Daily wellness calls provide documented patient touchpoints, medication adherence checks, and care plan follow-up.' },
-  { code: '99439', description: 'CCM — each additional 20 min non-complex CCM', rate: 48, pcSupport: 'Outreach can surface follow-up needs; clinical staff separately perform and document qualifying care coordination.' },
-  { code: '99487', description: 'Complex CCM — first 60 min for patients with multiple chronic conditions', rate: 144, pcSupport: 'Summaries support care-team review; the practice retains clinical decision-making, care-plan and qualifying-time requirements.' },
-  { code: '99495', description: 'TCM — post-discharge follow-up contact within 2 business days', rate: 178, pcSupport: 'Automated post-discharge outreach supports timely contact workflows and routes patients to clinical staff.' },
+  { code: '99457', description: 'RPM: first 20 min clinical staff time per month', rate: 52, pcSupport: 'Automated daily calls collect structured responses and surface patients for qualifying clinical-staff follow-up.' },
+  { code: '99458', description: 'RPM: each additional 20 min clinical staff time per month', rate: 41, pcSupport: 'Summaries support staff review; staff must separately perform and document qualifying work.' },
+  { code: '99454', description: 'RPM: device(s) supply with daily recordings or alert transmission, each 30 days', rate: 56, pcSupport: 'Patient outreach can complement device monitoring; reported answers do not replace qualifying connected-device transmissions.' },
+  { code: '99490', description: 'CCM: first 20 min non-complex chronic care management', rate: 66, pcSupport: 'Daily wellness calls provide documented patient touchpoints, medication adherence checks, and care plan follow-up.' },
+  { code: '99439', description: 'CCM: each additional 20 min non-complex CCM', rate: 48, pcSupport: 'Outreach can surface follow-up needs; clinical staff separately perform and document qualifying care coordination.' },
+  { code: '99487', description: 'Complex CCM: first 60 min for patients with multiple chronic conditions', rate: 144, pcSupport: 'Summaries support care-team review; the practice retains clinical decision-making, care-plan and qualifying-time requirements.' },
+  { code: '99495', description: 'TCM: post-discharge follow-up contact within 2 business days', rate: 178, pcSupport: 'Automated post-discharge outreach supports timely contact workflows and routes patients to clinical staff.' },
 ]
 
 const CPT_RATE_MAP: Record<string, number> = {}
@@ -183,7 +183,7 @@ export function ROICalculator() {
 
       <main>
         {/* ================================================================ */}
-        {/* Section 1 — Hero */}
+        {/* Section 1: Hero */}
         {/* ================================================================ */}
         <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
           <div className="max-w-7xl mx-auto text-center">
@@ -217,7 +217,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 2 — Calculator */}
+        {/* Section 2: Calculator */}
         {/* ================================================================ */}
         <section ref={calculatorRef} className="px-6 py-16 bg-white scroll-mt-4">
           <div className="max-w-7xl mx-auto">
@@ -269,7 +269,7 @@ export function ROICalculator() {
                         {(Object.entries(PROGRAM_CONFIGS) as [ProgramType, ProgramConfig][]).map(
                           ([key, cfg]) => (
                             <SelectItem key={key} value={key}>
-                              {cfg.label} — {formatCurrency(cfg.revenuePerPatient)}/pt/mo
+                              {cfg.label}: {formatCurrency(cfg.revenuePerPatient)}/pt/mo
                             </SelectItem>
                           ),
                         )}
@@ -395,7 +395,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 3 — Billing Breakdown */}
+        {/* Section 3: Billing Breakdown */}
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -444,7 +444,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 4 — Revenue Scenarios */}
+        {/* Section 4: Revenue Scenarios */}
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-white">
           <div className="max-w-7xl mx-auto">
@@ -514,7 +514,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 5 — CPT Code Reference */}
+        {/* Section 5: CPT Code Reference */}
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto">
@@ -555,7 +555,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 6 — Disclaimers */}
+        {/* Section 6: Disclaimers */}
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-white">
           <div className="max-w-4xl mx-auto">
@@ -588,7 +588,7 @@ export function ROICalculator() {
         </section>
 
         {/* ================================================================ */}
-        {/* Section 7 — CTA */}
+        {/* Section 7: CTA */}
         {/* ================================================================ */}
         <section className="px-6 py-16 bg-white border-t border-gray-100">
           <div className="max-w-3xl mx-auto text-center">
@@ -626,7 +626,7 @@ export function ROICalculator() {
       <PublicFooter />
 
       {/* ================================================================ */}
-      {/* Hidden PDF layout — positioned off-screen for html2canvas */}
+      {/* Hidden PDF layout, positioned off-screen for html2canvas */}
       {/* ================================================================ */}
       <div
         ref={pdfRef}

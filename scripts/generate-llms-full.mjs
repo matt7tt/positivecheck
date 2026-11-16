@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Generate public/llms-full.txt — full text of the site's evergreen reference
+// Generate public/llms-full.txt: full text of the site's evergreen reference
 // pages in one crawl-friendly markdown file (llms.txt convention companion).
 //
 // Usage: node scripts/generate-llms-full.mjs
@@ -86,7 +86,7 @@ function htmlToText(html) {
 
 const strip = (s) => decode(s.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
 
-let out = `# Positive Check — full reference content (llms-full.txt)
+let out = `# Positive Check: full reference content (llms-full.txt)
 
 > Companion to https://www.positivecheck.com/llms.txt containing the full text
 > of Positive Check's evergreen billing, compliance, and program reference

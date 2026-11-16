@@ -160,7 +160,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
             ) : (
               <p className="text-gray-600">Our team will contact you by email to arrange a time. No appointment has been booked yet.</p>
             )}
-            <p className="text-sm text-gray-600">For the demo, bring your outreach bottleneck and integration questions—not patient information.</p>
+            <p className="text-sm text-gray-600">For the demo, bring your outreach bottleneck and integration questions, not patient information.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} onChangeCapture={trackFormStart} className="space-y-4">

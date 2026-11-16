@@ -35,7 +35,7 @@ const breadcrumb = buildBreadcrumbSchema([
 const termSchema = buildDefinedTermSchema({
   term: 'Interactive Communication Requirement',
   definition:
-    'The interactive communication requirement is a CMS rule under the Medicare Physician Fee Schedule that defines the content and structure of billable clinical engagement for Remote Patient Monitoring (CPT 99457/99458) and related programs \u2014 specifically, real-time two-way engagement between clinical staff and the patient or caregiver discussing physiologic data, symptoms, or the care plan.',
+    'The interactive communication requirement is a CMS rule under the Medicare Physician Fee Schedule that defines the content and structure of billable clinical engagement for Remote Patient Monitoring (CPT 99457/99458) and related programs. Specifically, it requires real-time two-way engagement between clinical staff and the patient or caregiver discussing physiologic data, symptoms, or the care plan.',
   slug: 'interactive-communication-requirement',
   inDefinedTermSet: 'CMS clinical requirements',
 })
@@ -59,8 +59,8 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
               <p className="text-xl text-purple-100 leading-relaxed">
                 The interactive communication requirement is a CMS rule under the Medicare Physician
                 Fee Schedule that defines the content and structure of billable clinical engagement
-                for Remote Patient Monitoring (CPT 99457/99458) and related programs {'\u2014'}{' '}
-                specifically, real-time two-way engagement between clinical staff and the patient or
+                for Remote Patient Monitoring (CPT 99457/99458) and related programs.
+                Specifically, it requires real-time two-way engagement between clinical staff and the patient or
                 caregiver discussing physiologic data, symptoms, or the care plan.
               </p>
             </div>
@@ -73,8 +73,8 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The interactive communication requirement is a CMS rule under the Medicare Physician
                 Fee Schedule that defines the content and structure of billable clinical engagement
-                for Remote Patient Monitoring (CPT 99457/99458) and related programs {'\u2014'}{' '}
-                specifically, real-time two-way engagement between clinical staff and the patient or
+                for Remote Patient Monitoring (CPT 99457/99458) and related programs.
+                Specifically, it requires real-time two-way engagement between clinical staff and the patient or
                 caregiver discussing physiologic data, symptoms, or the care plan.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -126,32 +126,32 @@ export default function InteractiveCommunicationRequirementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  {'\u2014'} the care model interactive communication underpins
+                  </Link>:{' '}
+                  the care model interactive communication underpins
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99457
-                  </Link>{' '}
-                  {'\u2014'} the first 20 minutes of RPM treatment management including required interactive communication per month
+                  </Link>:{' '}
+                  the first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99458
-                  </Link>{' '}
-                  {'\u2014'} each additional 20 minutes of RPM treatment management including required interactive communication
+                  </Link>:{' '}
+                  each additional 20 minutes of RPM treatment management including required interactive communication
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the function interactive communication operationalizes
+                  </Link>:{' '}
+                  the function interactive communication operationalizes
                 </li>
                 <li>
                   <Link href="/resources/glossary/patient-engagement" className="text-purple-700 underline hover:text-purple-900">
                     Patient engagement
-                  </Link>{' '}
-                  {'\u2014'} the broader engagement concept
+                  </Link>:{' '}
+                  the broader engagement concept
                 </li>
               </ul>
 

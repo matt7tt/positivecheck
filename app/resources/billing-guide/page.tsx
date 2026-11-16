@@ -182,11 +182,10 @@ export default function BillingGuideIndexPage() {
                 </div>
               </div>
               <p className="text-gray-700 leading-relaxed mb-12">
-                A fourth program{'\u2014'}{' '}
+                A fourth program,{' '}
                 <Link href="/resources/glossary/principal-care-management" className="text-purple-700 underline hover:text-purple-900">
                   Principal Care Management (PCM)
-                </Link>
-                {'\u2014'}covers patients with a single high-risk chronic condition requiring intensive, focused
+                </Link>, covers patients with a single high-risk chronic condition requiring intensive, focused
                 management. Check PCM and CCM code-pair restrictions, practitioner roles and service requirements independently; a one-condition focus alone does not resolve concurrent-billing rules.
               </p>
 
@@ -369,7 +368,7 @@ export default function BillingGuideIndexPage() {
                     Verify time, consent, clinical work, practitioner rules and other requirements separately for each program.
                   </li>
                   <li>
-                    Rates update annually {'\u2014'} check the Medicare Physician Fee Schedule before locking
+                    Rates update annually. Check the Medicare Physician Fee Schedule before locking
                     program ROI.
                   </li>
                 </ul>

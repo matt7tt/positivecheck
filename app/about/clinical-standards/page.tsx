@@ -61,7 +61,7 @@ const faqs = [
   {
     question: 'What happens when a call flags a clinical concern?',
     answer:
-      "The platform is configured with escalation rules agreed with each provider partner. When a patient response triggers an escalation (e.g., a concerning symptom report, missed-medication pattern, or specific safety keyword), the call is flagged in the provider\u2019s dashboard in real time and, when configured, a notification is sent to the designated clinical contact. Positive Check does not make clinical decisions \u2014 every flagged concern is routed to a qualified clinician for action.",
+      "The platform is configured with escalation rules agreed with each provider partner. When a patient response triggers an escalation (e.g., a concerning symptom report, missed-medication pattern, or specific safety keyword), the call is flagged in the provider\u2019s dashboard in real time and, when configured, a notification is sent to the designated clinical contact. Positive Check does not make clinical decisions. Every flagged concern is routed to a qualified clinician for action.",
   },
   {
     question: 'Who designs the call content (questions and response handling)?',
@@ -110,8 +110,8 @@ export default function ClinicalStandardsPage() {
                 Clinical Standards: Compliance, Security, and Content Review
               </h1>
               <p className="text-xl text-purple-100 leading-relaxed">
-                Positive Check LLC{'\u2019'}s clinical, security, and compliance framework{' '}
-                {'\u2014'} the commitments behind every patient call and the safeguards around every
+                Positive Check LLC{'\u2019'}s clinical, security, and compliance framework:
+                the commitments behind every patient call and the safeguards around every
                 Protected Health Information (PHI) interaction.
               </p>
             </div>
@@ -171,8 +171,8 @@ export default function ClinicalStandardsPage() {
                 <Link href="/resources/glossary/hipaa-compliance" className="text-purple-700 underline hover:text-purple-900">
                   HIPAA
                 </Link>
-                ) distinguishes between covered entities{'\u2014'}providers, payers, and clearinghouses that handle
-                Protected Health Information{'\u2014'}and business associates, which are vendors and service providers
+                ) distinguishes between covered entities (providers, payers, and clearinghouses that handle
+                Protected Health Information) and business associates, which are vendors and service providers
                 that access PHI on a covered entity{'\u2019'}s behalf. Positive Check operates as a business associate.
                 That designation is not a label; it carries legally enforceable obligations under the HIPAA Privacy Rule
                 and Security Rule, obligations that can only be established through a signed{' '}
@@ -182,8 +182,8 @@ export default function ClinicalStandardsPage() {
                 .
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Before any PHI passes through our platform{'\u2014'}call logs, patient responses, escalation
-                records{'\u2014'}we execute a BAA with the provider partner. The agreement specifies the permitted uses
+                Before any PHI passes through our platform (call logs, patient responses, escalation
+                records), we execute a BAA with the provider partner. The agreement specifies the permitted uses
                 and disclosures of PHI, our breach notification timeline (within 60 days of discovery, consistent with
                 the HIPAA Breach Notification Rule), subcontractor provisions (any subprocessor we use is also bound by
                 equivalent obligations), and PHI return or destruction procedures at contract termination. This is not
@@ -196,7 +196,7 @@ export default function ClinicalStandardsPage() {
                 </Link>{' '}
                 of 2009 strengthened HIPAA by extending direct liability to business associates and increasing
                 civil monetary penalties for non-compliance. We design our systems and processes with HITECH in
-                view{'\u2014'}not merely the original HIPAA floor. The governing reference for our compliance posture
+                view, not merely the original HIPAA floor. The governing reference for our compliance posture
                 is the{' '}
                 <a
                   href="https://www.hhs.gov/hipaa/index.html"
@@ -235,7 +235,7 @@ export default function ClinicalStandardsPage() {
                 layer), workforce training on privacy and security obligations, contingency planning covering data
                 backup procedures and disaster recovery, and BAA subcontractor requirements ensuring every third-party
                 processor of ePHI operates under equivalent security obligations. Policies are reviewed and updated on
-                the same cadence as our content review rhythm{'\u2014'}quarterly at baseline, accelerated when HHS
+                the same cadence as our content review rhythm: quarterly at baseline, accelerated when HHS
                 issues significant guidance.
               </p>
               <p className="text-gray-700 leading-relaxed mb-12">
@@ -243,7 +243,7 @@ export default function ClinicalStandardsPage() {
                 processed. Since Positive Check operates as a cloud-native platform, physical safeguards primarily
                 apply to workstation security policies for team members accessing provider data: screen lock requirements,
                 clean-desk practices for remote workers, and device inventory management. Data infrastructure runs on
-                cloud providers with their own physical access controls and compliance certifications{'\u2014'}controls
+                cloud providers with their own physical access controls and compliance certifications, controls
                 that are captured in our vendor management process and BAA chain. <strong>Technical safeguards</strong>{' '}
                 include access control mechanisms (unique user identifiers, automatic logoff, role-based permissions),
                 multi-factor authentication supporting authenticator apps (TOTP), backup codes, and email verification,
@@ -259,8 +259,8 @@ export default function ClinicalStandardsPage() {
                 We do not commission external writers, engage third-party clinical advisors who contribute content
                 without editorial accountability, or publish guest posts that carry outside authorship. This is a
                 deliberate choice: in healthcare content, the authority comes from the organization and its
-                institutional relationships with primary sources{'\u2014'}CMS regulations, HHS guidance, peer-reviewed
-                evidence{'\u2014'}not from attributed individuals whose credentials cannot be consistently verified
+                institutional relationships with primary sources (CMS regulations, HHS guidance, peer-reviewed
+                evidence), not from attributed individuals whose credentials cannot be consistently verified
                 or maintained. We build credibility through citations, organizational signals, and case-based
                 demonstration, not through borrowed authorial authority.
               </p>
@@ -268,8 +268,8 @@ export default function ClinicalStandardsPage() {
                 Call content is configured per provider to match the clinical program the patient is enrolled in.
                 An RPM engagement call captures different data points than a CCM care coordination touchpoint or a
                 TCM post-discharge follow-up call. Providers review and approve the exact call script before any
-                patient enrollment begins. If a provider needs script customization{'\u2014'}different symptom
-                thresholds, program-specific language, condition-specific response branches{'\u2014'}that customization
+                patient enrollment begins. If a provider needs script customization (different symptom
+                thresholds, program-specific language, condition-specific response branches), that customization
                 is documented and approved before deployment.
               </p>
               <p className="text-gray-700 leading-relaxed mb-12">
@@ -285,25 +285,25 @@ export default function ClinicalStandardsPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Escalation protocols</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Positive Check surfaces clinical concerns; clinicians act on them. This boundary is not a limitation
-                of the platform{'\u2014'}it is a design principle. Our role as a business associate is to collect,
+                of the platform. It is a design principle. Our role as a business associate is to collect,
                 process, and communicate patient response data in a structured, timely, and documented way. The clinical
                 judgment about what to do with that information belongs exclusively to the provider and their
                 designated clinical staff.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Escalation rules are configured per provider partner before enrollment begins. Not every flagged
-                concern triggers the same response level. A provider might configure high-priority escalation{'\u2014'}
-                immediate dashboard alert plus SMS notification to a designated on-call clinician{'\u2014'}for responses
-                indicating acute distress or safety concerns. Lower-urgency flags{'\u2014'}a missed medication report,
-                a gradual trend in blood pressure readings, a patient-reported fall risk{'\u2014'}might route to a
+                concern triggers the same response level. A provider might configure high-priority escalation (an
+                immediate dashboard alert plus SMS notification to a designated on-call clinician) for responses
+                indicating acute distress or safety concerns. Lower-urgency flags (a missed medication report,
+                a gradual trend in blood pressure readings, or a patient-reported fall risk) might route to a
                 nightly summary reviewed by the care coordinator at the start of business the following day. The
                 thresholds, notification channels, and designated recipients are all provider-defined.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Escalation is not limited to after-the-call notifications. When a conversation warrants immediate
                 human attention, the platform supports live mid-call transfer to a provider-designated care team
-                member, with urgency routing across routine, urgent, and emergency levels. Live transfer supplements
-                {'\u2014'}and never replaces{'\u2014'}direction to call 911 for acute emergencies, which remains part
+                member, with urgency routing across routine, urgent, and emergency levels. Live transfer supplements,
+                and never replaces, direction to call 911 for acute emergencies, which remains part
                 of the call protocol for red-flag symptom reports.
               </p>
               <p className="text-gray-700 leading-relaxed mb-12">
@@ -326,8 +326,8 @@ export default function ClinicalStandardsPage() {
                 alerting does not depend on any single analysis being right.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                <strong>Deterministic clinical guardrails.</strong> Rule-based alert thresholds{'\u2014'}covering
-                readings such as blood pressure bands, blood glucose, and oxygen saturation{'\u2014'}evaluate every
+                <strong>Deterministic clinical guardrails.</strong> Rule-based alert thresholds (covering
+                readings such as blood pressure bands, blood glucose, and oxygen saturation) evaluate every
                 call independently of the AI{'\u2019'}s own analysis. If a patient reports a reading that crosses a
                 threshold and the AI analysis did not raise an alert, the guardrail raises it. These rules are
                 purely additive: they can add alerts the AI missed, but never suppress alerts the AI raised.
@@ -363,7 +363,7 @@ export default function ClinicalStandardsPage() {
                 infrastructure, allowing the patient{'\u2019'}s care plan to reflect updated information from
                 monitoring calls without manual re-entry. Providers retain full access to call records and can
                 export structured data for their own EHR documentation or audit preparation. The documentation
-                framework covers all four CMS care programs{'\u2014'}
+                framework covers all four CMS care programs:{' '}
                 <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                   RPM
                 </Link>
@@ -375,14 +375,14 @@ export default function ClinicalStandardsPage() {
                 <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                   TCM
                 </Link>
-                , and PCM{'\u2014'}with program-specific data elements layered on the shared base structure.
+                , and PCM, with program-specific data elements layered on the shared base structure.
               </p>
 
               {/* Content freshness and review cadence */}
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Content freshness and review cadence</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Every substantive provider-facing page on the Positive Check site carries a Last Reviewed date.
-                This is not decorative. CMS updates care management program rules annually{'\u2014'}typically through
+                This is not decorative. CMS updates care management program rules annually, typically through
                 the Medicare Physician Fee Schedule final rule published each November, effective the following January.
                 HHS updates HIPAA guidance on a less predictable schedule but has issued significant omnibus updates
                 that changed business associate obligations materially. Content that does not track these changes
@@ -391,8 +391,8 @@ export default function ClinicalStandardsPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Our baseline review cadence is quarterly: four scheduled reviews per year in which substantive pages
                 are checked against current CMS and HHS primary sources. When either agency publishes notable
-                guidance{'\u2014'}a final PFS rule, a significant MLN booklet update, an HHS omnibus change, a CMS
-                FAQ that materially clarifies program requirements{'\u2014'}we conduct an accelerated review of
+                guidance (a final PFS rule, a significant MLN booklet update, an HHS omnibus change, or a CMS
+                FAQ that materially clarifies program requirements), we conduct an accelerated review of
                 affected content outside the quarterly rhythm. The goal is that no provider reading a Positive Check
                 page is acting on outdated program requirements.
               </p>
@@ -416,8 +416,8 @@ export default function ClinicalStandardsPage() {
               <ul className="list-disc pl-6 space-y-3 text-gray-700 leading-relaxed mb-12">
                 <li>
                   We do not make clinical decisions or provide medical advice directly to patients. Every clinical
-                  judgment{'\u2014'}what a patient{'\u2019'}s flagged response means, what action to take, whether
-                  to adjust a care plan{'\u2014'}belongs to the provider and their designated clinical staff.
+                  judgment (what a patient{'\u2019'}s flagged response means, what action to take, whether
+                  to adjust a care plan) belongs to the provider and their designated clinical staff.
                 </li>
                 <li>
                   We do not name competitor platforms in our comparison or marketing content. We describe our
