@@ -162,7 +162,7 @@ function ResetPasswordForm() {
                   className={passwordError ? "border-red-500" : ""}
                 />
                 {passwordError && (
-                  <p className="text-red-500 text-sm mt-1">{passwordError}</p>
+                  <p className="text-pc-danger text-sm mt-1">{passwordError}</p>
                 )}
               </div>
 

@@ -252,7 +252,7 @@ export function ROICalculator() {
                       step={10}
                       className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                     />
-                    <div className="flex justify-between text-xs text-gray-400">
+                    <div className="flex justify-between text-xs text-gray-500">
                       <span>10</span>
                       <span>5,000</span>
                     </div>
@@ -310,7 +310,7 @@ export function ROICalculator() {
                       step={1}
                       className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                     />
-                    <div className="flex justify-between text-xs text-gray-400">
+                    <div className="flex justify-between text-xs text-gray-500">
                       <span>50%</span>
                       <span>100%</span>
                     </div>
@@ -339,7 +339,7 @@ export function ROICalculator() {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="text-center p-3 bg-green-50 rounded-lg">
                       <p className="text-xs text-gray-500 mb-1">Monthly Revenue</p>
-                      <p className="text-lg font-bold text-green-700">{formatCurrency(results.monthlyRevenue)}</p>
+                      <p className="text-lg font-bold text-pc-success">{formatCurrency(results.monthlyRevenue)}</p>
                     </div>
                     <div className="text-center p-3 bg-gray-50 rounded-lg">
                       <p className="text-xs text-gray-500 mb-1">Monthly Software Cost</p>
@@ -375,15 +375,15 @@ export function ROICalculator() {
                     <p className="text-sm font-medium text-gray-500 mb-3">Annual Projections</p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div className="text-center">
-                        <p className="text-xs text-gray-400">Revenue</p>
-                        <p className="text-base font-bold text-green-700">{formatCurrency(results.annualRevenue)}</p>
+                        <p className="text-xs text-gray-500">Revenue</p>
+                        <p className="text-base font-bold text-pc-success">{formatCurrency(results.annualRevenue)}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-gray-400">Software Cost</p>
+                        <p className="text-xs text-gray-500">Software Cost</p>
                         <p className="text-base font-bold text-gray-700">{formatCurrency(results.annualCost)}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-xs text-gray-400">After Software Cost*</p>
+                        <p className="text-xs text-gray-500">After Software Cost*</p>
                         <p className="text-base font-bold text-purple-700">{formatCurrency(results.annualNet)}</p>
                       </div>
                     </div>
@@ -482,7 +482,7 @@ export function ROICalculator() {
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-500">Monthly Revenue</span>
-                          <span className="font-semibold text-green-700">{formatCurrency(rev)}</span>
+                          <span className="font-semibold text-pc-success">{formatCurrency(rev)}</span>
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-500">Monthly Software Cost</span>
@@ -639,7 +639,7 @@ export function ROICalculator() {
             <h1 className="text-2xl font-bold text-gray-900">Positive Check</h1>
             <p className="text-sm text-gray-500">ROI &amp; Reimbursement Summary</p>
           </div>
-          <p className="text-sm text-gray-400">positivecheck.com</p>
+          <p className="text-sm text-gray-500">positivecheck.com</p>
         </div>
 
         {/* PDF Headline */}
@@ -699,7 +699,7 @@ export function ROICalculator() {
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-600">Revenue</span>
-                <span className="font-bold text-green-700">{formatCurrency(results.monthlyRevenue)}</span>
+                <span className="font-bold text-pc-success">{formatCurrency(results.monthlyRevenue)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Software Cost</span>
@@ -712,11 +712,11 @@ export function ROICalculator() {
             </div>
           </div>
           <div className="p-4 bg-green-50 rounded-lg">
-            <h4 className="text-xs font-semibold text-green-700 mb-2">Annual</h4>
+            <h4 className="text-xs font-semibold text-pc-success mb-2">Annual</h4>
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span className="text-gray-600">Revenue</span>
-                <span className="font-bold text-green-700">{formatCurrency(results.annualRevenue)}</span>
+                <span className="font-bold text-pc-success">{formatCurrency(results.annualRevenue)}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Software Cost</span>
@@ -731,7 +731,7 @@ export function ROICalculator() {
         </div>
 
         {/* PDF Disclaimers */}
-        <div className="mb-6 text-xs text-gray-400 space-y-1">
+        <div className="mb-6 text-xs text-gray-500 space-y-1">
           <p>*After software cost is not net profit. Clinical staffing, devices, integration, onboarding and other overhead are excluded. The multiple is revenue divided by software cost, not a full return-on-investment calculation. Software inputs are illustrative assumptions, not a quote.</p>
           <p>Illustrative payment assumptions, not a verified current fee schedule. Verify applicable rates, service requirements and total costs before budgeting.</p>
           <p>This does not constitute billing, legal, or financial advice. Consult qualified professionals.</p>
@@ -741,7 +741,7 @@ export function ROICalculator() {
         {/* PDF Footer */}
         <div className="text-center pt-4 border-t border-gray-200">
           <p className="text-sm font-medium text-purple-600">Learn more at positivecheck.com</p>
-          <p className="text-xs text-gray-400 mt-1">info@positivecheck.com &middot; (858) 522-9524</p>
+          <p className="text-xs text-gray-500 mt-1">info@positivecheck.com &middot; (858) 522-9524</p>
         </div>
       </div>
     </div>

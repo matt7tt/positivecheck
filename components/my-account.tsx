@@ -702,7 +702,7 @@ export function MyAccountComponent() {
       const value = parseInt(sentiment);
       if (value >= 4) return <Smile className="h-6 w-6 text-green-500" />; // 4-5 = positive
       if (value === 3 || value === 2) return <Meh className="h-6 w-6 text-yellow-500" />; // 2-3 = neutral
-      return <Frown className="h-6 w-6 text-red-500" />; // shouldn't reach here for 0-5 scale
+      return <Frown className="h-6 w-6 text-pc-danger" />; // shouldn't reach here for 0-5 scale
     }
     
     // Handle regular values (0/1/-)
@@ -710,7 +710,7 @@ export function MyAccountComponent() {
       case '1':
         return <Smile className="h-6 w-6 text-green-500" />; // positive
       case '0':
-        return <Frown className="h-6 w-6 text-red-500" />;   // negative
+        return <Frown className="h-6 w-6 text-pc-danger" />;   // negative
       case '-':
       default:
         return <Meh className="h-6 w-6 text-yellow-500" />;  // neutral/unknown
@@ -747,7 +747,7 @@ export function MyAccountComponent() {
     if (questionData.length === 0) {
       console.log(`No data available for question ID ${questionId}`)
       return (
-        <div className="flex justify-center items-center h-24 text-gray-400 bg-gray-50 rounded-md">
+        <div className="flex justify-center items-center h-24 text-gray-500 bg-gray-50 rounded-md">
           <span className="text-sm">No data available</span>
         </div>
       )
@@ -1899,15 +1899,15 @@ export function MyAccountComponent() {
                                     
                                     <div className="mt-6 space-y-1.5 bg-gray-50 p-4 rounded-lg border border-gray-200 text-xs text-gray-500">
                                       <p className="flex items-center">
-                                        <Calendar className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
+                                        <Calendar className="h-3.5 w-3.5 mr-1.5 text-gray-500" />
                                         Call Date: {convertDateToUserTimezone(lastContactCall.call_date, userData.callerInfo.timezone)}
                                       </p>
                                       <p className="flex items-center">
-                                        <Clock className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
+                                        <Clock className="h-3.5 w-3.5 mr-1.5 text-gray-500" />
                                         Call Time: {convertToUserTimezone(lastContactCall.call_start, userData.callerInfo.timezone)}
                                       </p>
                                       <p className="flex items-center">
-                                        <Timer className="h-3.5 w-3.5 mr-1.5 text-gray-400" />
+                                        <Timer className="h-3.5 w-3.5 mr-1.5 text-gray-500" />
                                         Duration: {lastContactCall.call_duration} mins
                                       </p>
                                     </div>
