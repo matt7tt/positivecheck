@@ -386,8 +386,8 @@ export function MyAccountComponent() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-          <div className="animate-spin h-8 w-8 border-4 border-[#1a2642] border-t-transparent rounded-full mx-auto mb-4"></div>
-          <p className="text-[#1a2642] font-medium">Loading your account...</p>
+          <div className="animate-spin h-8 w-8 border-4 border-pc-navy border-t-transparent rounded-full mx-auto mb-4"></div>
+          <p className="text-pc-navy font-medium">Loading your account...</p>
         </div>
       </div>
     )
@@ -498,7 +498,7 @@ export function MyAccountComponent() {
       toast.success('Changes saved successfully', {
         duration: 3000,
         style: {
-          background: '#10B981',
+          background: '#1f7a5c',
           color: '#FFFFFF',
         },
         position: 'bottom-center',
@@ -509,7 +509,7 @@ export function MyAccountComponent() {
       toast.error('Error saving changes. Please try again.', {
         duration: 5000,
         style: {
-          background: '#EF4444',
+          background: '#b42318',
           color: '#FFFFFF',
         },
         position: 'bottom-center',
@@ -527,7 +527,7 @@ export function MyAccountComponent() {
   ) => (
     <div className="relative w-full mb-6 overflow-hidden">
       <div className="mb-5 flex justify-between items-center w-full pb-3 border-b border-gray-200">
-        <div className="flex items-center gap-3 font-semibold text-xl text-[#1a2642]">
+        <div className="flex items-center gap-3 font-semibold text-xl text-pc-navy">
           {icon}
           {title}
         </div>
@@ -1017,19 +1017,19 @@ export function MyAccountComponent() {
               <div className="flex items-center gap-6">
                 <Link 
                   href="/" 
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200"
+                  className="text-base font-medium text-gray-600 hover:text-pc-navy transition-colors duration-200"
                 >
                   Home
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200"
+                  className="text-base font-medium text-gray-600 hover:text-pc-navy transition-colors duration-200"
                 >
                   Contact
                 </Link>
                 <button 
                   onClick={handleLogout}
-                  className="text-base font-medium text-gray-600 hover:text-[#1a2642] transition-colors duration-200 flex items-center"
+                  className="text-base font-medium text-gray-600 hover:text-pc-navy transition-colors duration-200 flex items-center"
                   aria-label="Log out of your account"
                 >
                   Log Out
@@ -1042,7 +1042,7 @@ export function MyAccountComponent() {
         <div className="container mx-auto px-4 py-8 flex-grow">
           <div className="mb-2">
             <div className="flex items-center gap-3">
-              <h1 className="text-3xl font-bold tracking-tight text-[#1a2642]">My Account</h1>
+              <h1 className="text-3xl font-bold tracking-tight text-pc-navy">My Account</h1>
               {userData.accountInfo.subscription_status && (
                 <span className={`px-3 py-1 text-xs font-medium rounded-full inline-flex items-center ${
                   userData.accountInfo.subscription_status.toLowerCase() === 'active' 
@@ -1070,7 +1070,7 @@ export function MyAccountComponent() {
                     className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-all duration-200 ${
                       activeSection === item.id 
                         ? 'bg-blue-50 text-blue-600 border-l-2 border-blue-600' 
-                        : 'hover:bg-gray-50 text-gray-700 hover:text-[#1a2642] border-l-2 border-transparent'
+                        : 'hover:bg-gray-50 text-gray-700 hover:text-pc-navy border-l-2 border-transparent'
                     }`}
                     aria-current={activeSection === item.id ? 'page' : undefined}
                   >
@@ -1366,7 +1366,7 @@ export function MyAccountComponent() {
                         <button
                           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                           disabled={currentPage === 1}
-                          className="px-4 py-2 text-sm font-medium text-[#1a2642] bg-white border border-gray-200 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="px-4 py-2 text-sm font-medium text-pc-navy bg-white border border-gray-200 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           Previous
                         </button>
@@ -1376,7 +1376,7 @@ export function MyAccountComponent() {
                         <button
                           onClick={() => setCurrentPage(prev => Math.min(prev + 1, Math.ceil(userData.callLog.length / rowsPerPage)))}
                           disabled={currentPage === Math.ceil(userData.callLog.length / rowsPerPage)}
-                          className="px-4 py-2 text-sm font-medium text-[#1a2642] bg-white border border-gray-200 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="px-4 py-2 text-sm font-medium text-pc-navy bg-white border border-gray-200 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           Next
                         </button>
@@ -1395,14 +1395,14 @@ export function MyAccountComponent() {
                   <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
                     <div className="flex justify-between items-center">
                       <div>
-                        <h3 className="font-semibold text-[#1a2642] mb-1">Current Plan</h3>
+                        <h3 className="font-semibold text-pc-navy mb-1">Current Plan</h3>
                         <p className="text-gray-600">Monthly Subscription</p>
                       </div>
                       <div className="text-right">
-                        <p className="font-semibold text-[#1a2642]">$20.00/month</p>
+                        <p className="font-semibold text-pc-navy">$20.00/month</p>
                         <Button 
                           onClick={redirectToCustomerPortal}
-                          className="mt-2 px-4 py-2 bg-[#1a2642] hover:bg-[#2a3752] text-white rounded-md transition-colors duration-200"
+                          className="mt-2 px-4 py-2 bg-pc-navy hover:bg-pc-navy-raised text-white rounded-md transition-colors duration-200"
                         >
                           Manage Billing
                         </Button>
@@ -1569,7 +1569,7 @@ export function MyAccountComponent() {
                   {/* Question Response Sections */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <h2 className="text-xl font-semibold text-[#1a2642] flex items-center gap-2">
+                      <h2 className="text-xl font-semibold text-pc-navy flex items-center gap-2">
                         <HelpCircle className="h-5 w-5 text-purple-500" />
                         Response Trends
                       </h2>
@@ -1582,7 +1582,7 @@ export function MyAccountComponent() {
                     
                     {isDashboardLoading ? (
                       <div className="text-center py-8 bg-gray-50 rounded-lg border border-gray-200">
-                        <div className="animate-spin h-6 w-6 border-3 border-[#1a2642] border-t-transparent rounded-full mx-auto mb-2"></div>
+                        <div className="animate-spin h-6 w-6 border-3 border-pc-navy border-t-transparent rounded-full mx-auto mb-2"></div>
                         <p className="text-gray-600 text-sm">Loading sentiment data...</p>
                       </div>
                     ) : (
@@ -1607,7 +1607,7 @@ export function MyAccountComponent() {
                   {userData.callLog.some(log => log.call_sentiment && log.call_sentiment.trim() !== '' && log.call_status === 'Contact Made') && (
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <h2 className="text-xl font-semibold text-[#1a2642] flex items-center gap-2">
+                        <h2 className="text-xl font-semibold text-pc-navy flex items-center gap-2">
                           <MessageCircle className="h-5 w-5 text-teal-500" />
                           Call Sentiment Analysis
                         </h2>
@@ -1629,7 +1629,7 @@ export function MyAccountComponent() {
                           return (
                             <div className="bg-white rounded-xl border border-gray-200 shadow p-6">
                               <div className="flex justify-between items-center mb-2">
-                                <span className="font-medium text-[#1a2642]">
+                                <span className="font-medium text-pc-navy">
                                   {convertDateToUserTimezone(lastContactCall.call_date, userData.callerInfo.timezone)}
                                 </span>
                                 <span className="text-sm text-gray-600">

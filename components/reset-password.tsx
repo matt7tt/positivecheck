@@ -36,14 +36,14 @@ function ResetPasswordForm() {
       {!token ? (
         <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
           <CardContent className="p-12 text-center">
-            <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Invalid or Expired Link</h2>
+            <h2 className="text-2xl font-bold text-pc-navy mb-4">Invalid or Expired Link</h2>
             <p className="text-gray-700">
               This password reset link is invalid or has expired. Please request a new password reset.
             </p>
             <div className="mt-6">
               <Link 
                 href="/forgot-password" 
-                className="text-[#1a2642] hover:text-[#2a3752] font-medium"
+                className="text-pc-navy hover:text-pc-ink-muted font-medium"
               >
                 Request a new password reset
               </Link>
@@ -53,14 +53,14 @@ function ResetPasswordForm() {
       ) : isSubmitted ? (
         <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
           <CardContent className="p-12 text-center">
-            <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Password Reset Complete</h2>
+            <h2 className="text-2xl font-bold text-pc-navy mb-4">Password Reset Complete</h2>
             <p className="text-gray-700">
               Your password has been successfully reset. You may now use your new password to sign in.
             </p>
             <div className="mt-6">
               <Link 
                 href="/sign-in" 
-                className="text-[#1a2642] hover:text-[#2a3752] font-medium"
+                className="text-pc-navy hover:text-pc-ink-muted font-medium"
               >
                 Go to sign in
               </Link>
@@ -112,7 +112,7 @@ function ResetPasswordForm() {
                   toast.error("Sorry, there was an error resetting your password. Please try again.", {
                     duration: 5000,
                     style: {
-                      background: "#EF4444",
+                      background: "#b42318",
                       color: "#FFFFFF",
                     },
                   })
@@ -168,7 +168,7 @@ function ResetPasswordForm() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white focus:ring-2 focus:ring-offset-2 focus:ring-[#1a2642]"
+                className="w-full bg-pc-navy hover:bg-pc-navy-raised text-white focus:ring-2 focus:ring-offset-2 focus:ring-pc-navy"
                 disabled={isSubmitting}
                 aria-disabled={isSubmitting}
               >
@@ -183,7 +183,7 @@ function ResetPasswordForm() {
         Remember your password?{' '}
         <Link 
           href="/sign-in" 
-          className="text-[#1a2642] hover:text-[#2a3752] font-medium focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2 rounded"
+          className="text-pc-navy hover:text-pc-ink-muted font-medium focus:outline-none focus:ring-2 focus:ring-pc-navy focus:ring-offset-2 rounded"
         >
           Sign in
         </Link>
@@ -198,7 +198,7 @@ function ResetPasswordFallback() {
     <div className="max-w-md mx-auto">
       <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
         <CardContent className="p-12 text-center">
-          <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Loading...</h2>
+          <h2 className="text-2xl font-bold text-pc-navy mb-4">Loading...</h2>
           <p className="text-gray-700">
             Please wait while we load the password reset form.
           </p>
@@ -216,14 +216,14 @@ export function ResetPasswordComponent() {
 
       {/* Skip link */}
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+        <a href="#main-content" className="text-pc-navy">Skip to main content</a>
       </div>
 
       <main id="main-content">
         <section className="w-full py-12 bg-[#F598FF]" aria-labelledby="reset-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 id="reset-heading" className="text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6">
+              <h1 id="reset-heading" className="text-4xl lg:text-6xl font-bold text-pc-navy mb-6">
                 Reset Password
               </h1>
               <p className="text-xl text-gray-700 mb-8">

@@ -105,7 +105,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
     <form onSubmit={handleSubmit} className="space-y-6">
       <Card className="bg-gray-50">
         <CardHeader>
-          <CardTitle className="text-lg font-semibold text-[#1a2642]">
+          <CardTitle className="text-lg font-semibold text-pc-navy">
             Payment Information
           </CardTitle>
         </CardHeader>
@@ -114,7 +114,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
           <div className="mb-4 p-4 bg-white rounded-lg border border-gray-300">
             <div className="flex justify-between items-center">
               <span className="text-lg font-semibold text-gray-700">Total Price:</span>
-              <span className="text-lg font-bold text-[#1a2642]">${formData.amount.toFixed(2) || "0.00"}</span>
+              <span className="text-lg font-bold text-pc-navy">${formData.amount.toFixed(2) || "0.00"}</span>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ const PaymentForm: React.FC<PaymentFormProps> = ({ onBack, isLoading, setIsLoadi
         </Button>
         <Button
           type="submit"
-          className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+          className="bg-pc-navy hover:bg-pc-navy-raised text-white"
           disabled={!stripe || isSubmitting} // ✅ Prevent double submission
         >
           {isSubmitting ? "Processing..." : `Submit`}

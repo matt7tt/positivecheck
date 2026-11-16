@@ -141,7 +141,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
             {bookingUrl ? (
               <>
                 <p className="text-gray-600">Your demo is not booked yet. Choose a time and complete the calendar confirmation.</p>
-                <Button asChild className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white">
+                <Button asChild className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
                   <a
                     href={bookingUrl}
                     target="_blank"
@@ -206,7 +206,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
             <LeadFormError message={error} />
             <Button
               type="submit"
-              className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white"
+              className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent"
               disabled={isSubmitting}
             >
               {isSubmitting ? (

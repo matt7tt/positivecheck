@@ -268,7 +268,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
             )}
             <Button
               type="submit"
-              className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white"
+              className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent"
               disabled={isSubmitting}
             >
               {isSubmitting ? (

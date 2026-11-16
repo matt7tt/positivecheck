@@ -103,7 +103,7 @@ export function RpmCptCalculator() {
 
       <main>
         {/* Hero */}
-        <section className="px-6 py-16 md:py-20 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 md:py-20 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm mb-6">
               <Calculator className="w-7 h-7 text-white" />
@@ -309,14 +309,14 @@ export function RpmCptCalculator() {
                 <div className="h-56">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={chartData} layout="vertical" margin={{ left: 10, right: 20 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                      <XAxis type="number" tick={{ fontSize: 12 }} stroke="#9ca3af" tickFormatter={(v: number) => formatCurrency(v)} />
-                      <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} stroke="#9ca3af" width={55} />
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                      <XAxis type="number" tick={{ fontSize: 12 }} stroke="#8a8fa3" tickFormatter={(v: number) => formatCurrency(v)} />
+                      <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} stroke="#8a8fa3" width={55} />
                       <Tooltip
-                        contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                        contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                         formatter={(value: number) => formatCurrency(value)}
                       />
-                      <Bar dataKey="Revenue" fill="#d946ef" radius={[0, 4, 4, 0]} />
+                      <Bar dataKey="Revenue" fill="#c756d9" radius={[0, 4, 4, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -384,7 +384,7 @@ export function RpmCptCalculator() {
               <p>
                 For the full requirements — transmission-day counting, interactive communication, stacking
                 RPM with CCM and TCM, and a documentation checklist — see our{' '}
-                <Link href="/blog/2026-rpm-cpt-codes" className="text-[#d946ef] hover:underline">
+                <Link href="/blog/2026-rpm-cpt-codes" className="text-pc-accent-text hover:underline">
                   2026 RPM billing guide
                 </Link>.
               </p>
@@ -433,7 +433,7 @@ export function RpmCptCalculator() {
               <RequestDemoModal>
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8"
+                  className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8"
                 >
                   Request a Demo
                   <ArrowRight className="w-4 h-4 ml-2" />

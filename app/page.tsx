@@ -118,12 +118,12 @@ export default function HomePage() {
             <p className="mb-8 text-base text-gray-600">Also for your <Link href="/solutions#front-office" className="font-semibold text-purple-700 underline">Front Office</Link>: calls and SMS for new inquiries, scheduling, reminders and notifications.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch sm:items-center mb-8">
               <RequestDemoModal source="homepage_hero">
-                <Button className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
+                <Button className="w-full sm:w-auto bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
                   BOOK A 15-MINUTE DEMO
                 </Button>
               </RequestDemoModal>
               <LolaVoicePreview source="homepage_hero">
-                <Button variant="outline" className="w-full sm:w-auto border-[#a21caf] text-[#a21caf] hover:bg-purple-50 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
+                <Button variant="outline" className="w-full sm:w-auto border-pc-accent-text text-pc-accent-text hover:bg-purple-50 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold min-h-12 whitespace-normal">
                   HEAR LOLA’S VOICE
                 </Button>
               </LolaVoicePreview>
@@ -131,7 +131,7 @@ export default function HomePage() {
             <MonthlyOutreachStats />
           </div>
           <div className="relative min-w-0">
-            <div className="absolute -inset-4 bg-gradient-to-br from-purple-100 to-fuchsia-100 rounded-3xl -z-10" />
+            <div className="absolute -inset-4 bg-pc-accent-soft rounded-3xl -z-10" />
             <Image
               src="/images/admin-console-dashboard-new.png"
               alt="Positive Check dashboard showing patient outreach, alerts, and engagement results"
@@ -147,19 +147,19 @@ export default function HomePage() {
           {/* Trust Signals */}
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm text-gray-600 pt-6 border-t border-gray-100">
             <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-[#e879f9]" />
+              <Shield className="w-5 h-5 text-pc-accent-text" />
               <span>HIPAA Compliant</span>
             </div>
             <div className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-[#e879f9]" />
+              <Phone className="w-5 h-5 text-pc-accent-text" />
               <span>No Apps or Devices Needed</span>
             </div>
             <div className="flex items-center gap-2">
-              <Stethoscope className="w-5 h-5 text-[#e879f9]" />
+              <Stethoscope className="w-5 h-5 text-pc-accent-text" />
               <span>Built for Healthcare Providers</span>
             </div>
             <div className="flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-[#e879f9]" />
+              <BarChart3 className="w-5 h-5 text-pc-accent-text" />
               <span>Real-Time Alerts & Analytics</span>
             </div>
           </div>
@@ -180,21 +180,21 @@ export default function HomePage() {
 
             <div className="space-y-3 mb-8">
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-600">HIPAA-compliant conversations</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-600">Real-time reporting and documentation</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-600">Automated alerting and escalation</span>
               </div>
             </div>
 
             <RequestDemoModal>
-              <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-6 py-3 font-bold">
+              <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-6 py-3 font-bold">
                 REQUEST DEMO
               </Button>
             </RequestDemoModal>
@@ -231,7 +231,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <Phone className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Automated Check-Ins</h3>
                 <p className="text-gray-600">
                   Structured calls and SMS outreach that meets program requirements and increases patient contact completion.
@@ -241,7 +241,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <BarChart3 className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Actionable Insights</h3>
                 <p className="text-gray-600">
                   Track outreach performance, monitor patient responses, and receive real-time alerts for clinical and operational issues.
@@ -251,7 +251,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <Shield className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <Shield className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">HIPAA Compliant</h3>
                 <p className="text-gray-600">
                   Enterprise-grade HIPAA-compliant infrastructure with secure data handling, audit-ready records, and role-based access controls.
@@ -263,7 +263,7 @@ export default function HomePage() {
       </section>
 
       {/* Meet Lola Section */}
-      <section className="px-6 py-16 bg-gradient-to-r from-purple-500 to-[#e879f9]">
+      <section className="px-6 py-16 bg-pc-surface-inverse [&_*:focus-visible]:outline-pc-pink">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <Image
@@ -277,31 +277,31 @@ export default function HomePage() {
           </div>
           <div className="text-white">
             <h2 className="text-3xl font-bold mb-6">Meet Lola</h2>
-            <p className="text-lg text-purple-100 mb-8">
+            <p className="text-lg text-white/85 mb-8">
               Lola is our HIPAA-compliant virtual assistant for structured patient outreach. She conducts voice and SMS check-ins, captures program-aligned data, and escalates meaningful changes in real time. Check-ins can be configured for RPM, CCM, post-discharge, or any care program requiring consistent, documented engagement. Lola speaks virtually any language, enabling scalable outreach across diverse populations.
             </p>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
-                <span className="text-purple-100">Program-aligned data capture</span>
+                <CheckCircle className="w-5 h-5 text-pc-pink mt-1" />
+                <span className="text-white/85">Program-aligned data capture</span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
-                <span className="text-purple-100">
+                <CheckCircle className="w-5 h-5 text-pc-pink mt-1" />
+                <span className="text-white/85">
                   Early identification of risk signals
                 </span>
               </div>
               <div className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-purple-200 mt-1" />
-                <span className="text-purple-100">
+                <CheckCircle className="w-5 h-5 text-pc-pink mt-1" />
+                <span className="text-white/85">
                   Automated escalation workflows
                 </span>
               </div>
             </div>
 
             <RequestDemoModal>
-              <Button className="bg-white text-[#a21caf] hover:bg-purple-50 px-6 py-3 font-bold">
+              <Button className="bg-pc-accent text-pc-on-accent hover:bg-pc-accent-hover px-6 py-3 font-bold">
                 REQUEST DEMO
               </Button>
             </RequestDemoModal>
@@ -343,19 +343,19 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold mb-4 text-gray-900">Why Providers Choose Positive Check:</h3>
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                   <span className="text-sm text-gray-600">
                     Simple to Deploy: No apps or additional equipment required.
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text flex-shrink-0" />
                   <span className="text-sm text-gray-600">
                     Built to Scale: From dozens to thousands of patients without added staff.
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text flex-shrink-0" />
                   <span className="text-sm text-gray-600">
                     Flexible by Design: Adjust cadence, scripts, languages, and alerts as needs evolve.
                   </span>
@@ -365,7 +365,7 @@ export default function HomePage() {
 
             <div className="mt-8">
               <RequestDemoModal>
-                <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-6 py-3 font-bold">
+                <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-6 py-3 font-bold">
                   REQUEST DEMO
                 </Button>
               </RequestDemoModal>
@@ -405,15 +405,15 @@ export default function HomePage() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-700">Configurable alert thresholds</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-700">Automated escalation paths</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#e879f9]" />
+                <CheckCircle className="w-5 h-5 text-pc-accent-text" />
                 <span className="text-gray-700">Audit-ready documentation</span>
               </div>
             </div>
@@ -440,7 +440,7 @@ export default function HomePage() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
-                  activeTab === tab.id ? "bg-[#a21caf] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  activeTab === tab.id ? "bg-[#9c2fb0] text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {tab.title.toUpperCase()}
@@ -484,7 +484,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <Users className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <Users className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Expand Coverage</h3>
                 <p className="text-gray-600">Increase patient reach without increasing staff workload.</p>
               </CardContent>
@@ -492,7 +492,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <BarChart3 className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <BarChart3 className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Protect Reimbursement</h3>
                 <p className="text-gray-600">Improve RPM and CCM compliance with consistent, documented outreach.</p>
               </CardContent>
@@ -500,7 +500,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <Phone className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <Phone className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Improve Patient Experience</h3>
                 <p className="text-gray-600">Deliver reliable check-ins that support engagement and satisfaction.</p>
               </CardContent>
@@ -508,7 +508,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <AlertTriangle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <AlertTriangle className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Reduce Avoidable Risk</h3>
                 <p className="text-gray-600">Identify meaningful changes earlier to lower downstream costs of care.</p>
               </CardContent>
@@ -516,7 +516,7 @@ export default function HomePage() {
 
             <Card className="p-6 text-center">
               <CardContent className="pt-6">
-                <CheckCircle className="w-12 h-12 text-[#e879f9] mx-auto mb-4" />
+                <CheckCircle className="w-12 h-12 text-pc-accent-text mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Scale with Flexibility</h3>
                 <p className="text-gray-600">
                   Deliver structured check-ins at any cadence, across any care program.
@@ -537,15 +537,15 @@ export default function HomePage() {
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
+                <Shield className="w-5 h-5 text-pc-accent-text mt-1" />
                 <span className="text-gray-600">Full HIPAA compliance and secure data handling</span>
               </div>
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
+                <Shield className="w-5 h-5 text-pc-accent-text mt-1" />
                 <span className="text-gray-600">Role-based access controls for authorized teams</span>
               </div>
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-[#e879f9] mt-1" />
+                <Shield className="w-5 h-5 text-pc-accent-text mt-1" />
                 <span className="text-gray-600">Encrypted data storage and transmission</span>
               </div>
             </div>
@@ -587,8 +587,8 @@ export default function HomePage() {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-4">
-                  <Stethoscope className="w-5 h-5 text-[#e879f9]" />
-                  <span className="text-sm font-medium text-[#a21caf] uppercase">Healthcare Provider</span>
+                  <Stethoscope className="w-5 h-5 text-pc-accent-text" />
+                  <span className="text-sm font-medium text-pc-accent-text uppercase">Healthcare Provider</span>
                 </div>
                 <blockquote className="text-lg text-gray-700 mb-4 italic leading-relaxed">
                   &ldquo;{testimonials[currentTestimonialIndex].quote}&rdquo;
@@ -604,12 +604,12 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonialIndex(index)}
-                  className="w-6 h-6 inline-flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a21caf]"
+                  className="w-6 h-6 inline-flex items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9c2fb0]"
                   aria-label={`Go to testimonial ${index + 1}`}
                 >
                   <span
                     className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentTestimonialIndex ? "bg-[#a21caf]" : "bg-gray-400"
+                      index === currentTestimonialIndex ? "bg-[#9c2fb0]" : "bg-gray-400"
                     }`}
                     aria-hidden="true"
                   />
@@ -786,7 +786,7 @@ export default function HomePage() {
                     toast.success("Thank you for your message. We will be in touch soon!", {
                       duration: 3000,
                       style: {
-                        background: "#10B981",
+                        background: "#1f7a5c",
                         color: "#FFFFFF",
                       },
                     })
@@ -800,7 +800,7 @@ export default function HomePage() {
                     toast.error(leadFailureMessage(error), {
                       duration: 5000,
                       style: {
-                        background: "#EF4444",
+                        background: "#b42318",
                         color: "#FFFFFF",
                       },
                     })
@@ -824,7 +824,7 @@ export default function HomePage() {
                       id="firstName"
                       name="firstName"
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -836,7 +836,7 @@ export default function HomePage() {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -851,7 +851,7 @@ export default function HomePage() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -864,7 +864,7 @@ export default function HomePage() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -876,7 +876,7 @@ export default function HomePage() {
                   <select
                     id="customerType"
                     name="customerType"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                   >
                     <SolutionInterestOptions />
                   </select>
@@ -889,7 +889,7 @@ export default function HomePage() {
                   <select
                     id="hearAbout"
                     name="hearAbout"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent"
                   >
                     <option value="">Select an option</option>
                     <option value="online-search">Online Search (Google, Bing, etc.)</option>
@@ -916,7 +916,7 @@ export default function HomePage() {
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] resize-vertical"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent resize-vertical"
                     placeholder="Please share your questions or how we can help you..."
                   ></textarea>
                 </div>
@@ -926,7 +926,7 @@ export default function HomePage() {
                     type="checkbox"
                     id="newsletter"
                     name="newsletter"
-                    className="w-4 h-4 text-[#e879f9] border-gray-300 rounded focus:ring-[#e879f9]"
+                    className="w-4 h-4 text-pc-accent-text border-gray-300 rounded focus:ring-pc-accent"
                   />
                   <label htmlFor="newsletter" className="text-sm text-gray-700">
                     Sign up for news and updates
@@ -935,7 +935,7 @@ export default function HomePage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white py-3 font-bold"
+                  className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent py-3 font-bold"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}

@@ -84,7 +84,7 @@ export default function PostDischargeContactTimingPage() {
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
         <main>
-          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Workflow</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">TCM Contact Within 2 Business Days: Friday and Holiday Examples</h1>

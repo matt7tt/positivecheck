@@ -18,7 +18,7 @@ export function ContactForm() {
   if (isSubmitted) {
     return (
       <div className="p-12 text-center" data-clarity-mask="true">
-        <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
+        <h2 className="text-2xl font-bold text-pc-navy mb-4">Thank You!</h2>
         <p className="text-gray-600">
           Thanks for your message. We will be in touch soon.
         </p>
@@ -67,7 +67,7 @@ export function ContactForm() {
           toast.success("Thank you for your message. We will be in touch soon!", {
             duration: 3000,
             style: {
-              background: "#10B981",
+              background: "#1f7a5c",
               color: "#FFFFFF",
             },
           })
@@ -81,7 +81,7 @@ export function ContactForm() {
           toast.error("Sorry, there was an error submitting the form. Please try again.", {
             duration: 5000,
             style: {
-              background: "#EF4444",
+              background: "#b42318",
               color: "#FFFFFF",
             },
           })
@@ -131,7 +131,7 @@ export function ContactForm() {
           id="newsletter" 
           name="newsletter" 
           type="checkbox" 
-          className="h-5 w-5 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded cursor-pointer"
+          className="h-5 w-5 text-pc-navy focus:ring-pc-navy border-gray-300 rounded cursor-pointer"
         />
         <label htmlFor="newsletter" className="ml-3 block text-sm text-gray-700 cursor-pointer py-2">
           Sign up for news and updates
@@ -139,7 +139,7 @@ export function ContactForm() {
       </div>
       <Button 
         type="submit" 
-        className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-4 min-h-[44px]"
+        className="w-full bg-pc-navy hover:bg-pc-navy-raised text-white py-4 min-h-[44px]"
         disabled={isSubmitting}
       >
         {isSubmitting ? 'Submitting...' : 'Submit'}

@@ -265,7 +265,7 @@ export default function TermsPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t">
-            <Link href="/" className="text-[#e879f9] hover:text-purple-600 font-medium">
+            <Link href="/" className="text-pc-accent-text hover:text-purple-600 font-medium">
               ← Back to Home
             </Link>
           </div>

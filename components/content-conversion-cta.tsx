@@ -29,7 +29,7 @@ export function ContentConversionCta({
 }: ContentConversionCtaProps) {
   const offer = getDemoOffer(offerId)
   return (
-    <aside className="my-10 rounded-xl border border-purple-200 bg-gradient-to-br from-purple-50 to-fuchsia-50 p-6 md:p-8">
+    <aside className="my-10 rounded-xl border border-purple-200 bg-pc-surface-subtle p-6 md:p-8">
       <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-purple-700">
         For healthcare operations teams
       </p>
@@ -42,7 +42,7 @@ export function ContentConversionCta({
       )}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <RequestDemoModal source={source} offerId={offerId}>
-          <Button className="min-h-11 h-auto whitespace-normal bg-[#1a2642] px-6 py-3 text-white hover:bg-[#2a3752]">
+          <Button className="min-h-11 h-auto whitespace-normal bg-pc-navy px-6 py-3 text-white hover:bg-pc-navy-raised">
             {buttonText}
           </Button>
         </RequestDemoModal>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Positive Check motif">
+<defs><linearGradient id="pc-check" gradientUnits="userSpaceOnUse" x1="376" y1="224" x2="457.7" y2="63.6"><stop offset="0" stop-color="#c756d9"/><stop offset="1" stop-color="#f598ff"/></linearGradient></defs>
+<rect x="0" y="0" width="152" height="96" rx="16" fill="#f598ff"/>
+<rect x="0" y="112" width="152" height="208" rx="16" fill="#c756d9"/>
+<rect x="168" y="0" width="312" height="320" rx="16" fill="#191c3b"/>
+<g transform="translate(-15 -8)">
+<line x1="220" y1="272" x2="247.2" y2="218.5" stroke="#c756d9" stroke-width="16" stroke-linecap="round"/>
+<line x1="272" y1="256" x2="317.4" y2="166.9" stroke="#f598ff" stroke-width="16" stroke-linecap="round"/>
+<line x1="324" y1="240" x2="387.6" y2="115.3" stroke="#c756d9" stroke-width="16" stroke-linecap="round"/>
+<line x1="376" y1="224" x2="457.7" y2="63.6" stroke="url(#pc-check)" stroke-width="16" stroke-linecap="round"/>
+</g>
+</svg>
