@@ -2,16 +2,10 @@
 
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
-import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Breadcrumb, BreadcrumbSchema } from '@/components/shared/breadcrumb'
 import { Card, CardContent } from '@/components/ui/card'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 const BLOG_POSTS = [
   {
@@ -58,7 +52,7 @@ export function BlogComponent() {
       <PublicHeader currentPage="blog" />
 
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+        <a href="#main-content" className="text-pc-navy">Skip to main content</a>
       </div>
 
       <main id="main-content" className="flex-grow container mx-auto px-4 py-8">
@@ -82,7 +76,7 @@ export function BlogComponent() {
                   />
                 </div>
                 <CardContent className="p-6">
-                  <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2 group-hover:text-[#2a3752]`}>
+                  <h3 className={`text-xl font-semibold text-pc-navy mb-2 group-hover:text-pc-ink-muted`}>
                     {post.title}
                   </h3>
                   <p className="text-gray-600 mb-4">

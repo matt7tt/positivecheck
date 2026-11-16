@@ -3,7 +3,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { AuthProvider } from "@/lib/auth-context";
 import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
 import { MarketingTelemetry } from "@/components/marketing-telemetry";
@@ -11,11 +11,14 @@ import { MARKETING_GA_MEASUREMENT_ID } from "@/lib/analytics-config";
 import { HeatmapPrivacy } from "@/components/heatmap-privacy";
 import sitemap from "./sitemap";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: 'swap',
+// Inter variable font from the Positive Check design system (SIL OFL, see app/fonts/Inter-OFL.txt)
+const inter = localFont({
+  src: "./fonts/inter-latin-wght-normal.woff2",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
   preload: true,
-  variable: '--font-inter',
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -147,7 +150,7 @@ gtag('config','${gaMeasurementId}');
           __html: `
             .hero-container { min-height: 400px; }
             @media (min-width: 1024px) { .hero-container { min-height: 600px; } }
-            .hero-image { background-color: #f3f4f6; }
+            .hero-image { background-color: #f2f2f4; }
             .hero-text { font-display: swap; }
           `
         }} />
@@ -191,7 +194,7 @@ gtag('config','${gaMeasurementId}');
       </head>
       <body
         data-clarity-mask="true"
-        className={`${inter.className} antialiased`}
+        className={`${inter.variable} ${inter.className} antialiased`}
 >
         {/* No unconditional noscript tracker: it bypasses the marketing-host guard. */}
         <AuthProvider>

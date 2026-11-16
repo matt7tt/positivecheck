@@ -40,7 +40,7 @@ export default function GlossaryIndexPage() {
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
         <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#1a2642] mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-bold text-pc-navy mb-6 leading-tight">
             Healthcare Billing & Care Program Glossary
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -48,7 +48,7 @@ export default function GlossaryIndexPage() {
             compliance terms referenced across Positive Check&apos;s provider resources.
             Each entry links to its primary CMS source.
           </p>
-          <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
+          <h2 className="text-2xl font-bold text-pc-navy mt-12 mb-4">
             What this section covers
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
@@ -71,7 +71,7 @@ export default function GlossaryIndexPage() {
               engagement.
             </li>
           </ul>
-          <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
+          <h2 className="text-2xl font-bold text-pc-navy mt-12 mb-4">
             Current entries
           </h2>
           <div className="grid md:grid-cols-2 gap-6 not-prose">
@@ -329,7 +329,7 @@ export default function GlossaryIndexPage() {
           <p className="text-gray-700 leading-relaxed mt-8">
             Entries are added on an ongoing basis as Positive Check publishes new
             provider-facing content. For questions about a term not yet listed,{" "}
-            <Link href="/contact" className="text-[#1a2642] underline">
+            <Link href="/contact" className="text-pc-navy underline">
               contact our team
             </Link>
             .

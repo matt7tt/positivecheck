@@ -10,14 +10,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import toast, { Toaster } from 'react-hot-toast'
-import { Space_Grotesk } from 'next/font/google'
 import { getDemoBookingUrl } from '@/lib/demo-booking'
 import { getAttributionContext, trackEvent } from '@/lib/analytics'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function DemoComponent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -34,12 +28,12 @@ export function DemoComponent() {
         <main className="flex-1 flex items-center justify-center bg-gray-50">
           <Card className="w-full max-w-md">
             <CardContent role="status" className="p-12 text-center">
-              <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
+              <h2 className="text-2xl font-bold text-pc-navy mb-4">Thank You!</h2>
               <p className="text-gray-600 mb-6">
                 {bookingUrl ? "Your request is in. Your demo is not booked yet. Choose a time and complete the calendar confirmation." : "Your request is in. Our team will contact you by email to arrange a time. No appointment has been booked yet."}
               </p>
               {bookingUrl && (
-                <Button asChild className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white mb-3">
+                <Button asChild className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent mb-3">
                   <a
                     href={bookingUrl}
                     target="_blank"
@@ -52,7 +46,7 @@ export function DemoComponent() {
               )}
               <Button 
                 onClick={() => setIsSubmitted(false)}
-                className="bg-[#1a2642] hover:bg-[#2a3752] text-white"
+                className="bg-pc-navy hover:bg-pc-navy-raised text-white"
               >
                 Submit Another
               </Button>
@@ -72,7 +66,7 @@ export function DemoComponent() {
       <main className="flex-1 flex items-center justify-center bg-gray-50 py-12">
         <Card className="w-full max-w-md">
           <CardHeader>
-            <CardTitle className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] text-center`}>
+            <CardTitle className={`text-2xl font-bold text-pc-navy text-center`}>
               Demo Request
             </CardTitle>
             <p className="text-gray-600 text-center">
@@ -115,7 +109,7 @@ export function DemoComponent() {
                   toast.success("Demo request submitted successfully!", {
                     duration: 3000,
                     style: {
-                      background: "#10B981",
+                      background: "#1f7a5c",
                       color: "#FFFFFF",
                     },
                   })
@@ -129,7 +123,7 @@ export function DemoComponent() {
                   toast.error(leadFailureMessage(error), {
                     duration: 5000,
                     style: {
-                      background: "#EF4444",
+                      background: "#b42318",
                       color: "#FFFFFF",
                     },
                   })
@@ -162,7 +156,7 @@ export function DemoComponent() {
 
               <Button 
                 type="submit" 
-                className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-4 min-h-[44px]"
+                className="w-full bg-pc-navy hover:bg-pc-navy-raised text-white py-4 min-h-[44px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Submitting...' : bookingUrl ? 'Continue to scheduling' : 'Request Demo'}

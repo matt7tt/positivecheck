@@ -67,7 +67,7 @@ export default function CCMVsInHouseCoordinatorsPage() {
       <StructuredData id="ccm-compare-faq" data={buildFAQSchema(comparisonFaqs)} />
       <PublicHeader currentPage="platform" />
       <main>
-        <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto">
             <p className="text-sm uppercase tracking-widest mb-4">Workflow comparison</p>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">{title}</h1>

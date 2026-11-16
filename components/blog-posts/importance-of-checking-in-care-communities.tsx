@@ -10,7 +10,7 @@ export function ImportanceOfCheckingInPost({ faqs = [] }: { faqs?: PostFAQItem[]
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link 
         href="/blog"
-        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+        className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
@@ -94,7 +94,7 @@ export function ImportanceOfCheckingInPost({ faqs = [] }: { faqs?: PostFAQItem[]
             Want to learn more about how Positive Check can help ensure your loved one's well-being in their care community? Contact us today!
           </p>
           <Link href="/contact">
-            <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white">
+            <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
               Contact Us
             </Button>
           </Link>

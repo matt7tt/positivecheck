@@ -10,7 +10,7 @@ export function RpmBilling2026CptCodesPost() {
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
         href="/blog"
-        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+        className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
@@ -51,7 +51,7 @@ export function RpmBilling2026CptCodesPost() {
           <p className="font-semibold text-gray-900 mb-1">Looking ahead to 2027?</p>
           <p className="text-gray-700 mb-0">
             CMS has proposed new initiating-visit and clinical-staff employment requirements. Read our{" "}
-            <Link href="/blog/2027-rpm-proposed-rule" className="text-[#d946ef] hover:underline">
+            <Link href="/blog/2027-rpm-proposed-rule" className="text-pc-accent-text hover:underline">
               analysis of the CY 2027 RPM proposed rule
             </Link>.
           </p>
@@ -70,12 +70,12 @@ export function RpmBilling2026CptCodesPost() {
         </h2>
         <p>
           The principal Medicare RPM codes for 2026 are{' '}
-          <Link href="/resources/glossary/cpt-99453" className="text-[#d946ef] hover:underline">99453</Link> for setup and education;{' '}
-          <Link href="/resources/glossary/cpt-99445" className="text-[#d946ef] hover:underline">99445</Link> and{' '}
-          <Link href="/resources/glossary/cpt-99454" className="text-[#d946ef] hover:underline">99454</Link> for device supply and data transmission; and{' '}
-          <Link href="/resources/glossary/cpt-99470" className="text-[#d946ef] hover:underline">99470</Link>,{' '}
-          <Link href="/resources/glossary/cpt-99457" className="text-[#d946ef] hover:underline">99457</Link>, and{' '}
-          <Link href="/resources/glossary/cpt-99458" className="text-[#d946ef] hover:underline">99458</Link> for treatment management. CPT 99091 may additionally apply to qualifying physician or other qualified healthcare professional data collection and interpretation, as a distinct legacy service rather than an interchangeable part of the six-code framework above.
+          <Link href="/resources/glossary/cpt-99453" className="text-pc-accent-text hover:underline">99453</Link> for setup and education;{' '}
+          <Link href="/resources/glossary/cpt-99445" className="text-pc-accent-text hover:underline">99445</Link> and{' '}
+          <Link href="/resources/glossary/cpt-99454" className="text-pc-accent-text hover:underline">99454</Link> for device supply and data transmission; and{' '}
+          <Link href="/resources/glossary/cpt-99470" className="text-pc-accent-text hover:underline">99470</Link>,{' '}
+          <Link href="/resources/glossary/cpt-99457" className="text-pc-accent-text hover:underline">99457</Link>, and{' '}
+          <Link href="/resources/glossary/cpt-99458" className="text-pc-accent-text hover:underline">99458</Link> for treatment management. CPT 99091 may additionally apply to qualifying physician or other qualified healthcare professional data collection and interpretation, as a distinct legacy service rather than an interchangeable part of the six-code framework above.
         </p>
         <p>
           Two of the six principal codes, 99445 and 99470, are new for 2026. CPT 99453 covers initial device setup and patient education. Device-supply codes 99445 and 99454 are reported based on a 30-day monitoring period, while treatment-management codes 99470, 99457, and 99458 are reported based on a calendar month. Those periods don't always align exactly, and each component's requirements are evaluated independently.
@@ -144,7 +144,7 @@ export function RpmBilling2026CptCodesPost() {
 
         <p className="mb-6">
           Amounts are approximate 2026 Medicare non-facility national averages and vary by locality, provider status, and geographic adjustment. Multiple industry sources report slightly different point estimates for 99454/99445 (commonly $47–$52); rather than pick one, verify the current locality-specific amount in the CMS Physician Fee Schedule Look-Up Tool before finalizing program economics. Estimates throughout this table are provided for general comparison only and should not be used to forecast claims revenue. To model program-level revenue from your own patient mix, try our{' '}
-          <Link href="/resources/rpm-cpt-calculator" className="text-[#d946ef] hover:underline">
+          <Link href="/resources/rpm-cpt-calculator" className="text-pc-accent-text hover:underline">
             2026 RPM CPT calculator
           </Link>.
         </p>
@@ -181,7 +181,7 @@ export function RpmBilling2026CptCodesPost() {
           CPT 99445 vs. 99454: Which RPM device-supply code applies?
         </h2>
 
-        <blockquote className="border-l-4 border-[#d946ef] bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
+        <blockquote className="border-l-4 border-pc-accent bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
           Quick answer: Use 99445 for 2–15 qualifying transmission days and 99454 for 16–30 qualifying transmission days within the 30-day monitoring period; don't report both for the same period.
         </blockquote>
 
@@ -208,7 +208,7 @@ export function RpmBilling2026CptCodesPost() {
           CPT 99470 vs. 99457: Which treatment-management code applies?
         </h2>
 
-        <blockquote className="border-l-4 border-[#d946ef] bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
+        <blockquote className="border-l-4 border-pc-accent bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
           Quick answer: Use 99470 when qualifying monthly treatment-management time reaches 10–19 minutes and 99457 when it reaches 20–39 minutes; 99458 may apply beginning at 40 total minutes.
         </blockquote>
 
@@ -249,7 +249,7 @@ export function RpmBilling2026CptCodesPost() {
         </h2>
         <p>
           RPM may be reported concurrently with Chronic Care Management and Transitional Care Management when all requirements for each service are independently met. The governing rule is that the same staff time, interaction, or work may not be counted toward more than one billed service. Documentation should clearly identify which activities support each program. RPM and CCM can create a meaningful concurrent reimbursement opportunity for patients with chronic conditions generating device data, since RPM's device-driven billing (setup, device supply, and treatment-management time) is separate from CCM's care-coordination time, as long as no minute is counted twice. CMS confirms this concurrent-billing structure in its CCM guidance. See our{' '}
-          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-[#d946ef] hover:underline">
+          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-pc-accent-text hover:underline">
             RPM vs. CCM Medicare billing comparison
           </Link>{' '}
           for how the two programs' eligibility and time rules differ.
@@ -320,7 +320,7 @@ export function RpmBilling2026CptCodesPost() {
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact">
-              <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white">
+              <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
                 Request a demo
               </Button>
             </Link>
@@ -387,35 +387,35 @@ export function RpmBilling2026CptCodesPost() {
           <ul className="list-disc pl-6 space-y-2 text-sm text-gray-600">
             <li>
               CMS Physician Fee Schedule Look-Up Tool.{' '}
-              <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
+              <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
             </li>
             <li>
               CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026.{' '}
-              <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
+              <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
             </li>
             <li>
               CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F).{' '}
-              <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
+              <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
             </li>
             <li>
               Federal Register: Medicare and Medicaid Programs; CY 2026 Payment Policies Under the Physician Fee Schedule.{' '}
-              <a href="https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other</a>
+              <a href="https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.federalregister.gov/documents/2025/11/05/2025-19787/medicare-and-medicaid-programs-cy-2026-payment-policies-under-the-physician-fee-schedule-and-other</a>
             </li>
             <li>
               CMS: Remote Patient Monitoring coverage page.{' '}
-              <a href="https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring</a>
+              <a href="https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/medicare/coverage/telehealth/remote-patient-monitoring</a>
             </li>
             <li>
               Telehealth.HHS.gov: Billing for Remote Patient Monitoring.{' '}
-              <a href="https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient</a>
+              <a href="https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://telehealth.hhs.gov/providers/best-practice-guides/telehealth-and-remote-patient-monitoring/billing-remote-patient</a>
             </li>
             <li>
               CMS MLN909188: Chronic Care Management Services (concurrent-billing guidance).{' '}
-              <a href="https://www.cms.gov/files/document/chroniccaremanagement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/chroniccaremanagement.pdf</a>
+              <a href="https://www.cms.gov/files/document/chroniccaremanagement.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/chroniccaremanagement.pdf</a>
             </li>
             <li>
               Nixon Law Group: CMS Finalizes 2026 Remote Monitoring Reimbursement Updates (secondary analysis quoting the CY 2026 final rule's comment/response on interactive communication and AI prompts).{' '}
-              <a href="https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm</a>
+              <a href="https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.nixonlawgroup.com/resources/cms-finalizes-2026-remote-monitoring-reimbursement-updates-what-changed-for-rpm-and-rtm</a>
             </li>
           </ul>
         </div>

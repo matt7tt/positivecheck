@@ -2,13 +2,7 @@
 
 import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
-import { Space_Grotesk } from 'next/font/google'
 import Link from 'next/link'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
 
 export function BlogPostComponent() {
   return (
@@ -17,7 +11,7 @@ export function BlogPostComponent() {
 
       <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
         <article className="prose max-w-none">
-          <h1 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642] mb-4`}>
+          <h1 className={`text-4xl font-bold text-pc-navy mb-4`}>
             How Many Adults Live Far From Aging Parents?
           </h1>
           <div className="text-gray-500 mb-8">March 15, 2024</div>
@@ -37,14 +31,14 @@ export function BlogPostComponent() {
             Regular wellness check-ins are essential for maintaining the health and safety of seniors, yet many go days or even weeks without meaningful contact. Whether in assisted living, home care, or independent living settings, consistent outreach helps identify changes in well-being early and ensures that seniors feel connected and supported. Positive Check was built to address this gap with reliable, proactive care.
           </p>
 
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          <h2 className={`text-2xl font-bold text-pc-navy mt-8 mb-4`}>
             The Importance of Checking in on Aging Parents
           </h2>
           <p>
             As our loved ones grow older, ensuring their safety, health, and well-being becomes an increasingly significant priority. Life often gets busy, but making time to check in on aging parents regularly is not just a kind gesture. It's a vital part of supporting their physical and emotional health.
           </p>
 
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          <h2 className={`text-2xl font-bold text-pc-navy mt-8 mb-4`}>
             Why Regular Check-ins Matter
           </h2>
           <p>
@@ -57,7 +51,7 @@ export function BlogPostComponent() {
             <li><strong>Help Manage Daily Tasks:</strong> Aging parents may struggle with tasks such as grocery shopping, scheduling doctor's appointments, or remembering medications. Regular communication ensures these needs don't go unmet.</li>
           </ul>
 
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          <h2 className={`text-2xl font-bold text-pc-navy mt-8 mb-4`}>
             How Positive Check Makes a Difference
           </h2>
           <p>
@@ -70,21 +64,21 @@ export function BlogPostComponent() {
             <li><strong>Affordable:</strong> Positive Check is an affordable solution for any healthcare provider or care team.</li>
           </ul>
 
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          <h2 className={`text-2xl font-bold text-pc-navy mt-8 mb-4`}>
             When Life Gets Busy, We're Here to Help
           </h2>
           <p>
             Positive Check gives care teams confidence that patients receive consistent wellness check-ins, even when staff bandwidth is limited. Knowing that Positive Check is consistently checking in can provide immense relief for providers and ensure seniors feel valued and cared for.
           </p>
 
-          <h2 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] mt-8 mb-4`}>
+          <h2 className={`text-2xl font-bold text-pc-navy mt-8 mb-4`}>
             Start Supporting Your Loved Ones Today
           </h2>
           <p>
             Every senior deserves the assurance that someone is looking out for them. Regular check-ins are more than just a phone call. They're a lifeline. Positive Check makes it easy to provide that care and connection.
           </p>
           <p>
-            <Link href="/contact" className="text-[#1a2642] font-medium hover:text-[#2a3752]">
+            <Link href="/contact" className="text-pc-navy font-medium hover:text-pc-ink-muted">
               Visit Positive Check
             </Link> to learn more about how we can help you support your aging parents. Together, we can ensure your loved ones lead happy, healthy, and connected lives.
           </p>

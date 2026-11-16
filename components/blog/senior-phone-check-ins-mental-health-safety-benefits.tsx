@@ -15,7 +15,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost({ faqs = [
           <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
             <Link
               href="/blog"
-              className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+              className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
               aria-label="Back to blog"
             >
               ← Back to Blog
@@ -169,7 +169,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost({ faqs = [
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-block bg-[#e879f9] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#d946ef] transition-colors"
+                  className="inline-block bg-pc-accent text-pc-on-accent px-8 py-4 rounded-lg font-semibold hover:bg-pc-accent-hover transition-colors"
                 >
                   Start Your Free Wellness Check-In Today
                 </Link>

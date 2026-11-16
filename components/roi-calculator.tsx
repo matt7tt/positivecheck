@@ -185,7 +185,7 @@ export function ROICalculator() {
         {/* ================================================================ */}
         {/* Section 1: Hero */}
         {/* ================================================================ */}
-        <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
           <div className="max-w-7xl mx-auto text-center">
             <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm mb-6">
               <Calculator className="w-7 h-7 text-white" />
@@ -357,15 +357,15 @@ export function ROICalculator() {
                   <div className="h-52">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={chartData} layout="vertical" margin={{ left: 10, right: 20 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                        <XAxis type="number" tick={{ fontSize: 12 }} stroke="#9ca3af" tickFormatter={(v: number) => formatCurrency(v)} />
-                        <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} stroke="#9ca3af" width={60} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                        <XAxis type="number" tick={{ fontSize: 12 }} stroke="#8a8fa3" tickFormatter={(v: number) => formatCurrency(v)} />
+                        <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} stroke="#8a8fa3" width={60} />
                         <Tooltip
-                          contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                          contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                           formatter={(value: number) => formatCurrency(value)}
                         />
-                        <Bar dataKey="Revenue" fill="#d946ef" radius={[0, 4, 4, 0]} />
-                        <Bar dataKey="Software Cost" fill="#9ca3af" radius={[0, 4, 4, 0]} />
+                        <Bar dataKey="Revenue" fill="#c756d9" radius={[0, 4, 4, 0]} />
+                        <Bar dataKey="Software Cost" fill="#8a8fa3" radius={[0, 4, 4, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -603,7 +603,7 @@ export function ROICalculator() {
               <RequestDemoModal>
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8"
+                  className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8"
                 >
                   Request a Demo
                   <ArrowRight className="w-4 h-4 ml-2" />

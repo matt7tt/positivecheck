@@ -57,7 +57,7 @@ export default function ContactPage() {
       toast.success("Thank you for your message. We will be in touch soon!", {
         duration: 3000,
         style: {
-          background: "#10B981",
+          background: "#1f7a5c",
           color: "#FFFFFF",
         },
       })
@@ -71,7 +71,7 @@ export default function ContactPage() {
       toast.error(leadFailureMessage(error), {
         duration: 5000,
         style: {
-          background: "#EF4444",
+          background: "#b42318",
           color: "#FFFFFF",
         },
       })
@@ -86,7 +86,7 @@ export default function ContactPage() {
       <PublicHeader currentPage="contact" />
 
       {/* Hero Section */}
-      <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+      <section className="px-6 py-16 bg-pc-navy text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Contact Us</h1>
           <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -165,7 +165,7 @@ export default function ContactPage() {
                     id="hearAbout"
                     name="hearAbout"
                     disabled={isSubmitting}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#e879f9] focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pc-accent focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select an option</option>
                     <option value="online-search">Online Search (Google, Bing, etc.)</option>
@@ -204,7 +204,7 @@ export default function ContactPage() {
                     id="newsletter"
                     name="newsletter"
                     disabled={isSubmitting}
-                    className="w-4 h-4 text-[#e879f9] border-gray-300 rounded focus:ring-[#e879f9] disabled:cursor-not-allowed"
+                    className="w-4 h-4 text-pc-accent-text border-gray-300 rounded focus:ring-pc-accent disabled:cursor-not-allowed"
                   />
                   <label htmlFor="newsletter" className="text-sm text-gray-700">
                     Sign up for news and updates
@@ -213,7 +213,7 @@ export default function ContactPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white py-3 font-bold"
+                  className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent py-3 font-bold"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

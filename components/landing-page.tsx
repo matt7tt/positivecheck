@@ -9,24 +9,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { CheckCircle, ChevronDown, Volume2 } from 'lucide-react'
 // import { Phone, Calendar, Clock, Shield } from 'lucide-react'
-import { Space_Grotesk, Raleway } from 'next/font/google'
 import { useState, useEffect } from 'react'
 import { PublicHeader } from "@/components/shared/public-header"
 import toast, { Toaster } from 'react-hot-toast'
 import { PublicFooter } from "@/components/shared/public-footer"
 import Script from 'next/script'
 import { ContactForm } from '@/components/contact-form'
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-})
-
-const raleway = Raleway({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
-})
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -224,13 +212,13 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           <div className="grid lg:grid-cols-2 gap-8 items-center py-2 lg:py-4 hero-container">
             <div className="space-y-8 md:space-y-12 ml-4">
               <div className="space-y-6">
-                <h1 id="hero-heading" className={`${spaceGrotesk.className} text-4xl lg:text-6xl font-bold text-[#1a2642] leading-tight hero-text`}>
+                <h1 id="hero-heading" className={`text-4xl lg:text-6xl font-bold text-pc-navy leading-tight hero-text`}>
                   {variant === 'B' 
                     ? 'Stay Connected Even When Life Get Busy'
                     : 'Wellness Check-In Calls for Aging Parents'
                   }
                 </h1>
-                <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600 hero-text`}>
+                <p className={`text-xl lg:text-2xl text-gray-600 hero-text`}>
                   {variant === 'B' 
                     ? 'A friendly conversation that keeps care teams informed with daily insights.'
                     : 'A friendly conversation that keeps care teams informed with daily insights.'
@@ -242,7 +230,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
               <Link 
                 href="/contact"
                 aria-label="Start your sign up process"
-                className={`${spaceGrotesk.className} inline-block bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                className={`inline-block bg-pc-navy hover:bg-pc-navy-raised text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
               >
                 SIGN UP
               </Link>
@@ -263,15 +251,15 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           </div>
         </section>
 
-        <section className="bg-[#f8f9ff] py-12 text-center">
+        <section className="bg-[#f2f2f4] py-12 text-center">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642] mb-4`}>
+            <h2 className={`text-4xl lg:text-5xl font-bold text-pc-navy mb-4`}>
               {variant === 'B' 
                 ? 'Never Wonder How Your Parents Are Doing'
                 : 'Stay Connected, Stay Informed'
               }
             </h2>
-            <p className={`${raleway.className} text-xl lg:text-2xl text-gray-600`}>
+            <p className={`text-xl lg:text-2xl text-gray-600`}>
               {variant === 'B' 
                 ? 'Daily Check-Ins That Bridge the Distance'
                 : 'Because You Cannot Always Be There'
@@ -295,36 +283,36 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 </div>
               </div>
               <div className="space-y-6 bg-[#F598FF] p-12 rounded-2xl ml-4">
-                <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642]`}>
+                <h2 className={`text-5xl font-bold text-pc-navy`}>
                   Meet Lola
                 </h2>
-                <p className="text-lg text-[#1a2642]">
+                <p className="text-lg text-pc-navy">
                   Caring for aging loved ones while managing life's responsibilities can be overwhelming.
                 </p>
-                <p className="text-lg text-[#1a2642]">
+                <p className="text-lg text-pc-navy">
                   That's where Lola comes in. Lola is our caring AI companion that makes regular check-in calls to seniors, asking simple but important questions about their well-being.
                 </p>
-                <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642] pt-4`}>
+                <h3 className={`text-2xl font-bold text-pc-navy pt-4`}>
                   How Lola Helps
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
-                    <span className="text-[#1a2642]">Provides peace of mind for busy care teams.</span>
+                    <CheckCircle className="text-pc-navy h-6 w-6 flex-shrink-0" />
+                    <span className="text-pc-navy">Provides peace of mind for busy care teams.</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
-                    <span className="text-[#1a2642]">Supports seniors in maintaining their independence.</span>
+                    <CheckCircle className="text-pc-navy h-6 w-6 flex-shrink-0" />
+                    <span className="text-pc-navy">Supports seniors in maintaining their independence.</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="text-[#1a2642] h-6 w-6 flex-shrink-0" />
-                    <span className="text-[#1a2642]">Delivers daily wellness updates with meaningful trend analysis.</span>
+                    <CheckCircle className="text-pc-navy h-6 w-6 flex-shrink-0" />
+                    <span className="text-pc-navy">Delivers daily wellness updates with meaningful trend analysis.</span>
                   </li>
                 </ul>
-                <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
+                <p className={`text-lg text-gray-600`}>&nbsp;</p>
                 <Link href="/contact">
                   <Button 
-                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                    className={`bg-pc-navy hover:bg-pc-navy-raised text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
                     SIGN UP
                   </Button>
@@ -337,12 +325,12 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4">
           <div className="flex items-center justify-center gap-4 mb-12">
-            <h2 className={`${spaceGrotesk.className} text-3xl md:text-4xl font-bold text-[#1a2642]`}>
+            <h2 className={`text-3xl md:text-4xl font-bold text-pc-navy`}>
               Hello there! My name is Lola...
             </h2>
             <Button 
               onClick={playAudio}
-              className="flex items-center gap-2 bg-[#1a2642] hover:bg-[#2a3752] text-white p-4 min-h-[44px] min-w-[44px]"
+              className="flex items-center gap-2 bg-pc-navy hover:bg-pc-navy-raised text-white p-4 min-h-[44px] min-w-[44px]"
             >
               <Volume2 className="h-5 w-5" />
               Click to hear Lola
@@ -362,7 +350,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2`}>
+                  <h3 className={`text-xl font-semibold text-pc-navy mb-2`}>
                     How are you feeling today?
                   </h3>
                   <p className="text-gray-600">
@@ -382,7 +370,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2`}>
+                  <h3 className={`text-xl font-semibold text-pc-navy mb-2`}>
                     Did you sleep well last night?
                   </h3>
                   <p className="text-gray-600">
@@ -402,7 +390,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2`}>
+                  <h3 className={`text-xl font-semibold text-pc-navy mb-2`}>
                     Have you taken your medicine?
                   </h3>
                   <p className="text-gray-600">
@@ -422,7 +410,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   />
                 </div>
                 <CardContent className="pt-6">
-                  <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642] mb-2`}>
+                  <h3 className={`text-xl font-semibold text-pc-navy mb-2`}>
                     Have you eaten today?
                   </h3>
                   <p className="text-gray-600">
@@ -434,7 +422,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
             <div className="text-center mt-12">
               <Link href="/contact">
                 <Button 
-                  className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                  className={`bg-pc-navy hover:bg-pc-navy-raised text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                 >
                   SIGN UP
                 </Button>
@@ -445,57 +433,57 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
 
         <section className="bg-[#F598FF] py-12 lg:py-16">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-12 ml-4`}>
+            <h2 className={`text-5xl font-bold text-pc-navy mb-12 ml-4`}>
               How does it work?
             </h2>
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-8 ml-4">
                 <div className="space-y-2">
-                  <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-2xl font-bold text-pc-navy`}>
                     Step 1: Personalized Scheduling
                   </h3>
-                  <p className="text-lg text-[#1a2642]">
+                  <p className="text-lg text-pc-navy">
                     Set up convenient call times and customize the questions you want Lola to ask.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-2xl font-bold text-pc-navy`}>
                     Step 2: Friendly Check-Ins
                   </h3>
-                  <p className="text-lg text-[#1a2642]">
+                  <p className="text-lg text-pc-navy">
                     Lola makes daily calls to your loved one's existing phone number, engaging them in natural, conversational wellness check-ins.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-2xl font-bold text-pc-navy`}>
                     Step 3: Insights Delivered to You
                   </h3>
-                  <p className="text-lg text-[#1a2642]">
+                  <p className="text-lg text-pc-navy">
                     Receive a daily email notification and click through to the dashboard for daily wellness insights and helpful trend analysis. <Link href="/how-it-works" className="text-blue-600 hover:text-blue-800 underline">Learn more about how it works</Link>.
                   </p>
                 </div>
 
                 <div className="space-y-4 pt-8">
-                  <h3 className={`${spaceGrotesk.className} text-2xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-2xl font-bold text-pc-navy`}>
                     Why Providers Choose Us
                   </h3>
                   <ul className="space-y-4">
-                    <li className="text-lg text-[#1a2642]">
+                    <li className="text-lg text-pc-navy">
                       • Easy setup: no smartphones, apps, or equipment needed.
                     </li>
-                    <li className="text-lg text-[#1a2642]">
+                    <li className="text-lg text-pc-navy">
                       • Affordable and flexible: $20 per month, no hidden fees, and cancel anytime.
                     </li>
-                    <li className="text-lg text-[#1a2642]">
+                    <li className="text-lg text-pc-navy">
                       • Reliable and adaptable: adjust settings as needs evolve.
                     </li>
                   </ul>
                 </div>
-                <p className={`${raleway.className} text-lg text-gray-600`}>&nbsp;</p>
+                <p className={`text-lg text-gray-600`}>&nbsp;</p>
 
                 <Link href="/contact">
                   <Button 
-                    className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                    className={`bg-pc-navy hover:bg-pc-navy-raised text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                   >
                     SIGN UP
                   </Button>
@@ -534,11 +522,11 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                 </div>
                 
                 <div className="space-y-8">
-                  <h2 className={`${spaceGrotesk.className} text-4xl lg:text-5xl font-bold text-[#1a2642]`}>
+                  <h2 className={`text-4xl lg:text-5xl font-bold text-pc-navy`}>
                     Introducing the Wellness Dashboard
                   </h2>
                   
-                  <h3 className={`${spaceGrotesk.className} text-2xl font-semibold text-[#1a2642]`}>
+                  <h3 className={`text-2xl font-semibold text-pc-navy`}>
                     Stay Informed with Daily Insights
                   </h3>
                   
@@ -548,20 +536,20 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   
                   <div className="space-y-6">
                     <div className="text-lg text-gray-700">
-                      <span className="font-semibold text-[#1a2642]">Track Contacts:</span> See contact rates over time and when last contact attempt was made.
+                      <span className="font-semibold text-pc-navy">Track Contacts:</span> See contact rates over time and when last contact attempt was made.
                     </div>
                     <div className="text-lg text-gray-700">
-                      <span className="font-semibold text-[#1a2642]">Monitor Trends:</span> Track changes in mood, sleep, medication adherence, and nutrition over time.
+                      <span className="font-semibold text-pc-navy">Monitor Trends:</span> Track changes in mood, sleep, medication adherence, and nutrition over time.
                     </div>
                     <div className="text-lg text-gray-700">
-                      <span className="font-semibold text-[#1a2642]">Personalize Care:</span> Adjust questions and call times to better suit your loved one's needs.
+                      <span className="font-semibold text-pc-navy">Personalize Care:</span> Adjust questions and call times to better suit your loved one's needs.
                     </div>
                   </div>
                   
                   <div className="pt-4">
                     <Link href="/contact">
                       <Button 
-                        className={`${spaceGrotesk.className} bg-[#1a2642] hover:bg-[#2a3752] text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
+                        className={`bg-pc-navy hover:bg-pc-navy-raised text-white px-8 py-4 text-lg rounded-md min-h-[44px] min-w-[44px]`}
                       >
                         SIGN UP
                       </Button>
@@ -575,7 +563,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
 
         <section className="py-12 lg:py-16">
           <div className="container mx-auto px-4">
-            <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-bold text-[#1a2642] mb-8 text-center`}>
+            <h2 className={`text-3xl lg:text-4xl font-bold text-pc-navy mb-8 text-center`}>
               FAQs
             </h2>
             <div className="space-y-4 max-w-3xl mx-auto">
@@ -639,11 +627,11 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                     aria-expanded={expandedFaqs.has(index)}
                     aria-controls={`faq-content-${index}`}
                   >
-                    <h3 className={`${spaceGrotesk.className} text-xl font-semibold text-[#1a2642]`}>
+                    <h3 className={`text-xl font-semibold text-pc-navy`}>
                       {faq.question}
                     </h3>
                     <ChevronDown 
-                      className={`h-5 w-5 text-[#1a2642] transition-transform ${
+                      className={`h-5 w-5 text-pc-navy transition-transform ${
                         expandedFaqs.has(index) ? 'transform rotate-180' : ''
                       }`}
                       aria-hidden="true"
@@ -663,7 +651,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           </div>
         </section>
 
-        <section className="bg-[#f8f9ff] py-8 lg:py-12">
+        <section className="bg-[#f2f2f4] py-8 lg:py-12">
           <div className="container mx-auto px-4">
             <blockquote className="max-w-3xl mx-auto">
               <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -680,7 +668,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                   <p className="text-xl text-gray-600 mb-4">
                     "My son calls when he can but lives far away and is busy with his family. Lola gives me peace of mind because she checks-in with me everyday and let's my son know that I am okay, even when we can't talk on the phone. He will call and help me if something is not right."
                   </p>
-                  <footer className="text-lg font-semibold text-[#1a2642]">F.B, Long Beach, California</footer>
+                  <footer className="text-lg font-semibold text-pc-navy">F.B, Long Beach, California</footer>
                 </div>
               </div>
             </blockquote>
@@ -690,30 +678,30 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
         <section className="bg-[#F598FF] py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-5xl font-bold text-[#1a2642] mb-8`}>
+              <h2 className={`text-5xl font-bold text-pc-navy mb-8`}>
                 A Personal Note to Care Teams
               </h2>
               
               <div className="mb-16">
-                <p className="text-xl text-[#1a2642]">
+                <p className="text-xl text-pc-navy">
                   We know you want the very best for your aging loved ones. Whether they live across the country or just around the corner, Lola bridges the gap, keeping you informed and connected with regular updates. Learn more about <Link href="/blog" className="text-blue-600 hover:text-blue-800 underline">our latest insights</Link>.
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-16">
                 <div className="space-y-8">
-                  <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-4xl font-bold text-pc-navy`}>
                     The Gift of Connection
                   </h3>
-                  <p className="text-xl text-[#1a2642]">
+                  <p className="text-xl text-pc-navy">
                     Daily check-ins aren't just about health. They're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
                   </p>
                 </div>
                 <div className="space-y-8">
-                  <h3 className={`${spaceGrotesk.className} text-4xl font-bold text-[#1a2642]`}>
+                  <h3 className={`text-4xl font-bold text-pc-navy`}>
                     Helping Seniors Age in Place
                   </h3>
-                  <p className="text-xl text-[#1a2642]">
+                  <p className="text-xl text-pc-navy">
                     At $20 per month, Positive Check is an affordable solution that empowers seniors to maintain their independence at home. It's care that feels personal, at a price that makes sense.
                   </p>
                 </div>
@@ -722,14 +710,14 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           </div>
         </section>
 
-        <section className="bg-[#f8f9ff] py-16 lg:py-24">
+        <section className="bg-[#f2f2f4] py-16 lg:py-24">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
-              <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-bold text-[#1a2642] mb-12 text-center`}>Contact Us</h2>
+              <h2 className={`text-3xl lg:text-4xl font-bold text-pc-navy mb-12 text-center`}>Contact Us</h2>
               {isSubmitted ? (
                 <Card>
                   <CardContent className="p-12 text-center">
-                    <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
+                    <h2 className="text-2xl font-bold text-pc-navy mb-4">Thank You!</h2>
                     <p className="text-gray-600">
                       Thanks for your message. We will be in touch soon.
                     </p>
@@ -746,7 +734,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
       <PublicFooter />
 
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+        <a href="#main-content" className="text-pc-navy">Skip to main content</a>
       </div>
 
       {showCookieConsent && (
@@ -754,7 +742,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
           <p className="text-gray-600">We use cookies to improve your experience.</p>
           <button
             onClick={acceptCookies}
-            className="bg-[#1a2642] text-white px-4 py-3 rounded-md hover:bg-[#2a3752] text-sm whitespace-nowrap min-h-[44px] min-w-[44px]"
+            className="bg-pc-navy text-white px-4 py-3 rounded-md hover:bg-pc-navy-raised text-sm whitespace-nowrap min-h-[44px] min-w-[44px]"
           >
             Got it
           </button>

@@ -29,7 +29,7 @@ export default function Error({
         </button>
         <Link 
           href="/"
-          className="px-6 py-3 bg-[#1a2642] hover:bg-[#2a3752] text-white rounded-md transition-colors"
+          className="px-6 py-3 bg-pc-navy hover:bg-pc-navy-raised text-white rounded-md transition-colors"
         >
           Return Home
         </Link>

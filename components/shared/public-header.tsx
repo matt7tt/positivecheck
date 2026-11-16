@@ -21,13 +21,13 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/positive-logo.png"
+            src="/brand/positive-wordmark-navy.svg"
             alt="Positive Check"
-            height={56}
-            width={210}
+            height={64}
+            width={160}
             priority
-            sizes="210px"
-            className="h-14 w-auto -mt-1"
+            unoptimized
+            className="h-16 w-auto"
           />
         </Link>
 
@@ -40,9 +40,9 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
           aria-controls="mobile-navigation"
         >
           {isMenuOpen ? (
-            <X className="h-6 w-6 text-[#1a2642]" />
+            <X className="h-6 w-6 text-pc-navy" />
           ) : (
-            <Menu className="h-6 w-6 text-[#1a2642]" />
+            <Menu className="h-6 w-6 text-pc-navy" />
           )}
         </button>
 
@@ -53,8 +53,8 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/platform"
               className={`text-base font-medium ${
                 currentPage === 'platform'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy'
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               Platform
@@ -64,8 +64,8 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/how-it-works"
               className={`text-base font-medium ${
                 currentPage === 'how-it-works'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy'
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               How It Works
@@ -74,8 +74,8 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/roi-calculator"
               className={`text-base font-medium ${
                 currentPage === 'roi-calculator'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy'
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               ROI Calculator
@@ -84,8 +84,8 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/resources"
               className={`text-base font-medium ${
                 currentPage === 'resources'
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]'
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy'
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               Resources
@@ -94,8 +94,8 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/contact" 
               className={`text-base font-medium ${
                 currentPage === 'contact' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy' 
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               Contact
@@ -104,14 +104,14 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               href="/sign-in" 
               className={`text-base font-medium ${
                 currentPage === 'sign-in' 
-                  ? 'text-[#1a2642] font-bold border-b-2 border-[#1a2642]' 
-                  : 'text-gray-600 hover:text-[#1a2642]'
+                  ? 'text-pc-navy font-bold border-b-2 border-pc-navy' 
+                  : 'text-gray-600 hover:text-pc-navy'
               }`}
             >
               Sign In
             </Link>
             <RequestDemoModal source="desktop_header">
-              <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-4 py-2 text-sm font-bold">
+              <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-4 py-2 text-sm font-bold">
                 REQUEST DEMO
               </Button>
             </RequestDemoModal>
@@ -125,7 +125,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
               <div className="flex flex-col space-y-4">
                 <Link
                   href="/platform"
-                  className={`text-base font-medium ${currentPage === 'platform' ? 'text-[#1a2642] font-bold' : 'text-gray-600'}`}
+                  className={`text-base font-medium ${currentPage === 'platform' ? 'text-pc-navy font-bold' : 'text-gray-600'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Platform
@@ -134,7 +134,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/solutions"
                   className={`text-base font-medium ${
                     currentPage === 'solutions'
-                      ? 'text-[#1a2642] font-bold'
+                      ? 'text-pc-navy font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -149,7 +149,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/how-it-works"
                   className={`text-base font-medium ${
                     currentPage === 'how-it-works'
-                      ? 'text-[#1a2642] font-bold'
+                      ? 'text-pc-navy font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -160,7 +160,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/roi-calculator"
                   className={`text-base font-medium ${
                     currentPage === 'roi-calculator'
-                      ? 'text-[#1a2642] font-bold'
+                      ? 'text-pc-navy font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -171,7 +171,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/resources"
                   className={`text-base font-medium ${
                     currentPage === 'resources'
-                      ? 'text-[#1a2642] font-bold'
+                      ? 'text-pc-navy font-bold'
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -182,7 +182,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/contact" 
                   className={`text-base font-medium ${
                     currentPage === 'contact' 
-                      ? 'text-[#1a2642] font-bold' 
+                      ? 'text-pc-navy font-bold' 
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -193,7 +193,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   href="/sign-in" 
                   className={`text-base font-medium ${
                     currentPage === 'sign-in' 
-                      ? 'text-[#1a2642] font-bold' 
+                      ? 'text-pc-navy font-bold' 
                       : 'text-gray-600'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -201,7 +201,7 @@ export function PublicHeader({ currentPage }: PublicHeaderProps) {
                   Sign In
                 </Link>
                 <RequestDemoModal source="mobile_header">
-                  <Button className="w-full bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white py-2 text-sm font-bold mt-2">
+                  <Button className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent py-2 text-sm font-bold mt-2">
                     REQUEST DEMO
                   </Button>
                 </RequestDemoModal>

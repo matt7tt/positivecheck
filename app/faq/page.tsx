@@ -47,7 +47,7 @@ export default function FaqPage() {
         <PublicHeader currentPage="platform" />
 
         <main>
-          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                 Frequently Asked Questions
@@ -78,7 +78,7 @@ export default function FaqPage() {
                 Our team is happy to walk through how Positive Check can fit your program.
               </p>
               <Link href="/contact">
-                <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white px-8 py-6 text-lg font-semibold">
+                <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8 py-6 text-lg font-semibold">
                   Contact Us
                 </Button>
               </Link>

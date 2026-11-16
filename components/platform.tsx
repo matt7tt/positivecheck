@@ -157,7 +157,7 @@ export function PlatformComponent() {
 
       <main>
         {/* Section 1: Hero */}
-        <section className="px-6 py-20 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-20 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               AI Patient Outreach for Your Care Team
@@ -169,7 +169,7 @@ export function PlatformComponent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <RequestDemoModal>
-                <Button className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                <Button className="bg-white text-pc-accent-text hover:bg-gray-100 px-8 py-4 text-lg font-bold">
                   REQUEST DEMO
                 </Button>
               </RequestDemoModal>
@@ -212,42 +212,42 @@ export function PlatformComponent() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Natural voice conversations</strong>
                     <p className="text-gray-600">Real-time AI voice, not pre-recorded scripts or touch-tone menus</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Context-aware follow-ups</strong>
                     <p className="text-gray-600">Remembers previous responses and adapts questions accordingly</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Structured clinical flow</strong>
                     <p className="text-gray-600">Designed with healthcare providers to capture the data that matters</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Works on any phone</strong>
                     <p className="text-gray-600">Landline or mobile. No apps, no devices, no barriers</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Configured live handoffs</strong>
                     <p className="text-gray-600">Live transfer depends on your routing configuration and staff availability. Agree coverage and fallback steps before launch.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Context for future conversations</strong>
                     <p className="text-gray-600">Weekly AI analysis learns each patient’s preferences, favorite topics, and rapport cues, and applies them to future calls</p>
@@ -282,7 +282,7 @@ export function PlatformComponent() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="bg-purple-100 p-3 rounded-lg w-fit mb-4">
-                  <PhoneOutgoing className="w-6 h-6 text-[#d946ef]" />
+                  <PhoneOutgoing className="w-6 h-6 text-pc-accent-text" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Outbound wellness calls</h3>
                 <p className="text-gray-600 mb-4">
@@ -292,18 +292,18 @@ export function PlatformComponent() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Pre-call reminder texts so patients are ready</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Voicemail detection and smart retry windows</span>
                   </li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="bg-purple-100 p-3 rounded-lg w-fit mb-4">
-                  <PhoneIncoming className="w-6 h-6 text-[#d946ef]" />
+                  <PhoneIncoming className="w-6 h-6 text-pc-accent-text" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Inbound: patients can call Lola back</h3>
                 <p className="text-gray-600 mb-4">
@@ -313,18 +313,18 @@ export function PlatformComponent() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Identity verified before any account changes</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Reschedule call times, pause calls, or request a live transfer</span>
                   </li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-8 shadow-sm">
                 <div className="bg-purple-100 p-3 rounded-lg w-fit mb-4">
-                  <MessageSquare className="w-6 h-6 text-[#d946ef]" />
+                  <MessageSquare className="w-6 h-6 text-pc-accent-text" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Two-way SMS check-ins</h3>
                 <p className="text-gray-600 mb-4">
@@ -334,11 +334,11 @@ export function PlatformComponent() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Unreachable by phone? Patients can opt into text check-ins</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                     <span>Concerning replies route straight to your care team</span>
                   </li>
                 </ul>
@@ -366,7 +366,7 @@ export function PlatformComponent() {
                   <div key={cap.title} className="bg-gray-50 rounded-lg p-8 shadow-sm">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="bg-purple-100 p-3 rounded-lg">
-                        <Icon className="w-6 h-6 text-[#d946ef]" />
+                        <Icon className="w-6 h-6 text-pc-accent-text" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900">{cap.title}</h3>
                     </div>
@@ -375,7 +375,7 @@ export function PlatformComponent() {
                     <ul className="space-y-2">
                       {cap.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2 text-sm text-gray-600">
-                          <CheckCircle className="w-4 h-4 text-[#e879f9] mt-0.5 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-pc-accent-text mt-0.5 flex-shrink-0" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -408,7 +408,7 @@ export function PlatformComponent() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-6 py-3 rounded-lg font-semibold transition-colors ${
                     activeTab === tab.id
-                      ? 'bg-[#e879f9] text-white'
+                      ? 'bg-pc-accent text-pc-on-accent'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -463,49 +463,49 @@ export function PlatformComponent() {
               </p>
               <div className="space-y-5">
                 <div className="flex items-start gap-3">
-                  <Activity className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <Activity className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Contact rate and engagement metrics</strong>
                     <p className="text-sm text-gray-600">Track call completion, response rates, and patient engagement over time</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <FileBarChart className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <FileBarChart className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Medication adherence reports</strong>
                     <p className="text-sm text-gray-600">Identify non-adherence patterns before they become emergencies</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Users className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <Users className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Population health trends</strong>
                     <p className="text-sm text-gray-600">Spot emerging concerns across patient cohorts and care programs</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Brain className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <Brain className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Cognitive health monitoring</strong>
                     <p className="text-sm text-gray-600">Track conversational markers and flag cognitive changes longitudinally</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <TrendingUp className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <TrendingUp className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Weekly AI risk-trend analysis</strong>
                     <p className="text-sm text-gray-600">Per-patient trajectories (improving, stable, or declining) with recommended actions for your care team</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Sparkles className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <Sparkles className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Ask your data anything</strong>
                     <p className="text-sm text-gray-600">AI reporting chat answers plain-English questions about your population and saves the answers as custom dashboards</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Database className="w-5 h-5 text-[#e879f9] mt-1 flex-shrink-0" />
+                  <Database className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Exportable reports</strong>
                     <p className="text-sm text-gray-600">Download compliance documentation and program performance data, with de-identified export options for sharing</p>
@@ -517,7 +517,7 @@ export function PlatformComponent() {
         </section>
 
         {/* Section 6: Enterprise-Ready */}
-        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 bg-pc-navy text-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -639,7 +639,7 @@ export function PlatformComponent() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
               <RequestDemoModal>
-                <Button className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-[#d946ef] text-white px-8 py-4 text-lg font-bold">
+                <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8 py-4 text-lg font-bold">
                   REQUEST DEMO
                 </Button>
               </RequestDemoModal>
@@ -649,19 +649,19 @@ export function PlatformComponent() {
             </div>
             <div className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500 pt-6 border-t border-gray-100">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[#e879f9]" />
+                <Shield className="w-4 h-4 text-pc-accent-text" />
                 <span>HIPAA Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#e879f9]" />
+                <Phone className="w-4 h-4 text-pc-accent-text" />
                 <span>No Apps or Devices Needed</span>
               </div>
               <div className="flex items-center gap-2">
-                <Stethoscope className="w-4 h-4 text-[#e879f9]" />
+                <Stethoscope className="w-4 h-4 text-pc-accent-text" />
                 <span>Built for Healthcare</span>
               </div>
               <div className="flex items-center gap-2">
-                <BarChart3 className="w-4 h-4 text-[#e879f9]" />
+                <BarChart3 className="w-4 h-4 text-pc-accent-text" />
                 <span>Real-Time Alerts & Analytics</span>
               </div>
             </div>

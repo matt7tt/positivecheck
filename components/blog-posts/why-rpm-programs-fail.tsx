@@ -10,7 +10,7 @@ export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) 
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
         href="/blog"
-        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+        className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
@@ -57,7 +57,7 @@ export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) 
 
         <p>
           RPM and CCM have different clinical and billing requirements. RPM centers on data collected and digitally transmitted from a connected medical device, with separate requirements for applicable setup, device-supply, and treatment-management services. As of 2026, CMS recognizes device-supply billing for both shorter and longer monitoring periods, depending on the number of days data is transmitted during the month. CCM centers on ongoing care coordination for eligible patients with two or more chronic conditions expected to last at least 12 months, or until death, and generally includes documented qualifying care-management time. But operationally, both depend on the same four things: consistent patient contact, sustained engagement, effective care-team workflows, and accurate documentation. When a program struggles, one or more of these four operational points is often involved. The problem is not necessarily the underlying clinical model, as research indicates that well-implemented RPM can improve selected outcomes when it is matched to the patient population. For a side-by-side look at how the two programs bill, see our{' '}
-          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-[#d946ef] hover:underline">
+          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-pc-accent-text hover:underline">
             RPM vs. CCM Medicare Billing Comparison
           </Link>.
         </p>
@@ -144,7 +144,7 @@ export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) 
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact">
-              <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white">
+              <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
                 Request a demo
               </Button>
             </Link>

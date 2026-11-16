@@ -77,7 +77,7 @@ export function CaseStudyAnchor() {
         {/* ---------------------------------------------------------------- */}
         {/* Hero */}
         {/* ---------------------------------------------------------------- */}
-        <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
           <div className="max-w-7xl mx-auto text-center">
             <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">
               Case Study
@@ -219,19 +219,19 @@ export function CaseStudyAnchor() {
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={enrollmentData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#9ca3af" />
-                        <YAxis tick={{ fontSize: 12 }} stroke="#9ca3af" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#8a8fa3" />
+                        <YAxis tick={{ fontSize: 12 }} stroke="#8a8fa3" />
                         <Tooltip
-                          contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                          contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                           formatter={(value: number) => [value.toLocaleString(), 'Patients']}
                         />
                         <Line
                           type="monotone"
                           dataKey="patients"
-                          stroke="#d946ef"
+                          stroke="#c756d9"
                           strokeWidth={3}
-                          dot={{ fill: '#d946ef', r: 4 }}
+                          dot={{ fill: '#c756d9', r: 4 }}
                           activeDot={{ r: 6 }}
                         />
                       </LineChart>
@@ -248,14 +248,14 @@ export function CaseStudyAnchor() {
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={engagementData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#9ca3af" />
-                        <YAxis tick={{ fontSize: 12 }} stroke="#9ca3af" domain={[0, 60]} unit="%" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#8a8fa3" />
+                        <YAxis tick={{ fontSize: 12 }} stroke="#8a8fa3" domain={[0, 60]} unit="%" />
                         <Tooltip
-                          contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                          contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                           formatter={(value: number) => [`${value}%`, 'Engagement']}
                         />
-                        <Bar dataKey="rate" fill="#d946ef" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="rate" fill="#c756d9" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -270,14 +270,14 @@ export function CaseStudyAnchor() {
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={alertsData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#9ca3af" />
-                        <YAxis tick={{ fontSize: 12 }} stroke="#9ca3af" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                        <XAxis dataKey="month" tick={{ fontSize: 12 }} stroke="#8a8fa3" />
+                        <YAxis tick={{ fontSize: 12 }} stroke="#8a8fa3" />
                         <Tooltip
-                          contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                          contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                           formatter={(value: number) => [value, 'Alerts']}
                         />
-                        <Bar dataKey="alerts" fill="#f472b6" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="alerts" fill="#f598ff" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -292,14 +292,14 @@ export function CaseStudyAnchor() {
                   <div className="h-64">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={callsByHourData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                        <XAxis dataKey="hour" tick={{ fontSize: 11 }} stroke="#9ca3af" interval={1} />
-                        <YAxis tick={{ fontSize: 12 }} stroke="#9ca3af" />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                        <XAxis dataKey="hour" tick={{ fontSize: 11 }} stroke="#8a8fa3" interval={1} />
+                        <YAxis tick={{ fontSize: 12 }} stroke="#8a8fa3" />
                         <Tooltip
-                          contentStyle={{ borderRadius: '8px', border: '1px solid #e5e7eb' }}
+                          contentStyle={{ borderRadius: '8px', border: '1px solid #e2e3e8' }}
                           formatter={(value: number) => [value, 'Calls']}
                         />
-                        <Bar dataKey="calls" fill="#a855f7" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="calls" fill="#c756d9" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
@@ -329,7 +329,7 @@ export function CaseStudyAnchor() {
         {/* ---------------------------------------------------------------- */}
         {/* Reporting context replaces an unverified placeholder testimonial. */}
         {/* ---------------------------------------------------------------- */}
-        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 bg-pc-navy text-white">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Reporting periods and limitations</h2>
             <p className="text-white leading-relaxed">{caseStudyLimitations}</p>
@@ -401,7 +401,7 @@ export function CaseStudyAnchor() {
               <RequestDemoModal>
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8"
+                  className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8"
                 >
                   Request a Demo
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -465,10 +465,10 @@ export function CaseStudyAnchor() {
           <div style={{ width: '100%', height: 200 }}>
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={enrollmentData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="month" tick={{ fontSize: 10 }} stroke="#9ca3af" />
-                <YAxis tick={{ fontSize: 10 }} stroke="#9ca3af" />
-                <Line type="monotone" dataKey="patients" stroke="#d946ef" strokeWidth={2} dot={{ fill: '#d946ef', r: 3 }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e2e3e8" />
+                <XAxis dataKey="month" tick={{ fontSize: 10 }} stroke="#8a8fa3" />
+                <YAxis tick={{ fontSize: 10 }} stroke="#8a8fa3" />
+                <Line type="monotone" dataKey="patients" stroke="#c756d9" strokeWidth={2} dot={{ fill: '#c756d9', r: 3 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>

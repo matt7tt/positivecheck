@@ -54,7 +54,7 @@ export function RPMCodeGlossary({ code }: { code: RPMCode }) {
     <StructuredData id={`cpt-${code}-term`} data={buildCPTCodeSchema({ code, name: data.name, description: data.definition, category: 'Remote Patient Monitoring' })} />
     <PublicHeader currentPage="platform" />
     <main>
-      <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+      <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Glossary</p>
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">CPT {code}</h1>

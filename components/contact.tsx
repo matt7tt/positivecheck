@@ -52,7 +52,7 @@ export function ContactComponent() {
 
       {/* Skip link */}
       <div className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white">
-        <a href="#main-content" className="text-[#1a2642]">Skip to main content</a>
+        <a href="#main-content" className="text-pc-navy">Skip to main content</a>
       </div>
 
       <main id="main-content">
@@ -60,7 +60,7 @@ export function ContactComponent() {
         <section className="w-full py-12 bg-[#F598FF]" aria-labelledby="contact-heading">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 id="contact-heading" className="text-4xl lg:text-6xl font-bold text-[#1a2642] mb-6">
+              <h1 id="contact-heading" className="text-4xl lg:text-6xl font-bold text-pc-navy mb-6">
                 Contact Us
               </h1>
               <p className="text-xl text-gray-700 mb-8">
@@ -77,7 +77,7 @@ export function ContactComponent() {
               {isSubmitted ? (
                 <Card className="shadow-[0_0_30px_rgba(245,152,255,0.3)]">
                   <CardContent className="p-12 text-center">
-                    <h2 className="text-2xl font-bold text-[#1a2642] mb-4">Thank You!</h2>
+                    <h2 className="text-2xl font-bold text-pc-navy mb-4">Thank You!</h2>
                     <p className="text-gray-700">
                       Thanks for your message. We will be in touch soon.
                     </p>
@@ -189,7 +189,7 @@ export function ContactComponent() {
                           id="newsletter" 
                           name="newsletter" 
                           type="checkbox" 
-                          className="h-4 w-4 text-[#1a2642] focus:ring-[#1a2642] border-gray-300 rounded"
+                          className="h-4 w-4 text-pc-navy focus:ring-pc-navy border-gray-300 rounded"
                           aria-describedby="newsletter-description"
                           defaultChecked
                         />
@@ -203,7 +203,7 @@ export function ContactComponent() {
 
                       <Button 
                         type="submit" 
-                        className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white focus:ring-2 focus:ring-offset-2 focus:ring-[#1a2642]"
+                        className="w-full bg-pc-navy hover:bg-pc-navy-raised text-white focus:ring-2 focus:ring-offset-2 focus:ring-pc-navy"
                         disabled={isSubmitting}
                         aria-disabled={isSubmitting}
                       >
@@ -221,7 +221,7 @@ export function ContactComponent() {
       <footer className="border-t bg-gray-50" role="contentinfo">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-gray-700 text-sm">
-            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-[#1a2642] focus:ring-offset-2">Terms</Link>
+            © Positive Check 2025 | <Link href="/terms" className="hover:underline focus:outline-none focus:ring-2 focus:ring-pc-navy focus:ring-offset-2">Terms</Link>
           </div>
         </div>
       </footer>

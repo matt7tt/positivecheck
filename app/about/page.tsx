@@ -47,7 +47,7 @@ export default function AboutPage() {
         <PublicHeader currentPage="about" />
 
         {/* Hero */}
-        <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">About</p>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
@@ -330,17 +330,17 @@ export default function AboutPage() {
           </section>
 
           {/* CTA */}
-          <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 bg-pc-navy text-white">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-xl mb-8 text-purple-100 leading-relaxed">
                 Ready to scale your CMS care program with structured AI-powered engagement? Request
                 a demo or see how it works.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                <Button asChild className="bg-white text-pc-accent-text hover:bg-gray-100 px-8 py-4 text-lg font-bold">
                   <Link href="/contact">REQUEST DEMO</Link>
                 </Button>
-                <Button asChild className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                <Button asChild className="bg-white text-pc-accent-text hover:bg-gray-100 px-8 py-4 text-lg font-bold">
                   <Link href="/how-it-works">HOW IT WORKS</Link>
                 </Button>
               </div>

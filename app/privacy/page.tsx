@@ -215,7 +215,7 @@ export default function PrivacyPage() {
                   href="https://openai.com/policies/privacy-policy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#e879f9] hover:text-purple-600 underline"
+                  className="text-pc-accent-text hover:text-purple-600 underline"
                 >
                   OpenAI's Privacy Policy
                 </a>
@@ -262,7 +262,7 @@ export default function PrivacyPage() {
           </div>
 
           <div className="mt-12 pt-8 border-t">
-            <Link href="/" className="text-[#e879f9] hover:text-purple-600 font-medium">
+            <Link href="/" className="text-pc-accent-text hover:text-purple-600 font-medium">
               ← Back to Home
             </Link>
           </div>

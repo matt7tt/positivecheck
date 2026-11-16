@@ -21,14 +21,14 @@ describe('PublicHeader', () => {
     
     const logo = screen.getByAltText('Positive Check')
     expect(logo).toBeInTheDocument()
-    expect(logo).toHaveAttribute('src', '/images/positive-logo.png')
+    expect(logo).toHaveAttribute('src', '/brand/positive-wordmark-navy.svg')
   })
 
   it('highlights the current page in desktop navigation', () => {
     render(<PublicHeader currentPage="solutions" />)
     
     const solutionsLink = screen.getByRole('link', { name: 'Solutions' })
-    expect(solutionsLink).toHaveClass('text-[#1a2642]', 'font-bold', 'border-b-2', 'border-[#1a2642]')
+    expect(solutionsLink).toHaveClass('text-pc-navy', 'font-bold', 'border-b-2', 'border-pc-navy')
   })
 
   it('shows mobile menu when menu button is clicked', () => {
@@ -99,7 +99,7 @@ describe('PublicHeader', () => {
       rerender(<PublicHeader currentPage={page} />)
 
       const link = screen.getByRole('link', { name: pageText })
-      expect(link).toHaveClass('text-[#1a2642]', 'font-bold')
+      expect(link).toHaveClass('text-pc-navy', 'font-bold')
     })
   })
 

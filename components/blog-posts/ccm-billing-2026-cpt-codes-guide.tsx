@@ -10,7 +10,7 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
         href="/blog"
-        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+        className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
@@ -53,10 +53,10 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
 
         <p>
           There are four core staff-directed Chronic Care Management codes that determine the revenue picture for almost every CCM program.{' '}
-          <Link href="/resources/glossary/cpt-99490" className="text-[#d946ef] hover:underline">CPT 99490</Link> is the foundation.{' '}
-          <Link href="/resources/glossary/cpt-99439" className="text-[#d946ef] hover:underline">CPT 99439</Link> is the upside on a non-complex patient.{' '}
-          <Link href="/resources/glossary/cpt-99487" className="text-[#d946ef] hover:underline">CPT 99487</Link> and{' '}
-          <Link href="/resources/glossary/cpt-99489" className="text-[#d946ef] hover:underline">99489</Link> are the complex tier, used when a patient's monthly care requires moderate or high complexity medical decision-making by the billing practitioner.
+          <Link href="/resources/glossary/cpt-99490" className="text-pc-accent-text hover:underline">CPT 99490</Link> is the foundation.{' '}
+          <Link href="/resources/glossary/cpt-99439" className="text-pc-accent-text hover:underline">CPT 99439</Link> is the upside on a non-complex patient.{' '}
+          <Link href="/resources/glossary/cpt-99487" className="text-pc-accent-text hover:underline">CPT 99487</Link> and{' '}
+          <Link href="/resources/glossary/cpt-99489" className="text-pc-accent-text hover:underline">99489</Link> are the complex tier, used when a patient's monthly care requires moderate or high complexity medical decision-making by the billing practitioner.
         </p>
 
         <p>
@@ -126,7 +126,7 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
             href="https://www.cms.gov/files/document/chronic-care-management-faqs.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#d946ef] hover:underline"
+            className="text-pc-accent-text hover:underline"
           >
             CMS Frequently Asked Questions About Practitioner Billing for Chronic Care Management Services
           </a>{' '}
@@ -171,7 +171,7 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
           This is the most consequential choice in CCM billing, and the one most often misrouted. The two tiers are mutually exclusive in any given calendar month.
         </p>
 
-        <blockquote className="border-l-4 border-[#d946ef] bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
+        <blockquote className="border-l-4 border-pc-accent bg-purple-50 pl-4 pr-4 py-3 my-6 italic text-gray-700">
           A billing practitioner cannot report both complex (99487) and non-complex (99490 or 99491) CCM for the same patient in the same calendar month. Choose one tier per patient per month based on the actual clinical complexity that month.
         </blockquote>
 
@@ -233,16 +233,16 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
         </p>
         <p>
           For more on how RPM and CCM compare and when each is the right fit, see our{' '}
-          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-[#d946ef] hover:underline">
+          <Link href="/resources/compare/rpm-vs-ccm-medicare-billing" className="text-pc-accent-text hover:underline">
             RPM vs. CCM Medicare Billing Comparison
           </Link>.
         </p>
 
         <p>
           Managing a recent discharge? Use the{' '}
-          <Link href="/resources/compare/tcm-and-ccm-combined-month-billing" className="text-[#d946ef] hover:underline">TCM and CCM combined-month guide</Link>{' '}
+          <Link href="/resources/compare/tcm-and-ccm-combined-month-billing" className="text-pc-accent-text hover:underline">TCM and CCM combined-month guide</Link>{' '}
           to separate the overlapping service periods, and the{' '}
-          <Link href="/solutions/post-discharge-follow-up/post-discharge-contact-timing#contact-checklist" className="text-[#d946ef] hover:underline">TCM contact-attempt checklist</Link>{' '}
+          <Link href="/solutions/post-discharge-follow-up/post-discharge-contact-timing#contact-checklist" className="text-pc-accent-text hover:underline">TCM contact-attempt checklist</Link>{' '}
           to prepare the discharge outreach record for review. Assign shared activity to one service;
           do not duplicate its minutes in another program’s log.
         </p>
@@ -265,7 +265,7 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
             href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#d946ef] hover:underline"
+            className="text-pc-accent-text hover:underline"
           >
             MLN Matters MM14315
           </a>. The rule did not introduce new CCM codes. The CCM rate increase comes from three interacting mechanics in the rule itself:
@@ -336,7 +336,7 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact">
-              <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white">
+              <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
                 Request a demo
               </Button>
             </Link>
@@ -357,23 +357,23 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
           <ul className="list-disc pl-6 space-y-2 text-sm text-gray-600">
             <li>
               CMS: Frequently Asked Questions About Practitioner Billing for Chronic Care Management Services (Division of Practitioner Services, last updated August 2022).{' '}
-              <a href="https://www.cms.gov/files/document/chronic-care-management-faqs.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/chronic-care-management-faqs.pdf</a>
+              <a href="https://www.cms.gov/files/document/chronic-care-management-faqs.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/chronic-care-management-faqs.pdf</a>
             </li>
             <li>
               CMS MLN Booklet: Chronic Care Management Services (MLN909188).{' '}
-              <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188</a>
+              <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188</a>
             </li>
             <li>
               CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F).{' '}
-              <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
+              <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
             </li>
             <li>
               CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026.{' '}
-              <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
+              <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
             </li>
             <li>
               CMS Physician Fee Schedule Look-Up Tool.{' '}
-              <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-[#d946ef] hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
+              <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
             </li>
           </ul>
         </div>
