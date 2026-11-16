@@ -29,7 +29,7 @@ export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) 
 
         <Image
           src="/images/why-rpm-programs-fail.jpg"
-          alt="Why RPM programs fail: four operational problems — enrollment, adherence, alerts, and documentation — and how to fix them"
+          alt="Why RPM programs fail: four operational problems (enrollment, adherence, alerts, and documentation) and how to fix them"
           width={1734}
           height={907}
           priority
@@ -37,13 +37,13 @@ export function WhyRpmProgramsFailPost({ faqs = [] }: { faqs?: PostFAQItem[] }) 
         />
 
         <KeyTakeaways
-          summary="Most RPM and CCM programs don't fail on clinical grounds — they fail operationally, at four specific points: enrollment, adherence, alert triage, and documentation."
+          summary="Most RPM and CCM programs don't fail on clinical grounds. They fail operationally, at four specific points: enrollment, adherence, alert triage, and documentation."
           points={[
             "Enrollment stalls when follow-up depends on staff remembering to call; structured multi-touch outreach campaigns fix it.",
             "Patient adherence declines by weeks 8–12 without reinforcement, threatening both monitoring quality and billing eligibility.",
             "Alert fatigue overwhelms care teams unless patient-specific thresholds triage which readings reach a clinician.",
             "Revenue is lost when documentation is reconstructed at month-end instead of captured as each interaction happens.",
-            "All four failure points share one root cause: patients are hard to reach consistently at scale — that's the gap automated outreach closes.",
+            "All four failure points share one root cause: patients are hard to reach consistently at scale. That's the gap automated outreach closes.",
           ]}
         />
 

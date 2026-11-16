@@ -40,7 +40,7 @@ const comparisonFaqs = [
   {
     question: 'Can a device-only RPM program legally bill CPT 99457?',
     answer:
-      'No. CPT 99457 requires real-time interactive communication with the patient for at least 20 minutes in a calendar month \u2014 it is explicitly a clinical time code, not a device code. A program that only supplies devices and reviews data asynchronously does not satisfy the interactive communication requirement and cannot bill 99457 or 99458.',
+      'No. CPT 99457 requires real-time interactive communication with the patient for at least 20 minutes in a calendar month. It is explicitly a clinical time code, not a device code. A program that only supplies devices and reviews data asynchronously does not satisfy the interactive communication requirement and cannot bill 99457 or 99458.',
   },
   {
     question: 'What percentage of possible RPM revenue does device-only capture?',
@@ -106,7 +106,7 @@ export default function RPMVsDeviceOnlyPage() {
                     leaving roughly two-thirds of available revenue untapped.
                   </li>
                   <li>
-                    99457/99458 require <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link> {'\u2014'} not just device transmissions {'\u2014'} so
+                    99457/99458 require <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link>, not just device transmissions, so
                     device-only programs are ineligible.
                   </li>
                   <li>
@@ -114,7 +114,7 @@ export default function RPMVsDeviceOnlyPage() {
                     don{'\u2019'}t have regular clinical contact.
                   </li>
                   <li>
-                    Escalation is reactive in device-only models {'\u2014'} engagement-driven RPM catches concerns the
+                    Escalation is reactive in device-only models. Engagement-driven RPM catches concerns the
                     device never captures (medication changes, psychosocial issues, symptoms).
                   </li>
                   <li>
@@ -157,12 +157,12 @@ export default function RPMVsDeviceOnlyPage() {
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">CMS interactive communication requirement</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Satisfied through structured AI calls with escalation</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Not attempted {'\u2014'} 99457/99458 not billable</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Not attempted: 99457/99458 not billable</td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Patient adherence (device transmission rate)</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Higher {'\u2014'} regular engagement reinforces device use</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Lower {'\u2014'} patients disengage without contact</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Higher: regular engagement reinforces device use</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Lower: patients disengage without contact</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Clinical insight beyond physiologic data</td>
@@ -172,7 +172,7 @@ export default function RPMVsDeviceOnlyPage() {
                     <tr className="bg-gray-50">
                       <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">Escalation speed</td>
                       <td className="border border-gray-200 px-4 py-3 text-gray-700">Real-time alerts triggered by AI-detected concerns</td>
-                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Delayed {'\u2014'} relies on scheduled data review</td>
+                      <td className="border border-gray-200 px-4 py-3 text-gray-700">Delayed: relies on scheduled data review</td>
                     </tr>
                   </tbody>
                 </table>
@@ -234,7 +234,7 @@ export default function RPMVsDeviceOnlyPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>Device-only RPM captures {'\u007e'}30{'\u2013'}40% of available revenue; AI-powered interactive RPM captures the full set.</li>
-                  <li>CPT 99457/99458 require interactive communication by CMS definition {'\u2014'} devices alone cannot satisfy this.</li>
+                  <li>CPT 99457/99458 require interactive communication by CMS definition. Devices alone cannot satisfy this.</li>
                   <li>Clinical outcomes follow the revenue: engagement-driven programs show better adherence and faster escalation.</li>
                   <li>The hybrid model (device + AI-powered interactive + human escalation) is the efficient frontier.</li>
                 </ul>

@@ -46,7 +46,7 @@ export default function CompareIndexPage() {
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
             Category-level comparisons of how healthcare providers can scale patient
             outreach across RPM, CCM, and TCM programs. Comparisons focus on
-            approaches and workflows &mdash; not specific vendors.
+            approaches and workflows, not specific vendors.
           </p>
           <h2 className="text-2xl font-bold text-pc-navy mt-12 mb-4">
             Available comparisons

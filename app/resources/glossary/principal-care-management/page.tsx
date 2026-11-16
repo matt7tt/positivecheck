@@ -95,7 +95,7 @@ export default function PrincipalCareManagementGlossaryPage() {
                 a critical way: PCM requires only ONE qualifying chronic condition, not two or more.
                 However, that single condition must place the patient at significant risk of acute
                 exacerbation, hospitalization, or clinical decompensation over the next 3{'\u2013'}12
-                months {'\u2014'} a higher individual-condition severity threshold than CCM.
+                months, a higher individual-condition severity threshold than CCM.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Authoritative billing guidance and annual rate updates are published by CMS at the{' '}
@@ -114,7 +114,7 @@ export default function PrincipalCareManagementGlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Who uses it and when it applies</h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700 leading-relaxed">
                 <li>
-                  Patients with a single complex, high-risk chronic condition {'\u2014'} examples
+                  Patients with a single complex, high-risk chronic condition. Examples
                   include newly diagnosed cancer in active treatment, heart failure with a recent
                   decompensation episode, or severe uncontrolled diabetes with complications
                 </li>
@@ -130,7 +130,7 @@ export default function PrincipalCareManagementGlossaryPage() {
                 </li>
                 <li>
                   Billed once per calendar month per patient when cumulative time thresholds are met
-                  within that month {'\u2014'} time must be documented to support the claimed code
+                  within that month. Time must be documented to support the claimed code
                 </li>
                 <li>
                   Generally mutually exclusive with CCM for the same patient in the same calendar
@@ -145,36 +145,36 @@ export default function PrincipalCareManagementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/chronic-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} the multi-condition analog to PCM, requiring two or more chronic
+                  </Link>:{' '}
+                  the multi-condition analog to PCM, requiring two or more chronic
                   conditions and billed under CPT 99490{'\u2013'}99491 and 99439
                 </li>
                 <li>
                   <Link href="/resources/glossary/transitional-care-management" className="text-purple-700 underline hover:text-purple-900">
                     Transitional Care Management
-                  </Link>{' '}
-                  {'\u2014'} the 30-day post-discharge program that addresses patients transitioning
+                  </Link>:{' '}
+                  the 30-day post-discharge program that addresses patients transitioning
                   from inpatient or other facility settings back to the community
                 </li>
                 <li>
                   <Link href="/resources/glossary/remote-patient-monitoring" className="text-purple-700 underline hover:text-purple-900">
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  {'\u2014'} the device-based monitoring program often layered with PCM to track
+                  </Link>:{' '}
+                  the device-based monitoring program often layered with PCM to track
                   physiological data for the single qualifying condition between office visits
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the clinical function that PCM operationalizes through structured monthly
+                  </Link>:{' '}
+                  the clinical function that PCM operationalizes through structured monthly
                   management activities
                 </li>
                 <li>
                   <Link href="/resources/glossary/patient-engagement" className="text-purple-700 underline hover:text-purple-900">
                     Patient engagement
-                  </Link>{' '}
-                  {'\u2014'} the engagement layer that supports PCM outcomes by keeping patients
+                  </Link>:{' '}
+                  the engagement layer that supports PCM outcomes by keeping patients
                   connected to their care plan between clinical contacts
                 </li>
               </ul>

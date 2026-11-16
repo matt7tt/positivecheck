@@ -9,7 +9,7 @@ import { PublicFooter } from "@/components/shared/public-footer"
 import { featuredPost, providerGridPosts, earlierCarePosts, type BlogPost } from "@/lib/blog-posts"
 
 export const metadata: Metadata = {
-  title: 'Blog — Care Management & Practice Operations | Positive Check',
+  title: 'Blog: Care Management & Practice Operations | Positive Check',
   description: 'Provider insights on care management, post-discharge follow-up, patient outreach and practice operations, with billing references and workflow guidance.',
   alternates: {
     canonical: '/blog',
@@ -77,7 +77,7 @@ export default function BlogPage() {
             <div className="aspect-video overflow-hidden">
               <Image
                 src={featuredArticle.image}
-                alt={`Featured article: ${featuredArticle.title} — ${featuredArticle.excerpt}`}
+                alt={`Featured article: ${featuredArticle.title}. ${featuredArticle.excerpt}`}
                 width={1200}
                 height={630}
                 priority
@@ -114,7 +114,7 @@ export default function BlogPage() {
                 <div className="aspect-video overflow-hidden">
                   <Image
                     src={article.image}
-                    alt={`${article.title} — ${article.excerpt}`}
+                    alt={`${article.title}: ${article.excerpt}`}
                     width={600}
                     height={340}
                     className="w-full h-full object-cover"

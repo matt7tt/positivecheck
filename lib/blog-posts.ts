@@ -8,7 +8,7 @@ export interface BlogPost {
   title: string;
   description: string;      // listing excerpt + feed description
   datePublished: string;    // YYYY-MM-DD
-  dateModified: string;     // YYYY-MM-DD — bump when a post is materially updated
+  dateModified: string;     // YYYY-MM-DD: bump when a post is materially updated
   displayDate: string;      // human-readable, e.g. "July 20, 2026"
   readTime: string;
   image: string;            // site-relative path under /public
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
     slug: "2026-rpm-cpt-codes",
     title: "RPM Billing in 2026: CPT Codes, Requirements and Reimbursement",
     description:
-      "The CY 2026 Physician Fee Schedule added two new RPM codes — 99445 and 99470 — creating billable pathways for shorter transmission and treatment-management periods. Learn what each code covers and how to keep documentation defensible.",
+      "The CY 2026 Physician Fee Schedule added two new RPM codes (99445 and 99470), creating billable pathways for shorter transmission and treatment-management periods. Learn what each code covers and how to keep documentation defensible.",
     datePublished: "2026-07-12",
     dateModified: "2026-07-12",
     displayDate: "July 12, 2026",

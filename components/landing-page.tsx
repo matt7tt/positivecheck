@@ -694,7 +694,7 @@ export function LandingPageComponent({ variant = 'A' }: LandingPageProps) {
                     The Gift of Connection
                   </h3>
                   <p className="text-xl text-pc-navy">
-                    Daily check-ins aren't just about health—they're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
+                    Daily check-ins aren't just about health. They're about showing you care. Lola ensures seniors feel valued and supported, creating a sense of connection that enhances their overall well-being.
                   </p>
                 </div>
                 <div className="space-y-8">

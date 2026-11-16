@@ -35,13 +35,13 @@ export function SeniorSleepHealthFallPreventionWellnessMonitoringPost({ faqs = [
         />
 
         <KeyTakeaways
-          summary="Quality sleep is not a luxury for seniors — it is a fundamental component of healthy aging, safety, and independence, and poor sleep carries documented risks families cannot afford to overlook."
+          summary="Quality sleep is not a luxury for seniors. It is a fundamental component of healthy aging, safety, and independence, and poor sleep carries documented risks families cannot afford to overlook."
           points={[
             "Poor sleep quality increases fall risk by 30% among seniors, while also raising the likelihood of adverse health outcomes by 15%.",
-            "Sleep patterns naturally change with age — earlier bedtimes, more fragmented sleep, and reduced deep sleep — but poor sleep is not inevitable.",
+            "Sleep patterns naturally change with age (earlier bedtimes, more fragmented sleep, and reduced deep sleep), but poor sleep is not inevitable.",
             "Sleep deprivation creates a cascade of health challenges, affecting cognitive function, immune strength, medication management, mental health, and physical health.",
             "Sleep problems often develop gradually and may not be obvious during occasional family visits, so warning signs like daytime fatigue, mood changes, and balance issues are easy to miss.",
-            "Daily wellness check-in calls track sleep quality over time, helping families spot declining trends and intervene early — with no devices or apps for seniors to learn.",
+            "Daily wellness check-in calls track sleep quality over time, helping families spot declining trends and intervene early, with no devices or apps for seniors to learn.",
           ]}
         />
 

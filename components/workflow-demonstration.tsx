@@ -41,7 +41,7 @@ export function WorkflowDemonstration() {
       <h2 id="workflow-example-title" className="mb-4 text-2xl font-bold text-gray-900">From patient call to care-team follow-up</h2>
       <p className="mb-6 leading-relaxed text-gray-700">
         Positive Check supports outreach and review; your team remains responsible for follow-up.
-        This illustrative scenario shows the handoffs to discuss in a demo—not a customer result,
+        This illustrative scenario shows the handoffs to discuss in a demo. It is not a customer result,
         a live product session, or a guarantee of your configured workflow.
       </p>
       <ol className="grid gap-4 md:grid-cols-2">

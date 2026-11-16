@@ -138,7 +138,7 @@ export default function CPT99445GlossaryPage() {
                   enrollments
                 </li>
                 <li>
-                  NOT additive with CPT 99454 in the same 30-day period{'\u2014'}choose one
+                  NOT additive with CPT 99454 in the same 30-day period. Choose one
                   based on actual transmission days
                 </li>
               </ul>
@@ -151,8 +151,8 @@ export default function CPT99445GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99454
-                  </Link>
-                  {' '}{'\u2014'} the companion device-supply code covering 16{'\u2013'}30 days
+                  </Link>:
+                  the companion device-supply code covering 16{'\u2013'}30 days
                   of transmission
                 </li>
                 <li>
@@ -161,8 +161,8 @@ export default function CPT99445GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99453
-                  </Link>
-                  {' '}{'\u2014'} one-time setup and patient education that precedes 99445
+                  </Link>:
+                  one-time setup and patient education that precedes 99445
                 </li>
                 <li>
                   <Link
@@ -170,8 +170,8 @@ export default function CPT99445GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99470
-                  </Link>
-                  {' '}{'\u2014'} the new 2026 treatment-management code for the first 10 minutes of RPM treatment management including required interactive communication
+                  </Link>:
+                  the new 2026 treatment-management code for the first 10 minutes of RPM treatment management including required interactive communication
                 </li>
                 <li>
                   <Link
@@ -179,8 +179,8 @@ export default function CPT99445GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Remote Patient Monitoring
-                  </Link>
-                  {' '}{'\u2014'} the care model 99445 supports
+                  </Link>:
+                  the care model 99445 supports
                 </li>
               </ul>
 

@@ -35,11 +35,11 @@ const FAQ_ITEMS: PostFAQItem[] = [
   },
   {
     question: "How can practices improve RPM patient adherence over time?",
-    answer: "Treat adherence as an ongoing outreach workload rather than a one-time onboarding task. Sustained engagement requires regular check-ins that scale with the enrolled panel — which is where manual calling models break down. Voice check-ins are particularly useful because they capture why a patient stopped taking readings, not just that they have, giving the care team something actionable to address.",
+    answer: "Treat adherence as an ongoing outreach workload rather than a one-time onboarding task. Sustained engagement requires regular check-ins that scale with the enrolled panel, which is where manual calling models break down. Voice check-ins are particularly useful because they capture why a patient stopped taking readings, not just that they have, giving the care team something actionable to address.",
   },
   {
     question: "Can RPM and CCM patient outreach be automated?",
-    answer: "Routine, low-acuity outreach — enrollment follow-up sequences, adherence check-ins, reminders, and routine patient contact — can be automated with AI voice and SMS while preserving clinical judgment. Clinical decisions, care planning, alert escalation review, and billing determinations remain with the care team and billing practitioner.",
+    answer: "Routine, low-acuity outreach (enrollment follow-up sequences, adherence check-ins, reminders, and routine patient contact) can be automated with AI voice and SMS while preserving clinical judgment. Clinical decisions, care planning, alert escalation review, and billing determinations remain with the care team and billing practitioner.",
   },
   {
     question: "What should you ask before choosing an RPM or CCM outreach partner?",

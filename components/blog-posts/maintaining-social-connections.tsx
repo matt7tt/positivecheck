@@ -35,7 +35,7 @@ export function MaintainingSocialConnectionsPost({ faqs = [] }: { faqs?: PostFAQ
         />
 
         <KeyTakeaways
-          summary="Social connections significantly impact seniors' mental, emotional, and physical well-being — and regular engagement can prevent isolation and enhance quality of life."
+          summary="Social connections significantly impact seniors' mental, emotional, and physical well-being, and regular engagement can prevent isolation and enhance quality of life."
           points={[
             "Active social engagement helps prevent depression and anxiety while maintaining cognitive function.",
             "Seniors with robust social networks often experience better physical health and healthier lifestyles.",

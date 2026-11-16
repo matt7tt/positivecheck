@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS: PostFAQItem[] = [
   {
     question: "How does poor sleep affect fall risk in seniors?",
-    answer: "Studies indicate that poor sleep quality increases fall risk by 30% among seniors, while also raising the likelihood of adverse health outcomes by 15%. Inadequate sleep affects balance, reaction time, and cognitive function — and falls can lead to serious injuries including hip fractures, head trauma, and complications that may require hospitalization or long-term care.",
+    answer: "Studies indicate that poor sleep quality increases fall risk by 30% among seniors, while also raising the likelihood of adverse health outcomes by 15%. Inadequate sleep affects balance, reaction time, and cognitive function, and falls can lead to serious injuries including hip fractures, head trauma, and complications that may require hospitalization or long-term care.",
   },
   {
     question: "How do sleep patterns change as people age?",

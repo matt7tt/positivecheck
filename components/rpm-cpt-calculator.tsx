@@ -34,11 +34,11 @@ type RpmCode = keyof typeof DEFAULT_RATES
 
 const CODE_INFO: Record<RpmCode, { label: string; glossary: string }> = {
   '99453': { label: 'Setup and patient education (one-time, new enrollments)', glossary: '/resources/glossary/cpt-99453' },
-  '99454': { label: 'Device supply — 16–30 transmission days per 30-day period', glossary: '/resources/glossary/cpt-99454' },
-  '99445': { label: 'Device supply — 2–15 transmission days per 30-day period (new 2026)', glossary: '/resources/glossary/cpt-99445' },
-  '99457': { label: 'Treatment management — first 20 min per month', glossary: '/resources/glossary/cpt-99457' },
-  '99458': { label: 'Treatment management — each additional 20 min (add-on)', glossary: '/resources/glossary/cpt-99458' },
-  '99470': { label: 'Treatment management — first 10 min per month (new 2026)', glossary: '/resources/glossary/cpt-99470' },
+  '99454': { label: 'Device supply: 16–30 transmission days per 30-day period', glossary: '/resources/glossary/cpt-99454' },
+  '99445': { label: 'Device supply: 2–15 transmission days per 30-day period (new 2026)', glossary: '/resources/glossary/cpt-99445' },
+  '99457': { label: 'Treatment management: first 20 min per month', glossary: '/resources/glossary/cpt-99457' },
+  '99458': { label: 'Treatment management: each additional 20 min (add-on)', glossary: '/resources/glossary/cpt-99458' },
+  '99470': { label: 'Treatment management: first 10 min per month (new 2026)', glossary: '/resources/glossary/cpt-99470' },
 }
 
 const formatCurrency = (n: number) =>
@@ -113,7 +113,7 @@ export function RpmCptCalculator() {
             </h1>
             <p className="text-xl text-purple-100 max-w-3xl mx-auto leading-relaxed">
               Estimate monthly Medicare Remote Patient Monitoring reimbursement across CPT 99453,
-              99454, 99445, 99457, 99458, and 99470 — including the two new 2026 codes for
+              99454, 99445, 99457, 99458, and 99470, including the two new 2026 codes for
               shorter transmission and treatment-management periods.
             </p>
           </div>
@@ -162,7 +162,7 @@ export function RpmCptCalculator() {
 
                 <div className="border-t pt-6 space-y-6">
                   <p className="text-sm font-semibold text-gray-700">
-                    Device supply — transmission days per 30-day period
+                    Device supply: transmission days per 30-day period
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -203,7 +203,7 @@ export function RpmCptCalculator() {
 
                 <div className="border-t pt-6 space-y-6">
                   <p className="text-sm font-semibold text-gray-700">
-                    Treatment management — qualifying time per calendar month
+                    Treatment management: qualifying time per calendar month
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
@@ -371,7 +371,7 @@ export function RpmCptCalculator() {
                 supply with 2–15 transmission days per 30-day period (below the 16-day threshold that CPT
                 99454 requires), and CPT 99470 covers the first 10 minutes of monthly treatment-management
                 time (below the 20-minute threshold that CPT 99457 requires). Engagement that previously
-                fell short of the all-or-nothing thresholds now has a billable pathway — which is why this
+                fell short of the all-or-nothing thresholds now has a billable pathway, which is why this
                 calculator asks for your patient mix across both tiers of each requirement.
               </p>
               <p>
@@ -382,8 +382,8 @@ export function RpmCptCalculator() {
                 that each claimed patient actually met the thresholds from logged dates and itemized time.
               </p>
               <p>
-                For the full requirements — transmission-day counting, interactive communication, stacking
-                RPM with CCM and TCM, and a documentation checklist — see our{' '}
+                For the full requirements (transmission-day counting, interactive communication, stacking
+                RPM with CCM and TCM, and a documentation checklist), see our{' '}
                 <Link href="/blog/2026-rpm-cpt-codes" className="text-pc-accent-text hover:underline">
                   2026 RPM billing guide
                 </Link>.

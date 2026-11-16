@@ -39,9 +39,9 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
         <KeyTakeaways
           summary="The CY 2026 Physician Fee Schedule raised rates on all four staff-directed CCM codes, making disciplined monthly billing more valuable than ever."
           points={[
-            "CPT 99490 pays approximately $66.30/month for the first 20 minutes of clinical staff time (2026 national non-facility average) — up 9.6% from 2025.",
+            "CPT 99490 pays approximately $66.30/month for the first 20 minutes of clinical staff time (2026 national non-facility average), up 9.6% from 2025.",
             "CPT 99439 adds approximately $50.56 per additional 20 minutes, commonly reported up to twice monthly, and is the most under-billed CCM code.",
-            "Complex CCM (99487/99489) requires moderate-or-high complexity medical decision-making by the billing practitioner — the two tiers are mutually exclusive in any month.",
+            "Complex CCM (99487/99489) requires moderate-or-high complexity medical decision-making by the billing practitioner. The two tiers are mutually exclusive in any month.",
             "Eligibility requires two or more chronic conditions, documented consent, an initiating visit for new patients, and a comprehensive care plan.",
             "CCM can stack with RPM and TCM in the same month, but the same minute can never count toward two programs.",
           ]}
@@ -356,23 +356,23 @@ export function CcmBilling2026CptCodesGuidePost({ faqs = [] }: { faqs?: PostFAQI
           <h2 className="text-xl font-bold text-gray-900 mb-3">Primary sources cited</h2>
           <ul className="list-disc pl-6 space-y-2 text-sm text-gray-600">
             <li>
-              CMS: Frequently Asked Questions About Practitioner Billing for Chronic Care Management Services (Division of Practitioner Services, last updated August 2022) —{' '}
+              CMS: Frequently Asked Questions About Practitioner Billing for Chronic Care Management Services (Division of Practitioner Services, last updated August 2022).{' '}
               <a href="https://www.cms.gov/files/document/chronic-care-management-faqs.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/chronic-care-management-faqs.pdf</a>
             </li>
             <li>
-              CMS MLN Booklet: Chronic Care Management Services (MLN909188) —{' '}
+              CMS MLN Booklet: Chronic Care Management Services (MLN909188).{' '}
               <a href="https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/outreach-and-education/medicare-learning-network-mln/mlnproducts/mln-publications-items/icn909188</a>
             </li>
             <li>
-              CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F) —{' '}
+              CMS Newsroom Fact Sheet: Calendar Year (CY) 2026 Medicare Physician Fee Schedule Final Rule (CMS-1832-F).{' '}
               <a href="https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/newsroom/fact-sheets/calendar-year-cy-2026-medicare-physician-fee-schedule-final-rule-cms-1832-f</a>
             </li>
             <li>
-              CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026 —{' '}
+              CMS MLN Matters MM14315: Medicare Physician Fee Schedule Final Rule Summary CY 2026.{' '}
               <a href="https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/files/document/mm14315-medicare-physician-fee-schedule-final-rule-summary-cy-2026.pdf</a>
             </li>
             <li>
-              CMS Physician Fee Schedule Look-Up Tool —{' '}
+              CMS Physician Fee Schedule Look-Up Tool.{' '}
               <a href="https://www.cms.gov/medicare/physician-fee-schedule/search/overview" target="_blank" rel="noopener noreferrer" className="text-pc-accent-text hover:underline break-words">https://www.cms.gov/medicare/physician-fee-schedule/search/overview</a>
             </li>
           </ul>

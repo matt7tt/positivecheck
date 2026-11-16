@@ -73,7 +73,7 @@ export default function CPT99487GlossaryPage() {
                 time spent on complex Chronic Care Management for a patient in a calendar month,
                 reimbursed at approximately $144 and requiring substantial care plan revision for
                 patients with moderate-to-high complexity medical decision-making. It is the complex
-                CCM track {'\u2014'} an alternative to non-complex CCM (CPT 99490) {'\u2014'} and
+                CCM track, an alternative to non-complex CCM (CPT 99490), and
                 cannot be billed in the same month as the non-complex base code.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -83,7 +83,7 @@ export default function CPT99487GlossaryPage() {
                 moderate-to-high complexity medical decision-making AND substantial care plan revision
                 during the billing month. The time threshold is 60 minutes of clinical staff time
                 (compared to 20 minutes for CPT 99490). A patient is billed under the non-complex
-                or the complex track in a given calendar month {'\u2014'} never both. The 2026
+                or the complex track in a given calendar month, never both. The 2026
                 Medicare national average reimbursement is approximately $144 per patient per month.
               </p>
 
@@ -105,8 +105,8 @@ export default function CPT99487GlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The {'\u201c'}moderate or high complexity medical decision-making{'\u201d'} element
                 follows CMS{'\u2019'}s Evaluation and Management (E/M) decision-making framework.
-                Substantial care plan revision must be documented in the patient chart with specifics
-                {'\u2014'} examples include medication changes, new specialist referrals, escalation
+                Substantial care plan revision must be documented in the patient chart with specifics.
+                Examples include medication changes, new specialist referrals, escalation
                 of monitoring frequency, or changes to the care-management protocol driven by a
                 worsening or newly identified condition. Annual updates to CCM billing policy are
                 published in the Medicare Physician Fee Schedule final rule.
@@ -120,7 +120,7 @@ export default function CPT99487GlossaryPage() {
                 </li>
                 <li>
                   Patients meeting non-complex CCM eligibility AND requiring moderate-to-high
-                  complexity medical decision-making {'\u2014'} typically those with unstable
+                  complexity medical decision-making, typically those with unstable
                   conditions, recent hospitalization, or significant care plan changes in the month
                 </li>
                 <li>
@@ -129,7 +129,7 @@ export default function CPT99487GlossaryPage() {
                 </li>
                 <li>
                   A patient can shift between the non-complex (99490) and complex (99487) tracks
-                  across months as clinical complexity changes {'\u2014'} only one track applies in
+                  across months as clinical complexity changes, but only one track applies in
                   any given month
                 </li>
               </ul>
@@ -142,8 +142,8 @@ export default function CPT99487GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99489
-                  </Link>{' '}
-                  {'\u2014'} each additional 30 minutes of complex CCM clinical staff time in the
+                  </Link>:{' '}
+                  each additional 30 minutes of complex CCM clinical staff time in the
                   same calendar month
                 </li>
                 <li>
@@ -152,8 +152,8 @@ export default function CPT99487GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99490
-                  </Link>{' '}
-                  {'\u2014'} alternative non-complex CCM track for lower-complexity patients,
+                  </Link>:{' '}
+                  alternative non-complex CCM track for lower-complexity patients,
                   requiring 20 minutes per month
                 </li>
                 <li>
@@ -162,8 +162,8 @@ export default function CPT99487GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} the broader care model CPT 99487 operationalizes for complex patients
+                  </Link>:{' '}
+                  the broader care model CPT 99487 operationalizes for complex patients
                 </li>
                 <li>
                   <Link
@@ -171,8 +171,8 @@ export default function CPT99487GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the function CCM supports through structured patient outreach and
+                  </Link>:{' '}
+                  the function CCM supports through structured patient outreach and
                   care-plan management
                 </li>
               </ul>

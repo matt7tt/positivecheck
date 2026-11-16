@@ -112,7 +112,7 @@ export function CaseStudyAnchor() {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">The Challenge</h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 A growing healthcare organization needed to maintain consistent, daily contact
-                with a rapidly expanding patient population — without scaling headcount at the
+                with a rapidly expanding patient population, without scaling headcount at the
                 same rate.
               </p>
             </div>
@@ -165,12 +165,12 @@ export function CaseStudyAnchor() {
                 {
                   icon: Phone,
                   title: 'AI-Powered Calls',
-                  desc: 'Lola, our virtual care assistant, conducts personalized daily calls — asking wellness questions, detecting sentiment changes, and escalating when needed.',
+                  desc: 'Lola, our virtual care assistant, conducts personalized daily calls, asking wellness questions, detecting sentiment changes, and escalating when needed.',
                 },
                 {
                   icon: ShieldAlert,
                   title: 'Real-Time Alerts',
-                  desc: 'Clinical concerns are flagged immediately. Care teams receive actionable alerts so they can intervene the same day — not days later.',
+                  desc: 'Clinical concerns are flagged immediately. Care teams receive actionable alerts so they can intervene the same day, not days later.',
                 },
                 {
                   icon: LayoutDashboard,
@@ -424,7 +424,7 @@ export function CaseStudyAnchor() {
       <PublicFooter />
 
       {/* ---------------------------------------------------------------- */}
-      {/* Hidden PDF layout — positioned off-screen so html2canvas can render */}
+      {/* Hidden PDF layout: positioned off-screen so html2canvas can render */}
       {/* ---------------------------------------------------------------- */}
       <div
         ref={pdfRef}
@@ -435,7 +435,7 @@ export function CaseStudyAnchor() {
         <div className="flex items-center justify-between mb-6 pb-4 border-b-2 border-purple-500">
           <div>
             <p className="text-2xl font-bold text-gray-900">Positive Check</p>
-            <p className="text-sm text-gray-500">Case Study — Patient Engagement at Scale</p>
+            <p className="text-sm text-gray-500">Case Study: Patient Engagement at Scale</p>
           </div>
           <p className="text-sm text-gray-400">positivecheck.com</p>
         </div>

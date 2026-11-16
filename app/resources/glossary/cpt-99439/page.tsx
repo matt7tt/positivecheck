@@ -77,7 +77,7 @@ export default function CPT99439GlossaryPage() {
                 also billed for the same patient in the same calendar month.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CPT 99439 can be billed up to twice per calendar month {'\u2014'} covering minutes
+                CPT 99439 can be billed up to twice per calendar month, covering minutes
                 21{'\u2013'}40 and 41{'\u2013'}60 of cumulative clinical staff time. Stacking 99490
                 with two units of 99439 brings total monthly non-complex CCM revenue to roughly $162
                 per patient. The 2026 Medicare national average reimbursement is approximately $48
@@ -88,8 +88,8 @@ export default function CPT99439GlossaryPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Regulatory basis</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CPT 99439 was established by CMS under the Medicare Physician Fee Schedule as an
-                add-on to the base non-complex CCM code 99490. It applies only as an add-on to 99490
-                {'\u2014'} the complex CCM track (99487) has its own distinct add-on code, 99489, and
+                add-on to the base non-complex CCM code 99490. It applies only as an add-on to 99490.
+                The complex CCM track (99487) has its own distinct add-on code, 99489, and
                 the two tracks cannot be combined. Each additional 20-minute block billed under 99439
                 must meet the same documentation standards as the base 99490 service, including
                 time-tracking entries and care plan updates. The authoritative guidance is the{' '}
@@ -121,7 +121,7 @@ export default function CPT99439GlossaryPage() {
                   99490 20-minute threshold in a given calendar month
                 </li>
                 <li>
-                  Billable up to twice per calendar month {'\u2014'} one unit for minutes 21{'\u2013'}40
+                  Billable up to twice per calendar month: one unit for minutes 21{'\u2013'}40
                   and a second unit for minutes 41{'\u2013'}60 of documented clinical staff time
                 </li>
                 <li>
@@ -138,8 +138,8 @@ export default function CPT99439GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99490
-                  </Link>{' '}
-                  {'\u2014'} the base non-complex CCM code that 99439 adds onto
+                  </Link>:{' '}
+                  the base non-complex CCM code that 99439 adds onto
                 </li>
                 <li>
                   <Link
@@ -147,8 +147,8 @@ export default function CPT99439GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99487
-                  </Link>{' '}
-                  {'\u2014'} alternative complex CCM track, not combinable with 99490/99439
+                  </Link>:{' '}
+                  alternative complex CCM track, not combinable with 99490/99439
                 </li>
                 <li>
                   <Link
@@ -156,8 +156,8 @@ export default function CPT99439GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Chronic Care Management
-                  </Link>{' '}
-                  {'\u2014'} the broader care model CPT 99439 helps operationalize
+                  </Link>:{' '}
+                  the broader care model CPT 99439 helps operationalize
                 </li>
                 <li>
                   <Link
@@ -165,8 +165,8 @@ export default function CPT99439GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Care coordination
-                  </Link>{' '}
-                  {'\u2014'} the function CCM supports through structured patient outreach and
+                  </Link>:{' '}
+                  the function CCM supports through structured patient outreach and
                   care-plan management
                 </li>
               </ul>

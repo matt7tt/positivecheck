@@ -110,9 +110,9 @@ export default function TransitionalCareManagementGlossaryPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 TCM requires coordination between inpatient discharge planning and outpatient
-                primary or specialty care. Non-face-to-face services \u2014 medication
+                primary or specialty care. Non-face-to-face services (medication
                 reconciliation, care plan development, referral coordination, and patient
-                education \u2014 can be performed by clinical staff under general supervision of
+                education) can be performed by clinical staff under general supervision of
                 the billing practitioner, making TCM operationally scalable across practice types.
               </p>
 
@@ -127,8 +127,8 @@ export default function TransitionalCareManagementGlossaryPage() {
                   long-term acute care hospital), observation, or partial hospitalization
                 </li>
                 <li>
-                  Patients discharged to community settings (home, assisted living, domiciliary)
-                  \u2014 not to a skilled nursing facility (SNF), long-term acute care (LTAC), or
+                  Patients discharged to community settings (home, assisted living, domiciliary),
+                  not to a skilled nursing facility (SNF), long-term acute care (LTAC), or
                   inpatient rehabilitation facility
                 </li>
                 <li>
@@ -142,26 +142,26 @@ export default function TransitionalCareManagementGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/cpt-99495" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99495
-                  </Link>{' '}
-                  \u2014 the moderate-complexity TCM billing code
+                  </Link>:{' '}
+                  the moderate-complexity TCM billing code
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99496" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99496
-                  </Link>{' '}
-                  \u2014 the high-complexity TCM billing code
+                  </Link>:{' '}
+                  the high-complexity TCM billing code
                 </li>
                 <li>
                   <Link href="/resources/glossary/30-day-readmission" className="text-purple-700 underline hover:text-purple-900">
                     30-day readmission
-                  </Link>{' '}
-                  \u2014 the clinical outcome TCM aims to reduce
+                  </Link>:{' '}
+                  the clinical outcome TCM aims to reduce
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  \u2014 the broader function TCM operationalizes
+                  </Link>:{' '}
+                  the broader function TCM operationalizes
                 </li>
               </ul>
 

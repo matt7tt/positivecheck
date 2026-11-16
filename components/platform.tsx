@@ -73,7 +73,7 @@ const capabilities = [
     title: 'Schedule Outreach and Retry Missed Calls',
     problem: 'Staff can only make so many calls in a day. Patients fall through the cracks.',
     solution:
-      'Automated scheduling handles thousands of check-ins daily while your team focuses on patients who need human attention. Set cadence per patient or cohort — daily, weekly, or custom — and let the platform do the rest.',
+      'Automated scheduling handles thousands of check-ins daily while your team focuses on patients who need human attention. Set cadence per patient or cohort (daily, weekly, or custom) and let the platform do the rest.',
     bullets: [
       'Enterprise scheduling: 4,000+ calls per day',
       'Configurable per-patient cadence and time windows',
@@ -97,11 +97,11 @@ const capabilities = [
   {
     icon: MessageSquare,
     title: 'Meet Patients Where They Are',
-    problem: 'Many patients — especially seniors — don\'t use apps or patient portals.',
+    problem: 'Many patients, especially seniors, don\'t use apps or patient portals.',
     solution:
-      'Positive Check works on any phone, landline or mobile — by voice or by text. No downloads, no logins, no devices. Patients answer a call or a text and have a natural conversation with Lola, our AI care companion.',
+      'Positive Check works on any phone, landline or mobile, by voice or by text. No downloads, no logins, no devices. Patients answer a call or a text and have a natural conversation with Lola, our AI care companion.',
     bullets: [
-      'Voice calls to any phone number — landline or mobile',
+      'Voice calls to any phone number, landline or mobile',
       'Two-way conversational SMS check-ins for patients who prefer texting',
       'Missed-call recovery: reminder texts, smart retries, and an opt-in switch to text check-ins',
       'No apps, portals, or special devices required',
@@ -117,20 +117,20 @@ const capabilities = [
       'AI-powered response analysis and summarization',
       'Medication adherence tracking over time',
       'Cognitive health monitoring and trend detection',
-      'Weekly AI risk-trend analysis per patient — improving, stable, or declining',
+      'Weekly AI risk-trend analysis per patient: improving, stable, or declining',
     ],
   },
   {
     icon: ShieldCheck,
     title: 'A Safety Net Behind the AI',
-    problem: 'How do you trust AI with clinical conversations? You verify it — every call.',
+    problem: 'How do you trust AI with clinical conversations? You verify it, every call.',
     solution:
       'Positive Check layers deterministic clinical guardrails on top of the AI: rule-based alert thresholds that fire even if the AI misses them, plus an independent quality-assurance engine that re-analyzes every call outcome.',
     bullets: [
       'Rule-based alert thresholds for blood pressure, glucose, and oxygen readings',
       'Independent AI quality audit reviews every call outcome',
       'Missed-alert and false-positive detection with flagged-call review',
-      'Live mid-call transfer to your care team — routine, urgent, or emergency',
+      'Live mid-call transfer to your care team: routine, urgent, or emergency',
     ],
   },
   {
@@ -138,7 +138,7 @@ const capabilities = [
     title: 'Built to Plug Into Your Stack',
     problem: 'Another portal to check is another silo. Your data should flow where your team works.',
     solution:
-      'A developer-ready REST API gives your integration team programmatic access to patients, call transcripts, conversations, alerts, and analytics — secured with API keys, per-key rate limits, and full OpenAPI documentation.',
+      'A developer-ready REST API gives your integration team programmatic access to patients, call transcripts, conversations, alerts, and analytics, secured with API keys, per-key rate limits, and full OpenAPI documentation.',
     bullets: [
       'REST API for patients, calls, transcripts, alerts, and analytics',
       'API-key authentication with per-key rate limiting',
@@ -215,7 +215,7 @@ export function PlatformComponent() {
                   <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Natural voice conversations</strong>
-                    <p className="text-gray-600">Real-time AI voice — not pre-recorded scripts or touch-tone menus</p>
+                    <p className="text-gray-600">Real-time AI voice, not pre-recorded scripts or touch-tone menus</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -236,7 +236,7 @@ export function PlatformComponent() {
                   <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Works on any phone</strong>
-                    <p className="text-gray-600">Landline or mobile — no apps, no devices, no barriers</p>
+                    <p className="text-gray-600">Landline or mobile. No apps, no devices, no barriers</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -250,7 +250,7 @@ export function PlatformComponent() {
                   <CheckCircle className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Context for future conversations</strong>
-                    <p className="text-gray-600">Weekly AI analysis learns each patient’s preferences, favorite topics, and rapport cues — and applies them to future calls</p>
+                    <p className="text-gray-600">Weekly AI analysis learns each patient’s preferences, favorite topics, and rapport cues, and applies them to future calls</p>
                   </div>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export function PlatformComponent() {
                 Outbound. Inbound. Text. One Platform, Every Channel.
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Positive Check reaches patients by voice and by text — and patients can reach back.
+                Positive Check reaches patients by voice and by text, and patients can reach back.
                 Every channel feeds the same dashboard, the same alerts, and the same documentation trail.
               </p>
             </div>
@@ -307,7 +307,7 @@ export function PlatformComponent() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Inbound: patients can call Lola back</h3>
                 <p className="text-gray-600 mb-4">
-                  Missed the check-in? Have a question? Patients can call back anytime and Lola answers —
+                  Missed the check-in? Have a question? Patients can call back anytime and Lola answers,
                   greeting known callers by name, verifying identity before anything sensitive, and offering
                   real self-service.
                 </p>
@@ -328,8 +328,8 @@ export function PlatformComponent() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Two-way SMS check-ins</h3>
                 <p className="text-gray-600 mb-4">
-                  Some patients prefer texting. Lola holds real back-and-forth SMS conversations — the same
-                  wellness questions, the same alert analysis — with TCPA-compliant opt-in and opt-out at
+                  Some patients prefer texting. Lola holds real back-and-forth SMS conversations (the same
+                  wellness questions, the same alert analysis) with TCPA-compliant opt-in and opt-out at
                   every step.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-600">
@@ -494,21 +494,21 @@ export function PlatformComponent() {
                   <TrendingUp className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Weekly AI risk-trend analysis</strong>
-                    <p className="text-sm text-gray-600">Per-patient trajectories — improving, stable, or declining — with recommended actions for your care team</p>
+                    <p className="text-sm text-gray-600">Per-patient trajectories (improving, stable, or declining) with recommended actions for your care team</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Sparkles className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Ask your data anything</strong>
-                    <p className="text-sm text-gray-600">AI reporting chat answers plain-English questions about your population — and saves the answers as custom dashboards</p>
+                    <p className="text-sm text-gray-600">AI reporting chat answers plain-English questions about your population and saves the answers as custom dashboards</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Database className="w-5 h-5 text-pc-accent-text mt-1 flex-shrink-0" />
                   <div>
                     <strong className="text-gray-900">Exportable reports</strong>
-                    <p className="text-sm text-gray-600">Download compliance documentation and program performance data — with de-identified export options for sharing</p>
+                    <p className="text-sm text-gray-600">Download compliance documentation and program performance data, with de-identified export options for sharing</p>
                   </div>
                 </div>
               </div>
@@ -547,7 +547,7 @@ export function PlatformComponent() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Lock className="w-5 h-5 text-purple-200 mt-0.5 flex-shrink-0" />
-                    <span className="text-purple-100">Multi-factor authentication — authenticator apps, backup codes, and email verification</span>
+                    <span className="text-purple-100">Multi-factor authentication: authenticator apps, backup codes, and email verification</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Lock className="w-5 h-5 text-purple-200 mt-0.5 flex-shrink-0" />
@@ -613,7 +613,7 @@ export function PlatformComponent() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Phone className="w-5 h-5 text-purple-200 mt-0.5 flex-shrink-0" />
-                    <span className="text-purple-100">In-console softphone for staff calls — no desk phones needed</span>
+                    <span className="text-purple-100">In-console softphone for staff calls. No desk phones needed</span>
                   </div>
                 </div>
               </div>

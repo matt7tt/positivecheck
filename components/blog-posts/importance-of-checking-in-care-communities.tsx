@@ -36,12 +36,12 @@ export function ImportanceOfCheckingInPost({ faqs = [] }: { faqs?: PostFAQItem[]
         />
 
         <KeyTakeaways
-          summary="Even the best care communities can fall short in providing consistent, individualized attention — regular family check-ins help ensure seniors receive the care they deserve."
+          summary="Even the best care communities can fall short in providing consistent, individualized attention. Regular family check-ins help ensure seniors receive the care they deserve."
           points={[
             "Staff shortages, high patient-to-caregiver ratios, and administrative oversight can lead to gaps in care.",
             "Daily check-ins help families monitor physical health, medication management, and emotional well-being.",
             "Consistent family involvement signals to staff that a resident has attentive loved ones, which can lead to better, more personalized care.",
-            "Regular check-ins help catch red flags — like neglect, medication errors, or depression — before a situation worsens.",
+            "Regular check-ins help catch red flags (like neglect, medication errors, or depression) before a situation worsens.",
             "A quick five-minute call, scheduled visits, engaging with staff, or automated wellness calls like Positive Check all keep families connected.",
           ]}
         />
@@ -83,7 +83,7 @@ export function ImportanceOfCheckingInPost({ faqs = [] }: { faqs?: PostFAQItem[]
           Peace of Mind for Families
         </h2>
         <p>
-          Daily monitoring of seniors in care communities is not just about ensuring their safety—it's about giving them the best possible quality of life. Knowing that a loved one is happy, healthy, and well-cared for provides peace of mind to families, reinforcing the belief that they made the right decision in choosing a care community.
+          Daily monitoring of seniors in care communities is not just about ensuring their safety. It's about giving them the best possible quality of life. Knowing that a loved one is happy, healthy, and well-cared for provides peace of mind to families, reinforcing the belief that they made the right decision in choosing a care community.
         </p>
         <p className="mb-8">
           With tools like Positive Check, families can take an active role in their senior loved ones' well-being, even from a distance. By committing to regular check-ins, we can ensure that every senior receives the care, dignity, and respect they deserve.

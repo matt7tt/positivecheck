@@ -18,7 +18,7 @@ export function OperationalAlertProof() {
     <div className="mx-auto max-w-6xl">
       <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-purple-700">From outreach to staff follow-up</p>
       <h2 id="operational-alert-heading" className="mb-4 text-3xl font-bold text-gray-900">What Lola flags for care teams</h2>
-      <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-600">Conversations can surface symptoms, medication problems and practical requests—including concerns patients raise beyond the standard questions. Your care team reviews the flagged information and decides what action to take.</p>
+      <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-600">Conversations can surface symptoms, medication problems and practical requests, including concerns patients raise beyond the standard questions. Your care team reviews the flagged information and decides what action to take.</p>
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="rounded-xl border border-purple-100 bg-purple-50/50 p-6">
           <h3 className="mb-5 text-xl font-semibold text-gray-900">Selected topics flagged</h3>
@@ -36,7 +36,7 @@ export function OperationalAlertProof() {
             <dd className="mt-1 text-2xl font-bold text-gray-900">{level.percent}%</dd>
             {level.detail && <dd className="mt-1 text-sm text-gray-600">{level.detail}</dd>}
           </div>)}</dl>
-          <p className="mt-6 text-sm leading-relaxed text-gray-500">Priority levels describe flagged alerts—not diagnoses, confirmed emergencies or completed clinical interventions. Clinical decisions and follow-up remain with your team.</p>
+          <p className="mt-6 text-sm leading-relaxed text-gray-500">Priority levels describe flagged alerts, not diagnoses, confirmed emergencies or completed clinical interventions. Clinical decisions and follow-up remain with your team.</p>
         </div>
       </div>
       <div id="operational-reporting-notes" className="mt-8 scroll-mt-24 border-t pt-6 text-sm leading-relaxed text-gray-600">

@@ -211,7 +211,7 @@ export default function PostDischargeFollowUpPage() {
                       <tbody>
                         <tr className="border-b">
                           <td className="py-3 px-4 font-medium text-purple-700">99495</td>
-                          <td className="py-3 px-4 text-gray-700">TCM — interactive contact within 2 business days, at least moderate medical decision-making and a visit within 14 calendar days, alongside other service requirements</td>
+                          <td className="py-3 px-4 text-gray-700">TCM: interactive contact within 2 business days, at least moderate medical decision-making and a visit within 14 calendar days, alongside other service requirements</td>
                         </tr>
                       </tbody>
                     </table>

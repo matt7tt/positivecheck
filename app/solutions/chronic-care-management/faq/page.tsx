@@ -32,7 +32,7 @@ const faqs = [
   {
     question: 'What is Chronic Care Management (CCM)?',
     answer:
-      "Chronic Care Management is a Medicare-reimbursed care coordination program for patients with two or more chronic conditions expected to last at least 12 months (or until death) and that place the patient at significant risk of death, acute exacerbation, or functional decline. Clinical staff deliver non-face-to-face care coordination \u2014 medication management, care plan updates, patient communication \u2014 and bill CPT 99490 (first 20 minutes non-complex), 99439 (each additional 20 minutes), 99487 (first 60 minutes complex), and 99489 (each additional 30 minutes complex).",
+      "Chronic Care Management is a Medicare-reimbursed care coordination program for patients with two or more chronic conditions expected to last at least 12 months (or until death) and that place the patient at significant risk of death, acute exacerbation, or functional decline. Clinical staff deliver non-face-to-face care coordination (medication management, care plan updates, and patient communication) and bill CPT 99490 (first 20 minutes non-complex), 99439 (each additional 20 minutes), 99487 (first 60 minutes complex), and 99489 (each additional 30 minutes complex).",
   },
   {
     question: 'What is the two-chronic-conditions requirement?',
@@ -42,22 +42,22 @@ const faqs = [
   {
     question: 'What is the 20-minute monthly clinical staff time requirement?',
     answer:
-      'CPT 99490 requires at least 20 minutes of clinical staff time per calendar month spent on CCM activities for a given patient. The time can be cumulative across multiple touchpoints in the month \u2014 a 5-minute medication check call, a 10-minute care plan update, and a 5-minute specialist-coordination task all count toward the threshold. If the cumulative time reaches the 20-minute mark, 99490 is billable. If it does not, no CCM code can be billed for that patient that month. Each additional 20 minutes may be billed under 99439 (up to twice per month for non-complex CCM).',
+      'CPT 99490 requires at least 20 minutes of clinical staff time per calendar month spent on CCM activities for a given patient. The time can be cumulative across multiple touchpoints in the month: a 5-minute medication check call, a 10-minute care plan update, and a 5-minute specialist-coordination task all count toward the threshold. If the cumulative time reaches the 20-minute mark, 99490 is billable. If it does not, no CCM code can be billed for that patient that month. Each additional 20 minutes may be billed under 99439 (up to twice per month for non-complex CCM).',
   },
   {
     question: 'Can AI-powered wellness calls count toward the 20-minute CCM time requirement?',
     answer:
-      'AI calls themselves do not count as "clinical staff time" under the CMS definition, but clinical staff time spent reviewing AI call summaries, updating care plans based on flagged concerns, coordinating escalations, and documenting the interaction does count. In practice, AI calls generate structured summaries that make the 20-minute clinical review highly efficient \u2014 the call captures the patient content, clinical staff spend their time on care-plan action rather than data gathering.',
+      'AI calls themselves do not count as "clinical staff time" under the CMS definition, but clinical staff time spent reviewing AI call summaries, updating care plans based on flagged concerns, coordinating escalations, and documenting the interaction does count. In practice, AI calls generate structured summaries that make the 20-minute clinical review highly efficient. The call captures the patient content, and clinical staff spend their time on care-plan action rather than data gathering.',
   },
   {
     question: "What's the difference between non-complex (99490) and complex (99487) CCM?",
     answer:
-      'Non-complex CCM (CPT 99490, \u007e$66/month) requires 20 minutes of clinical staff time and at least one moderate-complexity medical decision-making element per month. Complex CCM (CPT 99487, \u007e$144/month) requires 60 minutes of clinical staff time and substantial revision of the care plan for patients with moderate-to-high complexity medical decision-making. Complex CCM applies to patients with unstable conditions, recent hospitalizations, or significant care-plan changes. A patient can only be billed under one track per month \u2014 either non-complex or complex, not both.',
+      'Non-complex CCM (CPT 99490, \u007e$66/month) requires 20 minutes of clinical staff time and at least one moderate-complexity medical decision-making element per month. Complex CCM (CPT 99487, \u007e$144/month) requires 60 minutes of clinical staff time and substantial revision of the care plan for patients with moderate-to-high complexity medical decision-making. Complex CCM applies to patients with unstable conditions, recent hospitalizations, or significant care-plan changes. A patient can only be billed under one track per month: either non-complex or complex, not both.',
   },
   {
     question: 'Does HIPAA permit AI-powered CCM wellness calls?',
     answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards: encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
   },
   {
     question: 'Who can furnish CCM services?',
@@ -65,7 +65,7 @@ const faqs = [
       'CCM services can be furnished by physicians, non-physician practitioners (NPs, PAs, CNSs, CNMs), and clinical staff under the general supervision of the billing provider. "Clinical staff" includes RNs, LPNs, medical assistants, and other licensed personnel acting within their scope of practice. Only one billing provider can bill CCM codes for a given patient per calendar month, even if multiple practices are involved in that patient\u2019s care.',
   },
   {
-    question: 'What about CPT 99439 and 99489 \u2014 the add-on codes?',
+    question: 'What about CPT 99439 and 99489, the add-on codes?',
     answer:
       'CPT 99439 is the non-complex CCM add-on for each additional 20 minutes beyond the initial 99490 threshold, billable up to 2x per month (so a non-complex CCM patient with 60 minutes of clinical staff time in a month could bill 99490 + 99439 + 99439). CPT 99489 is the complex CCM add-on for each additional 30 minutes beyond the 99487 60-minute threshold. Both require the same documentation discipline as the base codes: time tracking, care plan updates, and CMS-recognized activities.',
   },
@@ -87,7 +87,7 @@ const faqs = [
   {
     question: 'Can CCM be billed for patients in skilled nursing facilities or hospice?',
     answer:
-      'Generally no. CMS excludes patients in an inpatient hospital, skilled nursing facility, inpatient rehab facility, or hospice from CCM billing. CCM is for community-dwelling patients \u2014 their home, assisted living, or similar setting. Patients receiving care in a facility-based setting are typically covered by the facility\u2019s per-diem payment, which already includes care coordination. See the CMS MLN CCM booklet for the full list of excluded settings.',
+      'Generally no. CMS excludes patients in an inpatient hospital, skilled nursing facility, inpatient rehab facility, or hospice from CCM billing. CCM is for community-dwelling patients in their home, assisted living, or similar setting. Patients receiving care in a facility-based setting are typically covered by the facility\u2019s per-diem payment, which already includes care coordination. See the CMS MLN CCM booklet for the full list of excluded settings.',
   },
 ]
 

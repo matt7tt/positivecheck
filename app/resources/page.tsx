@@ -79,7 +79,7 @@ const sections = [
     href: "/resources/compare",
     title: "Care Outreach Approach Comparisons",
     description:
-      "Category-level comparisons of how healthcare providers can scale patient outreach — AI-powered wellness calls, in-house call centers, nurse-led coordination, and more.",
+      "Category-level comparisons of how healthcare providers can scale patient outreach: AI-powered wellness calls, in-house call centers, nurse-led coordination, and more.",
   },
 ];
 

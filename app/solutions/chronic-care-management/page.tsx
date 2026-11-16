@@ -110,7 +110,7 @@ export default function ChronicCareManagementPage() {
               </h1>
               <p className="text-xl text-purple-100 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Daily AI wellness calls give your CCM patients consistent touchpoints, medication
-                adherence questions, and care plan follow-up — with summaries for your team to review.
+                adherence questions, and care plan follow-up, with summaries for your team to review.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {[

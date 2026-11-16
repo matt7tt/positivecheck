@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: '2026 RPM CPT Calculator',
-    description: 'Estimate monthly Medicare RPM reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470 — including the two new 2026 codes.',
+    description: 'Estimate monthly Medicare RPM reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470, including the two new 2026 codes.',
     url: '/resources/rpm-cpt-calculator',
     siteName: 'Positive Check',
     locale: 'en_US',

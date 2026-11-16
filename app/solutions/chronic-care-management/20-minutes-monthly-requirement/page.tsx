@@ -60,7 +60,7 @@ const faqs = [
   {
     question: 'How do I handle months where the patient needed less than 20 minutes of coordination?',
     answer:
-      'If cumulative CCM time for a patient is below 20 minutes in a calendar month, 99490 is not billable that month. This is a normal part of running a CCM program \u2014 some months a patient is stable and needs little coordination. Do not force time-tracking to reach 20 minutes; document what actually happened. Do not assume a population-wide average makes an individual patient month eligible.',
+      'If cumulative CCM time for a patient is below 20 minutes in a calendar month, 99490 is not billable that month. This is a normal part of running a CCM program: some months a patient is stable and needs little coordination. Do not force time-tracking to reach 20 minutes; document what actually happened. Do not assume a population-wide average makes an individual patient month eligible.',
   },
 ]
 
@@ -110,11 +110,11 @@ export default function CCMTwentyMinutesPage() {
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
                     <Link href="/resources/glossary/cpt-99490" className="text-purple-700 underline hover:text-purple-900">CPT 99490</Link> requires at least <strong>20 cumulative minutes of clinical staff time</strong> on
-                    CCM activities per calendar month {'\u2014'} it{'\u2019'}s a time threshold, not an encounter
+                    CCM activities per calendar month. It{'\u2019'}s a time threshold, not an encounter
                     threshold.
                   </li>
                   <li>
-                    Time is <strong>non-face-to-face</strong> {'\u2014'} minutes during an E/M visit are billed
+                    Time is <strong>non-face-to-face</strong>: minutes during an E/M visit are billed
                     under the E/M code, not CCM.
                   </li>
                   <li>
@@ -132,7 +132,7 @@ export default function CCMTwentyMinutesPage() {
                     </strong>
                   </li>
                   <li>
-                    The threshold is <strong>cumulative across the month</strong> {'\u2014'} multiple 5-minute
+                    The threshold is <strong>cumulative across the month</strong>: multiple 5-minute
                     interactions can combine; there{'\u2019'}s no minimum per-encounter duration.
                   </li>
                 </ul>
@@ -164,7 +164,7 @@ export default function CCMTwentyMinutesPage() {
                 The 20-minute figure is cumulative across the entire calendar month, not a minimum per encounter.
                 A patient who receives five 4-minute coordination calls throughout April has met the threshold
                 just as validly as a patient who receives a single 22-minute care planning session. There is no
-                CMS rule specifying a minimum per-interaction duration {'\u2014'} the month-end total is what
+                CMS rule specifying a minimum per-interaction duration. The month-end total is what
                 determines billability.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -215,8 +215,8 @@ export default function CCMTwentyMinutesPage() {
                   or social work referrals that support the patient{'\u2019'}s care plan
                 </li>
                 <li>
-                  Documentation of the CCM activities performed during the month {'\u2014'} writing the note that
-                  captures the care coordination work is itself part of the work
+                  Documentation of the CCM activities performed during the month (writing the note that
+                  captures the care coordination work is itself part of the work)
                 </li>
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -277,7 +277,7 @@ export default function CCMTwentyMinutesPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The billing physician or non-physician practitioner (NP, PA, CNS, or CNM) can perform CCM
                 activities and count that time toward the threshold. More commonly, the work is performed by
-                clinical staff {'\u2014'} RNs, LPNs, and in some cases medical assistants {'\u2014'} under the
+                clinical staff (RNs, LPNs, and in some cases medical assistants) under the
                 general supervision of the billing provider. General supervision means the physician or NPP
                 does not need to be physically present when the clinical staff performs CCM work, but must
                 be available by phone and must have reviewed and approved the care plan and coordination
@@ -303,7 +303,7 @@ export default function CCMTwentyMinutesPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Tracking time accurately</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Accurate time tracking is the operational foundation of a defensible CCM program. The mechanics
-                can be simple {'\u2014'} a paper log, an EHR template, or a dedicated CCM workflow module {'\u2014'}
+                can be simple (a paper log, an EHR template, or a dedicated CCM workflow module),
                 but the discipline must be consistent across every enrolled patient. Time should be recorded
                 to the nearest minute. Rounding to 5- or 15-minute blocks is not required by CMS and introduces
                 systematic overstatement risk that stands out in an audit. Start and stop times per activity
@@ -359,7 +359,7 @@ export default function CCMTwentyMinutesPage() {
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Common documentation pitfalls</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                The most common CCM billing errors at audit are not errors of commission {'\u2014'} they are
+                The most common CCM billing errors at audit are not errors of commission. They are
                 errors of documentation discipline. Practices that train staff carefully and build structured
                 workflows can avoid virtually all of the following:
               </p>
@@ -386,8 +386,8 @@ export default function CCMTwentyMinutesPage() {
                   Including E/M visit time in the CCM monthly total, either by accident or by design
                 </li>
                 <li>
-                  Billing CCM for a month with less than 20 documented minutes {'\u2014'} the most common
-                  error, typically caused by missing documentation of activities that did occur
+                  Billing CCM for a month with less than 20 documented minutes (the most common
+                  error, typically caused by missing documentation of activities that did occur)
                 </li>
                 <li>
                   Not reconciling time tracking entries with care plan updates: if the record shows 22 minutes
@@ -402,7 +402,7 @@ export default function CCMTwentyMinutesPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 The operational challenge of the 20-minute requirement changes significantly as enrolled
                 patient populations grow. For practices with fewer than 50 CCM-enrolled patients, manual
-                tracking {'\u2014'} a spreadsheet or basic EHR template {'\u2014'} is usually sufficient.
+                tracking (a spreadsheet or basic EHR template) is usually sufficient.
                 Each clinical staff member knows their patients and can monitor monthly totals informally.
                 The risk of threshold misses is low because the practice has enough bandwidth to handle
                 each patient individually.
@@ -420,7 +420,7 @@ export default function CCMTwentyMinutesPage() {
                 AI-generated call summaries create structured review tasks that scale with the population:
                 each patient{'\u2019'}s monthly call produces a summary that takes 2{'\u2013'}5 minutes
                 to review, act on, and document. This per-patient efficiency is what enables large CCM
-                programs to consistently bill 99490 for 80{'\u2014'}90% of their enrolled panel each month.
+                programs to consistently bill 99490 for 80{'\u2013'}90% of their enrolled panel each month.
                 Programs without this systematic coverage routinely miss 30{'\u2013'}50% of enrolled
                 patients, leaving substantial reimbursement on the table while still carrying the overhead
                 of running the program. See the{' '}
@@ -447,7 +447,7 @@ export default function CCMTwentyMinutesPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    The 20-minute threshold is cumulative clinical staff time per calendar month {'\u2014'}{' '}
+                    The 20-minute threshold is cumulative clinical staff time per calendar month:
                     non-face-to-face, patient-specific, documented.
                   </li>
                   <li>

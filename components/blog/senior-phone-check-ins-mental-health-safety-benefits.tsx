@@ -44,7 +44,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost({ faqs = [
                 summary="Regular phone check-ins create a comprehensive support system for seniors living alone, addressing both mental health and safety while helping them age in place."
                 points={[
                   "Scheduled calls build routine and safety awareness, supporting regular sleep, meal, and medication schedules.",
-                  "Consistent conversation combats social isolation — studies show prolonged loneliness can be as harmful to health as smoking 15 cigarettes daily.",
+                  "Consistent conversation combats social isolation. Studies show prolonged loneliness can be as harmful to health as smoking 15 cigarettes daily.",
                   "Trained callers can catch subtle changes in speech, mood, or cognition that signal developing health issues early.",
                   "Check-ins support medication adherence, a challenge for the up to 40% of older adults who don't take medications as prescribed.",
                   "Phone check-in services typically cost a fraction of institutional care, helping seniors stay independent longer while giving families peace of mind.",
@@ -52,7 +52,7 @@ export function SeniorPhoneCheckInsMentalHealthSafetyBenefitsBlogPost({ faqs = [
               />
 
               <p className="lead-paragraph">
-                As our loved ones age, maintaining their independence while ensuring their safety becomes a delicate balance. For many seniors living alone, regular phone check-ins have emerged as a simple yet powerful solution that addresses both mental health and safety concerns. These daily conversations provide far more than just a friendly voice—they create a comprehensive support system that can significantly improve quality of life for older adults.
+                As our loved ones age, maintaining their independence while ensuring their safety becomes a delicate balance. For many seniors living alone, regular phone check-ins have emerged as a simple yet powerful solution that addresses both mental health and safety concerns. These daily conversations provide far more than just a friendly voice. They create a comprehensive support system that can significantly improve quality of life for older adults.
               </p>
 
               <p>

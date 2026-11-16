@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const FAQ_ITEMS: PostFAQItem[] = [
   {
     question: "What is an AI companion for seniors?",
-    answer: "An AI companion is a technology designed to check in, listen, respond, and hold engaging conversations with an older adult. It can take the form of voice-based agents (like Alexa or ElliQ), tablet apps, or phone-based services like Positive Check. These companions reach out regularly with short, friendly conversations — asking how the senior is feeling, playing a quick game or riddle, and offering words of encouragement — with responses tracked and shared with caregivers through a secure dashboard.",
+    answer: "An AI companion is a technology designed to check in, listen, respond, and hold engaging conversations with an older adult. It can take the form of voice-based agents (like Alexa or ElliQ), tablet apps, or phone-based services like Positive Check. These companions reach out regularly with short, friendly conversations (asking how the senior is feeling, playing a quick game or riddle, and offering words of encouragement), with responses tracked and shared with caregivers through a secure dashboard.",
   },
   {
     question: "How do AI companions help reduce senior loneliness?",
@@ -43,7 +43,7 @@ const FAQ_ITEMS: PostFAQItem[] = [
   },
   {
     question: "Can an AI companion replace human care and visits?",
-    answer: "No. No machine can replace the emotional bond of a loved one's visit. AI companions are an extension of human care, not a substitute for it — they supplement care with consistency, engagement, and oversight when humans cannot be present 24/7. The key is balance: use AI to handle routine support, and save your energy for quality moments together.",
+    answer: "No. No machine can replace the emotional bond of a loved one's visit. AI companions are an extension of human care, not a substitute for it. They supplement care with consistency, engagement, and oversight when humans cannot be present 24/7. The key is balance: use AI to handle routine support, and save your energy for quality moments together.",
   },
 ]
 

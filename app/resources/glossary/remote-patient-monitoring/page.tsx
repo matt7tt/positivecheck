@@ -59,7 +59,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
               <p className="text-xl text-purple-100 leading-relaxed">
                 Remote Patient Monitoring (RPM) is a Medicare-reimbursed care model where clinical
                 staff review physiologic data (blood pressure, glucose, weight, SpO2, ECG, etc.)
-                transmitted from a patient\u2019s connected medical device and conduct interactive
+                transmitted from a patient’s connected medical device and conduct interactive
                 communication with the patient at least monthly, supported by CPT codes 99453,
                 99454, 99457, and 99458.
               </p>
@@ -73,7 +73,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 Remote Patient Monitoring (RPM) is a Medicare-reimbursed care model where clinical
                 staff review physiologic data (blood pressure, glucose, weight, SpO2, ECG, etc.)
-                transmitted from a patient\u2019s connected medical device and conduct interactive
+                transmitted from a patient’s connected medical device and conduct interactive
                 communication with the patient at least monthly. RPM covers ongoing monthly care
                 for patients with acute or chronic conditions where physiologic data informs clinical
                 decisions, enabling proactive intervention before conditions worsen.
@@ -119,7 +119,7 @@ export default function RemotePatientMonitoringGlossaryPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Unlike some CMS programs, RPM does not impose a minimum number of chronic
-                conditions \u2014 a single qualifying diagnosis is sufficient. The interactive
+                conditions. A single qualifying diagnosis is sufficient. The interactive
                 communication required by CPT 99457 and 99458 must be with the patient or
                 caregiver and must address the device data transmitted; it cannot be a generic
                 check-in unrelated to the monitored readings.
@@ -151,32 +151,32 @@ export default function RemotePatientMonitoringGlossaryPage() {
                 <li>
                   <Link href="/resources/glossary/cpt-99453" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99453
-                  </Link>{' '}
-                  \u2014 one-time setup and patient education
+                  </Link>:{' '}
+                  one-time setup and patient education
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99454" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99454
-                  </Link>{' '}
-                  \u2014 device supply billed each 30 days
+                  </Link>:{' '}
+                  device supply billed each 30 days
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99457" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99457
-                  </Link>{' '}
-                  \u2014 first 20 minutes of RPM treatment management including required interactive communication per month
+                  </Link>:{' '}
+                  first 20 minutes of RPM treatment management including required interactive communication per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/cpt-99458" className="text-purple-700 underline hover:text-purple-900">
                     CPT 99458
-                  </Link>{' '}
-                  \u2014 each additional 20 minutes per month
+                  </Link>:{' '}
+                  each additional 20 minutes per month
                 </li>
                 <li>
                   <Link href="/resources/glossary/care-coordination" className="text-purple-700 underline hover:text-purple-900">
                     Care coordination
-                  </Link>{' '}
-                  \u2014 the broader function RPM operationalizes
+                  </Link>:{' '}
+                  the broader function RPM operationalizes
                 </li>
               </ul>
 

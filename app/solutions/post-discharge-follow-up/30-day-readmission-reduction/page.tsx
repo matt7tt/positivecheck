@@ -51,7 +51,7 @@ const faqs = [
   {
     question: 'How much financial impact does HRRP have on a typical hospital?',
     answer:
-      'HRRP penalties apply to all base Medicare DRG payments \u2014 not just the six targeted conditions \u2014 and can reach 3% of Medicare fee-for-service payments. For a mid-sized hospital with $100M in Medicare payments, a 2% penalty equals $2M annually. Approximately 75% of hospitals receive some penalty in any given year, with the average penalty around 0.7%.',
+      'HRRP penalties apply to all base Medicare DRG payments (not just the six targeted conditions) and can reach 3% of Medicare fee-for-service payments. For a mid-sized hospital with $100M in Medicare payments, a 2% penalty equals $2M annually. Approximately 75% of hospitals receive some penalty in any given year, with the average penalty around 0.7%.',
   },
   {
     question: 'Is TCM the only CMS-reimbursed intervention for readmission reduction?',
@@ -111,19 +111,19 @@ export default function ReadmissionReductionPage() {
                 <h2 className="text-lg font-semibold text-purple-900 mb-3">In short</h2>
                 <ul className="list-disc pl-5 space-y-2 text-gray-800 leading-relaxed">
                   <li>
-                    The 30-day post-discharge window is when patients are most vulnerable {'\u2014'} roughly{' '}
+                    The 30-day post-discharge window is when patients are most vulnerable: roughly{' '}
                     <strong>15% of Medicare discharges</strong> result in a readmission within 30 days.
                   </li>
                   <li>
                     The{' '}
                     <strong>Hospital Readmissions Reduction Program (HRRP)</strong> penalizes hospitals
-                    with higher-than-expected readmission rates across six target conditions {'\u2014'} up to a{' '}
+                    with higher-than-expected readmission rates across six target conditions, up to a{' '}
                     <strong>3% reduction in Medicare payments</strong>.
                   </li>
                   <li>
                     Avoidable readmissions most commonly trace to{' '}
                     <strong>medication errors, missed follow-up appointments, and unrecognized clinical
-                    deterioration</strong> {'\u2014'} all addressable in the 30-day window.
+                    deterioration</strong>, all addressable in the 30-day window.
                   </li>
                   <li>
                     Evidence-based interventions include medication reconciliation, structured follow-up,
@@ -149,7 +149,7 @@ export default function ReadmissionReductionPage() {
                 planning, medication confusion, or a complication that a structured follow-up call could
                 have caught in the first critical days at home. The patient who returns to the ED three
                 days after discharge with uncontrolled heart failure typically missed a critical window
-                for medication adjustment or symptom escalation {'\u2014'} a window that targeted post-discharge
+                for medication adjustment or symptom escalation, a window that targeted post-discharge
                 contact is designed to capture.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -163,17 +163,17 @@ export default function ReadmissionReductionPage() {
                   Hospital Readmissions Reduction Program
                 </a>{' '}
                 reduces base Medicare payments for hospitals with higher-than-expected readmission
-                rates {'\u2014'} up to 3% across all Medicare DRG payments, not just those tied to the six
+                rates, up to 3% across all Medicare DRG payments, not just those tied to the six
                 target conditions. For a hospital receiving $150M in annual Medicare fee-for-service
                 payments, a penalty at the 2% level costs $3M per year. Even a modest reduction in
-                excess readmissions {'\u2014'} two percentage points at a mid-volume hospital {'\u2014'} can
+                excess readmissions (two percentage points at a mid-volume hospital) can
                 translate to seven figures in avoided penalties.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 For patients, readmissions compound care disruption, increase out-of-pocket costs, and
                 carry real psychological costs: the return to the hospital setting after an already
                 difficult acute episode can undermine confidence in recovery and increase caregiver
-                burden. Reducing readmissions is not an administrative priority {'\u2014'} it is a direct
+                burden. Reducing readmissions is not an administrative priority. It is a direct
                 patient outcome.
               </p>
 
@@ -211,7 +211,7 @@ export default function ReadmissionReductionPage() {
               </ul>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The penalty structure is what makes HRRP financially significant: reductions apply to
-                all base Medicare DRG payments {'\u2014'} not just payments associated with the six target
+                all base Medicare DRG payments, not just payments associated with the six target
                 conditions. A hospital penalized for excess heart failure readmissions sees a payment
                 reduction on every Medicare discharge it bills, regardless of diagnosis. The maximum
                 penalty is 3%, and approximately 75% of eligible hospitals receive some penalty
@@ -228,7 +228,7 @@ export default function ReadmissionReductionPage() {
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 <strong>High-risk primary diagnoses</strong> are the most straightforward risk signal.
-                Heart failure carries a <Link href="/resources/glossary/30-day-readmission" className="text-purple-700 underline hover:text-purple-900">30-day readmission</Link> rate exceeding 22% nationally {'\u2014'} the
+                Heart failure carries a <Link href="/resources/glossary/30-day-readmission" className="text-purple-700 underline hover:text-purple-900">30-day readmission</Link> rate exceeding 22% nationally, the
                 highest among HRRP-targeted conditions. COPD, sepsis, and pneumonia also carry
                 elevated rates. Patients with these diagnoses should be prioritized for the earliest
                 post-discharge contact.
@@ -239,7 +239,7 @@ export default function ReadmissionReductionPage() {
                 as do dual-eligible patients (Medicare and Medicaid), and patients in Black and
                 Hispanic populations where systemic care disparities create gaps in post-discharge
                 support. CMS risk-adjusts for most clinical factors in the ERR calculation but does
-                not fully account for social determinants of health {'\u2014'} meaning hospitals serving
+                not fully account for social determinants of health, meaning hospitals serving
                 high-social-risk populations face structural disadvantages in the penalty calculation.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -247,8 +247,8 @@ export default function ReadmissionReductionPage() {
                 chronic conditions, polypharmacy (five or more active medications), a prior
                 hospitalization within the last 90 days, and low functional status at discharge.
                 Patients who required ICU-level care or had a hospital stay longer than seven days
-                also carry elevated risk. Mental health comorbidities {'\u2014'} depression, cognitive
-                impairment, and active substance use disorders {'\u2014'} are among the most under-recognized
+                also carry elevated risk. Mental health comorbidities (depression, cognitive
+                impairment, and active substance use disorders) are among the most under-recognized
                 readmission risk factors; a patient who cannot follow a discharge care plan because
                 of cognitive impairment is high risk regardless of the primary diagnosis.
               </p>
@@ -258,8 +258,8 @@ export default function ReadmissionReductionPage() {
                 barriers to follow-up appointments, food insecurity (particularly relevant for
                 diabetic and cardiac patients), and the absence of a caregiver at home all
                 independently increase the likelihood of an avoidable return to the hospital.
-                Identifying these factors at discharge {'\u2014'} and connecting patients to community
-                resources before they leave {'\u2014'} is part of a complete{' '}
+                Identifying these factors at discharge, and connecting patients to community
+                resources before they leave, is part of a complete{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up"
                   className="text-purple-700 underline hover:text-purple-900"
@@ -329,7 +329,7 @@ export default function ReadmissionReductionPage() {
                 avoidable readmissions. New medications started at discharge, dose changes to
                 existing medications, adherence gaps due to cost or confusion, drug{'\u2013'}drug
                 interactions in polypharmacy patients, and generic substitutions that patients do
-                not recognize as equivalent {'\u2014'} all are frequent culprits. A patient discharged
+                not recognize as equivalent: all are frequent culprits. A patient discharged
                 on a new ACE inhibitor who stops taking it after two days because of a cough has
                 a preventable decompensation risk.
               </p>
@@ -338,8 +338,8 @@ export default function ReadmissionReductionPage() {
                 addressable by TCM. A missed post-discharge PCP appointment removes the clinical
                 touchpoint most likely to catch early deterioration. A specialist referral that was
                 noted in the discharge summary but never scheduled leaves a high-risk patient without
-                the monitoring they need. No contact during the highest-risk window {'\u2014'} the first
-                48 hours after discharge {'\u2014'} means problems identified by the patient or caregiver
+                the monitoring they need. No contact during the highest-risk window (the first
+                48 hours after discharge) means problems identified by the patient or caregiver
                 have nowhere to go.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -347,7 +347,7 @@ export default function ReadmissionReductionPage() {
                 caregivers do not know which symptoms warrant contacting the care team. Heart failure
                 patients who gain three pounds overnight and attribute it to what they ate, COPD
                 patients who interpret increased shortness of breath as normal fatigue, surgical
-                patients who dismiss early wound changes as expected {'\u2014'} all are at elevated risk
+                patients who dismiss early wound changes as expected: all are at elevated risk
                 of readmission because they lack the clinical literacy to trigger an escalation.
                 Structured post-discharge contact that explicitly asks about red-flag symptoms
                 addresses this root cause directly.
@@ -365,7 +365,7 @@ export default function ReadmissionReductionPage() {
                 medications is a readmission driver that no amount of clinical follow-up can
                 compensate for if the prescription is never filled. Lack of transportation makes
                 follow-up appointments aspirational rather than actual. Depression after
-                hospitalization {'\u2014'} particularly after cardiac events {'\u2014'} reduces adherence to
+                hospitalization, particularly after cardiac events, reduces adherence to
                 care plans and increases the likelihood of symptom underreporting. Cognitive
                 impairment, when not identified and accommodated in the discharge plan, makes
                 self-management impossible.
@@ -389,7 +389,7 @@ export default function ReadmissionReductionPage() {
                 </li>
                 <li>
                   <strong>Structured post-discharge contact within 48 hours</strong> covering
-                  medications, symptoms, and follow-up appointment status {'\u2014'} studies show
+                  medications, symptoms, and follow-up appointment status. Studies show
                   15{'\u2013'}30% readmission rate reductions when this contact is well-structured
                 </li>
                 <li>
@@ -433,7 +433,7 @@ export default function ReadmissionReductionPage() {
                 the two interventions with the strongest evidence for reducing readmissions:
                 structured contact within 48 hours of discharge and a comprehensive face-to-face
                 visit within 14 days. TCM reimburses care coordination activities that were
-                previously performed but unbilled {'\u2014'} making it both a clinical quality mechanism
+                previously performed but unbilled, making it both a clinical quality mechanism
                 and a revenue opportunity for practices that implement it at scale. See the full{' '}
                 <Link
                   href="/solutions/post-discharge-follow-up"
@@ -462,14 +462,14 @@ export default function ReadmissionReductionPage() {
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">Measuring readmission reduction</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The primary metric for readmission reduction programs is the all-cause 30-day
-                readmission rate {'\u2014'} what percentage of discharges result in any inpatient
+                readmission rate: what percentage of discharges result in any inpatient
                 readmission within 30 days, regardless of diagnosis. This is the most practical
                 measure for internal quality improvement purposes because it captures the full
                 scope of the problem, not just HRRP-targeted conditions.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 For regulatory purposes, the formal CMS measure is the Excess Readmission Ratio
-                (ERR) {'\u2014'} actual readmissions divided by expected readmissions, risk-adjusted for
+                (ERR): actual readmissions divided by expected readmissions, risk-adjusted for
                 patient characteristics. The ERR is what drives HRRP penalties. Benchmark data is
                 published by CMS through Hospital Compare (now Care Compare), updated annually with
                 three-year rolling averages. State hospital associations also publish condition-specific
@@ -510,7 +510,7 @@ export default function ReadmissionReductionPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Key takeaways</h3>
                 <ul className="list-disc pl-5 space-y-2 text-gray-700">
                   <li>
-                    30-day readmission reduction is both clinical quality and financial imperative {'\u2014'}
+                    30-day readmission reduction is both clinical quality and financial imperative.
                     HRRP penalties apply to all Medicare DRG payments.
                   </li>
                   <li>

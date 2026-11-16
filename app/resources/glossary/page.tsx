@@ -53,20 +53,20 @@ export default function GlossaryIndexPage() {
           </h2>
           <ul className="list-disc pl-6 space-y-2 text-gray-700">
             <li>
-              <strong>CMS billing codes</strong> &mdash; CPT codes used for Remote Patient
+              <strong>CMS billing codes</strong>: CPT codes used for Remote Patient
               Monitoring (RPM), Chronic Care Management (CCM), and Transitional Care
               Management (TCM) programs.
             </li>
             <li>
-              <strong>Care program terms</strong> &mdash; Definitions of RPM, CCM, TCM,
+              <strong>Care program terms</strong>: Definitions of RPM, CCM, TCM,
               Principal Care Management, and Annual Wellness Visit.
             </li>
             <li>
-              <strong>Compliance terms</strong> &mdash; HIPAA, Business Associate Agreement
+              <strong>Compliance terms</strong>: HIPAA, Business Associate Agreement
               (BAA), ePHI, HITECH Act.
             </li>
             <li>
-              <strong>Clinical &amp; operational terms</strong> &mdash; 30-day readmission,
+              <strong>Clinical &amp; operational terms</strong>: 30-day readmission,
               interactive communication requirement, care coordination, patient
               engagement.
             </li>
@@ -272,7 +272,7 @@ export default function GlossaryIndexPage() {
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Compliance</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">ePHI</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Electronic Protected Health Information {'\u2014'} the subset of PHI covered by the HIPAA Security Rule.
+                Electronic Protected Health Information: the subset of PHI covered by the HIPAA Security Rule.
               </p>
             </Link>
             <Link
@@ -322,7 +322,7 @@ export default function GlossaryIndexPage() {
               <p className="text-sm text-purple-700 uppercase tracking-wider mb-1">Clinical operations</p>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Patient engagement</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Active, structured involvement of patients in their own care {'\u2014'} core to CCM, RPM, TCM, and PCM outcomes.
+                Active, structured involvement of patients in their own care, core to CCM, RPM, TCM, and PCM outcomes.
               </p>
             </Link>
           </div>

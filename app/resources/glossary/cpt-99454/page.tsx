@@ -73,11 +73,11 @@ export default function CPT99454GlossaryPage() {
                 with daily recordings or programmed alert transmissions, billed each 30 days and
                 requiring the patient to transmit data on at least 16 of 30 days. It reimburses the
                 device rental or supply and the data transmission infrastructure that connects the
-                patient\u2019s FDA-cleared device to the clinical team\u2019s monitoring platform.
+                patient’s FDA-cleared device to the clinical team’s monitoring platform.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 The 2026 Medicare national average reimbursement for CPT 99454 is approximately
-                $47\u2013$56 per 30-day period, with variation by locality. Rates are updated
+                $47–$56 per 30-day period, with variation by locality. Rates are updated
                 annually through the Medicare Physician Fee Schedule; providers should verify
                 current figures on CMS.gov before projecting program revenue.
               </p>
@@ -101,7 +101,7 @@ export default function CPT99454GlossaryPage() {
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMS requires that the device used under CPT 99454 be FDA-cleared and capable of
                 automatic data transmission. Manual patient-reported data does not satisfy the
-                code\u2019s technical requirements. Annual updates to RPM billing policy are
+                code’s technical requirements. Annual updates to RPM billing policy are
                 published in the Medicare Physician Fee Schedule final rule.
               </p>
 
@@ -130,8 +130,8 @@ export default function CPT99454GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99453
-                  </Link>{' '}
-                  \u2014 one-time setup and patient education that precedes 99454
+                  </Link>:{' '}
+                  one-time setup and patient education that precedes 99454
                 </li>
                 <li>
                   <Link
@@ -139,8 +139,8 @@ export default function CPT99454GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99457
-                  </Link>{' '}
-                  \u2014 the first 20 minutes of RPM treatment management including required interactive communication billed alongside 99454
+                  </Link>:{' '}
+                  the first 20 minutes of RPM treatment management including required interactive communication billed alongside 99454
                 </li>
                 <li>
                   <Link
@@ -148,8 +148,8 @@ export default function CPT99454GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Remote Patient Monitoring
-                  </Link>{' '}
-                  \u2014 the care model 99454 supports
+                  </Link>:{' '}
+                  the care model 99454 supports
                 </li>
                 <li>
                   <Link
@@ -157,14 +157,14 @@ export default function CPT99454GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Care coordination
-                  </Link>{' '}
-                  \u2014 the broader function RPM supports
+                  </Link>:{' '}
+                  the broader function RPM supports
                 </li>
               </ul>
 
               <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-4">How Positive Check relates</h2>
               <p className="text-gray-700 leading-relaxed">
-                Positive Check\u2019s daily wellness calls reinforce patient engagement, which
+                Positive Check’s daily wellness calls reinforce patient engagement, which
                 maintains the device-transmission adherence required for 99454 billing. Patients
                 who receive a structured daily check-in are more likely to use their devices
                 consistently and exceed the 16-of-30-day threshold. See the{' '}

@@ -57,7 +57,7 @@ const rpmPillarFaqs = [
   {
     question: 'Does HIPAA permit AI-powered RPM wellness calls?',
     answer:
-      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards \u2014 encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
+      'Yes, when the vendor operates under a signed Business Associate Agreement (BAA) and the platform implements HIPAA technical safeguards: encryption in transit and at rest, role-based access, audit logging, and minimum-necessary data handling. Positive Check operates under a BAA for all provider engagements.',
   },
 ];
 
@@ -191,8 +191,8 @@ export default function RemotePatientMonitoringPage() {
                     className="text-purple-700 underline hover:text-purple-900 font-semibold"
                   >
                     CPT 99445
-                  </Link>
-                  {' '}{'—'} device supply when data is transmitted on 2{'–'}15
+                  </Link>:
+                  device supply when data is transmitted on 2{'–'}15
                   days within a 30-day period (alternative to CPT 99454, which still covers
                   16{'–'}30 days).
                 </li>
@@ -202,14 +202,14 @@ export default function RemotePatientMonitoringPage() {
                     className="text-purple-700 underline hover:text-purple-900 font-semibold"
                   >
                     CPT 99470
-                  </Link>
-                  {' '}{'—'} first 10 minutes of treatment management per calendar
+                  </Link>:
+                  first 10 minutes of treatment management per calendar
                   month (alternative to CPT 99457, which still covers the first 20 minutes).
                 </li>
               </ul>
               <p className="text-sm text-gray-600 leading-relaxed mt-4">
                 The new codes are mutually exclusive with their legacy counterparts in the same
-                billing period{'—'}providers select one based on actual transmission days
+                billing period. Providers select one based on actual transmission days
                 or cumulative time.
               </p>
             </div>
@@ -227,8 +227,8 @@ export default function RemotePatientMonitoringPage() {
                   staff spend time reviewing data and interacting with patients.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  The challenge: CMS requires documented <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link> with each patient — phone
-                  calls, secure messages, or video — at least once per billing period. For practices managing
+                  The challenge: CMS requires documented <Link href="/resources/glossary/interactive-communication-requirement" className="text-purple-700 underline hover:text-purple-900">interactive communication</Link> with each patient (phone
+                  calls, secure messages, or video) at least once per billing period. For practices managing
                   hundreds or thousands of RPM patients, this is operationally demanding.
                 </p>
               </div>
@@ -290,9 +290,9 @@ export default function RemotePatientMonitoringPage() {
                       </thead>
                       <tbody>
                         {[
-                          { code: '99457', desc: 'RPM — first 20 min clinical staff time per month' },
-                          { code: '99458', desc: 'RPM — each additional 20 min clinical staff time per month' },
-                          { code: '99454', desc: 'RPM — device(s) supply with daily recordings or alert transmission, each 30 days' },
+                          { code: '99457', desc: 'RPM: first 20 min clinical staff time per month' },
+                          { code: '99458', desc: 'RPM: each additional 20 min clinical staff time per month' },
+                          { code: '99454', desc: 'RPM: device(s) supply with daily recordings or alert transmission, each 30 days' },
                         ].map((row) => (
                           <tr key={row.code} className="border-b last:border-b-0">
                             <td className="py-3 px-4 font-medium text-purple-700">{row.code}</td>

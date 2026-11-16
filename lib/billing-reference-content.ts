@@ -29,7 +29,7 @@ export const ccmBillingGuide: BillingReference = {
     { id: 'time-record', title: 'Build an activity record, not just a timer', paragraphs: [
       'The 20-minute threshold concerns qualifying care-management work, not simply elapsed outreach or software time. Identify the staff member, date, clinical purpose, action, duration, and connection to the care plan. Exclude time already counted toward another service.',
       'This synthetic monthly record illustrates how a practice could make its work traceable. It is not a claim approval: the actual activities, staff qualifications, supervision, and all CCM requirements must be checked.',
-    ], table: { caption: 'Synthetic CCM activity log — 20 minutes total', headings: ['Activity', 'Minutes', 'Evidence to retain'], rows: [
+    ], table: { caption: 'Synthetic CCM activity log: 20 minutes total', headings: ['Activity', 'Minutes', 'Evidence to retain'], rows: [
       ['Care-plan review and update', '8', 'Staff identity, conditions addressed, and changes made'],
       ['Medication-related care coordination', '7', 'Issue assessed, coordination performed, and follow-up owner'],
       ['Coordination with another treating team', '5', 'Clinical purpose, information exchanged, and resulting action'],
@@ -77,7 +77,7 @@ export const rpmBillingGuide: BillingReference = {
     ], links: [rpmTimeSource] },
     { id: 'worked-example', title: 'Worked example: 20 total minutes, not a 20-minute call', paragraphs: [
       'This synthetic record shows 20 total minutes that include a seven-minute live conversation. It illustrates the distinction between time categories, not a guaranteed billable encounter. Each activity must qualify, and the patient, practitioner, supervision, device, consent, and other service requirements must also be satisfied.',
-    ], table: { caption: 'Synthetic monthly RPM treatment-management record — 20 minutes total', headings: ['Activity', 'Minutes', 'Record'], rows: [
+    ], table: { caption: 'Synthetic monthly RPM treatment-management record: 20 minutes total', headings: ['Activity', 'Minutes', 'Record'], rows: [
       ['Qualifying review of transmitted physiologic readings', '8', 'Staff member, data reviewed, and management purpose'],
       ['Live two-way patient or caregiver conversation', '7', 'Participants, clinical discussion, and resulting plan'],
       ['Qualifying treatment-management follow-through', '5', 'Action taken, responsible practitioner, and next step'],

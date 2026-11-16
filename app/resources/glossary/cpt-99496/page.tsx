@@ -74,7 +74,7 @@ export default function CPT99496GlossaryPage() {
                 with high medical decision-making complexity, requiring a direct patient
                 contact within two business days of discharge and a face-to-face visit within
                 7 calendar days. It reimburses the 30-day post-discharge care episode for
-                patients requiring high-complexity clinical decision-making \u2014 typically
+                patients requiring high-complexity clinical decision-making, typically
                 multi-condition patients with active medication changes, recent exacerbations,
                 or significant readmission risk factors.
               </p>
@@ -102,7 +102,7 @@ export default function CPT99496GlossaryPage() {
                 documentation standards for both TCM codes.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                \u201cHigh complexity\u201d medical decision-making is assessed per standard Evaluation
+                “High complexity” medical decision-making is assessed per standard Evaluation
                 &amp; Management (E/M) guidelines. Key factors include the number and complexity
                 of active problems addressed, the amount and complexity of data reviewed and
                 analyzed, and the risk of complications or morbidity associated with treatment
@@ -122,11 +122,11 @@ export default function CPT99496GlossaryPage() {
                   requiring close monitoring, or high readmission risk
                 </li>
                 <li>
-                  The 7-day face-to-face window (shorter than 99495\u2019s 14-day window) demands
+                  The 7-day face-to-face window (shorter than 99495’s 14-day window) demands
                   timely in-person assessment to address the elevated clinical risk
                 </li>
                 <li>
-                  Same community-setting discharge eligibility as CPT 99495 \u2014 home, assisted
+                  Same community-setting discharge eligibility as CPT 99495: home, assisted
                   living, or domiciliary; SNF, LTAC, and inpatient rehab discharges are not
                   eligible
                 </li>
@@ -140,8 +140,8 @@ export default function CPT99496GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     CPT 99495
-                  </Link>{' '}
-                  \u2014 the moderate-complexity TCM code (14-day face-to-face window)
+                  </Link>:{' '}
+                  the moderate-complexity TCM code (14-day face-to-face window)
                 </li>
                 <li>
                   <Link
@@ -149,8 +149,8 @@ export default function CPT99496GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     Transitional Care Management (TCM)
-                  </Link>{' '}
-                  \u2014 the CMS care model both codes bill
+                  </Link>:{' '}
+                  the CMS care model both codes bill
                 </li>
                 <li>
                   <Link
@@ -158,8 +158,8 @@ export default function CPT99496GlossaryPage() {
                     className="text-purple-700 underline hover:text-purple-900"
                   >
                     30-day readmission
-                  </Link>{' '}
-                  \u2014 the clinical outcome TCM aims to reduce
+                  </Link>:{' '}
+                  the clinical outcome TCM aims to reduce
                 </li>
               </ul>
 
@@ -181,7 +181,7 @@ export default function CPT99496GlossaryPage() {
                 >
                   CPT 99495 billing guide
                 </Link>{' '}
-                \u2014 which covers both 99495 and 99496 \u2014 for eligibility and documentation details.
+                (which covers both 99495 and 99496) for eligibility and documentation details.
               </p>
 
               <div className="text-center mt-12 mb-8">
