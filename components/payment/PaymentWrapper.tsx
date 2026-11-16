@@ -89,7 +89,7 @@ const PaymentWrapper: React.FC<PaymentWrapperProps> = ({ formData, onBack, isLoa
   }
 
   if (!clientSecret) {
-    return <p className="text-center text-red-500">Error loading payment details. Please refresh the page.</p>;
+    return <p className="text-center text-pc-danger">Error loading payment details. Please refresh the page.</p>;
   }
 
   return (

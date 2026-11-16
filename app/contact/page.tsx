@@ -127,7 +127,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="firstName" className="text-sm font-medium text-gray-700">
-                      First Name <span className="text-red-500">*</span>
+                      First Name <span className="text-pc-danger">*</span>
                     </Label>
                     <Input id="firstName" name="firstName" type="text" required className="mt-1" placeholder="Enter your first name" disabled={isSubmitting} />
                   </div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
 
                 <div>
                   <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                    Email <span className="text-red-500">*</span>
+                    Email <span className="text-pc-danger">*</span>
                   </Label>
                   <Input id="email" name="email" type="email" required className="mt-1" placeholder="Enter your email address" disabled={isSubmitting} />
                 </div>

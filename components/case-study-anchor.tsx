@@ -437,7 +437,7 @@ export function CaseStudyAnchor() {
             <p className="text-2xl font-bold text-gray-900">Positive Check</p>
             <p className="text-sm text-gray-500">Case Study: Patient Engagement at Scale</p>
           </div>
-          <p className="text-sm text-gray-400">positivecheck.com</p>
+          <p className="text-sm text-gray-500">positivecheck.com</p>
         </div>
 
         {/* PDF Title */}
@@ -495,7 +495,7 @@ export function CaseStudyAnchor() {
           <p className="text-sm font-medium text-purple-600">
             Learn more at positivecheck.com
           </p>
-          <p className="text-xs text-gray-400 mt-1">info@positivecheck.com · (858) 522-9524</p>
+          <p className="text-xs text-gray-500 mt-1">info@positivecheck.com · (858) 522-9524</p>
         </div>
       </div>
     </div>

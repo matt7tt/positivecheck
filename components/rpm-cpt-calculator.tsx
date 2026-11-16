@@ -141,7 +141,7 @@ export function RpmCptCalculator() {
                     min={10} max={5000} step={10}
                     className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                   />
-                  <div className="flex justify-between text-xs text-gray-400"><span>10</span><span>5,000</span></div>
+                  <div className="flex justify-between text-xs text-gray-500"><span>10</span><span>5,000</span></div>
                 </div>
 
                 <div className="space-y-3">
@@ -157,7 +157,7 @@ export function RpmCptCalculator() {
                     min={0} max={500} step={5}
                     className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                   />
-                  <div className="flex justify-between text-xs text-gray-400"><span>0</span><span>500</span></div>
+                  <div className="flex justify-between text-xs text-gray-500"><span>0</span><span>500</span></div>
                 </div>
 
                 <div className="border-t pt-6 space-y-6">
@@ -194,7 +194,7 @@ export function RpmCptCalculator() {
                       min={0} max={100} step={1}
                       className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                     />
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Only one device-supply code applies per patient per 30-day period. The remaining{' '}
                       {Math.max(0, 100 - pct99454 - pct99445)}% (fewer than 2 transmission days) is not billable.
                     </p>
@@ -235,7 +235,7 @@ export function RpmCptCalculator() {
                       min={0} max={100} step={1}
                       className="[&_[data-radix-slider-range]]:bg-purple-500 [&_[data-radix-slider-thumb]]:border-purple-500"
                     />
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Only one treatment-management code applies per patient per month, and both require at
                       least one real-time interactive communication.
                     </p>
@@ -258,7 +258,7 @@ export function RpmCptCalculator() {
 
                 <div className="border-t pt-6 space-y-4">
                   <p className="text-sm font-semibold text-gray-700">Rates (editable)</p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-500">
                     Defaults are approximate 2026 Medicare non-facility national averages. Verify your
                     locality-specific amounts in the CMS Physician Fee Schedule Look-Up Tool.
                   </p>
@@ -353,7 +353,7 @@ export function RpmCptCalculator() {
                     </tfoot>
                   </table>
                 </div>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-500">
                   Code names link to plain-English definitions in our glossary.
                 </p>
               </CardContent>

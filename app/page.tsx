@@ -817,7 +817,7 @@ export default function HomePage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name <span className="text-red-500">*</span>
+                      First Name <span className="text-pc-danger">*</span>
                     </label>
                     <input
                       type="text"
@@ -844,7 +844,7 @@ export default function HomePage() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email <span className="text-red-500">*</span>
+                    Email <span className="text-pc-danger">*</span>
                   </label>
                   <input
                     type="email"
