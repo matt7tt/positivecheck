@@ -40,7 +40,7 @@ export default function CompareIndexPage() {
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="platform" />
         <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#1a2642] mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-bold text-pc-navy mb-6 leading-tight">
             Care Outreach Approach Comparisons
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
@@ -48,7 +48,7 @@ export default function CompareIndexPage() {
             outreach across RPM, CCM, and TCM programs. Comparisons focus on
             approaches and workflows &mdash; not specific vendors.
           </p>
-          <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
+          <h2 className="text-2xl font-bold text-pc-navy mt-12 mb-4">
             Available comparisons
           </h2>
           <div className="space-y-4">
@@ -77,7 +77,7 @@ export default function CompareIndexPage() {
               </p>
             </Link>
           </div>
-          <h2 className="text-2xl font-bold text-[#1a2642] mt-12 mb-4">
+          <h2 className="text-2xl font-bold text-pc-navy mt-12 mb-4">
             Other approach comparisons (program-level)
           </h2>
           <div className="space-y-4">
@@ -117,7 +117,7 @@ export default function CompareIndexPage() {
           </div>
           <p className="text-gray-700 leading-relaxed mt-12">
             For a walk-through of how Positive Check compares to your current approach,{" "}
-            <Link href="/contact" className="text-[#1a2642] underline">
+            <Link href="/contact" className="text-pc-navy underline">
               request a demo
             </Link>
             .

@@ -102,7 +102,7 @@ function SignInForm() {
 
         <div className="flex-grow flex flex-col justify-center py-12 sm:px-6 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-[#1a2642]">Sign in to your account</h2>
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-pc-navy">Sign in to your account</h2>
             <p className="mt-2 text-center text-sm text-gray-500">
               Access your personalized dashboard and preferences
             </p>
@@ -111,7 +111,7 @@ function SignInForm() {
           <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <Card className="border border-gray-200 rounded-xl shadow-sm">
               <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-semibold text-[#1a2642]">Welcome back</CardTitle>
+                <CardTitle className="text-xl font-semibold text-pc-navy">Welcome back</CardTitle>
                 <CardDescription className="text-gray-500">Enter your email and password to access your account</CardDescription>
               </CardHeader>
               <CardContent>
@@ -162,7 +162,7 @@ function SignInForm() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-[#1a2642] hover:bg-[#2a3752] text-white py-2.5 rounded-md transition-colors duration-200"
+                    className="w-full bg-pc-navy hover:bg-pc-navy-raised text-white py-2.5 rounded-md transition-colors duration-200"
                     disabled={isLoading}
                   >
                     {isLoading ? (

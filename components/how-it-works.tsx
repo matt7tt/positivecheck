@@ -60,7 +60,7 @@ export function HowItWorksComponent() {
 
       <main>
         {/* Hero Section */}
-        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               How Positive Check Works
@@ -86,28 +86,28 @@ export function HowItWorksComponent() {
                 </p>
                 <div className="grid md:grid-cols-4 gap-6 mt-6">
                   <div className="text-center">
-                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-pc-accent text-pc-on-accent rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">1</span>
                     </div>
                     <h3 className="font-semibold text-gray-900">Set the Cadence</h3>
                     <p className="text-sm text-gray-600">Choose call frequency</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-pc-accent text-pc-on-accent rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">2</span>
                     </div>
                     <h3 className="font-semibold text-gray-900">Engineer Prompts</h3>
                     <p className="text-sm text-gray-600">Customize questions</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-pc-accent text-pc-on-accent rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">3</span>
                     </div>
                     <h3 className="font-semibold text-gray-900">Engage Patients</h3>
                     <p className="text-sm text-gray-600">Lola makes the calls</p>
                   </div>
                   <div className="text-center">
-                    <div className="bg-[#e879f9] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                    <div className="bg-pc-accent text-pc-on-accent rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">4</span>
                     </div>
                     <h3 className="font-semibold text-gray-900">Get Insights</h3>
@@ -136,7 +136,7 @@ export function HowItWorksComponent() {
               {/* Step 1 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-pc-accent text-pc-on-accent rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">1</span>
                   </div>
                   <div className="flex-1">
@@ -185,7 +185,7 @@ export function HowItWorksComponent() {
               {/* Step 2 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-pc-accent text-pc-on-accent rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">2</span>
                   </div>
                   <div className="flex-1">
@@ -223,7 +223,7 @@ export function HowItWorksComponent() {
               {/* Step 3 */}
               <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-pc-accent text-pc-on-accent rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">3</span>
                   </div>
                   <div className="flex-1">
@@ -263,7 +263,7 @@ export function HowItWorksComponent() {
               {/* Step 4 */}
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <div className="flex items-start gap-4">
-                  <div className="bg-[#e879f9] text-white rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <div className="bg-pc-accent text-pc-on-accent rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <span className="text-xl font-bold">4</span>
                   </div>
                   <div className="flex-1">
@@ -391,7 +391,7 @@ export function HowItWorksComponent() {
         </section>
 
         {/* CTA Section */}
-        <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+        <section className="px-6 py-16 bg-pc-navy text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-6">
               Ready to Get Started?
@@ -403,12 +403,12 @@ export function HowItWorksComponent() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <RequestDemoModal>
-                <Button className="bg-white text-[#d946ef] hover:bg-gray-100 px-8 py-4 text-lg font-bold">
+                <Button className="bg-white text-pc-accent-text hover:bg-gray-100 px-8 py-4 text-lg font-bold">
                   Request Demo
                 </Button>
               </RequestDemoModal>
               <LolaCallModal>
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#d946ef] px-8 py-4 text-lg font-bold bg-transparent">
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-pc-accent-text px-8 py-4 text-lg font-bold bg-transparent">
                   Get a Call from Lola
                 </Button>
               </LolaCallModal>

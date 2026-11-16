@@ -97,7 +97,7 @@ export default function SolutionsIndexPage() {
         <PublicHeader currentPage="solutions" />
 
         <main>
-          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
             <div className="max-w-5xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">Solutions</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
@@ -118,10 +118,10 @@ export default function SolutionsIndexPage() {
                 return (
                   <Card key={s.slug} className="flex flex-col hover:shadow-lg transition-shadow">
                     <CardContent className="p-8 flex flex-col h-full">
-                      <div className="w-12 h-12 rounded-lg bg-purple-100 text-[#d946ef] flex items-center justify-center mb-5">
+                      <div className="w-12 h-12 rounded-lg bg-purple-100 text-pc-accent-text flex items-center justify-center mb-5">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <p className="text-sm uppercase tracking-widest text-[#d946ef] font-semibold mb-2">
+                      <p className="text-sm uppercase tracking-widest text-pc-accent-text font-semibold mb-2">
                         {s.eyebrow}
                       </p>
                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{s.title}</h3>
@@ -130,14 +130,14 @@ export default function SolutionsIndexPage() {
                         {s.cpts.map((c) => (
                           <span
                             key={c}
-                            className="text-xs px-2 py-1 rounded bg-purple-50 text-[#d946ef] font-medium"
+                            className="text-xs px-2 py-1 rounded bg-purple-50 text-pc-accent-text font-medium"
                           >
                             {c}
                           </span>
                         ))}
                       </div>
                       <Link href={`/solutions/${s.slug}`} className="mt-auto">
-                        <Button className="w-full bg-[#e879f9] hover:bg-[#d946ef] text-white font-semibold">
+                        <Button className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent font-semibold">
                           Learn more <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>
                       </Link>
@@ -163,7 +163,7 @@ export default function SolutionsIndexPage() {
                 Bring your front office or care management workflow. We can discuss fit, integration scope and what your team would need to evaluate a pilot.
               </p>
               <Link href="/contact">
-                <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white px-8 py-6 text-lg font-semibold">
+                <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8 py-6 text-lg font-semibold">
                   Contact Us
                 </Button>
               </Link>

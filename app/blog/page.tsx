@@ -61,7 +61,7 @@ export default function BlogPage() {
       <PublicHeader currentPage="blog" />
 
       {/* Hero Section */}
-      <section className="px-6 py-16 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+      <section className="px-6 py-16 bg-pc-navy text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">Positive Check Blog</h1>
           <p className="text-xl text-purple-100 mb-8 leading-relaxed">
@@ -98,7 +98,7 @@ export default function BlogPage() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">{featuredArticle.title}</h3>
               <p className="text-gray-600 mb-6 leading-relaxed text-lg">{featuredArticle.excerpt}</p>
               <Link href={`/blog/${featuredArticle.slug}`}>
-                <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white px-6 py-2 font-semibold">READ MORE</Button>
+                <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-6 py-2 font-semibold">READ MORE</Button>
               </Link>
             </CardContent>
           </Card>
@@ -134,7 +134,7 @@ export default function BlogPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{article.title}</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed text-sm flex-1">{article.excerpt}</p>
                   <Link href={`/blog/${article.slug}`} className="w-full">
-                    <Button className="bg-[#e879f9] hover:bg-[#d946ef] text-white px-6 py-2 font-semibold w-full mt-auto">
+                    <Button className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-6 py-2 font-semibold w-full mt-auto">
                       READ MORE
                     </Button>
                   </Link>

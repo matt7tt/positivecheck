@@ -17,7 +17,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
     <nav aria-label="Breadcrumb" className="flex items-center space-x-1 text-sm text-gray-500 mb-6">
       <Link 
         href="/" 
-        className="flex items-center hover:text-[#1a2642] transition-colors"
+        className="flex items-center hover:text-pc-navy transition-colors"
         aria-label="Home"
       >
         <Home className="h-4 w-4" />
@@ -29,7 +29,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           {item.href && index < items.length - 1 ? (
             <Link 
               href={item.href} 
-              className="hover:text-[#1a2642] transition-colors"
+              className="hover:text-pc-navy transition-colors"
             >
               {item.label}
             </Link>

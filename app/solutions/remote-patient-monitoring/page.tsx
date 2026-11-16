@@ -131,7 +131,7 @@ export default function RemotePatientMonitoringPage() {
 
         <main>
           {/* Hero */}
-          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
             <div className="max-w-7xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">RPM Solution</p>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">

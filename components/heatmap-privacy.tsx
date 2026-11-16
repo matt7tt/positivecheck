@@ -65,14 +65,14 @@ export function HeatmapPrivacy({ publicPaths }: { publicPaths: string[] }) {
     <section aria-label="Heatmap privacy choices" className="fixed bottom-0 inset-x-0 z-[60] border-t border-gray-200 bg-white p-4 shadow-lg" data-clarity-mask="true">
       <div className="mx-auto max-w-5xl flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl text-sm text-gray-700">
-          <h2 className="font-semibold text-[#1a2642] mb-1">Help us improve this website</h2>
+          <h2 className="font-semibold text-pc-navy mb-1">Help us improve this website</h2>
           <p>Allow Microsoft Clarity heatmaps and session recordings of clicks and scrolling on public pages? Text and form entries are masked. This choice only controls Clarity. <a href="/privacy#website-heatmaps" className="underline">Privacy details</a>.</p>
           {blocked && <p className="mt-1">Recording is off because of your browser privacy settings or unavailable preference storage.</p>}
           {choice && <p className="mt-1">Your saved choice: {choice === 'accepted' ? 'allowed' : 'off'}.</p>}
         </div>
         <div className="flex flex-wrap gap-2 shrink-0">
           <button className="rounded-md border border-gray-400 px-4 py-2 text-sm font-medium" onClick={() => save('declined')}>No thanks</button>
-          <button disabled={blocked} className="rounded-md bg-[#1a2642] text-white px-4 py-2 text-sm font-medium disabled:opacity-50" onClick={() => save('accepted')}>Allow heatmaps</button>
+          <button disabled={blocked} className="rounded-md bg-pc-navy text-white px-4 py-2 text-sm font-medium disabled:opacity-50" onClick={() => save('accepted')}>Allow heatmaps</button>
           {choice && <button className="px-2 py-2 text-sm underline" onClick={() => setVisible(false)}>Close</button>}
         </div>
       </div>
@@ -81,5 +81,5 @@ export function HeatmapPrivacy({ publicPaths }: { publicPaths: string[] }) {
 }
 
 export function HeatmapChoicesButton() {
-  return <button type="button" className="hover:text-[#1a2642] underline" onClick={() => window.dispatchEvent(new Event(HEATMAP_CHOICES_EVENT))}>Heatmap privacy choices</button>
+  return <button type="button" className="hover:text-white underline" onClick={() => window.dispatchEvent(new Event(HEATMAP_CHOICES_EVENT))}>Heatmap privacy choices</button>
 }

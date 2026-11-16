@@ -115,7 +115,7 @@ export default function ImplementationGuidePage() {
       <PublicHeader currentPage="resources" />
       <StructuredData id="implementation-faq" data={buildFAQSchema(implementationFaqs)} />
       <main>
-        <section className="bg-[#1a2642] px-6 py-16 md:py-20 text-white">
+        <section className="bg-pc-navy px-6 py-16 md:py-20 text-white">
           <div className="max-w-5xl mx-auto">
             <Link href="/resources" className="text-sm text-purple-200 underline underline-offset-4">Back to resources</Link>
             <p className="mt-8 mb-4 text-sm font-semibold uppercase tracking-widest text-purple-200">From evaluation to launch</p>
@@ -134,7 +134,7 @@ export default function ImplementationGuidePage() {
         </section>
 
         <section aria-labelledby="connection-heading" className="max-w-5xl mx-auto px-6 py-14 md:py-20">
-          <h2 id="connection-heading" className="text-3xl font-bold text-[#1a2642]">Choose how your team connects</h2>
+          <h2 id="connection-heading" className="text-3xl font-bold text-pc-navy">Choose how your team connects</h2>
           <p className="mt-4 max-w-3xl text-gray-700 leading-relaxed">
             Start with the platform workflow that fits your team. For an EHR or another external system,
             confirm compatibility and the scope of any custom work during your technical review.
@@ -144,9 +144,9 @@ export default function ImplementationGuidePage() {
             {connectionOptions.map(({ title: optionTitle, icon: Icon, description: optionDescription, prepare }) => (
               <article key={optionTitle} className="rounded-xl border border-gray-200 p-6">
                 <Icon aria-hidden="true" className="h-7 w-7 text-purple-700 mb-4" />
-                <h3 className="text-xl font-bold text-[#1a2642]">{optionTitle}</h3>
+                <h3 className="text-xl font-bold text-pc-navy">{optionTitle}</h3>
                 <p className="mt-3 text-gray-700 leading-relaxed">{optionDescription}</p>
-                <p className="mt-4 border-t pt-4 text-sm text-gray-600 leading-relaxed"><strong className="text-[#1a2642]">Prepare:</strong> {prepare}</p>
+                <p className="mt-4 border-t pt-4 text-sm text-gray-600 leading-relaxed"><strong className="text-pc-navy">Prepare:</strong> {prepare}</p>
               </article>
             ))}
           </div>
@@ -158,14 +158,14 @@ export default function ImplementationGuidePage() {
 
         <section id="rollout" aria-labelledby="rollout-heading" className="bg-gray-50 px-6 py-14 md:py-20 scroll-mt-24">
           <div className="max-w-5xl mx-auto">
-            <h2 id="rollout-heading" className="text-3xl font-bold text-[#1a2642]">A practical rollout checklist</h2>
+            <h2 id="rollout-heading" className="text-3xl font-bold text-pc-navy">A practical rollout checklist</h2>
             <p className="mt-4 text-gray-700 leading-relaxed max-w-3xl">Use these steps to plan your launch together. Timing depends on your data readiness, security review and integration scope; agree milestones during scoping.</p>
             <ol className="mt-8 space-y-5">
               {rolloutSteps.map((step, index) => (
                 <li key={step.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4 md:gap-6">
                   <span aria-hidden="true" className="shrink-0 w-10 h-10 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold">{index + 1}</span>
                   <div>
-                    <h3 className="text-xl font-bold text-[#1a2642]">{step.title}</h3>
+                    <h3 className="text-xl font-bold text-pc-navy">{step.title}</h3>
                     <p className="mt-2 text-gray-700 leading-relaxed">{step.text}</p>
                     <p className="mt-3 text-sm text-gray-600"><strong>People to involve:</strong> {step.owner}</p>
                   </div>
@@ -179,7 +179,7 @@ export default function ImplementationGuidePage() {
           <div className="grid md:grid-cols-2 gap-10">
             <div>
               <ClipboardList aria-hidden="true" className="h-8 w-8 text-purple-700 mb-4" />
-              <h2 id="prepare-heading" className="text-2xl font-bold text-[#1a2642]">Bring these details to your first conversation</h2>
+              <h2 id="prepare-heading" className="text-2xl font-bold text-pc-navy">Bring these details to your first conversation</h2>
               <ul className="mt-5 list-disc pl-5 space-y-3 text-gray-700">
                 <li>Your care program, approximate cohort size and current outreach process.</li>
                 <li>The systems you use and where you want call results to appear.</li>
@@ -190,7 +190,7 @@ export default function ImplementationGuidePage() {
             </div>
             <aside className="rounded-xl bg-purple-50 border border-purple-100 p-6 md:p-8">
               <ShieldCheck aria-hidden="true" className="h-8 w-8 text-purple-700 mb-4" />
-              <h2 className="text-2xl font-bold text-[#1a2642]">Agree the safeguards before launch</h2>
+              <h2 className="text-2xl font-bold text-pc-navy">Agree the safeguards before launch</h2>
               <p className="mt-4 text-gray-700 leading-relaxed">Review access controls, patient data handling and clinical escalation responsibilities with your team. Use sample data for early scoping, and agree a secure transfer process before sharing patient records.</p>
               <p className="mt-4 text-gray-700 leading-relaxed">Please keep patient information out of public demo and contact forms.</p>
               <Link href="/about/clinical-standards" className="inline-block mt-5 font-semibold text-purple-800 underline underline-offset-4">Read our Security & Clinical Standards</Link>
@@ -199,11 +199,11 @@ export default function ImplementationGuidePage() {
         </section>
 
         <section aria-labelledby="qualification-heading" className="max-w-5xl mx-auto px-6 py-14">
-          <h2 id="qualification-heading" className="text-3xl font-bold text-[#1a2642]">Questions to resolve before a pilot</h2>
+          <h2 id="qualification-heading" className="text-3xl font-bold text-pc-navy">Questions to resolve before a pilot</h2>
           <div className="mt-8 space-y-7">
             {implementationFaqs.map(faq => (
               <div key={faq.question}>
-                <h3 className="text-xl font-semibold text-[#1a2642]">{faq.question}</h3>
+                <h3 className="text-xl font-semibold text-pc-navy">{faq.question}</h3>
                 <p className="mt-3 text-gray-700 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
@@ -211,7 +211,7 @@ export default function ImplementationGuidePage() {
           <p className="mt-8 text-sm text-gray-500">Published by Positive Check. Content updated September 13, 2026.</p>
         </section>
 
-        <section className="bg-[#1a2642] px-6 py-14 text-center text-white">
+        <section className="bg-pc-navy px-6 py-14 text-center text-white">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold">Plan your first patient outreach workflow</h2>
             <p className="mt-4 text-gray-200 leading-relaxed">Walk through the platform with us and discuss the setup, integration questions and pilot goals that matter to your organization.</p>

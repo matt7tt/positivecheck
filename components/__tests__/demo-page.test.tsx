@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event'
 import { DemoComponent } from '@/components/demo'
 import { trackEvent } from '@/lib/analytics'
 
-jest.mock('next/font/google', () => ({ Space_Grotesk: () => ({ className: 'font' }) }))
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
 jest.mock('@/components/shared/public-footer', () => ({ PublicFooter: () => null }))
 jest.mock('react-hot-toast', () => ({ __esModule: true, default: { success: jest.fn(), error: jest.fn() }, Toaster: () => null }))

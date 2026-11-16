@@ -107,7 +107,7 @@ export default function ResourcesIndexPage() {
       <div className="min-h-screen bg-white">
         <PublicHeader currentPage="resources" />
         <main className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#1a2642] mb-6 leading-tight">
+          <h1 className="text-4xl lg:text-5xl font-bold text-pc-navy mb-6 leading-tight">
             Resources for Healthcare Providers
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed mb-12">
@@ -118,7 +118,7 @@ export default function ResourcesIndexPage() {
           <div className="space-y-10">
             {sections.map((s) => (
               <article key={s.href}>
-                <h2 className="text-2xl font-bold text-[#1a2642] mb-2">
+                <h2 className="text-2xl font-bold text-pc-navy mb-2">
                   <Link href={s.href} className="hover:underline">
                     {s.title}
                   </Link>
@@ -129,7 +129,7 @@ export default function ResourcesIndexPage() {
           </div>
           <p className="text-gray-700 leading-relaxed mt-12">
             Questions about a topic you don&apos;t see here?{" "}
-            <Link href="/contact" className="text-[#1a2642] underline">
+            <Link href="/contact" className="text-pc-navy underline">
               Contact our team
             </Link>
             .

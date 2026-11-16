@@ -109,7 +109,7 @@ export default function PostDischargeFollowUpPage() {
 
         <main>
           {/* Hero */}
-          <section className="px-6 py-16 md:py-24 bg-gradient-to-br from-[#e879f9] to-[#d946ef] text-white">
+          <section className="px-6 py-16 md:py-24 bg-pc-navy text-white">
             <div className="max-w-7xl mx-auto text-center">
               <p className="text-purple-100 uppercase tracking-widest text-sm mb-4 font-medium">TCM Solution</p>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
@@ -346,7 +346,7 @@ export default function PostDischargeFollowUpPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <RequestDemoModal>
-                  <Button size="lg" className="bg-gradient-to-r from-purple-500 to-[#e879f9] hover:from-purple-600 hover:to-purple-500 text-white px-8">
+                  <Button size="lg" className="bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent px-8">
                     Request a Demo <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </RequestDemoModal>

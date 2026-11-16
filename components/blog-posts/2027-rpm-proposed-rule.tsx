@@ -36,7 +36,7 @@ export function Rpm2027ProposedRulePost() {
     <div className="max-w-3xl mx-auto bg-white p-6 md:p-8 rounded-lg shadow-sm">
       <Link
         href="/blog"
-        className="text-gray-900 hover:text-[#d946ef] mb-6 inline-block"
+        className="text-gray-900 hover:text-pc-accent-text mb-6 inline-block"
         aria-label="Back to blog"
       >
         ← Back to Blog
@@ -153,7 +153,7 @@ export function Rpm2027ProposedRulePost() {
           This should not be read as an automatic prohibition on every outside technology company. A software platform, connected device supplier, data-transmission service, or administrative vendor is not necessarily performing the clinical-staff service billed by the practice. The key operational question is <em>who performs the work represented by each code</em>, under whose supervision, and with what employment relationship.
         </p>
 
-        <blockquote className="border-l-4 border-[#d946ef] bg-purple-50 pl-4 pr-4 py-3 my-6 text-gray-700">
+        <blockquote className="border-l-4 border-pc-accent bg-purple-50 pl-4 pr-4 py-3 my-6 text-gray-700">
           Do not classify the entire vendor relationship with one label. Map setup, device supply, data review, patient communication, treatment management, escalation, documentation, and billing separately.
         </blockquote>
 
@@ -200,7 +200,7 @@ export function Rpm2027ProposedRulePost() {
         </p>
 
         <p>
-          Practices remain responsible for determining which activities qualify, who may perform them, and whether all requirements are met. See our current <Link href="/blog/2026-rpm-cpt-codes" className="text-[#d946ef] hover:underline">2026 RPM billing guide</Link> for the rules in effect today, or <Link href="/contact" className="text-[#d946ef] hover:underline">request a workflow review</Link>.
+          Practices remain responsible for determining which activities qualify, who may perform them, and whether all requirements are met. See our current <Link href="/blog/2026-rpm-cpt-codes" className="text-pc-accent-text hover:underline">2026 RPM billing guide</Link> for the rules in effect today, or <Link href="/contact" className="text-pc-accent-text hover:underline">request a workflow review</Link>.
         </p>
 
         <h2>Official sources</h2>
