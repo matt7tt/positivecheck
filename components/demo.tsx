@@ -11,6 +11,7 @@ import { PublicHeader } from "@/components/shared/public-header"
 import { PublicFooter } from "@/components/shared/public-footer"
 import toast, { Toaster } from 'react-hot-toast'
 import { getDemoBookingUrl } from '@/lib/demo-booking'
+import { readFirstTouch, sendMarketingLead } from '@/lib/marketing-lead'
 import { getAttributionContext, trackEvent } from '@/lib/analytics'
 
 export function DemoComponent() {
@@ -19,6 +20,8 @@ export function DemoComponent() {
   const [submissionError, setSubmissionError] = useState('')
   const hasStarted = useRef(false)
   const bookingUrl = getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL)
+  // Source-tagged link is built after a successful submit (client only), so it never differs between server and first render.
+  const [taggedBookingUrl, setTaggedBookingUrl] = useState<string | undefined>()
 
   if (isSubmitted) {
     return (
@@ -35,7 +38,7 @@ export function DemoComponent() {
               {bookingUrl && (
                 <Button asChild className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent mb-3">
                   <a
-                    href={bookingUrl}
+                    href={taggedBookingUrl ?? bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent('booking_link_click', { form_name: 'demo_page' })}
@@ -115,6 +118,13 @@ export function DemoComponent() {
                   })
                   trackEvent('form_submit', { form_name: 'demo_page' })
                   trackEvent('generate_lead', { lead_type: 'demo_request', form_name: 'demo_page' })
+                  setTaggedBookingUrl(getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL, readFirstTouch()))
+                  sendMarketingLead({
+                    kind: 'demo_request',
+                    name: String(formData.get('name') ?? ''),
+                    email: String(formData.get('email') ?? ''),
+                    practice: String(formData.get('organization') ?? ''),
+                  })
                   form.reset()
                   setIsSubmitted(true)
                 } catch (error) {

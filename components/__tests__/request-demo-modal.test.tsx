@@ -9,6 +9,9 @@ jest.mock('@/lib/analytics', () => ({
   getAttributionContext: jest.fn(() => ({ utm_source: 'test', landing_page: '/resources' })),
 }))
 
+// Keep the platform lead POST out of tests that count the form's own requests (a local .env may set the backend URL).
+beforeEach(() => { delete process.env.NEXT_PUBLIC_API_BASE_URL })
+
 const mockFetch = jest.mocked(global.fetch)
 const originalBookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
 
@@ -169,5 +172,55 @@ describe('demo request conversions', () => {
     await user.click(screen.getByRole('button', { name: 'Request demo' }))
     expect(await screen.findByText(/No appointment has been booked yet/)).toBeVisible()
     expect(screen.queryByRole('link', { name: 'Choose a demo time' })).not.toBeInTheDocument()
+  })
+})
+
+const LEAD_URL = "https://api.example.com/api/marketing/lead"
+const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
+const enableLeadForwarding = () => { process.env.NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"; process.env.NEXT_PUBLIC_API_KEY = "k" }
+const disableLeadForwarding = () => { delete process.env.NEXT_PUBLIC_API_BASE_URL; delete process.env.NEXT_PUBLIC_API_KEY }
+
+describe('request demo modal marketing lead', () => {
+  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset(); enableLeadForwarding() })
+  afterAll(disableLeadForwarding)
+
+  async function fillForm() {
+    const user = userEvent.setup()
+    render(<RequestDemoModal source="test_cta"><button>Open demo</button></RequestDemoModal>)
+    await user.click(screen.getByRole('button', { name: 'Open demo' }))
+    await user.type(screen.getByLabelText('Full Name'), 'Synthetic Test')
+    await user.type(screen.getByLabelText('Email Address'), 'synthetic@example.com')
+    return user
+  }
+
+  it('sends a marketing lead after a successful submit', async () => {
+    mockFetch.mockResolvedValue({ ok: true } as Response)
+    const user = await fillForm()
+    await user.type(screen.getByLabelText(/Organization/), 'Synthetic Clinic')
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    await screen.findByText('Your request is in.')
+    expect(leadCalls()).toHaveLength(1)
+    expect(JSON.parse(leadCalls()[0][1]!.body as string)).toMatchObject({
+      kind: 'demo_request', name: 'Synthetic Test', email: 'synthetic@example.com', practice: 'Synthetic Clinic',
+    })
+  })
+
+  it('does not send one when the submit fails', async () => {
+    mockFetch.mockResolvedValue({ ok: false, status: 502 } as Response)
+    const user = await fillForm()
+    await user.click(screen.getByRole('button', { name: 'Request demo' }))
+    await screen.findByRole('alert')
+    expect(leadCalls()).toHaveLength(0)
+  })
+
+  it('tags the booking link with the first-touch source', async () => {
+    process.env.NEXT_PUBLIC_DEMO_BOOKING_URL = 'https://cal.example.com/demo'
+    window.localStorage.setItem('pc_attr', JSON.stringify({ first: { utm_source: 'chatgpt', utm_medium: 'cpc', utm_campaign: 'c1', at: new Date().toISOString() } }))
+    mockFetch.mockResolvedValue({ ok: true } as Response)
+    const user = await fillForm()
+    await user.click(screen.getByRole('button', { name: 'Continue to scheduling' }))
+    const link = await screen.findByRole('link', { name: /Choose a demo time/ })
+    expect(new URL(link.getAttribute('href')!).searchParams.get('utm_source')).toBe('chatgpt')
+    window.localStorage.clear()
   })
 })

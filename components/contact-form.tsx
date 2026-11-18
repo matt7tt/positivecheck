@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import toast from 'react-hot-toast'
 import { getAttributionContext, trackEvent } from '@/lib/analytics'
+import { sendMarketingLead } from '@/lib/marketing-lead'
 
 const API_BASE_URL = (process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000').replace(/\/+$/, '')
 
@@ -73,6 +74,13 @@ export function ContactForm() {
           })
           trackEvent('form_submit', { form_name: 'contact_form' })
           trackEvent('generate_lead', { lead_type: 'contact', form_name: 'contact_form' })
+          sendMarketingLead({
+            kind: 'contact',
+            name: [formData.get('firstName'), formData.get('lastName')].filter(v => typeof v === 'string').join(' ').trim(),
+            email: String(formData.get('email') ?? ''),
+            phone: String(formData.get('phone') ?? ''),
+            self_reported_source: String(formData.get('hearAboutUs') ?? ''),
+          })
           form.reset()
           setIsSubmitted(true)
         } catch (error) {

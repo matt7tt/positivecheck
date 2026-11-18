@@ -8,6 +8,9 @@ jest.mock('@/components/shared/public-footer', () => ({ PublicFooter: () => null
 jest.mock('react-hot-toast', () => ({ __esModule: true, default: { success: jest.fn(), error: jest.fn() }, Toaster: () => null }))
 jest.mock('@/lib/analytics', () => ({ trackEvent: jest.fn(), getAttributionContext: () => ({}) }))
 
+// Keep the platform lead POST out of tests that count the form's own requests (a local .env may set the backend URL).
+beforeEach(() => { delete process.env.NEXT_PUBLIC_API_BASE_URL })
+
 const originalBookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
 beforeEach(() => { jest.clearAllMocks(); delete process.env.NEXT_PUBLIC_DEMO_BOOKING_URL })
 afterAll(() => {
@@ -40,4 +43,50 @@ it('retains entered details and offers an email fallback after delivery failure'
   expect(screen.getByLabelText('Work email (required)')).toHaveValue('synthetic@example.com')
   expect(screen.getByRole('link', { name: 'Email Positive Check' })).toBeVisible()
   expect(jest.mocked(trackEvent).mock.calls.filter(([name]) => name === 'generate_lead')).toHaveLength(0)
+})
+
+const LEAD_URL = "https://api.example.com/api/marketing/lead"
+const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
+const enableLeadForwarding = () => { process.env.NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"; process.env.NEXT_PUBLIC_API_KEY = "k" }
+const disableLeadForwarding = () => { delete process.env.NEXT_PUBLIC_API_BASE_URL; delete process.env.NEXT_PUBLIC_API_KEY }
+
+describe('demo page marketing lead', () => {
+  beforeEach(enableLeadForwarding)
+  afterAll(disableLeadForwarding)
+
+  async function submit() {
+    const user = userEvent.setup()
+    render(<DemoComponent />)
+    await user.type(screen.getByLabelText('Full name (required)'), 'Synthetic Test')
+    await user.type(screen.getByLabelText('Work email (required)'), 'synthetic@example.com')
+    await user.type(screen.getByLabelText(/Organization/i), 'Synthetic Clinic')
+    await user.click(screen.getByRole('button', { name: /Request Demo|Continue to scheduling/ }))
+  }
+
+  it('sends a marketing lead after a successful submit', async () => {
+    jest.mocked(fetch).mockResolvedValue({ ok: true } as Response)
+    await submit()
+    await screen.findByRole('status')
+    expect(leadCalls()).toHaveLength(1)
+    expect(JSON.parse(leadCalls()[0][1]!.body as string)).toMatchObject({
+      kind: 'demo_request', name: 'Synthetic Test', email: 'synthetic@example.com', practice: 'Synthetic Clinic',
+    })
+  })
+
+  it('does not send one when the submit fails', async () => {
+    jest.mocked(fetch).mockResolvedValue({ ok: false, status: 502 } as Response)
+    await submit()
+    await screen.findByRole('alert')
+    expect(leadCalls()).toHaveLength(0)
+  })
+
+  it('tags the booking link with the first-touch source', async () => {
+    process.env.NEXT_PUBLIC_DEMO_BOOKING_URL = 'https://cal.example.com/demo'
+    window.localStorage.setItem('pc_attr', JSON.stringify({ first: { utm_source: 'chatgpt', utm_medium: 'cpc', utm_campaign: 'c1', at: new Date().toISOString() } }))
+    jest.mocked(fetch).mockResolvedValue({ ok: true } as Response)
+    await submit()
+    const link = await screen.findByRole('link', { name: 'Choose a demo time' })
+    expect(new URL(link.getAttribute('href')!).searchParams.get('utm_source')).toBe('chatgpt')
+    window.localStorage.clear()
+  })
 })
