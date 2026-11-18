@@ -5,11 +5,12 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/components/structured-data'
 import { frontOfficeSolutions } from '@/lib/solution-catalog'
+import { pageTitle } from '@/lib/page-title'
 
 const title = 'AI Calls & SMS vs. Front Desk Staff and Reminder Tools'
 const description = 'Compare front office outreach approaches by task, staff handoff, scheduling integration and measurable outcomes. Choose a workflow before choosing automation.'
 const url = 'https://www.positivecheck.com/solutions/front-office/compare'
-export const metadata: Metadata = { title: `${title} | Positive Check`, description, alternates: { canonical: url }, openGraph: { title, description, url, type: 'website' }, twitter: { card: 'summary_large_image', title, description, images: ['/images/admin-console-dashboard-new.png'] } }
+export const metadata: Metadata = { title: pageTitle(title), description, alternates: { canonical: url }, openGraph: { title, description, url, type: 'website' }, twitter: { card: 'summary_large_image', title, description, images: ['/images/admin-console-dashboard-new.png'] } }
 const comparisons = [
   ['New patient inquiry', 'A person can discuss unusual requests and practice policies; coverage depends on staffing.', 'A basic reminder workflow may not handle new inquiries; check the actual product.', 'Evaluate prompt follow-up, approved questions and an explicit handoff for exceptions.'],
   ['Appointment confirmation', 'Staff can check availability and resolve conflicts directly.', 'Often suitable for scheduled messages and simple confirmation responses.', 'Evaluate conversational clarification and whether a requested change reaches an authorized scheduler.'],

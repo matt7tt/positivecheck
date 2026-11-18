@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99490: Definition and CCM Billing Requirements | Positive Check Glossary',
+  title: 'CPT 99490: Definition and CCM Billing Requirements | Positive Check',
   description:
     'CPT 99490 is the Medicare billing code for the first 20 minutes of non-complex Chronic Care Management clinical staff time per calendar month. Definition, eligibility, documentation, and the separate non-complex and complex CCM pathways.',
   alternates: { canonical: '/resources/glossary/cpt-99490' },

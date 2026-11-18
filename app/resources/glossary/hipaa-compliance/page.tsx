@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'HIPAA Compliance: Definition and Scope | Positive Check Glossary',
+  title: 'HIPAA Compliance: Definition and Scope | Positive Check',
   description:
     'HIPAA compliance is adherence to the Health Insurance Portability and Accountability Act and its regulations governing Protected Health Information. Definition, who must comply, key rules, and penalties.',
   alternates: { canonical: '/resources/glossary/hipaa-compliance' },

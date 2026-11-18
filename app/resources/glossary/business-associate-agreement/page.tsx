@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Business Associate Agreement (BAA): Definition and Requirements | Positive Check Glossary',
+  title: 'Business Associate Agreement (BAA): Definition | Positive Check',
   description:
     'A Business Associate Agreement (BAA) is the HIPAA-required contract between covered entities and vendors handling Protected Health Information. Definition, required provisions, and when it applies.',
   alternates: { canonical: '/resources/glossary/business-associate-agreement' },

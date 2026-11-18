@@ -5,7 +5,7 @@ export const rpmCommunicationReference: BillingReference = {
   id: 'interactive-comm',
   path: '/solutions/remote-patient-monitoring/interactive-communication-requirement',
   title: 'CMS Interactive Communication Requirement for RPM: What Counts and What Doesn’t',
-  seoTitle: 'CMS Interactive Communication Requirement for RPM: What Counts and What Doesn’t | Positive Check',
+  seoTitle: 'What Counts as RPM Interactive Communication? | Positive Check',
   description: 'Separate required live RPM communication from total treatment-management time. Check data review, outreach attempts, AI support, and clinical documentation boundaries.',
   published: '2026-04-19', updated: '2026-09-20', parent: rpmBillingGuide.parent,
   summary: 'RPM treatment-management codes require real-time, two-way communication with the patient or caregiver. That communication is one component of the service: qualifying care-management work can also contribute to the total time. Neither an unanswered message nor automated call duration independently establishes the required clinical service.',

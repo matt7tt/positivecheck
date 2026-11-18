@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99487: Definition and Complex CCM Billing | Positive Check Glossary',
+  title: 'CPT 99487: Definition and Complex CCM Billing | Positive Check',
   description:
     'CPT 99487 is the Medicare billing code for the first 60 minutes of complex Chronic Care Management per calendar month. Definition, when complex CCM applies, and how it differs from non-complex (CPT 99490).',
   alternates: { canonical: '/resources/glossary/cpt-99487' },

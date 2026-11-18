@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Principal Care Management (PCM): Definition and Requirements | Positive Check Glossary',
+  title: 'Principal Care Management (PCM): Definition | Positive Check',
   description:
     'Principal Care Management (PCM) is a Medicare-reimbursed care management program for patients with a single high-risk chronic condition. CPT 99424-99427, eligibility, and contrast with CCM.',
   alternates: { canonical: '/resources/glossary/principal-care-management' },

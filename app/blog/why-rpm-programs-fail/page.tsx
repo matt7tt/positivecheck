@@ -6,7 +6,7 @@ import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } f
 import type { PostFAQItem } from "@/components/blog-posts/post-blocks"
 
 export const metadata: Metadata = {
-  title: 'Why RPM Programs Fail: Four Operational Problems & Fixes | Positive Check',
+  title: 'Why RPM Programs Fail: Four Problems and Their Fixes | Positive Check',
   description: 'RPM and CCM programs often struggle with enrollment, adherence, alert overload, and staff capacity. Learn how to fix each operational failure point.',
   alternates: {
     canonical: '/blog/why-rpm-programs-fail',

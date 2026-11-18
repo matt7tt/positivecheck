@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99495: Definition and Billing Requirements | Positive Check Glossary',
+  title: 'CPT 99495: Definition and Billing Requirements | Positive Check',
   description:
     'CPT 99495 is the Medicare billing code for Transitional Care Management services with moderate medical decision-making complexity. Definition, requirements, and how it relates to RPM and CCM.',
   alternates: { canonical: '/resources/glossary/cpt-99495' },

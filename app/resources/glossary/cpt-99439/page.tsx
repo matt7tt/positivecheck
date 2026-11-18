@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99439: Definition and CCM Add-On Billing | Positive Check Glossary',
+  title: 'CPT 99439: Definition and CCM Add-On Billing | Positive Check',
   description:
     'CPT 99439 reimburses each additional 20 minutes of non-complex Chronic Care Management clinical staff time beyond CPT 99490. Definition, billable up to twice per patient per month, and how it stacks with 99490.',
   alternates: { canonical: '/resources/glossary/cpt-99439' },

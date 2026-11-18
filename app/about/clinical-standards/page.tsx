@@ -14,7 +14,7 @@ const PAGE_URL = 'https://www.positivecheck.com/about/clinical-standards'
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'Clinical Standards: Compliance, Security, and Content Review | Positive Check',
+  title: 'Clinical Standards: Compliance, Security and Review | Positive Check',
   description:
     'Positive Check LLC clinical standards: HIPAA Business Associate Agreement practice, Security Rule safeguards for ePHI, call content review process, escalation protocols to clinical staff, and CMS-aligned documentation standards.',
   alternates: { canonical: '/about/clinical-standards' },

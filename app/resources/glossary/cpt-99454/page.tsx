@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99454: Definition and RPM Device Supply Requirements | Positive Check Glossary',
+  title: 'CPT 99454: RPM Device Supply Requirements | Positive Check',
   description:
     'CPT 99454 is the Medicare billing code for RPM device supply with daily recordings or programmed alert transmissions. Definition, 16-of-30-day transmission threshold, and how it combines with 99457/99458.',
   alternates: { canonical: '/resources/glossary/cpt-99454' },

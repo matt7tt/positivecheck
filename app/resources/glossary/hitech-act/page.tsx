@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'HITECH Act: Definition, Scope, and HIPAA Expansion | Positive Check Glossary',
+  title: 'HITECH Act: Definition, Scope, and HIPAA Expansion | Positive Check',
   description:
     'The HITECH Act (2009) expanded HIPAA enforcement, created breach notification requirements, extended direct liability to business associates, and funded EHR adoption.',
   alternates: { canonical: '/resources/glossary/hitech-act' },

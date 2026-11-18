@@ -13,7 +13,7 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/chronic-care-managemen
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'CCM\u2019s 2-Chronic-Conditions Requirement: Eligibility and Documentation | Positive Check',
+  title: 'CCM\u2019s 2-Chronic-Conditions Requirement: Eligibility | Positive Check',
   description:
     'Exact CMS rules for the two-chronic-conditions eligibility requirement that underpins Chronic Care Management billing. What qualifies, how CCM differs from RPM (1 condition) and PCM (1 condition), common qualifying combinations, and documentation expectations.',
   alternates: { canonical: '/solutions/chronic-care-management/2-chronic-conditions-requirement' },

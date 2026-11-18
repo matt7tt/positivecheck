@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99489: Definition and Complex CCM Add-On Billing | Positive Check Glossary',
+  title: 'CPT 99489: Definition and Complex CCM Add-On Billing | Positive Check',
   description:
     'CPT 99489 reimburses each additional 30 minutes of complex Chronic Care Management beyond CPT 99487. Definition, how it stacks with 99487, and per-block reimbursement.',
   alternates: { canonical: '/resources/glossary/cpt-99489' },

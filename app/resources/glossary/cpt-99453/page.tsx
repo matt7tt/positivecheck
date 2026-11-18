@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99453: Definition and RPM Setup Requirements | Positive Check Glossary',
+  title: 'CPT 99453: Definition and RPM Setup Requirements | Positive Check',
   description:
     'CPT 99453 is the Medicare billing code for the one-time Remote Patient Monitoring setup and patient education service. Definition, what it reimburses, and how it relates to 99454/99457.',
   alternates: { canonical: '/resources/glossary/cpt-99453' },

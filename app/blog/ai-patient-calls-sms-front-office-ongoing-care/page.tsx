@@ -4,12 +4,13 @@ import { PublicHeader } from '@/components/shared/public-header'
 import { PublicFooter } from '@/components/shared/public-footer'
 import { AI_PATIENT_CALLS_POST as post } from '@/lib/blog-posts'
 import { buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema, SITE_URL } from '@/lib/schema'
+import { pageTitle } from '@/lib/page-title'
 
 const path = `/blog/${post.slug}`
 const url = `${SITE_URL}${path}`
 
 export const metadata: Metadata = {
-  title: `${post.title} | Positive Check`,
+  title: pageTitle(post.title),
   description: post.description,
   alternates: { canonical: path },
   openGraph: {

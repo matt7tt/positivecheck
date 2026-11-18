@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Chronic Care Management (CCM): Definition and Requirements | Positive Check Glossary',
+  title: 'Chronic Care Management (CCM): Definition | Positive Check',
   description:
     'Chronic Care Management (CCM) is a Medicare-reimbursed care coordination program for patients with 2+ chronic conditions. Definition, CPT codes (99490/99439/99487/99489), and eligibility.',
   alternates: { canonical: '/resources/glossary/chronic-care-management' },

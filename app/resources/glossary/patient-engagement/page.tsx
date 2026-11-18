@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Patient Engagement: Definition and Why It Matters | Positive Check Glossary',
+  title: 'Patient Engagement: Definition and Why It Matters | Positive Check',
   description:
     'Patient engagement is the active involvement of patients in their own care. Definition, why it drives outcomes in CCM/RPM/TCM, and how care teams operationalize it.',
   alternates: { canonical: '/resources/glossary/patient-engagement' },

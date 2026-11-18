@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Electronic Protected Health Information (ePHI): Definition | Positive Check Glossary',
+  title: 'Electronic Protected Health Information (ePHI) | Positive Check',
   description:
     'Electronic Protected Health Information (ePHI) is the subset of PHI in electronic form, governed by the HIPAA Security Rule. Definition, what counts, and required safeguards.',
   alternates: { canonical: '/resources/glossary/ephi' },
