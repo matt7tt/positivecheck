@@ -8,9 +8,6 @@ jest.mock('@/components/shared/public-footer', () => ({ PublicFooter: () => null
 jest.mock('react-hot-toast', () => ({ __esModule: true, default: { success: jest.fn(), error: jest.fn() }, Toaster: () => null }))
 jest.mock('@/lib/analytics', () => ({ trackEvent: jest.fn(), getAttributionContext: () => ({}) }))
 
-// Keep the platform lead POST out of tests that count the form's own requests (a local .env may set the backend URL).
-beforeEach(() => { delete process.env.NEXT_PUBLIC_API_BASE_URL })
-
 const originalBookingUrl = process.env.NEXT_PUBLIC_DEMO_BOOKING_URL
 beforeEach(() => { jest.clearAllMocks(); delete process.env.NEXT_PUBLIC_DEMO_BOOKING_URL })
 afterAll(() => {
@@ -45,15 +42,10 @@ it('retains entered details and offers an email fallback after delivery failure'
   expect(jest.mocked(trackEvent).mock.calls.filter(([name]) => name === 'generate_lead')).toHaveLength(0)
 })
 
-const LEAD_URL = "https://api.example.com/api/marketing/lead"
+const LEAD_URL = "/api/marketing-lead"
 const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
-const enableLeadForwarding = () => { process.env.NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"; process.env.NEXT_PUBLIC_API_KEY = "k" }
-const disableLeadForwarding = () => { delete process.env.NEXT_PUBLIC_API_BASE_URL; delete process.env.NEXT_PUBLIC_API_KEY }
 
 describe('demo page marketing lead', () => {
-  beforeEach(enableLeadForwarding)
-  afterAll(disableLeadForwarding)
-
   async function submit() {
     const user = userEvent.setup()
     render(<DemoComponent />)

@@ -20,12 +20,11 @@ export function readFirstTouch(): Touch | undefined {
 }
 
 // Best-effort, fire-and-forget: sends the lead and its stored visit source to
-// the platform. Never throws, never retries, and callers must not await it.
+// the site's own /api/marketing-lead route, which forwards it to the platform.
+// Never throws, never retries, and callers must not await it.
 export function sendMarketingLead(lead: MarketingLead): void {
   try {
     if (typeof window === 'undefined') return
-    const base = (process.env.NEXT_PUBLIC_API_BASE_URL || '').replace(/\/+$/, '')
-    if (!base) return
     let attribution: ReturnType<typeof readAttribution> = {}
     try {
       attribution = readAttribution(window.localStorage, new Date())
@@ -35,12 +34,9 @@ export function sendMarketingLead(lead: MarketingLead): void {
     const fields = Object.fromEntries(
       Object.entries(lead).filter(([, v]) => typeof v === 'string' && v.trim() !== ''),
     )
-    fetch(`${base}/api/marketing/lead`, {
+    fetch('/api/marketing-lead', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-Key': process.env.NEXT_PUBLIC_API_KEY || '',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...fields, ...attribution }),
       keepalive: true,
     }).catch(() => {})

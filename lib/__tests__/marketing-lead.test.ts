@@ -10,33 +10,28 @@ describe('sendMarketingLead', () => {
   beforeEach(() => {
     jest.clearAllMocks()
     window.localStorage.clear()
-    process.env.NEXT_PUBLIC_API_BASE_URL = 'https://api.example.com//'
-    process.env.NEXT_PUBLIC_API_KEY = 'key-123'
     mockFetch.mockResolvedValue({ ok: true } as Response)
   })
-  afterAll(() => {
-    delete process.env.NEXT_PUBLIC_API_BASE_URL
-    delete process.env.NEXT_PUBLIC_API_KEY
-  })
 
-  it('posts lead with attribution and api key', () => {
+  it('posts lead with attribution to the same-origin route, without a key', () => {
     window.localStorage.setItem('pc_attr', JSON.stringify(stored))
     sendMarketingLead({ kind: 'contact', name: 'Jane Doe', email: 'j@example.com', phone: '', self_reported_source: 'google' })
     expect(mockFetch).toHaveBeenCalledTimes(1)
     const [url, init] = mockFetch.mock.calls[0]
-    expect(url).toBe('https://api.example.com/api/marketing/lead')
+    expect(url).toBe('/api/marketing-lead')
     expect(init).toMatchObject({ method: 'POST', keepalive: true })
-    expect((init as RequestInit).headers).toEqual({ 'Content-Type': 'application/json', 'X-API-Key': 'key-123' })
+    expect((init as RequestInit).headers).toEqual({ 'Content-Type': 'application/json' })
     expect(JSON.parse((init as RequestInit).body as string)).toEqual({
       kind: 'contact', name: 'Jane Doe', email: 'j@example.com', self_reported_source: 'google',
       first_touch: stored.first, last_touch: stored.last,
     })
   })
 
-  it('does nothing when the backend url is not configured', () => {
+  it('sends even when no platform settings are in the browser build', () => {
     delete process.env.NEXT_PUBLIC_API_BASE_URL
+    delete process.env.NEXT_PUBLIC_API_KEY
     sendMarketingLead({ kind: 'contact', email: 'j@example.com' })
-    expect(mockFetch).not.toHaveBeenCalled()
+    expect(mockFetch).toHaveBeenCalledWith('/api/marketing-lead', expect.anything())
   })
 
   it('does not throw when fetch rejects', async () => {

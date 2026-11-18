@@ -46,9 +46,6 @@ jest.mock('@/components/ui/select', () => ({
   ),
 }))
 
-// Keep the platform lead POST out of tests that count the form's own requests (a local .env may set the backend URL).
-beforeEach(() => { delete process.env.NEXT_PUBLIC_API_BASE_URL })
-
 const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>
 
 describe('ContactForm', () => {
@@ -199,14 +196,11 @@ describe('ContactForm', () => {
   })
 })
 
-const LEAD_URL = "https://api.example.com/api/marketing/lead"
+const LEAD_URL = "/api/marketing-lead"
 const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
-const enableLeadForwarding = () => { process.env.NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"; process.env.NEXT_PUBLIC_API_KEY = "k" }
-const disableLeadForwarding = () => { delete process.env.NEXT_PUBLIC_API_BASE_URL; delete process.env.NEXT_PUBLIC_API_KEY }
 
 describe('ContactForm marketing lead', () => {
-  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset(); enableLeadForwarding() })
-  afterAll(disableLeadForwarding)
+  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset() })
 
   async function fillAndSubmit() {
     const user = userEvent.setup()

@@ -2,9 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { LolaCallModal } from '@/components/lola-call-modal'
 import { trackEvent } from '@/lib/analytics'
 jest.mock('@/lib/analytics', () => ({ trackEvent: jest.fn() }))
-// Keep the platform lead POST out of tests that count the form's own requests (a local .env may set the backend URL).
-beforeEach(() => { delete process.env.NEXT_PUBLIC_API_BASE_URL })
-
 const mockFetch = jest.mocked(global.fetch)
 
 function openAndFill() {
@@ -40,8 +37,9 @@ describe('Lola callback form', () => {
     fireEvent.click(submit)
     fireEvent.click(submit)
     await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('does not confirm that a call connected'))
-    expect(mockFetch).toHaveBeenCalledTimes(1)
-    expect(JSON.parse(mockFetch.mock.calls[0][1]!.body as string)).toMatchObject({ consent: true, phone: '+14155550100' })
+    const callbackCalls = mockFetch.mock.calls.filter(([url]) => url === '/api/lola-call')
+    expect(callbackCalls).toHaveLength(1)
+    expect(JSON.parse(callbackCalls[0][1]!.body as string)).toMatchObject({ consent: true, phone: '+14155550100' })
     expect(jest.mocked(trackEvent).mock.calls.filter(([event]) => event === 'generate_lead')).toHaveLength(1)
     expect(JSON.stringify(jest.mocked(trackEvent).mock.calls)).not.toContain('synthetic@example.com')
   })
@@ -56,14 +54,11 @@ describe('Lola callback form', () => {
   })
 })
 
-const LEAD_URL = "https://api.example.com/api/marketing/lead"
+const LEAD_URL = "/api/marketing-lead"
 const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
-const enableLeadForwarding = () => { process.env.NEXT_PUBLIC_API_BASE_URL = "https://api.example.com"; process.env.NEXT_PUBLIC_API_KEY = "k" }
-const disableLeadForwarding = () => { delete process.env.NEXT_PUBLIC_API_BASE_URL; delete process.env.NEXT_PUBLIC_API_KEY }
 
 describe('Lola callback marketing lead', () => {
-  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset(); enableLeadForwarding() })
-  afterAll(disableLeadForwarding)
+  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset() })
 
   it('sends a marketing lead after a successful submit', async () => {
     mockFetch.mockResolvedValue({ ok: true, json: async () => ({ ok: true }) } as Response)
