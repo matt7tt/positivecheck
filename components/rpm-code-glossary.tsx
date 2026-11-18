@@ -6,19 +6,19 @@ import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/com
 
 export const rpmCodeDefinitions = {
   '99457': {
-    title: 'CPT 99457: Definition and RPM Interactive Communication Requirements | Positive Check Glossary',
+    title: 'CPT 99457: RPM Interactive Communication Requirements | Positive Check',
     name: 'RPM treatment management: first 20 minutes per calendar month',
     definition: 'CPT 99457 describes the first 20 minutes of qualifying remote physiologic monitoring treatment-management time in a calendar month, including required interactive communication with the patient or caregiver. The total can include qualifying care-management work as well as the live conversation; it is not a requirement for a 20-minute call.',
     pathway: 'At least 20 qualifying minutes are required for 99457, along with the other RPM service requirements. Additional qualifying time may support 99458 under its reporting instructions. A shorter month must not be rounded up; assess the 2026 99470 pathway independently when appropriate.',
   },
   '99458': {
-    title: 'CPT 99458: Definition and RPM Additional Interactive Communication | Positive Check Glossary',
+    title: 'CPT 99458: Additional RPM Interactive Communication | Positive Check',
     name: 'RPM treatment management: each additional 20 minutes per calendar month',
     definition: 'CPT 99458 is an add-on for each additional 20 minutes of qualifying RPM treatment-management time beyond the initial 99457 service. Qualifying care-management work and required interactive communication contribute to the management total. Automated call duration does not independently establish additional qualifying time.',
     pathway: '99458 is not a standalone service. Check the base service, each additional time increment, current unit limits and payer edits before reporting it. More device readings or more automated calls do not by themselves support additional units. Keep the monthly record attributable to the actual qualifying clinical work.',
   },
   '99470': {
-    title: 'CPT 99470: New 2026 RPM Treatment Management Code (First 10 Minutes) | Positive Check Glossary',
+    title: 'CPT 99470: New 2026 RPM Management Code (10 Minutes) | Positive Check',
     name: 'RPM treatment management: first 10 minutes per calendar month',
     definition: 'CPT 99470 is a 2026 RPM treatment-management pathway for a qualifying monthly total beginning at 10 minutes and below 20 minutes. Required interactive communication is part of the service, but the threshold concerns total qualifying treatment-management work, not only live-call duration.',
     pathway: 'Assess 99470 separately when the month is below the 99457 threshold. Meeting a time threshold alone is not sufficient: communication, medical necessity, personnel, consent, device and other service requirements still apply. Follow current reporting instructions for alternative and add-on codes rather than combining code totals automatically.',

@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99496: Definition and Billing Requirements | Positive Check Glossary',
+  title: 'CPT 99496: Definition and Billing Requirements | Positive Check',
   description:
     'CPT 99496 is the Medicare billing code for Transitional Care Management services with high medical decision-making complexity. Definition, 7-day face-to-face requirement, and how it differs from 99495.',
   alternates: { canonical: '/resources/glossary/cpt-99496' },

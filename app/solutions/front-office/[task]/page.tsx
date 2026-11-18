@@ -10,6 +10,7 @@ import { ReminderWorkflowDemo } from '@/components/reminder-workflow-demo'
 import { ReminderEvaluation } from '@/components/reminder-evaluation'
 import { REMINDER_WORKFLOW_OFFER } from '@/lib/demo-offers'
 import { StructuredData, buildBreadcrumbSchema, buildFAQSchema } from '@/components/structured-data'
+import { pageTitle } from '@/lib/page-title'
 
 type Props = { params: Promise<{ task: string }> }
 function getContent(task: string) {
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const content = getContent(task)
   if (!content) return {}
   const url = `/solutions/front-office/${task}`
-  return { title: `${content.title} | Positive Check`, description: content.description, alternates: { canonical: url }, openGraph: { title: content.title, description: content.description, url, type: 'website' }, twitter: { card: 'summary_large_image', title: content.title, description: content.description, images: ['/images/admin-console-dashboard-new.png'] } }
+  return { title: pageTitle(content.title), description: content.description, alternates: { canonical: url }, openGraph: { title: content.title, description: content.description, url, type: 'website' }, twitter: { card: 'summary_large_image', title: content.title, description: content.description, images: ['/images/admin-console-dashboard-new.png'] } }
 }
 export default async function FrontOfficeTaskPage({ params }: Props) {
   const { task } = await params

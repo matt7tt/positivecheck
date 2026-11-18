@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Care Coordination: Definition and CMS Context | Positive Check Glossary',
+  title: 'Care Coordination: Definition and CMS Context | Positive Check',
   description:
     'Care coordination is the deliberate organization of patient care activities. Definition, CMS context (TCM, CCM, PCM), and measurement.',
   alternates: { canonical: '/resources/glossary/care-coordination' },

@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Interactive Communication Requirement: CMS Definition | Positive Check Glossary',
+  title: 'Interactive Communication Requirement: CMS Definition | Positive Check',
   description:
     'The interactive communication requirement is a CMS rule defining real-time two-way clinical engagement for Remote Patient Monitoring billing. Definition, what counts, and what doesn\u2019t.',
   alternates: { canonical: '/resources/glossary/interactive-communication-requirement' },

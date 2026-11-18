@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildCPTCodeSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'CPT 99445: New 2026 RPM Device Supply Code (2\u201315 Days) | Positive Check Glossary',
+  title: 'CPT 99445: 2026 RPM Device Supply Code (2\u201315 Days) | Positive Check',
   description:
     'CPT 99445 is the new 2026 Medicare billing code for Remote Patient Monitoring device supply when data is collected on 2\u201315 days within a 30-day period. Definition, threshold, and how it differs from CPT 99454.',
   alternates: { canonical: '/resources/glossary/cpt-99445' },

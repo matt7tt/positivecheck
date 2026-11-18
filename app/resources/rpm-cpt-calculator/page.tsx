@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { RpmCptCalculator } from '@/components/rpm-cpt-calculator'
 
 export const metadata: Metadata = {
-  title: '2026 RPM CPT Calculator: Estimate Medicare RPM Reimbursement | Positive Check',
+  title: '2026 RPM CPT Calculator: Medicare RPM Reimbursement | Positive Check',
   description: 'Free RPM CPT calculator for 2026 Medicare billing. Estimate monthly reimbursement across CPT 99453, 99454, 99445, 99457, 99458, and 99470 based on your patient mix.',
   alternates: {
     canonical: '/resources/rpm-cpt-calculator',

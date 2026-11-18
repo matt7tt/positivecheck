@@ -65,7 +65,7 @@ export const ccmBillingGuide: BillingReference = {
 export const rpmBillingGuide: BillingReference = {
   id: 'cpt-99457', path: rpmLink.href,
   title: 'CPT 99457 Billing Guide: RPM Interactive Communication Requirements',
-  seoTitle: 'CPT 99457 Billing Guide: RPM Interactive Communication Requirements | Positive Check',
+  seoTitle: 'CPT 99457 Billing Guide: RPM Communication Rules | Positive Check',
   description: 'Understand CPT 99457’s 20-minute total treatment-management threshold, required live communication, device rules, and documentation with a worked activity log.',
   published: '2026-04-19', updated: '2026-09-20',
   parent: { label: 'Remote Patient Monitoring', href: '/solutions/remote-patient-monitoring' },

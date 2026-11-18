@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Remote Patient Monitoring (RPM): Definition and Requirements | Positive Check Glossary',
+  title: 'Remote Patient Monitoring (RPM): Definition | Positive Check',
   description:
     'Remote Patient Monitoring (RPM) is a Medicare-reimbursed care model combining connected-device data transmission with monthly interactive communication. Definition, CPT codes, and requirements.',
   alternates: { canonical: '/resources/glossary/remote-patient-monitoring' },

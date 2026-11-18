@@ -13,7 +13,7 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/remote-patient-monitor
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'RPM Patient Selection: Which Patients, Which Conditions, Which Outcomes | Positive Check',
+  title: 'RPM Patient Selection: Conditions, Patients, Outcomes | Positive Check',
   description:
     'A provider-focused guide to selecting the right patients for Remote Patient Monitoring. CMS eligibility requirements, highest-value chronic conditions, adherence predictors, and which patients NOT to enroll.',
   alternates: { canonical: '/solutions/remote-patient-monitoring/patient-selection' },

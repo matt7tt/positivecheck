@@ -5,10 +5,11 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { ContentConversionCta } from '@/components/content-conversion-cta'
 import { StructuredData, buildArticleSchema, buildBreadcrumbSchema, buildFAQSchema } from '@/components/structured-data'
 import { TCM_WORKFLOW_POST as post } from '@/lib/blog-posts'
+import { pageTitle } from '@/lib/page-title'
 
 const url = `https://www.positivecheck.com/blog/${post.slug}`
 export const metadata: Metadata = {
-  title: `${post.title} | Positive Check`, description: post.description, alternates: { canonical: `/blog/${post.slug}` },
+  title: pageTitle(post.title), description: post.description, alternates: { canonical: `/blog/${post.slug}` },
   openGraph: { title: post.title, description: post.description, url, type: 'article', publishedTime: post.datePublished, modifiedTime: post.dateModified, images: [post.image] },
   twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [post.image] },
 }

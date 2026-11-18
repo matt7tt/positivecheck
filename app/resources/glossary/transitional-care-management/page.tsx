@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Transitional Care Management (TCM): Definition and Requirements | Positive Check Glossary',
+  title: 'Transitional Care Management (TCM): Definition | Positive Check',
   description:
     'Transitional Care Management (TCM) is a CMS-reimbursed care model for patients transitioning from inpatient to community settings. Definition, CPT codes, and requirements.',
   alternates: { canonical: '/resources/glossary/transitional-care-management' },

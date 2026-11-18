@@ -13,7 +13,7 @@ const PAGE_URL = 'https://www.positivecheck.com/solutions/chronic-care-managemen
 const HERO_IMAGE = 'https://www.positivecheck.com/images/admin-console-dashboard-new.png'
 
 export const metadata: Metadata = {
-  title: 'CCM\u2019s 20-Minutes-Per-Month Requirement: What Counts and How to Track It | Positive Check',
+  title: 'CCM\u2019s 20-Minute Monthly Requirement: What Counts | Positive Check',
   description:
     'Exact CMS rules for the 20-minute clinical staff time requirement underpinning CPT 99490. What activities count, what doesn\u2019t, who can perform the work, documentation standards, and common pitfalls that make billed time unbillable at audit.',
   alternates: { canonical: '/solutions/chronic-care-management/20-minutes-monthly-requirement' },

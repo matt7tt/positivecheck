@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: '30-Day Readmission: Definition and HRRP Context | Positive Check Glossary',
+  title: '30-Day Readmission: Definition and HRRP Context | Positive Check',
   description:
     'A 30-day readmission is an unplanned inpatient admission within 30 days of a prior discharge. Definition, HRRP penalty context, and which conditions CMS tracks.',
   alternates: { canonical: '/resources/glossary/30-day-readmission' },

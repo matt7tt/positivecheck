@@ -5,7 +5,7 @@ import { PublicFooter } from '@/components/shared/public-footer'
 import { StructuredData, buildBreadcrumbSchema, buildDefinedTermSchema } from '@/components/structured-data'
 
 export const metadata: Metadata = {
-  title: 'Annual Wellness Visit (AWV): Definition and Medicare Coverage | Positive Check Glossary',
+  title: 'Annual Wellness Visit (AWV): Definition and Coverage | Positive Check',
   description:
     'The Annual Wellness Visit (AWV) is a Medicare-covered yearly preventive visit that develops a personalized prevention plan. Definition, HCPCS G0438/G0439 codes, and how it differs from IPPE and annual physicals.',
   alternates: { canonical: '/resources/glossary/annual-wellness-visit' },
