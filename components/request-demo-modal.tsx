@@ -19,6 +19,7 @@ import { CalendarDays, Loader2 } from "lucide-react"
 import { getAttributionContext, trackEvent } from "@/lib/analytics"
 import { getDemoOffer, type DemoOfferId } from "@/lib/demo-offers"
 import { getDemoBookingUrl } from "@/lib/demo-booking"
+import { readFirstTouch, sendMarketingLead } from "@/lib/marketing-lead"
 
 interface RequestDemoModalProps {
   children: React.ReactNode
@@ -38,6 +39,8 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
   const [open, setOpen] = useState(false)
   const hasStarted = useRef(false)
   const bookingUrl = getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL)
+  // Source-tagged link is built after a successful submit (client only), so it never differs between server and first render.
+  const [taggedBookingUrl, setTaggedBookingUrl] = useState<string | undefined>()
 
   const trackFormStart = () => {
     if (hasStarted.current) return
@@ -87,6 +90,8 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
         cta_location: source,
         ...offerParameters,
       })
+      setTaggedBookingUrl(getDemoBookingUrl(process.env.NEXT_PUBLIC_DEMO_BOOKING_URL, readFirstTouch()))
+      sendMarketingLead({ kind: "demo_request", name, email, practice: organization })
       setIsSuccess(true)
     } catch (error) {
       trackEvent("form_error", {
@@ -143,7 +148,7 @@ export function RequestDemoModal({ children, source = "site_cta", offerId }: Req
                 <p className="text-gray-600">Your demo is not booked yet. Choose a time and complete the calendar confirmation.</p>
                 <Button asChild className="w-full bg-pc-accent hover:bg-pc-accent-hover text-pc-on-accent">
                   <a
-                    href={bookingUrl}
+                    href={taggedBookingUrl ?? bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => trackEvent("booking_link_click", {

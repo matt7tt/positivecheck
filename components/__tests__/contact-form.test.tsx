@@ -195,3 +195,39 @@ describe('ContactForm', () => {
     expect(newsletterCheckbox).not.toBeChecked()
   })
 })
+
+const LEAD_URL = "/api/marketing-lead"
+const leadCalls = () => jest.mocked(global.fetch).mock.calls.filter(([url]) => url === LEAD_URL)
+
+describe('ContactForm marketing lead', () => {
+  beforeEach(() => { jest.clearAllMocks(); mockFetch.mockReset() })
+
+  async function fillAndSubmit() {
+    const user = userEvent.setup()
+    render(<ContactForm />)
+    await user.type(screen.getByLabelText(/First Name/), 'John')
+    await user.type(screen.getByLabelText(/Last Name/), 'Doe')
+    await user.type(screen.getByLabelText(/Email/), 'john@example.com')
+    await user.type(screen.getByLabelText(/Message/), 'Private message text')
+    await user.click(screen.getByRole('button', { name: /Submit/ }))
+  }
+
+  it('sends a marketing lead after a successful submit', async () => {
+    mockFetch.mockResolvedValue({ ok: true, json: () => Promise.resolve({}) } as Response)
+    await fillAndSubmit()
+    await screen.findByText('Thank You!')
+    expect(leadCalls()).toHaveLength(1)
+    const body = JSON.parse(leadCalls()[0][1]!.body as string)
+    expect(body).toMatchObject({ kind: 'contact', name: 'John Doe', email: 'john@example.com' })
+    expect(JSON.stringify(body)).not.toContain('Private message text')
+  })
+
+  it('does not send one when the submit fails', async () => {
+    const consoleError = jest.spyOn(console, 'error').mockImplementation(() => {})
+    mockFetch.mockResolvedValue({ ok: false, status: 500 } as Response)
+    await fillAndSubmit()
+    await waitFor(() => expect(require('react-hot-toast').default.error).toHaveBeenCalled())
+    expect(leadCalls()).toHaveLength(0)
+    consoleError.mockRestore()
+  })
+})

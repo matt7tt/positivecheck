@@ -9,6 +9,7 @@ import { buildOrganizationSchema, buildWebSiteSchema } from "@/lib/schema";
 import { MarketingTelemetry } from "@/components/marketing-telemetry";
 import { MARKETING_GA_MEASUREMENT_ID } from "@/lib/analytics-config";
 import { HeatmapPrivacy } from "@/components/heatmap-privacy";
+import { AttributionCapture } from "@/components/attribution-capture";
 import sitemap from "./sitemap";
 
 // Inter variable font from the Positive Check design system (SIL OFL, see app/fonts/Inter-OFL.txt)
@@ -199,6 +200,7 @@ gtag('config','${gaMeasurementId}');
         {/* No unconditional noscript tracker: it bypasses the marketing-host guard. */}
         <AuthProvider>
           <MarketingTelemetry />
+          <AttributionCapture />
           <HeatmapPrivacy publicPaths={sitemap().map(entry => new URL(entry.url).pathname)} />
           {children}
         </AuthProvider>

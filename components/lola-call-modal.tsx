@@ -3,6 +3,7 @@
 import { LeadSubmissionError, leadFailureDetails } from '@/lib/lead-form-feedback'
 
 import { useRef, useState } from "react"
+import { sendMarketingLead } from "@/lib/marketing-lead"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -141,6 +142,7 @@ export function LolaCallModal({ children, source = "site_cta" }: LolaCallModalPr
       trackEvent("generate_lead", { lead_type: "lola_call", form_name: "lola_call", cta_location: source })
       trackEvent("form_submit", { form_name: "lola_call", cta_location: source })
       trackEvent("lola_call_requested", { cta_location: source })
+      sendMarketingLead({ kind: "demo_call", name: `${cleanFirst} ${cleanLast}`.trim(), email: cleanEmail, phone: e164 })
       setIsSuccess(true)
     } catch (err) {
       trackEvent("form_error", { form_name: "lola_call", cta_location: source, ...leadFailureDetails(err) })
