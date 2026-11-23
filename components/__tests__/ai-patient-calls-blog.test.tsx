@@ -4,7 +4,7 @@ import { join } from 'path'
 import Page, { metadata } from '@/app/blog/ai-patient-calls-sms-front-office-ongoing-care/page'
 import BlogPage from '@/app/blog/page'
 import { AI_PATIENT_CALLS_FAQ, AI_PATIENT_CALLS_IMAGE_ALT } from '@/components/blog-posts/ai-patient-calls-sms'
-import { AI_PATIENT_CALLS_POST as post, featuredPost, listedPosts, providerGridPosts, TCM_WORKFLOW_POST } from '@/lib/blog-posts'
+import { AI_PATIENT_CALLS_POST as post, listedPosts, providerGridPosts, TCM_WORKFLOW_POST } from '@/lib/blog-posts'
 import sitemap from '@/app/sitemap'
 
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
@@ -55,14 +55,13 @@ describe('AI patient calls blog', () => {
     expect(metadata.openGraph).toMatchObject({ images: [{ url: post.image, width: 640, height: 427, alt: AI_PATIENT_CALLS_IMAGE_ALT }] })
   })
 
-  it('features the new article and retains the earlier TCM post in the provider grid', () => {
-    expect(featuredPost.slug).toBe(post.slug)
+  it('lists the article and retains the earlier TCM post in the provider grid', () => {
+    expect(providerGridPosts).toContain(post)
     expect(listedPosts.filter(p => p.slug === post.slug)).toHaveLength(1)
     expect(providerGridPosts).toContain(TCM_WORKFLOW_POST)
     render(<BlogPage />)
     expect(screen.getByRole('heading', { name: post.title })).toBeVisible()
     expect(screen.getByRole('heading', { name: TCM_WORKFLOW_POST.title })).toBeVisible()
-    expect(screen.getAllByRole('link', { name: 'READ MORE', exact: true })[0]).toHaveAttribute('href', `/blog/${post.slug}`)
   })
 
   it('includes the post and image in the sitemap', () => {

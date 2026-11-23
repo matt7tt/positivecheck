@@ -56,7 +56,21 @@ export const AI_PATIENT_CALLS_POST: BlogPost = {
   keywords: ['AI patient calls', 'patient SMS', 'front office automation', 'appointment reminders', 'RPM outreach', 'CCM check-ins', 'patient communication'],
 }
 
+export const AI_CARE_ASSISTANT_POST: BlogPost = {
+  slug: 'introducing-ai-care-assistant-to-patients',
+  title: 'Lola Is Part of Your Care Team: 4 Ways to Build Patient Trust and Engagement',
+  description: 'Learn how to introduce an AI care assistant to patients, build trust, improve engagement, and connect automated outreach with your care team.',
+  datePublished: '2026-11-22',
+  dateModified: '2026-11-22',
+  displayDate: 'November 22, 2026',
+  readTime: '7 min read',
+  image: '/images/care-companion-lola-calling.webp',
+  articleSection: 'Patient Engagement & Care Management',
+  keywords: ['AI care assistant', 'AI patient engagement', 'patient outreach', 'virtual care assistant', 'patient communication', 'care management', 'patient trust'],
+}
+
 export const blogPosts: BlogPost[] = [
+  AI_CARE_ASSISTANT_POST,
   AI_PATIENT_CALLS_POST,
   TCM_WORKFLOW_POST,
   APCM_BILLING_POST,
