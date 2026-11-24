@@ -10,7 +10,7 @@ import { SolutionsMenu } from '@/components/solutions-menu'
 import { solutionGroups } from '@/lib/solution-catalog'
 
 interface PublicHeaderProps {
-  currentPage: "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources" | "roi-calculator"
+  currentPage: "demo" | "home" | "blog" | "sign-in" | "contact" | "about" | "privacy" | "terms" | "how-it-works" | "platform" | "solutions" | "resources" | "roi-calculator"
 }
 
 export function PublicHeader({ currentPage }: PublicHeaderProps) {
