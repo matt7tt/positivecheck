@@ -45,9 +45,15 @@ export default function TermsPage() {
       <main className="px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms and Conditions for Positive Check</h1>
-          <p className="text-gray-600 mb-8">Effective Date: August 31, 2025</p>
+          <p className="text-gray-600 mb-8">Effective Date: August 31, 2025. Text messaging disclosure updated November 24, 2026</p>
 
           <div className="prose prose-lg max-w-none">
+            <section id="demo-texts" className="mb-8 scroll-mt-24">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Positive Check demo texts</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">When you opt in, Positive Check sends demo verification codes, reminders and rescheduling texts.
+                Message frequency varies. Message and data rates may apply. Reply STOP to cancel or HELP for help.
+                Consent is not a condition of purchase. For help, call (858) 522-9524.</p>
+            </section>
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
