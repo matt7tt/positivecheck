@@ -34,6 +34,12 @@ const breadcrumb = buildBreadcrumbSchema([
 
 const sections = [
   {
+    href: "/compare",
+    title: "AI Patient Outreach Vendor Comparisons",
+    description:
+      "Compare Positive Check with other platforms by workflow, channels, care programs and integration needs, starting with Hyro.",
+  },
+  {
     href: "/solutions/post-discharge-follow-up/post-discharge-contact-timing",
     title: "TCM Contact Timing & Attempt Checklist",
     description:
