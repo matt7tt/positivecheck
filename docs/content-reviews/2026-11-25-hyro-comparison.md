@@ -2,7 +2,7 @@
 
 ## Decision
 
-Draft PR only. The requested production checks were completed read-only on November 25, 2026. They do not support the original universal claims. The website draft now uses narrower wording, and the requested second-pass-review claim has been removed because the named feature is not enabled. No production services or data were modified.
+The user approved publication of the revised copy on November 25, 2026. The requested production checks were completed read-only on November 25, 2026. They do not support the original universal claims. The website draft now uses narrower wording, and the requested second-pass-review claim has been removed because the named feature is not enabled. No production services or data were modified.
 
 ## Implementation
 
@@ -44,9 +44,9 @@ The application files were read from those immutable container images. Database 
 - Twilio recording defaults: https://www.twilio.com/docs/voice/recording-settings
 - Tanner bilingual deployment: the supplied CXM article was retrieved through indexed search and corroborated by Tanner's May 29, 2026 Business Wire announcement.
 
-## Publication requirements
+## Publication approval
 
-Review the narrowed copy before merging. In particular, the approved “automated second-pass review of every call outcome” wording cannot be published as an active capability based on the production findings. Enabling or repairing platform features is outside this website change; no settings were changed to make the claims true.
+The user explicitly requested “publish” after receiving the production findings and the draft PR with narrowed copy. In particular, the approved “automated second-pass review of every call outcome” wording cannot be published as an active capability based on the production findings. Enabling or repairing platform features is outside this website change; no settings were changed to make the claims true.
 
 ## Validation
 

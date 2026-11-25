@@ -1,4 +1,4 @@
-// Prepared from the approved draft. Publication remains on hold; see docs/content-reviews/2026-11-25-hyro-comparison.md.
+// Claim scope follows the production review in docs/content-reviews/2026-11-25-hyro-comparison.md.
 export const comparisonIntro = [
   "The short answer: Hyro and Positive Check both use AI voice and text agents in healthcare, but they are built for different jobs. Hyro is built for large health systems' patient access call centers, where AI agents answer inbound calls and chats for scheduling, prescription refills and billing, with an outbound product for reminders and referrals. Positive Check is built for practices and care management teams that need recurring outbound wellness check-ins, such as Remote Patient Monitoring (RPM), Chronic Care Management (CCM) and post-discharge follow-up, with Lola, its AI care companion, turning each call into structured notes and clinical alerts for staff review.",
   "If your main problem is call volume into a hospital contact center, Hyro is designed for that. If your main problem is reaching enrolled patients every week and documenting what they said, Positive Check is designed for that.",
