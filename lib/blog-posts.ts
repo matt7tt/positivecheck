@@ -69,7 +69,21 @@ export const AI_CARE_ASSISTANT_POST: BlogPost = {
   keywords: ['AI care assistant', 'AI patient engagement', 'patient outreach', 'virtual care assistant', 'patient communication', 'care management', 'patient trust'],
 }
 
+export const GLP1_OUTREACH_POST: BlogPost = {
+  slug: 'ai-patient-outreach-glp-1-clinics',
+  title: 'AI Patient Outreach for GLP-1 Clinics: Check-ins, Refills, and Keeping Patients Enrolled',
+  description: 'Learn how AI patient outreach helps GLP-1 clinics support medication adherence, run check-ins, send refill reminders, and keep patients engaged by call and text.',
+  datePublished: '2026-11-27',
+  dateModified: '2026-11-27',
+  displayDate: 'November 27, 2026',
+  readTime: '7 min read',
+  image: '/images/ai-patient-outreach-glp-1-clinics.webp',
+  articleSection: 'Patient Engagement & Care Management',
+  keywords: ['GLP-1 patient outreach', 'GLP-1 patient retention', 'GLP-1 medication adherence', 'medical weight loss patient engagement', 'automated patient check-ins', 'AI patient outreach', 'GLP-1 side effects check-in', 'refill reminders', 'patient engagement', 'AI care assistant'],
+}
+
 export const blogPosts: BlogPost[] = [
+  GLP1_OUTREACH_POST,
   AI_CARE_ASSISTANT_POST,
   AI_PATIENT_CALLS_POST,
   TCM_WORKFLOW_POST,

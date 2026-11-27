@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import Page, { metadata } from '@/app/blog/introducing-ai-care-assistant-to-patients/page'
 import { AI_CARE_ASSISTANT_FAQ } from '@/components/blog-posts/introducing-ai-care-assistant'
-import { AI_CARE_ASSISTANT_POST as post, featuredPost } from '@/lib/blog-posts'
+import { AI_CARE_ASSISTANT_POST as post, listedPosts } from '@/lib/blog-posts'
 import sitemap from '@/app/sitemap'
 
 jest.mock('@/components/shared/public-header', () => ({ PublicHeader: () => null }))
@@ -29,8 +29,8 @@ describe('AI care assistant blog', () => {
     }
   })
 
-  it('is featured on the blog and listed in the sitemap', () => {
-    expect(featuredPost.slug).toBe(post.slug)
+  it('is listed on the blog and in the sitemap', () => {
+    expect(listedPosts).toContain(post)
     expect(sitemap()).toContainEqual(expect.objectContaining({ url: `https://www.positivecheck.com/blog/${post.slug}` }))
   })
 })
